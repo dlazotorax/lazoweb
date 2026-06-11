@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobrevida del Cáncer Pulmonar por Estadio TNM · cancerpulmonar.cl</title>
+  <meta name="description" content="Datos de sobrevida del cáncer pulmonar por estadio según la clasificación TNM 9ª edición (IASLC 2023). Factores pronósticos y perspectivas de recuperación." />
+  <link rel="canonical" href="https://cancerpulmonar.cl/sobrevida" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#080e18; --bg2:#0c1422; --bg3:#111e30;
+      --accent:#0891b2; --accent2:#06b6d4; --accent-lt:#67e8f9;
+      --warm:#f59e0b; --success:#10b981; --danger:#ef4444;
+      --text:#f0f4f8; --text-muted:#8fa3bc;
+      --border:rgba(255,255,255,0.08); --radius:14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+
+    .topbar { background:var(--bg2); border-bottom:1px solid var(--border); padding:0.5rem 2.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; }
+    .topbar-left { font-size:0.72rem; color:var(--text-muted); }
+    .topbar-links { display:flex; gap:1.5rem; }
+    .topbar-links a { font-size:0.72rem; color:rgba(255,255,255,0.4); text-decoration:none; transition:color 0.2s; }
+    .topbar-links a:hover { color:var(--accent2); }
+    nav { position:sticky; top:0; z-index:300; background:rgba(8,14,24,0.92); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); padding:0 2.5rem; height:66px; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; color:var(--text); }
+    .nav-logo-icon { width:32px; height:32px; border-radius:8px; background:linear-gradient(135deg,var(--accent),var(--accent2)); display:flex; align-items:center; justify-content:center; font-size:1rem; }
+    .nav-logo-text { font-size:0.95rem; font-weight:700; }
+    .nav-logo-text span { color:var(--accent2); }
+    .nav-links { display:flex; gap:1.8rem; list-style:none; }
+    .nav-links a { font-size:0.85rem; font-weight:500; color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text); }
+    .nav-cta { background:var(--accent); color:#fff; padding:0.5rem 1.25rem; border-radius:8px; font-size:0.85rem; font-weight:600; text-decoration:none; transition:background 0.2s; }
+    .nav-cta:hover { background:var(--accent2); }
+
+    .breadcrumb { background:var(--bg2); border-bottom:1px solid var(--border); padding:0.8rem 2.5rem; }
+    .breadcrumb-inner { max-width:900px; margin:0 auto; display:flex; gap:0.5rem; align-items:center; }
+    .breadcrumb a { font-size:0.78rem; color:var(--text-muted); text-decoration:none; }
+    .breadcrumb a:hover { color:var(--accent2); }
+    .breadcrumb span { font-size:0.78rem; color:rgba(143,163,188,0.4); }
+    .breadcrumb-current { font-size:0.78rem; color:var(--accent2); }
+
+    .page-hero { padding:4rem 2.5rem 3rem; background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%); border-bottom:1px solid var(--border); }
+    .page-hero-inner { max-width:900px; margin:0 auto; }
+    .page-hero-tag { font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.75rem; }
+    .page-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:700; line-height:1.15; margin-bottom:1rem; }
+    .page-hero h1 span { color:var(--accent2); }
+    .page-hero-lead { font-size:1.05rem; color:var(--text-muted); line-height:1.75; max-width:650px; }
+
+    .content { max-width:900px; margin:0 auto; padding:4rem 2.5rem; }
+    .content h2 { font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:700; margin:3rem 0 1rem; line-height:1.2; }
+    .content h2:first-child { margin-top:0; }
+    .content h3 { font-size:1.1rem; font-weight:700; margin:2rem 0 0.65rem; color:var(--accent2); }
+    .content p { font-size:0.97rem; color:var(--text-muted); line-height:1.8; margin-bottom:1rem; }
+    .content strong { color:var(--text); }
+    .content ul { padding-left:1.4rem; margin-bottom:1rem; }
+    .content li { font-size:0.95rem; color:var(--text-muted); line-height:1.75; margin-bottom:0.4rem; }
+
+    /* SURVIVAL BARS */
+    .survival-section { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; margin:2rem 0; }
+    .survival-header { padding:1.25rem 1.5rem; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+    .survival-header h3 { font-size:1rem; font-weight:700; margin:0; }
+    .survival-badge { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; background:rgba(6,182,212,0.15); color:var(--accent2); padding:0.2rem 0.6rem; border-radius:4px; }
+    .survival-row { padding:0.9rem 1.5rem; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:1.25rem; }
+    .survival-row:last-child { border-bottom:none; }
+    .surv-stage { min-width:54px; }
+    .surv-stage-pill { display:inline-block; padding:0.2rem 0.6rem; border-radius:5px; font-size:0.78rem; font-weight:700; }
+    .surv-bar-wrap { flex:1; }
+    .surv-label { font-size:0.72rem; color:var(--text-muted); margin-bottom:0.25rem; }
+    .surv-bar-track { background:rgba(255,255,255,0.06); border-radius:4px; height:12px; overflow:hidden; position:relative; }
+    .surv-bar-fill { height:100%; border-radius:4px; }
+    .surv-pct { min-width:48px; text-align:right; font-size:0.9rem; font-weight:700; }
+
+    /* Colors by survival rate */
+    .s-ia1 .surv-bar-fill { background:linear-gradient(90deg,#059669,#34d399); }
+    .s-ia1 .surv-pct { color:#34d399; }
+    .s-ia2 .surv-bar-fill { background:linear-gradient(90deg,#059669,#34d399); }
+    .s-ia2 .surv-pct { color:#34d399; }
+    .s-ia3 .surv-bar-fill { background:linear-gradient(90deg,#0284c7,#22d3ee); }
+    .s-ia3 .surv-pct { color:#22d3ee; }
+    .s-ib .surv-bar-fill { background:linear-gradient(90deg,#0284c7,#22d3ee); }
+    .s-ib .surv-pct { color:#22d3ee; }
+    .s-iia .surv-bar-fill { background:linear-gradient(90deg,#0891b2,#67e8f9); }
+    .s-iia .surv-pct { color:#67e8f9; }
+    .s-iib .surv-bar-fill { background:linear-gradient(90deg,#b45309,#fbbf24); }
+    .s-iib .surv-pct { color:#fbbf24; }
+    .s-iiia .surv-bar-fill { background:linear-gradient(90deg,#b45309,#f59e0b); }
+    .s-iiia .surv-pct { color:#f59e0b; }
+    .s-iiib .surv-bar-fill { background:linear-gradient(90deg,#c2410c,#fb923c); }
+    .s-iiib .surv-pct { color:#fb923c; }
+    .s-iiic .surv-bar-fill { background:linear-gradient(90deg,#b91c1c,#f87171); }
+    .s-iiic .surv-pct { color:#f87171; }
+    .s-iva .surv-bar-fill { background:linear-gradient(90deg,#991b1b,#ef4444); }
+    .s-iva .surv-pct { color:#ef4444; }
+    .s-ivb .surv-bar-fill { background:linear-gradient(90deg,#7f1d1d,#dc2626); }
+    .s-ivb .surv-pct { color:#dc2626; }
+
+    /* STAGE PILLS same as que-es */
+    .sp-ia { background:rgba(16,185,129,0.2); color:#34d399; }
+    .sp-ib { background:rgba(16,185,129,0.1); color:#6ee7b7; }
+    .sp-iia { background:rgba(6,182,212,0.15); color:var(--accent2); }
+    .sp-iib { background:rgba(6,182,212,0.1); color:var(--accent-lt); }
+    .sp-iiia { background:rgba(245,158,11,0.15); color:var(--warm); }
+    .sp-iiib { background:rgba(245,158,11,0.1); color:#fcd34d; }
+    .sp-iiic { background:rgba(239,68,68,0.12); color:#f87171; }
+    .sp-iva { background:rgba(239,68,68,0.15); color:#ef4444; }
+    .sp-ivb { background:rgba(239,68,68,0.2); color:#dc2626; }
+
+    /* FACTORS */
+    .factor-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin:1.5rem 0; }
+    .factor-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.4rem; }
+    .factor-icon { font-size:1.5rem; margin-bottom:0.5rem; }
+    .factor-title { font-size:0.92rem; font-weight:700; margin-bottom:0.35rem; }
+    .factor-desc { font-size:0.83rem; color:var(--text-muted); line-height:1.6; }
+    .factor-positive { border-color:rgba(16,185,129,0.2); }
+    .factor-negative { border-color:rgba(239,68,68,0.15); }
+
+    /* HOPE BOX */
+    .hope-box { background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(8,145,178,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:var(--radius); padding:2rem; margin:2rem 0; }
+    .hope-box h3 { font-size:1.1rem; font-weight:700; color:#34d399; margin-bottom:1rem; }
+    .hope-box p { font-size:0.92rem; color:var(--text-muted); line-height:1.75; margin-bottom:0.75rem; }
+    .hope-box p:last-child { margin:0; }
+
+    /* CALLOUT */
+    .callout { background:rgba(8,145,178,0.08); border:1px solid rgba(6,182,212,0.2); border-radius:var(--radius); padding:1.5rem 2rem; margin:2rem 0; display:flex; gap:1rem; align-items:flex-start; }
+    .callout-icon { font-size:1.4rem; flex-shrink:0; }
+    .callout h4 { font-size:0.95rem; font-weight:700; color:var(--accent2); margin-bottom:0.4rem; }
+    .callout p { font-size:0.875rem; color:var(--text-muted); margin:0; line-height:1.65; }
+
+    .page-nav { display:flex; justify-content:space-between; gap:1rem; padding:3rem 2.5rem; border-top:1px solid var(--border); max-width:900px; margin:0 auto; }
+    .page-nav-link { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; text-decoration:none; color:var(--text); flex:1; transition:border-color 0.2s, transform 0.15s; }
+    .page-nav-link:hover { border-color:rgba(6,182,212,0.3); transform:translateY(-2px); }
+    .page-nav-link.next { text-align:right; }
+    .pnl-label { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); margin-bottom:0.3rem; }
+    .pnl-title { font-size:0.95rem; font-weight:600; }
+
+    footer { background:var(--bg2); border-top:1px solid var(--border); padding:2rem 2.5rem; }
+    .footer-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer-brand { font-size:0.875rem; color:var(--text-muted); }
+    .footer-brand strong { color:var(--text); }
+    .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .footer-links a { font-size:0.8rem; color:var(--text-muted); text-decoration:none; }
+    .footer-links a:hover { color:var(--accent2); }
+    .footer-disclaimer { max-width:1100px; margin:1.25rem auto 0; font-size:0.75rem; color:rgba(143,163,188,0.5); line-height:1.6; border-top:1px solid var(--border); padding-top:1.25rem; }
+
+    @media(max-width:768px) {
+      nav { padding:0 1.25rem; } .nav-links { display:none; }
+      .topbar, .breadcrumb { padding-left:1.25rem; padding-right:1.25rem; }
+      .page-hero, .content { padding-left:1.25rem; padding-right:1.25rem; }
+      .page-nav { flex-direction:column; padding:2rem 1.25rem; }
+      .page-nav-link.next { text-align:left; }
+      .survival-row { flex-wrap:wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-left">Información para pacientes · Santiago, Chile</span>
+  <div class="topbar-links">
+    <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
+    <a href="https://rats.cl">Cirugía Robótica</a>
+    <a href="https://broncoscopia.cl">Broncoscopía</a>
+  </div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🫁</div>
+    <div class="nav-logo-text">Cáncer <span>Pulmonar</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="que-es.html">¿Qué es?</a></li>
+    <li><a href="causas.html">Causas</a></li>
+    <li><a href="diagnostico.html">Diagnóstico</a></li>
+    <li><a href="etapificacion.html">Etapificación</a></li>
+    <li><a href="tratamiento.html">Tratamiento</a></li>
+    <li><a href="sobrevida.html" class="active">Sobrevida</a></li>
+  </ul>
+  <a href="https://cirugiatoracica.cl/#contacto" class="nav-cta">Consultar al especialista</a>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Inicio</a>
+    <span>›</span>
+    <span class="breadcrumb-current">Sobrevida</span>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">05 · Sobrevida</div>
+    <h1>¿Cuáles son las posibilidades de <span>recuperación</span>?</h1>
+    <p class="page-hero-lead">Los datos de sobrevida son una guía estadística, no un pronóstico individual. Cada paciente es distinto, y muchos factores influyen en el resultado. Lo que sí es claro: detectar el cáncer más temprano mejora significativamente las posibilidades.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="callout">
+    <div class="callout-icon">📌</div>
+    <div>
+      <h4>Cómo leer los datos de sobrevida</h4>
+      <p>La "sobrevida a 5 años" indica el porcentaje de pacientes que estaban vivos 5 años después del diagnóstico. Son datos poblacionales de decenas de miles de pacientes. Tu caso puede ser mejor o peor que el promedio dependiendo de muchos factores individuales. Úsalos como referencia, no como sentencia.</p>
+    </div>
+  </div>
+
+  <h2>Sobrevida a 5 años por estadio TNM 9ª edición</h2>
+  <p>
+    Los datos siguientes provienen de la base de datos internacional de la <strong>IASLC</strong> (International Association for the Study of Lung Cancer), que recopiló más de 100.000 casos de cáncer pulmonar para establecer la 9ª edición de la clasificación TNM (2023). Representan el estándar mundial más actualizado.
+  </p>
+
+  <div class="survival-section">
+    <div class="survival-header">
+      <h3>Sobrevida a 5 años · CPCNP (Cáncer No Microcítico)</h3>
+      <span class="survival-badge">IASLC 9ª Edición · 2023</span>
+    </div>
+
+    <div class="survival-row s-ia1">
+      <div class="surv-stage"><span class="surv-stage-pill sp-ia">IA1</span></div>
+      <div class="surv-bar-wrap">
+        <div class="surv-label">Tumor ≤1 cm · Sin ganglios · Sin metástasis</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:92%;"></div></div>
+      </div>
+      <div class="surv-pct">92%</div>
+    </div>
+
+    <div class="survival-row s-ia2">
+      <div class="surv-stage"><span class="surv-stage-pill sp-ia">IA2</span></div>
+      <div class="surv-bar-wrap">
+        <div class="surv-label">Tumor 1–2 cm · Sin ganglios</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:83%;"></div></div>
+      </div>
+      <div class="surv-pct">83%</div>
+    </div>
+
+    <div class="survival-row s-ia3">
+      <div class="surv-stage"><span class="surv-stage-pill sp-ia">IA3</span></div>
+      <div class="surv-bar-wrap">
+        <div class="surv-label">Tumor 2–3 cm · Sin ganglios</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:77%;"></div></div>
+      </div>
+      <div class="surv-pct">77%</div>
+    </div>
+
+    <div class="survival-row s-ib">
+      <div class="surv-stage"><span class="surv-stage-pill sp-ib">IB</span></div>
+      <div class="surv-bar-wrap">
+        <div class="surv-label">Tumor 3–4 cm · Sin ganglios</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:68%;"></div></div>
+      </div>
+      <div class="surv-pct">68%</div>
+    </div>
+
+    <div class="survival-row s-iia">
+      <div class="surv-stage"><span class="surv-stage-pill sp-iia">IIA</span></div>
+      <div class="surv-bar-wrap">
+        <div class="surv-label">Tumor 4–5 cm · Sin ganglios</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:60%;"></div></div>
+      </div>
+      <div class="surv-pct">60%</div>
+    </div>
+
+    <div class="survival-row s-iib">
+      <div class="surv-stage"><span class="surv-stage-pill sp-iib">IIB</span></div>
+      <div class="surv-bar-wrap">
+        <div class="surv-label">Tumor 5–7 cm o ganglios ipsilaterales</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:53%;"></div></div>
+      </div>
+      <div class="surv-pct">53%</div>
+    </div>
+
+    <div class="survival-row s-iiia">
+      <div class="surv-stage"><span class="surv-stage-pill sp-iiia">IIIA</span></div>
+      <div class="surv-bar-wrap">
+        <div class="surv-label">Ganglios mediastínicos ipsilaterales</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:36%;"></div></div>
+      </div>
+      <div class="surv-pct">36%</div>
+    </div>
+
+    <div class="survival-row s-iiib">
+      <div class="surv-stage"><span class="surv-stage-pill sp-iiib">IIIB</span></div>
+      <div class="surv-bar-wrap">
+        <div class="surv-label">Ganglios contralaterales / supraclaviculares</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:26%;"></div></div>
+      </div>
+      <div class="surv-pct">26%</div>
+    </div>
+
+    <div class="survival-row s-iiic">
+      <div class="surv-stage"><span class="surv-stage-pill sp-iiic">IIIC</span></div>
+      <div class="surv-bar-wrap">
+        <div class="surv-label">Tumor avanzado + ganglios contralaterales</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:13%;"></div></div>
+      </div>
+      <div class="surv-pct">13%</div>
+    </div>
+
+    <div class="survival-row s-iva">
+      <div class="surv-stage"><span class="surv-stage-pill sp-iva">IVA</span></div>
+      <div class="surv-bar-wrap">
+        <div class="surv-label">Metástasis en un órgano / derrame pleural</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:10%;"></div></div>
+      </div>
+      <div class="surv-pct">10%</div>
+    </div>
+
+    <div class="survival-row s-ivb">
+      <div class="surv-stage"><span class="surv-stage-pill sp-ivb">IVB</span></div>
+      <div class="surv-bar-wrap">
+        <div class="surv-label">Metástasis en múltiples órganos</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:4%;"></div></div>
+      </div>
+      <div class="surv-pct">&lt;5%</div>
+    </div>
+
+  </div>
+
+  <p style="font-size:0.82rem; color:rgba(143,163,188,0.6); margin-top:-1rem; margin-bottom:2rem;">
+    Fuente: IASLC Staging Project, 9ª edición (2023). Datos de sobrevida observada. Los datos del estadio IV no incluyen el impacto de las nuevas terapias dirigidas e inmunoterapia, que pueden mejorar significativamente estos números en pacientes con marcadores moleculares favorables.
+  </p>
+
+  <h2>El impacto del diagnóstico precoz</h2>
+  <p>
+    La diferencia entre detectar el cáncer en estadio IA1 (92% de sobrevida) versus estadio IVB (&lt;5%) es enorme. Esto explica por qué el <strong>screening con TAC de baja dosis</strong> en personas de alto riesgo puede salvar vidas: permite detectar tumores pequeños, antes de que den síntomas, cuando todavía son totalmente operables.
+  </p>
+  <p>
+    Desafortunadamente, más del 60% de los cánceres pulmonares en Chile se diagnostican en estadio III o IV, cuando las posibilidades de curación son menores. Esta es la principal razón por la que la mortalidad del cáncer pulmonar sigue siendo alta.
+  </p>
+
+  <h2>Factores que influyen en el pronóstico</h2>
+
+  <h3>Factores que mejoran el pronóstico</h3>
+  <div class="factor-grid">
+    <div class="factor-card factor-positive">
+      <div class="factor-icon">🔍</div>
+      <div class="factor-title">Diagnóstico precoz</div>
+      <div class="factor-desc">Tumor pequeño, sin compromiso ganglionar ni metástasis. La cirugía completa (R0) es posible y tiene intención curativa.</div>
+    </div>
+    <div class="factor-card factor-positive">
+      <div class="factor-icon">🧬</div>
+      <div class="factor-title">Marcador molecular favorable</div>
+      <div class="factor-desc">EGFR+, ALK+, ROS1+ — tienen terapias dirigidas orales muy efectivas que prolongan significativamente la vida incluso en estadio IV.</div>
+    </div>
+    <div class="factor-card factor-positive">
+      <div class="factor-icon">💪</div>
+      <div class="factor-title">Buen estado general</div>
+      <div class="factor-desc">Pacientes con buen performance status toleran mejor los tratamientos y tienen mejor respuesta global.</div>
+    </div>
+    <div class="factor-card factor-positive">
+      <div class="factor-icon">🏥</div>
+      <div class="factor-title">Centro especializado</div>
+      <div class="factor-desc">La atención en equipos multidisciplinarios de alta experiencia mejora los resultados oncológicos y la selección del mejor tratamiento.</div>
+    </div>
+  </div>
+
+  <h3>Factores que empeoran el pronóstico</h3>
+  <div class="factor-grid">
+    <div class="factor-card factor-negative">
+      <div class="factor-icon">📍</div>
+      <div class="factor-title">Estadio avanzado al diagnóstico</div>
+      <div class="factor-desc">Metástasis a distancia limitan las opciones de tratamiento curativo. Cada estadio avanzado implica menor sobrevida.</div>
+    </div>
+    <div class="factor-card factor-negative">
+      <div class="factor-icon">🚬</div>
+      <div class="factor-title">Tabaquismo activo</div>
+      <div class="factor-desc">Seguir fumando durante el tratamiento reduce la efectividad de la quimioterapia, radioterapia y cicatrización postquirúrgica.</div>
+    </div>
+    <div class="factor-card factor-negative">
+      <div class="factor-icon">⚖️</div>
+      <div class="factor-title">Bajo peso y desnutrición</div>
+      <div class="factor-desc">La caquexia (pérdida de peso y masa muscular) reduce la tolerancia a los tratamientos y empeora el pronóstico.</div>
+    </div>
+    <div class="factor-card factor-negative">
+      <div class="factor-icon">🫁</div>
+      <div class="factor-title">Función pulmonar deteriorada</div>
+      <div class="factor-desc">EPOC o fibrosis pulmonar avanzada puede limitar la posibilidad de cirugía y la tolerancia a la radioterapia torácica.</div>
+    </div>
+  </div>
+
+  <h2>Las terapias modernas están cambiando la realidad</h2>
+  <p>
+    Los datos de sobrevida de la 9ª edición TNM reflejan principalmente resultados históricos, antes de la masificación de las terapias dirigidas y la inmunoterapia. <strong>Los resultados actuales son mejores</strong>.
+  </p>
+
+  <div class="hope-box">
+    <h3>💚 Razones para la esperanza</h3>
+    <p>
+      <strong>Pacientes con EGFR+ tratados con osimertinib</strong> en estadio IV tienen hoy una supervivencia media de 38+ meses (más de 3 años), con algunos pacientes viviendo 5-10 años. Antes de estas terapias, la mediana era de 10-12 meses.
+    </p>
+    <p>
+      <strong>La inmunoterapia</strong> ha transformado el estadio III y IV: un subgrupo de pacientes logra respuestas prolongadas de años, con algunos que se mantienen sin progresión indefinidamente.
+    </p>
+    <p>
+      <strong>La cirugía mínimamente invasiva</strong> (VATS y robótica) permite operar tumores que antes eran inaccesibles, con menos complicaciones, mejor recuperación y resultados oncológicos equivalentes o superiores a la cirugía abierta.
+    </p>
+    <p>
+      <strong>La detección precoz</strong> con programas de screening está aumentando el diagnóstico en estadios tempranos, donde la curación es posible.
+    </p>
+    <p>
+      La medicina está avanzando muy rápidamente en cáncer pulmonar. Lo que era cierto hace 5 años puede no serlo hoy. Por eso es fundamental ser atendido por un equipo actualizado y especializado.
+    </p>
+  </div>
+
+</div>
+
+<div class="page-nav">
+  <a href="tratamiento.html" class="page-nav-link">
+    <div class="pnl-label">← Anterior</div>
+    <div class="pnl-title">Tratamiento</div>
+  </a>
+  <a href="etapificacion.html" class="page-nav-link next">
+    <div class="pnl-label">Profundizar →</div>
+    <div class="pnl-title">Etapificación TNM detallada</div>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>cancerpulmonar.cl</strong> · Dr. David Lazo</div>
+    <div class="footer-links">
+      <a href="que-es.html">¿Qué es?</a>
+      <a href="causas.html">Causas</a>
+      <a href="diagnostico.html">Diagnóstico</a>
+      <a href="tratamiento.html">Tratamiento</a>
+      <a href="sobrevida.html">Sobrevida</a>
+      <a href="etapificacion.html">Etapificación</a>
+      <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
+      <a href="https://rats.cl">rats.cl</a>
+      <a href="https://broncoscopia.cl">broncoscopia.cl</a>
+      <a href="https://vats.cl">vats.cl</a>
+      <a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    Datos de sobrevida basados en IASLC 9ª edición TNM (2023) y literatura científica actualizada. Son datos estadísticos poblacionales que no predicen el resultado individual de ningún paciente. No reemplaza la consulta médica con su especialista.
+  </div>
+</footer>
+</body>
+</html>

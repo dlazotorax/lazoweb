@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tratamiento del Cáncer Pulmonar — Cirugía, Quimio, Inmunoterapia · cancerpulmonar.cl</title>
+  <meta name="description" content="Opciones de tratamiento del cáncer pulmonar según estadio: cirugía VATS y robótica, quimioterapia, radioterapia, terapias dirigidas e inmunoterapia. Basado en NCCN v5.2026." />
+  <link rel="canonical" href="https://cancerpulmonar.cl/tratamiento" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#080e18; --bg2:#0c1422; --bg3:#111e30;
+      --accent:#0891b2; --accent2:#06b6d4; --accent-lt:#67e8f9;
+      --warm:#f59e0b; --success:#10b981; --danger:#ef4444; --purple:#8b5cf6;
+      --text:#f0f4f8; --text-muted:#8fa3bc;
+      --border:rgba(255,255,255,0.08); --radius:14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+
+    .topbar { background:var(--bg2); border-bottom:1px solid var(--border); padding:0.5rem 2.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; }
+    .topbar-left { font-size:0.72rem; color:var(--text-muted); }
+    .topbar-links { display:flex; gap:1.5rem; }
+    .topbar-links a { font-size:0.72rem; color:rgba(255,255,255,0.4); text-decoration:none; transition:color 0.2s; }
+    .topbar-links a:hover { color:var(--accent2); }
+    nav { position:sticky; top:0; z-index:300; background:rgba(8,14,24,0.92); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); padding:0 2.5rem; height:66px; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; color:var(--text); }
+    .nav-logo-icon { width:32px; height:32px; border-radius:8px; background:linear-gradient(135deg,var(--accent),var(--accent2)); display:flex; align-items:center; justify-content:center; font-size:1rem; }
+    .nav-logo-text { font-size:0.95rem; font-weight:700; }
+    .nav-logo-text span { color:var(--accent2); }
+    .nav-links { display:flex; gap:1.8rem; list-style:none; }
+    .nav-links a { font-size:0.85rem; font-weight:500; color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text); }
+    .nav-cta { background:var(--accent); color:#fff; padding:0.5rem 1.25rem; border-radius:8px; font-size:0.85rem; font-weight:600; text-decoration:none; transition:background 0.2s; }
+    .nav-cta:hover { background:var(--accent2); }
+
+    .breadcrumb { background:var(--bg2); border-bottom:1px solid var(--border); padding:0.8rem 2.5rem; }
+    .breadcrumb-inner { max-width:900px; margin:0 auto; display:flex; gap:0.5rem; align-items:center; }
+    .breadcrumb a { font-size:0.78rem; color:var(--text-muted); text-decoration:none; }
+    .breadcrumb a:hover { color:var(--accent2); }
+    .breadcrumb span { font-size:0.78rem; color:rgba(143,163,188,0.4); }
+    .breadcrumb-current { font-size:0.78rem; color:var(--accent2); }
+
+    .page-hero { padding:4rem 2.5rem 3rem; background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%); border-bottom:1px solid var(--border); }
+    .page-hero-inner { max-width:900px; margin:0 auto; }
+    .page-hero-tag { font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.75rem; }
+    .page-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:700; line-height:1.15; margin-bottom:1rem; }
+    .page-hero h1 span { color:var(--accent2); }
+    .page-hero-lead { font-size:1.05rem; color:var(--text-muted); line-height:1.75; max-width:650px; }
+
+    .content { max-width:900px; margin:0 auto; padding:4rem 2.5rem; }
+    .content h2 { font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:700; margin:3rem 0 1rem; line-height:1.2; }
+    .content h2:first-child { margin-top:0; }
+    .content h3 { font-size:1.1rem; font-weight:700; margin:2rem 0 0.65rem; color:var(--accent2); }
+    .content p { font-size:0.97rem; color:var(--text-muted); line-height:1.8; margin-bottom:1rem; }
+    .content strong { color:var(--text); }
+    .content ul { padding-left:1.4rem; margin-bottom:1rem; }
+    .content li { font-size:0.95rem; color:var(--text-muted); line-height:1.75; margin-bottom:0.4rem; }
+
+    /* STAGE TREATMENT */
+    .stage-blocks { margin:2rem 0; }
+    .stage-block { border:1px solid var(--border); border-radius:var(--radius); margin-bottom:1rem; overflow:hidden; }
+    .stage-block-header { padding:1.25rem 1.5rem; display:flex; gap:1rem; align-items:center; background:var(--bg2); }
+    .stage-pill { display:inline-block; padding:0.3rem 0.9rem; border-radius:6px; font-size:0.82rem; font-weight:700; min-width:70px; text-align:center; }
+    .sp-green { background:rgba(16,185,129,0.2); color:#34d399; }
+    .sp-teal { background:rgba(6,182,212,0.15); color:var(--accent2); }
+    .sp-amber { background:rgba(245,158,11,0.15); color:var(--warm); }
+    .sp-red { background:rgba(239,68,68,0.15); color:#f87171; }
+    .stage-block-title { font-size:0.95rem; font-weight:700; }
+    .stage-block-sub { font-size:0.8rem; color:var(--text-muted); margin-top:0.15rem; }
+    .stage-block-body { padding:1.25rem 1.5rem; background:var(--bg2); border-top:1px solid var(--border); }
+    .stage-block-body p { font-size:0.88rem; color:var(--text-muted); margin:0 0 0.6rem; line-height:1.65; }
+    .stage-block-body p:last-child { margin:0; }
+    .tx-tag { display:inline-block; font-size:0.72rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:4px; margin-right:0.3rem; margin-bottom:0.3rem; }
+    .tx-surgery { background:rgba(16,185,129,0.15); color:#34d399; }
+    .tx-chemo { background:rgba(8,145,178,0.15); color:var(--accent2); }
+    .tx-radio { background:rgba(245,158,11,0.12); color:var(--warm); }
+    .tx-targeted { background:rgba(139,92,246,0.15); color:#a78bfa; }
+    .tx-immuno { background:rgba(236,72,153,0.12); color:#f472b6; }
+
+    /* MODALITY CARDS */
+    .modality-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin:2rem 0; }
+    .modality-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.75rem; }
+    .mod-icon { font-size:1.75rem; margin-bottom:0.75rem; }
+    .mod-title { font-size:1rem; font-weight:700; margin-bottom:0.5rem; }
+    .mod-desc { font-size:0.87rem; color:var(--text-muted); line-height:1.65; }
+
+    /* ROBOTS HIGHLIGHT */
+    .robots-box { background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(8,145,178,0.08)); border:1px solid rgba(16,185,129,0.2); border-radius:var(--radius); padding:2rem; margin:2rem 0; }
+    .robots-box h3 { font-size:1.05rem; font-weight:700; color:#34d399; margin-bottom:1rem; }
+    .robots-box p { font-size:0.9rem; color:var(--text-muted); line-height:1.7; margin-bottom:0.75rem; }
+    .robots-box p:last-child { margin:0; }
+    .robots-box a { color:#34d399; font-weight:600; text-decoration:none; }
+    .robots-box a:hover { text-decoration:underline; }
+    .robots-features { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:0.75rem; margin:1rem 0; }
+    .rf { background:rgba(255,255,255,0.04); border-radius:8px; padding:0.75rem 1rem; font-size:0.85rem; color:var(--text-muted); }
+    .rf strong { color:var(--text); display:block; margin-bottom:0.2rem; font-size:0.9rem; }
+
+    /* BIOMARKERS TABLE */
+    .bio-table-wrap { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; margin:2rem 0; }
+    .bio-table-header { padding:1.25rem 1.5rem; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+    .bio-table-header h3 { font-size:0.97rem; font-weight:700; margin:0; }
+    .bio-table { width:100%; border-collapse:collapse; }
+    .bio-table th { padding:0.7rem 1.25rem; font-size:0.75rem; font-weight:700; color:var(--accent2); text-align:left; border-bottom:1px solid var(--border); background:rgba(8,145,178,0.06); text-transform:uppercase; letter-spacing:0.06em; }
+    .bio-table td { padding:0.85rem 1.25rem; font-size:0.87rem; color:var(--text-muted); border-bottom:1px solid var(--border); vertical-align:top; line-height:1.55; }
+    .bio-table tr:last-child td { border-bottom:none; }
+    .bio-table tr:hover td { background:rgba(255,255,255,0.02); }
+    .bio-name { font-weight:700; color:var(--text); }
+    .bio-drug { color:#a78bfa; font-weight:600; }
+    .bio-pct { color:var(--accent2); font-weight:600; }
+
+    /* CALLOUT */
+    .callout { background:rgba(8,145,178,0.08); border:1px solid rgba(6,182,212,0.2); border-radius:var(--radius); padding:1.5rem 2rem; margin:2rem 0; display:flex; gap:1rem; align-items:flex-start; }
+    .callout-icon { font-size:1.4rem; flex-shrink:0; }
+    .callout h4 { font-size:0.95rem; font-weight:700; color:var(--accent2); margin-bottom:0.4rem; }
+    .callout p { font-size:0.875rem; color:var(--text-muted); margin:0; line-height:1.65; }
+
+    .page-nav { display:flex; justify-content:space-between; gap:1rem; padding:3rem 2.5rem; border-top:1px solid var(--border); max-width:900px; margin:0 auto; }
+    .page-nav-link { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; text-decoration:none; color:var(--text); flex:1; transition:border-color 0.2s, transform 0.15s; }
+    .page-nav-link:hover { border-color:rgba(6,182,212,0.3); transform:translateY(-2px); }
+    .page-nav-link.next { text-align:right; }
+    .pnl-label { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); margin-bottom:0.3rem; }
+    .pnl-title { font-size:0.95rem; font-weight:600; }
+
+    footer { background:var(--bg2); border-top:1px solid var(--border); padding:2rem 2.5rem; }
+    .footer-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer-brand { font-size:0.875rem; color:var(--text-muted); }
+    .footer-brand strong { color:var(--text); }
+    .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .footer-links a { font-size:0.8rem; color:var(--text-muted); text-decoration:none; }
+    .footer-links a:hover { color:var(--accent2); }
+    .footer-disclaimer { max-width:1100px; margin:1.25rem auto 0; font-size:0.75rem; color:rgba(143,163,188,0.5); line-height:1.6; border-top:1px solid var(--border); padding-top:1.25rem; }
+
+    @media(max-width:768px) {
+      nav { padding:0 1.25rem; } .nav-links { display:none; }
+      .topbar, .breadcrumb { padding-left:1.25rem; padding-right:1.25rem; }
+      .page-hero, .content { padding-left:1.25rem; padding-right:1.25rem; }
+      .page-nav { flex-direction:column; padding:2rem 1.25rem; }
+      .page-nav-link.next { text-align:left; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-left">Información para pacientes · Santiago, Chile</span>
+  <div class="topbar-links">
+    <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
+    <a href="https://rats.cl">Cirugía Robótica</a>
+    <a href="https://broncoscopia.cl">Broncoscopía</a>
+  </div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🫁</div>
+    <div class="nav-logo-text">Cáncer <span>Pulmonar</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="que-es.html">¿Qué es?</a></li>
+    <li><a href="causas.html">Causas</a></li>
+    <li><a href="diagnostico.html">Diagnóstico</a></li>
+    <li><a href="etapificacion.html">Etapificación</a></li>
+    <li><a href="tratamiento.html" class="active">Tratamiento</a></li>
+    <li><a href="sobrevida.html">Sobrevida</a></li>
+  </ul>
+  <a href="https://cirugiatoracica.cl/#contacto" class="nav-cta">Consultar al especialista</a>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Inicio</a>
+    <span>›</span>
+    <span class="breadcrumb-current">Tratamiento</span>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">04 · Tratamiento</div>
+    <h1>Opciones de <span>Tratamiento</span></h1>
+    <p class="page-hero-lead">El tratamiento del cáncer pulmonar ha avanzado enormemente en los últimos años. Hoy existen múltiples opciones que se combinan según el estadio, el tipo de tumor y los marcadores moleculares de cada paciente.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <h2>El tratamiento es personalizado</h2>
+  <p>
+    No existe un tratamiento único para el cáncer pulmonar. El plan se diseña caso a caso, considerando el <strong>estadio TNM</strong>, el tipo histológico (adenocarcinoma, espinocelular, etc.), los <strong>marcadores moleculares</strong> (EGFR, ALK, PD-L1, etc.), la función pulmonar, la edad y el estado general del paciente.
+  </p>
+  <p>
+    Este plan se define en un <strong>comité oncológico multidisciplinario</strong>, donde participan cirujano torácico, oncólogo médico, radiooncólogo, radiólogo y patólogo. Es la mejor práctica recomendada por las guías NCCN.
+  </p>
+
+  <div class="callout">
+    <div class="callout-icon">💡</div>
+    <div>
+      <h4>Antes de iniciar cualquier tratamiento para CPCNP</h4>
+      <p>Es fundamental tener los resultados de <strong>biología molecular completa</strong> (panel de marcadores) porque pueden cambiar completamente el tratamiento. En muchos casos, un medicamento oral (terapia dirigida) es más efectivo que la quimioterapia clásica.</p>
+    </div>
+  </div>
+
+  <h2>Tratamiento según estadio (CPCNP)</h2>
+
+  <div class="stage-blocks">
+
+    <div class="stage-block">
+      <div class="stage-block-header">
+        <span class="stage-pill sp-green">I — II</span>
+        <div>
+          <div class="stage-block-title">Estadios tempranos — Potencialmente curables</div>
+          <div class="stage-block-sub">Tumor localizado, sin metástasis ganglionares o con ganglios ipsilaterales</div>
+        </div>
+      </div>
+      <div class="stage-block-body">
+        <p><span class="tx-tag tx-surgery">Cirugía</span> <strong>La cirugía es el tratamiento principal y potencialmente curativo.</strong> En estadio IA1, una resección limitada (segmentectomía) puede ser suficiente. En estadios IA2 a IIB, la lobectomía (extirpación de un lóbulo) es el estándar de oro.</p>
+        <p>Hoy la gran mayoría se realiza por <strong>videotoracoscopía (VATS) o cirugía robótica (RATS)</strong>, con incisiones mínimas, menos dolor postoperatorio y recuperación más rápida.</p>
+        <p><span class="tx-tag tx-chemo">Quimioterapia</span> En estadios IB y II puede agregarse quimioterapia adyuvante (después de la cirugía) para reducir el riesgo de recaída. En algunos casos con EGFR positivo, el uso de osimertinib adyuvante ha demostrado reducir significativamente las recaídas.</p>
+      </div>
+    </div>
+
+    <div class="stage-block">
+      <div class="stage-block-header">
+        <span class="stage-pill sp-amber">III</span>
+        <div>
+          <div class="stage-block-title">Estadio III — Localmente avanzado</div>
+          <div class="stage-block-sub">Compromiso ganglionar mediastínico o estructuras locales avanzadas</div>
+        </div>
+      </div>
+      <div class="stage-block-body">
+        <p><strong>El estadio III es heterogéneo</strong> — va desde IIIA (a veces operable) hasta IIIC (no operable). La estrategia depende de la evaluación detallada del equipo multidisciplinario.</p>
+        <p><span class="tx-tag tx-chemo">Quimio</span><span class="tx-tag tx-radio">Radioterapia</span> El tratamiento estándar para estadio III no operable es la <strong>quimio-radioterapia concurrente</strong> (platinum-based), que ataca el tumor tanto con medicamentos como con radiación.</p>
+        <p><span class="tx-tag tx-immuno">Inmunoterapia</span> Tras la quimio-radioterapia concurrente, la consolidación depende del perfil molecular: <strong>sin mutación EGFR exon 19 del/L858R</strong> → <strong>durvalumab</strong> de consolidación (categoría 1 NCCN). <strong>Con EGFR exon 19 del o L858R</strong> → <strong>osimertinib</strong> adyuvante (categoría 1), con mayor beneficio demostrado en este subgrupo.</p>
+        <p><span class="tx-tag tx-surgery">Cirugía</span> En estadio IIIA seleccionado (N2 único no bulky, lobectomía posible), se puede considerar estrategia multimodal: terapia sistémica perioperatoria → cirugía → terapia adyuvante según hallazgos. La resectabilidad debe ser determinada por el cirujano torácico <strong>antes</strong> de iniciar cualquier tratamiento.</p>
+      </div>
+    </div>
+
+    <div class="stage-block">
+      <div class="stage-block-header">
+        <span class="stage-pill sp-red">IV</span>
+        <div>
+          <div class="stage-block-title">Estadio IV — Enfermedad metastásica</div>
+          <div class="stage-block-sub">Metástasis a distancia — tratamiento sistémico personalizado</div>
+        </div>
+      </div>
+      <div class="stage-block-body">
+        <p><strong>En estadio IV la intención del tratamiento es controlar la enfermedad, mejorar la calidad de vida y prolongar la sobrevida.</strong> Las opciones han mejorado notablemente en los últimos 10 años gracias a las terapias dirigidas y la inmunoterapia.</p>
+        <p><span class="tx-tag tx-targeted">Terapia Dirigida</span> Si el tumor tiene una mutación "accionable" (EGFR, ALK, ROS1, KRAS, etc.), el tratamiento de primera línea es una <strong>terapia dirigida oral</strong>, que es más eficaz y mejor tolerada que la quimioterapia clásica.</p>
+        <p><span class="tx-tag tx-immuno">Inmunoterapia</span> Si no hay mutación accionable pero el PD-L1 es ≥50%, la <strong>pembrolizumab</strong> (inmunoterapia) en monoterapia es el tratamiento de primera línea. Si PD-L1 es menor, se usa en combinación con quimioterapia.</p>
+        <p><span class="tx-tag tx-chemo">Quimioterapia</span> Aún tiene su lugar, especialmente combinada con inmunoterapia o cuando no hay marcadores moleculares que guíen otra opción.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <h2>Cirugía mínimamente invasiva: VATS y Robótica</h2>
+  <p>
+    La cirugía es el tratamiento más importante en los estadios tempranos. Hoy, <strong>más del 80% de las cirugías pulmonares oncológicas</strong> pueden realizarse por técnicas mínimamente invasivas, evitando la cirugía abierta tradicional (toracotomía).
+  </p>
+
+  <div class="robots-box">
+    <h3>🤖 Cirugía Robótica RATS — El estándar más avanzado</h3>
+    <p>
+      La cirugía torácica robótica asistida (RATS) con sistema Da Vinci ofrece la máxima precisión para la resección pulmonar oncológica. El Dr. David Lazo es pionero en esta técnica en Chile, realizándola desde 2015.
+    </p>
+    <div class="robots-features">
+      <div class="rf"><strong>Visión 3D amplificada</strong>10× más detalle que el ojo humano</div>
+      <div class="rf"><strong>Menor sangrado</strong>Instrumental con movimiento de muñeca completo</div>
+      <div class="rf"><strong>Menos dolor</strong>Incisiones de 1-2 cm</div>
+      <div class="rf"><strong>Alta precoz</strong>2-4 días de hospitalización promedio</div>
+      <div class="rf"><strong>Oncología</strong>Márgenes quirúrgicos idénticos a cirugía abierta</div>
+      <div class="rf"><strong>Indicado en</strong>Estadios I, II y IIIA seleccionados</div>
+    </div>
+    <p>Más información sobre la técnica en <a href="https://rats.cl" target="_blank">rats.cl →</a></p>
+  </div>
+
+  <h3>Tipos de resección pulmonar</h3>
+  <ul>
+    <li><strong>Segmentectomía / Resección en cuña:</strong> Se extirpa solo una porción del lóbulo. Indicada en tumores pequeños (≤2 cm) o en pacientes con función pulmonar limitada.</li>
+    <li><strong>Lobectomía:</strong> Se extirpa un lóbulo completo del pulmón. Es el estándar de oro para la mayoría de los casos.</li>
+    <li><strong>Bilobectomía / Neumonectomía:</strong> Se extirpan dos lóbulos o un pulmón completo. Solo en casos con invasión extensa o cuando la anatomía lo requiere.</li>
+  </ul>
+  <p>En todos los casos, se realiza simultáneamente una <strong>linfadenectomía mediastínica</strong> (extirpación de ganglios linfáticos) para asegurar una estadificación precisa y mejorar el control oncológico.</p>
+
+  <h2>Terapias Dirigidas — Medicina de Precisión</h2>
+  <p>
+    Las terapias dirigidas son medicamentos que atacan específicamente las mutaciones que hacen crecer el tumor, respetando más las células sanas. Son más efectivas y con menos efectos secundarios que la quimioterapia clásica.
+  </p>
+
+  <div class="bio-table-wrap">
+    <div class="bio-table-header">
+      <h3>Marcadores moleculares y sus tratamientos</h3>
+      <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;background:rgba(6,182,212,0.15);color:#06b6d4;padding:0.2rem 0.6rem;border-radius:4px;">NCCN v5.2026</span>
+    </div>
+    <table class="bio-table">
+      <thead>
+        <tr>
+          <th>Marcador</th>
+          <th>Frecuencia</th>
+          <th>Fármaco de 1ª línea (estadio IV)</th>
+          <th>Vía</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="bio-name">EGFR exon 19 del / L858R</span></td>
+          <td><span class="bio-pct">~15-20%</span></td>
+          <td><span class="bio-drug">Osimertinib (preferido) · Lazertinib ★</span></td>
+          <td>Oral</td>
+        </tr>
+        <tr>
+          <td><span class="bio-name">EGFR mutaciones raras (S768I, L861Q, G719X, exon 20 ins)</span></td>
+          <td><span class="bio-pct">~3-5%</span></td>
+          <td><span class="bio-drug">Afatinib · Amivantamab · Mobocertinib</span></td>
+          <td>Oral / EV</td>
+        </tr>
+        <tr>
+          <td><span class="bio-name">ALK fusión</span></td>
+          <td><span class="bio-pct">~5%</span></td>
+          <td><span class="bio-drug">Alectinib (preferido) · Lorlatinib · Brigatinib</span></td>
+          <td>Oral</td>
+        </tr>
+        <tr>
+          <td><span class="bio-name">ROS1 fusión</span></td>
+          <td><span class="bio-pct">~2%</span></td>
+          <td><span class="bio-drug">Entrectinib · Crizotinib · Repotrectinib</span></td>
+          <td>Oral</td>
+        </tr>
+        <tr>
+          <td><span class="bio-name">KRAS G12C</span></td>
+          <td><span class="bio-pct">~13%</span></td>
+          <td><span class="bio-drug">Sotorasib · Adagrasib</span></td>
+          <td>Oral</td>
+        </tr>
+        <tr>
+          <td><span class="bio-name">MET exon 14 skipping</span></td>
+          <td><span class="bio-pct">~3-4%</span></td>
+          <td><span class="bio-drug">Capmatinib · Tepotinib</span></td>
+          <td>Oral</td>
+        </tr>
+        <tr>
+          <td><span class="bio-name">RET fusión</span></td>
+          <td><span class="bio-pct">~1-2%</span></td>
+          <td><span class="bio-drug">Selpercatinib (preferido) · Pralsetinib</span></td>
+          <td>Oral</td>
+        </tr>
+        <tr>
+          <td><span class="bio-name">BRAF V600E</span></td>
+          <td><span class="bio-pct">~2%</span></td>
+          <td><span class="bio-drug">Dabrafenib + Trametinib</span></td>
+          <td>Oral</td>
+        </tr>
+        <tr style="background:rgba(139,92,246,0.04);">
+          <td><span class="bio-name">HER2 (ERBB2) mutación TKD ★</span></td>
+          <td><span class="bio-pct">~3%</span></td>
+          <td><span class="bio-drug">Zongertinib ★ (1ª línea) · T-DXd (T-DXd)</span></td>
+          <td>Oral / EV</td>
+        </tr>
+        <tr>
+          <td><span class="bio-name">HER2 sobreexpresión IHC 3+</span></td>
+          <td><span class="bio-pct">~5-10%</span></td>
+          <td><span class="bio-drug">Fam-trastuzumab deruxtecan-nxki (2ª línea)</span></td>
+          <td>EV</td>
+        </tr>
+        <tr>
+          <td><span class="bio-name">NTRK 1/2/3 fusión</span></td>
+          <td><span class="bio-pct">&lt;1%</span></td>
+          <td><span class="bio-drug">Entrectinib · Larotrectinib</span></td>
+          <td>Oral</td>
+        </tr>
+        <tr style="background:rgba(6,182,212,0.04);">
+          <td><span class="bio-name">NRG1 fusión ★</span></td>
+          <td><span class="bio-pct">&lt;1%</span></td>
+          <td><span class="bio-drug">Zenocutuzumab ★</span></td>
+          <td>EV</td>
+        </tr>
+        <tr>
+          <td><span class="bio-name">MET sobreexpresión IHC 3+ / EGFR wt ★</span></td>
+          <td><span class="bio-pct">~5%</span></td>
+          <td><span class="bio-drug">Telisotuzumab vedotin-tllv ★ (2ª línea)</span></td>
+          <td>EV</td>
+        </tr>
+        <tr>
+          <td><span class="bio-name">PD-L1 ≥50% (sin driver accionable)</span></td>
+          <td><span class="bio-pct">~30%</span></td>
+          <td><span class="bio-drug">Pembrolizumab · Cemiplimab · Atezolizumab</span></td>
+          <td>EV</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.78rem;color:rgba(143,163,188,0.6);padding:0.75rem 1.25rem 1rem;">★ Incorporado o actualizado en NCCN v1-5.2026. EV = endovenoso. TKD = dominio tirosina kinasa. IHC = inmunohistoquímica. La detección de MET sobreexpresión requiere anticuerpo SP44 (IHC 3+ en ≥50% de células) y es distinta de MET amplificación o exon 14 skipping.</p>
+  </div>
+
+  <h2>Inmunoterapia</h2>
+  <p>
+    La inmunoterapia "despierta" al propio sistema inmune del paciente para que reconozca y ataque las células cancerosas. Los fármacos más usados son los inhibidores de checkpoint inmunológico (anti-PD-1 y anti-PD-L1).
+  </p>
+  <p>
+    Ha revolucionado el tratamiento del cáncer pulmonar en estadio IV y III. Algunos pacientes logran respuestas prolongadas de años. Sin embargo, no todos responden igual — el nivel de PD-L1 y la ausencia de mutaciones de conductores (EGFR, ALK) son los mejores predictores de respuesta.
+  </p>
+
+  <h2>Radioterapia</h2>
+  <p>
+    La radioterapia usa radiación para destruir células cancerosas. En cáncer pulmonar tiene varias indicaciones:
+  </p>
+  <ul>
+    <li><strong>SBRT / SABR (radiocirugía):</strong> Radioterapia estereotáctica ablativa para tumores pequeños en pacientes no aptos para cirugía. Puede lograr tasas de control local comparables a la cirugía en estadio I.</li>
+    <li><strong>Concurrente con quimio:</strong> En estadio III no operable, como parte del tratamiento curativo.</li>
+    <li><strong>Paliativa:</strong> Para controlar síntomas como dolor óseo, obstrucción bronquial o metástasis cerebrales.</li>
+    <li><strong>Radioterapia craneal profiláctica:</strong> En CPCP (cáncer microcítico) que responde al tratamiento inicial.</li>
+  </ul>
+
+  <h2>Tratamiento del CPCP (cáncer microcítico)</h2>
+  <p>
+    El cáncer de pulmón de células pequeñas tiene un tratamiento diferente al CPCNP. Se divide en dos categorías:
+  </p>
+  <ul>
+    <li><strong>Limitado (≤estadio III):</strong> Quimioterapia (etopósido + platino) más radioterapia torácica concurrente. Con respuesta completa, se agrega radioterapia craneal profiláctica. La inmunoterapia (atezolizumab o durvalumab) puede agregarse en algunos casos.</li>
+    <li><strong>Extendido (≡estadio IV):</strong> Quimioterapia (etopósido + carboplatino) más inmunoterapia (atezolizumab). La cirugía es excepcional (solo en estadio IA muy seleccionado).</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-icon">🤝</div>
+    <div>
+      <h4>El tratamiento es una decisión compartida</h4>
+      <p>Tienes derecho a conocer todas las opciones, sus beneficios y efectos secundarios, y participar activamente en la decisión. Pide a tu médico que te explique el plan en términos comprensibles, y no dudes en pedir una segunda opinión si lo necesitas.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="page-nav">
+  <a href="diagnostico.html" class="page-nav-link">
+    <div class="pnl-label">← Anterior</div>
+    <div class="pnl-title">Diagnóstico</div>
+  </a>
+  <a href="sobrevida.html" class="page-nav-link next">
+    <div class="pnl-label">Siguiente →</div>
+    <div class="pnl-title">Sobrevida</div>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>cancerpulmonar.cl</strong> · Dr. David Lazo</div>
+    <div class="footer-links">
+      <a href="que-es.html">¿Qué es?</a>
+      <a href="causas.html">Causas</a>
+      <a href="diagnostico.html">Diagnóstico</a>
+      <a href="tratamiento.html">Tratamiento</a>
+      <a href="sobrevida.html">Sobrevida</a>
+      <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
+      <a href="https://rats.cl">rats.cl</a>
+      <a href="https://broncoscopia.cl">broncoscopia.cl</a>
+      <a href="https://vats.cl">vats.cl</a>
+      <a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    Información educativa basada en NCCN Guidelines® for Non-Small Cell Lung Cancer, Version 5.2026 (marzo 2026). Los tratamientos deben ser indicados y supervisados por un médico especialista. No reemplaza la consulta médica.
+  </div>
+</footer>
+</body>
+</html>

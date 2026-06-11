@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rediseños Dr. Lazo — Vista General</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0c1526; --teal: #0891b2; --teal-lt: #22d3ee;
+      --bg: #f4f8fb; --border: #dce8f0; --text: #1a2b3c; --muted: #607d93;
+    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 3rem 2rem; }
+    .wrap { max-width: 900px; margin: 0 auto; }
+
+    .header { text-align: center; margin-bottom: 3rem; }
+    .header h1 { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    .header p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+
+    .sites { display: grid; gap: 1.5rem; }
+    .site-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 20px;
+      overflow: hidden; display: grid; grid-template-columns: 1fr auto;
+      align-items: center; transition: box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 2px 12px rgba(12,21,38,0.06);
+    }
+    .site-card:hover { box-shadow: 0 12px 40px rgba(8,145,178,0.12); transform: translateY(-2px); }
+    .site-info { padding: 2rem 2.25rem; }
+    .site-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+    .site-info h2 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    .site-info p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; max-width: 500px; }
+    .site-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+    .site-tag { background: #ecfeff; border: 1px solid #cffafe; color: #0e7490; padding: 0.22rem 0.7rem; border-radius: 100px; font-size: 0.72rem; font-weight: 600; }
+    .site-action { padding: 2rem 2.25rem 2rem 0; display: flex; flex-direction: column; gap: 0.6rem; align-items: flex-end; }
+    .btn-open {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: var(--teal); color: #fff; text-decoration: none;
+      padding: 0.7rem 1.4rem; border-radius: 8px;
+      font-size: 0.84rem; font-weight: 700;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-open:hover { background: #0e7490; transform: translateY(-1px); }
+    .btn-open svg { width: 14px; height: 14px; }
+    .site-label { font-size: 0.7rem; color: var(--muted); text-align: right; }
+
+    .footer-note { text-align: center; margin-top: 3rem; font-size: 0.8rem; color: var(--muted); line-height: 1.7; }
+    .footer-note strong { color: var(--text); }
+
+    @media (max-width: 600px) {
+      .site-card { grid-template-columns: 1fr; }
+      .site-action { padding: 0 2rem 2rem; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>Rediseños Dr. David Lazo</h1>
+      <p>Tres páginas rediseñadas con un sistema visual unificado — mismo estilo, misma tipografía, misma marca.</p>
+    </div>
+
+    <div class="sites">
+
+      <div class="site-card">
+        <div class="site-info">
+          <p class="site-badge">Hub principal</p>
+          <h2>cirugiatoracica.cl</h2>
+          <p>Página principal del Dr. Lazo con todas las especialidades. Hero full-bleed con foto del quirófano, barra de estadísticas, tarjetas de especialidades, bio completa y sección de contacto para médicos y pacientes.</p>
+          <div class="site-tags">
+            <span class="site-tag">Nav transparente → sólida</span>
+            <span class="site-tag">Hero foto OR</span>
+            <span class="site-tag">Especialidades grid</span>
+            <span class="site-tag">Contacto + RRSS</span>
+          </div>
+        </div>
+        <div class="site-action">
+          <a href="cirugiatoracica/index.html" class="btn-open">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Abrir página
+          </a>
+          <span class="site-label">cirugiatoracica/index.html</span>
+        </div>
+      </div>
+
+      <div class="site-card">
+        <div class="site-info">
+          <p class="site-badge">Especialidad flagship</p>
+          <h2>broncoscopia.cl</h2>
+          <p>El rediseño más completo. Hero con foto OR a pantalla completa, sección CryoEBUS oscura, indicaciones en cards, broncoscopía intervencional, tabla de derivación para médicos, bio del doctor y FAQ con acordeón.</p>
+          <div class="site-tags">
+            <span class="site-tag">Hero full-bleed</span>
+            <span class="site-tag">CryoEBUS oscuro</span>
+            <span class="site-tag">FAQ acordeón</span>
+            <span class="site-tag">Para médicos</span>
+          </div>
+        </div>
+        <div class="site-action">
+          <a href="broncoscopia/index.html" class="btn-open">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Abrir página
+          </a>
+          <span class="site-label">broncoscopia/index.html</span>
+        </div>
+      </div>
+
+      <div class="site-card">
+        <div class="site-info">
+          <p class="site-badge">Información para pacientes</p>
+          <h2>cancerpulmonar.cl</h2>
+          <p>Guía para pacientes con hero oscuro navy, alerta de detección precoz, seis tarjetas con las secciones de la guía, sección del doctor con foto, y red de sitios relacionados.</p>
+          <div class="site-tags">
+            <span class="site-tag">Hero oscuro</span>
+            <span class="site-tag">Alerta amber</span>
+            <span class="site-tag">Cards de secciones</span>
+            <span class="site-tag">Red de sitios</span>
+          </div>
+        </div>
+        <div class="site-action">
+          <a href="cancerpulmonar/index.html" class="btn-open">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Abrir página
+          </a>
+          <span class="site-label">cancerpulmonar/index.html</span>
+        </div>
+      </div>
+
+    </div>
+
+      <div class="site-card">
+        <div class="site-info">
+          <p class="site-badge">Especialidad activa</p>
+          <h2>hiperhidrosis.cl</h2>
+          <p>Sitio activo de hiperhidrosis. Enlazado desde el ecosistema de todas las páginas — topbar, ecosistema y footer. Vinculado al sistema de diseño compartido.</p>
+          <div class="site-tags">
+            <span class="site-tag">Sitio activo</span>
+            <span class="site-tag">Enlazado en topbar</span>
+            <span class="site-tag">Ecosistema integrado</span>
+          </div>
+        </div>
+        <div class="site-action">
+          <a href="https://hiperhidrosis.cl" class="btn-open" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Visitar sitio
+          </a>
+          <span class="site-label">hiperhidrosis.cl (externo)</span>
+        </div>
+      </div>
+
+    </div>
+
+      <div class="site-card">
+        <div class="site-info">
+          <p class="site-badge">Cirugía robótica · Nuevo</p>
+          <h2>rats.cl</h2>
+          <p>Página completa de cirugía torácica robótica con Da Vinci. Hero full-bleed con foto OR, anillos animados del sistema Da Vinci, grilla de beneficios, 8 procedimientos, bio del doctor y CTA final. Panel Tweaks incluido.</p>
+          <div class="site-tags">
+            <span class="site-tag">Hero foto OR</span>
+            <span class="site-tag">Da Vinci animado</span>
+            <span class="site-tag">8 procedimientos</span>
+            <span class="site-tag">Tweaks</span>
+          </div>
+        </div>
+        <div class="site-action">
+          <a href="rats/index.html" class="btn-open">
+            <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5'><path d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'/><polyline points='15 3 21 3 21 9'/><line x1='10' y1='14' x2='21' y2='3'/></svg>
+            Abrir página
+          </a>
+          <span class="site-label">rats/index.html</span>
+        </div>
+      </div>
+
+      <div class="site-card">
+        <div class="site-info">
+          <p class="site-badge">Artículo hub · Nuevo</p>
+          <h2>cirugiatoracica.cl/hub</h2>
+          <p>Artículo editorial completo: qué es la cirugía torácica, enfermedades que trata, técnicas disponibles. Layout con sidebar TOC, tarjeta de contacto flotante y sección de CTA al final.</p>
+          <div class="site-tags">
+            <span class="site-tag">Artículo editorial</span>
+            <span class="site-tag">Sidebar TOC</span>
+            <span class="site-tag">Patologías grid</span>
+            <span class="site-tag">CTA final</span>
+          </div>
+        </div>
+        <div class="site-action">
+          <a href="cirugiatoracica/hub.html" class="btn-open">
+            <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5'><path d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'/><polyline points='15 3 21 3 21 9'/><line x1='10' y1='14' x2='21' y2='3'/></svg>
+            Abrir página
+          </a>
+          <span class="site-label">cirugiatoracica/hub.html</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="footer-note">
+      <strong>Sistema de diseño compartido:</strong> DM Serif Display + Plus Jakarta Sans · Teal #0891B2 · Navy #0C1526<br>
+      Panel Tweaks en todas las páginas principales · hiperhidrosis.cl integrado en el ecosistema.<br>
+      Para implementar, copie cada carpeta HTML e imgs/ a su dominio correspondiente.
+    </p>
+  </div>
+</body>
+</html>

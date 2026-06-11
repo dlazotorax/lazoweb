@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico del Cáncer Pulmonar — Síntomas, TAC, Biopsia · cancerpulmonar.cl</title>
+  <meta name="description" content="Cómo se diagnostica el cáncer pulmonar: síntomas de alerta, TAC de tórax, PET-CT, broncoscopía, EBUS y cómo se determina el estadio. Información para pacientes." />
+  <link rel="canonical" href="https://cancerpulmonar.cl/diagnostico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#080e18; --bg2:#0c1422; --bg3:#111e30;
+      --accent:#0891b2; --accent2:#06b6d4; --accent-lt:#67e8f9;
+      --warm:#f59e0b; --success:#10b981; --danger:#ef4444;
+      --text:#f0f4f8; --text-muted:#8fa3bc;
+      --border:rgba(255,255,255,0.08); --radius:14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+
+    .topbar { background:var(--bg2); border-bottom:1px solid var(--border); padding:0.5rem 2.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; }
+    .topbar-left { font-size:0.72rem; color:var(--text-muted); }
+    .topbar-links { display:flex; gap:1.5rem; }
+    .topbar-links a { font-size:0.72rem; color:rgba(255,255,255,0.4); text-decoration:none; transition:color 0.2s; }
+    .topbar-links a:hover { color:var(--accent2); }
+    nav { position:sticky; top:0; z-index:300; background:rgba(8,14,24,0.92); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); padding:0 2.5rem; height:66px; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; color:var(--text); }
+    .nav-logo-icon { width:32px; height:32px; border-radius:8px; background:linear-gradient(135deg,var(--accent),var(--accent2)); display:flex; align-items:center; justify-content:center; font-size:1rem; }
+    .nav-logo-text { font-size:0.95rem; font-weight:700; }
+    .nav-logo-text span { color:var(--accent2); }
+    .nav-links { display:flex; gap:1.8rem; list-style:none; }
+    .nav-links a { font-size:0.85rem; font-weight:500; color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text); }
+    .nav-cta { background:var(--accent); color:#fff; padding:0.5rem 1.25rem; border-radius:8px; font-size:0.85rem; font-weight:600; text-decoration:none; transition:background 0.2s; }
+    .nav-cta:hover { background:var(--accent2); }
+
+    .breadcrumb { background:var(--bg2); border-bottom:1px solid var(--border); padding:0.8rem 2.5rem; }
+    .breadcrumb-inner { max-width:900px; margin:0 auto; display:flex; gap:0.5rem; align-items:center; }
+    .breadcrumb a { font-size:0.78rem; color:var(--text-muted); text-decoration:none; }
+    .breadcrumb a:hover { color:var(--accent2); }
+    .breadcrumb span { font-size:0.78rem; color:rgba(143,163,188,0.4); }
+    .breadcrumb-current { font-size:0.78rem; color:var(--accent2); }
+
+    .page-hero { padding:4rem 2.5rem 3rem; background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%); border-bottom:1px solid var(--border); }
+    .page-hero-inner { max-width:900px; margin:0 auto; }
+    .page-hero-tag { font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.75rem; }
+    .page-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:700; line-height:1.15; margin-bottom:1rem; }
+    .page-hero h1 span { color:var(--accent2); }
+    .page-hero-lead { font-size:1.05rem; color:var(--text-muted); line-height:1.75; max-width:650px; }
+
+    .content { max-width:900px; margin:0 auto; padding:4rem 2.5rem; }
+    .content h2 { font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:700; margin:3rem 0 1rem; line-height:1.2; }
+    .content h2:first-child { margin-top:0; }
+    .content h3 { font-size:1.1rem; font-weight:700; margin:2rem 0 0.65rem; color:var(--accent2); }
+    .content p { font-size:0.97rem; color:var(--text-muted); line-height:1.8; margin-bottom:1rem; }
+    .content strong { color:var(--text); }
+    .content ul { padding-left:1.4rem; margin-bottom:1rem; }
+    .content li { font-size:0.95rem; color:var(--text-muted); line-height:1.75; margin-bottom:0.4rem; }
+
+    /* SYMPTOMS */
+    .symptoms-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin:2rem 0; }
+    .symptom-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; display:flex; gap:1rem; align-items:flex-start; }
+    .sym-icon { font-size:1.5rem; flex-shrink:0; }
+    .sym-body { }
+    .sym-title { font-size:0.9rem; font-weight:700; margin-bottom:0.25rem; }
+    .sym-desc { font-size:0.82rem; color:var(--text-muted); line-height:1.55; }
+    .sym-alert { border-color:rgba(239,68,68,0.2); }
+    .sym-moderate { border-color:rgba(245,158,11,0.15); }
+
+    /* STEPS */
+    .steps { margin:2rem 0; }
+    .step { display:flex; gap:1.5rem; margin-bottom:0.5rem; position:relative; }
+    .step:not(:last-child)::after { content:''; position:absolute; left:20px; top:52px; bottom:-4px; width:2px; background:var(--border); }
+    .step-num { width:40px; height:40px; border-radius:10px; background:rgba(8,145,178,0.15); border:1px solid rgba(6,182,212,0.25); display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:700; color:var(--accent2); flex-shrink:0; z-index:1; }
+    .step-body { flex:1; background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; margin-bottom:1rem; }
+    .step-body h4 { font-size:0.97rem; font-weight:700; margin-bottom:0.4rem; }
+    .step-body p { font-size:0.87rem; color:var(--text-muted); margin:0; line-height:1.65; }
+    .step-tag { font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent2); margin-bottom:0.3rem; }
+
+    /* EXAMS */
+    .exam-list { margin:1.5rem 0; }
+    .exam-item { border:1px solid var(--border); border-radius:var(--radius); margin-bottom:0.75rem; overflow:hidden; }
+    .exam-header { padding:1.25rem 1.5rem; display:flex; gap:1rem; align-items:center; background:var(--bg2); cursor:pointer; }
+    .exam-icon { font-size:1.3rem; flex-shrink:0; }
+    .exam-name { font-size:0.97rem; font-weight:700; }
+    .exam-when { font-size:0.78rem; color:var(--accent2); margin-top:0.1rem; }
+    .exam-body { padding:0 1.5rem 1.25rem; background:var(--bg2); }
+    .exam-body p { font-size:0.875rem; color:var(--text-muted); line-height:1.7; margin:0; }
+
+    /* EBUS HIGHLIGHT */
+    .ebus-box { background:linear-gradient(135deg,rgba(8,145,178,0.1),rgba(6,182,212,0.06)); border:1px solid rgba(6,182,212,0.25); border-radius:var(--radius); padding:2rem; margin:2rem 0; }
+    .ebus-box h3 { font-size:1.05rem; font-weight:700; color:var(--accent2); margin-bottom:1rem; }
+    .ebus-box p { font-size:0.9rem; color:var(--text-muted); line-height:1.7; margin-bottom:0.75rem; }
+    .ebus-box p:last-child { margin:0; }
+    .ebus-box a { color:var(--accent2); text-decoration:none; font-weight:600; }
+    .ebus-box a:hover { text-decoration:underline; }
+
+    /* CALLOUT */
+    .callout { background:rgba(8,145,178,0.08); border:1px solid rgba(6,182,212,0.2); border-radius:var(--radius); padding:1.5rem 2rem; margin:2rem 0; display:flex; gap:1rem; align-items:flex-start; }
+    .callout-icon { font-size:1.4rem; flex-shrink:0; }
+    .callout h4 { font-size:0.95rem; font-weight:700; color:var(--accent2); margin-bottom:0.4rem; }
+    .callout p { font-size:0.875rem; color:var(--text-muted); margin:0; line-height:1.65; }
+
+    .page-nav { display:flex; justify-content:space-between; gap:1rem; padding:3rem 2.5rem; border-top:1px solid var(--border); max-width:900px; margin:0 auto; }
+    .page-nav-link { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; text-decoration:none; color:var(--text); flex:1; transition:border-color 0.2s, transform 0.15s; }
+    .page-nav-link:hover { border-color:rgba(6,182,212,0.3); transform:translateY(-2px); }
+    .page-nav-link.next { text-align:right; }
+    .pnl-label { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); margin-bottom:0.3rem; }
+    .pnl-title { font-size:0.95rem; font-weight:600; }
+
+    footer { background:var(--bg2); border-top:1px solid var(--border); padding:2rem 2.5rem; }
+    .footer-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer-brand { font-size:0.875rem; color:var(--text-muted); }
+    .footer-brand strong { color:var(--text); }
+    .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .footer-links a { font-size:0.8rem; color:var(--text-muted); text-decoration:none; }
+    .footer-links a:hover { color:var(--accent2); }
+    .footer-disclaimer { max-width:1100px; margin:1.25rem auto 0; font-size:0.75rem; color:rgba(143,163,188,0.5); line-height:1.6; border-top:1px solid var(--border); padding-top:1.25rem; }
+
+    @media(max-width:768px) {
+      nav { padding:0 1.25rem; } .nav-links { display:none; }
+      .topbar, .breadcrumb { padding-left:1.25rem; padding-right:1.25rem; }
+      .page-hero, .content { padding-left:1.25rem; padding-right:1.25rem; }
+      .page-nav { flex-direction:column; padding:2rem 1.25rem; }
+      .page-nav-link.next { text-align:left; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-left">Información para pacientes · Santiago, Chile</span>
+  <div class="topbar-links">
+    <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
+    <a href="https://rats.cl">Cirugía Robótica</a>
+    <a href="https://broncoscopia.cl">Broncoscopía</a>
+  </div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🫁</div>
+    <div class="nav-logo-text">Cáncer <span>Pulmonar</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="que-es.html">¿Qué es?</a></li>
+    <li><a href="causas.html">Causas</a></li>
+    <li><a href="diagnostico.html" class="active">Diagnóstico</a></li>
+    <li><a href="etapificacion.html">Etapificación</a></li>
+    <li><a href="tratamiento.html">Tratamiento</a></li>
+    <li><a href="sobrevida.html">Sobrevida</a></li>
+  </ul>
+  <a href="https://cirugiatoracica.cl/#contacto" class="nav-cta">Consultar al especialista</a>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Inicio</a>
+    <span>›</span>
+    <span class="breadcrumb-current">Diagnóstico</span>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">03 · Diagnóstico</div>
+    <h1>¿Cómo se <span>detecta</span> y se estadifica?</h1>
+    <p class="page-hero-lead">El diagnóstico del cáncer pulmonar implica varios pasos: reconocer los síntomas, confirmar la presencia del tumor con imágenes, obtener una muestra con biopsia, y determinar el estadio exacto para planificar el tratamiento.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <h2>Síntomas de alerta</h2>
+  <p>
+    El problema del cáncer pulmonar es que <strong>en sus etapas iniciales frecuentemente no da síntomas</strong>. Cuando aparecen, suele ser porque el tumor ya ha crecido o se ha diseminado. Por eso el screening en personas de alto riesgo es tan importante.
+  </p>
+  <p>Los síntomas más frecuentes son:</p>
+
+  <div class="symptoms-grid">
+    <div class="symptom-card sym-alert">
+      <div class="sym-icon">🩸</div>
+      <div class="sym-body">
+        <div class="sym-title">Sangre en la tos (hemoptisis)</div>
+        <div class="sym-desc">Toser sangre es una señal de alerta que siempre requiere evaluación médica urgente.</div>
+      </div>
+    </div>
+    <div class="symptom-card sym-alert">
+      <div class="sym-icon">😮‍💨</div>
+      <div class="sym-body">
+        <div class="sym-title">Disnea (falta de aire)</div>
+        <div class="sym-desc">Sensación de ahogo que aparece o empeora, especialmente si es nueva o progresiva.</div>
+      </div>
+    </div>
+    <div class="symptom-card sym-alert">
+      <div class="sym-icon">💨</div>
+      <div class="sym-body">
+        <div class="sym-title">Tos persistente</div>
+        <div class="sym-desc">Tos que dura más de 3 semanas, especialmente si cambia de características en un fumador.</div>
+      </div>
+    </div>
+    <div class="symptom-card sym-alert">
+      <div class="sym-icon">⚖️</div>
+      <div class="sym-body">
+        <div class="sym-title">Baja de peso inexplicada</div>
+        <div class="sym-desc">Pérdida de más de 5% del peso corporal sin causa aparente en pocas semanas.</div>
+      </div>
+    </div>
+    <div class="symptom-card sym-moderate">
+      <div class="sym-icon">😫</div>
+      <div class="sym-body">
+        <div class="sym-title">Dolor torácico</div>
+        <div class="sym-desc">Dolor en el pecho, hombro o espalda que puede empeorar al respirar profundo o toser.</div>
+      </div>
+    </div>
+    <div class="symptom-card sym-moderate">
+      <div class="sym-icon">🗣️</div>
+      <div class="sym-body">
+        <div class="sym-title">Disfonía (ronquera)</div>
+        <div class="sym-desc">Cambio en la voz sin causa clara puede indicar compromiso del nervio recurrente laríngeo.</div>
+      </div>
+    </div>
+    <div class="symptom-card sym-moderate">
+      <div class="sym-icon">😴</div>
+      <div class="sym-body">
+        <div class="sym-title">Fatiga extrema</div>
+        <div class="sym-desc">Cansancio desproporcionado al esfuerzo, persistente y que no mejora con descanso.</div>
+      </div>
+    </div>
+    <div class="symptom-card sym-moderate">
+      <div class="sym-icon">🦴</div>
+      <div class="sym-body">
+        <div class="sym-title">Dolor óseo</div>
+        <div class="sym-desc">Dolor en espalda, caderas o costillas puede ser señal de metástasis óseas.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-icon">⚠️</div>
+    <div>
+      <h4>Si tienes alguno de estos síntomas</h4>
+      <p>No esperes a que "pase solo". Consulta a tu médico. Si eres mayor de 50 años y fumador (o exfumador), comunícalo explícitamente, ya que esto cambia el nivel de sospecha del médico y acelera los exámenes.</p>
+    </div>
+  </div>
+
+  <h2>El proceso diagnóstico paso a paso</h2>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-tag">Primera evaluación</div>
+        <h4>Consulta médica + Radiografía de tórax</h4>
+        <p>La evaluación inicial incluye una radiografía de tórax, que puede mostrar masas, opacidades o derrames. Si existe sospecha, el médico solicitará una TAC de tórax para mayor detalle.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-tag">Imagen diagnóstica principal</div>
+        <h4>TAC de tórax con contraste</h4>
+        <p>La tomografía computarizada (TAC) es el examen más importante. Muestra el tamaño exacto del tumor, su ubicación, relación con estructuras vecinas (bronquios, vasos) y si hay ganglios linfáticos comprometidos. Es esencial para la estadificación y para planificar la biopsia.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-tag">Confirmación diagnóstica</div>
+        <h4>Biopsia — Obtención de tejido</h4>
+        <p>Para confirmar el diagnóstico y determinar el tipo de cáncer, <strong>siempre se necesita una muestra de tejido</strong> (biopsia). Sin biopsia no hay diagnóstico definitivo. La técnica elegida depende de la ubicación del tumor.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-tag">Análisis de laboratorio</div>
+        <h4>Anatomía patológica + Biología molecular</h4>
+        <p>La muestra obtenida se analiza en el laboratorio para confirmar que es cáncer, determinar el tipo histológico (adenocarcinoma, espinocelular, etc.) y estudiar los marcadores moleculares (EGFR, ALK, ROS1, PD-L1, etc.) que guían el tratamiento.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="step-tag">Extensión de la enfermedad</div>
+        <h4>PET-CT + RM de cerebro (estadificación)</h4>
+        <p>El PET-CT evalúa todo el cuerpo buscando ganglios comprometidos y metástasis. La resonancia magnética de cerebro busca metástasis cerebrales. Con estos estudios se determina el estadio TNM definitivo.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <div class="step-tag">Evaluación multidisciplinaria</div>
+        <h4>Comité oncológico</h4>
+        <p>Con todos los resultados, el caso se presenta en un <strong>comité de oncología torácica</strong> integrado por cirujano, oncólogo médico, radiooncólogo, radiólogo y patólogo. Este equipo define el tratamiento más adecuado para cada paciente.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <h2>Técnicas de biopsia disponibles</h2>
+
+  <div class="exam-list">
+
+    <div class="exam-item">
+      <div class="exam-header">
+        <div class="exam-icon">🔭</div>
+        <div>
+          <div class="exam-name">Broncoscopía con biopsia</div>
+          <div class="exam-when">Para tumores centrales (en o cerca de los bronquios)</div>
+        </div>
+      </div>
+      <div class="exam-body">
+        <p>Se introduce un tubo flexible (broncoscopio) a través de la boca o nariz hasta los bronquios, permitiendo ver directamente el tumor y tomar una muestra. Es un procedimiento ambulatorio bajo sedación. Para tumores de difícil acceso puede complementarse con navegación electromagnética o fluoroscopía aumentada.</p>
+      </div>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-header">
+        <div class="exam-icon">🔬</div>
+        <div>
+          <div class="exam-name">EBUS — Ecografía Endobronquial</div>
+          <div class="exam-when">Para ganglios mediastínicos y lesiones peribronquiales</div>
+        </div>
+      </div>
+      <div class="exam-body">
+        <p>El EBUS combina broncoscopía con ecografía para ver y puncionar los ganglios linfáticos del mediastino (N2/N3) sin necesidad de cirugía. Es fundamental para la estadificación ganglionar. También existe el cryo-EBUS, que permite obtener muestras de tejido de mayor tamaño con mayor precisión diagnóstica.</p>
+      </div>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-header">
+        <div class="exam-icon">💉</div>
+        <div>
+          <div class="exam-name">Biopsia por aguja guiada por TAC (BAGT)</div>
+          <div class="exam-when">Para tumores periféricos o de difícil acceso bronquial</div>
+        </div>
+      </div>
+      <div class="exam-body">
+        <p>Con el paciente acostado en la mesa del TAC, el radiólogo introduce una aguja a través de la piel del tórax hasta el tumor, guiado en tiempo real por las imágenes del TAC. Es un procedimiento ambulatorio o de corta hospitalización, con una pequeña chance de neumotórax (1-5%).</p>
+      </div>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-header">
+        <div class="exam-icon">🏥</div>
+        <div>
+          <div class="exam-name">Biopsia quirúrgica (VATS o mediastinoscopía)</div>
+          <div class="exam-when">Cuando otros métodos no son accesibles o suficientes</div>
+        </div>
+      </div>
+      <div class="exam-body">
+        <p>En casos donde las técnicas mínimamente invasivas no permiten obtener muestra suficiente, se puede realizar una biopsia quirúrgica por videotoracoscopía (VATS) o mediastinoscopía. Son procedimientos bajo anestesia general con alta efectividad diagnóstica.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ebus-box">
+    <h3>🔬 EBUS y Broncoscopía Avanzada en Santiago</h3>
+    <p>
+      El Dr. David Lazo es especialista en broncoscopía intervencionista avanzada, incluyendo EBUS convencional y cryo-EBUS, navegación electromagnética y técnicas de biopsia guiada por imágenes para lesiones de difícil acceso.
+    </p>
+    <p>
+      Estas técnicas permiten estadificar el cáncer y obtener muestras de alta calidad para biología molecular <strong>sin necesidad de cirugía abierta</strong> en la mayoría de los casos.
+    </p>
+    <p>
+      Más información en <a href="https://broncoscopia.cl" target="_blank">broncoscopia.cl →</a>
+    </p>
+  </div>
+
+  <h2>¿Qué es la biopsia líquida?</h2>
+  <p>
+    La <strong>biopsia líquida</strong> es un examen de sangre que detecta fragmentos de ADN del tumor (ctDNA) circulando en la sangre. Es una alternativa complementaria cuando no es posible obtener tejido suficiente, y también se usa para monitorear la respuesta al tratamiento o detectar recaídas precozmente.
+  </p>
+  <p>
+    Sin embargo, la biopsia de tejido sigue siendo el estándar de oro para el diagnóstico inicial, ya que permite un análisis más completo del tumor.
+  </p>
+
+  <h2>¿Cuánto demora el proceso diagnóstico?</h2>
+  <p>
+    En condiciones ideales, desde la primera consulta hasta tener todos los resultados (incluyendo biología molecular) puede tomar <strong>2 a 6 semanas</strong>. El tiempo varía según la complejidad del caso, la disponibilidad de los exámenes y el procesamiento del laboratorio de biología molecular.
+  </p>
+  <p>
+    Esta espera puede ser muy difícil emocionalmente. Es normal sentir angustia e incertidumbre. No dudes en pedir apoyo psicológico o comunicar tus preocupaciones al equipo médico.
+  </p>
+
+</div>
+
+<div class="page-nav">
+  <a href="causas.html" class="page-nav-link">
+    <div class="pnl-label">← Anterior</div>
+    <div class="pnl-title">Causas y factores de riesgo</div>
+  </a>
+  <a href="tratamiento.html" class="page-nav-link next">
+    <div class="pnl-label">Siguiente →</div>
+    <div class="pnl-title">Tratamiento</div>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>cancerpulmonar.cl</strong> · Dr. David Lazo</div>
+    <div class="footer-links">
+      <a href="que-es.html">¿Qué es?</a>
+      <a href="causas.html">Causas</a>
+      <a href="diagnostico.html">Diagnóstico</a>
+      <a href="tratamiento.html">Tratamiento</a>
+      <a href="sobrevida.html">Sobrevida</a>
+      <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
+      <a href="https://rats.cl">rats.cl</a>
+      <a href="https://broncoscopia.cl">broncoscopia.cl</a>
+      <a href="https://vats.cl">vats.cl</a>
+      <a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    Información educativa basada en guías NCCN. No reemplaza la consulta médica. Consulte siempre con su médico especialista.
+  </div>
+</footer>
+</body>
+</html>

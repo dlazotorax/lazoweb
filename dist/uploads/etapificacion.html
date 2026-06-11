@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Etapificación TNM del Cáncer Pulmonar — AJCC 9ª Edición · cancerpulmonar.cl</title>
+  <meta name="description" content="Etapificación completa del cáncer pulmonar: descriptores T, N, M, grupos de estadio AJCC 9ª edición 2024. T1mi, M1c1/M1c2, tabla de grupos por estadio. NCCN v5.2026." />
+  <link rel="canonical" href="https://cancerpulmonar.cl/etapificacion" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#080e18; --bg2:#0c1422; --bg3:#111e30; --bg4:#16253a;
+      --accent:#0891b2; --accent2:#06b6d4; --accent-lt:#67e8f9;
+      --warm:#f59e0b; --success:#10b981; --danger:#ef4444;
+      --text:#f0f4f8; --text-muted:#8fa3bc;
+      --border:rgba(255,255,255,0.08); --radius:14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+
+    .topbar { background:var(--bg2); border-bottom:1px solid var(--border); padding:0.5rem 2.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; }
+    .topbar-left { font-size:0.72rem; color:var(--text-muted); }
+    .topbar-links { display:flex; gap:1.5rem; }
+    .topbar-links a { font-size:0.72rem; color:rgba(255,255,255,0.4); text-decoration:none; transition:color 0.2s; }
+    .topbar-links a:hover { color:var(--accent2); }
+    nav { position:sticky; top:0; z-index:300; background:rgba(8,14,24,0.92); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); padding:0 2.5rem; height:66px; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; color:var(--text); }
+    .nav-logo-icon { width:32px; height:32px; border-radius:8px; background:linear-gradient(135deg,var(--accent),var(--accent2)); display:flex; align-items:center; justify-content:center; font-size:1rem; }
+    .nav-logo-text { font-size:0.95rem; font-weight:700; }
+    .nav-logo-text span { color:var(--accent2); }
+    .nav-links { display:flex; gap:1.8rem; list-style:none; }
+    .nav-links a { font-size:0.85rem; font-weight:500; color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--text); }
+    .nav-cta { background:var(--accent); color:#fff; padding:0.5rem 1.25rem; border-radius:8px; font-size:0.85rem; font-weight:600; text-decoration:none; transition:background 0.2s; }
+    .nav-cta:hover { background:var(--accent2); }
+
+    .breadcrumb { background:var(--bg2); border-bottom:1px solid var(--border); padding:0.8rem 2.5rem; }
+    .breadcrumb-inner { max-width:980px; margin:0 auto; display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap; }
+    .breadcrumb a { font-size:0.78rem; color:var(--text-muted); text-decoration:none; }
+    .breadcrumb a:hover { color:var(--accent2); }
+    .breadcrumb span { font-size:0.78rem; color:rgba(143,163,188,0.4); }
+    .breadcrumb-current { font-size:0.78rem; color:var(--accent2); }
+
+    .page-hero { padding:4rem 2.5rem 3rem; background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%); border-bottom:1px solid var(--border); }
+    .page-hero-inner { max-width:980px; margin:0 auto; }
+    .page-hero-tag { font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.75rem; }
+    .page-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(1.9rem,4vw,3rem); font-weight:700; line-height:1.15; margin-bottom:1rem; }
+    .page-hero h1 span { color:var(--accent2); }
+    .page-hero-lead { font-size:1.05rem; color:var(--text-muted); line-height:1.75; max-width:700px; }
+
+    .content { max-width:980px; margin:0 auto; padding:4rem 2.5rem; }
+    .content h2 { font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:700; margin:3rem 0 1rem; line-height:1.2; }
+    .content h2:first-child { margin-top:0; }
+    .content h3 { font-size:1.1rem; font-weight:700; margin:2rem 0 0.65rem; color:var(--accent2); }
+    .content p { font-size:0.97rem; color:var(--text-muted); line-height:1.8; margin-bottom:1rem; }
+    .content strong { color:var(--text); }
+    .content ul { padding-left:1.4rem; margin-bottom:1rem; }
+    .content li { font-size:0.95rem; color:var(--text-muted); line-height:1.75; margin-bottom:0.4rem; }
+
+    /* TNM DESCRIPTOR SECTION */
+    .tnm-intro { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:2rem 0; }
+    .tnm-letter-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:2rem 1.5rem; text-align:center; }
+    .tnm-big { font-size:3.5rem; font-weight:800; line-height:1; margin-bottom:0.5rem; font-family:'Playfair Display',serif; }
+    .tnm-t { color:var(--accent2); }
+    .tnm-n { color:var(--warm); }
+    .tnm-m { color:#f87171; }
+    .tnm-letter-card h4 { font-size:0.97rem; font-weight:700; margin-bottom:0.4rem; }
+    .tnm-letter-card p { font-size:0.85rem; color:var(--text-muted); margin:0; line-height:1.6; }
+
+    /* DESCRIPTOR TABLES */
+    .descriptor-section { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; margin:2rem 0; }
+    .descriptor-header { padding:1.1rem 1.5rem; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:1rem; background:rgba(255,255,255,0.02); }
+    .descriptor-letter { font-size:1.5rem; font-weight:800; font-family:'Playfair Display',serif; }
+    .descriptor-title { font-size:0.95rem; font-weight:700; }
+    .desc-table { width:100%; border-collapse:collapse; }
+    .desc-table th { padding:0.65rem 1.25rem; font-size:0.75rem; font-weight:700; color:var(--text-muted); text-align:left; border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015); text-transform:uppercase; letter-spacing:0.06em; }
+    .desc-table td { padding:0.75rem 1.25rem; font-size:0.875rem; color:var(--text-muted); border-bottom:1px solid var(--border); vertical-align:top; line-height:1.55; }
+    .desc-table tr:last-child td { border-bottom:none; }
+    .desc-table tr:hover td { background:rgba(255,255,255,0.015); }
+    .code { font-family:'JetBrains Mono',monospace; font-weight:600; font-size:0.85rem; color:var(--text); }
+    .code-t { color:var(--accent2); }
+    .code-n { color:var(--warm); }
+    .code-m { color:#f87171; }
+
+    /* GROUPING TABLE */
+    .grouping-wrap { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; margin:2rem 0; }
+    .grouping-header { padding:1.1rem 1.5rem; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+    .grouping-header h3 { font-size:0.97rem; font-weight:700; margin:0; }
+    .tnm-badge { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; background:rgba(6,182,212,0.15); color:var(--accent2); padding:0.2rem 0.6rem; border-radius:4px; }
+    .grouping-table { width:100%; border-collapse:collapse; }
+    .grouping-table th { padding:0.65rem 1rem; font-size:0.75rem; font-weight:700; color:var(--accent2); text-align:left; border-bottom:1px solid var(--border); background:rgba(8,145,178,0.06); text-transform:uppercase; letter-spacing:0.06em; }
+    .grouping-table td { padding:0.7rem 1rem; font-size:0.85rem; color:var(--text-muted); border-bottom:1px solid var(--border); vertical-align:middle; line-height:1.5; }
+    .grouping-table tr:last-child td { border-bottom:none; }
+    .grouping-table tr:hover td { background:rgba(255,255,255,0.015); }
+    .stage-chip { display:inline-block; padding:0.2rem 0.7rem; border-radius:6px; font-size:0.8rem; font-weight:700; }
+    .sc-oculto { background:rgba(16,185,129,0.25); color:#34d399; border:1px solid rgba(16,185,129,0.3); }
+    .sc-ia1 { background:rgba(16,185,129,0.2); color:#34d399; }
+    .sc-ia2 { background:rgba(16,185,129,0.18); color:#34d399; }
+    .sc-ia3 { background:rgba(16,185,129,0.15); color:#6ee7b7; }
+    .sc-ib { background:rgba(6,182,212,0.18); color:var(--accent2); }
+    .sc-iia { background:rgba(6,182,212,0.15); color:var(--accent2); }
+    .sc-iib { background:rgba(6,182,212,0.1); color:var(--accent-lt); }
+    .sc-iiia { background:rgba(245,158,11,0.15); color:var(--warm); }
+    .sc-iiib { background:rgba(245,158,11,0.12); color:#fcd34d; }
+    .sc-iiic { background:rgba(239,68,68,0.12); color:#f87171; }
+    .sc-iva { background:rgba(239,68,68,0.15); color:#ef4444; }
+    .sc-ivb { background:rgba(239,68,68,0.2); color:#dc2626; }
+
+    /* STAGING PROCESS */
+    .process-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin:1.5rem 0; }
+    .process-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; }
+    .pc-badge { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:0.2rem 0.6rem; border-radius:4px; margin-bottom:0.75rem; display:inline-block; }
+    .pc-clinical { background:rgba(8,145,178,0.15); color:var(--accent2); }
+    .pc-patho { background:rgba(16,185,129,0.15); color:#34d399; }
+    .pc-retreat { background:rgba(245,158,11,0.15); color:var(--warm); }
+    .pc-path { background:rgba(139,92,246,0.15); color:#a78bfa; }
+    .process-card h4 { font-size:0.95rem; font-weight:700; margin-bottom:0.5rem; }
+    .process-card p { font-size:0.85rem; color:var(--text-muted); margin:0; line-height:1.65; }
+    .process-prefix { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1rem; color:var(--accent2); margin-bottom:0.3rem; }
+
+    /* CALLOUT */
+    .callout { background:rgba(8,145,178,0.08); border:1px solid rgba(6,182,212,0.2); border-radius:var(--radius); padding:1.5rem 2rem; margin:2rem 0; display:flex; gap:1rem; align-items:flex-start; }
+    .callout-icon { font-size:1.4rem; flex-shrink:0; }
+    .callout h4 { font-size:0.95rem; font-weight:700; color:var(--accent2); margin-bottom:0.4rem; }
+    .callout p { font-size:0.875rem; color:var(--text-muted); margin:0; line-height:1.65; }
+
+    .page-nav { display:flex; justify-content:space-between; gap:1rem; padding:3rem 2.5rem; border-top:1px solid var(--border); max-width:980px; margin:0 auto; }
+    .page-nav-link { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; text-decoration:none; color:var(--text); flex:1; transition:border-color 0.2s, transform 0.15s; }
+    .page-nav-link:hover { border-color:rgba(6,182,212,0.3); transform:translateY(-2px); }
+    .page-nav-link.next { text-align:right; }
+    .pnl-label { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); margin-bottom:0.3rem; }
+    .pnl-title { font-size:0.95rem; font-weight:600; }
+
+    footer { background:var(--bg2); border-top:1px solid var(--border); padding:2rem 2.5rem; }
+    .footer-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer-brand { font-size:0.875rem; color:var(--text-muted); }
+    .footer-brand strong { color:var(--text); }
+    .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .footer-links a { font-size:0.8rem; color:var(--text-muted); text-decoration:none; }
+    .footer-links a:hover { color:var(--accent2); }
+    .footer-disclaimer { max-width:1100px; margin:1.25rem auto 0; font-size:0.75rem; color:rgba(143,163,188,0.5); line-height:1.6; border-top:1px solid var(--border); padding-top:1.25rem; }
+
+    @media(max-width:768px) {
+      nav { padding:0 1.25rem; } .nav-links { display:none; }
+      .topbar, .breadcrumb { padding-left:1.25rem; padding-right:1.25rem; }
+      .page-hero, .content { padding-left:1.25rem; padding-right:1.25rem; }
+      .tnm-intro { grid-template-columns:1fr; }
+      .page-nav { flex-direction:column; padding:2rem 1.25rem; }
+      .page-nav-link.next { text-align:left; }
+      .grouping-table { font-size:0.8rem; }
+      .grouping-table td, .grouping-table th { padding:0.6rem 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-left">Información para pacientes · Santiago, Chile</span>
+  <div class="topbar-links">
+    <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
+    <a href="https://rats.cl">Cirugía Robótica</a>
+    <a href="https://broncoscopia.cl">Broncoscopía</a>
+  </div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🫁</div>
+    <div class="nav-logo-text">Cáncer <span>Pulmonar</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="que-es.html">¿Qué es?</a></li>
+    <li><a href="causas.html">Causas</a></li>
+    <li><a href="diagnostico.html">Diagnóstico</a></li>
+    <li><a href="etapificacion.html" class="active">Etapificación</a></li>
+    <li><a href="tratamiento.html">Tratamiento</a></li>
+    <li><a href="sobrevida.html">Sobrevida</a></li>
+  </ul>
+  <a href="https://cirugiatoracica.cl/#contacto" class="nav-cta">Consultar al especialista</a>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Inicio</a>
+    <span>›</span>
+    <a href="que-es.html">¿Qué es?</a>
+    <span>›</span>
+    <span class="breadcrumb-current">Etapificación TNM 9ª Edición</span>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">Detalle técnico · Etapificación</div>
+    <h1>Clasificación <span>TNM 9ª Edición</span><br>Cáncer Pulmonar</h1>
+    <p class="page-hero-lead">La etapificación es el proceso que determina la extensión del cáncer pulmonar. La clasificación TNM (9ª edición IASLC 2023) es el sistema universal que define el estadio y guía las decisiones de tratamiento.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <h2>¿Qué evalúa el sistema TNM?</h2>
+  <p>El sistema TNM evalúa tres dimensiones independientes del cáncer, cada una con una escala específica:</p>
+
+  <div class="tnm-intro">
+    <div class="tnm-letter-card">
+      <div class="tnm-big tnm-t">T</div>
+      <h4>Tumor primario</h4>
+      <p>Tamaño del tumor en centímetros e invasión de estructuras locales (pleura, bronquio principal, mediastino, etc.)</p>
+    </div>
+    <div class="tnm-letter-card">
+      <div class="tnm-big tnm-n">N</div>
+      <h4>Ganglios linfáticos</h4>
+      <p>Presencia de células cancerosas en los ganglios linfáticos regionales, según su localización anatómica</p>
+    </div>
+    <div class="tnm-letter-card">
+      <div class="tnm-big tnm-m">M</div>
+      <h4>Metástasis</h4>
+      <p>Diseminación del cáncer a órganos distantes al pulmón, como hígado, huesos, cerebro o glándulas suprarrenales</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-icon">📖</div>
+    <div>
+      <h4>9ª edición IASLC — Vigente desde 2024</h4>
+      <p>La International Association for the Study of Lung Cancer (IASLC) publicó la 9ª edición de la clasificación TNM en 2023, basándose en el análisis de más de 100.000 pacientes de todo el mundo. Es el estándar actual para todos los nuevos diagnósticos de cáncer pulmonar.</p>
+    </div>
+  </div>
+
+  <h2>Descriptores T — Tumor Primario</h2>
+
+  <div class="descriptor-section">
+    <div class="descriptor-header">
+      <span class="descriptor-letter tnm-t">T</span>
+      <div>
+        <div class="descriptor-title">Descriptores del Tumor Primario — TNM 9ª edición</div>
+      </div>
+    </div>
+    <table class="desc-table">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Definición (AJCC 9ª edición, 2024)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="code code-t">TX</span></td>
+          <td>Tumor no puede evaluarse, o tumor demostrado por células malignas en esputo/lavado bronquial pero no visible con imágenes ni broncoscopía</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T0</span></td>
+          <td>Sin evidencia de tumor primario</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">Tis</span></td>
+          <td>Carcinoma in situ espinocelular (SCIS) o adenocarcinoma in situ (AIS): patrón lepídico puro, ≤3 cm</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T1mi</span></td>
+          <td><strong style="color:var(--accent2)">Adenocarcinoma mínimamente invasor:</strong> adenocarcinoma ≤3 cm, patrón lepídico predominante, con componente invasivo ≤5 mm. Pronóstico excelente (Estadio IA1)</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T1a</span></td>
+          <td>Tumor ≤ 1 cm, rodeado de pulmón/pleura visceral, sin invasión más proximal que bronquio lobar. También incluye tumor superficial de cualquier tamaño cuyo componente invasivo se limita a la pared bronquial</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T1b</span></td>
+          <td>Tumor &gt;1 cm pero ≤ 2 cm en su dimensión mayor</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T1c</span></td>
+          <td>Tumor &gt;2 cm pero ≤ 3 cm en su dimensión mayor</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T2a</span></td>
+          <td>Tumor &gt;3 cm pero ≤ 4 cm, O tumor ≤4 cm con una o más de las siguientes: invade pleura visceral, invade lóbulo adyacente, compromete bronquio principal (sin alcanzar carina), o asociado a atelectasia/neumonitis obstructiva hasta el hilio</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T2b</span></td>
+          <td>Tumor &gt;4 cm pero ≤ 5 cm, con o sin las características de T2a</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T3</span></td>
+          <td>Tumor &gt;5 cm pero ≤ 7 cm, O tumor ≤7 cm con invasión de: pleura parietal/pared torácica, pericardio, nervio frénico, vena ácigos, raíces nerviosas torácicas (T1–T2) o ganglio estrellado; O nódulo(s) tumoral(es) separados en el <em>mismo</em> lóbulo</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T4</span></td>
+          <td>Tumor &gt;7 cm, O invasión de: mediastino, timo, tráquea, carina, nervio laríngeo recurrente, nervio vago, esófago, diafragma, corazón, grandes vasos, vasos subclavios, cuerpo vertebral/canal espinal, plexo braquial; O nódulo(s) en un lóbulo ipsilateral <em>diferente</em></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Descriptores N — Ganglios Linfáticos</h2>
+
+  <div class="descriptor-section">
+    <div class="descriptor-header">
+      <span class="descriptor-letter tnm-n">N</span>
+      <div>
+        <div class="descriptor-title">Descriptores Ganglionares — TNM 9ª edición</div>
+      </div>
+    </div>
+    <table class="desc-table">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Definición</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="code code-n">NX</span></td>
+          <td>Los ganglios linfáticos regionales no pueden evaluarse</td>
+        </tr>
+        <tr>
+          <td><span class="code code-n">N0</span></td>
+          <td>Sin compromiso tumoral de ganglios linfáticos regionales</td>
+        </tr>
+        <tr>
+          <td><span class="code code-n">N1</span></td>
+          <td>Compromiso de estaciones ganglionares peribronquiales ipsilaterales y/o hiliares ipsilaterales y/o intrapulmonares, incluyendo por extensión directa</td>
+        </tr>
+        <tr>
+          <td><span class="code code-n">N2a</span></td>
+          <td>Compromiso de <strong>una sola</strong> estación ganglionar mediastínica ipsilateral <em>o</em> de la estación subcarina</td>
+        </tr>
+        <tr>
+          <td><span class="code code-n">N2b</span></td>
+          <td>Compromiso de <strong>múltiples</strong> estaciones ganglionares mediastínicas ipsilaterales <em>o</em> de la estación subcarina más otra estación</td>
+        </tr>
+        <tr>
+          <td><span class="code code-n">N3</span></td>
+          <td>Compromiso de ganglios mediastínicos contralaterales, hiliares contralaterales, escalenos ipsilaterales/contralaterales, o supraclaviculares ipsilaterales/contralaterales</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Descriptores M — Metástasis</h2>
+
+  <div class="descriptor-section">
+    <div class="descriptor-header">
+      <span class="descriptor-letter tnm-m">M</span>
+      <div>
+        <div class="descriptor-title">Descriptores de Metástasis — TNM 9ª edición</div>
+      </div>
+    </div>
+    <table class="desc-table">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Definición</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="code code-m">cM0</span></td>
+          <td>Sin metástasis a distancia</td>
+        </tr>
+        <tr>
+          <td><span class="code code-m">M1a</span></td>
+          <td>Nódulo(s) tumoral(es) en pulmón contralateral; nódulos pleurales o pericárdicos; derrame pleural maligno; derrame pericárdico maligno</td>
+        </tr>
+        <tr>
+          <td><span class="code code-m">M1b</span></td>
+          <td>Metástasis extratoráxica única en un solo sistema orgánico (incluyendo ganglio no regional único)</td>
+        </tr>
+        <tr>
+          <td><span class="code code-m">M1c1</span></td>
+          <td><strong style="color:#f87171">Múltiples metástasis extratoráxicas en un solo sistema orgánico.</strong> Ejemplo: varias metástasis óseas = M1c1 (el esqueleto se considera un solo órgano)</td>
+        </tr>
+        <tr>
+          <td><span class="code code-m">M1c2</span></td>
+          <td><strong style="color:#ef4444">Múltiples metástasis extratoráxicas en múltiples sistemas orgánicos</strong> (p.ej. hígado + hueso + cerebro)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Grupos de Estadio — Clasificación Final</h2>
+  <p>La combinación de los descriptores T, N y M define el <strong>estadio</strong> de la enfermedad:</p>
+
+  <div class="grouping-wrap">
+    <div class="grouping-header">
+      <h3>Grupos de Estadio · CPCNP · TNM 9ª edición</h3>
+      <span class="tnm-badge">IASLC 2023</span>
+    </div>
+    <table class="grouping-table">
+      <thead>
+        <tr>
+          <th>Estadio</th>
+          <th>T</th>
+          <th>N</th>
+          <th>M</th>
+          <th>Descripción clínica</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="stage-chip sc-oculto">Oculto</span></td>
+          <td><span class="code code-t">TX</span></td>
+          <td><span class="code code-n">N0</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Células malignas en esputo, tumor no visible con imágenes</td>
+        </tr>
+        <tr>
+          <td><span class="stage-chip sc-ia1">0</span></td>
+          <td><span class="code code-t">Tis</span></td>
+          <td><span class="code code-n">N0</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Carcinoma in situ (espinocelular o adenocarcinoma)</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="stage-chip sc-ia1">IA1</span></td>
+          <td><span class="code code-t">T1mi</span></td>
+          <td><span class="code code-n">N0</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Adenocarcinoma mínimamente invasor (≤3 cm, ≤5 mm invasión)</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T1a</span></td>
+          <td><span class="code code-n">N0</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor ≤ 1 cm, sin ganglios ni metástasis</td>
+        </tr>
+        <tr>
+          <td><span class="stage-chip sc-ia2">IA2</span></td>
+          <td><span class="code code-t">T1b</span></td>
+          <td><span class="code code-n">N0</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor 1–2 cm, sin ganglios ni metástasis</td>
+        </tr>
+        <tr>
+          <td><span class="stage-chip sc-ia3">IA3</span></td>
+          <td><span class="code code-t">T1c</span></td>
+          <td><span class="code code-n">N0</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor 2–3 cm, sin ganglios ni metástasis</td>
+        </tr>
+        <tr>
+          <td><span class="stage-chip sc-ib">IB</span></td>
+          <td><span class="code code-t">T2a</span></td>
+          <td><span class="code code-n">N0</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor 3–4 cm (o ≤4 cm con invasión de pleura visceral/bronquio principal)</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="stage-chip sc-iia">IIA</span></td>
+          <td><span class="code code-t">T2b</span></td>
+          <td><span class="code code-n">N0</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor 4–5 cm, sin ganglios ni metástasis</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T1</span></td>
+          <td><span class="code code-n">N1</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor ≤3 cm con ganglios hiliares/peribronquiales ipsilaterales (N1)</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><span class="stage-chip sc-iib">IIB</span></td>
+          <td><span class="code code-t">T1</span></td>
+          <td><span class="code code-n">N2a</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor ≤3 cm con una sola estación mediastínica ipsilateral</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T2a–T2b</span></td>
+          <td><span class="code code-n">N1</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor 3–5 cm con ganglios hiliares ipsilaterales</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T3</span></td>
+          <td><span class="code code-n">N0</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor 5–7 cm o invasión pared torácica/pericardio/nervio frénico, sin ganglios</td>
+        </tr>
+        <tr>
+          <td rowspan="4"><span class="stage-chip sc-iiia">IIIA</span></td>
+          <td><span class="code code-t">T1</span></td>
+          <td><span class="code code-n">N2b</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor ≤3 cm con múltiples estaciones mediastínicas ipsilaterales</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T2–T3</span></td>
+          <td><span class="code code-n">N2a</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor 3–7 cm con una sola estación mediastínica ipsilateral</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T3–T4</span></td>
+          <td><span class="code code-n">N1</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor localmente avanzado con N1 ipsilateral</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T4</span></td>
+          <td><span class="code code-n">N0</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor muy avanzado (>7 cm o invasión mediastino/grandes vasos) sin ganglios</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><span class="stage-chip sc-iiib">IIIB</span></td>
+          <td><span class="code code-t">T1–T2</span></td>
+          <td><span class="code code-n">N3</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor T1-T2 con ganglios contralaterales o supraclaviculares</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T2–T3</span></td>
+          <td><span class="code code-n">N2b</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor 3–7 cm con múltiples estaciones mediastínicas ipsilaterales</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T4</span></td>
+          <td><span class="code code-n">N2a–N2b</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor T4 con ganglios mediastínicos ipsilaterales (1 o varias estaciones)</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="stage-chip sc-iiic">IIIC</span></td>
+          <td><span class="code code-t">T3</span></td>
+          <td><span class="code code-n">N3</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor 5–7 cm / invasión local + ganglios contralaterales</td>
+        </tr>
+        <tr>
+          <td><span class="code code-t">T4</span></td>
+          <td><span class="code code-n">N3</span></td>
+          <td><span class="code code-m">M0</span></td>
+          <td>Tumor más avanzado + cualquier ganglio contralateral</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="stage-chip sc-iva">IVA</span></td>
+          <td>Cualquier T</td>
+          <td>Cualquier N</td>
+          <td><span class="code code-m">M1a</span></td>
+          <td>Derrame pleural/pericárdico maligno o nódulo en pulmón contralateral</td>
+        </tr>
+        <tr>
+          <td>Cualquier T</td>
+          <td>Cualquier N</td>
+          <td><span class="code code-m">M1b</span></td>
+          <td>Metástasis extratoráxica única (un solo órgano)</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="stage-chip sc-ivb">IVB</span></td>
+          <td>Cualquier T</td>
+          <td>Cualquier N</td>
+          <td><span class="code code-m">M1c1</span></td>
+          <td>Múltiples metástasis extratoráxicas en un solo sistema orgánico (p.ej. varias óseas)</td>
+        </tr>
+        <tr>
+          <td>Cualquier T</td>
+          <td>Cualquier N</td>
+          <td><span class="code code-m">M1c2</span></td>
+          <td>Múltiples metástasis extratoráxicas en múltiples sistemas orgánicos</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Prefijos de estadificación</h2>
+  <p>El TNM puede ir precedido de un prefijo que indica el tipo de estadificación realizada:</p>
+
+  <div class="process-grid">
+    <div class="process-card">
+      <span class="pc-badge pc-clinical">Clínica</span>
+      <div class="process-prefix">c</div>
+      <h4>Estadificación clínica</h4>
+      <p>Basada en exámenes de imagen (TAC, PET-CT, RM) y procedimientos invasivos mínimos (EBUS). Se realiza antes del tratamiento. Ej: cT2b N1 M0.</p>
+    </div>
+    <div class="process-card">
+      <span class="pc-badge pc-patho">Patológica</span>
+      <div class="process-prefix">p</div>
+      <h4>Estadificación patológica</h4>
+      <p>Basada en el análisis microscópico de la pieza quirúrgica y los ganglios resecados. Es la más precisa y definitiva. Ej: pT2a N0 M0.</p>
+    </div>
+    <div class="process-card">
+      <span class="pc-badge pc-retreat">Post-neoadyuvante</span>
+      <div class="process-prefix">yp</div>
+      <h4>Post-tratamiento neoadyuvante</h4>
+      <p>Cuando se realiza cirugía después de quimioterapia o radioterapia preoperatoria. El prefijo "y" indica que la patología fue evaluada tras el tratamiento previo.</p>
+    </div>
+    <div class="process-card">
+      <span class="pc-badge pc-path">Autopsia</span>
+      <div class="process-prefix">a</div>
+      <h4>Estadificación en autopsia</h4>
+      <p>Cuando la estadificación se realiza post-mortem. Rara vez utilizado en la práctica clínica habitual.</p>
+    </div>
+  </div>
+
+  <h2>Procedimientos de estadificación</h2>
+  <p>
+    La estadificación clínica precisa requiere una serie de procedimientos que evalúan sistemáticamente la extensión de la enfermedad:
+  </p>
+  <ul>
+    <li><strong>TAC de tórax + abdomen superior con contraste:</strong> Evalúa el tumor primario (T) y ganglios mediastínicos e hiliares (N)</li>
+    <li><strong>PET-CT (FDG):</strong> Evalúa ganglios y metástasis a distancia con alta sensibilidad. Fundamental para estadio II-III</li>
+    <li><strong>RM de cerebro con contraste:</strong> Busca metástasis cerebrales, especialmente en adenocarcinoma y estadio III-IV</li>
+    <li><strong>EBUS (Ecografía Endobronquial):</strong> Estadificación ganglionar mediastínica invasiva mínima (N2/N3). Reemplaza la mediastinoscopía en la mayoría de los casos</li>
+    <li><strong>Mediastinoscopía:</strong> Reservada para casos en que el EBUS es negativo pero la sospecha clínica es alta</li>
+    <li><strong>Toracocentesis + análisis citológico:</strong> Si hay derrame pleural, confirma o descarta compromiso maligno (M1a)</li>
+    <li><strong>Biopsia de metástasis:</strong> Para confirmar enfermedad metastásica (M1b/c) y obtener material para biología molecular</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-icon">🎯</div>
+    <div>
+      <h4>La estadificación correcta es crítica</h4>
+      <p>Una estadificación incompleta puede llevar a tratamientos inadecuados: operar un tumor irresecable (subestadificación) o dar quimioterapia a un paciente tratable con cirugía (sobrestadificación). El equipo multidisciplinario asegura que todos los estudios necesarios estén completos antes de definir el tratamiento.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="page-nav">
+  <a href="que-es.html" class="page-nav-link">
+    <div class="pnl-label">← Relacionado</div>
+    <div class="pnl-title">¿Qué es el cáncer pulmonar?</div>
+  </a>
+  <a href="sobrevida.html" class="page-nav-link next">
+    <div class="pnl-label">Ver →</div>
+    <div class="pnl-title">Sobrevida por estadio</div>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>cancerpulmonar.cl</strong> · Dr. David Lazo</div>
+    <div class="footer-links">
+      <a href="que-es.html">¿Qué es?</a>
+      <a href="causas.html">Causas</a>
+      <a href="diagnostico.html">Diagnóstico</a>
+      <a href="tratamiento.html">Tratamiento</a>
+      <a href="sobrevida.html">Sobrevida</a>
+      <a href="etapificacion.html">Etapificación</a>
+      <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
+      <a href="https://rats.cl">rats.cl</a>
+      <a href="https://broncoscopia.cl">broncoscopia.cl</a>
+      <a href="https://vats.cl">vats.cl</a>
+      <a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    Clasificación TNM basada en: AJCC Cancer Staging System, 9ª edición (© 2024, American College of Surgeons). Guía clínica: NCCN Guidelines® for Non-Small Cell Lung Cancer, Version 5.2026 (marzo 2026). No reemplaza la consulta médica especializada.
+  </div>
+</footer>
+</body>
+</html>

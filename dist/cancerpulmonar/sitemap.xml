@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://cancerpulmonar.cl/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://cancerpulmonar.cl/" />
+  </url>
+
+  <url>
+    <loc>https://cancerpulmonar.cl/que-es</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://cancerpulmonar.cl/que-es" />
+  </url>
+
+  <url>
+    <loc>https://cancerpulmonar.cl/causas</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://cancerpulmonar.cl/causas" />
+  </url>
+
+  <url>
+    <loc>https://cancerpulmonar.cl/diagnostico</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://cancerpulmonar.cl/diagnostico" />
+  </url>
+
+  <url>
+    <loc>https://cancerpulmonar.cl/etapificacion</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://cancerpulmonar.cl/etapificacion" />
+  </url>
+
+  <url>
+    <loc>https://cancerpulmonar.cl/tratamiento</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://cancerpulmonar.cl/tratamiento" />
+  </url>
+
+  <url>
+    <loc>https://cancerpulmonar.cl/sobrevida</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://cancerpulmonar.cl/sobrevida" />
+  </url>
+
+</urlset>

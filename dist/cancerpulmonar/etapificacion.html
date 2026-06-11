@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Etapificación TNM del Cáncer Pulmonar — AJCC 9ª Edición · cancerpulmonar.cl</title>
+  <meta name="description" content="Etapificación completa del cáncer pulmonar: descriptores T, N, M, grupos de estadio AJCC 9ª edición 2024. T1mi, M1c1/M1c2, tabla de grupos por estadio. NCCN v5.2026." />
+  <meta name="keywords" content="etapificación cáncer pulmonar, estadios cáncer pulmón, TNM clasificación, estadio I II III IV" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Dr. David Lazo Pérez" />
+  <link rel="canonical" href="https://cancerpulmonar.cl/etapificacion" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Dr. David Lazo Pérez — Cáncer Pulmonar" />
+  <meta property="og:title" content="Etapificación del Cáncer Pulmonar · Dr. David Lazo" />
+  <meta property="og:description" content="Estadios del cáncer de pulmón: clasificación TNM, estadios I a IV y su implicancia en el tratamiento. Dr. David Lazo." />
+  <meta property="og:url" content="https://cancerpulmonar.cl/etapificacion" />
+  <meta property="og:image" content="https://cancerpulmonar.cl/imgs/foto-dr-lazo.jpg" />
+  <meta property="og:locale" content="es_CL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Etapificación del Cáncer Pulmonar" />
+  <meta name="twitter:description" content="Estadios del cáncer de pulmón: clasificación TNM y tratamiento por estadio." />
+  <meta name="twitter:image" content="https://cancerpulmonar.cl/imgs/foto-dr-lazo.jpg" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. David Lazo Pérez",
+  "jobTitle": "Cirujano Torácico",
+  "medicalSpecialty": [
+    "Cirugía Torácica",
+    "Cirugía Robótica",
+    "Broncoscopía Intervencionista"
+  ],
+  "url": "https://cancerpulmonar.cl/etapificacion",
+  "image": "https://cancerpulmonar.cl/imgs/foto-dr-lazo.jpg",
+  "worksFor": [
+    {
+      "@type": "Hospital",
+      "name": "Clínica Las Condes"
+    },
+    {
+      "@type": "Hospital",
+      "name": "Hospital Clínico San Borja Arriarán"
+    }
+  ],
+  "sameAs": [
+    "https://cirugiatoracica.cl",
+    "https://rats.cl",
+    "https://broncoscopia.cl",
+    "https://cancerpulmonar.cl",
+    "https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/",
+    "https://www.instagram.com/dr.david.lazo.p/"
+  ]
+}
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:      #0c1526;
+      --teal-deep: #0c4a6e;
+      --teal:      #0891b2;
+      --teal-dark: #0e7490;
+      --teal-lt:   #22d3ee;
+      --teal-pale: #ecfeff;
+      --teal-mid:  #cffafe;
+      --bg:        #ffffff;
+      --bg2:       #f4f8fb;
+      --bg3:       #edf2f7;
+      --bg4:       #dce8f0;
+      --text:      #1a2b3c;
+      --slate:     #3a5068;
+      --muted:     #607d93;
+      --border:    #dce8f0;
+      --accent:    #0891b2;
+      --accent2:   #0891b2;
+      --accent-lt: #22d3ee;
+      --warm:      #d97706;
+      --success:   #059669;
+      --danger:    #dc2626;
+      --radius:    14px;
+      --serif:     'DM Serif Display', serif;
+      --sans:      'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    /* TOPBAR */
+    .topbar { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .topbar-left { font-size: 0.72rem; color: rgba(255,255,255,0.38); }
+    .topbar-links { display: flex; gap: 1.5rem; }
+    .topbar-links a { font-size: 0.72rem; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
+    .topbar-links a:hover { color: rgba(255,255,255,0.8); }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 300; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 66px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--teal-deep); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .nav-logo-text { font-size: 0.95rem; font-weight: 700; color: var(--text); }
+    .nav-logo-text span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--slate); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-cta { background: var(--accent); color: #fff; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--teal-dark); }
+
+    /* BREADCRUMB */
+    .breadcrumb { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0.8rem 2.5rem; }
+    .breadcrumb-inner { max-width: 980px; margin: 0 auto; display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+    .breadcrumb a { font-size: 0.78rem; color: var(--teal); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { font-size: 0.78rem; color: rgba(0,0,0,0.2); }
+    .breadcrumb-current { font-size: 0.78rem; color: var(--muted); }
+
+    /* PAGE HERO */
+    .page-hero { padding: 4rem 2.5rem 3rem; background: linear-gradient(180deg,#f4f8fb 0%,#fff 100%); border-bottom: 1px solid var(--border); }
+    .page-hero-inner { max-width: 980px; margin: 0 auto; }
+    .page-hero-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .page-hero h1 { font-family: var(--serif); font-size: clamp(1.9rem,4vw,3rem); line-height: 1.15; margin-bottom: 1rem; color: var(--text); }
+    .page-hero h1 span { color: var(--accent); }
+    .page-hero-lead { font-size: 1.05rem; color: var(--muted); line-height: 1.75; max-width: 700px; }
+
+    /* CONTENT */
+    .content { max-width: 980px; margin: 0 auto; padding: 4rem 2.5rem; }
+    .content h2 { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; margin: 3rem 0 1rem; line-height: 1.2; color: var(--text); }
+    .content h2:first-child { margin-top: 0; }
+    .content h3 { font-size: 1.1rem; font-weight: 700; margin: 2rem 0 0.65rem; color: var(--teal-dark); }
+    .content p { font-size: 0.97rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+    .content strong { color: var(--text); }
+    .content ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+    .content li { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.4rem; }
+
+    /* TNM INTRO CARDS */
+    .tnm-intro { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 2rem 0; }
+    .tnm-letter-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; }
+    .tnm-big { font-size: 3.5rem; font-weight: 800; line-height: 1; margin-bottom: 0.5rem; font-family: var(--serif); }
+    .tnm-t { color: var(--accent); }
+    .tnm-n { color: var(--warm); }
+    .tnm-m { color: #dc2626; }
+    .tnm-letter-card h4 { font-size: 0.97rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text); }
+    .tnm-letter-card p { font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.6; }
+
+    /* DESCRIPTOR TABLES */
+    .descriptor-section { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 2rem 0; }
+    .descriptor-header { padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 1rem; background: var(--bg3); }
+    .descriptor-letter { font-size: 1.5rem; font-weight: 800; font-family: var(--serif); }
+    .descriptor-title { font-size: 0.95rem; font-weight: 700; color: var(--text); }
+    .desc-table { width: 100%; border-collapse: collapse; }
+    .desc-table th { padding: 0.65rem 1.25rem; font-size: 0.75rem; font-weight: 700; color: var(--muted); text-align: left; border-bottom: 1px solid var(--border); background: var(--bg3); text-transform: uppercase; letter-spacing: 0.06em; }
+    .desc-table td { padding: 0.75rem 1.25rem; font-size: 0.875rem; color: var(--slate); border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; }
+    .desc-table tr:last-child td { border-bottom: none; }
+    .desc-table tr:hover td { background: var(--teal-pale); }
+    .code { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 0.85rem; }
+    .code-t { color: var(--teal-dark); }
+    .code-n { color: var(--warm); }
+    .code-m { color: #dc2626; }
+
+    /* GROUPING TABLE */
+    .grouping-wrap { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 2rem 0; }
+    .grouping-header { padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg3); }
+    .grouping-header h3 { font-size: 0.97rem; font-weight: 700; margin: 0; color: var(--text); }
+    .tnm-badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--teal-pale); color: var(--teal-dark); padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid var(--teal-mid); }
+    .grouping-table { width: 100%; border-collapse: collapse; }
+    .grouping-table th { padding: 0.65rem 1rem; font-size: 0.75rem; font-weight: 700; color: var(--teal-dark); text-align: left; border-bottom: 1px solid var(--border); background: var(--teal-pale); text-transform: uppercase; letter-spacing: 0.06em; }
+    .grouping-table td { padding: 0.7rem 1rem; font-size: 0.85rem; color: var(--slate); border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5; }
+    .grouping-table tr:last-child td { border-bottom: none; }
+    .grouping-table tr:hover td { background: var(--teal-pale); }
+    .stage-chip { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700; }
+    .sc-oculto { background: #dcfce7; color: #166534; }
+    .sc-ia1  { background: #dcfce7; color: #166534; }
+    .sc-ia2  { background: #d1fae5; color: #065f46; }
+    .sc-ia3  { background: #a7f3d0; color: #065f46; }
+    .sc-ib   { background: var(--teal-pale); color: var(--teal-dark); }
+    .sc-iia  { background: var(--teal-pale); color: var(--teal-dark); }
+    .sc-iib  { background: #cffafe; color: #0e7490; }
+    .sc-iiia { background: #fef3c7; color: #92400e; }
+    .sc-iiib { background: #fde68a; color: #78350f; }
+    .sc-iiic { background: #fee2e2; color: #991b1b; }
+    .sc-iva  { background: #fecaca; color: #b91c1c; }
+    .sc-ivb  { background: #fca5a5; color: #991b1b; }
+
+    /* PROCESS CARDS */
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .process-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+    .pc-badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.75rem; display: inline-block; }
+    .pc-clinical { background: var(--teal-pale); color: var(--teal-dark); border: 1px solid var(--teal-mid); }
+    .pc-patho    { background: #dcfce7; color: #166534; }
+    .pc-retreat  { background: #fef3c7; color: #92400e; }
+    .pc-path     { background: #ede9fe; color: #5b21b6; }
+    .process-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
+    .process-card p { font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.65; }
+    .process-prefix { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1rem; color: var(--teal-dark); margin-bottom: 0.3rem; }
+
+    /* CALLOUT */
+    .callout { background: rgba(8,145,178,0.05); border: 1px solid rgba(8,145,178,0.18); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; display: flex; gap: 1rem; align-items: flex-start; }
+    .callout-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .callout h4 { font-size: 0.95rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 0.4rem; }
+    .callout p { font-size: 0.875rem; color: var(--muted); margin: 0; line-height: 1.65; }
+
+    /* PAGE NAV */
+    .page-nav { display: flex; justify-content: space-between; gap: 1rem; padding: 3rem 2.5rem; border-top: 1px solid var(--border); max-width: 980px; margin: 0 auto; }
+    .page-nav-link { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; text-decoration: none; color: var(--text); flex: 1; transition: border-color 0.2s, transform 0.15s; }
+    .page-nav-link:hover { border-color: rgba(8,145,178,0.35); transform: translateY(-2px); }
+    .page-nav-link.next { text-align: right; }
+    .pnl-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.3rem; }
+    .pnl-title { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+
+    /* BIO */
+    .bio-section-light { padding: 5rem 2.5rem; background: #fff; }
+    .bio-section-light .bio-wrap { display: grid; grid-template-columns: 240px 1fr; gap: 3.5rem; align-items: start; max-width: 1100px; margin: 0 auto; }
+    .bio-section-light .bio-photo { border-radius: 18px; overflow: hidden; box-shadow: 0 16px 48px rgba(12,21,38,0.15); }
+    .bio-section-light .bio-photo img { width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; object-position: center 10%; }
+    @media (max-width: 768px) { .bio-section-light .bio-wrap { grid-template-columns: 1fr; } }
+
+    /* CTA */
+    .cta-unified { background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 60%, #0369a1 100%); padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+    .cta-unified::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(34,211,238,0.08), transparent 70%); pointer-events:none; }
+    .cta-unified > * { position: relative; z-index: 2; }
+    .cta-unified .cta-eyebrow { font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#22d3ee; margin-bottom:0.75rem; }
+    .cta-unified .cta-title { font-family: var(--serif); font-size:clamp(1.8rem,3vw,2.6rem); color:#fff; letter-spacing:-0.02em; margin-bottom:2rem; }
+    .cta-unified .cta-contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:980px; margin:0 auto; align-items:stretch; }
+    .cta-unified .contact-card { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:1.5rem; text-align:left; transition:background 0.2s; }
+    .cta-unified .contact-card:hover { background:rgba(255,255,255,0.11); }
+    .cta-unified .contact-card h4 { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#22d3ee; margin-bottom:0.75rem; }
+    .cta-unified .ccontact-links { display:flex; flex-direction:column; gap:0.65rem; margin-top:0.5rem; }
+    .cta-unified .ccontact-link { display:flex; align-items:center; gap:0.75rem; text-decoration:none; padding:0.6rem 0.75rem; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); transition:background 0.2s, border-color 0.2s; }
+    .cta-unified .ccontact-link:hover { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2); }
+    .cta-unified .ccontact-ico { font-size:1.1rem; flex-shrink:0; }
+    .cta-unified .ccontact-label { display:block; font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.4); }
+    .cta-unified .ccontact-val { display:block; font-size:0.82rem; font-weight:600; color:rgba(255,255,255,0.85); margin-top:0.1rem; }
+
+    /* FOOTER */
+    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 2rem 2.5rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-brand { font-size: 0.875rem; color: rgba(255,255,255,0.4); }
+    .footer-brand strong { color: rgba(255,255,255,0.7); }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.35); text-decoration: none; }
+    .footer-links a:hover { color: var(--teal-lt); }
+    .footer-disclaimer { max-width: 1100px; margin: 1.25rem auto 0; font-size: 0.75rem; color: rgba(255,255,255,0.25); line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.25rem; }
+
+    @media(max-width: 768px) {
+      nav { padding: 0 1.25rem; } .nav-links { display: none; }
+      .topbar, .breadcrumb { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .page-hero, .content { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .tnm-intro { grid-template-columns: 1fr; }
+      .page-nav { flex-direction: column; padding: 2rem 1.25rem; }
+      .page-nav-link.next { text-align: left; }
+      .grouping-table { font-size: 0.8rem; }
+      .grouping-table td, .grouping-table th { padding: 0.6rem 0.75rem; }
+      .cta-unified .cta-contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-left">Información para pacientes · Santiago, Chile</span>
+  <div class="topbar-links">
+    <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
+    <a href="https://rats.cl">Cirugía Robótica</a>
+    <a href="https://broncoscopia.cl">Broncoscopía</a>
+  </div>
+</div>
+
+<header>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🫁</div>
+    <div class="nav-logo-text">Cáncer <span>Pulmonar</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="que-es.html">¿Qué es?</a></li>
+    <li><a href="causas.html">Causas</a></li>
+    <li><a href="diagnostico.html">Diagnóstico</a></li>
+    <li><a href="etapificacion.html" class="active">Etapificación</a></li>
+    <li><a href="tratamiento.html">Tratamiento</a></li>
+    <li><a href="sobrevida.html">Sobrevida</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Consultar al especialista</a>
+</nav>
+</header>
+
+<main id="main-content">
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Inicio</a>
+    <span>›</span>
+    <span class="breadcrumb-current">Etapificación TNM 9ª Edición</span>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">Detalle técnico · Etapificación</div>
+    <h1>Clasificación <span>TNM 9ª Edición</span><br>Cáncer Pulmonar</h1>
+    <p class="page-hero-lead">La etapificación es el proceso que determina la extensión del cáncer pulmonar. La clasificación TNM (9ª edición IASLC 2023) es el sistema universal que define el estadio y guía las decisiones de tratamiento.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <h2>¿Qué evalúa el sistema TNM?</h2>
+  <p>El sistema TNM evalúa tres dimensiones independientes del cáncer, cada una con una escala específica:</p>
+
+  <div class="tnm-intro">
+    <div class="tnm-letter-card">
+      <div class="tnm-big tnm-t">T</div>
+      <h4>Tumor primario</h4>
+      <p>Tamaño del tumor en centímetros e invasión de estructuras locales (pleura, bronquio principal, mediastino, etc.)</p>
+    </div>
+    <div class="tnm-letter-card">
+      <div class="tnm-big tnm-n">N</div>
+      <h4>Ganglios linfáticos</h4>
+      <p>Presencia de células cancerosas en los ganglios linfáticos regionales, según su localización anatómica</p>
+    </div>
+    <div class="tnm-letter-card">
+      <div class="tnm-big tnm-m">M</div>
+      <h4>Metástasis</h4>
+      <p>Diseminación del cáncer a órganos distantes al pulmón, como hígado, huesos, cerebro o glándulas suprarrenales</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-icon">📖</div>
+    <div>
+      <h4>9ª edición IASLC — Vigente desde 2024</h4>
+      <p>La International Association for the Study of Lung Cancer (IASLC) publicó la 9ª edición de la clasificación TNM en 2023, basándose en el análisis de más de 100.000 pacientes de todo el mundo. Es el estándar actual para todos los nuevos diagnósticos de cáncer pulmonar.</p>
+    </div>
+  </div>
+
+  <h2>Descriptores T — Tumor Primario</h2>
+
+  <div class="descriptor-section">
+    <div class="descriptor-header">
+      <span class="descriptor-letter tnm-t">T</span>
+      <div class="descriptor-title">Descriptores del Tumor Primario — TNM 9ª edición</div>
+    </div>
+    <table class="desc-table">
+      <thead>
+        <tr><th>Código</th><th>Definición (AJCC 9ª edición, 2024)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="code code-t">TX</span></td><td>Tumor no puede evaluarse, o tumor demostrado por células malignas en esputo/lavado bronquial pero no visible con imágenes ni broncoscopía</td></tr>
+        <tr><td><span class="code code-t">T0</span></td><td>Sin evidencia de tumor primario</td></tr>
+        <tr><td><span class="code code-t">Tis</span></td><td>Carcinoma in situ espinocelular (SCIS) o adenocarcinoma in situ (AIS): patrón lepídico puro, ≤3 cm</td></tr>
+        <tr><td><span class="code code-t">T1mi</span></td><td><strong>Adenocarcinoma mínimamente invasor:</strong> adenocarcinoma ≤3 cm, patrón lepídico predominante, con componente invasivo ≤5 mm. Pronóstico excelente (Estadio IA1)</td></tr>
+        <tr><td><span class="code code-t">T1a</span></td><td>Tumor ≤ 1 cm, rodeado de pulmón/pleura visceral, sin invasión más proximal que bronquio lobar</td></tr>
+        <tr><td><span class="code code-t">T1b</span></td><td>Tumor &gt;1 cm pero ≤ 2 cm en su dimensión mayor</td></tr>
+        <tr><td><span class="code code-t">T1c</span></td><td>Tumor &gt;2 cm pero ≤ 3 cm en su dimensión mayor</td></tr>
+        <tr><td><span class="code code-t">T2a</span></td><td>Tumor &gt;3 cm pero ≤ 4 cm, O tumor ≤4 cm con: invasión de pleura visceral, lóbulo adyacente, bronquio principal (sin carina), o atelectasia hasta el hilio</td></tr>
+        <tr><td><span class="code code-t">T2b</span></td><td>Tumor &gt;4 cm pero ≤ 5 cm, con o sin las características de T2a</td></tr>
+        <tr><td><span class="code code-t">T3</span></td><td>Tumor &gt;5 cm pero ≤ 7 cm, O invasión de pleura parietal/pared torácica, pericardio, nervio frénico, vena ácigos; O nódulo(s) en el <em>mismo</em> lóbulo</td></tr>
+        <tr><td><span class="code code-t">T4</span></td><td>Tumor &gt;7 cm, O invasión de mediastino, tráquea, carina, esófago, diafragma, corazón, grandes vasos, cuerpo vertebral; O nódulo(s) en lóbulo ipsilateral <em>diferente</em></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Descriptores N — Ganglios Linfáticos</h2>
+
+  <div class="descriptor-section">
+    <div class="descriptor-header">
+      <span class="descriptor-letter tnm-n">N</span>
+      <div class="descriptor-title">Descriptores Ganglionares — TNM 9ª edición</div>
+    </div>
+    <table class="desc-table">
+      <thead>
+        <tr><th>Código</th><th>Definición</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="code code-n">NX</span></td><td>Los ganglios linfáticos regionales no pueden evaluarse</td></tr>
+        <tr><td><span class="code code-n">N0</span></td><td>Sin compromiso tumoral de ganglios linfáticos regionales</td></tr>
+        <tr><td><span class="code code-n">N1</span></td><td>Compromiso de estaciones peribronquiales, hiliares ipsilaterales e intrapulmonares</td></tr>
+        <tr><td><span class="code code-n">N2a</span></td><td>Compromiso de <strong>una sola</strong> estación ganglionar mediastínica ipsilateral o de la estación subcarina</td></tr>
+        <tr><td><span class="code code-n">N2b</span></td><td>Compromiso de <strong>múltiples</strong> estaciones ganglionares mediastínicas ipsilaterales o subcarina + otra estación</td></tr>
+        <tr><td><span class="code code-n">N3</span></td><td>Compromiso de ganglios mediastínicos contralaterales, hiliares contralaterales, escalenos o supraclaviculares (ipsi o contralaterales)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Descriptores M — Metástasis</h2>
+
+  <div class="descriptor-section">
+    <div class="descriptor-header">
+      <span class="descriptor-letter tnm-m">M</span>
+      <div class="descriptor-title">Descriptores de Metástasis — TNM 9ª edición</div>
+    </div>
+    <table class="desc-table">
+      <thead>
+        <tr><th>Código</th><th>Definición</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="code code-m">cM0</span></td><td>Sin metástasis a distancia</td></tr>
+        <tr><td><span class="code code-m">M1a</span></td><td>Nódulo(s) en pulmón contralateral; nódulos pleurales/pericárdicos; derrame pleural maligno; derrame pericárdico maligno</td></tr>
+        <tr><td><span class="code code-m">M1b</span></td><td>Metástasis extratoráxica única en un solo sistema orgánico</td></tr>
+        <tr><td><span class="code code-m">M1c1</span></td><td><strong>Múltiples metástasis extratoráxicas en un solo sistema orgánico</strong> (p.ej. varias metástasis óseas)</td></tr>
+        <tr><td><span class="code code-m">M1c2</span></td><td><strong>Múltiples metástasis extratoráxicas en múltiples sistemas orgánicos</strong> (p.ej. hígado + hueso + cerebro)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Grupos de Estadio — Clasificación Final</h2>
+  <p>La combinación de los descriptores T, N y M define el <strong>estadio</strong> de la enfermedad:</p>
+
+  <div class="grouping-wrap">
+    <div class="grouping-header">
+      <h3>Grupos de Estadio · CPCNP · TNM 9ª edición</h3>
+      <span class="tnm-badge">IASLC 2023</span>
+    </div>
+    <table class="grouping-table">
+      <thead>
+        <tr><th>Estadio</th><th>T</th><th>N</th><th>M</th><th>Descripción clínica</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="stage-chip sc-oculto">Oculto</span></td><td><span class="code code-t">TX</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Células malignas en esputo, tumor no visible con imágenes</td></tr>
+        <tr><td><span class="stage-chip sc-ia1">0</span></td><td><span class="code code-t">Tis</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Carcinoma in situ</td></tr>
+        <tr><td rowspan="2"><span class="stage-chip sc-ia1">IA1</span></td><td><span class="code code-t">T1mi</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Adenocarcinoma mínimamente invasor (≤3 cm, ≤5 mm invasión)</td></tr>
+        <tr><td><span class="code code-t">T1a</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor ≤ 1 cm, sin ganglios ni metástasis</td></tr>
+        <tr><td><span class="stage-chip sc-ia2">IA2</span></td><td><span class="code code-t">T1b</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor 1–2 cm</td></tr>
+        <tr><td><span class="stage-chip sc-ia3">IA3</span></td><td><span class="code code-t">T1c</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor 2–3 cm</td></tr>
+        <tr><td><span class="stage-chip sc-ib">IB</span></td><td><span class="code code-t">T2a</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor 3–4 cm</td></tr>
+        <tr><td rowspan="2"><span class="stage-chip sc-iia">IIA</span></td><td><span class="code code-t">T2b</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor 4–5 cm</td></tr>
+        <tr><td><span class="code code-t">T1</span></td><td><span class="code code-n">N1</span></td><td><span class="code code-m">M0</span></td><td>Tumor ≤3 cm con ganglios hiliares ipsilaterales</td></tr>
+        <tr><td rowspan="3"><span class="stage-chip sc-iib">IIB</span></td><td><span class="code code-t">T1</span></td><td><span class="code code-n">N2a</span></td><td><span class="code code-m">M0</span></td><td>Tumor ≤3 cm con una sola estación mediastínica</td></tr>
+        <tr><td><span class="code code-t">T2a–T2b</span></td><td><span class="code code-n">N1</span></td><td><span class="code code-m">M0</span></td><td>Tumor 3–5 cm con ganglios hiliares</td></tr>
+        <tr><td><span class="code code-t">T3</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor 5–7 cm o invasión pared torácica/pericardio</td></tr>
+        <tr><td rowspan="4"><span class="stage-chip sc-iiia">IIIA</span></td><td><span class="code code-t">T1</span></td><td><span class="code code-n">N2b</span></td><td><span class="code code-m">M0</span></td><td>Tumor ≤3 cm con múltiples estaciones mediastínicas</td></tr>
+        <tr><td><span class="code code-t">T2–T3</span></td><td><span class="code code-n">N2a</span></td><td><span class="code code-m">M0</span></td><td>Tumor 3–7 cm con una sola estación mediastínica</td></tr>
+        <tr><td><span class="code code-t">T3–T4</span></td><td><span class="code code-n">N1</span></td><td><span class="code code-m">M0</span></td><td>Tumor localmente avanzado con N1</td></tr>
+        <tr><td><span class="code code-t">T4</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor muy avanzado sin ganglios</td></tr>
+        <tr><td rowspan="3"><span class="stage-chip sc-iiib">IIIB</span></td><td><span class="code code-t">T1–T2</span></td><td><span class="code code-n">N3</span></td><td><span class="code code-m">M0</span></td><td>Tumor T1-T2 con ganglios contralaterales/supraclaviculares</td></tr>
+        <tr><td><span class="code code-t">T2–T3</span></td><td><span class="code code-n">N2b</span></td><td><span class="code code-m">M0</span></td><td>Tumor 3–7 cm con múltiples estaciones mediastínicas</td></tr>
+        <tr><td><span class="code code-t">T4</span></td><td><span class="code code-n">N2a–N2b</span></td><td><span class="code code-m">M0</span></td><td>Tumor T4 con ganglios mediastínicos ipsilaterales</td></tr>
+        <tr><td rowspan="2"><span class="stage-chip sc-iiic">IIIC</span></td><td><span class="code code-t">T3</span></td><td><span class="code code-n">N3</span></td><td><span class="code code-m">M0</span></td><td>Tumor 5–7 cm + ganglios contralaterales</td></tr>
+        <tr><td><span class="code code-t">T4</span></td><td><span class="code code-n">N3</span></td><td><span class="code code-m">M0</span></td><td>Tumor avanzado + cualquier ganglio contralateral</td></tr>
+        <tr><td rowspan="2"><span class="stage-chip sc-iva">IVA</span></td><td>Cualquier T</td><td>Cualquier N</td><td><span class="code code-m">M1a</span></td><td>Derrame pleural/pericárdico maligno o nódulo contralateral</td></tr>
+        <tr><td>Cualquier T</td><td>Cualquier N</td><td><span class="code code-m">M1b</span></td><td>Metástasis extratoráxica única</td></tr>
+        <tr><td rowspan="2"><span class="stage-chip sc-ivb">IVB</span></td><td>Cualquier T</td><td>Cualquier N</td><td><span class="code code-m">M1c1</span></td><td>Múltiples metástasis en un solo sistema orgánico</td></tr>
+        <tr><td>Cualquier T</td><td>Cualquier N</td><td><span class="code code-m">M1c2</span></td><td>Múltiples metástasis en múltiples sistemas orgánicos</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Prefijos de estadificación</h2>
+  <p>El TNM puede ir precedido de un prefijo que indica el tipo de estadificación realizada:</p>
+
+  <div class="process-grid">
+    <div class="process-card">
+      <span class="pc-badge pc-clinical">Clínica</span>
+      <div class="process-prefix">c</div>
+      <h4>Estadificación clínica</h4>
+      <p>Basada en imágenes (TAC, PET-CT) y procedimientos mínimamente invasivos (EBUS). Se realiza antes del tratamiento.</p>
+    </div>
+    <div class="process-card">
+      <span class="pc-badge pc-patho">Patológica</span>
+      <div class="process-prefix">p</div>
+      <h4>Estadificación patológica</h4>
+      <p>Basada en el análisis microscópico de la pieza quirúrgica y los ganglios resecados. Es la más precisa y definitiva.</p>
+    </div>
+    <div class="process-card">
+      <span class="pc-badge pc-retreat">Post-neoadyuvante</span>
+      <div class="process-prefix">yp</div>
+      <h4>Post-tratamiento neoadyuvante</h4>
+      <p>Cuando se realiza cirugía después de quimioterapia o radioterapia preoperatoria.</p>
+    </div>
+    <div class="process-card">
+      <span class="pc-badge pc-path">Autopsia</span>
+      <div class="process-prefix">a</div>
+      <h4>Estadificación en autopsia</h4>
+      <p>Cuando la estadificación se realiza post-mortem. Rara vez utilizado en práctica clínica habitual.</p>
+    </div>
+  </div>
+
+  <h2>Procedimientos de estadificación</h2>
+  <p>La estadificación clínica precisa requiere una serie de procedimientos que evalúan sistemáticamente la extensión de la enfermedad:</p>
+  <ul>
+    <li><strong>TAC de tórax + abdomen superior con contraste:</strong> Evalúa el tumor primario (T) y ganglios mediastínicos e hiliares (N)</li>
+    <li><strong>PET-CT (FDG):</strong> Evalúa ganglios y metástasis a distancia con alta sensibilidad. Fundamental para estadio II–III</li>
+    <li><strong>RM de cerebro con contraste:</strong> Busca metástasis cerebrales, especialmente en adenocarcinoma y estadio III–IV</li>
+    <li><strong>EBUS (Ecografía Endobronquial):</strong> Estadificación ganglionar mediastínica mínimamente invasiva (N2/N3). Reemplaza la mediastinoscopía en la mayoría de los casos</li>
+    <li><strong>Mediastinoscopía:</strong> Reservada para casos en que el EBUS es negativo pero la sospecha clínica es alta</li>
+    <li><strong>Toracocentesis + análisis citológico:</strong> Si hay derrame pleural, confirma o descarta compromiso maligno (M1a)</li>
+    <li><strong>Biopsia de metástasis:</strong> Para confirmar enfermedad metastásica (M1b/c) y obtener material para biología molecular</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-icon">🎯</div>
+    <div>
+      <h4>La estadificación correcta es crítica</h4>
+      <p>Una estadificación incompleta puede llevar a tratamientos inadecuados: operar un tumor irresecable (subestadificación) o dar quimioterapia a un paciente tratable con cirugía (sobrestadificación). El equipo multidisciplinario asegura que todos los estudios estén completos antes de definir el tratamiento.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="page-nav">
+  <a href="diagnostico.html" class="page-nav-link">
+    <div class="pnl-label">← Anterior</div>
+    <div class="pnl-title">Diagnóstico</div>
+  </a>
+  <a href="sobrevida.html" class="page-nav-link next">
+    <div class="pnl-label">Siguiente →</div>
+    <div class="pnl-title">Sobrevida por estadio</div>
+  </a>
+</div>
+
+</main>
+
+<!-- BIO DR. LAZO -->
+<section class="bio-section-light" id="dr-lazo">
+  <div class="bio-wrap">
+    <div class="bio-photo">
+      <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en cáncer pulmonar en Clínica Las Condes" loading="lazy" />
+    </div>
+    <div>
+      <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#0891b2;margin-bottom:0.75rem;">Tu especialista</p>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:2rem;color:#1a2b3c;letter-spacing:-0.02em;margin-bottom:0.3rem;">Dr. David Lazo Pérez</h2>
+      <p style="font-size:0.9rem;font-weight:600;color:#0e7490;margin-bottom:1rem;">Cirujano Torácico · Oncología Torácica</p>
+      <p style="font-size:0.9rem;line-height:1.8;color:#3a5068;margin-bottom:1rem;text-wrap:pretty;">Cirujano torácico con 19 años de experiencia especializado en <strong style="color:#1a2b3c;">oncología torácica y cirugía mínimamente invasiva</strong>. Realiza lobectomías, segmentectomías y resecciones pulmonares con técnicas robóticas (Da Vinci) y videotoracoscopía (VATS).</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;">
+        <div style="background:#f4f8fb;border:1px solid #dce8f0;border-radius:10px;padding:0.9rem;text-align:center;"><div style="font-size:1.4rem;font-weight:800;color:#0891b2;letter-spacing:-0.03em;">+5.700</div><div style="font-size:0.68rem;color:#607d93;margin-top:0.15rem;line-height:1.3;">cirugías torácicas</div></div>
+        <div style="background:#f4f8fb;border:1px solid #dce8f0;border-radius:10px;padding:0.9rem;text-align:center;"><div style="font-size:1.4rem;font-weight:800;color:#0891b2;letter-spacing:-0.03em;">+3.200</div><div style="font-size:0.68rem;color:#607d93;margin-top:0.15rem;line-height:1.3;">EBUS desde 2010</div></div>
+        <div style="background:#f4f8fb;border:1px solid #dce8f0;border-radius:10px;padding:0.9rem;text-align:center;"><div style="font-size:1.4rem;font-weight:800;color:#0891b2;letter-spacing:-0.03em;">19</div><div style="font-size:0.68rem;color:#607d93;margin-top:0.15rem;line-height:1.3;">años de experiencia</div></div>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <a href="#contacto" style="display:inline-flex;align-items:center;gap:0.5rem;background:#0891b2;color:#fff;text-decoration:none;padding:0.75rem 1.5rem;border-radius:8px;font-size:0.88rem;font-weight:700;">Solicitar hora →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA CONTACTO -->
+<section class="cta-unified" id="contacto">
+  <p class="cta-eyebrow">Primer paso</p>
+  <h2 class="cta-title">Hable directamente<br>con el especialista</h2>
+  <div class="cta-contact-grid">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.5rem;">
+      <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico, experto en tratamiento quirúrgico del cáncer de pulmón" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 10%;border:3px solid rgba(255,255,255,0.2);margin:0;" loading="lazy">
+      <div style="text-align:center;">
+        <p style="font-size:0.88rem;font-weight:700;color:#fff;margin-bottom:0.2rem;">Dr. David Lazo Pérez</p>
+        <p style="font-size:0.75rem;color:rgba(255,255,255,0.55);">Cirujano Torácico</p>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h4>🗓️ Agendar consulta</h4>
+      <div class="ccontact-links">
+        <a class="ccontact-link" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener">
+          <span class="ccontact-ico">🏥</span>
+          <div><span class="ccontact-label">Clínica Las Condes</span><span class="ccontact-val">Reservar hora presencial →</span></div>
+        </a>
+        <a class="ccontact-link" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">
+          <span class="ccontact-ico">💻</span>
+          <div><span class="ccontact-label">Telemedicina</span><span class="ccontact-val">Consulta online — todo Chile →</span></div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h4>🌐 Redes sociales</h4>
+      <div class="ccontact-links">
+        <a class="ccontact-link" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener">
+          <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <div><span class="ccontact-label">LinkedIn</span><span class="ccontact-val">Dr. David Lazo Pérez</span></div>
+        </a>
+        <a class="ccontact-link" href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener">
+          <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <div><span class="ccontact-label">Instagram</span><span class="ccontact-val">@dr.david.lazo.p</span></div>
+        </a>
+        <a class="ccontact-link" href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener">
+          <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5z"/></svg>
+          <div><span class="ccontact-label">Doctoralia</span><span class="ccontact-val">Ver perfil y reseñas →</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>cancerpulmonar.cl</strong> · Información para pacientes</div>
+    <div class="footer-links">
+      <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
+      <a href="https://rats.cl">rats.cl</a>
+      <a href="https://broncoscopia.cl">broncoscopia.cl</a>
+      <a href="https://vats.cl">vats.cl</a>
+      <a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    Clasificación TNM basada en: AJCC Cancer Staging System, 9ª edición (© 2024, American College of Surgeons). Guía clínica: NCCN Guidelines® for Non-Small Cell Lung Cancer, Version 5.2026 (marzo 2026). No reemplaza la consulta médica especializada.
+  </div>
+</footer>
+</body>
+</html>

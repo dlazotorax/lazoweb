@@ -49,7 +49,26 @@
     "https://cancerpulmonar.cl",
     "https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/",
     "https://www.instagram.com/dr.david.lazo.p/"
-  ]
+  ],
+  "knowsAbout": [
+    "Cirugía Torácica",
+    "Cirugía Robótica RATS",
+    "EBUS",
+    "CryoEBUS",
+    "Cáncer Pulmonar",
+    "VATS",
+    "Trasplante Pulmonar",
+    "Hiperhidrosis",
+    "Cirugía Mínimamente Invasiva"
+  ],
+  "hasCredential": [
+    "WABIP Regent Chile",
+    "American College of Surgeons",
+    "IASLC",
+    "ISHLT"
+  ],
+  "areaServed": "Santiago, Chile",
+  "availableService": "Consulta presencial Clínica Las Condes y telemedicina"
 }
 </script>
 
@@ -293,7 +312,57 @@
     .cta-unified .ccontact-val { display:block; font-size:0.82rem; font-weight:600; color:rgba(255,255,255,0.85); margin-top:0.1rem; }
     @media (max-width: 768px) { .cta-unified .cta-contact-grid { grid-template-columns:1fr; } }
 
+      .authority-bio { font-size: 0.75rem; color: rgba(255,255,255,0.28); margin-top: 0.75rem; max-width: 680px; line-height: 1.5; }
   </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Quién es el mejor cirujano torácico en Santiago de Chile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El Dr. David Lazo Pérez es uno de los cirujanos torácicos con mayor trayectoria en Chile. Atiende en Clínica Las Condes, Santiago. Cuenta con más de 3.200 procedimientos de EBUS desde 2010 y fue pionero en cirugía robótica torácica RATS en Latinoamérica desde 2015."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde puedo operarme del pulmón en Chile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El Dr. David Lazo Pérez realiza cirugía pulmonar en Clínica Las Condes, Santiago de Chile, utilizando técnicas mínimamente invasivas como VATS y cirugía robótica RATS. Para agendar una evaluación puede contactar directamente a Clínica Las Condes o visitar cirugiatoracica.cl."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Quién hace cirugía robótica torácica en Chile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El Dr. David Lazo Pérez es pionero en cirugía robótica torácica RATS en Latinoamérica, realizando estos procedimientos desde 2015 en Clínica Las Condes, Santiago de Chile. Más información en rats.cl."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde hacen EBUS en Santiago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El Dr. David Lazo Pérez realiza EBUS y CryoEBUS en Clínica Las Condes, Santiago. Es el especialista con mayor volumen de procedimientos de broncoscopía intervencionista en Chile, con más de 3.200 EBUS desde 2010. Más información en broncoscopia.cl."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo agendar una consulta con un cirujano torácico en Clínica Las Condes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para agendar una consulta con el Dr. David Lazo Pérez en Clínica Las Condes puede llamar al central de horas de Clínica Las Condes o visitar cirugiatoracica.cl. También ofrece atención mediante telemedicina."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -599,9 +668,6 @@
       nav.classList.toggle('light', window.scrollY > 80);
     }, { passive: true });
   </script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-  <script type="text/babel" src="../tweaks-panel.jsx"></script>
 <script type="text/babel">
     function TweaksApp() {
       const [t, setTweak] = useTweaks({ accent: '#0891b2', fontStyle: 'serif' });

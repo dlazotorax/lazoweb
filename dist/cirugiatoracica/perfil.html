@@ -131,6 +131,7 @@
       background-image: url('imgs/hero-dr-lazo.jpg');
       background-color: #0c1526;
       background-size: 80% auto; background-position: right 60%;
+      background-repeat: no-repeat;
     }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -570,6 +571,9 @@
       .bio-wrap { grid-template-columns: 1fr !important; gap: 1.5rem; }
       .bio-wrap img { max-width: 260px; margin: 0 auto; }
       .bio-creds { grid-template-columns: 1fr 1fr !important; }
+
+      /* ── Hero background mobile fix ── */
+      .hero-bg { background-size: cover !important; background-position: center top !important; }
     }
 
   </style>

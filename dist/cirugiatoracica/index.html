@@ -501,6 +501,21 @@
       .evidence-strip { grid-template-columns: 1fr 1fr !important; }
       .abl-card-kpis { gap: 1rem !important; flex-wrap: wrap !important; }
       .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; }
+
+      /* ── Bio wrap (Sobre el autor) mobile fix ── */
+      .bio-wrap {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+        overflow: hidden !important;
+      }
+      .bio-wrap > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        padding-right: 0 !important;
+      }
+      .bio-name { font-size: 1.8rem !important; }
     }
 
   </style>

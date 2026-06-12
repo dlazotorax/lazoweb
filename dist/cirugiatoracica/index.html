@@ -502,6 +502,18 @@
       .abl-card-kpis { gap: 1rem !important; flex-wrap: wrap !important; }
       .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; }
 
+      /* ── Bio author grid mobile fix ── */
+      .bio-author-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .bio-author-grid > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        padding-right: 0 !important;
+      }
+
       /* ── Bio wrap (Sobre el autor) mobile fix ── */
       .bio-wrap {
         grid-template-columns: 1fr !important;
@@ -826,7 +838,7 @@
 
   <!-- BIO DR. LAZO -->
   <section style="padding:5rem 2.5rem;background:var(--bg-alt);border-top:1px solid var(--border);">
-    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:3.5rem;align-items:start;">
+    <div class="bio-author-grid" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:3.5rem;align-items:start;">
       <div style="border-radius:18px;overflow:hidden;box-shadow:0 16px 48px rgba(12,21,38,0.15);">
         <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico en Clínica Las Condes, Santiago de Chile" style="width:100%;display:block;object-fit:cover;aspect-ratio:3/4;object-position:center 10%;" loading="lazy" />
       </div>

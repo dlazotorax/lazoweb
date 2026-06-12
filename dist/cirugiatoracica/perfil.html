@@ -121,47 +121,26 @@
     .nav-cta { background: var(--teal); color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.83rem; font-weight: 700; text-decoration: none; transition: background 0.2s, transform 0.15s; }
     .nav-cta:hover { background: var(--teal-dark) !important; transform: translateY(-1px); }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end;
-      position: relative; overflow: hidden;
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--navy);
+      padding: 7rem 2.5rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image: url('imgs/hero-dr-lazo.jpg');
-      background-color: #0c1526;
-      background-size: 80% auto; background-position: right 60%;
+    .page-header-eyebrow {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--teal-lt); margin-bottom: 1rem;
     }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(12,21,38,0.95) 0%, rgba(12,21,38,0.88) 35%, rgba(12,21,38,0.45) 60%, rgba(12,21,38,0.15) 100%);
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 1140px; width: 100%; margin: 0 auto;
-      padding: 9rem 2.5rem 0;
-    }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(34,211,238,0.12); border: 1px solid rgba(34,211,238,0.25);
-      border-radius: 100px; padding: 0.35rem 1rem;
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--teal-lt); margin-bottom: 1.75rem;
-    }
-    .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-lt); animation: blink 2.5s infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-    .hero-h1 {
+    .page-header h1 {
       font-family: var(--serif);
-      font-size: clamp(3rem, 6vw, 5rem);
-      line-height: 1.08; letter-spacing: -0.025em;
-      color: #fff; margin-bottom: 1.25rem; max-width: 680px;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.12; letter-spacing: -0.02em;
+      color: #fff; margin-bottom: 0.5rem;
     }
-    .hero-h1 em { color: var(--teal-lt); font-style: italic; }
-    .hero-sub {
-      font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.68);
-      max-width: 520px; margin-bottom: 2.5rem;
+    .page-header-sub {
+      font-size: 0.95rem; color: rgba(255,255,255,0.55);
     }
-    .hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 4rem; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 0.5rem;
       background: var(--teal); color: #fff; text-decoration: none;
@@ -566,11 +545,15 @@
       .abl-card-kpis { gap: 1rem !important; flex-wrap: wrap !important; }
       .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; }
 
+      /* ── Page header mobile ── */
+      .page-header { padding: 5.5rem 1.5rem 2rem !important; }
+      .page-header h1 { font-size: 1.8rem !important; }
+
       /* ── Bio section specific fixes ── */
       .bio-wrap {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
-        padding: 0 1rem !important;
+        padding: 0 1.5rem !important;
         overflow: hidden !important;
       }
       .bio-photo {
@@ -586,7 +569,7 @@
         object-position: center 15% !important;
       }
       .bio-name {
-        font-size: 1.75rem !important;
+        font-size: 1.8rem !important;
         max-width: 100% !important;
         word-break: break-word !important;
       }
@@ -668,30 +651,11 @@
 
   <main id="main-content">
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-dot"></div>
-        Cirugía Torácica · Santiago, Chile
-      </div>
-      <h1 class="hero-h1">Referente en<br><em>Cirugía Torácica</em><br>en Latinoamérica</h1>
-      <p class="hero-sub">
-        19 años de experiencia en cirugía oncológica torácica, robótica, broncoscopía intervencionista y trasplante pulmonar. Atención en Clínica Las Condes y Hospital Clínico San Borja Arriarán.
-      </p>
-      <div class="hero-btns">
-        <a href="#contacto" class="btn-primary">Solicitar consulta →</a>
-
-      </div>
-    </div>
-    <div class="statsbar">
-      <div class="stat"><div class="stat-n">+5.700</div><div class="stat-l">cirugías torácicas realizadas</div></div>
-      <div class="stat"><div class="stat-n">+3.200</div><div class="stat-l">EBUS · nº 1 en Chile desde 2010</div></div>
-      <div class="stat"><div class="stat-n">+200</div><div class="stat-l">RATS robóticas · nº 1 Chile desde 2015</div></div>
-      <div class="stat"><div class="stat-n">19</div><div class="stat-l">años de experiencia desde 2007</div></div>
-    </div>
+  <!-- PAGE HEADER -->
+  <section class="page-header" id="inicio">
+    <p class="page-header-eyebrow">Cirugía Torácica · Santiago, Chile</p>
+    <h1>Dr. David Lazo Pérez</h1>
+    <p class="page-header-sub">Cirujano Torácico · Clínica Las Condes</p>
   </section>
 
   <!-- ESPECIALIDADES -->

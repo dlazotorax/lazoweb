@@ -296,8 +296,10 @@
 
     /* APPROACH GRID */
     .approach-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.25rem; margin-top: 1.5rem; }
-    .approach-card { display: flex; flex-direction: column; gap: 0.6rem; background: var(--navy); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.75rem 1.5rem; text-decoration: none; color: #fff; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
-    .approach-card:hover { background: var(--navy2); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(8,145,178,0.15); }
+    .approach-card { display: flex; flex-direction: column; gap: 0.6rem; background: var(--navy); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.75rem 1.5rem; text-decoration: none !important; color: #fff !important; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
+    .approach-card:hover { background: #1e4976 !important; color: #fff !important; text-decoration: none !important; transform: translateY(-3px); box-shadow: 0 12px 36px rgba(8,145,178,0.2); }
+    .approach-card * { color: inherit !important; text-decoration: none !important; }
+    .approach-card:hover * { color: #fff !important; }
     .approach-icon { font-size: 1.75rem; }
     .approach-card h3 { font-size: 0.92rem; font-weight: 700; color: #fff; }
     .approach-card p { font-size: 0.8rem; line-height: 1.65; color: rgba(255,255,255,0.55); flex: 1; }

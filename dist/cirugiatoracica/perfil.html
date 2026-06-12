@@ -565,6 +565,38 @@
       .evidence-strip { grid-template-columns: 1fr 1fr !important; }
       .abl-card-kpis { gap: 1rem !important; flex-wrap: wrap !important; }
       .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; }
+
+      /* ── Bio section specific fixes ── */
+      .bio-wrap {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 1rem !important;
+        overflow: hidden !important;
+      }
+      .bio-photo {
+        width: 100% !important;
+        max-width: 260px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+      }
+      .bio-photo img {
+        width: 100% !important;
+        max-width: 100% !important;
+        aspect-ratio: 4/3 !important;
+        object-position: center 15% !important;
+      }
+      .bio-name {
+        font-size: 1.75rem !important;
+        max-width: 100% !important;
+        word-break: break-word !important;
+      }
+      .bio-text, .bio-role, .bio-insts, .bio-eyebrow {
+        max-width: 100% !important;
+        overflow-wrap: break-word !important;
+      }
+      .bio-creds {
+        grid-template-columns: 1fr 1fr !important;
+      }
     }
 
   </style>

@@ -131,18 +131,20 @@
 
     /* HERO */
     .hero {
-      background: var(--navy);
-      padding: 6rem 2.5rem 5rem;
+      min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end;
       position: relative; overflow: hidden;
     }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 70% 70% at 80% 40%, rgba(8,145,178,0.12), transparent 70%),
-        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(12,74,110,0.25), transparent 60%);
-      pointer-events: none;
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('imgs/hero-petct.png');
+      background-color: #0c1526;
+      background-size: cover; background-position: center 30%;
     }
-    .hero-inner { max-width: 780px; position: relative; z-index: 1; margin: 0 auto 0 0; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(12,21,38,0.96) 0%, rgba(12,21,38,0.88) 40%, rgba(12,21,38,0.55) 70%, rgba(12,21,38,0.25) 100%);
+    }
+    .hero-inner { max-width: 780px; position: relative; z-index: 2; margin: 0 auto 0 0; padding: 9rem 2.5rem 5rem; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
       background: rgba(8,145,178,0.15); border: 1px solid rgba(34,211,238,0.25);
@@ -154,12 +156,12 @@
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
     .hero h1 {
       font-family: var(--serif);
-      font-size: clamp(2.6rem, 5vw, 4rem);
-      line-height: 1.12; letter-spacing: -0.025em; color: #fff;
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 1.08; letter-spacing: -0.025em; color: #fff;
       margin-bottom: 1.5rem;
     }
-    .hero h1 span { color: var(--teal-lt); }
-    .hero-lead { font-size: 1.05rem; color: rgba(255,255,255,0.6); max-width: 560px; margin-bottom: 2.5rem; line-height: 1.78; }
+    .hero h1 span { color: var(--teal-lt); font-style: italic; }
+    .hero-lead { font-size: 1.05rem; color: rgba(255,255,255,0.68); max-width: 520px; margin-bottom: 2.5rem; line-height: 1.75; }
     .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
     .hero-stat-num { font-family: var(--serif); font-size: 2.2rem; color: var(--teal-lt); line-height: 1; margin-bottom: 0.2rem; }
     .hero-stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.42); line-height: 1.45; }
@@ -265,7 +267,8 @@
       nav { padding: 0 1.25rem; }
       .nav-links { display: none; }
       .topbar { padding: 0.4rem 1.25rem; }
-      .hero { padding: 5rem 1.25rem 4rem; }
+      .hero { min-height: 85vh; }
+      .hero-inner { padding: 7rem 1.25rem 4rem; }
       .section { padding: 4rem 1.25rem; }
       .cards-grid, .eco-grid { grid-template-columns: 1fr; }
       .hero-stats { gap: 1.5rem; }
@@ -398,12 +401,18 @@
   <main id="main-content">
   <!-- HERO -->
   <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
     <div class="hero-inner">
-
-      <h1>Todo lo que necesitas saber sobre el <span>Cáncer Pulmonar</span></h1>
-      <p class="hero-lead">Información clara, honesta y actualizada para pacientes y familias. Entender tu diagnóstico es el primer paso para tomar las mejores decisiones.</p>
-
-
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Oncología Torácica · Santiago, Chile
+      </div>
+      <h1><span>Cáncer Pulmonar</span></h1>
+      <p class="hero-lead">Diagnóstico, estadificación y tratamiento quirúrgico. Dr. David Lazo Pérez</p>
+      <div class="hero-ctas">
+        <a href="#contacto" class="btn-primary">Solicitar consulta →</a>
+      </div>
     </div>
   </section>
 

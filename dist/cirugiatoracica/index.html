@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. David Lazo · Cirugía Torácica · Santiago, Chile</title>
-  <meta name="description" content="Dr. David Lazo Pérez — Cirujano Torácico. Especialista en cirugía robótica, cáncer pulmonar, broncoscopía intervencionista y trasplante pulmonar. Clínica Las Condes, Santiago." />
-  <meta property="og:type" content="website" />
+  <title>Cirugía Torácica: ¿Qué hacemos y cómo te podemos ayudar? · Dr. David Lazo</title>
+  <meta name="description" content="Todo sobre cirugía torácica: qué enfermedades trata, técnicas disponibles y cómo puede ayudarte. Dr. David Lazo, mayor experiencia en EBUS y cirugía robótica en Chile." />
+  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Dr. David Lazo Pérez — Cirujano Torácico" />
-  <meta property="og:title" content="Dr. David Lazo · Cirugía Torácica · Santiago, Chile" />
-  <meta property="og:description" content="Dr. David Lazo Pérez — Cirujano Torácico. Especialista en cirugía robótica, cáncer pulmonar, broncoscopía intervencionista y trasplante pulmonar. Clínica Las Condes." />
+  <meta property="og:title" content="Cirugía Torácica: ¿Qué hacemos y cómo te podemos ayudar? · Dr. David Lazo" />
+  <meta property="og:description" content="Todo sobre cirugía torácica: enfermedades, técnicas (VATS, RATS, EBUS) y cómo puede ayudarte el Dr. David Lazo. Clínica Las Condes." />
   <meta property="og:url" content="https://cirugiatoracica.cl/" />
-  <meta property="og:image" content="https://cirugiatoracica.cl/imgs/foto-dr-lazo.jpg" />
+  <meta property="og:image" content="https://cirugiatoracica.cl/imgs/hero-pabellon3.jpg" />
   <meta property="og:locale" content="es_CL" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,276 +76,189 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:      #0c1526;
-      --teal-deep: #0c4a6e;
-      --teal:      #0891b2;
-      --teal-dark: #0e7490;
-      --teal-lt:   #22d3ee;
-      --teal-pale: #ecfeff;
-      --teal-mid:  #cffafe;
-      --bg:        #ffffff;
-      --bg-alt:    #f4f8fb;
-      --text:      #1a2b3c;
-      --slate:     #3a5068;
-      --muted:     #607d93;
-      --border:    #dce8f0;
-      --serif:     'DM Serif Display', serif;
-      --sans:      'Plus Jakarta Sans', system-ui, sans-serif;
+      --navy:      #0c1526; --teal-deep:#0c4a6e;
+      --teal:      #0891b2; --teal-dark:#0e7490;
+      --teal-lt:   #22d3ee; --teal-pale:#ecfeff; --teal-mid:#cffafe;
+      --bg:        #ffffff; --bg-alt:#f4f8fb;
+      --text:      #1a2b3c; --slate:#3a5068; --muted:#607d93; --border:#dce8f0;
+      --serif:     'DM Serif Display', serif; --sans:'Plus Jakarta Sans', system-ui, sans-serif;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+    body { font-family: var(--sans); background: #2e5068; color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+
+    /* TOPBAR */
+    .topbar { background: var(--navy); padding: 0.42rem 2.5rem; display: flex; justify-content: flex-end; gap: 1.25rem; flex-wrap: wrap; }
+    .topbar a { font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
+    .topbar a:hover { color: rgba(255,255,255,0.8); }
+    .topbar span { color: rgba(255,255,255,0.15); }
 
     /* NAV */
     nav {
-      position: fixed; top: 0; width: 100%; z-index: 500;
-      height: 66px; padding: 0 2.5rem;
-      background: rgba(12,21,38,0.92); backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position: sticky; top: 0; z-index: 500; height: 66px; padding: 0 2.5rem;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
-      transition: background 0.4s;
+      box-shadow: 0 1px 0 var(--border);
     }
-    nav.light {
-      background: rgba(255,255,255,0.96);
-      border-bottom-color: var(--border);
-      box-shadow: 0 2px 24px rgba(12,21,38,0.08);
-    }
-    .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: #fff; text-decoration: none; transition: color 0.3s; letter-spacing: 0.01em; }
-    .nav-logo span { color: var(--teal-lt); transition: color 0.3s; }
-    nav.light .nav-logo { color: var(--navy); }
-    nav.light .nav-logo span { color: var(--teal); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { font-size: 0.83rem; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: #fff; }
-    nav.light .nav-links a { color: var(--slate); }
-    nav.light .nav-links a:hover { color: var(--teal); }
-    .nav-cta { background: var(--teal); color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.83rem; font-weight: 700; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-    .nav-cta:hover { background: var(--teal-dark) !important; transform: translateY(-1px); }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 0.6rem; }
+    .nav-logo-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--teal-deep); display: flex; align-items: center; justify-content: center; }
+    .nav-logo-mark svg { width: 16px; height: 16px; }
+    .nav-logo-text { font-size: 0.88rem; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; }
+    .nav-logo-text span { color: var(--teal); }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { font-size: 0.83rem; font-weight: 500; color: var(--slate); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { background: var(--teal); color: #fff; text-decoration: none; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.83rem; font-weight: 700; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--teal-dark); }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end;
-      position: relative; overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image: url('imgs/hero-dr-lazo.jpg');
-      background-color: #0c1526;
-      background-size: 80% auto; background-position: right 60%;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(12,21,38,0.95) 0%, rgba(12,21,38,0.88) 35%, rgba(12,21,38,0.45) 60%, rgba(12,21,38,0.15) 100%);
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 1140px; width: 100%; margin: 0 auto;
-      padding: 9rem 2.5rem 0;
-    }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(34,211,238,0.12); border: 1px solid rgba(34,211,238,0.25);
-      border-radius: 100px; padding: 0.35rem 1rem;
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--teal-lt); margin-bottom: 1.75rem;
-    }
-    .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-lt); animation: blink 2.5s infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-    .hero-h1 {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 6vw, 5rem);
-      line-height: 1.08; letter-spacing: -0.025em;
-      color: #fff; margin-bottom: 1.25rem; max-width: 680px;
-    }
-    .hero-h1 em { color: var(--teal-lt); font-style: italic; }
-    .hero-sub {
-      font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.68);
-      max-width: 520px; margin-bottom: 2.5rem;
-    }
-    .hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 4rem; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--teal); color: #fff; text-decoration: none;
-      padding: 0.85rem 1.75rem; border-radius: 8px;
-      font-size: 0.9rem; font-weight: 700;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    }
-    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 8px 28px rgba(8,145,178,0.4); }
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(255,255,255,0.1); color: #fff; text-decoration: none;
-      padding: 0.85rem 1.75rem; border-radius: 8px;
-      font-size: 0.9rem; font-weight: 600;
-      border: 1.5px solid rgba(255,255,255,0.28); transition: background 0.2s;
-    }
-    .btn-ghost:hover { background: rgba(255,255,255,0.18); }
+    /* BREADCRUMB */
+    .breadcrumb { background: #3a6078; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 0.6rem 2.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+    .breadcrumb a { color: var(--teal-lt); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 0.4rem; color: rgba(255,255,255,0.2); }
 
-    /* Stats bar */
-    .statsbar {
-      position: relative; z-index: 2;
-      background: rgba(12,21,38,0.82); backdrop-filter: blur(16px);
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding: 1.5rem 2.5rem;
-      display: grid; grid-template-columns: repeat(4,1fr);
+    /* ARTICLE HERO */
+    .article-hero { background: linear-gradient(160deg, rgba(26,48,72,0.88) 0%, rgba(26,82,122,0.80) 60%, rgba(30,100,144,0.75) 100%), url('imgs/hero-pabellon3.jpg') center/cover no-repeat; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 3.5rem 2.5rem; }
+    .article-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
+    .article-category {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(34,211,238,0.12); color: var(--teal-lt);
+      border: 1px solid rgba(34,211,238,0.25);
+      padding: 0.25rem 0.85rem; border-radius: 100px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 1rem;
     }
-    .stat { text-align: center; padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.07); }
-    .stat:last-child { border-right: none; }
-    .stat-n { font-family: var(--serif); font-size: 2.1rem; color: var(--teal-lt); line-height: 1; margin-bottom: 0.25rem; }
-    .stat-l { font-size: 0.7rem; color: rgba(255,255,255,0.42); line-height: 1.45; }
+    .article-hero h1 {
+      font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.18; letter-spacing: -0.025em; color: #fff;
+      margin-bottom: 1rem;
+    }
+    .article-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .meta-author { display: flex; align-items: center; gap: 0.6rem; }
+    .meta-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--teal-pale); border: 1px solid var(--teal-mid); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; color: var(--teal-dark); }
+    .meta-name { font-size: 0.85rem; font-weight: 700; color: #fff; }
+    .meta-role { font-size: 0.73rem; color: var(--muted); }
+    .meta-sep { width: 1px; height: 24px; background: rgba(255,255,255,0.15); }
+    .meta-info { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+    .hero-cta-group { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--teal); color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 0.88rem; font-weight: 700; transition: background 0.2s, transform 0.15s; }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--teal); text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 0.88rem; font-weight: 600; border: 1.5px solid var(--teal); transition: background 0.2s; }
+    .btn-outline:hover { background: var(--teal-pale); }
 
-    /* SECTIONS */
-    .section { padding: 6rem 2.5rem; }
-    .section-alt { background: var(--bg-alt); }
-    .section-dark { background: var(--navy); }
-    .inner { max-width: 1100px; margin: 0 auto; }
-    .eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
-    .eyebrow-w { color: var(--teal-lt); }
-    h2 { font-family: var(--serif); font-size: clamp(2rem, 3.2vw, 2.8rem); line-height: 1.18; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 1rem; }
-    h2.w { color: #fff; }
-    .lead { font-size: 1rem; line-height: 1.78; color: var(--slate); max-width: 620px; margin-bottom: 3rem; }
-    .lead.w { color: rgba(255,255,255,0.58); }
+    /* Contact card */
+    .contact-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(12,21,38,0.06); }
+    .contact-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+    .contact-card > p { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.25rem; }
+    .contact-row { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+    .contact-row:last-of-type { border-bottom: none; }
+    .contact-icon { font-size: 1.1rem; flex-shrink: 0; }
+    .contact-label { font-size: 0.7rem; color: var(--muted); display: block; }
+    .contact-value { font-weight: 600; color: var(--text); }
+    .contact-value a { color: var(--teal); text-decoration: none; }
+    .trust-row { margin-top: 1rem; padding: 0.85rem; background: var(--teal-pale); border-radius: 8px; border: 1px solid var(--teal-mid); font-size: 0.76rem; color: var(--teal-dark); line-height: 1.7; }
 
-    /* SPECIALTIES GRID */
-    .esp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
-    .esp-card {
-      background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;
-      text-decoration: none; color: inherit; display: flex; flex-direction: column;
-      position: relative; overflow: hidden; transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-    }
-    .esp-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      background: var(--teal); transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
-    }
-    .esp-card:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(8,145,178,0.1); }
-    .esp-card:hover::after { transform: scaleX(1); }
-    .esp-domain { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
-    .esp-card h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
-    .esp-card p { font-size: 0.83rem; line-height: 1.65; color: var(--muted); flex: 1; }
-    .esp-arrow { margin-top: 1.25rem; font-size: 0.8rem; font-weight: 700; color: var(--teal); transition: gap 0.2s; display: inline-flex; align-items: center; gap: 0.3rem; }
-    .esp-card:hover .esp-arrow { gap: 0.55rem; }
+    /* MAIN LAYOUT */
+    .main-wrap { max-width: 1080px; margin: 0 auto; padding: 3rem 2.5rem; display: grid; grid-template-columns: 1fr; gap: 3.5rem; align-items: start; }
+    .article-content { background: #fff; border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 32px rgba(0,0,0,0.18); }
+    .article-content { min-width: 0; }
 
-    /* ABOUT / BIO */
-    .about-grid { display: grid; grid-template-columns: 1fr 400px; gap: 5rem; align-items: start; }
-    .about-text p { font-size: 0.93rem; line-height: 1.82; color: var(--slate); margin-bottom: 1.25rem; text-wrap: pretty; }
-    .about-text p strong { color: var(--text); font-weight: 700; }
-    .credentials-box {
-      background: var(--bg-alt); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem;
-      position: sticky; top: 88px;
-    }
-    .credentials-box h4 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.25rem; }
-    .cred-item { display: flex; gap: 0.85rem; align-items: flex-start; padding: 0.7rem 0; border-bottom: 1px solid var(--border); }
-    .cred-item:last-child { border-bottom: none; }
-    .cred-dot { flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); margin-top: 0.45rem; }
-    .cred-text { font-size: 0.82rem; line-height: 1.55; color: var(--muted); }
-    .cred-text strong { color: var(--text); font-weight: 600; }
+    /* ARTICLE TYPOGRAPHY */
+    .article-content h2 { font-family: var(--serif); font-size: 1.7rem; color: var(--navy); margin: 2.5rem 0 0.85rem; line-height: 1.2; letter-spacing: -0.02em; padding-left: 1rem; border-left: 3px solid var(--teal); }
+    .article-content h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin: 1.75rem 0 0.5rem; }
+    .article-content p { color: var(--slate); font-size: 0.95rem; line-height: 1.82; margin-bottom: 1rem; text-wrap: pretty; }
+    .article-content a { color: var(--teal); text-decoration: underline; }
+    .article-content ul, .article-content ol { margin: 0.75rem 0 1rem 1.5rem; color: var(--slate); font-size: 0.93rem; line-height: 1.8; }
+    .article-content li { margin-bottom: 0.3rem; }
+    .article-content strong { color: var(--text); font-weight: 700; }
 
-    /* AUDIENCE CARDS */
-    .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .aud-card {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px; padding: 2.25rem;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .aud-card:hover { border-color: rgba(8,145,178,0.4); background: rgba(8,145,178,0.05); }
-    .aud-icon {
-      width: 48px; height: 48px; border-radius: 12px;
-      background: rgba(8,145,178,0.15); border: 1px solid rgba(8,145,178,0.25);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.25rem; color: var(--teal-lt);
-    }
-    .aud-icon svg { width: 24px; height: 24px; }
-    .aud-card h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
-    .aud-card p { font-size: 0.85rem; line-height: 1.65; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; }
-    .aud-links { display: flex; flex-direction: column; gap: 0.5rem; }
-    .aud-link {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.6rem 0.9rem; border-radius: 8px;
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
-      text-decoration: none; color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 500;
-      transition: background 0.15s, border-color 0.15s;
-    }
-    .aud-link:hover { background: rgba(8,145,178,0.12); border-color: rgba(8,145,178,0.3); }
-    .aud-link-arrow { color: rgba(255,255,255,0.3); font-size: 0.8rem; }
+    /* HIGHLIGHT BOX */
+    .highlight-box { background: var(--teal-pale); border-left: 4px solid var(--teal); border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .highlight-box p { margin: 0; color: var(--teal-dark); font-size: 0.92rem; }
 
-    /* TECH CHIPS */
-    .tech-banner {
-      background: linear-gradient(135deg, rgba(8,145,178,0.12), rgba(34,211,238,0.06));
-      border: 1px solid rgba(8,145,178,0.2); border-radius: 16px; padding: 2.25rem;
-      display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
-      margin-top: 3rem;
-    }
-    .tech-banner-text h3 { font-family: var(--serif); font-size: 1.5rem; color: var(--navy); margin-bottom: 0.4rem; }
-    .tech-banner-text p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; max-width: 520px; }
-    .tech-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
-    .tech-chip { background: var(--teal-pale); border: 1px solid var(--teal-mid); color: var(--teal-dark); padding: 0.3rem 0.8rem; border-radius: 100px; font-size: 0.77rem; font-weight: 600; }
+    /* STATS STRIP */
+    .stats-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin: 1.75rem 0; background: var(--navy); border-radius: 14px; padding: 1.5rem; }
+    .stat-block { text-align: center; }
+    .stat-num { font-family: var(--serif); font-size: 1.8rem; color: var(--teal-lt); line-height: 1; }
+    .stat-lbl { font-size: 0.7rem; color: rgba(255,255,255,0.42); margin-top: 0.3rem; line-height: 1.4; }
 
-    /* CONTACT */
-    .contact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
-    .contact-card {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px; padding: 1.75rem;
-      transition: background 0.2s;
-    }
-    .contact-card:hover { background: rgba(255,255,255,0.08); }
-    .contact-card h3 { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
-    .contact-card p { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 1.25rem; }
-    .contact-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 0.83rem; }
-    .contact-item:last-child { border-bottom: none; }
-    .contact-item-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.3); display: block; }
-    .contact-item-val { display: block; color: rgba(255,255,255,0.8); font-weight: 600; margin-top: 0.1rem; }
-    .contact-link { color: var(--teal-lt); text-decoration: none; font-weight: 600; font-size: 0.84rem; transition: color 0.2s; }
-    .contact-link:hover { color: #fff; }
-    .rrss-list { display: flex; flex-direction: column; gap: 0.5rem; }
-    .rrss-item {
-      display: flex; align-items: center; gap: 0.85rem;
-      padding: 0.65rem 0.9rem; border-radius: 8px;
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
-      text-decoration: none; color: rgba(255,255,255,0.75); font-size: 0.83rem; font-weight: 500;
-      transition: background 0.15s;
-    }
-    .rrss-item:hover { background: rgba(8,145,178,0.12); }
-    .rrss-item svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--teal-lt); }
+    /* PATHOLOGY GRID */
+    .pathology-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .path-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+    .path-card--wide { grid-column: 1 / -1; }
+    .path-title { font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 0.65rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .path-card ul { margin: 0 0 0 1.1rem; }
+    .path-card li { font-size: 0.83rem; color: var(--slate); margin-bottom: 0.3rem; line-height: 1.5; }
+    .path-two-col { columns: 2; column-gap: 1.5rem; }
+
+    /* INLINE CTA */
+    .inline-cta { background: linear-gradient(135deg, var(--teal-deep), var(--teal-dark)); border-radius: 14px; padding: 2rem; color: #fff; margin: 2rem 0; }
+    .inline-cta h3 { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .inline-cta p { font-size: 0.88rem; color: rgba(255,255,255,0.7); margin-bottom: 1.25rem; line-height: 1.65; }
+    .checks { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .checks span { font-size: 0.83rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 0.5rem; }
+    .checks span::before { content: '✓'; font-weight: 700; color: var(--teal-lt); flex-shrink: 0; }
+    .btn-white { display: inline-block; background: #fff; color: var(--teal-deep); padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.88rem; }
+    .btn-white:hover { opacity: 0.92; }
+
+    /* SIDEBAR */
+    .sidebar { position: sticky; top: 88px; }
+    .toc { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; margin-bottom: 1.5rem; }
+    .toc h4 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .toc ol { list-style: none; counter-reset: toc; }
+    .toc li { counter-increment: toc; margin-bottom: 0.5rem; }
+    .toc li a { display: flex; gap: 0.6rem; text-decoration: none; color: var(--slate); font-size: 0.82rem; line-height: 1.4; transition: color 0.15s; }
+    .toc li a::before { content: counter(toc) "."; color: var(--teal); font-weight: 700; font-size: 0.78rem; min-width: 16px; flex-shrink: 0; }
+    .toc li a:hover { color: var(--teal); }
+    .sidebar-contact { background: var(--navy); border-radius: 14px; padding: 1.5rem; }
+    .sidebar-contact h4 { font-size: 0.88rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+    .sidebar-contact p { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; line-height: 1.5; }
+    .trust-checks { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .trust-checks span { font-size: 0.76rem; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 0.4rem; }
+    .trust-checks span::before { content: '✓'; color: var(--teal-lt); font-weight: 700; flex-shrink: 0; }
+    .btn-sidebar { display: block; text-align: center; background: var(--teal); color: #fff; padding: 0.65rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.875rem; margin-bottom: 0.6rem; transition: background 0.2s; }
+    .btn-sidebar:hover { background: var(--teal-dark); }
+    .btn-sidebar-outline { display: block; text-align: center; background: transparent; color: rgba(255,255,255,0.6); padding: 0.6rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.83rem; border: 1px solid rgba(255,255,255,0.15); }
+    .btn-sidebar-outline:hover { background: rgba(255,255,255,0.07); }
+
+    /* CTA BOTTOM */
+    .cta-bottom { background: var(--navy); padding: 5rem 2.5rem; }
+    .cta-bottom-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 360px; gap: 3rem; align-items: start; }
+    .cta-bottom h2 { font-family: var(--serif); font-size: 2rem; color: #fff; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+    .cta-bottom > div > p { color: rgba(255,255,255,0.55); font-size: 0.93rem; line-height: 1.75; margin-bottom: 1.5rem; }
+    .footer-checks { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.75rem; }
+    .footer-checks span { font-size: 0.85rem; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 0.6rem; }
+    .footer-checks span::before { content: '✓'; color: var(--teal-lt); font-weight: 700; flex-shrink: 0; }
+    .footer-contact-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 1.75rem; }
+    .footer-contact-card h3 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 1.25rem; }
+    .fc-row { display: flex; gap: 0.85rem; align-items: center; padding: 0.65rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 0.85rem; }
+    .fc-row:last-child { border-bottom: none; }
+    .fc-icon { font-size: 1.1rem; width: 22px; text-align: center; }
+    .fc-label { font-size: 0.7rem; color: rgba(255,255,255,0.38); display: block; }
+    .fc-value { color: rgba(255,255,255,0.82); font-weight: 600; }
+    .fc-value a { color: var(--teal-lt); text-decoration: none; }
 
     /* FOOTER */
-    footer { background: var(--navy); padding: 2.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.06); }
-    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.32); }
+    footer { background: #060a12; border-top: 1px solid rgba(255,255,255,0.05); padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.28); }
     .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.28); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--teal-lt); }
 
     /* RESPONSIVE */
-    @media (max-width: 960px) {
-      .about-grid, .audience-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .esp-grid { grid-template-columns: 1fr 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .statsbar { grid-template-columns: 1fr 1fr; gap: 1rem; }
-      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 1rem; }
-      .stat:last-child { border-bottom: none; }
+    @media (max-width: 900px) {
+      .article-hero-inner, .main-wrap, .cta-bottom-inner { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .contact-card { display: none; }
+      .stats-strip { grid-template-columns: 1fr 1fr; }
+      .pathology-grid { grid-template-columns: 1fr; }
+      .path-two-col { columns: 1; }
     }
     @media (max-width: 640px) {
-      nav { padding: 0 1.25rem; }
+      nav, .topbar, .breadcrumb, .article-hero, .main-wrap, .cta-bottom { padding-left: 1.25rem; padding-right: 1.25rem; }
       .nav-links { display: none; }
-      .section { padding: 4rem 1.25rem; }
-      .hero-content { padding: 7rem 1.25rem 0; }
-      .statsbar { padding: 1.25rem; }
-      .esp-grid { grid-template-columns: 1fr; }
+      .stats-strip { grid-template-columns: 1fr 1fr; }
     }
-  
-    /* ── BIO DR. LAZO (shared) ── */
-    .bio-wrap { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; align-items: start; }
-    .bio-photo { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(12,21,38,0.2); }
-    .bio-photo img { width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; object-position: center 10%; }
-    .bio-name { font-family: var(--serif,'DM Serif Display',serif); font-size: 2.2rem; color: var(--navy,#0c1526); letter-spacing: -0.02em; margin-bottom: 0.3rem; }
-    .bio-role { font-size: 0.95rem; font-weight: 600; color: var(--teal-dark,#0e7490); margin-bottom: 1rem; }
-    .bio-insts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .bio-inst { font-size: 0.78rem; font-weight: 600; color: var(--slate,#3a5068); padding: 0.3rem 0.85rem; border-radius: 6px; background: var(--bg-alt,#f4f8fb); border: 1px solid var(--border,#dce8f0); }
-    .bio-text { font-size: 0.93rem; line-height: 1.8; color: var(--slate,#3a5068); margin-bottom: 1.5rem; max-width: 580px; text-wrap: pretty; }
-    .bio-creds { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.85rem; }
-    .bio-cred { background: var(--bg-alt,#f4f8fb); border: 1px solid var(--border,#dce8f0); border-radius: 10px; padding: 1rem; text-align: center; }
-    .bio-cred-n { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: var(--teal,#0891b2); }
-    .bio-cred-l { font-size: 0.7rem; color: var(--muted,#607d93); margin-top: 0.15rem; line-height: 1.3; }
-    .bio-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal,#0891b2); margin-bottom: 0.75rem; }
-    @media (max-width: 960px) { .bio-wrap { grid-template-columns: 1fr; gap: 2.5rem; } .bio-creds { grid-template-columns: repeat(3,1fr); } }
-
   
     /* ══ CTA CONTACTO UNIFICADO ══ */
     .cta-unified {
@@ -368,247 +281,352 @@
     .cta-unified .ccontact-val { display:block; font-size:0.82rem; font-weight:600; color:rgba(255,255,255,0.85); margin-top:0.1rem; }
     @media (max-width: 768px) { .cta-unified .cta-contact-grid { grid-template-columns:1fr; } }
 
+    /* PROC TABLE */
+    .proc-table-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 1.5rem; }
+    .proc-col { display: flex; flex-direction: column; }
+    .proc-col:first-child { border-right: 1px solid var(--border); }
+    .proc-group { display: flex; flex-direction: column; }
+    .proc-group-header { background: var(--navy); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 0.55rem 1rem; letter-spacing: 0.01em; }
+    .proc-row { font-size: 0.82rem; color: var(--slate); padding: 0.45rem 1rem; border-bottom: 1px solid var(--border); }
+    .proc-row:last-child { border-bottom: none; }
+    .proc-group:not(:last-child) .proc-row:last-child { border-bottom: 1px solid var(--border); }
+    .proc-row:nth-child(odd) { background: var(--bg-alt); }
+    .proc-row:nth-child(even) { background: var(--bg); }
+    @media (max-width: 700px) { .proc-table-grid { grid-template-columns: 1fr; } .proc-col:first-child { border-right: none; border-bottom: 1px solid var(--border); } }
+
+    /* APPROACH GRID */
+    .approach-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.25rem; margin-top: 1.5rem; }
+    .approach-card { display: flex; flex-direction: column; gap: 0.6rem; background: var(--navy); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.75rem 1.5rem; text-decoration: none; color: #fff; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
+    .approach-card:hover { background: var(--navy2); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(8,145,178,0.15); }
+    .approach-icon { font-size: 1.75rem; }
+    .approach-card h3 { font-size: 0.92rem; font-weight: 700; color: #fff; }
+    .approach-card p { font-size: 0.8rem; line-height: 1.65; color: rgba(255,255,255,0.55); flex: 1; }
+    .approach-link { font-size: 0.75rem; font-weight: 700; color: var(--teal-lt); letter-spacing: 0.02em; margin-top: auto; }
+    @media (max-width: 560px) { .approach-grid { grid-template-columns: 1fr; } }
+
       .authority-bio { font-size: 0.75rem; color: rgba(255,255,255,0.28); margin-top: 0.75rem; max-width: 680px; line-height: 1.5; }
   </style>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Quién es el mejor cirujano torácico en Santiago de Chile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez es uno de los cirujanos torácicos con mayor trayectoria en Chile. Atiende en Clínica Las Condes, Santiago. Cuenta con más de 3.200 procedimientos de EBUS desde 2010 y fue pionero en cirugía robótica torácica RATS en Latinoamérica desde 2015."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Dónde puedo operarme del pulmón en Chile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez realiza cirugía pulmonar en Clínica Las Condes, Santiago de Chile, utilizando técnicas mínimamente invasivas como VATS y cirugía robótica RATS. Para agendar una evaluación puede contactar directamente a Clínica Las Condes o visitar cirugiatoracica.cl."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Quién hace cirugía robótica torácica en Chile?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez es pionero en cirugía robótica torácica RATS en Latinoamérica, realizando estos procedimientos desde 2015 en Clínica Las Condes, Santiago de Chile. Más información en rats.cl."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Dónde hacen EBUS en Santiago?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez realiza EBUS y CryoEBUS en Clínica Las Condes, Santiago. Es el especialista con mayor volumen de procedimientos de broncoscopía intervencionista en Chile, con más de 3.200 EBUS desde 2010. Más información en broncoscopia.cl."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo agendar una consulta con un cirujano torácico en Clínica Las Condes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Para agendar una consulta con el Dr. David Lazo Pérez en Clínica Las Condes puede llamar al central de horas de Clínica Las Condes o visitar cirugiatoracica.cl. También ofrece atención mediante telemedicina."
-      }
-    }
-  ]
-}
-  </script>
 </head>
 <body>
 
-  <!-- NAV -->
   <header>
-    <nav id="main-nav">
-      <a class="nav-logo" href="#inicio"><span>Dr.</span> David Lazo · Cirugía Torácica</a>
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <a href="https://rats.cl">Robótica</a>
+      <span>·</span>
+      <a href="https://cancerpulmonar.cl">Cáncer Pulmonar</a>
+      <span>·</span>
+      <a href="https://broncoscopia.cl">Broncoscopía</a>
+      <span>·</span>
+      <a href="https://vats.cl">VATS</a>
+      <span>·</span>
+      <a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+      <a class="nav-logo" href="index.html">
+        <div class="nav-logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <span class="nav-logo-text">CirugiaToracica.cl</span>
+      </a>
       <ul class="nav-links">
-        <li><a href="#especialidades">Especialidades</a></li>
-        <li><a href="#sobre">Sobre mí</a></li>
+        <li><a href="#que-es">Qué es</a></li>
+        <li><a href="#como-puedo-ayudarte">Enfermedades</a></li>
+        <li><a href="#tecnicas">Técnicas</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#contacto" class="nav-cta">Reservar hora →</a></li>
       </ul>
+      <a href="#contacto" class="nav-cta">Agenda tu consulta →</a>
     </nav>
   </header>
 
   <main id="main-content">
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-dot"></div>
-        Cirugía Torácica · Santiago, Chile
-      </div>
-      <h1 class="hero-h1">Referente en<br><em>Cirugía Torácica</em><br>en Latinoamérica</h1>
-      <p class="hero-sub">
-        19 años de experiencia en cirugía oncológica torácica, robótica, broncoscopía intervencionista y trasplante pulmonar. Atención en Clínica Las Condes y Hospital Clínico San Borja Arriarán.
-      </p>
-      <div class="hero-btns">
-        <a href="#contacto" class="btn-primary">Solicitar consulta →</a>
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Cirugía Torácica</a>
+    <span>›</span>
+    <span>¿Qué hacemos y cómo te podemos ayudar?</span>
+  </div>
 
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <div>
+        <div class="article-category">Cirugía Torácica</div>
+        <h1>Cirugía Torácica: ¿Qué hacemos y cómo te podemos ayudar?</h1>
+        <div class="article-meta">
+          <div class="meta-author">
+            <div class="meta-avatar">DL</div>
+            <div>
+              <div class="meta-name">Dr. David Lazo</div>
+              <div class="meta-role">Cirujano Torácico · Santiago, Chile</div>
+            </div>
+          </div>
+          <div class="meta-sep"></div>
+          <span class="meta-info">Actualizado: mayo 2026</span>
+          <div class="meta-sep"></div>
+          <span class="meta-info">⏱ 7 min de lectura</span>
+        </div>
+        <div class="hero-cta-group">
+          <a class="btn-primary" href="#contacto">Agenda tu consulta →</a>
+          <a class="btn-outline" href="#como-puedo-ayudarte">Ver condiciones que tratamos</a>
+        </div>
       </div>
-    </div>
-    <div class="statsbar">
-      <div class="stat"><div class="stat-n">+5.700</div><div class="stat-l">cirugías torácicas realizadas</div></div>
-      <div class="stat"><div class="stat-n">+3.200</div><div class="stat-l">EBUS · nº 1 en Chile desde 2010</div></div>
-      <div class="stat"><div class="stat-n">+200</div><div class="stat-l">RATS robóticas · nº 1 Chile desde 2015</div></div>
-      <div class="stat"><div class="stat-n">19</div><div class="stat-l">años de experiencia desde 2007</div></div>
-    </div>
-  </section>
-
-  <!-- ESPECIALIDADES -->
-  <section class="section" id="especialidades">
-    <div class="inner">
-      <p class="eyebrow">Áreas de especialización</p>
-      <h2>Cirugía Torácica de Vanguardia</h2>
-      <p class="lead">Cobertura completa en patología torácica con tecnología de última generación disponible en Chile.</p>
-      <div class="esp-grid">
-        <a href="https://rats.cl" class="esp-card">
-          <p class="esp-domain">rats.cl</p>
-          <h3>Cirugía Robótica Torácica</h3>
-          <p>Lobectomías, segmentectomías y timectomías con sistema Da Vinci. Máxima precisión, mínima invasión, recuperación acelerada.</p>
-          <span class="esp-arrow">Visitar rats.cl →</span>
-        </a>
-        <a href="https://cancerpulmonar.cl" class="esp-card">
-          <p class="esp-domain">cancerpulmonar.cl</p>
-          <h3>Cáncer Pulmonar</h3>
-          <p>Diagnóstico, estadificación y tratamiento quirúrgico del cáncer pulmonar en todas sus etapas resecables. Guía para pacientes y familias.</p>
-          <span class="esp-arrow">Visitar cancerpulmonar.cl →</span>
-        </a>
-        <a href="https://broncoscopia.cl" class="esp-card">
-          <p class="esp-domain">broncoscopia.cl</p>
-          <h3>Broncoscopía Intervencionista</h3>
-          <p>EBUS, CryoEBUS y técnicas avanzadas de diagnóstico endobronquial. Más de 3.200 procedimientos EBUS desde 2010.</p>
-          <span class="esp-arrow">Visitar broncoscopia.cl →</span>
-        </a>
-        <a href="https://vats.cl" class="esp-card">
-          <p class="esp-domain">vats.cl</p>
-          <h3>VATS / Videotoracoscopía</h3>
-          <p>Cirugía torácica mínimamente invasiva para patologías pleurales, pulmonares y mediastínicas sin toracotomía.</p>
-          <span class="esp-arrow">Visitar vats.cl →</span>
-        </a>
-        <a href="https://hiperhidrosis.cl" class="esp-card">
-          <p class="esp-domain">hiperhidrosis.cl</p>
-          <h3>Hiperhidrosis</h3>
-          <p>Simpatectomía torácica por videotoracoscopía. Más de 95% de éxito en el tratamiento definitivo del sudor excesivo de manos y axilas.</p>
-          <span class="esp-arrow">Visitar hiperhidrosis.cl →</span>
-        </a>
-
-      </div>
-      <div class="tech-banner">
-        <div class="tech-banner-text">
-          <h3>Tecnología de última generación</h3>
-          <p>Acceso a las plataformas más avanzadas disponibles en Chile para cirugía torácica mínimamente invasiva y diagnóstico de precisión.</p>
-          <div class="tech-chips">
-            <span class="tech-chip">Da Vinci Robótico</span>
-            <span class="tech-chip">CryoEBUS</span>
-            <span class="tech-chip">Fluoroscopía Aumentada</span>
-            <span class="tech-chip">VATS 4K</span>
-            <span class="tech-chip">Navegación Bronquial</span>
+      <div class="contact-card">
+        <h3>Agenda una consulta</h3>
+        <p>Atención en Clínica Las Condes.</p>
+        <div class="contact-row">
+          <span class="contact-icon">🏥</span>
+          <div>
+            <span class="contact-label">Clínica Las Condes</span>
+            <span class="contact-value"><a href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener">Reservar hora →</a></span>
           </div>
         </div>
-        <a href="#contacto" class="btn-primary" style="white-space:nowrap;flex-shrink:0;">Consultar →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PACIENTES Y MÉDICOS -->
-  <section class="section section-dark">
-    <div class="inner">
-      <p class="eyebrow eyebrow-w">¿Quién busca esta información?</p>
-      <h2 class="w">Recursos para pacientes<br>y para médicos</h2>
-      <p class="lead w" style="margin-bottom:2.5rem;">Información específica según tu perfil — paciente buscando orientación, o médico que necesita derivar a un especialista.</p>
-      <div class="audience-grid">
-        <div class="aud-card">
-          <div class="aud-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <h3>Para pacientes y familias</h3>
-          <p>Información clara sobre patologías torácicas frecuentes, síntomas, diagnóstico y opciones de tratamiento — sin tecnicismos innecesarios.</p>
-          <div class="aud-links">
-            <a class="aud-link" href="https://cancerpulmonar.cl"><span>Cáncer Pulmonar — guía completa</span><span class="aud-link-arrow">→</span></a>
-            <a class="aud-link" href="https://hiperhidrosis.cl"><span>Hiperhidrosis — tratamiento quirúrgico</span><span class="aud-link-arrow">→</span></a>
-            <a class="aud-link" href="https://broncoscopia.cl"><span>Broncoscopía — qué es y cuándo se indica</span><span class="aud-link-arrow">→</span></a>
+        <div class="contact-row">
+          <span class="contact-icon">💻</span>
+          <div>
+            <span class="contact-label">Telemedicina</span>
+            <span class="contact-value"><a href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">Consulta online →</a></span>
           </div>
         </div>
-        <div class="aud-card">
-          <div class="aud-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <h3>Para médicos y referentes</h3>
-          <p>Información técnica sobre procedimientos, indicaciones, plataformas tecnológicas disponibles y criterios de derivación directa.</p>
-          <div class="aud-links">
-            <a class="aud-link" href="https://rats.cl"><span>Cirugía Robótica RATS — indicaciones</span><span class="aud-link-arrow">→</span></a>
-            <a class="aud-link" href="https://vats.cl"><span>VATS / Videotoracoscopía</span><span class="aud-link-arrow">→</span></a>
-            <a class="aud-link" href="https://broncoscopia.cl#medicos"><span>EBUS / CryoEBUS — protocolo derivación</span><span class="aud-link-arrow">→</span></a>
-          </div>
+        <div class="trust-row">
+          ✓ +5.700 cirugías torácicas<br>
+          ✓ #1 en EBUS y RATS en Chile
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE / BIO -->
-  <section class="section section-alt" id="sobre">
-    <div class="inner">
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="eyebrow">Formación y trayectoria</p>
-          <h2 style="margin-bottom:1.5rem;">Dr. David Lazo Pérez</h2>
-          <p>Médico-Cirujano de la <strong>Pontificia Universidad Católica de Chile</strong>, con especialización en Cirugía General y Torácica por la <strong>Universidad de Chile</strong> y formación en Trasplante Pulmonar en el <strong>Hospital Universitario Puerta de Hierro Majadahonda</strong>, Madrid, España.</p>
-          <p>Con <strong>19 años de experiencia</strong> y más de 5.700 cirugías torácicas, es el cirujano con mayor experiencia en <strong>EBUS en Chile</strong> (desde 2010, +3.200 procedimientos) y en <strong>cirugía robótica torácica RATS</strong> (desde 2015, +200 cirugías robóticas).</p>
-          <p><strong>Regente para Chile</strong> de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP). Miembro de American College of Surgeons, IASLC, European Respiratory Society y ISHLT.</p>
-          <p>Activo en formación médica continua, desarrollo de programas quirúrgicos avanzados e innovación tecnológica en cirugía torácica a nivel latinoamericano.</p>
+  <!-- MAIN WRAP -->
+  <div class="main-wrap">
+    <article class="article-content">
+
+      <p>Si tu médico te ha derivado a un cirujano torácico, probablemente te estés preguntando qué significa eso exactamente y qué puedes esperar. Esta guía te explica todo lo que necesitas saber: qué hace un cirujano torácico, qué enfermedades trata y cómo puede ayudarte a recuperarte.</p>
+
+      <div class="stats-strip">
+        <div class="stat-block"><div class="stat-num">+5.700</div><div class="stat-lbl">Cirugías torácicas realizadas</div></div>
+        <div class="stat-block"><div class="stat-num">+3.200</div><div class="stat-lbl">EBUS · #1 Chile</div></div>
+        <div class="stat-block"><div class="stat-num">+200</div><div class="stat-lbl">RATS robóticas · #1 Chile</div></div>
+        <div class="stat-block"><div class="stat-num">19</div><div class="stat-lbl">Años de experiencia</div></div>
+      </div>
+
+      <h2 id="que-es">¿Qué es la Cirugía Torácica?</h2>
+      <img src="imgs/cirugia-ilustracion.png" alt="Ilustración de técnicas de cirugía torácica: VATS, cirugía robótica y procedimientos mínimamente invasivos" style="width:100%;border-radius:10px;margin:1rem 0 1.5rem;display:block;object-fit:cover;max-height:420px;" loading="lazy" />
+      <p>Un <strong>cirujano torácico</strong> es el médico especialista que realiza procedimientos quirúrgicos sobre los órganos contenidos en la cavidad torácica, con excepción del corazón y los grandes vasos. Luego de completar la escuela de medicina y la formación en cirugía general, estos médicos realizan una subespecialización enfocada exclusivamente en la cirugía del tórax.</p>
+      <p>La cavidad torácica contiene órganos vitales: pulmones, esófago, diafragma, pleura y las estructuras de la pared torácica. Cuando estas estructuras desarrollan problemas que no pueden resolverse con medicamentos, el cirujano torácico ofrece la solución quirúrgica.</p>
+
+      <div class="highlight-box">
+        <p>Lo que distingue a los cirujanos torácicos modernos es su dominio tanto de la cirugía tradicional como de las técnicas mínimamente invasivas de vanguardia: videotoracoscopía (VATS), cirugía robótica (RATS) y broncoscopía intervencionista avanzada.</p>
+      </div>
+
+      <h2 id="como-puedo-ayudarte">Enfermedades que tratamos</h2>
+      <p>Tratamos una amplia gama de enfermedades que afectan la función pulmonar y las estructuras del tórax.</p>
+
+      <div class="pathology-grid">
+        <div class="path-card">
+          <div class="path-title">🫁 Patología Pulmonar</div>
+          <ul>
+            <li>Cáncer pulmonar — lobectomía, segmentectomía, neumonectomía</li>
+            <li>Nódulo pulmonar solitario — estudio, biopsia y resección</li>
+            <li>Metástasis pulmonares</li>
+            <li>Enfisema bulloso — bullectomía</li>
+            <li>Quistes pulmonares y absceso complicado</li>
+          </ul>
         </div>
-        <div>
-          <div class="credentials-box">
-            <h4>Formación y cargos</h4>
-            <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>Médico-Cirujano · PUC Chile</strong><br>Esp. Cirugía Torácica · U. de Chile</div></div>
-            <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>Trasplante Pulmonar</strong><br>H. U. Puerta de Hierro Majadahonda, España</div></div>
-            <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>Regente Chile · WABIP</strong><br>Asociación Mundial de Broncología y Neumología Intervencionista</div></div>
-            <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>ACS · IASLC · ERS · ISHLT</strong><br>Sociedades internacionales activas</div></div>
-            <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>Clínica Las Condes</strong><br>Atención privada · Hospital San Borja Arriarán (público)</div></div>
+        <div class="path-card">
+          <div class="path-title">🩺 Patología Pleural</div>
+          <ul>
+            <li>Neumotórax espontáneo primario y secundario</li>
+            <li>Derrame pleural — diagnóstico y pleurodesis</li>
+            <li>Empiema pleural — drenaje y decorticación por VATS</li>
+            <li>Mesotelioma pleural · Biopsia pleural</li>
+          </ul>
+        </div>
+        <div class="path-card">
+          <div class="path-title">🔲 Patología Mediastínica</div>
+          <ul>
+            <li>Timoma — timectomía por VATS o robótica</li>
+            <li>Quistes mediastínicos · Tumores neurogénicos</li>
+            <li>Estadificación ganglionar — mediastinoscopia, EBUS</li>
+          </ul>
+        </div>
+        <div class="path-card">
+          <div class="path-title">🦴 Pared Torácica y Esófago</div>
+          <ul>
+            <li>Pectus excavatum — operación de Nuss</li>
+            <li>Tumores de pared torácica</li>
+            <li>Cáncer de esófago — esofagectomía robótica</li>
+          </ul>
+        </div>
+        <div class="path-card">
+          <div class="path-title">💧 Hiperhidrosis</div>
+          <ul>
+            <li>Hiperhidrosis palmar, axilar y plantar</li>
+            <li>Simpatectomía torácica por VATS</li>
+            <li>Rubor facial patológico (eritrofobia)</li>
+          </ul>
+        </div>
+        <div class="path-card path-card--wide">
+          <div class="path-title">🔬 Broncoscopía Intervencionista</div>
+          <ul class="path-two-col">
+            <li><strong>EBUS:</strong> estadificación y biopsia ganglionar mediastínica</li>
+            <li><strong>CryoEBUS:</strong> biopsia criogénica, pionero en Latinoamérica</li>
+            <li><strong>Broncoscopía rígida:</strong> manejo de obstrucción central y stents</li>
+            <li><strong>Crioterapia endobronquial:</strong> destrucción de tumores endobronquiales</li>
+            <li>Láser y electrocauterio endobronquial</li>
+            <li>Diagnóstico y tratamiento broncoscópico avanzado</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 id="tecnicas">Cirugía Torácica: Procedimientos</h2>
+
+      <div class="proc-table-grid">
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="proc-col">
+          <div class="proc-group">
+            <div class="proc-group-header">Resecciones pulmonares oncológicas</div>
+            <div class="proc-row">Resección en cuña (wedge resection)</div>
+            <div class="proc-row">Segmentectomía anatómica</div>
+            <div class="proc-row">Lobectomía</div>
+            <div class="proc-row">Bilobectomía</div>
+            <div class="proc-row">Neumonectomía</div>
+            <div class="proc-row">Lobectomía con manguito (sleeve lobectomy)</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Resecciones pulmonares no oncológicas</div>
+            <div class="proc-row">Bullectomía / cirugía de reducción de volumen pulmonar (LVRS)</div>
+            <div class="proc-row">Biopsia pulmonar quirúrgica</div>
+            <div class="proc-row">Resección de secuestro pulmonar / MAQ</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Procedimientos pleurales</div>
+            <div class="proc-row">Pleurodesis mecánica/química (talco)</div>
+            <div class="proc-row">Decorticación pleural / Pleurectomía</div>
+            <div class="proc-row">Biopsia pleural</div>
+            <div class="proc-row">Drenaje de empiema/hemotórax retenido</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Procedimientos mediastínicos</div>
+            <div class="proc-row">Timectomía</div>
+            <div class="proc-row">Resección de masas/quistes mediastínicos</div>
+            <div class="proc-row">Disección/estadificación ganglionar mediastínica</div>
+            <div class="proc-row">Biopsia de masas mediastínicas</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Procedimientos esofágicos</div>
+            <div class="proc-row">Tiempo torácico de esofagectomía (Ivor Lewis / McKeown)</div>
+            <div class="proc-row">Enucleación de leiomioma esofágico</div>
+            <div class="proc-row">Diverticulectomía esofágica</div>
           </div>
         </div>
+
+        <!-- COLUMNA DERECHA -->
+        <div class="proc-col">
+          <div class="proc-group">
+            <div class="proc-group-header">Procedimientos diafragmáticos</div>
+            <div class="proc-row">Plicatura diafragmática</div>
+            <div class="proc-row">Reparación de hernia diafragmática</div>
+            <div class="proc-row">Resección/reconstrucción diafragmática</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Trauma y urgencias</div>
+            <div class="proc-row">Drenaje y aseo de hemotórax retenido</div>
+            <div class="proc-row">Manejo de lesiones penetrantes torácicas</div>
+            <div class="proc-row">Manejo del Neumotórax (Espontáneo o Traumático)</div>
+            <div class="proc-row">Estabilización quirúrgica de fracturas costales</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Sistema nervioso simpático</div>
+            <div class="proc-row">Simpatectomía torácica</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Procedimientos pericárdicos</div>
+            <div class="proc-row">Ventana pericárdica</div>
+            <div class="proc-row">Pericardiectomía</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Vía aérea</div>
+            <div class="proc-row">Resección traqueal/bronquial asistida</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Conducto torácico</div>
+            <div class="proc-row">Ligadura del conducto torácico</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Pared torácica</div>
+            <div class="proc-row">Resección de tumores de pared torácica</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Opérculo torácico</div>
+            <div class="proc-row">Resección de primera costilla</div>
+            <div class="proc-row">Escalenectomía / descompresión neurovascular</div>
+          </div>
+          <div class="proc-group">
+            <div class="proc-group-header">Trasplante</div>
+            <div class="proc-row">Trasplante Monopulmonar</div>
+            <div class="proc-row">Trasplante Bipulmonar</div>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="abordajes">Cirugía Torácica: Vías de Abordaje</h2>
+      <div class="approach-grid">
+        <a class="approach-card" href="https://cirugiatoracica.cl" target="_blank" rel="noopener">
+          <div class="approach-icon">🔪</div>
+          <h3>Cirugía Abierta</h3>
+          <p>Toracotomía y esternotomía para casos de alta complejidad. Acceso directo y amplio al tórax.</p>
+          <span class="approach-link">cirugiatoracica.cl →</span>
+        </a>
+        <a class="approach-card" href="https://vats.cl" target="_blank" rel="noopener">
+          <div class="approach-icon">🎥</div>
+          <h3>Videotoracoscopía (VATS)</h3>
+          <p>Cirugía mínimamente invasiva con cámara HD. 1–3 incisiones de 1–2 cm, sin separar costillas.</p>
+          <span class="approach-link">vats.cl →</span>
+        </a>
+        <a class="approach-card" href="https://rats.cl" target="_blank" rel="noopener">
+          <div class="approach-icon">🦾</div>
+          <h3>Cirugía Robótica (RATS)</h3>
+          <p>Sistema Da Vinci: visión 3D amplificada 10×, 7 grados de libertad. El programa más experimentado de Chile.</p>
+          <span class="approach-link">rats.cl →</span>
+        </a>
+        <a class="approach-card" href="https://broncoscopia.cl" target="_blank" rel="noopener">
+          <div class="approach-icon">🔭</div>
+          <h3>Broncoscopía</h3>
+          <p>Diagnóstico e intervención endobronquial sin incisión. EBUS, CryoEBUS, broncoscopía rígida y más.</p>
+          <span class="approach-link">broncoscopia.cl →</span>
+        </a>
+      </div>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+    </aside>
+  </div>
+
+  <!-- BIO DR. LAZO -->
+  <section style="padding:5rem 2.5rem;background:var(--bg-alt);border-top:1px solid var(--border);">
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:3.5rem;align-items:start;">
+      <div style="border-radius:18px;overflow:hidden;box-shadow:0 16px 48px rgba(12,21,38,0.15);">
+        <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico en Clínica Las Condes, Santiago de Chile" style="width:100%;display:block;object-fit:cover;aspect-ratio:3/4;object-position:center 10%;" loading="lazy" />
+      </div>
+      <div>
+        <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem;">Sobre el autor</p>
+        <h2 style="font-family:var(--serif);font-size:2rem;color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.3rem;">Dr. David Lazo Pérez</h2>
+        <p style="font-size:0.9rem;font-weight:600;color:var(--teal-dark);margin-bottom:1rem;">Cirujano Torácico · Clínica Las Condes · H. San Borja Arriarán</p>
+        <p style="font-size:0.9rem;line-height:1.8;color:var(--slate);margin-bottom:1rem;text-wrap:pretty;">Médico-cirujano de la <strong>PUC de Chile</strong>, especialista en Cirugía Torácica por la <strong>Universidad de Chile</strong> y con formación en Trasplante Pulmonar en el <strong>Hospital Puerta de Hierro Majadahonda</strong>, España. Con 19 años de experiencia, es el cirujano con mayor experiencia en EBUS (+3.200) y cirugía robótica torácica RATS (+200) en Chile.</p>
+        <a href="perfil.html" style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--teal);color:#fff;text-decoration:none;padding:0.75rem 1.5rem;border-radius:8px;font-size:0.88rem;font-weight:700;">Ver perfil completo →</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  
-  <!-- DR. LAZO BIO -->
-  <section class="section" id="dr-lazo" style="background:#fff;">
-    <div class="inner" style="max-width:1100px;margin:0 auto;padding:0 2.5rem;">
-      <div class="bio-wrap">
-        <div class="bio-photo">
-          <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico en Clínica Las Condes, Santiago de Chile" loading="lazy" />
-        </div>
-        <div>
-          <p class="bio-eyebrow">Especialista</p>
-          <h2 class="bio-name">Dr. David Lazo Pérez</h2>
-          <p class="bio-role">Cirujano Torácico · Broncoscopía Intervencional</p>
-          <p class="bio-text">
-            Médico-cirujano de la <strong>Pontificia Universidad Católica de Chile</strong>, con especialización en Cirugía Torácica por la <strong>Universidad de Chile</strong> y formación en Trasplante Pulmonar en el <strong>Hospital Universitario Puerta de Hierro Majadahonda</strong>, España.
-          </p>
-          <p class="bio-text">
-            Con 19 años de experiencia, es el cirujano con mayor experiencia en <strong>EBUS en Chile</strong> (desde 2010, +3.200 procedimientos) y pionero en la técnica <strong>CryoEBUS</strong> a nivel latinoamericano. Regente para Chile de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP).
-          </p>
-          <div class="bio-creds">
-            <div class="bio-cred"><div class="bio-cred-n">+5.700</div><div class="bio-cred-l">cirugías torácicas totales</div></div>
-            <div class="bio-cred"><div class="bio-cred-n">+3.200</div><div class="bio-cred-l">procedimientos EBUS desde 2010</div></div>
-            <div class="bio-cred"><div class="bio-cred-n">19</div><div class="bio-cred-l">años de experiencia clínica</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   
   <!-- ─── CTA CONTACTO UNIFICADO ─── -->
   <section class="cta-unified" id="contacto">
@@ -616,7 +634,7 @@
     <h2 class="cta-title">Hable directamente<br>con el especialista</h2>
     <div class="cta-contact-grid">
       <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.5rem;">
-        <img src="imgs/foto-dr-lazo.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en cirugía robótica y broncoscopía intervencionista" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 10%;border:3px solid rgba(255,255,255,0.2);margin:0;" loading="lazy">
+        <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en cirugía robótica y broncoscopía intervencionista" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 10%;border:3px solid rgba(255,255,255,0.2);margin:0;" loading="lazy">
         <div style="text-align:center;">
           <p style="font-size:0.88rem;font-weight:700;color:#fff;margin-bottom:0.2rem;">Dr. David Lazo Pérez</p>
           <p style="font-size:0.75rem;color:rgba(255,255,255,0.55);">Cirujano Torácico</p>
@@ -658,7 +676,7 @@
   </main>
 
   <footer>
-    <p>© 2026 Dr. David Lazo Pérez · Cirujano Torácico · Santiago, Chile</p>
+    <p>© 2026 · Dr. David Lazo Pérez · Cirugía Torácica · Santiago, Chile</p>
     <div class="footer-links">
       <a href="https://rats.cl">rats.cl</a>
       <a href="https://cancerpulmonar.cl">cancerpulmonar.cl</a>
@@ -668,11 +686,5 @@
     </div>
   </footer>
 
-  <script>
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('light', window.scrollY > 80);
-    }, { passive: true });
-  </script>
 </body>
 </html>

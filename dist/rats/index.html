@@ -668,30 +668,6 @@
       nav.classList.toggle('light', window.scrollY > 80);
     }, { passive: true });
   </script>
-<script type="text/babel">
-    function TweaksApp() {
-      const [t, setTweak] = useTweaks({ accent: '#0891b2', fontStyle: 'serif' });
-      const PALETTES = {
-        '#0891b2': { teal:'#0891b2', dark:'#0e7490', deep:'#0c4a6e', lt:'#22d3ee', pale:'#ecfeff', mid:'#cffafe' },
-        '#2563eb': { teal:'#2563eb', dark:'#1d4ed8', deep:'#1e3a8a', lt:'#93c5fd', pale:'#eff6ff', mid:'#bfdbfe' },
-        '#059669': { teal:'#059669', dark:'#047857', deep:'#064e3b', lt:'#6ee7b7', pale:'#ecfdf5', mid:'#a7f3d0' },
-      };
-      React.useEffect(() => {
-        const r = document.documentElement;
-        const c = PALETTES[t.accent] || PALETTES['#0891b2'];
-        r.style.setProperty('--teal', c.teal); r.style.setProperty('--teal-dark', c.dark);
-        r.style.setProperty('--teal-deep', c.deep); r.style.setProperty('--teal-lt', c.lt);
-        r.style.setProperty('--teal-pale', c.pale); r.style.setProperty('--teal-mid', c.mid);
-        r.style.setProperty('--serif', t.fontStyle === 'sans' ? "'Plus Jakarta Sans', system-ui, sans-serif" : "'DM Serif Display', serif");
-      }, [t.accent, t.fontStyle]);
-      return React.createElement(TweaksPanel, null,
-        React.createElement(TweakSection, {label: "Color de acento"}),
-        React.createElement(TweakColor, { label: "Acento", value: t.accent, options: ['#0891b2', '#2563eb', '#059669'], onChange: v => setTweak('accent', v) }),
-        React.createElement(TweakSection, {label: "Tipografía"}),
-        React.createElement(TweakRadio, { label: "Títulos", value: t.fontStyle, options: ['serif', 'sans'], onChange: v => setTweak('fontStyle', v) })
-      );
-    }
-    ReactDOM.createRoot(document.getElementById('tweaks-mount')).render(React.createElement(TweaksApp));
-  </script>
+
 </body>
 </html>

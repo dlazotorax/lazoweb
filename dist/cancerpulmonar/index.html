@@ -389,14 +389,6 @@
       .nav-links li:last-child a { border-bottom: none !important; }
 
       /* ── Topbar & breadcrumb ── */
-      .topbar {
-        flex-wrap: wrap !important;
-        padding: 0.5rem 1rem !important;
-        gap: 0.4rem 0.75rem !important;
-        justify-content: flex-start !important;
-      }
-      .topbar a { font-size: 0.75rem !important; }
-      .topbar span { display: none !important; }
       .topbar, .breadcrumb {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
@@ -428,7 +420,6 @@
       .hero-content { padding: 6rem 1rem 2rem !important; }
       .hero-inner { padding: 6rem 1rem 3rem !important; }
       .hero-h1, .hero h1 { font-size: clamp(2rem, 8vw, 3rem) !important; }
-      .hero p { font-size: 1rem !important; }
       h1 { font-size: clamp(1.9rem, 7.5vw, 3rem) !important; }
       h2 { font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important; }
       .hero-btns, .hero-ctas, .hero-actions, .hero-cta-group {
@@ -519,6 +510,33 @@
       .evidence-strip { grid-template-columns: 1fr 1fr !important; }
       .abl-card-kpis { gap: 1rem !important; flex-wrap: wrap !important; }
       .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; }
+
+      /* ── Bio author grid mobile fix ── */
+      .bio-author-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .bio-author-grid > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        padding-right: 0 !important;
+      }
+
+      /* ── Bio wrap (Sobre el autor) mobile fix ── */
+      .bio-wrap {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+        overflow: hidden !important;
+      }
+      .bio-wrap > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        padding-right: 0 !important;
+      }
+      .bio-name { font-size: 1.8rem !important; }
     }
 
   </style>

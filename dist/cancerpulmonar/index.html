@@ -120,14 +120,10 @@
     .nav-links a:hover { color: var(--teal); }
     .nav-cta { background: var(--teal); color: #fff; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.83rem; font-weight: 700; text-decoration: none; transition: background 0.2s; }
     .nav-cta:hover { background: var(--teal-dark); }
-    .topbar {
-      background: var(--navy); padding: 0.4rem 2.5rem;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
-    }
-    .topbar-left { font-size: 0.7rem; color: rgba(255,255,255,0.35); }
-    .topbar-links { display: flex; gap: 1.25rem; }
-    .topbar-links a { font-size: 0.7rem; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
-    .topbar-links a:hover { color: rgba(255,255,255,0.75); }
+    .topbar { background: var(--navy); padding: 0.42rem 2.5rem; display: flex; justify-content: flex-end; gap: 1.25rem; flex-wrap: wrap; }
+    .topbar a { font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
+    .topbar a:hover { color: rgba(255,255,255,0.8); }
+    .topbar span { color: rgba(255,255,255,0.15); }
 
     /* HERO */
     .hero {
@@ -592,17 +588,18 @@
 </head>
 <body>
 
-  <!-- TOPBAR -->
-  <div class="topbar">
-    <span class="topbar-left">Información para pacientes · Santiago, Chile</span>
-    <div class="topbar-links">
-      <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
+    <!-- TOPBAR -->
+    <div class="topbar">
       <a href="https://rats.cl">Robótica</a>
+      <span>·</span>
+      <a href="https://cancerpulmonar.cl">Cáncer Pulmonar</a>
+      <span>·</span>
       <a href="https://broncoscopia.cl">Broncoscopía</a>
+      <span>·</span>
       <a href="https://vats.cl">VATS</a>
-    <a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
+      <span>·</span>
+      <a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
     </div>
-  </div>
 
   <!-- NAV -->
   <header>

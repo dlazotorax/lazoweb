@@ -95,8 +95,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: var(--sans); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
 
-    /* ── TOPBAR ── */
-    .topbar { background: var(--navy); padding: 0.42rem 2.5rem; display: flex; justify-content: flex-end; align-items: center; gap: 1.25rem; }
+    .topbar { background: var(--navy); padding: 0.42rem 2.5rem; display: flex; justify-content: flex-end; gap: 1.25rem; flex-wrap: wrap; }
     .topbar a { font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
     .topbar a:hover { color: rgba(255,255,255,0.8); }
     .topbar span { color: rgba(255,255,255,0.15); }
@@ -509,6 +508,33 @@
       .evidence-strip { grid-template-columns: 1fr 1fr !important; }
       .abl-card-kpis { gap: 1rem !important; flex-wrap: wrap !important; }
       .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; }
+
+      /* ── Bio author grid mobile fix ── */
+      .bio-author-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .bio-author-grid > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        padding-right: 0 !important;
+      }
+
+      /* ── Bio wrap (Sobre el autor) mobile fix ── */
+      .bio-wrap {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+        overflow: hidden !important;
+      }
+      .bio-wrap > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        padding-right: 0 !important;
+      }
+      .bio-name { font-size: 1.8rem !important; }
     }
 
   </style>
@@ -564,18 +590,18 @@
 </head>
 <body>
 
-  <!-- TOPBAR -->
-  <div class="topbar">
-    <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
-    <span>·</span>
-    <a href="https://cancerpulmonar.cl">Cáncer Pulmonar</a>
-    <span>·</span>
-    <a href="https://broncoscopia.cl">Broncoscopía</a>
-    <span>·</span>
-    <a href="https://vats.cl">VATS</a>
-    <span>·</span>
-    <a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
-  </div>
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <a href="https://rats.cl">Robótica</a>
+      <span>·</span>
+      <a href="https://cancerpulmonar.cl">Cáncer Pulmonar</a>
+      <span>·</span>
+      <a href="https://broncoscopia.cl">Broncoscopía</a>
+      <span>·</span>
+      <a href="https://vats.cl">VATS</a>
+      <span>·</span>
+      <a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
+    </div>
 
   <header>
   <!-- NAV -->

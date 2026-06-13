@@ -389,7 +389,14 @@
       .nav-links li:last-child a { border-bottom: none !important; }
 
       /* ── Topbar & breadcrumb ── */
-      .topbar { display: none !important; }
+      .topbar {
+        flex-wrap: wrap !important;
+        padding: 0.5rem 1rem !important;
+        gap: 0.4rem 0.75rem !important;
+        justify-content: flex-start !important;
+      }
+      .topbar a { font-size: 0.75rem !important; }
+      .topbar span { display: none !important; }
       .topbar, .breadcrumb {
         padding-left: 1rem !important;
         padding-right: 1rem !important;

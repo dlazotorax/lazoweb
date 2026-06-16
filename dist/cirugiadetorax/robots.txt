@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://www.cirugiatoracica.cl/sitemap.xml

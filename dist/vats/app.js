@@ -62,44 +62,4 @@
   document.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
-  /* ============================================================
-     TWEAKS  (host protocol)
-     ============================================================ */
-  var defaults = window.TWEAK_DEFAULTS || {palette:"quirofano", display:"archivo"};
-  var state = Object.assign({}, defaults);
-
-  function apply(){
-    var root = document.documentElement;
-    root.setAttribute('data-palette', state.palette);
-    root.setAttribute('data-display', state.display);
-    // reflect active buttons
-    document.querySelectorAll('#tweaks [data-key]').forEach(function(b){
-      var k=b.getAttribute('data-key'), v=b.getAttribute('data-val');
-      b.classList.toggle('on', state[k]===v);
-    });
-  }
-
-  function setKey(k,v){
-    state[k]=v; apply();
-    try{ window.parent.postMessage({type:'__edit_mode_set_keys', edits:(function(){var o={};o[k]=v;return o;})()}, '*'); }catch(e){}
-  }
-
-  // build panel behaviour
-  var panel = document.getElementById('tweaks');
-  if(panel){
-    panel.querySelectorAll('[data-key]').forEach(function(b){
-      b.addEventListener('click', function(){ setKey(b.getAttribute('data-key'), b.getAttribute('data-val')); });
-    });
-    var closeBtn = panel.querySelector('.tw-close');
-    if(closeBtn) closeBtn.addEventListener('click', function(){ panel.classList.remove('show'); });
-  }
-
-  // host messages — register BEFORE announcing availability
-  window.addEventListener('message', function(ev){
-    var d = ev.data||{};
-    if(d.type==='__activate_edit_mode'){ if(panel) panel.classList.add('show'); }
-    else if(d.type==='__deactivate_edit_mode'){ if(panel) panel.classList.remove('show'); }
-  });
-  apply();
-  try{ window.parent.postMessage({type:'__edit_mode_available'}, '*'); }catch(e){}
 })();

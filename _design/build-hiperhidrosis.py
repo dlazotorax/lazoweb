@@ -499,7 +499,7 @@ def build_sobre():
     <figure class="img-card">
       <img src="/assets/tipos-secundaria.jpg" alt="Hiperhidrosis generalizada o secundaria" width="1920" height="800" loading="lazy">
     </figure>
-    <p>En este tipo, la hipersudoración es consecuencia de otra condición, entre las que se cuentan:</p>
+    <p>En este tipo, la hipersudoración habitualmente no tiene una causa identificable, pero como su nombre lo dice, puede también ser consecuencia de una condición patológica, entre las que se cuentan:</p>
     <ul>
       <li>Infecciones</li>
       <li>Tumores</li>

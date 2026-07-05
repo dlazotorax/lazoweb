@@ -22,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/nav.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://hiperhidrosis.cl/#website","name":"Hiperhidrosis.cl","url":"https://hiperhidrosis.cl/","inLanguage":"es","publisher":{"@id":"https://hiperhidrosis.cl/#org"}},{"@type":"Organization","@id":"https://hiperhidrosis.cl/#org","name":"Hiperhidrosis.cl","url":"https://hiperhidrosis.cl/","logo":{"@type":"ImageObject","url":"https://hiperhidrosis.cl/assets/logo-hd.png"}},{"@type":"Physician","@id":"https://hiperhidrosis.cl/#physician","name":"Dr. David Lazo","image":"https://hiperhidrosis.cl/assets/foto-dr-lazo-bio.jpg","medicalSpecialty":"https://schema.org/Surgical","description":"Cirujano torácico especialista en hiperhidrosis y rubor facial patológico (eritrofobia). Médico-Cirujano de la Pontificia Universidad Católica de Chile, especialista en Cirugía General y Cirugía Torácica de la Universidad de Chile.","affiliation":[{"@type":"MedicalOrganization","name":"Clínica Las Condes"},{"@type":"MedicalOrganization","name":"Hospital Clínico San Borja Arriarán"}],"url":"https://cirugiatoracica.cl","sameAs":["https://cirugiatoracica.cl","https://encuadrado.com/p/david-lazo-perez/","https://www.instagram.com/hiperhidrosis.cl/","https://www.facebook.com/hiperhidrosis.cl/","https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/","https://www.instagram.com/dr.david.lazo.p/","https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago"]},{"@type":"MedicalCondition","@id":"https://hiperhidrosis.cl/#hiperhidrosis","name":"Hiperhidrosis","alternateName":"Sudoración excesiva","description":"Trastorno producido por la sobreestimulación del sistema nervioso simpático que provoca un aumento de la sudoración, especialmente en cara, axilas, manos y pies."},{"@type":"MedicalWebPage","@id":"https://hiperhidrosis.cl/2020/08/30/como-saber-si-tengo-hiperhidrosis#webpage","url":"https://hiperhidrosis.cl/2020/08/30/como-saber-si-tengo-hiperhidrosis","name":"¿Cómo saber si tengo hiperhidrosis? | Hiperhidrosis.cl","description":"¿Sudas más de lo habitual? Aprende a diferenciar la sudoración normal de la hiperhidrosis primaria y secundaria, y qué hacer para diagnosticarla.","inLanguage":"es","isPartOf":{"@id":"https://hiperhidrosis.cl/#website"},"about":{"@id":"https://hiperhidrosis.cl/#hiperhidrosis"},"reviewedBy":{"@id":"https://hiperhidrosis.cl/#physician"}},{"@type":"BlogPosting","@id":"https://hiperhidrosis.cl/2020/08/30/como-saber-si-tengo-hiperhidrosis#article","headline":"¿Cómo saber si tengo hiperhidrosis?","description":"¿Sudas más de lo habitual? Aprende a diferenciar la sudoración normal de la hiperhidrosis primaria y secundaria, y qué hacer para diagnosticarla.","url":"https://hiperhidrosis.cl/2020/08/30/como-saber-si-tengo-hiperhidrosis","inLanguage":"es","image":"https://hiperhidrosis.cl/assets/post-como-saber.jpg","datePublished":"2020-08-30","dateModified":"2020-11-14","author":{"@id":"https://hiperhidrosis.cl/#physician"},"publisher":{"@id":"https://hiperhidrosis.cl/#org"},"mainEntityOfPage":"https://hiperhidrosis.cl/2020/08/30/como-saber-si-tengo-hiperhidrosis","isPartOf":{"@id":"https://hiperhidrosis.cl/blog#blog"}}]}</script>
 </head>
 <body>
@@ -31,14 +32,40 @@
   </a>
   <div class="site-nav__links desk-nav">
     <a href="/sobre-la-hiperhidrosis" class="navlink-d">¿Qué es?</a>
-    <a href="/#tratamientos" class="navlink-d">Tratamientos</a>
+    <div class="nav-drop">
+      <button type="button" class="navlink-d nav-drop__btn" aria-haspopup="true" aria-expanded="false" aria-controls="drop-tratamientos">Tratamientos<span class="nav-drop__caret" aria-hidden="true">▾</span></button>
+      <ul class="nav-drop__menu" id="drop-tratamientos">
+        <li><a href="/hiperhidrosis-localizada-leve">Hiperhidrosis localizada leve</a></li>
+        <li><a href="/hiperhidrosis-localizada-moderada">Hiperhidrosis localizada moderada</a></li>
+        <li><a href="/hiperhidrosis-localizada-severa">Hiperhidrosis localizada severa</a></li>
+        <li><a href="/rubor-facial-patologico">Rubor facial patológico</a></li>
+      </ul>
+    </div>
     <a href="/cirugia-hiperhidrosis" class="navlink-d">Cirugía</a>
-    <a href="/rubor-facial-patologico" class="navlink-d">Rubor facial</a>
     <a href="/test-nivel-de-severidad" class="navlink-d">Test</a>
     <a href="/blog" class="navlink-d">Blog</a>
     <a href="#contacto" class="btn-pill cta-btn">Agendar hora<span class="arrow">→</span></a>
   </div>
+  <button type="button" class="nav-burger" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-nav" id="mobile-nav" hidden>
+  <a href="/sobre-la-hiperhidrosis">¿Qué es?</a>
+  <div class="mnav-drop">
+    <button type="button" class="mnav-drop__btn" aria-haspopup="true" aria-expanded="false" aria-controls="mdrop-tratamientos">Tratamientos<span class="nav-drop__caret" aria-hidden="true">▾</span></button>
+    <ul class="mnav-drop__menu" id="mdrop-tratamientos" hidden>
+        <li><a href="/hiperhidrosis-localizada-leve">Hiperhidrosis localizada leve</a></li>
+        <li><a href="/hiperhidrosis-localizada-moderada">Hiperhidrosis localizada moderada</a></li>
+        <li><a href="/hiperhidrosis-localizada-severa">Hiperhidrosis localizada severa</a></li>
+        <li><a href="/rubor-facial-patologico">Rubor facial patológico</a></li>
+    </ul>
+  </div>
+  <a href="/cirugia-hiperhidrosis">Cirugía</a>
+  <a href="/test-nivel-de-severidad">Test</a>
+  <a href="/blog">Blog</a>
+  <a href="#contacto" class="btn-pill cta-btn mobile-nav__cta">Agendar hora<span class="arrow">→</span></a>
+</div>
 <header class="page-hero">
   <div class="page-hero__inner">
     <span class="eyebrow">Blog · Causas</span>

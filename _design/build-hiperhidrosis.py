@@ -115,26 +115,51 @@ def head(title, desc, path, ogimage="assets/logo-hd.png", ogtype="website", extr
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/nav.js" defer></script>
   {extra_jsonld}
 </head>
 <body>
 """
 
 
-NAV = """<nav class="site-nav">
+TRATAMIENTOS_LINKS = """
+        <li><a href="/hiperhidrosis-localizada-leve">Hiperhidrosis localizada leve</a></li>
+        <li><a href="/hiperhidrosis-localizada-moderada">Hiperhidrosis localizada moderada</a></li>
+        <li><a href="/hiperhidrosis-localizada-severa">Hiperhidrosis localizada severa</a></li>
+        <li><a href="/rubor-facial-patologico">Rubor facial patológico</a></li>"""
+
+NAV = f"""<nav class="site-nav">
   <a href="/" class="site-nav__logo" aria-label="Hiperhidrosis.cl — Inicio">
     <img src="/assets/logo-hd.png" alt="Hiperhidrosis.cl" width="333" height="201">
   </a>
   <div class="site-nav__links desk-nav">
     <a href="/sobre-la-hiperhidrosis" class="navlink-d">¿Qué es?</a>
-    <a href="/#tratamientos" class="navlink-d">Tratamientos</a>
+    <div class="nav-drop">
+      <button type="button" class="navlink-d nav-drop__btn" aria-haspopup="true" aria-expanded="false" aria-controls="drop-tratamientos">Tratamientos<span class="nav-drop__caret" aria-hidden="true">▾</span></button>
+      <ul class="nav-drop__menu" id="drop-tratamientos">{TRATAMIENTOS_LINKS}
+      </ul>
+    </div>
     <a href="/cirugia-hiperhidrosis" class="navlink-d">Cirugía</a>
-    <a href="/rubor-facial-patologico" class="navlink-d">Rubor facial</a>
     <a href="/test-nivel-de-severidad" class="navlink-d">Test</a>
     <a href="/blog" class="navlink-d">Blog</a>
     <a href="#contacto" class="btn-pill cta-btn">Agendar hora<span class="arrow">→</span></a>
   </div>
+  <button type="button" class="nav-burger" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-nav" id="mobile-nav" hidden>
+  <a href="/sobre-la-hiperhidrosis">¿Qué es?</a>
+  <div class="mnav-drop">
+    <button type="button" class="mnav-drop__btn" aria-haspopup="true" aria-expanded="false" aria-controls="mdrop-tratamientos">Tratamientos<span class="nav-drop__caret" aria-hidden="true">▾</span></button>
+    <ul class="mnav-drop__menu" id="mdrop-tratamientos" hidden>{TRATAMIENTOS_LINKS}
+    </ul>
+  </div>
+  <a href="/cirugia-hiperhidrosis">Cirugía</a>
+  <a href="/test-nivel-de-severidad">Test</a>
+  <a href="/blog">Blog</a>
+  <a href="#contacto" class="btn-pill cta-btn mobile-nav__cta">Agendar hora<span class="arrow">→</span></a>
+</div>
 """
 
 LINKEDIN = "https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/"

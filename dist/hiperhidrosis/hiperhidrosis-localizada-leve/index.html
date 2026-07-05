@@ -22,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/nav.js" defer></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://hiperhidrosis.cl/#website","name":"Hiperhidrosis.cl","url":"https://hiperhidrosis.cl/","inLanguage":"es","publisher":{"@id":"https://hiperhidrosis.cl/#org"}},{"@type":"Organization","@id":"https://hiperhidrosis.cl/#org","name":"Hiperhidrosis.cl","url":"https://hiperhidrosis.cl/","logo":{"@type":"ImageObject","url":"https://hiperhidrosis.cl/assets/logo-hd.png"}},{"@type":"Physician","@id":"https://hiperhidrosis.cl/#physician","name":"Dr. David Lazo","image":"https://hiperhidrosis.cl/assets/foto-dr-lazo-bio.jpg","medicalSpecialty":"https://schema.org/Surgical","description":"Cirujano torácico especialista en hiperhidrosis y rubor facial patológico (eritrofobia). Médico-Cirujano de la Pontificia Universidad Católica de Chile, especialista en Cirugía General y Cirugía Torácica de la Universidad de Chile.","affiliation":[{"@type":"MedicalOrganization","name":"Clínica Las Condes"},{"@type":"MedicalOrganization","name":"Hospital Clínico San Borja Arriarán"}],"url":"https://cirugiatoracica.cl","sameAs":["https://cirugiatoracica.cl","https://encuadrado.com/p/david-lazo-perez/","https://www.instagram.com/hiperhidrosis.cl/","https://www.facebook.com/hiperhidrosis.cl/","https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/","https://www.instagram.com/dr.david.lazo.p/","https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago"]},{"@type":"MedicalCondition","@id":"https://hiperhidrosis.cl/#hiperhidrosis","name":"Hiperhidrosis","alternateName":"Sudoración excesiva","description":"Trastorno producido por la sobreestimulación del sistema nervioso simpático que provoca un aumento de la sudoración, especialmente en cara, axilas, manos y pies."},{"@type":"MedicalWebPage","@id":"https://hiperhidrosis.cl/hiperhidrosis-localizada-leve#webpage","url":"https://hiperhidrosis.cl/hiperhidrosis-localizada-leve","name":"Hiperhidrosis localizada leve: antitranspirantes médicos | Hiperhidrosis.cl","description":"Tratamiento de la hiperhidrosis leve: desodorantes y cremas en base a cloruro de aluminio indicados por dermatólogo, con hasta un 98% de efectividad en este grado de severidad.","inLanguage":"es","isPartOf":{"@id":"https://hiperhidrosis.cl/#website"},"about":{"@id":"https://hiperhidrosis.cl/#hiperhidrosis"},"reviewedBy":{"@id":"https://hiperhidrosis.cl/#physician"}},{"@type":"MedicalTherapy","name":"Antitranspirantes médicos (cloruro de aluminio)","description":"Desodorantes y cremas en base a cloruro de aluminio para hiperhidrosis leve; aplicaciones seriadas nocturnas con hasta un 98% de efectividad.","recognizingAuthority":{"@id":"https://hiperhidrosis.cl/#physician"}}]}</script>
 </head>
 <body>
@@ -31,14 +32,40 @@
   </a>
   <div class="site-nav__links desk-nav">
     <a href="/sobre-la-hiperhidrosis" class="navlink-d">¿Qué es?</a>
-    <a href="/#tratamientos" class="navlink-d">Tratamientos</a>
+    <div class="nav-drop">
+      <button type="button" class="navlink-d nav-drop__btn" aria-haspopup="true" aria-expanded="false" aria-controls="drop-tratamientos">Tratamientos<span class="nav-drop__caret" aria-hidden="true">▾</span></button>
+      <ul class="nav-drop__menu" id="drop-tratamientos">
+        <li><a href="/hiperhidrosis-localizada-leve">Hiperhidrosis localizada leve</a></li>
+        <li><a href="/hiperhidrosis-localizada-moderada">Hiperhidrosis localizada moderada</a></li>
+        <li><a href="/hiperhidrosis-localizada-severa">Hiperhidrosis localizada severa</a></li>
+        <li><a href="/rubor-facial-patologico">Rubor facial patológico</a></li>
+      </ul>
+    </div>
     <a href="/cirugia-hiperhidrosis" class="navlink-d">Cirugía</a>
-    <a href="/rubor-facial-patologico" class="navlink-d">Rubor facial</a>
     <a href="/test-nivel-de-severidad" class="navlink-d">Test</a>
     <a href="/blog" class="navlink-d">Blog</a>
     <a href="#contacto" class="btn-pill cta-btn">Agendar hora<span class="arrow">→</span></a>
   </div>
+  <button type="button" class="nav-burger" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-nav" id="mobile-nav" hidden>
+  <a href="/sobre-la-hiperhidrosis">¿Qué es?</a>
+  <div class="mnav-drop">
+    <button type="button" class="mnav-drop__btn" aria-haspopup="true" aria-expanded="false" aria-controls="mdrop-tratamientos">Tratamientos<span class="nav-drop__caret" aria-hidden="true">▾</span></button>
+    <ul class="mnav-drop__menu" id="mdrop-tratamientos" hidden>
+        <li><a href="/hiperhidrosis-localizada-leve">Hiperhidrosis localizada leve</a></li>
+        <li><a href="/hiperhidrosis-localizada-moderada">Hiperhidrosis localizada moderada</a></li>
+        <li><a href="/hiperhidrosis-localizada-severa">Hiperhidrosis localizada severa</a></li>
+        <li><a href="/rubor-facial-patologico">Rubor facial patológico</a></li>
+    </ul>
+  </div>
+  <a href="/cirugia-hiperhidrosis">Cirugía</a>
+  <a href="/test-nivel-de-severidad">Test</a>
+  <a href="/blog">Blog</a>
+  <a href="#contacto" class="btn-pill cta-btn mobile-nav__cta">Agendar hora<span class="arrow">→</span></a>
+</div>
 <header class="page-hero">
   <div class="page-hero__inner">
     <span class="eyebrow">Grados de severidad</span>

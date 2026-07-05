@@ -994,7 +994,7 @@ def build_posts():
         title = f"{p['title']} | Hiperhidrosis.cl"
         img, w, h, alt = p["hero_img"]
         hero = subpage_hero("Blog · " + p["cat"], p["title"],
-                            meta=f"Por el equipo de Hiperhidrosis.cl · <time datetime=\"{p['date']}\">{p['date_h']}</time>")
+                            meta="Por el equipo de Hiperhidrosis.cl")
         body_text = p["body"].replace("{INSTAGRAM}", INSTAGRAM)
         body = f"""<section class="prose-section">
   <article class="prose">
@@ -1038,7 +1038,6 @@ def build_blog():
         <div class="post__body">
           <span class="post__cat">{p['cat']}</span>
           <h2 class="post__title">{p['title']}</h2>
-          <div class="post__date"><time datetime="{p['date']}">{p['date_h']}</time></div>
         </div>
       </a>""" for p in POSTS)
     body = f"""<section class="blog-section" style="padding-top:54px">

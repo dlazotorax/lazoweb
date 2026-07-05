@@ -33,7 +33,7 @@ PHYSICIAN = {
     "@type": "Physician",
     "@id": f"{BASE}/#physician",
     "name": "Dr. David Lazo",
-    "image": f"{BASE}/assets/dr-david-lazo.jpg",
+    "image": f"{BASE}/assets/foto-dr-lazo-bio.jpg",
     "medicalSpecialty": "https://schema.org/Surgical",
     "description": "Cirujano torácico especialista en hiperhidrosis y rubor facial patológico (eritrofobia). Médico-Cirujano de la Pontificia Universidad Católica de Chile, especialista en Cirugía General y Cirugía Torácica de la Universidad de Chile.",
     "affiliation": [
@@ -155,7 +155,7 @@ CONTACT = f"""<!-- ===== CONTACTO (bloque estándar de la red, ref: dist/rats/) 
   <h2 class="cta-title">Hable directamente<br>con el especialista</h2>
   <div class="cta-contact-grid">
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.5rem;">
-      <img alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en hiperhidrosis" loading="lazy" src="/assets/dr-david-lazo.jpg" width="344" height="450" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 10%;border:3px solid rgba(255,255,255,0.2);margin:0;">
+      <img alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en hiperhidrosis" loading="lazy" src="/assets/foto-dr-lazo-bio.jpg" width="800" height="800" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 10%;border:3px solid rgba(255,255,255,0.2);margin:0;">
       <div style="text-align:center;">
         <p style="font-size:0.88rem;font-weight:700;color:#fff;margin:0 0 0.2rem;">Dr. David Lazo Pérez</p>
         <p style="font-size:0.75rem;color:rgba(255,255,255,0.55);margin:0;">Cirujano Torácico</p>

@@ -16,18 +16,18 @@
     {
       min: 1, max: 9, name: 'LEVE',
       text: 'Tu sudoración corresponde a una hiperhidrosis leve. En este nivel el tratamiento lo maneja el dermatólogo, con antitranspirantes médicos en base a cloruro de aluminio, con excelentes resultados. La cirugía no está indicada en este grado.',
-      primary: { label: 'Ver tratamiento para hiperhidrosis leve', href: '/hiperhidrosis-localizada-leve' }
+      primary: { label: 'Ver tratamiento para hiperhidrosis leve', href: '/hiperhidrosis-localizada-leve/' }
     },
     {
       min: 10, max: 19, name: 'MODERADA',
       text: 'Tu sudoración corresponde a una hiperhidrosis moderada. En este nivel el manejo también recae en el dermatólogo, con alternativas como iontoforesis, medicamentos orales o toxina botulínica (Botox). La cirugía se reserva para casos que no responden a estas terapias.',
-      primary: { label: 'Ver tratamientos para hiperhidrosis moderada', href: '/hiperhidrosis-localizada-moderada' }
+      primary: { label: 'Ver tratamientos para hiperhidrosis moderada', href: '/hiperhidrosis-localizada-moderada/' }
     },
     {
       min: 20, max: 30, name: 'SEVERA',
       text: 'Tu sudoración corresponde a una hiperhidrosis severa. La cirugía (simpatectomía por videotoracoscopía) es el tratamiento con mejores resultados en este grado. Si buscas una solución definitiva, agenda una evaluación con el Dr. David Lazo, cirujano torácico.',
       primary: { label: 'Agendar evaluación quirúrgica', href: AGENDA_CLC, external: true },
-      secondary: { label: 'Conocer la cirugía', href: '/cirugia-hiperhidrosis' }
+      secondary: { label: 'Conocer la cirugía', href: '/cirugia-hiperhidrosis/' }
     }
   ];
 

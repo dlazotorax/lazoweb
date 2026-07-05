@@ -108,6 +108,7 @@ def head(title, desc, path, ogimage="assets/logo-hd.png", ogtype="website", extr
   <meta property="og:url" content="{canonical}">
   <meta property="og:image" content="{BASE}/{ogimage}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{canonical}">
   <meta name="twitter:title" content="{title}">
   <meta name="twitter:description" content="{desc}">
   <meta name="twitter:image" content="{BASE}/{ogimage}">
@@ -263,6 +264,10 @@ def subpage_hero(eyebrow, h1, lede="", meta=""):
 
 def write_page(path, html):
     """path: '' para home, 'slug' o '2020/08/30/slug' para el resto."""
+    # Enlaces internos con barra final (coinciden con las URLs indexadas y
+    # con trailingSlash:true — sin saltos de redirección internos).
+    # No toca assets (contienen "."), anclas ("#") ni URLs externas.
+    html = re.sub(r'href="(/[a-z0-9/-]*[a-z0-9])"', r'href="\1/"', html)
     d = OUT / path if path else OUT
     d.mkdir(parents=True, exist_ok=True)
     (d / "index.html").write_text(html, encoding="utf-8")
@@ -272,7 +277,7 @@ def write_page(path, html):
 def page(path, title, desc, hero, body, ld_nodes, ogimage="assets/logo-hd.png",
          ogtype="website", scripts=""):
     url = BASE + ("/" + path if path else "/")
-    html = (head(title, desc, ("/" + path if path else "/"), ogimage, ogtype, jsonld(*ld_nodes))
+    html = (head(title, desc, ("/" + path + "/" if path else "/"), ogimage, ogtype, jsonld(*ld_nodes))
             + NAV + hero + body + CONTACT + FOOTER + scripts + "</body>\n</html>\n")
     write_page(path, html)
     return url
@@ -534,7 +539,7 @@ def build_sobre():
   </div>
 </section>
 """
-    url = BASE + "/" + path
+    url = BASE + "/" + path + "/"
     page(path, title, desc, hero, body,
          [medical_page(url, title, desc)], ogimage="assets/foto-palmar.jpg")
 
@@ -562,7 +567,7 @@ def build_leve():
   </div>
 </section>
 """
-    url = BASE + "/" + path
+    url = BASE + "/" + path + "/"
     therapy = {
         "@type": "MedicalTherapy",
         "name": "Antitranspirantes médicos (cloruro de aluminio)",
@@ -611,7 +616,7 @@ def build_moderada():
   </div>
 </section>
 """
-    url = BASE + "/" + path
+    url = BASE + "/" + path + "/"
     therapies = [
         {"@type": "MedicalTherapy", "name": "Iontoforesis",
          "description": "Exposición de la superficie cutánea afectada a impulsos de corriente eléctrica de bajo voltaje; reduce hasta en un 81% la sudoración palmar."},
@@ -641,7 +646,7 @@ def build_severa():
   </div>
 </section>
 """
-    url = BASE + "/" + path
+    url = BASE + "/" + path + "/"
     proc = {
         "@type": "MedicalProcedure",
         "name": "Simpatectomía por videotoracoscopía",
@@ -697,7 +702,7 @@ def build_cirugia():
   </div>
 </section>
 """
-    url = BASE + "/" + path
+    url = BASE + "/" + path + "/"
     proc = {
         "@type": "MedicalProcedure",
         "@id": url + "#procedure",
@@ -749,7 +754,7 @@ def build_rubor():
   </div>
 </section>
 """
-    url = BASE + "/" + path
+    url = BASE + "/" + path + "/"
     faq_node = {
         "@type": "FAQPage",
         "@id": url + "#faq",
@@ -817,7 +822,7 @@ def build_test():
   </div>
 </section>
 """
-    url = BASE + "/" + path
+    url = BASE + "/" + path + "/"
     page(path, title, desc, hero, body,
          [medical_page(url, title, desc)],
          scripts='<script src="/assets/quiz.js" defer></script>\n')
@@ -990,7 +995,7 @@ POSTS = [
 def build_posts():
     for p in POSTS:
         path = p["slug"]
-        url = f"{BASE}/{path}"
+        url = f"{BASE}/{path}/"
         title = f"{p['title']} | Hiperhidrosis.cl"
         img, w, h, alt = p["hero_img"]
         hero = subpage_hero("Blog · " + p["cat"], p["title"],
@@ -1018,7 +1023,7 @@ def build_posts():
             "author": {"@id": f"{BASE}/#physician"},
             "publisher": {"@id": f"{BASE}/#org"},
             "mainEntityOfPage": url,
-            "isPartOf": {"@id": f"{BASE}/blog#blog"},
+            "isPartOf": {"@id": f"{BASE}/blog/#blog"},
         }
         page(path, title, p["desc"], hero, body,
              [medical_page(url, title, p["desc"]), article],
@@ -1047,7 +1052,7 @@ def build_blog():
   </div>
 </section>
 """
-    url = f"{BASE}/{path}"
+    url = f"{BASE}/{path}/"
     blog_node = {
         "@type": "Blog",
         "@id": url + "#blog",
@@ -1057,7 +1062,7 @@ def build_blog():
         "publisher": {"@id": f"{BASE}/#org"},
         "blogPost": [
             {"@type": "BlogPosting", "headline": p["title"],
-             "url": f"{BASE}/{p['slug']}", "datePublished": p["date"]}
+             "url": f"{BASE}/{p['slug']}/", "datePublished": p["date"]}
             for p in POSTS
         ],
     }
@@ -1110,7 +1115,7 @@ Sitemap: https://hiperhidrosis.cl/sitemap.xml
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for p in ALL_PATHS:
-        loc = BASE + ("/" + p if p else "/")
+        loc = BASE + ("/" + p + "/" if p else "/")
         lastmod = mods.get(p, "2026-07-04")
         lines.append(f"  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>")
     lines.append("</urlset>")

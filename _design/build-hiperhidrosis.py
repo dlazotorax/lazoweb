@@ -12,6 +12,7 @@ Uso:  python3 _design/build-hiperhidrosis.py
 """
 import json
 import pathlib
+import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "dist" / "hiperhidrosis"
@@ -140,6 +141,7 @@ NAV = f"""<nav class="site-nav">
       </ul>
     </div>
     <a href="/cirugia-hiperhidrosis" class="navlink-d">Cirugía</a>
+    <a href="/rubor-facial-patologico" class="navlink-d">Rubor facial</a>
     <a href="/test-nivel-de-severidad" class="navlink-d">Test</a>
     <a href="/blog" class="navlink-d">Blog</a>
     <a href="#contacto" class="btn-pill cta-btn">Agendar hora<span class="arrow">→</span></a>
@@ -156,6 +158,7 @@ NAV = f"""<nav class="site-nav">
     </ul>
   </div>
   <a href="/cirugia-hiperhidrosis">Cirugía</a>
+  <a href="/rubor-facial-patologico">Rubor facial</a>
   <a href="/test-nivel-de-severidad">Test</a>
   <a href="/blog">Blog</a>
   <a href="#contacto" class="btn-pill cta-btn mobile-nav__cta">Agendar hora<span class="arrow">→</span></a>
@@ -720,7 +723,7 @@ RUBOR_FAQ = [
     ("¿En qué consiste la cirugía del rubor facial patológico?",
      "La cirugía del rubor facial patológico (reservada para casos que no responden a los tratamientos con fármacos) es similar a la de la hiperhidrosis y consiste en la simpatectomía videotoracoscópica, con la salvedad que el lugar de sección de la cadena simpática es más proximal (o más arriba), a nivel de la 2ª costilla (T2 o R2)."),
     ("¿Qué diferencias tiene la simpatectomía por videotoracoscopía de la hiperhidrosis con la que se realiza para el rubor facial patológico?",
-     "La diferencia más importante entre estos dos procedimientos es que debido al ascenso en el nivel de corte en la cadena de los nervios simpáticos, existe una mayor probabilidad de que ocurran los efectos secundarios y complicaciones de la operación."),
+     "La diferencia más importante entre estos dos procedimientos es que debido al ascenso en el nivel de corte de la cadena simpática, existe una importante probabilidad de que ocurran los efectos secundarios/complicaciones de la operación y en especial la <strong>sudoración compensatoria</strong>."),
 ]
 
 
@@ -738,7 +741,7 @@ def build_rubor():
     body = f"""<section class="prose-section">
   <div class="prose">
     <figure class="img-card">
-      <img src="/assets/foto-rubor.jpg" alt="Rubor facial patológico o eritrofobia" width="1920" height="800" loading="lazy">
+      <img src="/assets/foto-rubor.jpg" alt="Rubor facial patológico o eritrofobia" width="1400" height="583" loading="lazy">
     </figure>
     <p>Esta afección se encuentra comúnmente en la población, siendo objeto de múltiples trastornos sociales para las personas que lo padecen, pudiendo llegar incluso a provocar cuadros psiquiátricos de difícil manejo, como alteraciones del ánimo, fobias y conductas aberrantes.</p>
     {faq_html}
@@ -752,7 +755,7 @@ def build_rubor():
         "@id": url + "#faq",
         "mainEntity": [
             {"@type": "Question", "name": q,
-             "acceptedAnswer": {"@type": "Answer", "text": a}}
+             "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a)}}
             for q, a in RUBOR_FAQ
         ],
     }

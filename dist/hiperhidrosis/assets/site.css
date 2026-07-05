@@ -414,6 +414,14 @@ img { display: block; max-width: 100%; height: auto; }
 .img-card figcaption { font-size: 13px; color: var(--ink-mute); margin-top: 10px; text-align: center; }
 figure.img-card { margin-left: 0; margin-right: 0; }
 
+/* Imagen a media columna en paralelo al texto (prose) */
+.media-split { display: grid; grid-template-columns: minmax(0, 320px) 1fr; gap: 26px; align-items: start; margin-top: 22px; }
+.media-split .img-card.media-split__media { margin: 0; }
+.media-split__body p:first-child { margin-top: 0; }
+@media (max-width: 768px) {
+  .media-split { grid-template-columns: 1fr; }
+}
+
 .img-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 30px 0 0; }
 .img-row--2 { grid-template-columns: repeat(2, 1fr); }
 .img-row .prod {

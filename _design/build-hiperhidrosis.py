@@ -463,10 +463,6 @@ def build_sobre():
                         "La hiperhidrosis es un trastorno producido por la sobreestimulación del sistema nervioso simpático (que junto al sistema parasimpático forman el sistema nervioso autónomo, que comanda todas las funciones no conscientes del organismo), produciéndose un aumento de la sudoración de todo el organismo, en especial de cara, axila, manos, y pies.")
     body = f"""<section class="prose-section">
   <div class="prose">
-    <figure class="img-card">
-      <img src="/assets/foto-palmar.jpg" alt="Hiperhidrosis palmar: mano con sudoración excesiva" width="414" height="325" loading="lazy">
-    </figure>
-
     <h2 id="por-que-sudamos">¿Por qué sudamos?</h2>
     <p>El sudor es una de las formas que emplea el organismo para controlar su temperatura, proceso que se denomina <strong>termorregulación</strong> y que es controlado por la corteza cerebral y el hipotálamo, los cuales comandan todos los procesos ligados a la producción y eliminación del calor corporal.</p>
     <p>Normalmente, cuando aumenta la temperatura corporal, estas estructuras envían impulsos eléctricos a través de los nervios simpáticos hasta las glándulas sudoríparas para que produzcan sudor, el cual al evaporarse en la superficie de la piel, disminuye la temperatura del organismo. Para esto, el cuerpo humano posee entre <strong>2 a 4 millones de glándulas sudoríparas</strong>, las cuales se encuentran distribuidas de forma heterogénea, concentrándose principalmente en las palmas de las manos, cara, axilas y plantas de los pies.</p>
@@ -482,11 +478,15 @@ def build_sobre():
     <h2 id="tipos-hiperhidrosis">Tipos de hiperhidrosis</h2>
 
     <h3>Hiperhidrosis localizada o primaria</h3>
-    <figure class="img-card">
-      <img src="/assets/tipos-localizada.jpg" alt="Hiperhidrosis localizada o primaria" width="1920" height="800" loading="lazy">
-    </figure>
-    <p>Es la forma más frecuentemente observada, afectando al <strong>2-3% de la población general</strong>, a hombres y mujeres por igual. Este trastorno no se debe a una enfermedad, sino a un trastorno “primario” (sin una causa aparente) de la regulación del sistema nervioso autónomo. Se cree que existe una sobreestimulación de las estructuras cerebrales que controlan la producción de sudor (corteza cerebral e hipotálamo), que a través de los nervios simpáticos, le ordenan a las glándulas sudoríparas aumentar la excreción de sudor <strong>hasta 40 veces lo normal</strong> para una persona.</p>
-    <p>La hiperhidrosis primaria se presenta desde temprano en la infancia, aumentando severamente en la pubertad, para luego disminuir en la adultez tardía. Entre un 25-50% de los pacientes poseen historia familiar de hiperhidrosis. La hipersudoración ocurre en forma espontánea e intermitente y se acentúa en situaciones de estrés emocional y con altas temperaturas, a su vez que desaparece durante el sueño. El término “localizada” se emplea ya que habitualmente, este tipo de hiperhidrosis afecta zonas determinadas del cuerpo:</p>
+    <div class="media-split">
+      <figure class="img-card media-split__media">
+        <img src="/assets/foto-palmar.jpg" alt="Hiperhidrosis localizada: palma de la mano con sudoración excesiva" width="414" height="325" loading="lazy">
+      </figure>
+      <div class="media-split__body">
+        <p>Es la forma más frecuentemente observada, afectando al <strong>2-3% de la población general</strong>, a hombres y mujeres por igual. Este trastorno no se debe a una enfermedad, sino a un trastorno “primario” (sin una causa aparente) de la regulación del sistema nervioso autónomo. Se cree que existe una sobreestimulación de las estructuras cerebrales que controlan la producción de sudor (corteza cerebral e hipotálamo), que a través de los nervios simpáticos, le ordenan a las glándulas sudoríparas aumentar la excreción de sudor <strong>hasta 40 veces lo normal</strong> para una persona.</p>
+        <p>La hiperhidrosis primaria se presenta desde temprano en la infancia, aumentando severamente en la pubertad, para luego disminuir en la adultez tardía. Entre un 25-50% de los pacientes poseen historia familiar de hiperhidrosis. La hipersudoración ocurre en forma espontánea e intermitente y se acentúa en situaciones de estrés emocional y con altas temperaturas, a su vez que desaparece durante el sueño. El término “localizada” se emplea ya que habitualmente, este tipo de hiperhidrosis afecta zonas determinadas del cuerpo:</p>
+      </div>
+    </div>
     <ul>
       <li>Cara</li>
       <li>Axilas</li>
@@ -526,7 +526,7 @@ def build_sobre():
 """
     url = BASE + "/" + path
     page(path, title, desc, hero, body,
-         [medical_page(url, title, desc)], ogimage="assets/tipos-localizada.jpg")
+         [medical_page(url, title, desc)], ogimage="assets/foto-palmar.jpg")
 
 
 # =====================================================================================

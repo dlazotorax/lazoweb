@@ -20,12 +20,8 @@ BASE = "https://hiperhidrosis.cl"
 # ---- Datos de contacto de la red -------------------------------------------------
 CLC_URL = "https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ"
 ENCUADRADO_URL = "https://encuadrado.com/p/david-lazo-perez/"
-EMAIL = "dlazo.torax@gmail.com"
-WHATSAPP_DISPLAY = "+56 9 9888 6151"
-WHATSAPP_URL = "https://api.whatsapp.com/send?phone=56998886151&text=%C2%A1Hola!%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20del%20tratamiento."
 INSTAGRAM = "https://www.instagram.com/hiperhidrosis.cl/"
 FACEBOOK = "https://www.facebook.com/hiperhidrosis.cl/"
-YOUTUBE = "https://www.youtube.com/channel/UChzVM4jSTdzjqCwHssHsOIw"
 CIRUGIATORACICA = "https://cirugiatoracica.cl"
 
 # ---- JSON-LD compartido -----------------------------------------------------------
@@ -40,10 +36,8 @@ PHYSICIAN = {
         {"@type": "MedicalOrganization", "name": "Clínica Las Condes"},
         {"@type": "MedicalOrganization", "name": "Hospital Clínico San Borja Arriarán"},
     ],
-    "email": EMAIL,
-    "telephone": "+56998886151",
     "url": CIRUGIATORACICA,
-    "sameAs": [CIRUGIATORACICA, ENCUADRADO_URL, INSTAGRAM, FACEBOOK, YOUTUBE,
+    "sameAs": [CIRUGIATORACICA, ENCUADRADO_URL, INSTAGRAM, FACEBOOK,
                "https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/",
                "https://www.instagram.com/dr.david.lazo.p/",
                "https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago"],
@@ -174,23 +168,6 @@ CONTACT = f"""<!-- ===== CONTACTO (bloque estándar de la red, ref: dist/rats/) 
         </a>
       </div>
     </div>
-    <div class="contact-card">
-      <h4>🌐 Redes sociales</h4>
-      <div class="ccontact-links">
-        <a class="ccontact-link" href="{LINKEDIN}" rel="noopener" target="_blank">
-          <svg class="ccontact-ico" fill="currentColor" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-          <div><span class="ccontact-label">LinkedIn</span><span class="ccontact-val">Dr. David Lazo Pérez</span></div>
-        </a>
-        <a class="ccontact-link" href="{INSTAGRAM_DR}" rel="noopener" target="_blank">
-          <svg class="ccontact-ico" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><circle cx="12" cy="12" r="4"></circle><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-          <div><span class="ccontact-label">Instagram</span><span class="ccontact-val">@dr.david.lazo.p</span></div>
-        </a>
-        <a class="ccontact-link" href="{DOCTORALIA}" rel="noopener" target="_blank">
-          <svg class="ccontact-ico" fill="currentColor" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5z"></path></svg>
-          <div><span class="ccontact-label">Doctoralia</span><span class="ccontact-val">Ver perfil y reseñas →</span></div>
-        </a>
-      </div>
-    </div>
   </div>
 </section>
 """
@@ -199,7 +176,7 @@ FOOTER = f"""<footer class="site-footer">
   <div class="footer-grid">
     <div>
       <img src="/assets/logo-footer.png" alt="Hiperhidrosis.cl" class="site-footer__logo" width="194" height="142" loading="lazy">
-      <p class="site-footer__blurb">Portal de información sobre la sudoración excesiva y sus tratamientos en Chile. Dr. David Lazo, cirujano torácico — Clínica Las Condes · Hospital Clínico San Borja Arriarán.</p>
+      <p class="site-footer__blurb">Portal de información sobre la sudoración excesiva y sus tratamientos en Chile. Dr. David Lazo, cirujano torácico — Clínica Las Condes.</p>
     </div>
     <div>
       <div class="footer-col__title">Navegación</div>
@@ -217,11 +194,8 @@ FOOTER = f"""<footer class="site-footer">
       <div class="footer-col__links">
         <a href="{CLC_URL}" class="flink" target="_blank" rel="noopener">Agenda Clínica Las Condes</a>
         <a href="{ENCUADRADO_URL}" class="flink" target="_blank" rel="noopener">Agenda Encuadrado</a>
-        <a href="mailto:{EMAIL}" class="flink">{EMAIL}</a>
-        <a href="{WHATSAPP_URL}" class="flink" target="_blank" rel="noopener">WhatsApp {WHATSAPP_DISPLAY}</a>
         <a href="{INSTAGRAM}" class="flink" target="_blank" rel="noopener">Instagram</a>
         <a href="{FACEBOOK}" class="flink" target="_blank" rel="noopener">Facebook</a>
-        <a href="{YOUTUBE}" class="flink" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
   </div>
@@ -494,8 +468,6 @@ def build_sobre():
     </ul>
     <p>El gran desafío de este tipo de hiperhidrosis consiste en descubrir cuál es su causa, para lo cual se debe consultar con un especialista para realizar toda la serie de estudios de laboratorio e imágenes necesarios. Obviamente su tratamiento corresponderá al de la enfermedad que lo produce. Revisa el listado de <a href="/2021/02/19/enfermedades-asociadas-a-la-hiperhidrosis">enfermedades asociadas a la hiperhidrosis</a>.</p>
 
-    <h2>Entrevistas en medios</h2>
-    <p>Revisa nuestras entrevistas en distintos medios e infórmate más sobre la hiperhidrosis en nuestro <a href="{YOUTUBE}" target="_blank" rel="noopener">canal de YouTube</a>.</p>
   </div>
 </section>
 
@@ -902,7 +874,7 @@ POSTS = [
     <blockquote>“Se hacen dos incisiones de 3 y 5 mm en el pliegue anterior de la axila, por una de ellas se introduce una cámara y por la otra se introducen pinzas para seccionar el nervio o cadena simpática, habitualmente a nivel de la tercera o cuarta costilla, para así controlar la producción del sudor en la cara, palmas de las manos y en las axilas. El procedimiento se repite en forma idéntica en ambos lados.”</blockquote>
     <h2>¿Qué riesgos tiene someterse a esta cirugía?</h2>
     <p>Como en cualquier cirugía existen riesgos y complicaciones, que aunque pueden darse muy rara vez, existen: sangrado, neumotórax e infección. También es importante conocer la <a href="/2020/11/13/sudoracion-compensatoria-el-temido-efecto-secundario-de-la-simpatectomia">sudoración compensatoria</a>, su principal efecto secundario.</p>
-    <p>¡Si quieres conocer valores, convenios y coberturas comunícate por <a href="{WHATSAPP_URL}" target="_blank" rel="noopener">WhatsApp al {WHATSAPP_DISPLAY}</a>!</p>""",
+    <p>¡Si quieres conocer valores, convenios y coberturas, <a href="#contacto">agenda una consulta</a>!</p>""",
     },
     {
         "slug": "2020/10/13/que-especialista-consultar-para-la-hiperhidrosis",
@@ -956,9 +928,7 @@ def build_posts():
         img, w, h, alt = p["hero_img"]
         hero = subpage_hero("Blog · " + p["cat"], p["title"],
                             meta=f"Por el equipo de Hiperhidrosis.cl · <time datetime=\"{p['date']}\">{p['date_h']}</time>")
-        body_text = p["body"].replace("{INSTAGRAM}", INSTAGRAM) \
-                             .replace("{WHATSAPP_URL}", WHATSAPP_URL) \
-                             .replace("{WHATSAPP_DISPLAY}", WHATSAPP_DISPLAY)
+        body_text = p["body"].replace("{INSTAGRAM}", INSTAGRAM)
         body = f"""<section class="prose-section">
   <article class="prose">
     <figure class="img-card" style="margin-top:0">

@@ -629,8 +629,15 @@ def build_severa():
     hero = subpage_hero("Grados de severidad", "Hiperhidrosis localizada severa")
     body = """<section class="prose-section">
   <div class="prose">
-    <p>La <strong>cirugía es el tratamiento con mejores resultados</strong> disponible en la actualidad. Consiste en la <strong>simpatectomía o simpaticotomía</strong>, procedimiento en el que se seccionan las cadenas formadas por el nervio simpático por su paso a través del tórax con el fin de bloquear permanentemente los estímulos cerebrales hacia las glándulas sudoríparas.</p>
-    <p>Esta técnica se realiza hoy en día por <strong>videotoracoscopía</strong> y su principal ventaja es la inmediata resolución de la hipersudoración. Conoce el detalle del procedimiento, sus resultados y efectos secundarios en <a href="/cirugia-hiperhidrosis">cirugía de la hiperhidrosis</a>.</p>
+    <div class="media-split media-split--img-right">
+      <div class="media-split__body">
+        <p>La <strong>cirugía es el tratamiento con mejores resultados</strong> disponible en la actualidad. Consiste en la <strong>simpatectomía o simpaticotomía</strong>, procedimiento en el que se seccionan las cadenas formadas por el nervio simpático por su paso a través del tórax con el fin de bloquear permanentemente los estímulos cerebrales hacia las glándulas sudoríparas.</p>
+        <p>Esta técnica se realiza hoy en día por <strong>videotoracoscopía</strong> y su principal ventaja es la inmediata resolución de la hipersudoración. Conoce el detalle del procedimiento, sus resultados y efectos secundarios en <a href="/cirugia-hiperhidrosis">cirugía de la hiperhidrosis</a>.</p>
+      </div>
+      <figure class="img-card media-split__media">
+        <img src="/assets/cirugia-videotoracoscopia.jpg" alt="Simpatectomía por videotoracoscopía para hiperhidrosis severa — equipo quirúrgico en pabellón" width="1200" height="611" loading="lazy">
+      </figure>
+    </div>
     <p>Para la <strong>hiperhidrosis plantar</strong> el tratamiento quirúrgico se encuentra en fase experimental y aún no disponible en nuestro país.</p>
   </div>
 </section>

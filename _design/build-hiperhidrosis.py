@@ -464,8 +464,15 @@ def build_sobre():
     body = f"""<section class="prose-section">
   <div class="prose">
     <h2 id="por-que-sudamos">¿Por qué sudamos?</h2>
-    <p>El sudor es una de las formas que emplea el organismo para controlar su temperatura, proceso que se denomina <strong>termorregulación</strong> y que es controlado por la corteza cerebral y el hipotálamo, los cuales comandan todos los procesos ligados a la producción y eliminación del calor corporal.</p>
-    <p>Normalmente, cuando aumenta la temperatura corporal, estas estructuras envían impulsos eléctricos a través de los nervios simpáticos hasta las glándulas sudoríparas para que produzcan sudor, el cual al evaporarse en la superficie de la piel, disminuye la temperatura del organismo. Para esto, el cuerpo humano posee entre <strong>2 a 4 millones de glándulas sudoríparas</strong>, las cuales se encuentran distribuidas de forma heterogénea, concentrándose principalmente en las palmas de las manos, cara, axilas y plantas de los pies.</p>
+    <div class="media-split media-split--img-right">
+      <div class="media-split__body">
+        <p>El sudor es una de las formas que emplea el organismo para controlar su temperatura, proceso que se denomina <strong>termorregulación</strong> y que es controlado por la corteza cerebral y el hipotálamo, los cuales comandan todos los procesos ligados a la producción y eliminación del calor corporal.</p>
+        <p>Normalmente, cuando aumenta la temperatura corporal, estas estructuras envían impulsos eléctricos a través de los nervios simpáticos hasta las glándulas sudoríparas para que produzcan sudor, el cual al evaporarse en la superficie de la piel, disminuye la temperatura del organismo. Para esto, el cuerpo humano posee entre <strong>2 a 4 millones de glándulas sudoríparas</strong>, las cuales se encuentran distribuidas de forma heterogénea, concentrándose principalmente en las palmas de las manos, cara, axilas y plantas de los pies.</p>
+      </div>
+      <figure class="img-card media-split__media">
+        <img src="/assets/por-que-sudamos.jpg" alt="Persona con sudoración tras ejercicio físico — termorregulación corporal" width="900" height="682" loading="lazy">
+      </figure>
+    </div>
 
     <h2 id="consecuencias-hiperhidrosis">¿Cuáles son las consecuencias de la hiperhidrosis?</h2>
     <p>Este trastorno no solo produce las consecuencias propias de la hipersudoración, sino también:</p>

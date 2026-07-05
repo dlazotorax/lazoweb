@@ -419,6 +419,7 @@ figure.img-card { margin-left: 0; margin-right: 0; }
 .media-split .img-card.media-split__media { margin: 0; }
 .media-split__body p:first-child { margin-top: 0; }
 .media-split + p { margin-top: 30px; }
+.media-split--img-right { grid-template-columns: 1fr minmax(0, 360px); }
 @media (max-width: 768px) {
   .media-split { grid-template-columns: 1fr; }
 }

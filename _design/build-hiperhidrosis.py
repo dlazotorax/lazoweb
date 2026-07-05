@@ -43,7 +43,10 @@ PHYSICIAN = {
     "email": EMAIL,
     "telephone": "+56998886151",
     "url": CIRUGIATORACICA,
-    "sameAs": [CIRUGIATORACICA, ENCUADRADO_URL, INSTAGRAM, FACEBOOK, YOUTUBE],
+    "sameAs": [CIRUGIATORACICA, ENCUADRADO_URL, INSTAGRAM, FACEBOOK, YOUTUBE,
+               "https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/",
+               "https://www.instagram.com/dr.david.lazo.p/",
+               "https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago"],
 }
 ORG = {
     "@type": "Organization",
@@ -140,39 +143,53 @@ NAV = """<nav class="site-nav">
 </nav>
 """
 
-CONTACT = f"""<!-- ===== CONTACTO (bloque estándar de la red) ===== -->
-<section id="contacto" class="navy-section" aria-label="Contacto y agenda">
-  <div class="navy-panel">
-    <div class="navy-panel__head">
-      <span class="eyebrow">Contacto</span>
-      <h2>Agenda tu consulta</h2>
-      <p>Evaluación presencial o por telemedicina con el Dr. David Lazo, cirujano torácico especialista en hiperhidrosis y rubor facial patológico.</p>
+LINKEDIN = "https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/"
+INSTAGRAM_DR = "https://www.instagram.com/dr.david.lazo.p/"
+DOCTORALIA = "https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago"
+
+# Bloque de contacto estándar de la red (estructura idéntica a dist/rats/ y
+# dist/cirugiatoracica/), adaptado visualmente al design system de hiperhidrosis.
+CONTACT = f"""<!-- ===== CONTACTO (bloque estándar de la red, ref: dist/rats/) ===== -->
+<section class="cta-unified" id="contacto">
+  <p class="cta-eyebrow">Primer paso</p>
+  <h2 class="cta-title">Hable directamente<br>con el especialista</h2>
+  <div class="cta-contact-grid">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.5rem;">
+      <img alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en hiperhidrosis" loading="lazy" src="/assets/dr-david-lazo.jpg" width="344" height="450" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 10%;border:3px solid rgba(255,255,255,0.2);margin:0;">
+      <div style="text-align:center;">
+        <p style="font-size:0.88rem;font-weight:700;color:#fff;margin:0 0 0.2rem;">Dr. David Lazo Pérez</p>
+        <p style="font-size:0.75rem;color:rgba(255,255,255,0.55);margin:0;">Cirujano Torácico</p>
+      </div>
     </div>
-    <div class="contact-grid">
-      <a class="contact-card" href="{CLC_URL}" target="_blank" rel="noopener">
-        <span class="cc-kicker">Agenda presencial</span>
-        <h3>Agenda online Clínica Las Condes</h3>
-        <p>Reserva tu hora médica presencial directamente en el sitio de Clínica Las Condes.</p>
-        <span class="cc-go">Reservar hora →</span>
-      </a>
-      <a class="contact-card" href="{ENCUADRADO_URL}" target="_blank" rel="noopener">
-        <span class="cc-kicker">Telemedicina</span>
-        <h3>Agenda Encuadrado</h3>
-        <p>Consulta por telemedicina desde cualquier lugar de Chile, con reserva online.</p>
-        <span class="cc-go">Reservar online →</span>
-      </a>
-      <a class="contact-card" href="mailto:{EMAIL}">
-        <span class="cc-kicker">Email</span>
-        <h3>{EMAIL}</h3>
-        <p>Escríbenos para consultas, valores, convenios y coberturas.</p>
-        <span class="cc-go">Escribir →</span>
-      </a>
-      <a class="contact-card" href="{WHATSAPP_URL}" target="_blank" rel="noopener">
-        <span class="cc-kicker">WhatsApp</span>
-        <h3>{WHATSAPP_DISPLAY}</h3>
-        <p>Resolvemos tus dudas sobre tratamientos y agenda por WhatsApp.</p>
-        <span class="cc-go">Chatear →</span>
-      </a>
+    <div class="contact-card">
+      <h4>🗓️ Agendar consulta</h4>
+      <div class="ccontact-links">
+        <a class="ccontact-link" href="{CLC_URL}" rel="noopener" target="_blank">
+          <span class="ccontact-ico">🏥</span>
+          <div><span class="ccontact-label">Clínica Las Condes</span><span class="ccontact-val">Reservar hora presencial →</span></div>
+        </a>
+        <a class="ccontact-link" href="{ENCUADRADO_URL}" rel="noopener" target="_blank">
+          <span class="ccontact-ico">💻</span>
+          <div><span class="ccontact-label">Telemedicina</span><span class="ccontact-val">Consulta online — todo Chile →</span></div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h4>🌐 Redes sociales</h4>
+      <div class="ccontact-links">
+        <a class="ccontact-link" href="{LINKEDIN}" rel="noopener" target="_blank">
+          <svg class="ccontact-ico" fill="currentColor" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <div><span class="ccontact-label">LinkedIn</span><span class="ccontact-val">Dr. David Lazo Pérez</span></div>
+        </a>
+        <a class="ccontact-link" href="{INSTAGRAM_DR}" rel="noopener" target="_blank">
+          <svg class="ccontact-ico" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><circle cx="12" cy="12" r="4"></circle><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+          <div><span class="ccontact-label">Instagram</span><span class="ccontact-val">@dr.david.lazo.p</span></div>
+        </a>
+        <a class="ccontact-link" href="{DOCTORALIA}" rel="noopener" target="_blank">
+          <svg class="ccontact-ico" fill="currentColor" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5z"></path></svg>
+          <div><span class="ccontact-label">Doctoralia</span><span class="ccontact-val">Ver perfil y reseñas →</span></div>
+        </a>
+      </div>
     </div>
   </div>
 </section>

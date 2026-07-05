@@ -663,13 +663,16 @@ def build_cirugia():
     body = f"""<section class="prose-section">
   <div class="prose">
     <h2>¿En qué consiste?</h2>
-    <p>Este procedimiento consiste en la <strong>sección de las cadenas formadas por el nervio simpático torácico</strong>, entre los ganglios que éste posee sobre las 2ª a 4ª costillas (dependiendo de la zona afectada) y también de las posibles interconexiones nerviosas entre dichos ganglios, a ambos lados del tórax.</p>
-    <p>Esta técnica es realizada por <a href="{CIRUGIATORACICA}" target="_blank" rel="noopener">nuestro equipo</a>, utilizando dos pequeñas incisiones a la altura de la axila: una de 3 mm y la otra de 3 ó 5 mm (dependiendo del tamaño del paciente). A través de estas pequeñas incisiones se introducen la cámara y los instrumentos quirúrgicos con los que se secciona la cadena simpática. Una vez seccionada la cadena simpática del lado derecho del paciente, se realiza la del lado izquierdo.</p>
-    <p>La duración aproximada de la cirugía es de <strong>menos de una hora</strong>, requiere anestesia general y de <strong>un día de hospitalización</strong>. La reincorporación a la vida cotidiana es muy rápida y se lleva a cabo luego de 24 a 48 horas.</p>
-
-    <figure class="img-card">
-      <img src="/assets/cirugia.jpg" alt="Esquema de la simpatectomía por videotoracoscopía" width="600" height="1000" loading="lazy">
-    </figure>
+    <div class="media-split media-split--img-right">
+      <div class="media-split__body">
+        <p>Este procedimiento consiste en la <strong>sección de las cadenas formadas por el nervio simpático torácico</strong>, entre los ganglios que éste posee sobre las 2ª a 4ª costillas (dependiendo de la zona afectada) y también de las posibles interconexiones nerviosas entre dichos ganglios, a ambos lados del tórax.</p>
+        <p>Esta técnica es realizada por <a href="{CIRUGIATORACICA}" target="_blank" rel="noopener">nuestro equipo</a>, utilizando dos pequeñas incisiones a la altura de la axila: una de 3 mm y la otra de 3 ó 5 mm (dependiendo del tamaño del paciente). A través de estas pequeñas incisiones se introducen la cámara y los instrumentos quirúrgicos con los que se secciona la cadena simpática. Una vez seccionada la cadena simpática del lado derecho del paciente, se realiza la del lado izquierdo.</p>
+        <p>La duración aproximada de la cirugía es de <strong>menos de una hora</strong>, requiere anestesia general y de <strong>un día de hospitalización</strong>. La reincorporación a la vida cotidiana es muy rápida y se lleva a cabo luego de 24 a 48 horas.</p>
+      </div>
+      <figure class="img-card media-split__media media-split__media--tall">
+        <img src="/assets/cadena-simpatica-toracica.jpg" alt="Diagrama de la cadena simpática torácica y ganglios — anatomía de la simpatectomía" width="800" height="1215" loading="lazy">
+      </figure>
+    </div>
 
     <h2>Resultados</h2>
     <p>En general el éxito de esta operación es <strong>superior al 95%</strong>, dependiendo de la zona a tratar:</p>
@@ -703,7 +706,7 @@ def build_cirugia():
         "seriousAdverseOutcome": {"@type": "MedicalEntity", "name": "Sudoración compensatoria"},
     }
     page(path, title, desc, hero, body,
-         [medical_page(url, title, desc), proc], ogimage="assets/cirugia.jpg")
+         [medical_page(url, title, desc), proc], ogimage="assets/cadena-simpatica-toracica.jpg")
 
 
 # =====================================================================================

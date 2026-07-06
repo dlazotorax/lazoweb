@@ -237,6 +237,22 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .hero-copy__actions .cta-btn .arrow { font-size: 17px; }
 
+/* Hero home en móvil: apilado (banner arriba, texto debajo), no superpuesto.
+   Solo ≤768px — en desktop el overlay con glow se mantiene intacto. */
+@media (max-width: 768px) {
+  .hero-full__stage { --hero-banner-h: 40vh; display: block; flex: none; }
+  .hero-slides { position: relative; height: var(--hero-banner-h); }
+  .hero-slides img { object-position: center; }
+  .hero-dots { top: calc(var(--hero-banner-h) - 30px); bottom: auto; right: 16px; }
+  .hero-content { position: static; display: block; padding: 24px 20px 38px; }
+  .hero-copy { max-width: none; }
+  .hero-copy__glow { display: none; }
+  .hero-copy h1 { font-size: 29px; line-height: 1.08; margin: 0; }
+  .hero-copy h1 em span { font-size: 29px; }
+  .hero-copy > p { font-size: 15.5px; margin: 12px 0 0; }
+  .hero-copy__actions { margin-top: 18px; }
+}
+
 /* ---- Hero subpágina ------------------------------------------------------ */
 .page-hero { background: var(--teal-soft); padding: 46px 28px 42px; }
 .page-hero__inner { max-width: 1240px; margin: 0 auto; }

@@ -258,6 +258,30 @@ img { display: block; max-width: 100%; height: auto; }
   display: grid; grid-template-columns: .9fr 1.1fr;
   gap: 54px; align-items: center;
 }
+/* Box clicable completo (stretched link accesible) */
+.quees-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid rgba(30,46,94,.1);
+  border-radius: var(--radius-panel);
+  padding: 36px 40px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.quees-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 50px -26px rgba(20,33,63,.4);
+  border-color: rgba(44,140,158,.45);
+}
+.quees-card:focus-within {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+  box-shadow: 0 26px 50px -26px rgba(20,33,63,.4);
+}
+.stretched-link { position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.stretched-link:focus { outline: none; }
+.quees-card__cta { margin-top: 26px; }
+.quees-card:hover .quees-card__cta { transform: translateY(-2px); }
+
 .quees__media { position: relative; }
 .quees__media::before {
   content: "";
@@ -557,6 +581,7 @@ figure.img-card { margin-left: 0; margin-right: 0; }
   .hero-full { min-height: 0 !important; }
   .hero-content { padding: 20px 24px 56px; }
   .quees { grid-template-columns: 1fr !important; gap: 30px; }
+  .quees-card { padding: 24px 20px; }
   .page-hero { padding: 34px 20px 32px; }
   .prose-section { padding: 40px 20px 6px; }
   .navy-panel { padding: 38px 26px; }

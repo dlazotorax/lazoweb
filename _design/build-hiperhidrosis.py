@@ -307,7 +307,7 @@ def build_home():
     <div class="hero-content">
       <div class="hero-copy">
         <div class="hero-copy__glow"></div>
-        <h1>La Sudoración Excesiva<br><em><span>tiene tratamiento.</span></em></h1>
+        <h1>La Sudoración Excesiva <br><em><span>tiene tratamiento.</span></em></h1>
         <p>Manos, axilas, pies o rostro que transpiran sin control. Conoce las causas y las alternativas reales para recuperar tu vida diaria.</p>
         <div class="hero-copy__actions">
           <a href="#contacto" class="cta-btn">Agenda tu hora médica<span class="arrow">→</span></a>
@@ -319,7 +319,8 @@ def build_home():
 """
     body = """<!-- ===== ¿QUÉ ES? ===== -->
 <section id="que-es" class="quees-section">
-  <div class="quees">
+  <div class="quees quees-card">
+    <a class="stretched-link" href="/sobre-la-hiperhidrosis/" aria-label="Conoce más sobre la hiperhidrosis"></a>
     <div class="quees__media">
       <img src="/assets/localizada.jpg" alt="Hiperhidrosis localizada" width="1920" height="800" loading="lazy">
     </div>
@@ -327,7 +328,7 @@ def build_home():
       <span class="eyebrow">Entender la condición</span>
       <h2>¿Qué es la hiperhidrosis?</h2>
       <p>Es un trastorno producido por la <strong>sobreestimulación del sistema nervioso simpático</strong>, parte del sistema nervioso autónomo que comanda las funciones no conscientes del organismo. Esto provoca un aumento de la sudoración, especialmente en <strong>cara, axilas, manos y pies</strong>.</p>
-      <p>No depende del calor ni del esfuerzo físico, y puede afectar de forma importante la vida social, laboral y emocional de quien la padece. <a href="/sobre-la-hiperhidrosis" class="navlink" style="font-weight:600;color:#2C8C9E">Conoce más sobre la hiperhidrosis →</a></p>
+      <p>No depende del calor ni del esfuerzo físico, y puede afectar de forma importante la vida social, laboral y emocional de quien la padece.</p>
       <div class="quees__facts">
         <div class="fact-card">
           <div class="fact-card__title">Primaria</div>
@@ -338,6 +339,7 @@ def build_home():
           <div class="fact-card__body">Asociada a otra condición o medicamento; puede afectar todo el cuerpo.</div>
         </div>
       </div>
+      <span class="btn-pill cta-btn quees-card__cta" aria-hidden="true">Conoce más<span class="arrow">→</span></span>
     </div>
   </div>
 </section>
@@ -674,7 +676,7 @@ def build_cirugia():
     <div class="media-split media-split--img-right">
       <div class="media-split__body">
         <p>Este procedimiento consiste en la <strong>sección de las cadenas formadas por el nervio simpático torácico</strong>, entre los ganglios que éste posee sobre las 2ª a 4ª costillas (dependiendo de la zona afectada) y también de las posibles interconexiones nerviosas entre dichos ganglios, a ambos lados del tórax.</p>
-        <p>Esta técnica es realizada por <a href="{CIRUGIATORACICA}" target="_blank" rel="noopener">nuestro equipo</a>, utilizando dos pequeñas incisiones a la altura de la axila: una de 3 mm y la otra de 3 ó 5 mm (dependiendo del tamaño del paciente). A través de estas pequeñas incisiones se introducen la cámara y los instrumentos quirúrgicos con los que se secciona la cadena simpática. Una vez seccionada la cadena simpática del lado derecho del paciente, se realiza la del lado izquierdo.</p>
+        <p>Esta técnica es realizada por <a href="{CIRUGIATORACICA}" target="_blank" rel="noopener">nuestro equipo</a>, utilizando dos pequeñas incisiones a la altura de la axila: una de 3 mm y la otra de 3 o 5 mm (dependiendo del tamaño del paciente). A través de estas pequeñas incisiones se introducen la cámara y los instrumentos quirúrgicos con los que se secciona la cadena simpática. Una vez seccionada la cadena simpática del lado derecho del paciente, se realiza la del lado izquierdo.</p>
         <p>La duración aproximada de la cirugía es de <strong>menos de una hora</strong>, requiere anestesia general y de <strong>un día de hospitalización</strong>. La reincorporación a la vida cotidiana es muy rápida y se lleva a cabo luego de 24 a 48 horas.</p>
       </div>
       <figure class="img-card media-split__media media-split__media--tall">

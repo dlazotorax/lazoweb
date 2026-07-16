@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/((?!robots\\.txt$).*)",
-      "destination": "https://www.cirugiatoracica.cl/$1",
+      "destination": "https://cirugiatoracica.cl/$1",
       "permanent": true
     }
   ]

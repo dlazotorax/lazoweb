@@ -46,10 +46,17 @@
   "sameAs": [
     "https://cirugiatoracica.cl",
     "https://rats.cl",
+    "https://vats.cl",
     "https://broncoscopia.cl",
     "https://cancerpulmonar.cl",
+    "https://hiperhidrosis.cl",
     "https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/",
-    "https://www.instagram.com/dr.david.lazo.p/"
+    "https://www.instagram.com/dr.david.lazo.p/",
+    "https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago",
+    "https://www.doctoralia.cl/david-rene-lazo-perez/cirujano-toracico-cirujano-general/las-condes",
+    "https://www.topdoctors.cl/doctor/david-rene-lazo-perez/",
+    "https://www.ctsnet.org/home/dlazo",
+    "https://encuadrado.com/p/david-lazo-perez/"
   ],
   "knowsAbout": [
     "Cirugía Torácica",
@@ -63,15 +70,72 @@
     "Cirugía Mínimamente Invasiva"
   ],
   "hasCredential": [
-    "WABIP Regent Chile",
-    "American College of Surgeons",
-    "IASLC",
-    "ISHLT"
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Especialidad médica",
+      "name": "Cirugía Torácica — Universidad de Chile"
+    }
   ],
   "areaServed": "Santiago, Chile",
-  "availableService": "Consulta presencial Clínica Las Condes y telemedicina"
+  "availableService": "Consulta presencial Clínica Las Condes y telemedicina",
+  "@id": "https://cirugiatoracica.cl/#david-lazo",
+  "memberOf": [
+    {
+      "@type": "MedicalOrganization",
+      "name": "World Association for Bronchology and Interventional Pulmonology (WABIP)",
+      "url": "https://wabip.com/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "American College of Surgeons (ACS)",
+      "url": "https://www.facs.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "International Association for the Study of Lung Cancer (IASLC)",
+      "url": "https://www.iaslc.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "European Respiratory Society (ERS)",
+      "url": "https://www.ersnet.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "International Society for Heart and Lung Transplantation (ISHLT)",
+      "url": "https://ishlt.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "Sociedad de Cirujanos de Chile",
+      "url": "https://www.socich.cl/"
+    }
+  ],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Pontificia Universidad Católica de Chile",
+      "url": "https://www.uc.cl/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Universidad de Chile",
+      "url": "https://www.uchile.cl/"
+    },
+    {
+      "@type": "Hospital",
+      "name": "Hospital Universitario Puerta de Hierro Majadahonda",
+      "url": "https://www.comunidad.madrid/hospital/puertadehierro/"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santiago",
+    "addressRegion": "Región Metropolitana",
+    "addressCountry": "CL"
+  }
 }
-</script>
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -576,54 +640,104 @@
       .hero-bg { background-size: cover !important; background-position: center top !important; }
     }
 
-  </style>
+  
+    /* ── FAQ (visible, marcado con JSON-LD) ── */
+    .faq-list { max-width: 760px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex;
+      align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 0;
+      text-align: left; font-family: var(--sans); font-size: 0.95rem; font-weight: 600;
+      color: var(--navy); transition: color 0.2s; }
+    .faq-q:hover { color: var(--teal); }
+    .faq-arrow { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      border: 1.5px solid var(--border); color: var(--muted); display: flex; align-items: center;
+      justify-content: center; font-size: 0.9rem; transition: all 0.3s; }
+    .faq-item.open .faq-arrow { background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
+      transition: max-height 0.35s ease, padding 0.35s; }
+    .faq-item.open .faq-a { max-height: 420px; padding-bottom: 1.25rem; }
+    .faq-h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
+      margin: 0 0 1.8rem; line-height: 1.2; }
 
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": "https://cirugiatoracica.cl/perfil#faq",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Quién es el mejor cirujano torácico en Santiago de Chile?",
+      "name": "¿Dónde atiende el Dr. David Lazo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez es uno de los cirujanos torácicos con mayor trayectoria en Chile. Atiende en Clínica Las Condes, Santiago. Cuenta con más de 3.200 procedimientos de EBUS desde 2010 y fue pionero en cirugía robótica torácica RATS en Latinoamérica desde 2015."
+        "text": "Atiende en Clínica Las Condes (sistema privado) y en el Hospital Clínico San Borja Arriarán (sistema público), donde integra la Unidad de Cirugía Torácica y Broncoscopía Intervencional. También realiza consultas por telemedicina para todo Chile."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Dónde puedo operarme del pulmón en Chile?",
+      "name": "¿Qué formación tiene?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez realiza cirugía pulmonar en Clínica Las Condes, Santiago de Chile, utilizando técnicas mínimamente invasivas como VATS y cirugía robótica RATS. Para agendar una evaluación puede contactar directamente a Clínica Las Condes o visitar cirugiatoracica.cl."
+        "text": "Médico-Cirujano de la Pontificia Universidad Católica de Chile, con especialización en Cirugía General y Torácica por la Universidad de Chile y formación en trasplante pulmonar en el Hospital Universitario Puerta de Hierro Majadahonda (Madrid, España)."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Quién hace cirugía robótica torácica en Chile?",
+      "name": "¿A qué sociedades pertenece?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez es pionero en cirugía robótica torácica RATS en Latinoamérica, realizando estos procedimientos desde 2015 en Clínica Las Condes, Santiago de Chile. Más información en rats.cl."
+        "text": "Es Regente para Chile de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP), y miembro del American College of Surgeons (ACS), la International Association for the Study of Lung Cancer (IASLC), la European Respiratory Society (ERS) y la International Society for Heart and Lung Transplantation (ISHLT)."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Dónde hacen EBUS en Santiago?",
+      "name": "¿Cómo agendo una consulta?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez realiza EBUS y CryoEBUS en Clínica Las Condes, Santiago. Es el especialista con mayor volumen de procedimientos de broncoscopía intervencionista en Chile, con más de 3.200 EBUS desde 2010. Más información en broncoscopia.cl."
+        "text": "Para atención presencial en Clínica Las Condes puede reservar hora a través del sistema de agenda de la clínica. Para consulta por telemedicina, a través de la plataforma de agendamiento en línea. Ambos enlaces están disponibles en la sección de contacto de este sitio."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cómo agendar una consulta con un cirujano torácico en Clínica Las Condes?",
+      "name": "¿Necesito derivación de otro médico?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Para agendar una consulta con el Dr. David Lazo Pérez en Clínica Las Condes puede llamar al central de horas de Clínica Las Condes o visitar cirugiatoracica.cl. También ofrece atención mediante telemedicina."
+        "text": "No es indispensable, pero es útil llegar con los exámenes disponibles —imágenes (TC de tórax), informes previos y biopsias si las hay—. Eso permite orientar la evaluación desde la primera consulta y evitar repetir estudios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Atiende pacientes derivados por otros médicos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Recibe derivaciones de neumólogos, oncólogos, cirujanos generales y médicos internistas, tanto para evaluación quirúrgica como para procedimientos de broncoscopía intervencional y diagnóstico endobronquial."
       }
     }
   ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "@id": "https://doi.org/10.4067/S0034-98872021000200171",
+  "headline": "Trasplante pulmonar ex vivo. Primera experiencia en Chile y Latinoamérica",
+  "author": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "isPartOf": {
+    "@type": "Periodical",
+    "name": "Revista Médica de Chile",
+    "issn": "0034-9887"
+  },
+  "datePublished": "2021",
+  "pagination": "149(2)",
+  "url": "https://www.revistamedicadechile.cl/index.php/rmedica/article/view/8950",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sociedad Médica de Santiago"
+  }
 }
   </script>
 </head>
@@ -665,8 +779,8 @@
     </div>
     <div class="statsbar">
       <div class="stat"><div class="stat-n">+5.700</div><div class="stat-l">cirugías torácicas realizadas</div></div>
-      <div class="stat"><div class="stat-n">+3.200</div><div class="stat-l">EBUS · nº 1 en Chile desde 2010</div></div>
-      <div class="stat"><div class="stat-n">+200</div><div class="stat-l">RATS robóticas · nº 1 Chile desde 2015</div></div>
+      <div class="stat"><div class="stat-n">+3.200</div><div class="stat-l">procedimientos EBUS desde 2010</div></div>
+      <div class="stat"><div class="stat-n">+200</div><div class="stat-l">cirugías RATS desde 2015</div></div>
       <div class="stat"><div class="stat-n">19</div><div class="stat-l">años de experiencia desde 2007</div></div>
     </div>
   </section>
@@ -865,7 +979,41 @@
 
   </main>
 
-  <footer>
+  
+    <!-- FAQ visible — marcado con JSON-LD FAQPage -->
+    <section class="section section-alt" id="faq">
+      <div class="inner">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2 class="faq-h2">Consultas sobre la atención</h2>
+        <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Dónde atiende el Dr. David Lazo?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Atiende en Clínica Las Condes (sistema privado) y en el Hospital Clínico San Borja Arriarán (sistema público), donde integra la Unidad de Cirugía Torácica y Broncoscopía Intervencional. También realiza consultas por telemedicina para todo Chile.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Qué formación tiene?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Médico-Cirujano de la Pontificia Universidad Católica de Chile, con especialización en Cirugía General y Torácica por la Universidad de Chile y formación en trasplante pulmonar en el Hospital Universitario Puerta de Hierro Majadahonda (Madrid, España).</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿A qué sociedades pertenece?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Es Regente para Chile de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP), y miembro del American College of Surgeons (ACS), la International Association for the Study of Lung Cancer (IASLC), la European Respiratory Society (ERS) y la International Society for Heart and Lung Transplantation (ISHLT).</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Cómo agendo una consulta?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Para atención presencial en Clínica Las Condes puede reservar hora a través del sistema de agenda de la clínica. Para consulta por telemedicina, a través de la plataforma de agendamiento en línea. Ambos enlaces están disponibles en la sección de contacto de este sitio.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Necesito derivación de otro médico?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">No es indispensable, pero es útil llegar con los exámenes disponibles —imágenes (TC de tórax), informes previos y biopsias si las hay—. Eso permite orientar la evaluación desde la primera consulta y evitar repetir estudios.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Atiende pacientes derivados por otros médicos?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Sí. Recibe derivaciones de neumólogos, oncólogos, cirujanos generales y médicos internistas, tanto para evaluación quirúrgica como para procedimientos de broncoscopía intervencional y diagnóstico endobronquial.</div>
+        </div>
+        </div>
+      </div>
+    </section>
+<footer>
     <p>© 2026 Dr. David Lazo Pérez · Cirujano Torácico · Santiago, Chile</p>
     <div class="footer-links">
       <a href="https://rats.cl">rats.cl</a>
@@ -881,6 +1029,12 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('light', window.scrollY > 80);
     }, { passive: true });
+  </script>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (b) {
+      b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
+    });
   </script>
 </body>
 </html>

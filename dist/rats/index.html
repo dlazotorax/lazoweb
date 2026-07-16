@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cirugía Torácica Robótica RATS · Dr. David Lazo · Santiago, Chile</title>
-  <meta name="description" content="Cirugía torácica robótica con sistema Da Vinci. Máxima precisión, mínima invasión. Dr. David Lazo — #1 en cirugía robótica torácica en Chile, desde 2015." />
+  <meta name="description" content="Cirugía torácica robótica con sistema Da Vinci. Máxima precisión, mínima invasión. Dr. David Lazo — cirugía robótica torácica en Chile desde 2015." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cirugía Robótica RATS · Dr. David Lazo Pérez" />
   <meta property="og:title" content="Cirugía Torácica Robótica RATS · Dr. David Lazo · Santiago, Chile" />
@@ -45,10 +45,17 @@
   "sameAs": [
     "https://cirugiatoracica.cl",
     "https://rats.cl",
+    "https://vats.cl",
     "https://broncoscopia.cl",
     "https://cancerpulmonar.cl",
+    "https://hiperhidrosis.cl",
     "https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/",
-    "https://www.instagram.com/dr.david.lazo.p/"
+    "https://www.instagram.com/dr.david.lazo.p/",
+    "https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago",
+    "https://www.doctoralia.cl/david-rene-lazo-perez/cirujano-toracico-cirujano-general/las-condes",
+    "https://www.topdoctors.cl/doctor/david-rene-lazo-perez/",
+    "https://www.ctsnet.org/home/dlazo",
+    "https://encuadrado.com/p/david-lazo-perez/"
   ],
   "knowsAbout": [
     "Cirugía Torácica",
@@ -62,15 +69,72 @@
     "Cirugía Mínimamente Invasiva"
   ],
   "hasCredential": [
-    "WABIP Regent Chile",
-    "American College of Surgeons",
-    "IASLC",
-    "ISHLT"
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Especialidad médica",
+      "name": "Cirugía Torácica — Universidad de Chile"
+    }
   ],
   "areaServed": "Santiago, Chile",
-  "availableService": "Consulta presencial Clínica Las Condes y telemedicina"
+  "availableService": "Consulta presencial Clínica Las Condes y telemedicina",
+  "@id": "https://cirugiatoracica.cl/#david-lazo",
+  "memberOf": [
+    {
+      "@type": "MedicalOrganization",
+      "name": "World Association for Bronchology and Interventional Pulmonology (WABIP)",
+      "url": "https://wabip.com/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "American College of Surgeons (ACS)",
+      "url": "https://www.facs.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "International Association for the Study of Lung Cancer (IASLC)",
+      "url": "https://www.iaslc.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "European Respiratory Society (ERS)",
+      "url": "https://www.ersnet.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "International Society for Heart and Lung Transplantation (ISHLT)",
+      "url": "https://ishlt.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "Sociedad de Cirujanos de Chile",
+      "url": "https://www.socich.cl/"
+    }
+  ],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Pontificia Universidad Católica de Chile",
+      "url": "https://www.uc.cl/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Universidad de Chile",
+      "url": "https://www.uchile.cl/"
+    },
+    {
+      "@type": "Hospital",
+      "name": "Hospital Universitario Puerta de Hierro Majadahonda",
+      "url": "https://www.comunidad.madrid/hospital/puertadehierro/"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santiago",
+    "addressRegion": "Región Metropolitana",
+    "addressCountry": "CL"
+  }
 }
-</script>
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -537,51 +601,78 @@
       .bio-name { font-size: 1.8rem !important; }
     }
 
-  </style>
+  
+    /* ── FAQ (visible, marcado con JSON-LD) ── */
+    .faq-list { max-width: 760px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex;
+      align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 0;
+      text-align: left; font-family: var(--sans); font-size: 0.95rem; font-weight: 600;
+      color: var(--navy); transition: color 0.2s; }
+    .faq-q:hover { color: var(--teal); }
+    .faq-arrow { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      border: 1.5px solid var(--border); color: var(--muted); display: flex; align-items: center;
+      justify-content: center; font-size: 0.9rem; transition: all 0.3s; }
+    .faq-item.open .faq-arrow { background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
+      transition: max-height 0.35s ease, padding 0.35s; }
+    .faq-item.open .faq-a { max-height: 420px; padding-bottom: 1.25rem; }
+    .faq-h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
+      margin: 0 0 1.8rem; line-height: 1.2; }
 
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": "https://rats.cl/#faq",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Quién es el mejor cirujano torácico en Santiago de Chile?",
+      "name": "¿Qué diferencia real hay entre cirugía robótica (RATS) y videotoracoscopía (VATS)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez es uno de los cirujanos torácicos con mayor trayectoria en Chile. Atiende en Clínica Las Condes, Santiago. Cuenta con más de 3.200 procedimientos de EBUS desde 2010 y fue pionero en cirugía robótica torácica RATS en Latinoamérica desde 2015."
+        "text": "Ambas son mínimamente invasivas y evitan separar las costillas. La diferencia está en el instrumental: el sistema robótico aporta visión 3D magnificada y muñecas articuladas con mayor rango de movimiento, lo que facilita la disección en espacios estrechos como el mediastino o el hilio pulmonar. La VATS sigue siendo el estándar de referencia contra el cual se mide toda técnica nueva, incluida la robótica."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Dónde puedo operarme del pulmón en Chile?",
+      "name": "¿Qué procedimientos torácicos se pueden realizar con robot?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez realiza cirugía pulmonar en Clínica Las Condes, Santiago de Chile, utilizando técnicas mínimamente invasivas como VATS y cirugía robótica RATS. Para agendar una evaluación puede contactar directamente a Clínica Las Condes o visitar cirugiatoracica.cl."
+        "text": "Principalmente resecciones pulmonares anatómicas (segmentectomía, lobectomía), timectomía, resección de masas y quistes mediastínicos, y disección ganglionar mediastínica. La indicación depende del caso: no todos los pacientes son candidatos y la decisión se toma tras evaluar imágenes, función pulmonar y etapificación."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Quién hace cirugía robótica torácica en Chile?",
+      "name": "¿Cuánto dura la recuperación tras una lobectomía robótica?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez es pionero en cirugía robótica torácica RATS en Latinoamérica, realizando estos procedimientos desde 2015 en Clínica Las Condes, Santiago de Chile. Más información en rats.cl."
+        "text": "Varía según el paciente, la extensión de la resección y las condiciones asociadas. En general, los abordajes mínimamente invasivos se asocian a menos dolor postoperatorio y estadías hospitalarias más cortas que la toracotomía. El plan de recuperación se define caso a caso en la consulta."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Dónde hacen EBUS en Santiago?",
+      "name": "¿Dónde se realiza cirugía torácica robótica en Chile?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El Dr. David Lazo Pérez realiza EBUS y CryoEBUS en Clínica Las Condes, Santiago. Es el especialista con mayor volumen de procedimientos de broncoscopía intervencionista en Chile, con más de 3.200 EBUS desde 2010. Más información en broncoscopia.cl."
+        "text": "El Dr. David Lazo realiza cirugía torácica robótica en Clínica Las Condes (sistema privado) y en el Hospital Clínico San Borja Arriarán, donde funciona la Unidad de Cirugía Torácica y Broncoscopía Intervencional del sistema público."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cómo agendar una consulta con un cirujano torácico en Clínica Las Condes?",
+      "name": "¿Tiene cobertura de ISAPRE o FONASA?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Para agendar una consulta con el Dr. David Lazo Pérez en Clínica Las Condes puede llamar al central de horas de Clínica Las Condes o visitar cirugiatoracica.cl. También ofrece atención mediante telemedicina."
+        "text": "La atención en Clínica Las Condes opera con cobertura de ISAPRE; el Hospital Clínico San Borja Arriarán corresponde al sistema público (FONASA). La cobertura específica depende de su plan y del procedimiento: conviene consultarla antes de la cita."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Soy candidato a cirugía robótica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se determina en la evaluación clínica. Se consideran el tipo y la ubicación del tumor o lesión, la etapificación, la función pulmonar y las comorbilidades. En algunos casos la VATS o la cirugía abierta siguen siendo la mejor opción — elegir bien el abordaje es parte del tratamiento."
       }
     }
   ]
@@ -647,7 +738,7 @@
     <div class="statsbar">
       <div class="stat"><div class="stat-n">+200</div><div class="stat-l">cirugías robóticas torácicas realizadas</div></div>
       <div class="stat"><div class="stat-n">2015</div><div class="stat-l">inicio del programa RATS en Chile</div></div>
-      <div class="stat"><div class="stat-n">#1</div><div class="stat-l">mayor experiencia en RATS torácico en Chile</div></div>
+      <div class="stat"><div class="stat-n">+200</div><div class="stat-l">cirugías RATS torácicas desde 2015</div></div>
       <div class="stat"><div class="stat-n">19</div><div class="stat-l">años de experiencia en cirugía torácica</div></div>
     </div>
   </section>
@@ -794,7 +885,41 @@
     </div>
   </section>
 
-  <!-- BIO DR. LAZO -->
+  
+    <!-- FAQ visible — marcado con JSON-LD FAQPage -->
+    <section class="section section-alt" id="faq">
+      <div class="inner">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2 class="faq-h2">Cirugía robótica: lo que más nos preguntan</h2>
+        <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Qué diferencia real hay entre cirugía robótica (RATS) y videotoracoscopía (VATS)?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Ambas son mínimamente invasivas y evitan separar las costillas. La diferencia está en el instrumental: el sistema robótico aporta visión 3D magnificada y muñecas articuladas con mayor rango de movimiento, lo que facilita la disección en espacios estrechos como el mediastino o el hilio pulmonar. La VATS sigue siendo el estándar de referencia contra el cual se mide toda técnica nueva, incluida la robótica.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Qué procedimientos torácicos se pueden realizar con robot?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Principalmente resecciones pulmonares anatómicas (segmentectomía, lobectomía), timectomía, resección de masas y quistes mediastínicos, y disección ganglionar mediastínica. La indicación depende del caso: no todos los pacientes son candidatos y la decisión se toma tras evaluar imágenes, función pulmonar y etapificación.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Cuánto dura la recuperación tras una lobectomía robótica?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Varía según el paciente, la extensión de la resección y las condiciones asociadas. En general, los abordajes mínimamente invasivos se asocian a menos dolor postoperatorio y estadías hospitalarias más cortas que la toracotomía. El plan de recuperación se define caso a caso en la consulta.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Dónde se realiza cirugía torácica robótica en Chile?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">El Dr. David Lazo realiza cirugía torácica robótica en Clínica Las Condes (sistema privado) y en el Hospital Clínico San Borja Arriarán, donde funciona la Unidad de Cirugía Torácica y Broncoscopía Intervencional del sistema público.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Tiene cobertura de ISAPRE o FONASA?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">La atención en Clínica Las Condes opera con cobertura de ISAPRE; el Hospital Clínico San Borja Arriarán corresponde al sistema público (FONASA). La cobertura específica depende de su plan y del procedimiento: conviene consultarla antes de la cita.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Soy candidato a cirugía robótica?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Se determina en la evaluación clínica. Se consideran el tipo y la ubicación del tumor o lesión, la etapificación, la función pulmonar y las comorbilidades. En algunos casos la VATS o la cirugía abierta siguen siendo la mejor opción — elegir bien el abordaje es parte del tratamiento.</div>
+        </div>
+        </div>
+      </div>
+    </section>
+<!-- BIO DR. LAZO -->
   <section class="section" id="dr-lazo" style="background:#fff;">
     <div class="inner">
       <div class="bio-wrap" style="display:grid;grid-template-columns:260px 1fr;gap:4rem;align-items:start;">
@@ -894,5 +1019,11 @@
     }, { passive: true });
   </script>
 
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (b) {
+      b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
+    });
+  </script>
 </body>
 </html>

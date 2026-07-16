@@ -18,4 +18,9 @@
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://cirugiatoracica.cl/perfil" />
   </url>
 
+  <url>
+    <loc>https://cirugiatoracica.cl/links</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

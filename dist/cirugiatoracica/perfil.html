@@ -659,6 +659,17 @@
     .faq-h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
       margin: 0 0 1.8rem; line-height: 1.2; }
 
+  
+    /* ── Publicaciones ── */
+    .pub-list { max-width: 780px; margin-top: 1.5rem; }
+    .pub-item { border-left: 3px solid var(--teal); padding: 0.2rem 0 0.2rem 1.25rem; margin-bottom: 1.5rem; }
+    .pub-title { font-weight: 700; color: var(--navy); font-size: 0.98rem; line-height: 1.45; margin-bottom: 0.4rem; }
+    .pub-meta { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
+    .pub-meta a { color: var(--teal); text-decoration: none; font-weight: 600; }
+    .pub-meta a:hover { text-decoration: underline; }
+    .pub-authors { font-size: 0.82rem; color: var(--slate); margin-bottom: 0.3rem; }
+    .pub-authors strong { color: var(--navy); }
+
   </style>
   <script type="application/ld+json">
 {
@@ -721,19 +732,46 @@
 {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "@id": "https://doi.org/10.4067/S0034-98872021000200171",
+  "@id": "https://doi.org/10.4067/s0034-98872021000200171",
   "headline": "Trasplante pulmonar ex vivo. Primera experiencia en Chile y Latinoamérica",
+  "alternativeHeadline": "Lung transplant with ex vivo lung perfusion, Chilean and Latin American first experience",
   "author": {
     "@id": "https://cirugiatoracica.cl/#david-lazo"
   },
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "DOI",
+      "value": "10.4067/s0034-98872021000200171"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "PMID",
+      "value": "34479260"
+    }
+  ],
   "isPartOf": {
-    "@type": "Periodical",
-    "name": "Revista Médica de Chile",
-    "issn": "0034-9887"
+    "@type": "PublicationIssue",
+    "issueNumber": "2",
+    "isPartOf": {
+      "@type": "PublicationVolume",
+      "volumeNumber": "149",
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "Revista Médica de Chile",
+        "issn": [
+          "0034-9887",
+          "0717-6163"
+        ]
+      }
+    }
   },
-  "datePublished": "2021",
-  "pagination": "149(2)",
-  "url": "https://www.revistamedicadechile.cl/index.php/rmedica/article/view/8950",
+  "datePublished": "2021-02",
+  "pageStart": "171",
+  "pageEnd": "177",
+  "inLanguage": "es",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/34479260/",
+  "sameAs": "https://www.revistamedicadechile.cl/index.php/rmedica/article/view/8950",
   "publisher": {
     "@type": "Organization",
     "name": "Sociedad Médica de Santiago"
@@ -980,7 +1018,27 @@
   </main>
 
   
-    <!-- FAQ visible — marcado con JSON-LD FAQPage -->
+    
+    <!-- Publicaciones — visible, respaldado por JSON-LD ScholarlyArticle -->
+    <section class="section" id="publicaciones">
+      <div class="inner">
+        <p class="eyebrow">Investigación</p>
+        <h2 class="faq-h2">Publicaciones</h2>
+        <div class="pub-list">
+          <div class="pub-item">
+            <div class="pub-title">Trasplante pulmonar ex vivo. Primera experiencia en Chile y Latinoamérica</div>
+            <div class="pub-authors">Undurraga M F, Vega S J, Fajardo J C, Díaz G R, <strong>Lazo P D</strong>, Rodríguez G H, Villalabeitia R E, Sepúlveda V E, Rufs B J, Dreyse D J, et&nbsp;al.</div>
+            <div class="pub-meta">
+              <em>Revista Médica de Chile</em>. 2021 Feb;149(2):171-177.
+              Indexada en PubMed/MEDLINE, Scopus y SciELO. ·
+              <a href="https://pubmed.ncbi.nlm.nih.gov/34479260/" target="_blank" rel="noopener">PubMed PMID:&nbsp;34479260</a> ·
+              <a href="https://doi.org/10.4067/s0034-98872021000200171" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- FAQ visible — marcado con JSON-LD FAQPage -->
     <section class="section section-alt" id="faq">
       <div class="inner">
         <p class="eyebrow">Preguntas frecuentes</p>

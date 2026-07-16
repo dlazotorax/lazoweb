@@ -10,6 +10,11 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/publicaciones.html",
+      "destination": "/publicaciones",
+      "permanent": true
     }
   ]
 }

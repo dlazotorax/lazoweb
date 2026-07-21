@@ -1,7 +1,7 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
 > **Léeme primero.** Este archivo evita proponer cosas ya hechas o rehacer trabajo.
-> Última actualización: **16 jul 2026**. Último commit: `748c703`.
+> Última actualización: **21 jul 2026**. Último commit: `612e8fe`.
 
 ---
 
@@ -33,7 +33,7 @@
 ### Del lado de David (verificado en jul-2026)
 - ✅ **Google Search Console** — los 6 dominios, propiedades de dominio (`sc-domain:`), sitemaps enviados
 - ✅ **Google Business Profile** — existe, 160 interacciones, dirección Estoril 450 (CLC)
-- ✅ **ORCID `0009-0007-0806-6679`** — 26 works, 7 "also known as", bio, website, 2 empleos, **público**
+- ✅ **ORCID `0009-0007-0806-6679`** — 7 "also known as", bio, website, 2 empleos, **público**. Works: tiene 26 cargados; PENDIENTE reimportar `lazo_31_publicaciones.bib` para sumar los 5 abstracts → quedaría en 31
 - ✅ **Dominio primario sin-www en Vercel** — verificado: `www.*` → `sin-www` en toda la red
 - ✅ **LinkedIn actualizado** (ya no dice MEDS)
 
@@ -42,7 +42,7 @@
 - ✅ `sameAs`: 6 dominios propios + ORCID + LinkedIn + Doctoralia (×2) + TopDoctors + CTSNet + Instagram + Encuadrado
 - ✅ `identifier` con `propertyID: "ORCID"` en los 6 dominios
 - ✅ `memberOf` (WABIP, ACS, IASLC, ERS, ISHLT, SOCICH, **ALAT**, **SER**) y `alumniOf` en schema
-- ✅ **26 publicaciones verificadas** en `/publicaciones` (2004-2022)
+- ✅ **31 publicaciones verificadas** en `/publicaciones` (2004-2023): 26 artículos revisados por pares + 5 resúmenes de congreso indexados
 - ✅ Publicaciones enlazadas desde broncoscopia (7), cancerpulmonar (6), vats (2)
 - ✅ FAQ visible y distinto por dominio (24 preguntas) — antes había uno oculto y clonado
 - ✅ Claims de ranking `#1`/`nº 1` eliminados (9 lugares)
@@ -136,14 +136,22 @@ Antes había un FAQPage oculto clonado en 4 dominios (infracción de Google). Ya
 - **Formación:** Médico-Cirujano PUC (2004) · Esp. Cirugía Torácica U. de Chile / INT (2009) ·
   Fellowship Trasplante Pulmonar, H.U. Puerta de Hierro Majadahonda (2010-2011)
 
-### Publicaciones: 26 verificadas
-10 Rev Chil Enf Respir · 6 Rev Chil Cirugía · 4 Rev Med Chile · 3 Rev Med Clin Condes ·
-1 Rev Chil Radiología · 1 Cir Cir · 1 Rev Chil Urología
-Identificadores: 21 PID SciELO · 7 DOI · 5 PMID · 1 LILACS
-Archivo para importar: `lazo_26_publicaciones.bib`
+### Publicaciones: 31 verificadas (26 artículos + 5 resúmenes de congreso)
+**26 artículos revisados por pares:** 10 Rev Chil Enf Respir · 6 Rev Chil Cirugía · 4 Rev Med Chile ·
+3 Rev Med Clin Condes · 1 Rev Chil Radiología · 1 Cir Cir · 1 Rev Chil Urología.
+**5 resúmenes de congreso indexados** (verificados por DOI en Crossref salvo el de 2014):
+- J Heart Lung Transplant 2023;42(4):S298 — PLLTX (DOI …685) y PLTX 15 años (DOI …684)
+- Pediatr Crit Care Med 2021;22(Supl 1) — Awake ECMO (:135, DOI …252) y Chilean PICU (:196, DOI …832)
+- J Thorac Oncol 2014;9(9):S184-5 — lipiodol marking (SIN DOI; solo ResearchGate)
 
-**7 no estaban en el CV** (los más valiosos): biopsia líquida en adenocarcinoma (Rev Med Clin Condes
-2022) y recomendaciones de broncoscopía COVID-19 de la SER (2020, documento de sociedad científica).
+Identificadores: 21 PID SciELO · 11 DOI · 5 PMID · 1 LILACS · 1 sin ID.
+Archivo para importar: `lazo_31_publicaciones.bib`. Fuente del cruce final: ResearchGate
+`/profile/David-Lazo-2` (listaba 31; 2 de ellas eran duplicados con codificación rota, descartados).
+
+**7 artículos no estaban en el CV original** (los más valiosos): biopsia líquida en adenocarcinoma
+(Rev Med Clin Condes 2022) y recomendaciones de broncoscopía COVID-19 de la SER (2020).
+El CV `CV_David_Lazo_2026.docx` ya incluye los 5 abstracts bajo el encabezado
+"Resúmenes en Congresos Internacionales (indexados)".
 
 **Errores del CV a corregir:** omite coautores sistemáticamente — #17 lista 4 de **14**; #14 lista 4 de 9
 ("Yévene" → **Yévenes**); #18 falta Clavero JM. CV corregido ya generado: `CV_David_Lazo_2026.docx`.
@@ -155,7 +163,7 @@ Archivo para importar: `lazo_26_publicaciones.bib`
 | Archivo | Para qué |
 |---|---|
 | `CV_David_Lazo_2026.docx` / `.pdf` | CV completo, Carta, 26 citas Vancouver verificadas |
-| `lazo_26_publicaciones.bib` | Importar publicaciones a ORCID |
+| `lazo_31_publicaciones.bib` | Importar las 31 publicaciones a ORCID |
 | `ORCID-instrucciones.md` | Pasos ORCID (ya ejecutados) |
 | `apply_orcid.py` | Inyecta un ORCID en los nodos Physician de la red |
 | `foto-publicaciones.jpg` | Hero de /publicaciones (ver nota abajo) |

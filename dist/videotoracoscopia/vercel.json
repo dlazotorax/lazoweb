@@ -1,9 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/((?!robots\\.txt$).*)",
-      "destination": "https://vats.cl/$1",
-      "permanent": true
-    }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }

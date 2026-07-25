@@ -611,3 +611,18 @@ figcaption{font-family:var(--font-mono);font-size:.72rem;line-height:1.5;color:v
   .ind-cell{ padding:18px 20px; }
   .contra .card, .algo .branch{ padding:22px 20px; }
 }
+
+/* ── Ajuste tipográfico del hero ──────────────────────────────
+   "videotoracoscopía" (17 caracteres) no cabe en el display del
+   hero al tamaño base y `overflow-wrap:break-word` la partía a
+   la mitad sin guión. Se reduce sólo esa palabra para que entre
+   en una línea; `hyphens:auto` queda de red de seguridad para
+   que, si alguna vez debe partirse, lo haga con guión. */
+.hero h1 em{
+  font-size:.70em;
+  hyphens:auto;
+  -webkit-hyphens:auto;
+}
+@media (max-width:900px){
+  .hero h1 em{font-size:.82em;}
+}

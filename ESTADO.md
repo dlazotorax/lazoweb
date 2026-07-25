@@ -1,7 +1,7 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
 > **Léeme primero.** Este archivo evita proponer cosas ya hechas o rehacer trabajo.
-> Última actualización: **21 jul 2026**. Último commit: `612e8fe`.
+> Última actualización: **25 jul 2026**.
 
 ---
 
@@ -22,8 +22,8 @@
 | cancerpulmonar.cl | 7 | Pacientes |
 | broncoscopia.cl | 3 | Dual |
 | rats.cl | 1 | Médicos referentes |
-| vats.cl | 1 | Médicos referentes |
-| videotoracoscopia.cl | 301 → **vats.cl** | Redirect |
+| videotoracoscopia.cl | 1 | Videotoracoscopía (VATS) — dominio principal desde jul-2026 |
+| vats.cl | 308 → **videotoracoscopia.cl** | Redirect |
 | cirugiadetorax.cl | 301 → cirugiatoracica.cl | Redirect |
 
 ---
@@ -184,3 +184,57 @@ El CV `CV_David_Lazo_2026.docx` ya incluye los 5 abstracts bajo el encabezado
   PerplexityBot, Google-Extended, Applebot-Extended, CCBot.
 - Sitemap por dominio, siempre sin-www.
 - Estilo: Arial/Figtree, teal `#0891b2`, navy `#0c1526`, serif `DM Serif Display`.
+
+---
+
+## 10. Intercambio vats.cl → videotoracoscopia.cl (25-jul-2026)
+
+**Qué se hizo.** El término en español pasó a ser el dominio principal de la
+videotoracoscopía; la sigla quedó como atajo memorable que redirige con 308.
+
+**Por qué.** "VATS" casi no se busca en Chile — es jerga de cirujanos, que además
+ya conocen a David. "Videotoracoscopía" es lo que escribe el paciente recién
+derivado ("lo vamos a operar por videotoracoscopía") y el médico que deriva:
+intención alta, abajo del embudo. La auditoría mostró además que ese resultado
+está vacío de contenido chileno (lo ocupan Quirónsalud, Elsevier, hospitales
+españoles). **Ninguno de los dos dominios tuvo sitio antes** (confirmado por
+David), así que la migración no arrastra historial y fue el momento más barato
+de hacerla: vats.cl tenía 1 página, 1 URL indexada y 0 clics.
+
+**Estado:** videotoracoscopia.cl en línea, proyecto Vercel `videotoracoscopia`
+creado con root `dist/videotoracoscopia`, www → apex 308. vats.cl sirve el stub
+de redirección. 31 páginas de los otros 5 dominios actualizadas (enlaces, texto
+visible y `sameAs`). `dist/uploads/` eliminado (47 archivos basura).
+
+**No soltar vats.cl:** un .cl de 4 letras es escaso, está pagado hasta 2028 y es
+el atajo que se dice en voz alta en un congreso.
+
+### CORRECCIÓN a la auditoría del 25-jul — dos falsos positivos
+
+Verificado contra el panel de Vercel, que es la fuente de verdad:
+
+- **`cirugiadetorax.cl` NO devuelve 302.** Está configurado como **308** hacia
+  cirugiatoracica.cl. El "302" venía de WebFetch.
+- **Los host `www` NO responden 200.** Los seis dominios tienen `www` → apex con
+  **308** (hiperhidrosis usa **301**, igualmente permanente). El estándar sin-www
+  está bien aplicado en toda la red.
+
+**Lección de método:** WebFetch reporta las redirecciones de forma poco fiable —
+dio "302 Found" donde había 308, y sirvió contenido sin declarar el salto www→apex.
+Para cualquier afirmación sobre códigos de redirección, **verificar en el panel de
+Vercel**, no con WebFetch. Ver §6.
+
+### Dos trampas de Vercel a recordar
+
+1. Al agregar un dominio, la casilla **"Redirect apex domains to www (recommended)"
+   viene MARCADA por defecto**. Es lo contrario al estándar sin-www: hay que
+   desmarcarla siempre.
+2. El desplegable de redirección a nivel de dominio **arranca en 307 (temporal)**.
+   Hay que cambiarlo a **308** a mano. La configuración del panel gana sobre el
+   `vercel.json` del repo.
+
+### Pendiente menor
+- `www.vats.cl` encadena 2 saltos (→ vats.cl → videotoracoscopia.cl). Funciona,
+  pero se puede apuntar directo al destino final.
+- Commits `5b5028d` y `590937a` quedaron firmados con el correo de David en vez
+  del de Claude (el rebase para corregirlo fue bloqueado). Cosmético.

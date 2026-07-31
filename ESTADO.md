@@ -1,7 +1,7 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
 > **Léeme primero.** Este archivo evita proponer cosas ya hechas o rehacer trabajo.
-> Última actualización: **25 jul 2026**.
+> Última actualización: **30 jul 2026**.
 
 ---
 
@@ -68,19 +68,27 @@
 
 **No es indexación, no es estructura. Es autoridad.**
 
-Datos de Search Console (jul-2026, 3 meses):
+Datos de Search Console (**30 jul 2026**, últimos 3 meses):
 
-| | broncoscopia.cl | hiperhidrosis.cl |
-|---|---|---|
-| Impresiones | 37 | 75 |
-| **Clics** | **0** | **0** |
-| **Posición media** | **18,9** (pág. 2) | **42** (pág. 4-5) |
-| Consultas | 6 | 22 |
+| Dominio | Impresiones | Clics | Posición media |
+|---|---|---|---|
+| rats.cl | 82 | **4** | **8,2** |
+| cancerpulmonar.cl | 71 | 2 | 23,6 |
+| cirugiatoracica.cl | 223 | 1 | 45,6 |
+| broncoscopia.cl | 49 | 1 | 19,4 |
+| hiperhidrosis.cl | 133 | 0 | 44 |
+| **Total** | **558** | **8** | — |
 
-- Toda la red **está indexada** (verificado con `site:` en Google).
-- La consulta #1 de broncoscopia es **"david lazo"** → solo te encuentra quien ya te conoce.
-- hiperhidrosis capta la demanda correcta ("sudor compensatorio", "rubor facial") pero en posición 42.
-- Los datos de hiperhidrosis parten el **4/7/26**, con la migración a Vercel. **No vemos su historial previo** — revisar en ago-2026 si la migración costó posiciones.
+Comparado con jul-2026 (~112 impresiones, **0 clics**): la red pasó de invisible a
+tener tráfico. **rats.cl es el activo que funciona** — posición 8,2 y la mitad de los
+clics de toda la red. Confirma la tesis de la ventana abierta: RATS en Chile no tiene
+competencia de contenido.
+
+Toda la red **está indexada**. El 30-jul se pidió indexación manual de tres URLs que
+Google conocía y no había indexado: `/publicaciones` y `/links` (estaban en
+"Descubierta: actualmente sin indexar") y `cancerpulmonar.cl/que-es` (estaba en
+"Rastreada: actualmente sin indexar" — peor señal: Google la rastreó y decidió no
+indexarla).
 
 **En las búsquedas objetivo la red no aparece.** Dominan Doctoralia y TopDoctors. En "EBUS Chile" la IA cita a **Clínica Alemana** como pionera — compite directo con el claim de David.
 
@@ -238,3 +246,31 @@ Vercel**, no con WebFetch. Ver §6.
   pero se puede apuntar directo al destino final.
 - Commits `5b5028d` y `590937a` quedaron firmados con el correo de David en vez
   del de Claude (el rebase para corregirlo fue bloqueado). Cosmético.
+
+---
+
+## 11. Vocabulario: "cirugía de tórax" (30-jul-2026)
+
+**Hallazgo.** El hub tenía **223 impresiones** y **107 de ellas** (48%) venían de
+`cirugía de tórax` (70) y `cirugía torax` (37) — en posición ~45. Auditado el HTML:
+la página decía **"cirugía torácica" 9 veces** y **"cirugía de tórax" cero**. Estaba
+posicionando para un término que nunca usaba.
+
+**Corrección aplicada** (commit `5ad0bb3`) en `dist/cirugiatoracica/index.html`:
+
+- `<title>` y `og:title` → "Cirugía de Tórax: ¿Qué hacemos y cómo te podemos ayudar?"
+- `description` y `og:description` reescritas con ambos términos. De paso se eliminó
+  el claim superlativo *"mayor experiencia en EBUS y cirugía robótica en Chile"*,
+  que contradecía el estándar de §9 (sin claims de ranking).
+- `H2` → "¿Qué es la cirugía de tórax o cirugía torácica?"
+- Párrafo-definición nuevo que declara la equivalencia de forma citable por una IA.
+- `H2` de abordajes → "Cirugía de Tórax: vías de abordaje"
+
+**No es keyword stuffing:** son sinónimos reales y David firma sus papers como
+*"Cirujano de Tórax"* (Rev Med Chile 2021;149(2)). El `H1` conserva "Cirugía Torácica",
+así que la página cubre las dos variantes. Además `cirugiadetorax.cl` ya redirige 308
+al hub — el dominio de coincidencia exacta apunta a una página que ahora sí usa el término.
+
+**Qué medir:** la posición de `cirugía de tórax` en GSC hacia fines de agosto. Si baja
+de 45 a página 2-3, el mismo método (auditar la brecha entre lo que la gente escribe y
+lo que la página dice) se aplica al resto de la red.

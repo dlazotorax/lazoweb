@@ -388,6 +388,8 @@
     .contacto-fila--alt .cf-sub { color: var(--topbar-texto); }
     .cf-flecha { font: 600 18px/1 var(--sans); color: #fff; }
     .contacto-fila--alt .cf-flecha { color: var(--verde-claro); }
+    .cf-izq { display: flex; align-items: center; gap: 14px; }
+    .cf-ico { flex: none; color: var(--verde-claro); }
 
     /* ── 10. FOOTER ── */
     footer { border-top: 1px solid var(--borde); }
@@ -889,15 +891,24 @@
     </div>
     <div class="contacto-der">
       <a class="contacto-fila contacto-fila--alt" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener">
-        <div><div class="cf-titulo">LinkedIn</div><div class="cf-sub">Dr. David Lazo Pérez</div></div>
+        <div class="cf-izq">
+          <svg class="cf-ico" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <div><div class="cf-titulo">LinkedIn</div><div class="cf-sub">Dr. David Lazo Pérez</div></div>
+        </div>
         <span class="cf-flecha">→</span>
       </a>
       <a class="contacto-fila contacto-fila--alt" href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener">
-        <div><div class="cf-titulo">Instagram</div><div class="cf-sub">@dr.david.lazo.p</div></div>
+        <div class="cf-izq">
+          <svg class="cf-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <div><div class="cf-titulo">Instagram</div><div class="cf-sub">@dr.david.lazo.p</div></div>
+        </div>
         <span class="cf-flecha">→</span>
       </a>
       <a class="contacto-fila contacto-fila--alt" href="https://orcid.org/0009-0007-0806-6679" target="_blank" rel="noopener">
-        <div><div class="cf-titulo">ORCID</div><div class="cf-sub">Publicaciones científicas</div></div>
+        <div class="cf-izq">
+          <svg class="cf-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><text x="12" y="15.5" text-anchor="middle" font-family="Figtree, sans-serif" font-size="9.5" font-weight="700" fill="currentColor">iD</text></svg>
+          <div><div class="cf-titulo">ORCID</div><div class="cf-sub">Publicaciones científicas</div></div>
+        </div>
         <span class="cf-flecha">→</span>
       </a>
     </div>

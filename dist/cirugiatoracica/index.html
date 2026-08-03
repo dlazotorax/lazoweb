@@ -156,6 +156,60 @@
 }
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es la cirugía torácica?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Es la especialidad quirúrgica dedicada a las enfermedades del tórax: pulmón, pleura, mediastino, tráquea, pared torácica y esófago. Abarca desde la biopsia de un nódulo hasta la resección de un cáncer pulmonar, el manejo del neumotórax, los tumores del mediastino y el trasplante pulmonar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es lo mismo que cirugía cardíaca o cardiotorácica?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. La cirugía torácica general no opera el corazón ni los grandes vasos; eso corresponde a la cirugía cardíaca. En Chile ambas son especialidades separadas, con formación distinta. El término \"cardiotorácico\" se usa en otros países donde las dos se ejercen juntas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre un cirujano de tórax y un broncopulmonar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El broncopulmonar (neumólogo) diagnostica y trata con medicamentos las enfermedades respiratorias; el cirujano torácico resuelve las que requieren pabellón: extirpar un tumor, tomar una biopsia quirúrgica, drenar la pleura, corregir un neumotórax. Habitualmente trabajan juntos sobre el mismo paciente." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo debo consultar a un cirujano de tórax?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cuando un examen de imagen muestra un nódulo o masa pulmonar, un tumor en el mediastino o líquido en la pleura; cuando hay sospecha o diagnóstico de cáncer de pulmón; ante neumotórax repetidos; o por sudoración excesiva de manos, axilas o rubor facial que no responde a tratamiento médico." }
+    },
+    {
+      "@type": "Question",
+      "name": "Me encontraron un nódulo pulmonar en un scanner. ¿Me tengo que operar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No necesariamente. La mayoría de los nódulos pulmonares son benignos. La conducta depende del tamaño, la densidad, la ubicación y los factores de riesgo del paciente: puede indicarse seguimiento con scanner, un PET-CT, una biopsia por broncoscopía o punción, o cirugía diagnóstica. Un nódulo detectado no equivale a un cáncer." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La cirugía de tórax significa que me van a abrir el pecho?",
+      "acceptedAnswer": { "@type": "Answer", "text": "En la mayoría de los casos, no. Hoy el estándar es la cirugía mínimamente invasiva: videotoracoscopía (VATS) o cirugía robótica (RATS), con dos a cuatro incisiones de entre 8 mm y 4 cm. La toracotomía abierta se reserva para tumores extensos o situaciones específicas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué son la videotoracoscopía (VATS) y la cirugía robótica (RATS)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Son dos técnicas mínimamente invasivas. En la VATS se opera con una cámara e instrumentos largos a través de pequeñas incisiones. En la RATS el cirujano maneja brazos robóticos desde una consola, con visión 3D e instrumentos articulados, lo que aporta mayor precisión en la disección de ganglios y en espacios estrechos. Ambas evitan separar las costillas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito una interconsulta para ser evaluado?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No es un requisito. Puedes consultar directamente. Sí ayuda llegar con las imágenes en disco o digital (radiografía, scanner, PET-CT), los informes y cualquier biopsia previa: eso permite resolver la conducta en la primera consulta en vez de citar a una segunda." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tiene sentido pedir una segunda opinión?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, y es una práctica habitual en patología torácica oncológica. Ante un diagnóstico de cáncer, una indicación de cirugía abierta o una recomendación de \"solo observar\" un nódulo, una segunda opinión especializada puede reforzar o cambiar la conducta. Se puede realizar por telemedicina revisando las imágenes y biopsias existentes." }
+    }
+  ]
+}
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -288,6 +342,17 @@
     .proc-card ul { display: flex; flex-direction: column; gap: 7px; list-style: none; }
     .proc-card li { font: 400 14.5px/1.5 var(--sans); color: #5A6A70; }
 
+    /* ── 7b. FAQ ── */
+    .faq { padding: 0 40px 72px; }
+    .faq-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 26px; }
+    .faq-lista { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item { border-radius: 18px; background: var(--sup1); overflow: hidden; }
+    .faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; cursor: pointer; list-style: none; font: 600 16.5px/1.4 var(--sans); color: var(--azul); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: ''; flex: none; width: 10px; height: 10px; border-right: 2px solid var(--verde); border-bottom: 2px solid var(--verde); transform: rotate(45deg); transition: transform 0.2s; margin-top: -4px; }
+    .faq-item[open] summary::after { transform: rotate(225deg); margin-top: 4px; }
+    .faq-item p { padding: 0 24px 22px; font: 400 15.5px/1.65 var(--sans); color: var(--cuerpo); text-wrap: pretty; max-width: 75ch; }
+
     /* ── 8. SOBRE EL AUTOR ── */
     .autor { margin: 0 40px 72px; display: grid; grid-template-columns: 1fr 1.15fr; border-radius: 32px; overflow: hidden; background: var(--sup1); }
     .autor-foto { min-height: 440px; }
@@ -381,6 +446,9 @@
       .abordajes-grid { grid-template-columns: 1fr; }
       .abordaje-card { min-height: 0; }
       .procedimientos { padding: 0 16px 48px; }
+      .faq { padding: 0 16px 48px; }
+      .faq-item summary { padding: 16px 18px; font-size: 15.5px; }
+      .faq-item p { padding: 0 18px 18px; }
       .proc-grid { grid-template-columns: 1fr; }
       .autor { margin: 0 16px 48px; }
       .autor-texto { padding: 28px 20px; }
@@ -731,6 +799,52 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="faq-head">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="sec-titulo">Preguntas frecuentes</h2>
+    </div>
+    <div class="faq-lista">
+      <details class="faq-item">
+        <summary>¿Qué es la cirugía torácica?</summary>
+        <p>Es la especialidad quirúrgica dedicada a las enfermedades del tórax: pulmón, pleura, mediastino, tráquea, pared torácica y esófago. Abarca desde la biopsia de un nódulo hasta la resección de un cáncer pulmonar, el manejo del neumotórax, los tumores del mediastino y el trasplante pulmonar.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Es lo mismo que cirugía cardíaca o cardiotorácica?</summary>
+        <p>No. La cirugía torácica general no opera el corazón ni los grandes vasos; eso corresponde a la cirugía cardíaca. En Chile ambas son especialidades separadas, con formación distinta. El término "cardiotorácico" se usa en otros países donde las dos se ejercen juntas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué diferencia hay entre un cirujano de tórax y un broncopulmonar?</summary>
+        <p>El broncopulmonar (neumólogo) diagnostica y trata con medicamentos las enfermedades respiratorias; el cirujano torácico resuelve las que requieren pabellón: extirpar un tumor, tomar una biopsia quirúrgica, drenar la pleura, corregir un neumotórax. Habitualmente trabajan juntos sobre el mismo paciente.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuándo debo consultar a un cirujano de tórax?</summary>
+        <p>Cuando un examen de imagen muestra un nódulo o masa pulmonar, un tumor en el mediastino o líquido en la pleura; cuando hay sospecha o diagnóstico de cáncer de pulmón; ante neumotórax repetidos; o por sudoración excesiva de manos, axilas o rubor facial que no responde a tratamiento médico.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Me encontraron un nódulo pulmonar en un scanner. ¿Me tengo que operar?</summary>
+        <p>No necesariamente. La mayoría de los nódulos pulmonares son benignos. La conducta depende del tamaño, la densidad, la ubicación y los factores de riesgo del paciente: puede indicarse seguimiento con scanner, un PET-CT, una biopsia por broncoscopía o punción, o cirugía diagnóstica. Un nódulo detectado no equivale a un cáncer.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿La cirugía de tórax significa que me van a abrir el pecho?</summary>
+        <p>En la mayoría de los casos, no. Hoy el estándar es la cirugía mínimamente invasiva: videotoracoscopía (VATS) o cirugía robótica (RATS), con dos a cuatro incisiones de entre 8 mm y 4 cm. La toracotomía abierta se reserva para tumores extensos o situaciones específicas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué son la videotoracoscopía (VATS) y la cirugía robótica (RATS)?</summary>
+        <p>Son dos técnicas mínimamente invasivas. En la VATS se opera con una cámara e instrumentos largos a través de pequeñas incisiones. En la RATS el cirujano maneja brazos robóticos desde una consola, con visión 3D e instrumentos articulados, lo que aporta mayor precisión en la disección de ganglios y en espacios estrechos. Ambas evitan separar las costillas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Necesito una interconsulta para ser evaluado?</summary>
+        <p>No es un requisito. Puedes consultar directamente. Sí ayuda llegar con las imágenes en disco o digital (radiografía, scanner, PET-CT), los informes y cualquier biopsia previa: eso permite resolver la conducta en la primera consulta en vez de citar a una segunda.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Tiene sentido pedir una segunda opinión?</summary>
+        <p>Sí, y es una práctica habitual en patología torácica oncológica. Ante un diagnóstico de cáncer, una indicación de cirugía abierta o una recomendación de "solo observar" un nódulo, una segunda opinión especializada puede reforzar o cambiar la conducta. Se puede realizar por telemedicina revisando las imágenes y biopsias existentes.</p>
+      </details>
+    </div>
+  </section>
+
   <!-- SOBRE EL AUTOR -->
   <section class="autor">
     <div class="autor-foto">
@@ -777,6 +891,7 @@
       <div class="footer-marca">
         <span class="footer-marca-nombre">CirugiaToracica.cl</span>
         <span class="footer-copy">© 2026 · Dr. David Lazo Pérez · Cirugía Torácica · Santiago, Chile</span>
+        <span class="footer-copy">Revisado por Dr. David Lazo, cirujano torácico — actualizado agosto 2026</span>
       </div>
       <div class="footer-col">
         <span class="footer-col-titulo">Red clínica</span>
@@ -816,6 +931,11 @@
           else if (e.key === 'Home') n = 0;
           else if (e.key === 'End') n = tabs.length - 1;
           if (n !== null) { e.preventDefault(); select(n); tabs[n].focus(); }
+        });
+      });
+      document.querySelectorAll('.faq-item').forEach(function (d) {
+        d.addEventListener('toggle', function () {
+          if (d.open) document.querySelectorAll('.faq-item[open]').forEach(function (o) { if (o !== d) o.open = false; });
         });
       });
       document.querySelectorAll('.nav-links a').forEach(function (a) {

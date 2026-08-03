@@ -227,6 +227,8 @@
       --nav-texto:   #3C4C52;
       --sup1:        #F1F7F6;
       --sup2:        #F4F7F7;
+      --sup-azul:    #EAF2F8;
+      --sup-menta:   #E4F5F0;
       --borde:       #EAEFEE;
       --borde-fuerte:#C9D8D6;
       --borde-tab:   #DCE5E4;
@@ -301,7 +303,7 @@
     .que-es-texto p strong { font-weight: 700; color: var(--tinta); }
 
     /* ── 5. ENFERMEDADES — PESTAÑAS ── */
-    .enfermedades { margin: 0 40px; padding: 56px 44px; border-radius: 32px; background: var(--sup1); }
+    .enfermedades { margin: 0 40px; padding: 56px 44px; border-radius: 32px; background: var(--sup-azul); }
     .enfermedades-head { display: flex; flex-direction: column; gap: 14px; max-width: 56ch; }
     .enfermedades-head p { font: 400 16.5px/1.6 var(--sans); color: var(--cuerpo); }
     .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 24px; }
@@ -322,7 +324,7 @@
     .abordajes { padding: 72px 40px 64px; }
     .abordajes-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
     .abordajes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .abordaje-card { display: flex; flex-direction: column; gap: 14px; min-height: 230px; padding: 26px; border-radius: 24px; border: 1px solid var(--borde); text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s; }
+    .abordaje-card { display: flex; flex-direction: column; gap: 14px; min-height: 230px; padding: 26px; border-radius: 24px; background: var(--sup1); border: 1px solid transparent; text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s; }
     .abordaje-card:hover { border-color: var(--borde-fuerte); box-shadow: 0 8px 24px rgba(11,59,82,0.08); }
     .abordaje-card h3 { font: 700 18px/1.25 var(--sans); color: var(--azul); }
     .abordaje-card p { flex: 1; font: 400 14.5px/1.55 var(--sans); color: var(--cuerpo-suave); }
@@ -337,7 +339,7 @@
     .procedimientos { padding: 0 40px 72px; }
     .procedimientos-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 26px; }
     .proc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .proc-card { padding: 24px; border-radius: 22px; background: var(--sup2); display: flex; flex-direction: column; gap: 12px; }
+    .proc-card { padding: 24px; border-radius: 22px; background: var(--sup-azul); display: flex; flex-direction: column; gap: 12px; }
     .proc-card-titulo { font: 700 15.5px/1.3 var(--sans); color: var(--azul); }
     .proc-card ul { display: flex; flex-direction: column; gap: 7px; list-style: none; }
     .proc-card li { font: 400 14.5px/1.5 var(--sans); color: #5A6A70; }
@@ -346,7 +348,7 @@
     .faq { padding: 0 40px 72px; }
     .faq-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 26px; }
     .faq-lista { display: flex; flex-direction: column; gap: 10px; }
-    .faq-item { border-radius: 18px; background: var(--sup1); overflow: hidden; }
+    .faq-item { border-radius: 18px; background: var(--sup-menta); overflow: hidden; }
     .faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; cursor: pointer; list-style: none; font: 600 16.5px/1.4 var(--sans); color: var(--azul); }
     .faq-item summary::-webkit-details-marker { display: none; }
     .faq-item summary::after { content: ''; flex: none; width: 10px; height: 10px; border-right: 2px solid var(--verde); border-bottom: 2px solid var(--verde); transform: rotate(45deg); transition: transform 0.2s; margin-top: -4px; }
@@ -354,7 +356,7 @@
     .faq-item p { padding: 0 24px 22px; font: 400 15.5px/1.65 var(--sans); color: var(--cuerpo); text-wrap: pretty; max-width: 75ch; }
 
     /* ── 8. SOBRE EL AUTOR ── */
-    .autor { margin: 0 40px 72px; display: grid; grid-template-columns: 1fr 1.15fr; border-radius: 32px; overflow: hidden; background: var(--sup1); }
+    .autor { margin: 0 40px 72px; display: grid; grid-template-columns: 1fr 1.15fr; border-radius: 32px; overflow: hidden; background: var(--sup-azul); }
     .autor-foto { min-height: 440px; }
     .autor-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; display: block; }
     .autor-texto { padding: 48px; display: flex; flex-direction: column; gap: 16px; justify-content: center; align-items: flex-start; }
@@ -484,6 +486,7 @@
             <li><a href="#que-es">Qué es</a></li>
             <li><a href="#como-puedo-ayudarte">Enfermedades</a></li>
             <li><a href="#tecnicas">Técnicas</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
           <a href="#contacto" class="nav-cta">Agenda tu consulta</a>

@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://cirugiatoracica.cl/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://cirugiatoracica.cl/" />
@@ -20,11 +20,13 @@
 
   <url>
     <loc>https://cirugiatoracica.cl/links</loc>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://cirugiatoracica.cl/publicaciones</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>

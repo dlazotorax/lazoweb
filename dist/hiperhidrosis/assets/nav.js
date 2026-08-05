@@ -40,3 +40,13 @@
     });
   });
 })();
+
+/* FAQ acordeón */
+document.querySelectorAll('.faq-q').forEach(function (b) {
+  b.setAttribute('aria-expanded', 'false');
+  b.addEventListener('click', function () {
+    var item = b.parentElement;
+    item.classList.toggle('open');
+    b.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+  });
+});

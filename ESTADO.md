@@ -1,7 +1,7 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
 > **Léeme primero.** Este archivo evita proponer cosas ya hechas o rehacer trabajo.
-> Última actualización: **30 jul 2026**.
+> Última actualización: **5 ago 2026**.
 
 ---
 
@@ -274,3 +274,52 @@ al hub — el dominio de coincidencia exacta apunta a una página que ahora sí 
 **Qué medir:** la posición de `cirugía de tórax` en GSC hacia fines de agosto. Si baja
 de 45 a página 2-3, el mismo método (auditar la brecha entre lo que la gente escribe y
 lo que la página dice) se aplica al resto de la red.
+
+---
+
+## 12. Sesión del 5-ago-2026
+
+### Búsqueda: dónde estamos de verdad
+GSC (3 meses, cuenta **`dr.david.lazo@gmail.com`**, authuser=1 — `dlazo.torax@` no tiene propiedades):
+
+| Dominio | Imp | Clics | Pos |
+|---|---|---|---|
+| cirugiatoracica.cl | 282 | 2 | 42,9 |
+| hiperhidrosis.cl | 156 | 0 | 42,6 |
+| rats.cl | 105 | 5 | 7,9 |
+| cancerpulmonar.cl | 97 | 2 | 22,3 |
+| broncoscopia.cl | 53 | 2 | 18,3 |
+| videotoracoscopia.cl | 7 | 1 | 18,6 |
+| **Total** | **700** | **10** | |
+
+Venía de 558/8 el 30-jul. **25 URLs indexadas.** Las dos que pedí indexar el 30-jul (`/publicaciones` y `cancerpulmonar.cl/que-es`) **entraron**.
+
+**CORRECCIÓN a la §11:** dije "cirugía de tórax en posición 45". Falso — 45,6 era la media del dominio. La consulta está en **83,4**. Para leer posiciones por consulta hay que activar la métrica Posición (`&metrics=CLICKS%2CIMPRESSIONS%2CPOSITION`) o disparar pointerdown+mousedown+mouseup+click sobre el `div[role="button"]` "Posición media".
+
+**Patrón:** marca en pág. 1 (`david lazo` 7,4 · `cirujano cardiotoracico` 5,5) · genéricas en pág. 7-9 (`cirugía de tórax` 83,4 · `hiperhidrosis` 74,7). Perfil clásico de sitio sin autoridad. En `"david lazo" cirujano toracico` ya salen **4 dominios propios en el top 10**.
+
+### La corroboración externa SÍ existía (corrige "backlinks: CERO")
+- **Universidad Finis Terrae** lo lista en el **Comité Académico** del Programa de Subespecialidad en Cirugía de Tórax (`medfinis.cl/postitulo/subesp-cirugia-torax/`), con foto y bio.
+- **clinicalascondes.cl**: ~3 páginas de resultados citándolo desde 2016. Verificado en la fuente: la nota del trasplante bilobar (12-jul-2018) lo llama *"cirujano de tórax y **jefe de cirugía adulto** de Clínica Las Condes"*.
+- ORCID sumó dos cargos que la web no menciona: **ALAT — Director del Depto. de Cirugía (2020-2022)** y **SER — Director (2016-2019)**.
+
+**Nada de esto está publicado en la red.** Es la mejor apuesta pendiente: una página de docencia y menciones.
+
+### Cambios aplicados hoy
+- **Hub:** ilustración 2,79 MB → JPG q95 con `srcset` 960/1408. Home de **3.040 KB a 622 KB**. (Probé WebP primero; David pidió revertir, luego JPG. El JPG q95 4:4:4 da PSNR 42,4 dB.)
+- **/links:** el canonical decía `/links/` con barra y el sitemap `/links` sin barra — señales contradictorias, probable causa de que no se indexara. Corregido + `meta robots` + fuera el claim "#1 EBUS en Chile".
+- **hiperhidrosis.cl:** el `Organization` tenía `sameAs` **vacío** pese a enlazar `@hiperhidrosis.cl` 20 veces en el pie. Ahora declara la cuenta y la conecta con `founder` → `#david-lazo`. En el bloque de RRSS, Doctoralia dio paso al IG propio (sigue en `sameAs`).
+- **/cirugia-hiperhidrosis/** (era 612 palabras, pos. 61): reordenada para abrir con **¿Quién es candidato?**, + recuperación, + **FAQ en acordeón con 9 preguntas** y schema. 1.373 palabras.
+- **"Es ambulatoria"** — dato que dio David. El sitio decía lo contrario en 4 lugares (entradilla, ¿En qué consiste?, recuperación, `howPerformed`) más el post de 2020 que decía "menos de 24 h de hospitalización" y "3er día". Todo alineado.
+- La página de sudoración compensatoria (pos. 15,2, la mejor con volumen) ahora **empuja hacia la cirugía** con el dato del 95% de satisfacción, que estaba enterrado.
+
+### Decisiones de David (no revisitar)
+- **NO destacar por sudoración compensatoria** — es el principal motivo por el que la gente no se opera.
+- **Rubor facial: cada vez se opera menos**, por alta probabilidad de SC posoperatoria. No priorizar esa página pese a tener 70 impresiones.
+- **No tocar precio ni cobertura todavía** — hay un convenio en curso. La estructura de la página admite la sección entre "Recuperación" y "Resultados" sin rehacer nada. Es el hueco más grande: 7 de las 12 búsquedas asociadas a "cirugia hiperhidrosis" son sobre plata y **ninguna clínica responde**.
+- El video que rankea en el carrusel de "sudoración compensatoria" **no es suyo**: es de `@biotorax`, de otro país. No interesa.
+
+### Pendiente conocido
+- `publicaciones.html` tiene un `</section>` mal anidado — viene del commit `d29c6c4` de David, no de mis cambios.
+- 12,5 MB de imágenes huérfanas en `dist/cirugiatoracica/imgs/` (`hero-pabellon2/3/pabellón.jpg`). No se sirven; engordan el repo.
+- El resto del sitio de hiperhidrosis todavía tiene las FAQ como títulos sueltos, no en acordeón (`rubor-facial-patologico`).

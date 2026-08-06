@@ -51,10 +51,33 @@
 
 ---
 
-## 3. PENDIENTE DE VERDAD
+## 3. PENDIENTE DE VERDAD (revisado 5-ago-2026)
 
-| # | Qué | De quién |
+### De David — por impacto
+
+| # | Qué | Por qué importa |
 |---|---|---|
+| 1 | **Crear la propiedad GA4 y pasar el ID `G-…`** | Hoy la red no mide nada. `/links` tiene el código con los IDs de ejemplo (`G-XXXXXXXXXX`, `TU_PIXEL_ID`) sin reemplazar, y las otras 32 páginas no tienen analítica. Todo el tráfico de Instagram se pierde |
+| 2 | **Google Business Profile: conseguir reseñas** | Tiene **0**. Es la ficha que sale al googlear su nombre. Tiene 58 en Doctoralia — el flujo hacia GBP no existe |
+| 3 | **GBP: cargar horario y categoría** | Google lo pide en el panel. El teléfono ya está |
+| 4 | **ORCID: borrar el duplicado** "Resistencia a ciprofloxacino" (marca 32, son 31) | 2 minutos |
+| 5 | **ORCID: cargar la regencia WABIP** | Su credencial internacional más fuerte y no aparece en ninguna parte del registro |
+| 6 | **Fusionar las 2 fichas de Doctoralia** | 58 reseñas partidas. Doctoralia es el resultado #1 en "cirujano torácico Santiago" |
+| 7 | **Pedir el enlace a WABIP, SOCICH y Finis Terrae** | Única vía de backlink institucional que queda. Backlinks actuales: cero |
+| 8 | Cerrar el convenio para poder publicar la sección de cobertura | Es el hueco más grande de "cirugia hiperhidrosis" |
+| 9 | CV: corregir coautores omitidos (ver §6) | |
+| 10 | TopDoctors: reactivar ("no es posible contactar") | |
+
+### De Claude
+
+| # | Qué |
+|---|---|
+| 1 | **Página de docencia y menciones** — Finis Terrae (Comité Académico) + las ~10 notas de CLC. Autoridad ya publicada que la red no usa |
+| 2 | Instalar GA4 en las 33 páginas + medición entre dominios + conversiones de reserva |
+| 3 | Acordeón de FAQ en el resto de hiperhidrosis.cl (`rubor-facial-patologico` aún los tiene como títulos sueltos) |
+| 4 | `/rats-vs-vats` — contenido nuevo |
+
+---|---|---|
 | 1 | **Fusionar las 2 fichas de Doctoralia** (`-3/…/santiago` y `/…/las-condes`) — reseñas partidas; Doctoralia es el resultado #1 en "cirujano torácico Santiago" | David |
 | 2 | **GBP: falta teléfono y horario** (lo dice Google en el panel) | David |
 | 3 | **ORCID: keywords y país vacíos** (2 min) | David |

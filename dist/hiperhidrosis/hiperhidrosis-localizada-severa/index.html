@@ -196,6 +196,28 @@
   ]
 }
   </script>
+  <!-- Google Analytics 4 · red Dr. David Lazo -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-X3GX2HCVZL', { linker: { domains: ['cirugiatoracica.cl','rats.cl','cancerpulmonar.cl','broncoscopia.cl','hiperhidrosis.cl','videotoracoscopia.cl'] } });
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var h = a.getAttribute('href') || '';
+      if (h.indexOf('reserva.clinicalascondes.cl') > -1) {
+        gtag('event', 'reserva_presencial', { canal: 'Clinica Las Condes', pagina: location.pathname });
+      } else if (h.indexOf('encuadrado.com') > -1) {
+        gtag('event', 'reserva_telemedicina', { canal: 'Telemedicina', pagina: location.pathname });
+      } else if (h.indexOf('doctoralia.cl') > -1) {
+        gtag('event', 'salida_doctoralia', { pagina: location.pathname });
+      } else if (h.indexOf('instagram.com') > -1) {
+        gtag('event', 'salida_instagram', { pagina: location.pathname });
+      }
+    }, true);
+  </script>
 </head>
 <body>
 <nav class="site-nav">

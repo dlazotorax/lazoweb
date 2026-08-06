@@ -57,7 +57,7 @@
 
 | # | Qué | Por qué importa |
 |---|---|---|
-| 1 | **Crear la propiedad GA4 y pasar el ID `G-…`** | Hoy la red no mide nada. `/links` tiene el código con los IDs de ejemplo (`G-XXXXXXXXXX`, `TU_PIXEL_ID`) sin reemplazar, y las otras 32 páginas no tienen analítica. Todo el tráfico de Instagram se pierde |
+| 1 | **GA4: marcar conversiones y vincular Search Console** | El tag ya está instalado (ver §13). Falta marcar `reserva_presencial` y `reserva_telemedicina` como eventos clave, y añadir los 6 dominios en Admin → Flujos de datos → Configurar dominios |
 | 2 | **Google Business Profile: conseguir reseñas** | Tiene **0**. Es la ficha que sale al googlear su nombre. Tiene 58 en Doctoralia — el flujo hacia GBP no existe |
 | 3 | **GBP: cargar horario y categoría** | Google lo pide en el panel. El teléfono ya está |
 | 4 | **ORCID: borrar el duplicado** "Resistencia a ciprofloxacino" (marca 32, son 31) | 2 minutos |
@@ -346,3 +346,21 @@ Venía de 558/8 el 30-jul. **25 URLs indexadas.** Las dos que pedí indexar el 3
 - `publicaciones.html` tiene un `</section>` mal anidado — viene del commit `d29c6c4` de David, no de mis cambios.
 - 12,5 MB de imágenes huérfanas en `dist/cirugiatoracica/imgs/` (`hero-pabellon2/3/pabellón.jpg`). No se sirven; engordan el repo.
 - El resto del sitio de hiperhidrosis todavía tiene las FAQ como títulos sueltos, no en acordeón (`rubor-facial-patologico`).
+
+---
+
+## 13. Analítica — GA4 (5-ago-2026)
+
+**ID de medición: `G-X3GX2HCVZL`** · propiedad creada en `dr.david.lazo@gmail.com`, la misma cuenta que Search Console.
+
+Hasta hoy la red **no medía nada**: `/links` traía el snippet de GA4 y del píxel de Meta pero **comentado entero** y con los IDs de ejemplo (`G-XXXXXXXXXX`, `TU_PIXEL_ID`); las otras 32 páginas no tenían analítica. Todo el tráfico de Instagram —con UTM y todo— se perdía.
+
+Instalado en **las 32 páginas publicadas**, en el `<head>`, con:
+- `linker.domains` con los 6 dominios, para que un recorrido entre sitios cuente como una visita y no como varias.
+- Eventos por delegación en `document` (captura): `reserva_presencial` (reserva.clinicalascondes.cl), `reserva_telemedicina` (encuadrado.com), `salida_doctoralia`, `salida_instagram`.
+
+Verificado en vivo: `gtag/js` carga, el hit lleva `tid=G-X3GX2HCVZL`, dispara en cirugiatoracica.cl y en hiperhidrosis.cl, los UTM llegan intactos y el clic a reservar emite `en=reserva_presencial`.
+
+**Ojo al medir:** GA4 envía por `sendBeacon` y agrupa los eventos, así que un conteo inmediato de `performance.getEntriesByType('resource')` puede dar cero aunque el evento sí haya salido. Comprobar el parámetro `en=` del último hit `/g/collect`, no el número de hits.
+
+`dist/index.html` es una "Vista General" de rediseños que no se publica (los roots de Vercel son `dist/<dominio>`). Es el mismo artefacto que `project/`. Sin GA a propósito.

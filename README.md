@@ -1,25 +1,47 @@
-# CODING AGENTS: READ THIS FIRST
+# lazoweb — red de sitios del Dr. David Lazo Pérez
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Monorepo de la red de dominios de cirugía torácica. **Sitios estáticos, sin build.**
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Léeme primero
 
-## What you should do — IMPORTANT
+**`ESTADO.md`** es el documento de referencia del proyecto: infraestructura, qué ya está
+hecho, qué está pendiente, decisiones tomadas y los datos canónicos de identidad.
+Consúltalo antes de proponer cualquier cambio — evita rehacer trabajo ya resuelto.
 
-**Read the chat transcripts first.** There are 3 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+## Estructura
 
-**Find the primary design file under `project/` and read it top to bottom.** The chat transcripts will tell you which file the user was last iterating on. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+```
+dist/<dominio>/     ← lo único que se publica. Un proyecto de Vercel por carpeta.
+ESTADO.md           ← estado del proyecto (leer primero)
+chats/              ← transcripciones del diseño original (histórico)
+_design/            ← borradores sueltos (no se publica)
+```
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## Dominios
 
-## About the design files
+| Carpeta | Dominio | Rol |
+|---|---|---|
+| `cirugiatoracica` | cirugiatoracica.cl | Hub principal (+ `/perfil`, `/publicaciones`, `/links`) |
+| `rats` | rats.cl | Cirugía robótica torácica |
+| `cancerpulmonar` | cancerpulmonar.cl | Cáncer pulmonar (7 páginas) |
+| `broncoscopia` | broncoscopia.cl | Broncoscopía intervencional |
+| `hiperhidrosis` | hiperhidrosis.cl | Hiperhidrosis (16 páginas) |
+| `videotoracoscopia` | videotoracoscopia.cl | VATS |
+| `vats` | vats.cl | Redirige 308 → videotoracoscopia.cl |
+| `cirugiadetorax` | cirugiadetorax.cl | Redirige 308 → cirugiatoracica.cl |
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+## Despliegue
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+Push a `main` = despliegue automático en Vercel. Un proyecto por carpeta, con
+Root Directory = `dist/<carpeta>`. La propagación del CDN toma entre 40 y 90 segundos.
 
-## Bundle contents
+**La configuración del panel de Vercel gana sobre el `vercel.json` del repo.**
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `www lazo` project files (HTML prototypes, assets, components)
+## Reglas que no se negocian
+
+- **Contenido médico (YMYL).** Nunca publicar una autoría, cifra, credencial o afiliación
+  sin abrirla en su fuente primaria. Ver la regla completa en `ESTADO.md` §6.
+- **Todo `FAQPage` debe tener su contenido visible** en la página. Nunca marcado oculto.
+- **`@id` único de la entidad:** `https://cirugiatoracica.cl/#david-lazo` en toda la red.
+- **Canonical sin `www` y sin barra final.**
+- **Sin claims de ranking.** Las cifras de volumen sí se conservan.

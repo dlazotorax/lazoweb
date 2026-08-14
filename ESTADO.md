@@ -1,7 +1,7 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
 > **Léeme primero.** Este archivo evita proponer cosas ya hechas o rehacer trabajo.
-> Última actualización: **5 ago 2026**.
+> Última actualización: **14 ago 2026**.
 
 ---
 
@@ -364,3 +364,51 @@ Verificado en vivo: `gtag/js` carga, el hit lleva `tid=G-X3GX2HCVZL`, dispara en
 **Ojo al medir:** GA4 envía por `sendBeacon` y agrupa los eventos, así que un conteo inmediato de `performance.getEntriesByType('resource')` puede dar cero aunque el evento sí haya salido. Comprobar el parámetro `en=` del último hit `/g/collect`, no el número de hits.
 
 `dist/index.html` es una "Vista General" de rediseños que no se publica (los roots de Vercel son `dist/<dominio>`). Es el mismo artefacto que `project/`. Sin GA a propósito.
+
+---
+
+## 14. Chequeo del 14-ago-2026 (9 días después de la sesión grande)
+
+### Search Console — 3 meses
+
+| Dominio | 5-ago | 14-ago | Δ impresiones |
+|---|---|---|---|
+| cirugiatoracica.cl | 282 / 2 / 42,9 | **375 / 5 / 36,7** | +93 |
+| hiperhidrosis.cl | 156 / 0 / 42,6 | **204 / 0 / 42,1** | +48 |
+| rats.cl | 105 / 5 / 7,9 | **175 / 8 / 7,3** | +70 |
+| cancerpulmonar.cl | 97 / 2 / 22,3 | **163 / 4 / 25,2** | +66 |
+| broncoscopia.cl | 53 / 2 / 18,3 | **86 / 3 / 17,5** | +33 |
+| videotoracoscopia.cl | 7 / 1 / 18,6 | **19 / 1 / 13,6** | +12 |
+| **Total** | **700 / 10** | **1.022 / 21** | **+46% imp · +110% clics** |
+
+### Lo que NO se movió — importante para no engañarse
+- **`cirugía de tórax` sigue en 82,9** (era 83,4). El cambio de vocabulario del 2-ago no movió nada en 12 días. Confirma que ahí el problema es autoridad, no on-page.
+- **`/cirugia-hiperhidrosis/` sigue en 60,7** (era 60,8) pese a la reescritura completa del 5-ago. Solo +5 impresiones. 9 días es poco, pero conviene no prometer nada.
+- **hiperhidrosis.cl: 204 impresiones y 0 clics.** Sigue sin convertir. `sudoración compensatoria` está en **posición 9,1** y no recibe un solo clic — pero David decidió no destacar esa página.
+
+### Lo que sí
+- `doctor lazo` → **posición 1,0**. `david lazo` → 6,1 con 2 clics.
+- rats.cl sigue siendo el mejor activo: 8 clics, posición 7,3.
+- En `"david lazo" cirujano toracico` ya salen **5 dominios propios** (entró videotoracoscopia.cl).
+- El cambio de nombre de Instagram **ya se refleja en Google**: el resultado aparece como *"Cirujano Torácico (@dr.david.lazo.p)"*.
+
+### GA4 — primera medición real (instalado el 6-ago)
+80 sesiones · 25 usuarios nuevos · 329 vistas. Search Console **ya vinculado**.
+
+| Canal | Sesiones | Interacción media |
+|---|---|---|
+| Direct | 56 (70%) | **2 s** |
+| Organic Search | 15 | **54 s**, 5,73 páginas/sesión |
+| Organic Social | 5 | — |
+| Referral | 3 | — |
+
+**Cuidado al leer:** el 70% "Direct" con 2 segundos de interacción, más el reparto por país (US 27, Chile 16, luego Alemania 4, India 4, Francia 3, NZ 3, Canadá 2) es el patrón clásico de **bots**. El tráfico real es Chile 16 usuarios y las 15 sesiones de búsqueda orgánica, que sí leen: 54 segundos y casi 6 páginas por sesión.
+
+**Página más vista: videotoracoscopia.cl con 28 vistas**, por encima del hub (15). Es la que menos impresiones tiene y la que más se lee — el formato largo funciona.
+
+Conviene activar el filtro de bots y considerar excluir su propia IP.
+
+### Redes
+- **@dr.david.lazo.p**: nombre ya es `David Lazo • Cirujano Torácico` ✓ · 2.427 seguidores · siguiendo bajó a 1.287 · enlace a cirugiatoracica.cl/links ✓
+- **@hiperhidrosis.cl**: 1.110 seguidores, 625 publicaciones, **sigue apuntando a beacons.page** ✗ — pendiente
+- `/links` **sigue sin indexar**.

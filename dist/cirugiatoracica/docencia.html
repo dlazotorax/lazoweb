@@ -731,6 +731,15 @@
     .pub-orcid { font-size: 0.86rem; color: var(--muted); margin-top: 0.7rem; }
     .pub-orcid a { color: var(--teal); text-decoration: none; }
     .pub-orcid a:hover { text-decoration: underline; }
+
+    /* Embed de vídeo — 16:9, sin librerías */
+    .tv-embed { position: relative; width: 100%; max-width: 780px; aspect-ratio: 16 / 9;
+      margin: 1.5rem 0 0.9rem; border-radius: 10px; overflow: hidden;
+      background: var(--navy); border: 1px solid var(--border); }
+    .tv-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .tv-cap { font-size: 0.84rem; color: var(--muted); max-width: 780px; line-height: 1.6; }
+    .tv-cap a { color: var(--teal); text-decoration: none; font-weight: 600; }
+    .tv-cap a:hover { text-decoration: underline; }
   </style>
   <script type="application/ld+json">
 {
@@ -946,6 +955,32 @@
   }
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Hiperhidrosis en Dr. TV",
+  "description": "Entrevista en el programa de salud chileno Dr. TV sobre hiperhidrosis: qué es la sudoración excesiva, cuándo deja de ser fisiológica y qué opciones de tratamiento existen, incluida la simpaticotomía por videotoracoscopía.",
+  "uploadDate": "2017-07-18",
+  "duration": "PT13M39S",
+  "thumbnailUrl": "https://i.ytimg.com/vi/mtympCL6XuY/hqdefault.jpg",
+  "embedUrl": "https://www.youtube.com/embed/mtympCL6XuY",
+  "url": "https://www.youtube.com/watch?v=mtympCL6XuY",
+  "inLanguage": "es-CL",
+  "actor": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "about": {
+    "@type": "MedicalCondition",
+    "name": "Hiperhidrosis"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "hiperhidrosis.cl",
+    "url": "https://www.youtube.com/@hiperhidrosiscl"
+  }
+}
+  </script>
   <!-- Google Analytics 4 · red Dr. David Lazo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
   <script>
@@ -992,7 +1027,7 @@
       <div class="inner">
         <p class="eyebrow"><a href="/perfil" style="color:var(--teal);text-decoration:none;">← Dr. David Lazo Pérez</a></p>
         <h1 class="pub-h1">Docencia y menciones</h1>
-        <p class="pub-lead">Dirijo un programa de perfeccionamiento en la Escuela de Postgrado de la Universidad de Chile desde 2014, formo parte del comité académico del programa de subespecialidad en Cirugía de Tórax de la Universidad Finis Terrae y he sido consultado por Clínica Las Condes como especialista de referencia desde 2016. Aquí está el registro, con el enlace a cada fuente original.</p>
+        <p class="pub-lead">Dirijo un programa de perfeccionamiento en la Escuela de Postgrado de la Universidad de Chile desde 2014, formo parte del comité académico del programa de subespecialidad en Cirugía de Tórax de la Universidad Finis Terrae y he sido consultado por Clínica Las Condes y por televisión como especialista de referencia desde 2016. Aquí está el registro, con el enlace a cada fuente original.</p>
         <p class="pub-orcid">El listado de mis artículos en revistas indexadas está en <a href="/publicaciones">las 31 publicaciones científicas</a>, y mi trayectoria completa en <a href="/perfil">el perfil profesional</a>.</p>
       </div>
     </section>
@@ -1039,6 +1074,18 @@
           </div>
         </div>
         <p class="pub-orcid" style="margin-top:1.6rem;">Fuera de la universidad, en 2018 fui instructor del programa <em>Train-the-Trainers</em> en broncoscopía de Bronchoscopy International junto a <a href="https://wabip.com/" target="_blank" rel="noopener">WABIP</a> y AABE, la asociación de la que soy regente para Chile.</p>
+      </div>
+    </section>
+
+    <!-- TELEVISIÓN -->
+    <section class="section" id="television" style="padding-top:0;">
+      <div class="inner">
+        <h2 class="pub-h1" style="font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:0.8rem;">Televisión</h2>
+        <p class="pub-lead">En 2017 el programa de salud <em>Dr. TV</em> dedicó un capítulo a la hiperhidrosis. Trece minutos explicando qué es la sudoración excesiva, cuándo deja de ser fisiológica y qué se puede hacer al respecto.</p>
+        <div class="tv-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/mtympCL6XuY" title="Hiperhidrosis en Dr. TV — Dr. David Lazo Pérez, cirujano torácico" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="tv-cap"><strong>Hiperhidrosis en Dr. TV</strong> · 18 de julio de 2017 · 13 min 39 s · Publicado en <a href="https://www.youtube.com/@hiperhidrosiscl" target="_blank" rel="noopener">el canal de hiperhidrosis.cl</a>. Si prefieres el texto, todo esto está desarrollado y actualizado en <a href="https://hiperhidrosis.cl/">hiperhidrosis.cl</a>.</p>
       </div>
     </section>
     <!-- MENCIONES -->

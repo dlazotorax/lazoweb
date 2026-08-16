@@ -630,3 +630,29 @@ figcaption{font-family:var(--font-mono);font-size:.72rem;line-height:1.5;color:v
 @media (max-width:900px){
   .hero h1 em{font-size:.82em;}
 }
+
+/* ============================================================
+   PUBLICACIONES (Investigación)
+   El bloque venía con clases de otro sitio de la red (.inner,
+   .eyebrow, .pubs-*) que aquí no existían: caía a los estilos por
+   defecto del navegador. Reescrito con los tokens de este sitio.
+   ============================================================ */
+.pubs{display:grid;gap:1.9rem;margin-top:2.6rem;}
+.pub{border-left:1px solid var(--line);padding-left:1.4rem;max-width:var(--measure);}
+.pub-t{font-family:var(--font-body);font-size:clamp(1.02rem,1.5vw,1.22rem);
+  line-height:1.36;color:var(--fg);margin-bottom:.55rem;}
+.pub-a{font-family:var(--font-mono);font-size:.72rem;line-height:1.65;
+  color:var(--bone-dim);margin-bottom:.3rem;}
+.pub-a strong{color:var(--fg);font-weight:700;}
+.pub-m{font-family:var(--font-mono);font-size:.72rem;line-height:1.65;color:var(--bone-faint);}
+.pub-m a{color:var(--new);text-decoration:none;border-bottom:1px solid rgba(38,195,174,.38);}
+.pub-m a:hover{color:var(--fg);border-bottom-color:var(--fg);}
+.pubs-all{display:inline-block;margin-top:2.4rem;font-family:var(--font-mono);
+  font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--new);
+  text-decoration:none;border-bottom:1px solid rgba(38,195,174,.38);padding-bottom:.25rem;}
+.pubs-all:hover{color:var(--fg);border-bottom-color:var(--fg);}
+
+@media (max-width:768px){
+  .pub{padding-left:1rem;}
+  .pubs{gap:1.5rem;}
+}

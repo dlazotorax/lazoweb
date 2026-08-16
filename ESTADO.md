@@ -1,7 +1,7 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
 > **Léeme primero.** Este archivo evita proponer cosas ya hechas o rehacer trabajo.
-> Última actualización: **14 ago 2026**.
+> Última actualización: **16 ago 2026**.
 
 ---
 
@@ -583,3 +583,49 @@ cuando su proporción real da 553×302, y la foto del hub pasó de 521×497 (rec
 `aspect-ratio` o alturas por CSS. El script `scripts/audit.py` no detecta esto porque es un
 problema de renderizado, no de HTML: hace falta un navegador. Conviene comprobarlo midiendo
 la caja de cada imagen antes y después.
+
+---
+
+## 16. Cierre del 16-ago-2026 — los cuatro pendientes del bloque técnico
+
+### Vídeo de rats.cl
+Pesaba 2.637 KB con `autoplay muted loop` y **sin `preload`**: se descargaba entero al abrir
+la página. Ahora lleva `preload="none"`, un `poster` WebP de 50 KB extraído del segundo 1,5
+del propio vídeo, y un `IntersectionObserver` (`rootMargin: 300px`) que inyecta el `<source>`
+y lo reproduce **solo al acercarse a esa sección**. El comportamiento visible es el mismo.
+
+**rats.cl: carga inicial de 3,70 MB → 1,15 MB.**
+
+### lastReviewed
+Añadido a **17 páginas**, con la fecha real de cada archivo sacada de `git log`, no la de hoy:
+- Las **15 de hiperhidrosis** ya tenían `MedicalWebPage`; solo les faltaban `lastReviewed`,
+  `dateModified` y `author`.
+- **`perfil.html`** no tenía `MedicalWebPage`: se le creó uno completo.
+- **`publicaciones.html`** recibió `dateModified` + `author` en su `CollectionPage`. **No** se
+  le puso `lastReviewed` a propósito: es una bibliografía, no consejo médico.
+- **`links/index.html` se omitió deliberadamente.** Es una página de enlaces sin contenido
+  clínico; marcarla como "revisada por un médico" sería ruido. Si un auditor la reporta como
+  faltante, es un falso positivo.
+
+### Sitemap del hub y .gitignore
+`cirugiatoracica/sitemap.xml` tenía fechas de junio, julio y 2 de agosto en páginas tocadas
+hoy; las 4 quedaron con su fecha real. Creado `.gitignore` (pycache, .DS_Store, `.github-token`,
+`.env`) y sacado del índice `scripts/__pycache__/audit.cpython-311.pyc`, que se había commiteado.
+
+### Verificación
+`python3 scripts/audit.py` → 0 fallos. Auditoría independiente en paralelo (anidado, JSON-LD,
+FAQ visible contra texto normalizado, recursos, GA4, fechas de revisión) → 0 hallazgos.
+
+### Dos correcciones a mi propio método
+- **GA4 aparece 2 veces por página y está bien** (loader + `gtag('config')`). Esperar 3 marcaba
+  las 32 páginas como anómalas. Claude Code cayó en lo mismo con su auditor.
+- **`image-set()` en CSS es la forma correcta de servir WebP en fondos.** Cuatro imágenes
+  (`hero-davinci`, `hero-or`, `hero-petct`, `hero-dr-lazo`) las di por "no conectadas" porque
+  mi detector solo buscaba `<picture>`. Al no contarlas, los pesos que calculé primero estaban
+  inflados: contaba el JPG de respaldo en vez del WebP.
+
+### Pendiente de revisar con David
+El commit `fd2c927` simplificó la columna "Posibilidad de cirugía" de `cancerpulmonar/que-es`:
+en el estadio **IIB** pasó de *"Sí (con evaluación)"* a *"Sí"* a secas. Quitar ese matiz en una
+tabla de operabilidad por estadio TNM es una decisión clínica — conviene que David confirme que
+es lo que quería.

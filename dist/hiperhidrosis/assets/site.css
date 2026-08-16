@@ -635,3 +635,23 @@ figure.img-card { margin-left: 0; margin-right: 0; }
   color: var(--ink-soft, #444); transition: max-height .28s ease, padding-bottom .28s ease; }
 .faq-item.open .faq-a { max-height: 600px; padding-bottom: 1.15rem; }
 @media (max-width: 640px) { .faq-q { font-size: .95rem; } }
+
+/* ── Box de perfil en el bloque de contacto ── */
+.cta-unified .perfil-box {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  margin-top: 0.15rem; padding: 0.6rem 1.15rem;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 999px;
+  font-family: Figtree, Arial, sans-serif;
+  font-size: 0.78rem; font-weight: 700; line-height: 1;
+  color: #fff; text-decoration: none; white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.cta-unified .perfil-box:hover,
+.cta-unified .perfil-box:focus-visible {
+  background: rgba(255,255,255,0.20);
+  border-color: var(--teal-bright);
+  transform: translateY(-1px);
+}
+.cta-unified .perfil-box svg { flex: none; color: var(--teal-bright); }

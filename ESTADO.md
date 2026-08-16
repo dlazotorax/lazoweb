@@ -816,11 +816,46 @@ sección **Prensa nacional** con nodo `NewsArticle` (`publisher: La Tercera`, `m
 **David dijo "artículos" en plural y sólo entregó uno.** Si hay más, verificar y añadir; la
 sección ya está montada para recibirlos.
 
+### Adenda 3 — correcciones y WABIP (cierre de la noche)
+
+**1. El programa de la U. de Chile terminó en nov-2022, no sigue vigente.** Lo corrigió David.
+Cambiado a "2014 – noviembre de 2022" y pasado a tiempo pasado en `/docencia` (lead, ficha,
+intro de sección y el puente desde Finis Terrae), en la bio de `/perfil` y en el bloque del hub.
+En schema, el `director` del `EducationalOccupationalProgram` pasó a ser un `Role` con
+`startDate: 2014` / `endDate: 2022-11`.
+
+**Consecuencia que no era obvia:** la `affiliation` a "Universidad de Chile — Escuela de
+Postgrado" que había añadido horas antes al nodo `Physician` de 32 páginas quedaba afirmando
+un vínculo académico vigente que ya no existe. **Retirada de las 32 páginas.** La U. de Chile
+sigue en `alumniOf` (eso no caduca) y `affiliation` queda sólo con Finis Terrae.
+*Si David conserva algún nombramiento académico en la U. de Chile, hay que reponerla.*
+
+**2. CV actualizado.** `CV_David_Lazo_2026.docx` p41: "2014 – presente" → "2014 – 2022".
+PDF regenerado con LibreOffice headless (`soffice --headless --convert-to pdf`). Verificado:
+6 páginas antes y después, `pdftotext -layout` muestra la línea correctamente alineada, y el
+`diff` del texto extraído no arroja ninguna otra diferencia. Copia de seguridad del docx
+original en `/tmp/CV_backup.docx` (se pierde al cerrar la sesión).
+
+**3. Dr. TV.** David confirmó que es el programa de **Claudio Aldunate**. Añadido a la ficha.
+El canal sigue sin nombrarse: Dr. TV era de Mega (2011) pero desde 2014 Aldunate produce
+"Doctor en Casa", así que para 2017 la emisora no está clara y no se afirma.
+
+**4. WABIP — sección propia (pedida por David).** Antes de escribirla comprobé el directorio
+oficial abriéndolo con Chrome (la web de WABIP es client-side; WebFetch devuelve vacío):
+
+> https://www.wabip.com/about/board-of-regents/ → **"Lazo, David, MD · Chile Bronchology · Chile"**
+
+**Es la primera cita externa de un organismo internacional que verificamos en el proyecto**, y
+está en el mismo listado que los regentes de la ATS, la Japan Society for Respiratory Endoscopy,
+la Asociación Argentina de Broncoesofagología, etc. Sección `#wabip` con dos fichas —regente por
+Chile y Train-the-Trainers 2018 (Bronchoscopy International / WABIP / AABE)— y nodo
+`MedicalOrganization` con `member: Role{roleName: "Regent for Chile"}`.
+
 ### Estado de `/docencia` al cierre
-1.058 palabras visibles, 62,0 KB, 13 nodos JSON-LD: `Physician`, `MedicalWebPage`,
-2× `EducationalOccupationalProgram`, `NewsArticle`, `VideoObject` y 7× `Article`.
-Cinco secciones: Formación de subespecialistas · Universidad de Chile · Prensa nacional ·
-Televisión · Menciones en Clínica Las Condes.
+1.213 palabras visibles, 64,1 KB, 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,
+2× `EducationalOccupationalProgram`, `MedicalOrganization`, `NewsArticle`, `VideoObject`
+y 7× `Article`. Seis secciones: Formación de subespecialistas · Universidad de Chile ·
+WABIP · Prensa nacional · Televisión · Menciones en Clínica Las Condes.
 
 ### Lo que sigue siendo el problema
 La página **documenta** autoridad; no la **importa**. El backlink sigue siendo cero. Los tres

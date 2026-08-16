@@ -851,8 +851,50 @@ la Asociación Argentina de Broncoesofagología, etc. Sección `#wabip` con dos 
 Chile y Train-the-Trainers 2018 (Bronchoscopy International / WABIP / AABE)— y nodo
 `MedicalOrganization` con `member: Role{roleName: "Regent for Chile"}`.
 
+### Adenda 4 — Ambu/AEER, ALAT y un deploy que no corrió
+
+**Fuente nueva (verificada):** `ambu.es/registro-primera-pildora-de-broncoscopia` — ficha del
+webinar *"Primera Píldora de Broncoscopia"*, ciclo organizado por **Ambu con el respaldo de la
+AEER** (Asociación Española de Endoscopia Respiratoria), moderado por el **Dr. Javier Flandes**
+(Hospital Fundación Jiménez Díaz, Madrid; presidente de la AEER). Tema: los cambios que impuso
+el COVID-19 en la broncoscopía diaria. Ambu presenta a David como:
+
+> "Jefe Unidad Cirugía Torácica y Neumología Intervencionista, Clínica Las Condes.
+> **Regente, WABIP - Chile. Dtor. Dpto. Cirugía Torácica - ALAT.**"
+
+Dos cosas importantes:
+1. **Segunda confirmación externa e independiente de la regencia WABIP**, ahora desde España.
+   La primera es el propio Board of Regents de WABIP.
+2. **Credencial que no estaba en la red: dirección del Departamento de Cirugía Torácica de ALAT.**
+   Hasta ahora ALAT sólo figuraba en `memberOf`. Está citada textualmente dentro de la ficha del
+   webinar, no afirmada por separado, **porque no tengo fechas**.
+
+Añadida como tercera ficha de la sección `#wabip`.
+
+**Dos datos que faltan y bloquean contenido (para David):**
+- **Año del webinar de Ambu.** La página sólo dice "El 3 de noviembre". Por el contexto COVID
+  es 2020 o 2021, pero no se afirma. La ficha va sin fecha hasta que él lo confirme.
+- **Fechas de la dirección del Dpto. de Cirugía Torácica de ALAT.** Con ellas, merece sección
+  propia igual que WABIP; sin ellas se queda como cita dentro del webinar.
+
+**Incidencia de despliegue (sin resolver, decisión de David: esperar).**
+Los commits `f09bfea` (WABIP + corrección 2014-2022) y `730c104` (Ambu) **están en
+`origin/main`** —verificado con `git fetch` + `git rev-parse`— pero **Vercel no generó
+deployment para el proyecto `cirugiatoracica`**. Comprobado en el panel
+(`vercel.com/drdavidlazo/cirugiatoracica/deployments`): el último despliegue de producción es
+`5c93723` (sección Prensa). En la vista global, `730c104` sí desplegó… en el proyecto `vats`.
+
+Diagnóstico: no es caché. `/perfil` y `/` se sirven con `x-vercel-cache: MISS`, `age: 0`, y aun
+así muestran el texto viejo ("Dirige desde 2014"). La cuenta es **Hobby**, que tiene tope diario
+de despliegues, y hoy se hicieron muchos en 7 proyectos — es la explicación más probable.
+
+**Consecuencia:** en producción, `/docencia` está en la versión de la sección Prensa. **Faltan en
+vivo: la sección WABIP, la ficha de Ambu y la corrección de "2014 – presente" a "2014 – 2022"**,
+tanto en `/docencia` como en `/perfil` y el hub. Si mañana sigue igual: panel de Vercel →
+proyecto `cirugiatoracica` → menú «…» del último deployment → **Redeploy**.
+
 ### Estado de `/docencia` al cierre
-1.213 palabras visibles, 64,1 KB, 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,
+1.290 palabras visibles, 65,8 KB (en el repo; ver la incidencia de despliegue), 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,
 2× `EducationalOccupationalProgram`, `MedicalOrganization`, `NewsArticle`, `VideoObject`
 y 7× `Article`. Seis secciones: Formación de subespecialistas · Universidad de Chile ·
 WABIP · Prensa nacional · Televisión · Menciones en Clínica Las Condes.

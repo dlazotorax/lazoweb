@@ -412,3 +412,139 @@ Conviene activar el filtro de bots y considerar excluir su propia IP.
 - **@dr.david.lazo.p**: nombre ya es `David Lazo • Cirujano Torácico` ✓ · 2.427 seguidores · siguiendo bajó a 1.287 · enlace a cirugiatoracica.cl/links ✓
 - **@hiperhidrosis.cl**: 1.110 seguidores, 625 publicaciones, **sigue apuntando a beacons.page** ✗ — pendiente
 - `/links` **sigue sin indexar**.
+
+---
+
+## 15. Sesión del 16-ago-2026 — enlazado, meta, peso y schema
+
+Cuatro bloques de trabajo técnico. **Ningún texto clínico fue modificado**: los cambios
+son de enlazado, metadatos, formato de imagen y JSON-LD.
+
+### Herramienta nueva: `scripts/audit.py`
+
+Auditor de la red, ejecutable con `python3 scripts/audit.py` desde la raíz. Comprueba las
+32 páginas publicadas: anidado HTML (pila de etiquetas), JSON-LD parseable, **cada pregunta
+y respuesta de FAQPage presente en el texto visible**, recursos locales existentes, GA4
+instalado una sola vez, `title` ≤60 y `description` 120-158 sin duplicados, y `@id` canónico
+sin variantes locales. Devuelve 1 si algo falla. **Estado actual: 0 fallos, 0 avisos.**
+
+Dos correcciones que hubo que hacerle, y que conviene recordar:
+- **GA4 aparece 2 veces por página y está bien**: una en el `src` del loader y otra en
+  `gtag('config', …)`. Contar la cadena suelta marcaba las 32 páginas como duplicadas. Lo
+  que debe ser único es cada una de esas dos piezas.
+- **Comparar el schema con el texto visible exige ignorar la puntuación**: en la página el
+  texto va partido por `<strong>` y `<a>`, lo que mete espacios junto a comas y puntos que
+  no existen en el JSON-LD. Sin eso, `rubor-facial-patologico` daba un falso positivo de
+  "respuesta no visible" cuando el contenido sí estaba (línea 317). Casi corrijo contenido
+  médico que estaba bien: verificar el detector antes de creerle.
+
+### Bloque 1 — Enlazado interno
+
+Contando solo enlaces **contextuales** (fuera de `nav`, `header` y `footer`):
+
+| Dominio → hub | Antes | Después |
+|---|---|---|
+| rats.cl | **0** | 3 |
+| hiperhidrosis.cl | 1 | 4 |
+| broncoscopia.cl | 3 | 4 |
+| videotoracoscopia.cl | 2 | 2 |
+| cancerpulmonar.cl | 12 | 13 |
+
+| Página del hub | Páginas que la enlazan: antes → después |
+|---|---|
+| `/publicaciones` | 3 → **7** |
+| `/links` | **0** → 1 |
+| `/perfil` | 1 → 5 |
+
+Anclas descriptivas y variadas ("cirujano torácico en Santiago", "sus 31 publicaciones
+indexadas", "videotoracoscopía (VATS)", "cirujano de tórax con formación en cirugía
+mínimamente invasiva"), siempre dentro de una frase.
+
+**Ojo con dos trampas de precisión aquí:**
+- El enlace de rats.cl a `/publicaciones` está redactado como *trayectoria académica* del
+  cirujano, **sin insinuar que las publicaciones sean de RATS** — ninguna lo es (§5).
+- Escribí "31 publicaciones revisadas por pares" en cancerpulmonar y lo corregí en el acto:
+  son **26 artículos revisados por pares + 5 resúmenes de congreso** (§7). El enlace dice
+  ahora "26 artículos revisados por pares".
+
+### Bloque 2 — Titles y descriptions
+
+| Métrica | Antes | Después |
+|---|---|---|
+| `title` > 60 caracteres | **22** de 32 | **0** |
+| `description` fuera de 120-158 | **21** de 32 | **0** |
+| `og:`/`twitter:` desincronizados | **39** | **0** |
+| Duplicados | 0 | 0 |
+
+Término principal al principio y marca al final. Los peores casos bajaron mucho:
+`videotoracoscopia` (title 90→50, description 268→139),
+`hiperhidrosis-localizada-moderada` (88→54), `broncoscopia/intervencional` (84→54),
+`cancerpulmonar/tratamiento` (84→57).
+
+### Bloque 3 — Peso de las páginas
+
+Peso de cada home **tal como la descarga un navegador moderno** (elige WebP, y no baja el
+vídeo si lleva `preload="none"`):
+
+| Home | Antes | Después | |
+|---|---|---|---|
+| videotoracoscopia.cl | 13.801 KB | **1.375 KB** | −90% |
+| broncoscopia.cl | 4.689 KB | **1.376 KB** | −71% |
+| cancerpulmonar.cl | 2.729 KB | **668 KB** | −76% |
+| hiperhidrosis.cl | 1.041 KB | **788 KB** | −24% |
+| cirugiatoracica.cl | 1.434 KB | 1.434 KB | sin cambio |
+| **rats.cl** | 6.413 KB | **3.762 KB** | −41% · **sigue sobre el umbral** |
+
+- **11 imágenes a WebP con fallback**, todas con PSNR ≥ 40 dB (rango 40,3–99 dB). Las
+  ilustraciones de línea van sin pérdida (equivalente a 4:4:4); las fotos a q88-90.
+- **El original nunca se borra**: es el fallback de `<picture>` y de `image-set()`.
+- Los heroes eran **fotos de teléfono sin redimensionar** (rats: 4032×3024). Ese era el
+  problema real, más que el formato: hero-davinci 3.265 KB → 612 KB.
+- Fondos CSS: no admiten `<picture>`, así que usan `image-set()` con doble declaración.
+  **Verificado en navegador real**: los tres heroes descargan el `.webp`.
+- `VATS1.mp4` (12,4 MB): `preload="none"` + `poster` de 69 KB. No se recomprimió.
+- `width`, `height`, `loading` y `decoding` añadidos a **118 de 127** `<img>`. Los logos van
+  `eager` (están sobre el pliegue); el resto `lazy`.
+- Renderizado verificado sirviendo cada dominio por HTTP con navegador real: 0 imágenes
+  rotas, 0 respuestas 4xx.
+
+### Bloque 4 — Schema y frescura
+
+- **12 nodos `MedicalWebPage`** añadidos (7 cancerpulmonar, 3 broncoscopia, 1 rats,
+  1 videotoracoscopia), replicando el patrón de `cirugiatoracica/index.html`: `@id`, `url`,
+  `name`, `inLanguage`, `about`, `author`, `reviewedBy` → `#david-lazo`, `specialty`,
+  `isPartOf`, `lastReviewed` y `dateModified`.
+- Páginas con `lastReviewed`: **2 de 32 → 14 de 32**.
+- `<lastmod>` actualizado en los sitemaps de cancerpulmonar, broncoscopia y rats (decían
+  2026-06-11) y **añadido al de videotoracoscopia, que no tenía ninguno**. XML validado.
+
+**Criterio de fecha, importante:** `lastReviewed` y `dateModified` llevan **2026-08-06**,
+la fecha del último cambio real del archivo *antes* de esta sesión (`git log -1` sobre
+`21f57e7`), no la de hoy. Los cambios de hoy fueron técnicos, no clínicos: poner la fecha
+de hoy en `lastReviewed` afirmaría una revisión médica que no ocurrió. En cambio el
+`<lastmod>` del sitemap sí lleva **2026-08-16**, porque ahí la afirmación es "el archivo
+cambió", que es cierta.
+
+### Pendiente de esta sesión
+
+| # | Qué | Por qué no se hizo |
+|---|---|---|
+| 1 | **rats.cl sigue en 3,76 MB.** El culpable es `imgs/robotfantoma.mp4` (2,6 MB), decorativo y con `autoplay muted loop`. Sin él la home queda en ~1,1 MB | Ponerle `preload="none"` rompe la reproducción automática y recomprimirlo requiere tu visto bueno. **Decisión tuya** |
+| 2 | 18 páginas siguen sin `lastReviewed` (15 de hiperhidrosis + `/perfil`, `/publicaciones` y `/links` del hub) | Estampar esa fecha afirma una revisión clínica. Dime qué fecha corresponde y las pongo |
+| 3 | El hub tiene `MedicalWebPage` en 1 de sus 4 páginas | El encargo acotaba el bloque a los otros 4 dominios |
+| 4 | El `name` de los `MedicalWebPage` de hiperhidrosis conserva los titles largos anteriores | No estaba en el encargo; es cosmético y de una línea por archivo |
+| 5 | `broncoscopia/imgs/rigida-ilustracion.jpg` se sirve como JPG (306 KB en WebP, ahorro menor) | Convertida igualmente; el fallback pesa lo mismo |
+| 6 | **La verificación en vivo no se pudo hacer desde el sandbox** | La lista de egreso del entorno devuelve `403 host_not_allowed` para los 6 dominios (y para cualquier host). Hay que comprobarlo desde un navegador propio |
+
+### Cómo verificar el despliegue
+
+Los 6 dominios no son alcanzables desde el entorno de Claude. Para confirmar en tu máquina,
+~60-90 s después del push:
+
+```
+curl -s https://rats.cl/ | grep -c hero-davinci.webp     # debe dar 1
+curl -s https://cancerpulmonar.cl/ | grep -o 'lastReviewed[^,]*'
+```
+
+Y en Search Console, el dato a mirar en 2-3 semanas: si `/publicaciones` y `/links` empiezan
+a recibir impresiones. Eran las dos páginas sin enlaces entrantes y por eso no se indexaban.

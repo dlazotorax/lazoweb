@@ -750,6 +750,31 @@ es probable que existan más. **Si aparecen, verificar antes de añadir.**
   páginas del hub y a `sitemap.xml`.
 - `scripts/audit.py`: 33 páginas, 0 hallazgos. Verificada en vivo tras el despliegue.
 
+### Adenda — Universidad de Chile (misma noche)
+David señaló que es docente de la Universidad de Chile desde 2014 y pidió añadirlo aunque no
+haya referencia web. Al abrir su CV el dato resultó **más fuerte de lo que él mismo dijo**: la
+entrada de 2014 no es "docente", es **Director** del Programa de Perfeccionamiento en Cirugía
+Toracoscópica para Cirujanos Generales, Escuela de Postgrado, Facultad de Medicina, U. de Chile
+(2014 – presente). Y el vínculo con la U. de Chile es mucho más largo: profesor en Bases
+Biomédicas de la Medicina Intensiva (Esp. Enfermería, 2012–2016) y examinador OSCE + docente de
+Cirugía Experimental en 4º de Medicina (2004–2009).
+
+Añadido:
+- Sección **Universidad de Chile** en `/docencia` con los tres cargos y sus fechas, más el
+  Train-the-Trainers de broncoscopía (Bronchoscopy International / WABIP / AABE, 2018).
+- Segundo nodo `EducationalOccupationalProgram` con `provider: Universidad de Chile` y
+  `director → #david-lazo`.
+- **`affiliation` universitaria en el nodo `Physician` de las 32 páginas que lo tienen** (las
+  16 de hiperhidrosis.cl ya traían `affiliation` con los dos hospitales, con otra estructura;
+  ahí las universidades se anexaron al array existente en vez de crear uno nuevo). No la tienen
+  `dist/index.html` ni `/links`, que no llevan nodo Physician.
+- Lead, `description`, bio de `/perfil` y bloque del hub reescritos para abrir con la U. de Chile.
+
+**Regla de procedencia:** este dato viene del CV de David, no de una fuente web externa. Es su
+propia declaración biográfica, no una afirmación clínica ni una autoría — la regla YMYL de
+§verificar-antes-de-afirmar no lo bloquea, pero conviene tenerlo presente: si algún día Finis
+Terrae o la U. de Chile publican una ficha suya, hay que enlazarla desde `/docencia`.
+
 ### Lo que sigue siendo el problema
 La página **documenta** autoridad; no la **importa**. El backlink sigue siendo cero. Los tres
 enlaces que moverían la aguja son los mismos de §17 y dependen de David:

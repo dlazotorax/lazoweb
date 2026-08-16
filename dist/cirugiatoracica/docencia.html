@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. David Lazo · Cirugía Torácica · Santiago, Chile</title>
-  <meta name="description" content="Dr. David Lazo Pérez, cirujano torácico en Santiago: cirugía robótica, cáncer pulmonar, broncoscopía intervencionista y trasplante pulmonar." />
+  <title>Docencia y menciones · Dr. David Lazo Pérez</title>
+  <meta name="description" content="Comité académico del programa de subespecialidad en Cirugía de Tórax de la Universidad Finis Terrae y menciones en Clínica Las Condes desde 2016." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dr. David Lazo Pérez — Cirujano Torácico" />
-  <meta property="og:title" content="Dr. David Lazo · Cirugía Torácica · Santiago, Chile" />
-  <meta property="og:description" content="Dr. David Lazo Pérez, cirujano torácico en Santiago: cirugía robótica, cáncer pulmonar, broncoscopía intervencionista y trasplante pulmonar." />
-  <meta property="og:url" content="https://cirugiatoracica.cl/perfil" />
+  <meta property="og:title" content="Docencia y menciones · Dr. David Lazo Pérez" />
+  <meta property="og:description" content="Comité académico del programa de subespecialidad en Cirugía de Tórax de la Universidad Finis Terrae y menciones en Clínica Las Condes desde 2016." />
+  <meta property="og:url" content="https://cirugiatoracica.cl/docencia" />
   <meta property="og:image" content="https://cirugiatoracica.cl/imgs/foto-dr-lazo.jpg" />
   <meta property="og:locale" content="es_CL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Docencia y menciones · Dr. David Lazo Pérez" />
+  <meta name="twitter:description" content="Comité académico del programa de subespecialidad en Cirugía de Tórax de la Universidad Finis Terrae y menciones en Clínica Las Condes desde 2016." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Dr. David Lazo Pérez" />
-  <link rel="canonical" href="https://cirugiatoracica.cl/perfil" />
-  <!-- Open Graph -->
+  <link rel="canonical" href="https://cirugiatoracica.cl/docencia" />
 
   <script type="application/ld+json">
 {
@@ -214,16 +216,13 @@
     .hero-bg {
       position: absolute; inset: 0;
       background-image: url('imgs/hero-dr-lazo.jpg');
-      background-image: image-set(url('imgs/hero-dr-lazo.webp') type('image/webp'), url('imgs/hero-dr-lazo.jpg') type('image/jpeg'));
       background-color: #0c1526;
       background-size: 80% auto; background-position: right 60%;
       background-repeat: no-repeat;
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      /* Mismo degradado original de borde a borde (evita que el texto quede
-         partido entre fondo oscuro y foto clara), un 20% menos oscuro. */
-      background: linear-gradient(to right, rgba(12,21,38,0.84) 0%, rgba(12,21,38,0.77) 35%, rgba(12,21,38,0.40) 60%, rgba(12,21,38,0.13) 100%);
+      background: linear-gradient(to right, rgba(12,21,38,0.95) 0%, rgba(12,21,38,0.88) 35%, rgba(12,21,38,0.45) 60%, rgba(12,21,38,0.15) 100%);
     }
     .hero-content {
       position: relative; z-index: 2;
@@ -245,7 +244,7 @@
       line-height: 1.08; letter-spacing: -0.025em;
       color: #fff; margin-bottom: 1.25rem; max-width: 680px;
     }
-    .hero-h1 em { color: var(--teal-lt); font-style: normal; }
+    .hero-h1 em { color: var(--teal-lt); font-style: italic; }
     .hero-sub {
       font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.68);
       max-width: 520px; margin-bottom: 2.5rem;
@@ -695,69 +694,230 @@
   
     /* ── Resumen de publicaciones ── */
     .pub-summary { max-width: 800px; }
+    .pub-stats { display: flex; gap: 2.6rem; flex-wrap: wrap; margin-bottom: 1.6rem;
+      padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .pub-stat-n { font-family: var(--serif); font-size: 2rem; color: var(--teal-deep); line-height: 1.1; }
+    .pub-stat-l { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
     .pub-sum-txt { font-size: 0.92rem; line-height: 1.8; color: var(--slate); margin-bottom: 0.9rem; }
     .pub-cta { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--teal);
       color: #fff; text-decoration: none; padding: 0.8rem 1.7rem; border-radius: 8px;
       font-size: 0.9rem; font-weight: 700; transition: transform 0.15s, box-shadow 0.2s; }
     .pub-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(8,145,178,0.28); }
+    @media (max-width: 600px) { .pub-stats { gap: 1.5rem; } }
+  
+    .pub-h1 { font-family: var(--serif); font-size: clamp(2rem,4vw,2.9rem); color: var(--navy);
+      letter-spacing: -0.02em; margin: 0.3rem 0 0.9rem; line-height: 1.12; }
+    .pub-lead { font-size: 1rem; line-height: 1.8; color: var(--slate); max-width: 700px; }
+  
+    /* ── Banda del hero de publicaciones ── */
+    .pub-hero-img { width: 100%; max-width: 1000px; aspect-ratio: 1376 / 768; margin: 1.2rem 0 1.6rem; overflow: hidden; border-radius: 10px; position: relative; }
+    .pub-hero-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .pub-hero-img::after { content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(12,21,38,0.06), rgba(12,21,38,0.16)); pointer-events: none; }
+    @media (max-width: 700px) { .pub-hero-img { border-radius: 8px; } }
+  
+    .pub-orcid { font-size: 0.86rem; color: var(--muted); margin-top: 0.7rem; }
+    .pub-orcid a { color: var(--teal); text-decoration: none; }
+    .pub-orcid a:hover { text-decoration: underline; }
   </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": "https://cirugiatoracica.cl/perfil#faq",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Dónde atiende el Dr. David Lazo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Atiende en Clínica Las Condes (sistema privado) y en el Hospital Clínico San Borja Arriarán (sistema público), donde integra la Unidad de Cirugía Torácica y Broncoscopía Intervencional. También realiza consultas por telemedicina para todo Chile."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué formación tiene?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Médico-Cirujano de la Pontificia Universidad Católica de Chile, con especialización en Cirugía General y Torácica por la Universidad de Chile y formación en trasplante pulmonar en el Hospital Universitario Puerta de Hierro Majadahonda (Madrid, España)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿A qué sociedades pertenece?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es Regente para Chile de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP), y miembro del American College of Surgeons (ACS), la International Association for the Study of Lung Cancer (IASLC), la European Respiratory Society (ERS) y la International Society for Heart and Lung Transplantation (ISHLT)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo agendo una consulta?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Para atención presencial en Clínica Las Condes puede reservar hora a través del sistema de agenda de la clínica. Para consulta por telemedicina, a través de la plataforma de agendamiento en línea. Ambos enlaces están disponibles en la sección de contacto de este sitio."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Necesito derivación de otro médico?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No es indispensable, pero es útil llegar con los exámenes disponibles —imágenes (TC de tórax), informes previos y biopsias si las hay—. Eso permite orientar la evaluación desde la primera consulta y evitar repetir estudios."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Atiende pacientes derivados por otros médicos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Recibe derivaciones de neumólogos, oncólogos, cirujanos generales y médicos internistas, tanto para evaluación quirúrgica como para procedimientos de broncoscopía intervencional y diagnóstico endobronquial."
-      }
-    }
-  ]
+  "@type": "MedicalWebPage",
+  "@id": "https://cirugiatoracica.cl/docencia#webpage",
+  "url": "https://cirugiatoracica.cl/docencia",
+  "name": "Docencia y menciones — Dr. David Lazo Pérez",
+  "description": "Comité académico del programa de subespecialidad en Cirugía de Tórax de la Universidad Finis Terrae y menciones en Clínica Las Condes desde 2016.",
+  "inLanguage": "es-CL",
+  "about": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "author": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "reviewedBy": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "lastReviewed": "2026-08-16",
+  "dateModified": "2026-08-16",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://cirugiatoracica.cl/",
+    "name": "Dr. David Lazo Pérez — Cirujano Torácico"
+  }
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOccupationalProgram",
+  "name": "Programa de Formación de Subespecialista en Cirugía de Tórax",
+  "url": "https://medfinis.cl/postitulo/subesp-cirugia-torax/",
+  "provider": {
+    "@type": "CollegeOrUniversity",
+    "name": "Universidad Finis Terrae",
+    "url": "https://www.uft.cl/"
+  },
+  "timeToComplete": "P2Y",
+  "educationalCredentialAwarded": "Subespecialista en Cirugía de Tórax",
+  "occupationalCategory": "Cirugía de Tórax",
+  "educationalProgramMode": "full-time"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Doble Trasplante de pulmón infantil: Hito de Clínica Las Condes",
+  "url": "https://www.clinicalascondes.cl/BLOG/Listado/Cirugia-Adultos/trasplante-de-pulmon-doble-infantil",
+  "publisher": {
+    "@type": "MedicalOrganization",
+    "name": "Clínica Las Condes",
+    "url": "https://www.clinicalascondes.cl/"
+  },
+  "inLanguage": "es-CL",
+  "mentions": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Trasplante pulmonar bilobar"
+  },
+  "datePublished": "2018-07-12"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Conoces la iontoforesis?",
+  "url": "https://www.clinicalascondes.cl/BLOG/Listado/Cirugia-Adultos/iontoforesis",
+  "publisher": {
+    "@type": "MedicalOrganization",
+    "name": "Clínica Las Condes",
+    "url": "https://www.clinicalascondes.cl/"
+  },
+  "inLanguage": "es-CL",
+  "mentions": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Hiperhidrosis · tratamiento no quirúrgico"
+  },
+  "datePublished": "2018-04-05"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Endosonografía Bronquial: tecnología mínimamente invasiva",
+  "url": "https://www.clinicalascondes.cl/BLOG/Listado/Cancer/Endosonografia-bronquial",
+  "publisher": {
+    "@type": "MedicalOrganization",
+    "name": "Clínica Las Condes",
+    "url": "https://www.clinicalascondes.cl/"
+  },
+  "inLanguage": "es-CL",
+  "mentions": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "EBUS · cáncer pulmonar"
+  },
+  "datePublished": "2017-11-22"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Sólo sudor en exceso o hiperhidrosis?",
+  "url": "https://www.clinicalascondes.cl/BLOG/Listado/Cirugia-Adultos/solo-sudor-en-exceso-hiperhidrosis",
+  "publisher": {
+    "@type": "MedicalOrganization",
+    "name": "Clínica Las Condes",
+    "url": "https://www.clinicalascondes.cl/"
+  },
+  "inLanguage": "es-CL",
+  "mentions": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Hiperhidrosis · diagnóstico"
+  },
+  "datePublished": "2017-08-22"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Es la cirugía la mejor opción para la hiperhidrosis?",
+  "url": "https://www.clinicalascondes.cl/BLOG/Listado/Cirugia-Adultos/cirugia-la-mejor-opcion-para-la-hiperhidrosis",
+  "publisher": {
+    "@type": "MedicalOrganization",
+    "name": "Clínica Las Condes",
+    "url": "https://www.clinicalascondes.cl/"
+  },
+  "inLanguage": "es-CL",
+  "mentions": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Simpatectomía por videotoracoscopía"
+  },
+  "datePublished": "2016-10-19"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Sabes si tu sudoración excesiva es idiopática?",
+  "url": "https://www.clinicalascondes.cl/BLOG/Listado/Cirugia-Adultos/sudoracion-excesiva-hiperhidrosis-idiopatica",
+  "publisher": {
+    "@type": "MedicalOrganization",
+    "name": "Clínica Las Condes",
+    "url": "https://www.clinicalascondes.cl/"
+  },
+  "inLanguage": "es-CL",
+  "mentions": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Hiperhidrosis idiopática"
+  },
+  "datePublished": "2016-08-11"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Inédito caso médico: joven se recupera tras 123 días conectada a pulmón artificial",
+  "url": "https://www.clinicalascondes.cl/DOCENCIA/NOTICIAS-INVESTIGACION/Inedito-caso-medico--joven-se-recupera-tras-123-di",
+  "publisher": {
+    "@type": "MedicalOrganization",
+    "name": "Clínica Las Condes",
+    "url": "https://www.clinicalascondes.cl/"
+  },
+  "inLanguage": "es-CL",
+  "mentions": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "ECMO · trasplante pulmonar"
+  }
+}
+  </script>
+  <!-- Google Analytics 4 · red Dr. David Lazo -->
   <!-- Google Analytics 4 · red Dr. David Lazo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
   <script>
@@ -780,329 +940,100 @@
       }
     }, true);
   </script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  "@id": "https://cirugiatoracica.cl/perfil#webpage",
-  "url": "https://cirugiatoracica.cl/perfil",
-  "name": "Dr. David Lazo · Cirugía Torácica · Santiago, Chile",
-  "description": "Dr. David Lazo Pérez, cirujano torácico en Santiago: cirugía robótica, cáncer pulmonar, broncoscopía intervencionista y trasplante pulmonar.",
-  "inLanguage": "es-CL",
-  "about": {
-    "@id": "https://cirugiatoracica.cl/#david-lazo"
-  },
-  "author": {
-    "@id": "https://cirugiatoracica.cl/#david-lazo"
-  },
-  "reviewedBy": {
-    "@id": "https://cirugiatoracica.cl/#david-lazo"
-  },
-  "lastReviewed": "2026-08-16",
-  "dateModified": "2026-08-16",
-  "isPartOf": {
-    "@type": "WebSite",
-    "@id": "https://cirugiatoracica.cl/#website",
-    "url": "https://cirugiatoracica.cl/",
-    "name": "CirugiaToracica.cl",
-    "inLanguage": "es-CL"
-  }
-}
-  </script>
 </head>
 <body>
-
-  <!-- NAV -->
+<!-- NAV -->
   <header>
     <nav id="main-nav">
-      <a class="nav-logo" href="#inicio"><span>Dr.</span> David Lazo · Cirugía Torácica</a>
+      <a class="nav-logo" href="/perfil"><span>Dr.</span> David Lazo · Cirugía Torácica</a>
       <ul class="nav-links">
-        <li><a href="#especialidades">Especialidades</a></li>
-        <li><a href="#sobre">Sobre mí</a></li>
+        <li><a href="/perfil#especialidades">Especialidades</a></li>
+        <li><a href="/perfil#sobre">Sobre mí</a></li>
         <li><a href="/publicaciones">Publicaciones</a></li>
         <li><a href="/docencia">Docencia</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#contacto" class="nav-cta">Reservar hora →</a></li>
+        <li><a href="/perfil#contacto">Contacto</a></li>
+        <li><a href="/perfil#contacto" class="nav-cta">Reservar hora →</a></li>
       </ul>
     <button class="nav-hamburger" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
   </nav>
   </header>
 
-  <main id="main-content">
+    <main id="main-content">
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-dot"></div>
-        Cirugía Torácica · Santiago, Chile
-      </div>
-      <h1 class="hero-h1">Referente en<br><em>Cirugía Torácica</em><br>en Latinoamérica</h1>
-      <p class="hero-sub">
-        19 años de experiencia en cirugía oncológica torácica, robótica, broncoscopía intervencionista y trasplante pulmonar. Atención en Clínica Las Condes y Hospital Clínico San Borja Arriarán.
-      </p>
-      <div class="hero-btns">
-        <a href="#contacto" class="btn-primary">Solicitar consulta →</a>
-
-      </div>
-    </div>
-    <div class="statsbar">
-      <div class="stat"><div class="stat-n">+5.700</div><div class="stat-l">cirugías torácicas realizadas</div></div>
-      <div class="stat"><div class="stat-n">+3.200</div><div class="stat-l">procedimientos EBUS desde 2010</div></div>
-      <div class="stat"><div class="stat-n">+200</div><div class="stat-l">cirugías RATS desde 2015</div></div>
-      <div class="stat"><div class="stat-n">19</div><div class="stat-l">años de experiencia desde 2007</div></div>
-    </div>
-  </section>
-
-  <!-- ESPECIALIDADES -->
-  <section class="section" id="especialidades">
-    <div class="inner">
-      <p class="eyebrow">Áreas de especialización</p>
-      <h2>Cirugía Torácica de Vanguardia</h2>
-      <p class="lead">Cobertura completa en patología torácica con tecnología de última generación disponible en Chile.</p>
-      <div class="esp-grid">
-        <a href="https://rats.cl" class="esp-card">
-          <p class="esp-domain">rats.cl</p>
-          <h3>Cirugía Robótica Torácica</h3>
-          <p>Lobectomías, segmentectomías y timectomías con sistema Da Vinci. Máxima precisión, mínima invasión, recuperación acelerada.</p>
-          <span class="esp-arrow">Visitar rats.cl →</span>
-        </a>
-        <a href="https://cancerpulmonar.cl" class="esp-card">
-          <p class="esp-domain">cancerpulmonar.cl</p>
-          <h3>Cáncer Pulmonar</h3>
-          <p>Diagnóstico, estadificación y tratamiento quirúrgico del cáncer pulmonar en todas sus etapas resecables. Guía para pacientes y familias.</p>
-          <span class="esp-arrow">Visitar cancerpulmonar.cl →</span>
-        </a>
-        <a href="https://broncoscopia.cl" class="esp-card">
-          <p class="esp-domain">broncoscopia.cl</p>
-          <h3>Broncoscopía Intervencionista</h3>
-          <p>EBUS, CryoEBUS y técnicas avanzadas de diagnóstico endobronquial. Más de 3.200 procedimientos EBUS desde 2010.</p>
-          <span class="esp-arrow">Visitar broncoscopia.cl →</span>
-        </a>
-        <a href="https://videotoracoscopia.cl" class="esp-card">
-          <p class="esp-domain">videotoracoscopia.cl</p>
-          <h3>Videotoracoscopía (VATS)</h3>
-          <p>Cirugía torácica mínimamente invasiva para patologías pleurales, pulmonares y mediastínicas sin toracotomía.</p>
-          <span class="esp-arrow">Visitar videotoracoscopia.cl →</span>
-        </a>
-        <a href="https://hiperhidrosis.cl" class="esp-card">
-          <p class="esp-domain">hiperhidrosis.cl</p>
-          <h3>Hiperhidrosis</h3>
-          <p>Simpatectomía torácica por videotoracoscopía. Más de 95% de éxito en el tratamiento definitivo del sudor excesivo de manos y axilas.</p>
-          <span class="esp-arrow">Visitar hiperhidrosis.cl →</span>
-        </a>
-
-      </div>
-      <div class="tech-banner">
-        <div class="tech-banner-text">
-          <h3>Tecnología de última generación</h3>
-          <p>Acceso a las plataformas más avanzadas disponibles en Chile para cirugía torácica mínimamente invasiva y diagnóstico de precisión.</p>
-          <div class="tech-chips">
-            <span class="tech-chip">Da Vinci Robótico</span>
-            <span class="tech-chip">CryoEBUS</span>
-            <span class="tech-chip">Fluoroscopía Aumentada</span>
-            <span class="tech-chip">VATS 4K</span>
-            <span class="tech-chip">Navegación Bronquial</span>
-          </div>
-        </div>
-        <a href="#contacto" class="btn-primary" style="white-space:nowrap;flex-shrink:0;">Consultar →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PACIENTES Y MÉDICOS -->
-  <section class="section section-dark">
-    <div class="inner">
-      <p class="eyebrow eyebrow-w">¿Quién busca esta información?</p>
-      <h2 class="w">Recursos para pacientes<br>y para médicos</h2>
-      <p class="lead w" style="margin-bottom:2.5rem;">Información específica según tu perfil — paciente buscando orientación, o médico que necesita derivar a un especialista.</p>
-      <div class="audience-grid">
-        <div class="aud-card">
-          <div class="aud-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <h3>Para pacientes y familias</h3>
-          <p>Información clara sobre patologías torácicas frecuentes, síntomas, diagnóstico y opciones de tratamiento — sin tecnicismos innecesarios.</p>
-          <div class="aud-links">
-            <a class="aud-link" href="https://cancerpulmonar.cl"><span>Cáncer Pulmonar — guía completa</span><span class="aud-link-arrow">→</span></a>
-            <a class="aud-link" href="https://hiperhidrosis.cl"><span>Hiperhidrosis — tratamiento quirúrgico</span><span class="aud-link-arrow">→</span></a>
-            <a class="aud-link" href="https://broncoscopia.cl"><span>Broncoscopía — qué es y cuándo se indica</span><span class="aud-link-arrow">→</span></a>
-          </div>
-        </div>
-        <div class="aud-card">
-          <div class="aud-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <h3>Para médicos y referentes</h3>
-          <p>Información técnica sobre procedimientos, indicaciones, plataformas tecnológicas disponibles y criterios de derivación directa.</p>
-          <div class="aud-links">
-            <a class="aud-link" href="https://rats.cl"><span>Cirugía Robótica RATS — indicaciones</span><span class="aud-link-arrow">→</span></a>
-            <a class="aud-link" href="https://videotoracoscopia.cl"><span>Videotoracoscopía (VATS)</span><span class="aud-link-arrow">→</span></a>
-            <a class="aud-link" href="https://broncoscopia.cl#medicos"><span>EBUS / CryoEBUS — protocolo derivación</span><span class="aud-link-arrow">→</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE / BIO -->
-  <section class="section section-alt" id="sobre">
-    <div class="inner">
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="eyebrow">Formación y trayectoria</p>
-          <h2 style="margin-bottom:1.5rem;">Dr. David Lazo Pérez</h2>
-          <p>Médico-Cirujano de la <strong>Pontificia Universidad Católica de Chile</strong>, con especialización en Cirugía General y Torácica por la <strong>Universidad de Chile</strong> y formación en Trasplante Pulmonar en el <strong>Hospital Universitario Puerta de Hierro Majadahonda</strong>, Madrid, España.</p>
-          <p>Con <strong>19 años de experiencia</strong> y más de 5.700 cirugías torácicas, es el cirujano con mayor experiencia en <strong>EBUS en Chile</strong> (desde 2010, +3.200 procedimientos) y en <strong>cirugía robótica torácica RATS</strong> (desde 2015, +200 cirugías robóticas).</p>
-          <p><strong>Regente para Chile</strong> de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP). Miembro de American College of Surgeons, IASLC, European Respiratory Society y ISHLT.</p>
-          <p>Activo en formación médica continua, desarrollo de programas quirúrgicos avanzados e innovación tecnológica en cirugía torácica a nivel latinoamericano.</p>
-          <p>Integra el comité académico del programa de subespecialidad en Cirugía de Tórax de la Universidad Finis Terrae. El detalle está en <a href="/docencia">docencia y menciones en medios especializados</a>.</p>
-        </div>
-        <div>
-          <div class="credentials-box">
-            <h4>Formación y cargos</h4>
-            <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>Médico-Cirujano · PUC Chile</strong><br>Esp. Cirugía Torácica · U. de Chile</div></div>
-            <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>Trasplante Pulmonar</strong><br>H. U. Puerta de Hierro Majadahonda, España</div></div>
-            <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>Regente Chile · WABIP</strong><br>Asociación Mundial de Broncología y Neumología Intervencionista</div></div>
-            <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>ACS · IASLC · ERS · ISHLT</strong><br>Sociedades internacionales activas</div></div>
-            <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>Clínica Las Condes</strong><br>Atención privada · Hospital San Borja Arriarán (público)</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-
-  <!-- DR. LAZO BIO -->
-  <section class="section" id="dr-lazo" style="background:#fff;">
-    <div class="inner" style="max-width:1100px;margin:0 auto;padding:0 2.5rem;">
-      <div class="bio-wrap">
-        <div class="bio-photo">
-          <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico en Clínica Las Condes, Santiago de Chile" loading="lazy" width="800" height="800" decoding="async"/>
-        </div>
-        <div>
-          <p class="bio-eyebrow">Especialista</p>
-          <h2 class="bio-name">Dr. David Lazo Pérez</h2>
-          <p class="bio-role">Cirujano Torácico · Broncoscopía Intervencional</p>
-          <p class="bio-text">
-            Médico-cirujano de la <strong>Pontificia Universidad Católica de Chile</strong>, con especialización en Cirugía Torácica por la <strong>Universidad de Chile</strong> y formación en Trasplante Pulmonar en el <strong>Hospital Universitario Puerta de Hierro Majadahonda</strong>, España.
-          </p>
-          <p class="bio-text">
-            Con 19 años de experiencia, es el cirujano con mayor experiencia en <strong>EBUS en Chile</strong> (desde 2010, +3.200 procedimientos) y pionero en la técnica <strong>CryoEBUS</strong> a nivel latinoamericano. Regente para Chile de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP).
-          </p>
-          <div class="bio-creds">
-            <div class="bio-cred"><div class="bio-cred-n">+5.700</div><div class="bio-cred-l">cirugías torácicas totales</div></div>
-            <div class="bio-cred"><div class="bio-cred-n">+3.200</div><div class="bio-cred-l">procedimientos EBUS desde 2010</div></div>
-            <div class="bio-cred"><div class="bio-cred-n">19</div><div class="bio-cred-l">años de experiencia clínica</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── CTA CONTACTO UNIFICADO ─── -->
-
-    <!-- Publicaciones — resumen; el detalle vive en /publicaciones -->
-    <section class="section" id="publicaciones">
+    <section class="section" style="padding:7rem 0 1.4rem;">
       <div class="inner">
-        <p class="eyebrow">Investigación</p>
-        <h2 class="faq-h2">Publicaciones científicas</h2>
-        <div class="pub-summary">
-          <p class="pub-sum-txt">Producción indexada en <strong>PubMed/MEDLINE</strong>, <strong>SciELO</strong>, <strong>Scopus</strong> y <strong>LILACS</strong>, en trasplante pulmonar, oncología torácica, cirugía mínimamente invasiva, broncoscopía intervencional y patología pleural.</p>
-          <p class="pub-sum-txt" style="margin-bottom:1.6rem;">Incluye la primera experiencia de trasplante pulmonar <em>ex vivo</em> en Chile y Latinoamérica (<em>Rev Med Chile</em> 2021) y las recomendaciones de broncoscopía en COVID-19 de la Sociedad Chilena de Enfermedades Respiratorias.</p>
-          <a class="pub-cta" href="/publicaciones">Ver las 31 publicaciones →</a>
-          <p class="pub-sum-txt" style="margin-top:1.6rem;">Además de la producción indexada, está el registro de <a href="/docencia">docencia universitaria y menciones en Clínica Las Condes</a> desde 2016.</p>
-          <p class="pub-sum-txt" style="margin-top:1.6rem;">También están reunidos en un solo lugar los <a href="/links">canales de contacto y perfiles profesionales del Dr. Lazo</a>: reserva de hora, telemedicina, ORCID y redes.</p>
-        </div>
-      </div>
-    </section>
-    <!-- FAQ visible — marcado con JSON-LD FAQPage -->
-    <section class="section section-alt" id="faq">
-      <div class="inner">
-        <p class="eyebrow">Preguntas frecuentes</p>
-        <h2 class="faq-h2">Consultas sobre la atención</h2>
-        <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q">¿Dónde atiende el Dr. David Lazo?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Atiende en Clínica Las Condes (sistema privado) y en el Hospital Clínico San Borja Arriarán (sistema público), donde integra la Unidad de Cirugía Torácica y Broncoscopía Intervencional. También realiza consultas por telemedicina para todo Chile.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Qué formación tiene?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Médico-Cirujano de la Pontificia Universidad Católica de Chile, con especialización en Cirugía General y Torácica por la Universidad de Chile y formación en trasplante pulmonar en el Hospital Universitario Puerta de Hierro Majadahonda (Madrid, España).</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿A qué sociedades pertenece?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Es Regente para Chile de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP), y miembro del American College of Surgeons (ACS), la International Association for the Study of Lung Cancer (IASLC), la European Respiratory Society (ERS) y la International Society for Heart and Lung Transplantation (ISHLT).</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Cómo agendo una consulta?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Para atención presencial en Clínica Las Condes puede reservar hora a través del sistema de agenda de la clínica. Para consulta por telemedicina, a través de la plataforma de agendamiento en línea. Ambos enlaces están disponibles en la sección de contacto de este sitio.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Necesito derivación de otro médico?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">No es indispensable, pero es útil llegar con los exámenes disponibles —imágenes (TC de tórax), informes previos y biopsias si las hay—. Eso permite orientar la evaluación desde la primera consulta y evitar repetir estudios.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Atiende pacientes derivados por otros médicos?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Sí. Recibe derivaciones de neumólogos, oncólogos, cirujanos generales y médicos internistas, tanto para evaluación quirúrgica como para procedimientos de broncoscopía intervencional y diagnóstico endobronquial.</div>
-        </div>
-        </div>
+        <p class="eyebrow"><a href="/perfil" style="color:var(--teal);text-decoration:none;">← Dr. David Lazo Pérez</a></p>
+        <h1 class="pub-h1">Docencia y menciones</h1>
+        <p class="pub-lead">Formo parte del comité académico del programa de subespecialidad en Cirugía de Tórax de la Universidad Finis Terrae y he sido consultado por Clínica Las Condes como especialista de referencia desde 2016. Aquí está el registro, con el enlace a cada fuente original.</p>
+        <p class="pub-orcid">El listado de mis artículos en revistas indexadas está en <a href="/publicaciones">las 31 publicaciones científicas</a>, y mi trayectoria completa en <a href="/perfil">el perfil profesional</a>.</p>
       </div>
     </section>
 
-    <section class="cta-unified" id="contacto">
-    <p class="cta-eyebrow">Primer paso</p>
-    <h2 class="cta-title">Hable directamente<br>con el especialista</h2>
-    <div class="cta-contact-grid">
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.5rem;">
-        <img src="imgs/foto-dr-lazo.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en cirugía robótica y broncoscopía intervencionista" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 10%;border:3px solid rgba(255,255,255,0.2);margin:0;" loading="lazy" width="1007" height="1388" decoding="async">
-        <div style="text-align:center;">
-          <p style="font-size:0.88rem;font-weight:700;color:#fff;margin-bottom:0.2rem;">Dr. David Lazo Pérez</p>
-          <p style="font-size:0.75rem;color:rgba(255,255,255,0.55);">Cirujano Torácico</p>
-        </div>
-      </div>
-      <div class="contact-card">
-        <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Agendar consulta</h4>
-        <div class="ccontact-links">
-          <a class="ccontact-link" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener">
-            <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 8v6M9 11h6M9 21v-3h6v3"/></svg></span>
-            <div><span class="ccontact-label">Clínica Las Condes</span><span class="ccontact-val">Reservar hora presencial →</span></div>
-          </a>
-          <a class="ccontact-link" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">
-            <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/></svg></span>
-            <div><span class="ccontact-label">Telemedicina</span><span class="ccontact-val">Consulta online — todo Chile →</span></div>
-          </a>
-        </div>
-      </div>
-      <div class="contact-card">
-        <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>Redes sociales</h4>
-        <div class="ccontact-links">
-          <a class="ccontact-link" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener">
-            <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            <div><span class="ccontact-label">LinkedIn</span><span class="ccontact-val">Dr. David Lazo Pérez</span></div>
-          </a>
-          <a class="ccontact-link" href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener">
-            <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            <div><span class="ccontact-label">Instagram</span><span class="ccontact-val">@dr.david.lazo.p</span></div>
-          </a>
-          <a class="ccontact-link" href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener">
-            <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5z"/></svg>
-            <div><span class="ccontact-label">Doctoralia</span><span class="ccontact-val">Ver perfil y reseñas →</span></div>
-          </a>
-          <a class="ccontact-link" href="https://orcid.org/0009-0007-0806-6679" target="_blank" rel="noopener me">
-            <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.516.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.588-1.444 3.588-3.722 0-2.016-1.091-3.722-3.588-3.722h-2.297z"/></svg>
-            <div><span class="ccontact-label">ORCID</span><span class="ccontact-val">0009-0007-0806-6679</span></div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- DOCENCIA -->
+    <section class="section" id="docencia" style="padding-top:0;">
+      <div class="inner">
+        <h2 class="pub-h1" style="font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:0.8rem;">Formación de subespecialistas</h2>
+        <p class="pub-lead">Integro el <strong>comité académico</strong> del Programa de Formación de Subespecialista en Cirugía de Tórax de la <a href="https://medfinis.cl/postitulo/subesp-cirugia-torax/" target="_blank" rel="noopener">Universidad Finis Terrae</a>, dirigido por el Dr. Felipe Undurraga Machicao. Es un programa de dos años, dirigido a cirujanos de adulto ya certificados por CONACEM, cuyos campos clínicos son Clínica Las Condes y el Hospital San Borja Arriarán.</p>
 
-  </main>    
+        <div class="pub-list">
+          <div class="pub-item">
+            <div class="pub-title">Comité Académico · Subespecialidad en Cirugía de Tórax</div>
+            <div class="pub-authors">Universidad Finis Terrae &middot; <strong>Facultad de Medicina</strong></div>
+            <div class="pub-meta">Junto al Dr. Javier Vega Salas, el Dr. Huáscar Rodríguez Galbán y el Dr. Nicolás Von Jentschyk, bajo la jefatura del Dr. Felipe Undurraga. Duración: 2 años. Campos clínicos: Clínica Las Condes y Hospital San Borja Arriarán. &middot; <a href="https://medfinis.cl/postitulo/subesp-cirugia-torax/" target="_blank" rel="noopener">Ver el programa</a></div>
+          </div>
+        </div>
 
+        <p class="pub-orcid" style="margin-top:1.6rem;">Buena parte de lo que enseño en el programa es <a href="https://rats.cl">cirugía torácica robótica (RATS)</a>, <a href="https://videotoracoscopia.cl">videotoracoscopía</a> y <a href="https://broncoscopia.cl">broncoscopía intervencional</a>.</p>
+      </div>
+    </section>
+
+    <!-- MENCIONES -->
+    <section class="section" id="menciones" style="padding-top:0;">
+      <div class="inner">
+        <h2 class="pub-h1" style="font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:0.8rem;">Menciones en Clínica Las Condes</h2>
+        <p class="pub-lead">Siete notas publicadas por Clínica Las Condes entre 2016 y 2018 en las que aparezco citado como especialista. Cada una fue abierta y verificada en su fuente el 16 de agosto de 2026.</p>
+        <div class="pub-list">
+          <div class="pub-item">
+            <div class="pub-title">Doble Trasplante de pulmón infantil: Hito de Clínica Las Condes</div>
+            <div class="pub-authors">12 de julio de 2018 &middot; <strong>Trasplante pulmonar bilobar</strong></div>
+            <div class="pub-meta">Primeros dos trasplantes pulmonares pediátricos con injerto reducido realizados en Chile. Explica la técnica bilobar, los tiempos quirúrgicos y el funcionamiento de la lista de espera nacional. Citado como &laquo;Doctor David Lazo cirujano de tórax y jefe de cirugía adulto de Clínica Las Condes&raquo;. &middot; <a href="https://www.clinicalascondes.cl/BLOG/Listado/Cirugia-Adultos/trasplante-de-pulmon-doble-infantil" target="_blank" rel="noopener">Leer en clinicalascondes.cl</a></div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">¿Conoces la iontoforesis?</div>
+            <div class="pub-authors">5 de abril de 2018 &middot; <strong>Hiperhidrosis · tratamiento no quirúrgico</strong></div>
+            <div class="pub-meta">Única voz técnica de la nota. Indicaciones y límites de la iontoforesis en hiperhidrosis palmoplantar, y por qué no se aplica en la cara. Citado como &laquo;doctor David Lazo, cirujano de tórax de Clínica Las Condes&raquo;. &middot; <a href="https://www.clinicalascondes.cl/BLOG/Listado/Cirugia-Adultos/iontoforesis" target="_blank" rel="noopener">Leer en clinicalascondes.cl</a></div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">Endosonografía Bronquial: tecnología mínimamente invasiva</div>
+            <div class="pub-authors">22 de noviembre de 2017 &middot; <strong>EBUS · cáncer pulmonar</strong></div>
+            <div class="pub-meta">EBUS para biopsia y etapificación mediastínica, y cuándo sigue estando indicada la mediastinoscopía. Citado como &laquo;doctor David Lazo, cirujano de tórax de Clínica Las Condes&raquo;. &middot; <a href="https://www.clinicalascondes.cl/BLOG/Listado/Cancer/Endosonografia-bronquial" target="_blank" rel="noopener">Leer en clinicalascondes.cl</a></div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">¿Sólo sudor en exceso o hiperhidrosis?</div>
+            <div class="pub-authors">22 de agosto de 2017 &middot; <strong>Hiperhidrosis · diagnóstico</strong></div>
+            <div class="pub-meta">Cuándo la sudoración deja de ser fisiológica, y la técnica de 3 mm sin puntos. Citado como &laquo;el doctor David Lazo, del equipo de cirugía de tórax&raquo;. &middot; <a href="https://www.clinicalascondes.cl/BLOG/Listado/Cirugia-Adultos/solo-sudor-en-exceso-hiperhidrosis" target="_blank" rel="noopener">Leer en clinicalascondes.cl</a></div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">¿Es la cirugía la mejor opción para la hiperhidrosis?</div>
+            <div class="pub-authors">19 de octubre de 2016 &middot; <strong>Simpatectomía por videotoracoscopía</strong></div>
+            <div class="pub-meta">La nota más leída del grupo. Describe la simpaticotomía por videotoracoscopía y sus resultados por territorio. Citado como &laquo;doctor David Lazo, cirujano torácico de la Unidad de Hiperhidrosis de Clínica Las Condes&raquo;. &middot; <a href="https://www.clinicalascondes.cl/BLOG/Listado/Cirugia-Adultos/cirugia-la-mejor-opcion-para-la-hiperhidrosis" target="_blank" rel="noopener">Leer en clinicalascondes.cl</a></div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">¿Sabes si tu sudoración excesiva es idiopática?</div>
+            <div class="pub-authors">11 de agosto de 2016 &middot; <strong>Hiperhidrosis idiopática</strong></div>
+            <div class="pub-meta">Diagnóstico diferencial de la hiperhidrosis primaria frente a las causas secundarias que hay que descartar. Citado como &laquo;Dr. David Lazo, listado entre los especialistas del equipo&raquo;. &middot; <a href="https://www.clinicalascondes.cl/BLOG/Listado/Cirugia-Adultos/sudoracion-excesiva-hiperhidrosis-idiopatica" target="_blank" rel="noopener">Leer en clinicalascondes.cl</a></div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">Inédito caso médico: joven se recupera tras 123 días conectada a pulmón artificial</div>
+            <div class="pub-authors">Sin fecha en la ficha · fuente: Diario El Mercurio &middot; <strong>ECMO · trasplante pulmonar</strong></div>
+            <div class="pub-meta">Paciente de 23 años trasplantada tras 123 días en ECMO, uno de los soportes extracorpóreos más prolongados reportados con resultado favorable. Citado como &laquo;David Lazo, médico cirujano que participó en la operación&raquo;. &middot; <a href="https://www.clinicalascondes.cl/DOCENCIA/NOTICIAS-INVESTIGACION/Inedito-caso-medico--joven-se-recupera-tras-123-di" target="_blank" rel="noopener">Leer en clinicalascondes.cl</a></div>
+          </div>
+        </div>
+        <p class="pub-orcid" style="margin-top:1.6rem;">Nota: las cifras y recomendaciones de estas notas reflejan la práctica del momento en que se publicaron. Para el criterio quirúrgico vigente en hiperhidrosis, consulta <a href="https://hiperhidrosis.cl/cirugia-hiperhidrosis/">la página de cirugía de hiperhidrosis</a>, que reviso periódicamente.</p>
+      </div>
+    </section>
+
+  </main>
 <footer>
     <p>© 2026 Dr. David Lazo Pérez · Cirujano Torácico · Santiago, Chile</p>
     <div class="footer-links">
@@ -1119,12 +1050,6 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('light', window.scrollY > 80);
     }, { passive: true });
-  </script>
-
-  <script>
-    document.querySelectorAll('.faq-q').forEach(function (b) {
-      b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
-    });
   </script>
 </body>
 </html>

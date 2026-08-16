@@ -221,7 +221,9 @@
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(12,21,38,0.95) 0%, rgba(12,21,38,0.88) 35%, rgba(12,21,38,0.45) 60%, rgba(12,21,38,0.15) 100%);
+      /* Degradado confinado a la franja del texto: la foto queda limpia,
+         sin el velo oscuro que se percibía como sombra sobre el rostro. */
+      background: linear-gradient(to right, rgba(12,21,38,0.85) 0%, rgba(12,21,38,0.55) 30%, rgba(12,21,38,0) 62%);
     }
     .hero-content {
       position: relative; z-index: 2;

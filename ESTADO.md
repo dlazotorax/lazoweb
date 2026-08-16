@@ -689,3 +689,69 @@ WABIP, SOCICH y Finis Terrae que enlacen el sitio**.
 - 7 páginas bajo 400 palabras (todas en hiperhidrosis.cl).
 
 *(No se pudieron leer GSC ni GA4 en esta pasada: la extensión de Chrome estaba desconectada.)*
+
+---
+
+## 18. `/docencia` — la página de docencia y menciones (16-ago-2026, noche)
+
+Publicada `https://cirugiatoracica.cl/docencia`. Es la respuesta al cuello de botella descrito
+en §17: la red no tenía ninguna página que expusiera autoridad institucional verificable, y las
+IA respondían con Doctoralia y TopDoctors porque era lo único con respaldo externo que encontraban.
+
+### Qué contiene
+
+**Docencia.** Comité académico del Programa de Formación de Subespecialista en Cirugía de Tórax
+de la Universidad Finis Terrae. Verificado en `medfinis.cl/postitulo/subesp-cirugia-torax/`:
+jefe de programa Dr. Felipe Undurraga Machicao; comité con Dr. Javier Vega Salas, Dr. Huáscar
+Rodríguez Galbán, Dr. David Lazo Pérez y Dr. Nicolás Von Jentschyk. Dos años, campos clínicos
+Clínica Las Condes y Hospital San Borja Arriarán.
+
+**Menciones.** Siete notas de Clínica Las Condes, **todas abiertas en la fuente primaria el
+16-ago-2026** antes de publicarlas:
+
+| Fecha | Nota | Cargo que le atribuyen |
+|---|---|---|
+| 12-07-2018 | Doble trasplante de pulmón infantil | cirujano de tórax y **jefe de cirugía adulto** de CLC |
+| 05-04-2018 | ¿Conoces la iontoforesis? | cirujano de tórax de CLC — **única voz de la nota** |
+| 22-11-2017 | Endosonografía bronquial | cirujano de tórax de CLC |
+| 22-08-2017 | ¿Sólo sudor en exceso o hiperhidrosis? | del equipo de cirugía de tórax |
+| 19-10-2016 | ¿Es la cirugía la mejor opción para la hiperhidrosis? | cirujano torácico de la **Unidad de Hiperhidrosis** de CLC |
+| 11-08-2016 | ¿Sabes si tu sudoración excesiva es idiopática? | listado entre los especialistas del equipo |
+| s/f | Inédito caso médico: 123 días en ECMO | médico cirujano que participó en la operación |
+
+### Corrección de una cifra que yo mismo había dado mal
+En sesiones anteriores dije "unas diez notas de CLC". Eran una aproximación de un `site:` en
+Google, no un recuento. Verificadas al abrirlas: **siete**. Tres candidatas quedaron fuera y
+**no se publicaron** por no estar verificadas:
+`/CENTROS-Y-ESPECIALIDADES/.../Trasplante-de-pulmon-de-importancia-mundial`, `AFICHE-CER.pdf`
+(Jornadas CR y CT 2018) y `Programa-Oficial-Puesta-al-dia-enfermedades-Resp-2016.pdf`.
+Google mostraba 3 páginas de resultados para `site:clinicalascondes.cl "David Lazo"`, así que
+es probable que existan más. **Si aparecen, verificar antes de añadir.**
+
+### Dos trampas encontradas en las fuentes
+1. **La nota de 2016 dice "un día de hospitalización"** para la simpatectomía. Contradice lo que
+   hoy afirma hiperhidrosis.cl (ambulatoria). Por eso la página cierra con una nota que aclara
+   que esas cifras reflejan la práctica del momento y remite a `/cirugia-hiperhidrosis/`.
+   **No citar esa frase en ningún otro sitio.**
+2. **Error de atribución del lado de CLC** en la nota de EBUS: la cita *"Yo entré a pabellón a
+   las 18:30..."* está marcada en el HTML como del Dr. Lazo, pero el texto deja claro que habla
+   el paciente Rodrigo Campos. **No reproducirla.**
+
+### Implementación
+- `dist/cirugiatoracica/docencia.html`, 53,9 KB, 696 palabras visibles, sirve en `/docencia`
+  por `cleanUrls`.
+- Plantilla y CSS reutilizados de `publicaciones.html` — cero assets nuevos, cero imágenes.
+- Schema: `Physician` canónico + `MedicalWebPage` (`lastReviewed` 2026-08-16) +
+  `EducationalOccupationalProgram` (Finis Terrae) + **7 nodos `Article`** con
+  `publisher: Clínica Las Condes` y `mentions → https://cirugiatoracica.cl/#david-lazo`.
+  Es el primer marcado de la red que declara explícitamente *quién cita a David desde fuera*.
+- Enlaces contextuales entrantes: hub (`index.html`, sección Sobre el autor), `perfil.html`
+  (bio y bloque de publicaciones) y `publicaciones.html` (lead). Añadida al nav de las cuatro
+  páginas del hub y a `sitemap.xml`.
+- `scripts/audit.py`: 33 páginas, 0 hallazgos. Verificada en vivo tras el despliegue.
+
+### Lo que sigue siendo el problema
+La página **documenta** autoridad; no la **importa**. El backlink sigue siendo cero. Los tres
+enlaces que moverían la aguja son los mismos de §17 y dependen de David:
+**Finis Terrae** (que la ficha del comité enlace a cirugiatoracica.cl), **WABIP** (regencia) y
+**SOCICH**. Con `/docencia` publicada, ahora hay una URL concreta que pedirles que enlacen.

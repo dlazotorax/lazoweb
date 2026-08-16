@@ -47,6 +47,9 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* Los atributos width/height protegen del CLS; height:auto evita que
+       fijen el alto y pisen el aspect-ratio o el alto que define el CSS. */
+    img { height: auto; }
 
     :root {
       --bg:        #0a0f1a;

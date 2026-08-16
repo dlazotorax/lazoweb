@@ -548,3 +548,38 @@ curl -s https://cancerpulmonar.cl/ | grep -o 'lastReviewed[^,]*'
 
 Y en Search Console, el dato a mirar en 2-3 semanas: si `/publicaciones` y `/links` empiezan
 a recibir impresiones. Eran las dos páginas sin enlaces entrantes y por eso no se indexaban.
+
+### Corrección posterior (mismo día): regresión de las imágenes
+
+Al revisar visualmente, David detectó que `foto-dr-lazo-bio` salía alargada y con la cara
+cortada. **Era una regresión mía del Bloque 3.**
+
+**Causa.** Al añadir `width`/`height` a 118 `<img>`, el atributo `height="800"` actúa como
+*presentational hint* y **fija el alto**, anulando el `aspect-ratio: 3/4` que definía el CSS.
+La foto pasó de 260×347 a 260×800: con `object-fit: cover` sobre una imagen cuadrada, eso
+deja ver solo la franja central del 32% — de ahí la cara cortada.
+
+**Alcance real: 16 imágenes**, no solo la del doctor. Las peores:
+`crio-muestra` 350×417 → 350×1436 · `stent-img` 263×263 → 263×1024 ·
+`rigida-ilustracion-ai` 518×324 → 518×1024 · `image5_jpeg` 338×470 → 338×1024.
+
+**Por qué hiperhidrosis.cl no se rompió:** su `site.css` ya tenía
+`img { display:block; max-width:100%; height:auto; }` (línea 33). Ese contraste confirmó el
+diagnóstico. videotoracoscopia tenía la regla, pero **solo dentro de una media query**, así
+que en escritorio no aplicaba.
+
+**Arreglo.** Regla base `img { height: auto; }` en los 4 sitios con `<style>` inline
+(15 páginas) y al principio de `styles.css` de videotoracoscopia. Los atributos se conservan
+—siguen protegiendo del CLS— pero el CSS recupera el control, porque cualquier regla de autor
+gana a un presentational hint. Verificado con navegador: **las 16 cajas vuelven a su tamaño
+previo y no queda ninguna imagen con la proporción rota.**
+
+De paso se corrigió algo que ya venía mal: `cirugia-ilustracion-960` se estiraba a 553×768
+cuando su proporción real da 553×302, y la foto del hub pasó de 521×497 (recortada) a
+521×521 (completa).
+
+**Lección para la próxima:** añadir `width`/`height` a `<img>` **exige** que exista
+`img { height: auto; }` en el CSS del sitio. Sin eso se rompe cualquier maquetación que use
+`aspect-ratio` o alturas por CSS. El script `scripts/audit.py` no detecta esto porque es un
+problema de renderizado, no de HTML: hace falta un navegador. Conviene comprobarlo midiendo
+la caja de cada imagen antes y después.

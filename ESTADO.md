@@ -624,8 +624,17 @@ FAQ visible contra texto normalizado, recursos, GA4, fechas de revisión) → 0 
   mi detector solo buscaba `<picture>`. Al no contarlas, los pesos que calculé primero estaban
   inflados: contaba el JPG de respaldo en vez del WebP.
 
-### Pendiente de revisar con David
-El commit `fd2c927` simplificó la columna "Posibilidad de cirugía" de `cancerpulmonar/que-es`:
-en el estadio **IIB** pasó de *"Sí (con evaluación)"* a *"Sí"* a secas. Quitar ese matiz en una
-tabla de operabilidad por estadio TNM es una decisión clínica — conviene que David confirme que
-es lo que quería.
+### Corregido: el matiz clínico del estadio IIB
+El commit `fd2c927` simplificó la columna "Posibilidad de cirugía" de `cancerpulmonar/que-es`
+quitando las técnicas entre paréntesis (IA1, IA2, IA3) — eso era lo pedido. Pero de paso el
+estadio **IIB** pasó de *"Sí (con evaluación)"* a *"Sí"* a secas. David confirmó que fue un
+error de instrucción y en `fafb7a6` se repuso el texto original.
+
+**Por qué importa:** la fila IIB usa `var(--accent2)`, un color distinto al de los estadios I
+y IIA, precisamente porque su operabilidad es condicional. Sin el "(con evaluación)" el color
+quedaba sin explicación y la tabla decía a un paciente con IIB lo mismo que a uno con IA1.
+
+**Regla que deja:** en las tablas de operabilidad por estadio, los paréntesis pueden contener
+dos cosas muy distintas — la **técnica** (lobectomía, VATS, RATS), que es prescindible, o una
+**condición clínica** ("con evaluación", "en casos seleccionados"), que no lo es. Antes de
+simplificar una columna entera hay que distinguirlas fila por fila.

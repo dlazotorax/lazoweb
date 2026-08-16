@@ -554,7 +554,32 @@
       .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; }
     }
 
-  </style>
+  
+    /* ── Box de perfil dentro del bloque biográfico ── */
+    .perfil-box {
+      display: flex; align-items: center; gap: 0.85rem;
+      margin-top: 1.5rem; padding: 0.9rem 1.1rem; max-width: 430px;
+      background: var(--teal-pale); color: var(--teal-dark);
+      border: 1px solid var(--teal); border-left: 4px solid var(--teal);
+      border-radius: 10px; text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+    .perfil-box:hover {
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(8,145,178,0.18);
+      transform: translateY(-2px);
+    }
+    .perfil-box-txt { flex: 1; }
+    .perfil-box-t {
+      display: block; font-size: 0.84rem; font-weight: 700;
+      color: var(--navy); letter-spacing: -0.01em;
+    }
+    .perfil-box-s {
+      display: block; font-size: 0.74rem; line-height: 1.45;
+      color: var(--muted); margin-top: 0.15rem;
+    }
+    @media (max-width: 768px) { .perfil-box { max-width: 100%; } }
+</style>
   <!-- Google Analytics 4 · red Dr. David Lazo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
   <script>
@@ -837,7 +862,16 @@
         <div style="margin-top:1.5rem;">
           <a href="https://cirugiatoracica.cl/#contacto" style="display:inline-flex;align-items:center;gap:0.5rem;background:#0891b2;color:#fff;text-decoration:none;padding:0.75rem 1.5rem;border-radius:8px;font-size:0.88rem;font-weight:700;">Solicitar hora →</a>
         </div>
-      </div>
+      
+          <a class="perfil-box" href="https://cirugiatoracica.cl/perfil">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span class="perfil-box-txt">
+              <span class="perfil-box-t">Perfil profesional completo</span>
+              <span class="perfil-box-s">Formación, cargos, sociedades científicas y publicaciones</span>
+            </span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
     </div>
   </section>
 

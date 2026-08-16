@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Credenciales — NUNCA commitear
+.github-token
+*.pem
+.env
+.env.*

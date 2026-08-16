@@ -846,9 +846,11 @@
   <section id="davinci">
     <div class="davinci-grid">
       <div class="davinci-visual" style="background:#000;display:flex;align-items:center;justify-content:center;">
-        <video autoplay muted loop playsinline aria-label="Video demostrativo del sistema robótico Da Vinci durante cirugía torácica (robot fantasma)" style="width:86%;height:86%;object-fit:contain;display:block;">
-          <source src="imgs/robotfantoma.mp4" type="video/mp4" />
-        </video>
+        <video muted loop playsinline preload="none"
+             poster="imgs/robotfantoma-poster.webp"
+             data-src="imgs/robotfantoma.mp4"
+             aria-label="Video demostrativo del sistema robótico Da Vinci durante cirugía torácica (robot fantasma)"
+             style="width:86%;height:86%;object-fit:contain;display:block;"></video>
       </div>
       <div class="davinci-content">
         <p class="eyebrow eyebrow-w">Sistema Da Vinci</p>
@@ -1133,6 +1135,28 @@
     document.querySelectorAll('.faq-q').forEach(function (b) {
       b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
     });
+  </script>
+
+  <script>
+    /* El vídeo del robot (2,6 MB) no se descarga al cargar la página:
+       se carga y arranca solo cuando el usuario llega a esa sección. */
+    (function () {
+      var v = document.querySelector('video[data-src]');
+      if (!v) return;
+      function cargar() {
+        if (v.dataset.cargado) return;
+        v.dataset.cargado = '1';
+        var s = document.createElement('source');
+        s.src = v.dataset.src; s.type = 'video/mp4';
+        v.appendChild(s); v.load();
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      }
+      if (!('IntersectionObserver' in window)) { cargar(); return; }
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { cargar(); io.disconnect(); } });
+      }, { rootMargin: '300px' });
+      io.observe(v);
+    })();
   </script>
 </body>
 </html>

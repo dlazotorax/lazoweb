@@ -1140,7 +1140,13 @@ footer p { color: rgba(255,255,255,0.32) !important; }
       color: var(--muted); margin-top: 0.15rem;
     }
     @media (max-width: 768px) { .perfil-box { max-width: 100%; } }
-</style>
+
+    /* Iconos SVG que reemplazan a los emojis: tamaño equivalente */
+    .adv-icon svg{width:20px;height:20px} .tech-pill-icon svg{width:19px;height:19px}
+    .abl-card-icon svg{width:26px;height:26px} .stent-vs-icon svg{width:24px;height:24px}
+    .abl-ico svg{width:20px;height:20px}
+    .adv-icon,.stent-vs-icon{color:#0891b2}
+  </style>
   <!-- Google Analytics 4 · red Dr. David Lazo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
   <script>
@@ -1264,28 +1270,28 @@ footer p { color: rgba(255,255,255,0.32) !important; }
             <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;">Ventajas del broncoscopio rígido</p>
             <div class="adv-list">
               <div class="adv-item">
-                <span class="adv-icon">⚙️</span>
+                <span class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M7 12h10M9.5 9.5 7 12l2.5 2.5M14.5 9.5 17 12l-2.5 2.5"/></svg></span>
                 <div>
                   <h5>Gran calibre para instrumentalización</h5>
                   <p>Permite introducir múltiples instrumentos simultáneamente — láser, pinzas, criosonda — sin sacrificar visión ni ventilación.</p>
                 </div>
               </div>
               <div class="adv-item">
-                <span class="adv-icon">💨</span>
+                <span class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h9a2.5 2.5 0 1 0-2.5-2.5M4 12h12a2.5 2.5 0 1 1-2.5 2.5M4 16h7"/></svg></span>
                 <div>
                   <h5>Control total de la vía aérea</h5>
                   <p>Ventilación jet estable. Aislamiento de vía aérea derecha o izquierda. Mínima obstrucción funcional durante el procedimiento.</p>
                 </div>
               </div>
               <div class="adv-item">
-                <span class="adv-icon">🩸</span>
+                <span class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.5 5 6 8.2 6 11a6 6 0 0 1-12 0c0-2.8 2.5-6 6-11z"/></svg></span>
                 <div>
                   <h5>Hemostasia y succión directa</h5>
                   <p>Gran capacidad de succión. Manipulación directa de la lesión. Control de hemoptisis masiva e intraoperatoria.</p>
                 </div>
               </div>
               <div class="adv-item">
-                <span class="adv-icon">🔩</span>
+                <span class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="5"/><path d="M7 9h10M7 15h10"/></svg></span>
                 <div>
                   <h5>Despliegue de stents</h5>
                   <p>Plataforma estándar para instalar stents de silicona y autoexpandibles en estenosis malignas y benignas.</p>
@@ -1298,11 +1304,11 @@ footer p { color: rgba(255,255,255,0.32) !important; }
             <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;">Indicaciones principales</p>
             <div class="adv-list" style="margin-top:0;">
               <div class="adv-item">
-                <span class="adv-icon">🔬</span>
+                <span class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></span>
                 <div><h5>Biopsia de tejido de gran calibre</h5><p>Muestras histológicas completas en lesiones endobronquiales voluminosas.</p></div>
               </div>
               <div class="adv-item">
-                <span class="adv-icon">🧩</span>
+                <span class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 13V3M8.5 6.5 12 3l3.5 3.5"/><rect x="4" y="13" width="16" height="8" rx="1.5"/></svg></span>
                 <div><h5>Remoción de cuerpos extraños complejos</h5><p>Extracción con fórceps rígidos, canastillo o resección mecánica directa.</p></div>
               </div>
               <div class="adv-item">
@@ -1310,21 +1316,21 @@ footer p { color: rgba(255,255,255,0.32) !important; }
                 <div><h5>Hemoptisis masiva</h5><p>Control inmediato del sangrado, taponamiento y coagulación endobronquial.</p></div>
               </div>
               <div class="adv-item">
-                <span class="adv-icon">🚧</span>
+                <span class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span>
                 <div><h5>Obstrucción de vía aérea central</h5><p>Resección mecánica (<em>coring</em>), dilatación directa del lumen y despliegue de stents en OVA intrínseca o extrínseca.</p></div>
               </div>
             </div>
 
             <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:calc(1.75rem + 50px);margin-bottom:0.75rem;">Técnicas accesorias (manejo indirecto OVA)</p>
             <div class="tech-grid">
-              <div class="tech-pill"><span class="tech-pill-icon">⚡</span><div><h5>Electrocauterio</h5><p>Coagulación y resección</p></div></div>
-              <div class="tech-pill"><span class="tech-pill-icon">🧊</span><div><h5>Crioterapia</h5><p>Ablación y criobiopsia</p></div></div>
-              <div class="tech-pill"><span class="tech-pill-icon">🔴</span><div><h5>Láser</h5><p>Vaporización tisular</p></div></div>
-              <div class="tech-pill"><span class="tech-pill-icon">💨</span><div><h5>Argón Plasma</h5><p>Coagulación sin contacto</p></div></div>
-              <div class="tech-pill"><span class="tech-pill-icon">🫧</span><div><h5>Balones / bujías</h5><p>Dilatación de estenosis</p></div></div>
-              <div class="tech-pill"><span class="tech-pill-icon">🔩</span><div><h5>Stents</h5><p>Silicona y autoexpandibles</p></div></div>
-              <div class="tech-pill"><span class="tech-pill-icon">🔬</span><div><h5>Microdebridador</h5><p>Resección mecánica</p></div></div>
-              <div class="tech-pill"><span class="tech-pill-icon">💡</span><div><h5>Terapia fotodinámica</h5><p>Lesiones superficiales</p></div></div>
+              <div class="tech-pill"><span class="tech-pill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><div><h5>Electrocauterio</h5><p>Coagulación y resección</p></div></div>
+              <div class="tech-pill"><span class="tech-pill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5.2 7.5l13.6 9M18.8 7.5l-13.6 9"/></svg></span><div><h5>Crioterapia</h5><p>Ablación y criobiopsia</p></div></div>
+              <div class="tech-pill"><span class="tech-pill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h6M15 12h6M12 3v6M12 15v6"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span><div><h5>Láser</h5><p>Vaporización tisular</p></div></div>
+              <div class="tech-pill"><span class="tech-pill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h9a2.5 2.5 0 1 0-2.5-2.5M4 12h12a2.5 2.5 0 1 1-2.5 2.5M4 16h7"/></svg></span><div><h5>Argón Plasma</h5><p>Coagulación sin contacto</p></div></div>
+              <div class="tech-pill"><span class="tech-pill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="14" r="5.5"/><circle cx="17" cy="6.5" r="3"/></svg></span><div><h5>Balones / bujías</h5><p>Dilatación de estenosis</p></div></div>
+              <div class="tech-pill"><span class="tech-pill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="5"/><path d="M7 9h10M7 15h10"/></svg></span><div><h5>Stents</h5><p>Silicona y autoexpandibles</p></div></div>
+              <div class="tech-pill"><span class="tech-pill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></span><div><h5>Microdebridador</h5><p>Resección mecánica</p></div></div>
+              <div class="tech-pill"><span class="tech-pill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.7.5 1 1.3 1 2.1h5c0-.8.3-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></span><div><h5>Terapia fotodinámica</h5><p>Lesiones superficiales</p></div></div>
             </div>
           </div>
         </div>
@@ -1347,7 +1353,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
           <!-- ELECTROCOAGULACIÓN -->
           <div class="abl-card c-amber" id="electro">
             <div class="abl-card-header">
-              <div class="abl-card-icon">⚡</div>
+              <div class="abl-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
               <div class="abl-card-meta">
                 <div class="abl-card-tag">Desde 1932 · Renovado en los 80s</div>
                 <div class="abl-card-name">Electrocoagulación</div>
@@ -1381,7 +1387,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
           <!-- APC -->
           <div class="abl-card c-violet" id="apc">
             <div class="abl-card-header">
-              <div class="abl-card-icon">💨</div>
+              <div class="abl-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h9a2.5 2.5 0 1 0-2.5-2.5M4 12h12a2.5 2.5 0 1 1-2.5 2.5M4 16h7"/></svg></div>
               <div class="abl-card-meta">
                 <div class="abl-card-tag">Gastroenterología 1991 · Broncoscopía 2000 (Lungenklinik Hemer)</div>
                 <div class="abl-card-name">Argón Plasma (APC)</div>
@@ -1413,7 +1419,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
           <!-- LÁSER -->
           <div class="abl-card c-red" id="laser">
             <div class="abl-card-header">
-              <div class="abl-card-icon">🔴</div>
+              <div class="abl-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h6M15 12h6M12 3v6M12 15v6"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
               <div class="abl-card-meta">
                 <div class="abl-card-tag">CO₂ 1967 · Nd:YAG 1981 (Dumon, Marsella)</div>
                 <div class="abl-card-name">Láser Nd:YAG</div>
@@ -1461,7 +1467,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
             <h4>Principio de acción · Efecto Joule-Thompson</h4>
             <p>El CO₂ a alta presión es hecho pasar a través de un orificio pequeño, aumentando dramáticamente su volumen, lo que resulta en el <strong>enfriamiento rápido de la sonda</strong>. Esto induce muerte celular por cristales de hielo intracelulares, deshidratación osmótica, daño vascular y apoptosis tardía.</p>
             <div class="crio-advantage" style="margin-top:1.25rem;">
-              <h4>✅ Ventajas frente a técnicas "calientes"</h4>
+              <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 5-5.5"/></svg>Ventajas frente a técnicas "calientes"</h4>
               <ul>
                 <li>No requiere reducir FiO₂ — sin riesgo de ignición endobronquial</li>
                 <li>El cartílago es criorresistente → menor riesgo de fístulas</li>
@@ -1637,7 +1643,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
         <div class="stent-vs-grid">
           <div class="stent-vs-card silicona">
             <div class="stent-vs-header">
-              <span class="stent-vs-icon">⬜</span>
+              <span class="stent-vs-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="5"/><path d="M7 9h10M7 15h10"/></svg></span>
               <div>
                 <div class="stent-vs-name">Stent de Silicona</div>
                 <div class="stent-vs-sub">Dumon · Noppen · Montgomery T · Dynamic</div>
@@ -1655,7 +1661,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
           </div>
           <div class="stent-vs-card metalico">
             <div class="stent-vs-header">
-              <span class="stent-vs-icon">🔩</span>
+              <span class="stent-vs-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="5"/><path d="m7.5 6 9 6M16.5 6l-9 6m0 6 9-6m-9 0 9 6"/></svg></span>
               <div>
                 <div class="stent-vs-name">Stent Metálico (Nitinol)</div>
                 <div class="stent-vs-sub">Wallstent · Gianturco · Alveolus · Ultraflex</div>
@@ -1672,7 +1678,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
             </div>
           </div>
         </div>
-        <p style="font-size:0.78rem;color:var(--muted);margin-top:-0.5rem;margin-bottom:2rem;font-style:italic;">⚠️ Los stents metálicos descubiertos están contraindicados en patología benigna por dificultad de extracción y mayor tasa de complicaciones tardías.</p>
+        <p style="font-size:0.78rem;color:var(--muted);margin-top:-0.5rem;margin-bottom:2rem;font-style:italic;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4M12 16.8v.1"/></svg> Los stents metálicos descubiertos están contraindicados en patología benigna por dificultad de extracción y mayor tasa de complicaciones tardías.</p>
 
         <!-- INDICACIONES -->
         <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;">Indicaciones (Cuadro 2 — Pinedo-Onofre, 2009)</p>
@@ -1734,7 +1740,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
 
         <!-- CONTRAINDICACIONES -->
         <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:2rem;display:flex;gap:0.75rem;align-items:flex-start;">
-          <span style="font-size:1.2rem;flex-shrink:0;">⚠️</span>
+          <span style="font-size:1.2rem;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4M12 16.8v.1"/></svg></span>
           <div>
             <p style="font-size:0.82rem;font-weight:700;color:#c2410c;margin-bottom:0.35rem;">Contraindicaciones absolutas</p>
             <p style="font-size:0.83rem;color:#7c3b1e;line-height:1.6;">Paciente inestable hemodinámicamente · Alergia al material del stent · Parénquima pulmonar no viable distal al sitio de obstrucción</p>
@@ -1844,17 +1850,17 @@ footer p { color: rgba(255,255,255,0.32) !important; }
         </div>
       </div>
       <div class="contact-card" style="text-align:left;">
-        <h4>🗓️ Agendar consulta</h4>
+        <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Agendar consulta</h4>
         <div class="ccontact-links">
           <a class="ccontact-link" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener">
-            <span class="ccontact-ico">🏥</span>
+            <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 8v6M9 11h6M9 21v-3h6v3"/></svg></span>
             <div>
               <span class="ccontact-label">Clínica Las Condes</span>
               <span class="ccontact-val">Reservar hora presencial →</span>
             </div>
           </a>
           <a class="ccontact-link" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">
-            <span class="ccontact-ico">💻</span>
+            <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/></svg></span>
             <div>
               <span class="ccontact-label">Telemedicina</span>
               <span class="ccontact-val">Consulta online — todo Chile →</span>
@@ -1865,7 +1871,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
 
       <!-- RRSS -->
       <div class="contact-card" style="text-align:left;">
-        <h4>🌐 Redes sociales</h4>
+        <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>Redes sociales</h4>
         <div class="ccontact-links">
           <a class="ccontact-link" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener">
             <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>

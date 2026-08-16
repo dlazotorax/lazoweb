@@ -1,7 +1,7 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
 > **Léeme primero.** Este archivo evita proponer cosas ya hechas o rehacer trabajo.
-> Última actualización: **16 ago 2026**.
+> Última actualización: **16 ago 2026** (2.ª revisión: GEO).
 
 ---
 
@@ -638,3 +638,54 @@ quedaba sin explicación y la tabla decía a un paciente con IIB lo mismo que a 
 dos cosas muy distintas — la **técnica** (lobectomía, VATS, RATS), que es prescindible, o una
 **condición clínica** ("con evaluación", "en casos seleccionados"), que no lo es. Antes de
 simplificar una columna entera hay que distinguirlas fila por fila.
+
+---
+
+## 17. Chequeo de visibilidad para IA (16-ago-2026, tarde)
+
+### Salud técnica: 0 hallazgos
+32 páginas. Anidado, JSON-LD, FAQ visible, recursos, GA4, títulos, descripciones, H1,
+duplicados: **todo limpio**. El trabajo de Claude Code y el cierre posterior quedaron sólidos.
+
+### Infraestructura GEO: buena
+- **Ningún `Disallow` activo** en los 6 dominios; todos con `User-agent: * / Allow: /`.
+- Bots de IA nombrados explícitamente en 5 de 6. **hiperhidrosis.cl no nombra `OAI-SearchBot`
+  ni `ChatGPT-User`** — cosmético, porque el comodín ya los cubre, pero conviene igualar.
+- **46 pares pregunta-respuesta** en 7 `FAQPage` — es el formato que las IA citan.
+- Schema con ORCID, 14 `sameAs`, 8 `memberOf`, 3 `alumniOf`, `knowsAbout`, `worksFor`.
+- **No existe `llms.txt`** en ningún dominio.
+- `videotoracoscopia.cl` es el único sin `FAQPage`.
+
+### Resultado real: la red es invisible para las IA
+Tres consultas de prueba, con búsqueda en vivo:
+
+| Consulta | Qué respondió | ¿Aparece David? |
+|---|---|---|
+| "mejor cirujano torácico Santiago cirugía robótica RATS" | Destaca al **Dr. Pablo Pérez Castro (oncotorax.cl)** + UC Christus y Bupa | **No** |
+| "EBUS CryoEBUS broncoscopía intervencional Chile" | **Clínica Alemana como pionera del EBUS en Chile desde 2010**; menciona al Dr. Alfredo Jalilie (Sta. María) | **No** |
+| "David Lazo Pérez cirujano torácico publicaciones" | Cita Doctoralia, TopDoctors, CTSNet, LinkedIn, Horalibre, medicosonline. Concluye: *"los resultados no contienen detalles específicos sobre sus publicaciones científicas"* | **Ningún dominio propio** |
+
+**El tercero es el diagnóstico.** Buscando su nombre + "publicaciones", la IA no encuentra
+`/publicaciones` —31 referencias verificadas con `ScholarlyArticle`— y responde que no hay datos.
+Los directorios de terceros tapan por completo a sus propios sitios.
+
+**Dos conflictos de claim confirmados en vivo:**
+- Clínica Alemana reclama públicamente ser pionera del EBUS en Chile **desde 2010**, el mismo
+  año y el mismo terreno que el claim de David (+3.200 EBUS desde 2010).
+- El Dr. Jalilie, **coautor suyo** en las recomendaciones COVID de la SER, sí es citado por nombre.
+
+### Conclusión
+El on-page está resuelto y ya no es el problema. **El cuello de botella sigue siendo el mismo
+de julio: cero backlinks.** Sin dominios externos que lo respalden, las IA prefieren directorios
+con autoridad antes que sus seis sitios, por bien construidos que estén.
+
+Lo que cambiaría esto es lo que lleva pendiente desde el 5-ago: **publicar la página de docencia
+y menciones** (Comité Académico de Finis Terrae + ~10 notas de Clínica Las Condes) y **pedir a
+WABIP, SOCICH y Finis Terrae que enlacen el sitio**.
+
+### Menor pero accionable
+- **LinkedIn sigue indexado como "Clínica MEDS"** en los resultados, pese a que terminó en
+  dic-2025. Aparece así en la respuesta de IA.
+- 7 páginas bajo 400 palabras (todas en hiperhidrosis.cl).
+
+*(No se pudieron leer GSC ni GA4 en esta pasada: la extensión de Chrome estaba desconectada.)*

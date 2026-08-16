@@ -775,6 +775,53 @@ propia declaración biográfica, no una afirmación clínica ni una autoría —
 §verificar-antes-de-afirmar no lo bloquea, pero conviene tenerlo presente: si algún día Finis
 Terrae o la U. de Chile publican una ficha suya, hay que enlazarla desde `/docencia`.
 
+### Adenda 2 — YouTube y prensa nacional (misma noche)
+
+**Canal de YouTube.** `youtube.com/@hiperhidrosiscl` — 4 suscriptores, **un solo vídeo**.
+Verificado vía oEmbed y abriendo la página con Chrome:
+
+- **"Hiperhidrosis en Dr. TV"** · uploadDate `2017-07-18` · 13 min 39 s (`PT13M39S`) · 327 vistas.
+- Añadida sección **Televisión** en `/docencia` con embed `youtube-nocookie` + `loading="lazy"`
+  (no descarga el reproductor hasta que se acerca al viewport) y nodo `VideoObject` con
+  `actor → #david-lazo`.
+- El canal se añadió al `sameAs` del nodo `Organization` `https://hiperhidrosis.cl/#org` en las
+  16 páginas de hiperhidrosis.cl — **no** al `sameAs` del `Physician`, porque el canal es de la
+  marca hiperhidrosis.cl, no un perfil personal de David.
+- **Pendiente de confirmar con David:** el vídeo se titula "Dr TV", que era el programa de
+  Claudio Aldunate en **Mega** (2011); desde 2014 el mismo conductor produce "Doctor en Casa".
+  Por eso la página dice sólo *"el programa de salud Dr. TV"* **sin nombrar el canal**. Si él
+  confirma la emisora, añadirla.
+
+**Prensa nacional.** `La Tercera / Paula`, 25-ene-2021, por Camila Ossandón:
+*"Sudor por hiperhidrosis: cómo las expectativas sociales impiden que tratemos antes esta condición"*.
+Verificado en la fuente. Cita literal:
+
+> "explica **David Lazo, cirujano torácico y creador de la página hiperhidrosis.cl** para
+> combatir la desinformación que ha existido hasta el momento"
+
+**Es la fuente externa más valiosa de todo el proyecto**: un medio nacional asocia editorialmente
+su nombre a un dominio de la red. Hasta ahora ninguna fuente de terceros lo hacía. Añadida como
+sección **Prensa nacional** con nodo `NewsArticle` (`publisher: La Tercera`, `mentions → #david-lazo`).
+
+**Dos cosas a vigilar en ese reportaje:**
+1. Contiene un testimonio de mal resultado por sudoración compensatoria y una cita suya diciendo
+   que las probabilidades de que exista "son absolutas". David pidió expresamente no destacar la
+   SC (§12). Por eso la ficha en `/docencia` describe el reportaje por su titular —la demora en
+   consultar— y por la acreditación como creador del sitio, sin ese ángulo. **No es ocultamiento:
+   el enlace al artículo completo está ahí.**
+2. Ese "absolutas" se refiere a que aparezca *alguna* SC, no a que sea severa. hiperhidrosis.cl
+   maneja 8% de SC severa (nota CLC 2016). No hay contradicción, pero conviene que la página de
+   cirugía deje explícita esa distinción por si un paciente lee ambos.
+
+**David dijo "artículos" en plural y sólo entregó uno.** Si hay más, verificar y añadir; la
+sección ya está montada para recibirlos.
+
+### Estado de `/docencia` al cierre
+1.058 palabras visibles, 62,0 KB, 13 nodos JSON-LD: `Physician`, `MedicalWebPage`,
+2× `EducationalOccupationalProgram`, `NewsArticle`, `VideoObject` y 7× `Article`.
+Cinco secciones: Formación de subespecialistas · Universidad de Chile · Prensa nacional ·
+Televisión · Menciones en Clínica Las Condes.
+
 ### Lo que sigue siendo el problema
 La página **documenta** autoridad; no la **importa**. El backlink sigue siendo cero. Los tres
 enlaces que moverían la aguja son los mismos de §17 y dependen de David:

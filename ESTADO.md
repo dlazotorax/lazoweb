@@ -1061,6 +1061,32 @@ Con el Ignored Build Step ya no hay competencia: un commit a `dist/cirugiatoraci
 **Si algún proyecto dejara de construir cuando debe:** quitar el comando desde
 Settings → Git → Ignored Build Step.
 
+### Adenda 9 — desplegado y verificado (17-ago-2026)
+
+El cupo se reinició y el commit `cc01a67` (`lastReviewed` y `lastmod` al 17-ago) confirmó la
+regla en condiciones normales:
+
+| Proyecto | Resultado |
+|---|---|
+| **cirugiatoracica** | **READY** — construyó |
+| broncoscopia, cancerpulmonar, hiperhidrosis, rats, vats, videotoracoscopia | **CANCELED** — saltados por el Ignored Build Step |
+
+**1 despliegue en vez de 7.** El arreglo de la §8 funciona en producción.
+
+**Verificado en vivo con `cache: no-store`:**
+- `/docencia` — `<title>` "Docencia, WABIP y menciones", 6 secciones incluida
+  **WABIP · Broncoscopía intervencional**, ficha de Ambu presente, `lastReviewed: 2026-08-17`,
+  66,1 KB.
+- `/perfil` — "Dirigió entre 2014 y 2022" ✓, ya no aparece "Dirige desde 2014".
+- Hub `/` — "Dirigió entre 2014 y 2022" ✓ y el enlace `/docencia#wabip` ✓.
+
+Con esto **queda cerrado todo lo que arrastraba la §7**: WABIP, Ambu, la corrección del
+programa de la U. de Chile y el nuevo title/description están en producción.
+
+**Nota sobre el registro CANCELED de anoche** (`b82671b`, proyecto hiperhidrosis): no era un
+fallo. Es el comportamiento correcto — Vercel crea el despliegue, ejecuta el Ignored Build Step,
+obtiene salida 0 y cancela el build. Los despliegues cancelados **no consumen minutos de build**.
+
 ### Estado de `/docencia` al cierre
 1.290 palabras visibles, 65,8 KB (en el repo; ver la incidencia de despliegue), 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,
 2× `EducationalOccupationalProgram`, `MedicalOrganization`, `NewsArticle`, `VideoObject`

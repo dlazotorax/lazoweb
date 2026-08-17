@@ -1087,6 +1087,39 @@ programa de la U. de Chile y el nuevo title/description están en producción.
 fallo. Es el comportamiento correcto — Vercel crea el despliegue, ejecuta el Ignored Build Step,
 obtiene salida 0 y cancela el build. Los despliegues cancelados **no consumen minutos de build**.
 
+### Adenda 10 — registro sobrio (corrección de estilo pedida por David)
+
+David marcó como **"poco serio"** el registro narrativo con el que había escrito la página, y
+pidió eliminar todas las descripciones de eventos. Tenía razón: lo que empezó como contexto
+acabó siendo autopromoción. Ejemplos de lo retirado:
+
+- *"Antes de este programa dirigí durante ocho años… Buena parte de lo que enseño es…"*
+- *"Figuro en el directorio oficial de regentes… en el mismo listado que los regentes de la
+  American Association for Bronchology, la Japan Society…"* (comparación jactanciosa)
+- *"Es el curso que cierra el arco que empieza en el Train-the-Trainers de 2018"*
+- *"Primer curso dictado fuera de Chile bajo el alero de la asociación"*
+- *"La nota más leída del grupo"*, *"Única voz técnica de la nota"*
+- *"El hilo que une lo que hago con esa asociación es la formación de formadores: no enseñar a
+  broncoscopiar, sino enseñar a enseñar broncoscopía"*
+
+**Criterio nuevo de la página:** cada entrada es **título · fecha · institución · enlace**.
+Nada más. Se conservó lo verificable y se eliminó lo interpretativo:
+
+- **Sí se conserva** el `Citado como «…»` de cada nota, porque es atribución literal de un
+  tercero —es la prueba, no un adorno— y es justo lo que la página existe para demostrar.
+- **Se eliminan** valoraciones, comparaciones, superlativos y cualquier frase que explique
+  por qué algo es importante.
+- Los encabezados pasaron a nombrar la institución sin adjetivos: "Universidad Finis Terrae",
+  "Universidad de Chile", "Prensa", "Televisión", "Clínica Las Condes".
+
+**Resultado:** 605 palabras visibles (antes 1.460), 60,2 KB (antes 66,8). Menos de la mitad
+del texto, con la misma información verificable y los mismos enlaces a fuente. El schema
+JSON-LD no se tocó.
+
+**Regla para lo que venga:** en las páginas de David, describir los hechos y enlazar la fuente.
+No explicar su relevancia. Si un dato necesita que yo argumente por qué importa, probablemente
+no debería estar.
+
 ### Estado de `/docencia` al cierre
 1.290 palabras visibles, 65,8 KB (en el repo; ver la incidencia de despliegue), 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,
 2× `EducationalOccupationalProgram`, `MedicalOrganization`, `NewsArticle`, `VideoObject`

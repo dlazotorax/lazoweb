@@ -970,6 +970,52 @@ saberlo: no son verificables desde fuera como sí lo son ALAT, AAC, SOCICH o WAB
 es accesible con su sesión abierta en Chrome. 123 de los 176 posts son clínicos o personales y no
 aportan al CV; el filtro de palabras clave que se usó está en esta sesión y puede rehacerse.
 
+### Adenda 7 — WABIP con sección propia, y la causa real del bloqueo de despliegue
+
+**Sección WABIP ampliada a siete fichas**, a petición de David, que la considera lo más
+destacable. Ya no es una entrada suelta sino un arco 2018→2026 con un hilo explícito —la
+formación de formadores—:
+
+1. **Regente por Chile** · Board of Regents (verificado en wabip.com)
+2. **Instructor Train-the-Trainers** (2018) · Bronchoscopy International / WABIP / AABE
+3. **Workshop de Broncoscopía Rígida** (2019) · WABIP, La Paz, Bolivia
+4. **1er Curso WABIP/Chile de Broncoscopía Intervencional** · 5–6 dic 2022, Santiago
+5. **22° WCBIP/WCBE**, congreso mundial · 2022, Marsella
+6. **Curso de Broncoscopía Intervencional Clínica Las Condes** · 18–19 jun 2026, con WABIP y
+   Ambu Academy
+7. **Ponente, Primera Píldora de Broncoscopia** · Ambu con respaldo de la AEER
+
+El `<title>` pasó a "Docencia, WABIP y menciones" (50 car.) y el lead abre con la regencia.
+Página: 1.460 palabras, 66,8 KB.
+
+### La causa del bloqueo de despliegue (resuelta como diagnóstico)
+
+Redeploy **no servía**: el diálogo de Vercel dice literalmente *"Create a new deployment with the
+same source code as your current one"* — habría reconstruido el commit viejo.
+
+Consultando la API desde la sesión del panel:
+
+- `/api/v2/user` → plan **hobby**, `resourceConfig: {concurrentBuilds: 1}`, `softBlock: null`.
+- `/api/v6/deployments` contando desde las 00:00 → **115 despliegues hoy**, todos READY.
+  Reparto: cirugiatoracica 15, videotoracoscopia 15, broncoscopia 14, cancerpulmonar 14,
+  hiperhidrosis 14, rats 14, vats 14.
+
+**El límite del plan Hobby es 100 despliegues al día. Se superó.**
+
+**La causa estructural:** los siete proyectos observan el mismo repositorio, así que
+**cada commit dispara siete despliegues**. Unos quince commits en una jornada = ~105.
+No es un fallo: es la configuración multiplicando.
+
+**Arreglo recomendado (no aplicado, requiere decisión de David):** configurar el
+**Ignored Build Step** de cada proyecto para que solo construya cuando cambie su propio
+`dist/<dominio>/`. En Vercel, Settings → Git → Ignored Build Step, con un comando del tipo
+`git diff --quiet HEAD^ HEAD -- dist/<dominio>/`. Eso divide los despliegues por siete y el
+problema no vuelve. Mientras tanto, el límite se reinicia solo.
+
+**Estado en producción:** `/docencia` sigue mostrando la versión del commit `5c93723`
+(sección Prensa). **Faltan por salir: WABIP, Ambu, la corrección de 2014-2022 y el nuevo
+title/description**, en `/docencia`, `/perfil` y el hub. Todo está en `main` y auditado.
+
 ### Estado de `/docencia` al cierre
 1.290 palabras visibles, 65,8 KB (en el repo; ver la incidencia de despliegue), 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,
 2× `EducationalOccupationalProgram`, `MedicalOrganization`, `NewsArticle`, `VideoObject`

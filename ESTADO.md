@@ -1016,6 +1016,37 @@ problema no vuelve. Mientras tanto, el límite se reinicia solo.
 (sección Prensa). **Faltan por salir: WABIP, Ambu, la corrección de 2014-2022 y el nuevo
 title/description**, en `/docencia`, `/perfil` y el hub. Todo está en `main` y auditado.
 
+### Adenda 8 — Ignored Build Step configurado en los 7 proyectos
+
+Aplicado el arreglo de la §7 vía la API de Vercel desde la sesión del panel
+(`PATCH /api/v9/projects/{id}`), no por formulario. Los 7 devolvieron HTTP 200 y se releyó la
+lista para confirmar que quedó escrito.
+
+**Comprobación previa:** los 7 proyectos tienen `rootDirectory = dist/<nombre>` (verificado
+uno a uno, incluidos `dist/videotoracoscopia` y `dist/cirugiatoracica`) y **ninguno** tenía
+comando previo, así que no se pisó nada.
+
+**Comando, idéntico en los 7:**
+
+```
+git diff --quiet HEAD^ HEAD ./
+```
+
+Vercel ejecuta el Ignored Build Step **desde el Root Directory**, así que `./` significa
+`dist/<dominio>` en cada proyecto — no hace falta un comando distinto por sitio. Semántica:
+salida **0** (sin cambios) → se salta el build; salida **1** (hay cambios) → construye.
+Si `HEAD^` no existiera, git da error y la salida no es 0, con lo que **construye**: el modo
+de fallo es seguro.
+
+**Efecto esperado:** un commit que toque sólo `dist/cirugiatoracica/` genera 1 despliegue en
+vez de 7. Los commits a `ESTADO.md`, `scripts/` o `README.md` —raíz del repo— pasan a generar
+**cero**. Es donde se iba buena parte del cupo: hoy hubo ~15 commits, varios sólo de
+documentación, y cada uno gastaba 7 despliegues.
+
+**Pendiente de comprobar en la próxima sesión:** que el primer commit a un único dominio
+genere exactamente un despliegue. Si algún proyecto dejara de construir cuando debe, el
+comando se quita desde Settings → Git → Ignored Build Step.
+
 ### Estado de `/docencia` al cierre
 1.290 palabras visibles, 65,8 KB (en el repo; ver la incidencia de despliegue), 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,
 2× `EducationalOccupationalProgram`, `MedicalOrganization`, `NewsArticle`, `VideoObject`

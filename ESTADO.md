@@ -933,6 +933,43 @@ Es la misma afiliación desactualizada que ya estaba pendiente de corregir (§17
 **Instagram:** su grid no es legible sin sesión iniciada (Instagram lo bloquea). Si quiere que
 se explote su archivo de IG como fuente, tiene que dejar la sesión abierta en Chrome.
 
+### Adenda 6 — vaciado del Instagram (177 posts) y 5 altas más en el CV
+
+David dejó la sesión de Instagram abierta en Chrome. Extraídos **176 de 177 posts** vía
+`/api/v1/feed/user/1486809562/` con `x-ig-app-id`, paginando de 33 en 33 (el navegador corta a
+los 45 s, así que hubo que trocear en tandas y acumular en `window`). Rango: **20-may-2019 a
+16-ago-2026**. Filtrados por palabras clave de actividad académica: **53 posts relevantes**.
+
+**Cinco entradas nuevas en el CV** (ahora **86 congresos**, perfil actualizado a "más de 85"):
+
+| # | Entrada | Fuente (post IG) |
+|---|---|---|
+| 67 | [Dir./Rel.] Curso Internacional de Broncoscopía — Santiago | 6-abr-2024 (con J.M. Lucchelli, apoyo de Zepeda y Erbe) |
+| 69 | [Rel.] 3er Curso AIRE — Guayaquil, Ecuador | 23-jun-2024 (hands-on + 7 procedimientos en vivo) |
+| 71 | [Dir./Doc.] 2° Curso de Actualización en Cirugía Torácica — Clínica MEDS / IMP | 27-jul-2024 (28 asistentes; broncoscopía intervencional + OTS de pared y pectus con modelos cadavéricos) |
+| 73 | [Rel.] Jornadas de Actualización en Neumología Intervencional — Sociedad Peruana de Neumología | 14-sep-2024 |
+| 85 | [Dir./Doc.] 1er Curso de Broncoscopía Intervencional Clínica Las Condes — WABIP / Ambu Academy | 22-may y 21-jun-2026 (18–19 jun 2026: criobiopsias, EBUS, obstrucción de vía aérea, stenting; teoría + simulación) |
+
+Toda la lista se renumeró 1–86 y se verificó que la secuencia no tiene saltos. PDF regenerado:
+**7 páginas** (antes 6, por las altas). Copia del docx previo en `/tmp/CV_pre_ig.docx`.
+
+**Tres cosas que NO se tocaron por riesgo de duplicar — pendientes de que David decida:**
+1. **"Curso Latinoamericano Osteosíntesis Pared Torácica"** (IG 10-may-2023) podría ser el mismo
+   que el #58 actual, "Curso Pared Torácica MedXpert LATAM — Bogotá".
+2. **"Webinar SBCT-GBOT-ALAT"** (IG 27-sep-2021) podría ser el #47, "Webinar ALAT: Nuevas
+   Modalidades Terapéuticas en Adyuvancia para Cáncer Pulmonar".
+3. **Discrepancia de ordinal:** el CV dice "#64 3° International SRS LATAM Robotic Surgery Congress
+   — Río de Janeiro", pero el post del 25-ago-2023 dice "**2do** Congreso de la Society of Robotic
+   Surgery LATAM y **COLCIR**". Ni el ordinal ni la sede coinciden. **Hay que revisarlo.**
+
+**Procedencia:** estas cinco altas vienen de los posts del propio David, no de fuentes de terceros.
+Es su propia declaración sobre su propia actividad —el mismo estándar que su CV— pero conviene
+saberlo: no son verificables desde fuera como sí lo son ALAT, AAC, SOCICH o WABIP.
+
+**Dato útil para el futuro:** el archivo de IG es la mejor fuente de su actividad reciente y sólo
+es accesible con su sesión abierta en Chrome. 123 de los 176 posts son clínicos o personales y no
+aportan al CV; el filtro de palabras clave que se usó está en esta sesión y puede rehacerse.
+
 ### Estado de `/docencia` al cierre
 1.290 palabras visibles, 65,8 KB (en el repo; ver la incidencia de despliegue), 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,
 2× `EducationalOccupationalProgram`, `MedicalOrganization`, `NewsArticle`, `VideoObject`

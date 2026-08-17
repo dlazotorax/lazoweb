@@ -1043,9 +1043,23 @@ vez de 7. Los commits a `ESTADO.md`, `scripts/` o `README.md` —raíz del repo�
 **cero**. Es donde se iba buena parte del cupo: hoy hubo ~15 commits, varios sólo de
 documentación, y cada uno gastaba 7 despliegues.
 
-**Pendiente de comprobar en la próxima sesión:** que el primer commit a un único dominio
-genere exactamente un despliegue. Si algún proyecto dejara de construir cuando debe, el
-comando se quita desde Settings → Git → Ignored Build Step.
+**Comprobado en caliente, dos pruebas:**
+1. Commit `c4ad227`, que sólo tocaba `ESTADO.md` → **cero despliegues**. La regla funciona.
+2. Commit siguiente, que sólo tocaba `dist/cirugiatoracica/index.html` → **también cero**,
+   pero por otra razón: el cupo diario está agotado y Vercel ya no crea ningún despliegue.
+
+**Hallazgo que cierra el diagnóstico de la §7.** Mirando el histórico se ve que, al pasarse
+del cupo, Vercel no dejó de desplegar de golpe: **degradó a un solo proyecto por push**.
+`df57e56` → sólo `vats`. `730c104` → sólo `vats`. `d955a48` → sólo `videotoracoscopia`.
+Los siete proyectos competían por una plaza y **cirugiatoracica llevaba varias rondas
+perdiendo el sorteo**. Por eso parecía que "no se desplegaba nada" cuando en realidad sí se
+desplegaba — pero siempre otro sitio.
+
+Con el Ignored Build Step ya no hay competencia: un commit a `dist/cirugiatoracica/` es el
+único candidato posible. En cuanto el cupo se reinicie, sale a la primera.
+
+**Si algún proyecto dejara de construir cuando debe:** quitar el comando desde
+Settings → Git → Ignored Build Step.
 
 ### Estado de `/docencia` al cierre
 1.290 palabras visibles, 65,8 KB (en el repo; ver la incidencia de despliegue), 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,

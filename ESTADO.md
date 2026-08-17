@@ -893,6 +893,46 @@ vivo: la sección WABIP, la ficha de Ambu y la corrección de "2014 – presente
 tanto en `/docencia` como en `/perfil` y el hub. Si mañana sigue igual: panel de Vercel →
 proyecto `cirugiatoracica` → menú «…» del último deployment → **Redeploy**.
 
+### Adenda 5 — barrido de fuentes y CV (cierre)
+
+David señaló, con razón, que él estaba encontrando más material suyo que yo. Barrido sistemático
+de fuentes públicas. **Conclusión honesta: su CV ya era casi completo — de todo lo verificado,
+sólo tres cosas faltaban.**
+
+**Fuentes verificadas en origen (16-ago-2026):**
+
+| Fuente | Qué acredita |
+|---|---|
+| `eventio-back.alatorax.org` (19° Congreso ALAT 2026, Cartagena, 8–11 jul) | **Moderador**, sesión "Segmentectomías: ¿Cómo las hago?", mié 8 jul, 08:00–10:15, sala Fragata 1 |
+| `instagram.com/p/Cbqc6BzrC29` (post del 28-mar-2022) | Webinar ALAT "Cirugía Robótica Torácica en Latinoamérica", **5 de abril de 2022** |
+| `aac.org.ar/93congreso/cursos.htm` | 93° Congreso Argentino de Cirugía (nov-2023), Curso de Cirugía Torácica: **"EBUS, la visión del cirujano"** (13 nov) y **"Cirugía robótica y opérculo torácico"** (15 nov) |
+| `aac.org.ar/94congreso/invitados.htm` | 94° Congreso Argentino (2024): figura como **Invitado Extranjero**, con foto |
+| `socich.cl` (XCVII Congreso Chileno de Cirugía, 20–21 nov 2025) | Ponencia **"Otras Cirugías por robot"** (jue 20 nov, 16:10–16:30) + coautoría en 11 trabajos libres |
+
+**Lo añadido al CV (`.docx` + PDF regenerado, 6 páginas, verificado con `pdftotext -layout`):**
+1. Resumen **#18** — "Cirugía post-quimioinmunoterapia neoadyuvante en cáncer pulmonar: experiencia
+   en el HCSBA" (SOCICH 2025).
+2. Resumen **#19** — "Volumen quirúrgico de programa de formación de subespecialistas en cirugía
+   torácica en Chile, comparado con estándares internacionales" (SOCICH 2025).
+   Los 17 resúmenes del congreso SER 2025 se renumeraron 18–34 → **20–36**.
+3. Congreso **#81** — "[Mod.] 19° Congreso ALAT — Cartagena de Indias, Colombia".
+4. Perfil profesional: "más de 60 congresos" → **"más de 80"** (ahora son 81 entradas).
+
+**Ya estaba en el CV** (comprobado uno a uno): 93° y 94° Congreso Argentino (#66, #71), XCVII
+Chileno (#79), Webinar ALAT Cirugía Robótica LATAM (#50), Píldoras de Broncoscopía (#45) y los
+otros 9 resúmenes de SOCICH 2025.
+
+**Detalle verificado que el CV no recoge, por estilo** (una línea por evento, sin títulos de
+ponencia): los títulos de las charlas del 93° Argentino, el de SOCICH 2025, la fecha exacta del
+webinar ALAT 2022 y la condición de Invitado Extranjero en el 94°. **Si se quiere una versión
+del CV con títulos de ponencia, hay material verificado para hacerlo.**
+
+**Aviso:** el 94° Congreso Argentino lo lista con afiliación **Clínica MEDS**, igual que LinkedIn.
+Es la misma afiliación desactualizada que ya estaba pendiente de corregir (§17).
+
+**Instagram:** su grid no es legible sin sesión iniciada (Instagram lo bloquea). Si quiere que
+se explote su archivo de IG como fuente, tiene que dejar la sesión abierta en Chrome.
+
 ### Estado de `/docencia` al cierre
 1.290 palabras visibles, 65,8 KB (en el repo; ver la incidencia de despliegue), 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,
 2× `EducationalOccupationalProgram`, `MedicalOrganization`, `NewsArticle`, `VideoObject`

@@ -670,8 +670,13 @@ Tres consultas de prueba, con búsqueda en vivo:
 Los directorios de terceros tapan por completo a sus propios sitios.
 
 **Dos conflictos de claim confirmados en vivo:**
-- Clínica Alemana reclama públicamente ser pionera del EBUS en Chile **desde 2010**, el mismo
-  año y el mismo terreno que el claim de David (+3.200 EBUS desde 2010).
+- Clínica Alemana reclama públicamente EBUS **desde 2010**. **Matizado por David el 17-ago-2026:**
+  es verdad a medias — partieron el mismo año, pero con otro médico que ya no está en Chile; su
+  equipo actual se formó en **2014**. La web de David nunca dijo "pionero en EBUS" sino
+  *"el cirujano con mayor experiencia en EBUS en Chile (desde 2010, +3.200 procedimientos)"*,
+  que con este dato queda **reforzado**, no debilitado: 16 años de práctica continua frente a 12.
+  **No es un conflicto de claims.** (Yo había confundido este claim con el de "pionero en
+  CryoEBUS", que es otra técnica.)
 - El Dr. Jalilie, **coautor suyo** en las recomendaciones COVID de la SER, sí es citado por nombre.
 
 ### Conclusión
@@ -1172,7 +1177,20 @@ pionería en EBUS está disputado** — Clínica Alemana reclama públicamente l
 (§17). Las cifras verificables (+3.200 EBUS desde 2010, +200 RATS desde 2015, 19 años de
 ejercicio) transmiten lo mismo sin afirmar una primacía que un tercero discute.
 
-**No se tocó**: son afirmaciones suyas sobre sí mismo, no prosa mía. Requiere su decisión.
+**DECIDIDO POR DAVID (17-ago-2026): se quedan como están. Tema cerrado — no volver a plantearlo.**
+
+Contexto para entender la decisión:
+- El claim de EBUS no está disputado (ver corrección en §17).
+- Los dos claims de RATS **sí tienen respaldo publicado**: su propio resumen de congreso se
+  titula *"Cirugía torácica robótica en hospital público docente en Chile: análisis de 79 casos
+  del primer programa nacional"*. Si alguna vez se quisiera reforzar, basta con enlazarlo.
+- Quedaron sin fuente y así se mantienen por decisión suya: *"pionero en CryoEBUS a nivel
+  latinoamericano"* (sin año de inicio) y el H1 de `/perfil` *"Referente en Cirugía Torácica en
+  Latinoamérica"* + el H2 *"Cirugía Torácica de Vanguardia"*.
+
+**Nota de método:** el criterio sobrio de la §10 aplica a **prosa que escribo yo**. Las
+afirmaciones que David hace sobre sí mismo son suyas: se señalan una vez, se documenta el
+estado, y se respeta su decisión.
 
 ### Estado de `/docencia` al cierre
 1.290 palabras visibles, 65,8 KB (en el repo; ver la incidencia de despliegue), 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,

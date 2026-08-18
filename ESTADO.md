@@ -1120,6 +1120,60 @@ JSON-LD no se tocó.
 No explicar su relevancia. Si un dato necesita que yo argumente por qué importa, probablemente
 no debería estar.
 
+### Adenda 11 — chequeo completo de la red y directivas de snippet (17-ago-2026)
+
+**Estado técnico: todo en verde.**
+
+| Comprobación | Resultado |
+|---|---|
+| `audit.py` | 33 páginas, 0 hallazgos |
+| Repo ↔ producción | mismo commit |
+| Páginas en vivo | 33/33 responden 200 |
+| GA4 | 2 apariciones en las 33 (loader + config) |
+| Canonical y `@id` canónico | correctos en las 33 |
+| robots.txt + sitemaps | 6/6, **33 URLs**, cuadran con las páginas |
+| `cirugiadetorax.cl` | redirige al hub |
+| Ignored Build Step | 1 READY + 6 CANCELED por push |
+| Despliegues | 35 en el día, frente a 115 el día anterior con el mismo trabajo |
+
+**Cambio aplicado — directivas de snippet en las 33 páginas.** Antes: 17 páginas con
+`index, follow` (que es el valor por defecto de Google y por tanto no hacía nada) y 16 sin
+etiqueta. Ahora, todas con:
+
+```html
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+```
+
+- `max-snippet:-1` — sin límite de longitud de fragmento. **Es el relevante para el objetivo
+  del proyecto:** autoriza a Google, y a los sistemas que se alimentan de su índice, a usar
+  texto largo en vez de un recorte corto.
+- `max-image-preview:large` — miniatura grande en resultados y en Discover.
+- `max-video-preview:-1` — sin límite de previsualización; aplica al vídeo de rats.cl y al de
+  Dr. TV en `/docencia`.
+
+Verificado en producción en los 6 dominios. De paso desaparece la única inconsistencia
+estructural que quedaba (hiperhidrosis.cl no llevaba la etiqueta).
+
+### Pendiente de decisión de David — claims de «pionero» y «referente»
+
+El barrido de tono con el criterio de la §10 encontró, **en contenido anterior a esta sesión**,
+el mismo registro que él rechazó en `/docencia`:
+
+- **«pionero»** en 8 páginas de 4 dominios. La frase *"pionero en la técnica CryoEBUS a nivel
+  latinoamericano"* viaja en el bloque de bio compartido (broncoscopia ×3, cancerpulmonar,
+  perfil, rats). Además *"pionero en Chile"* (broncoscopia), *"El Dr. David Lazo es pionero en
+  esta técnica en Chile, realizándola desde 2015"* (cancerpulmonar/tratamiento) y *"Fue el
+  primero en desarrollar un programa sistemático de cirugía torácica robótica"* (rats).
+- **`/perfil`**: H1 *«Referente en Cirugía Torácica en Latinoamérica»* y H2 *«Cirugía Torácica
+  de Vanguardia»*.
+
+**Dos razones para revisarlo:** es el registro que él calificó de poco serio, y **el claim de
+pionería en EBUS está disputado** — Clínica Alemana reclama públicamente lo mismo desde 2010
+(§17). Las cifras verificables (+3.200 EBUS desde 2010, +200 RATS desde 2015, 19 años de
+ejercicio) transmiten lo mismo sin afirmar una primacía que un tercero discute.
+
+**No se tocó**: son afirmaciones suyas sobre sí mismo, no prosa mía. Requiere su decisión.
+
 ### Estado de `/docencia` al cierre
 1.290 palabras visibles, 65,8 KB (en el repo; ver la incidencia de despliegue), 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,
 2× `EducationalOccupationalProgram`, `MedicalOrganization`, `NewsArticle`, `VideoObject`

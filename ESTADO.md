@@ -72,18 +72,10 @@
 
 | # | Qué |
 |---|---|
-| 1 | **Página de docencia y menciones** — Finis Terrae (Comité Académico) + las ~10 notas de CLC. Autoridad ya publicada que la red no usa |
-| 2 | Instalar GA4 en las 33 páginas + medición entre dominios + conversiones de reserva |
-| 3 | Acordeón de FAQ en el resto de hiperhidrosis.cl (`rubor-facial-patologico` aún los tiene como títulos sueltos) |
-| 4 | `/rats-vs-vats` — contenido nuevo |
-
----|---|---|
-| 1 | **Fusionar las 2 fichas de Doctoralia** (`-3/…/santiago` y `/…/las-condes`) — reseñas partidas; Doctoralia es el resultado #1 en "cirujano torácico Santiago" | David |
-| 2 | **GBP: falta teléfono y horario** (lo dice Google en el panel) | David |
-| 3 | **ORCID: keywords y país vacíos** (2 min) | David |
-| 4 | `/rats-vs-vats` — mejor apuesta de contenido nuevo | Claude |
-| 5 | `dist/uploads/` — 47 archivos basura (copias viejas). No se publica (404), pero conviene limpiar | Claude |
-| 6 | CV: corregir coautores omitidos (ver §6) | David |
+| 1 | ~~Página de docencia y menciones~~ — **HECHO** el 16/17-ago. Publicada en `/docencia` (§18 y adendas). Nota: eran **7** notas de CLC, no ~10 |
+| 2 | ~~Instalar GA4 en las 33 páginas~~ — **HECHO** el 6-ago (§13). Sigue pendiente de David marcar las conversiones |
+| 3 | Acordeón de FAQ en el resto de hiperhidrosis.cl — **sigue pendiente**, verificado hoy: `rubor-facial-patologico` no tiene ni un `.faq-q` |
+| 4 | `/rats-vs-vats` — **sigue pendiente**, verificado hoy: `dist/rats/` solo tiene `index.html` |
 
 ---
 
@@ -1193,10 +1185,14 @@ afirmaciones que David hace sobre sí mismo son suyas: se señalan una vez, se d
 estado, y se respeta su decisión.
 
 ### Estado de `/docencia` al cierre
-1.290 palabras visibles, 65,8 KB (en el repo; ver la incidencia de despliegue), 14 nodos JSON-LD: `Physician`, `MedicalWebPage`,
-2× `EducationalOccupationalProgram`, `MedicalOrganization`, `NewsArticle`, `VideoObject`
-y 7× `Article`. Seis secciones: Formación de subespecialistas · Universidad de Chile ·
-WABIP · Prensa nacional · Televisión · Menciones en Clínica Las Condes.
+**Verificado el 17-ago-2026, después de la reescritura sobria de la §10:**
+**500 palabras visibles, 58,8 KB, 14 nodos JSON-LD** (`Physician`, `MedicalWebPage`,
+2× `EducationalOccupationalProgram`, `MedicalOrganization`, `NewsArticle`, `VideoObject`,
+7× `Article`). Seis secciones: **Universidad Finis Terrae · Universidad de Chile · WABIP ·
+Prensa · Televisión · Clínica Las Condes**.
+
+*(La cifra anterior aquí —1.290 palabras— era de antes de la reescritura y quedó desfasada
+durante unas horas. Corregida.)*
 
 ### Lo que sigue siendo el problema
 La página **documenta** autoridad; no la **importa**. El backlink sigue siendo cero. Los tres

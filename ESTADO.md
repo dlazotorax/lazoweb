@@ -73,6 +73,54 @@ la raíz (`ESTADO.md`, `scripts/`) dan **0 despliegues**. Los CANCELED no consum
   (verificado en medfinis.cl) · Director de perfeccionamiento en la **Escuela de Postgrado de la
   U. de Chile, 2014 – nov 2022** (terminó; no es vigente).
 
+### Actividad verificada en fuentes de terceros (17-ago-2026)
+
+Material encontrado al rastrear serchile.cl y savalnet.cl. **Todo abierto en la fuente.**
+
+| Fecha | Qué | Fuente |
+|---|---|---|
+| 17-20 oct 2012 | Charla "Trasplante pulmonar en FQ. Experiencia chilena" — Congreso Soc. Latinoamericana de Neumología Pediátrica, Hotel del Mar | savalnet.cl `20121017_12354/17676` |
+| 6-9 nov 2013 | Charla "Situación actual del trasplante pulmonar en Chile" — Congreso SER 2013, Viña del Mar | savalnet.cl `20131106_20393/20430` |
+| 2-3 jul 2015 | Charla "Manejo de la fístula broncopleural" — Desafíos en patologías pulmonares avanzadas, Auditorio CLC | savalnet.cl `20150602_25449/25462` (¡la URL dice junio, la página dice julio!) |
+| 9-12 nov 2016 | **Coordinador de Cirugía del 49° Congreso Chileno de Enfermedades Respiratorias**, Viña del Mar. Coordinó 2 simposios médico-quirúrgicos de pleura, el simposio quirúrgico y la Conferencia Magistral "Trasplante Pulmonar en España" con el Dr. Ángel Salvatierra | serchile.cl/congreso2016/ |
+| 2-3 ago 2018 | Charlas **"EBUS"** y "Puesta al día en el manejo del nódulo pulmonar" — Patologías pulmonares complejas, Auditorio CLC | savalnet.cl `20180802_39747` |
+| 25 mar 2020 | Coautor de las recomendaciones COVID de la **Comisión de Broncoscopía y Neumología Intervencionista de la SER** | serchile.cl `noticia.php?id=619` |
+
+**El hallazgo más fuerte:** en SciELO (*Rev Chil Enferm Respir* 2020;36(2):135-137,
+DOI 10.4067/S0717-73482020000200135) su afiliación declarada **es la comisión**:
+
+> David Lazo P.\* — \* *Comisión de Broncoscopía y Neumología Intervencionista de la Sociedad
+> Chilena de Enfermedades Respiratorias*
+
+No es "participó en": es miembro, en documento indexado y con DOI. Coautores: Alfredo Jalilie E.,
+Paula Barcos M., Arturo Morales S., Macarena Rodríguez V.
+
+**Las charlas de Savalnet tienen grabación en vídeo** (tras registro profesional). Son contenido
+suyo, fechado y alojado por un tercero.
+
+### Desde cuándo — lo que cada técnica puede fechar
+
+| Técnica | Evidencia pública más antigua |
+|---|---|
+| Trasplante pulmonar | **2012** (charla en congreso) |
+| Pleura / fístula broncopleural | **2015** |
+| Hiperhidrosis | **2016** (notas CLC) |
+| Broncoscopía intervencional / EBUS | **2018** (charla titulada "EBUS"); Comisión SER **2020** |
+| **EBUS desde 2010** | **SIN FUENTE EXTERNA** |
+| **RATS desde 2015** | **SIN FUENTE EXTERNA** — ver abajo |
+
+**Corrección importante (error mío, 17-ago):** ofrecí el resumen *"análisis de 79 casos del primer
+programa nacional"* como respaldo del claim de RATS. **No lo respalda.** David lo aclaró: ese es el
+programa del **Hospital San Borja Arriarán, que partió en 2022**; el título dice literalmente *"en
+hospital público docente"*. Acredita el primer programa **en un hospital público**, no su práctica
+personal desde 2015. Es exactamente el tipo de conflación contra la que advierte la §3.1.
+
+**Lo que sí podría fechar 2015:** el CV lista *"[Asis.] Da Vinci Console Surgeon Training — Florida
+Hospital Celebration, Orlando"* como entrada #27, **entre** el 48° Congreso SEPAR (Gran Canaria,
+2015) y el 11.º Simposio ISSS (Santiago, **15-16 oct 2015**, verificado en isss.net). La lista es
+cronológica, así que la certificación cae en 2015. **El certificado de cirujano de consola es el
+documento que zanjaría el asunto** — pendiente de que David lo aporte.
+
 ### Publicaciones: 31 verificadas (2004-2023)
 
 **26 artículos revisados por pares:** 10 Rev Chil Enf Respir · 6 Rev Chil Cirugía · 4 Rev Med Chile ·

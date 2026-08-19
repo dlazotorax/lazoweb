@@ -81,6 +81,8 @@ Material encontrado al rastrear serchile.cl y savalnet.cl. **Todo abierto en la 
 |---|---|---|
 | 17-20 oct 2012 | Charla "Trasplante pulmonar en FQ. Experiencia chilena" — Congreso Soc. Latinoamericana de Neumología Pediátrica, Hotel del Mar | savalnet.cl `20121017_12354/17676` |
 | 6-9 nov 2013 | Charla "Situación actual del trasplante pulmonar en Chile" — Congreso SER 2013, Viña del Mar | savalnet.cl `20131106_20393/20430` |
+| **may 2014** | **"Endosonografía bronquial: innovadora tecnología mínimamente invasiva"** — revista **Vivir Más** de CLC. Es la voz técnica de la nota, citado como «cirujano de tórax del Centro Clínico del Cáncer». Dice que CLC tiene EBUS **desde diciembre de 2012** y que se ha usado en «alrededor de 30 pacientes» | clinicalascondes.cl `/App_Themes/CLC/revista/revista_vivir_mas_201405/ventana-16.html` |
+| **may 2015** | **"Avances en videobroncoscopía"** — **primer autor**, Rev Med Clin Condes 2015;26(3):387-392, **DOI 10.1016/j.rmclc.2015.06.013**, CC BY-NC-ND. Coautora: E.U. Karina Bunster D. Palabras clave: *videobroncoscopia, **EBUS**, autofluorescencia, navegador electromagnético* | Crossref + elsevier.es |
 | 2-3 jul 2015 | Charla "Manejo de la fístula broncopleural" — Desafíos en patologías pulmonares avanzadas, Auditorio CLC | savalnet.cl `20150602_25449/25462` (¡la URL dice junio, la página dice julio!) |
 | 9-12 nov 2016 | **Coordinador de Cirugía del 49° Congreso Chileno de Enfermedades Respiratorias**, Viña del Mar. Coordinó 2 simposios médico-quirúrgicos de pleura, el simposio quirúrgico y la Conferencia Magistral "Trasplante Pulmonar en España" con el Dr. Ángel Salvatierra | serchile.cl/congreso2016/ |
 | 2-3 ago 2018 | Charlas **"EBUS"** y "Puesta al día en el manejo del nódulo pulmonar" — Patologías pulmonares complejas, Auditorio CLC | savalnet.cl `20180802_39747` |
@@ -98,16 +100,55 @@ Paula Barcos M., Arturo Morales S., Macarena Rodríguez V.
 **Las charlas de Savalnet tienen grabación en vídeo** (tras registro profesional). Son contenido
 suyo, fechado y alojado por un tercero.
 
-### Desde cuándo — lo que cada técnica puede fechar
+### Desde cuándo — fechas exactas de formación por técnica
 
-| Técnica | Evidencia pública más antigua |
-|---|---|
-| Trasplante pulmonar | **2012** (charla en congreso) |
-| Pleura / fístula broncopleural | **2015** |
-| Hiperhidrosis | **2016** (notas CLC) |
-| Broncoscopía intervencional / EBUS | **2018** (charla titulada "EBUS"); Comisión SER **2020** |
-| **EBUS desde 2010** | **SIN FUENTE EXTERNA** |
-| **RATS desde 2015** | **SIN FUENTE EXTERNA** — ver abajo |
+**RESUELTO (19-ago-2026).** David aportó **`CV David Lazo 2024.pdf`** (Projects/Paginas web).
+Ese CV **sí lleva la fecha exacta en las 65 entradas** de la sección V (Cursos y Conferencias);
+el CV 2026 en Word las perdió. Es la fuente de fechas del proyecto: **consultarlo antes de
+deducir cronología por posición en la lista.**
+
+| Técnica | Ancla de formación / docencia | Fecha exacta | Rol | CV24 |
+|---|---|---|---|---|
+| Video-cirugía torácica | Curso Postgrado "Aspectos Técnicos en Video Cirugía", Viña | 23-26 nov **2003** | Asistente | V.2 |
+| **EBUS** | **Workshop EBUS-TBNA — Thoraxklinik am Universitätsklinikum Heidelberg** | **9 y 10 dic 2010** | Asistente | **V.12** |
+| VATS avanzada | Advanced Video-assisted and Thoracoscopic Procedures — **IRCAD Estrasburgo** | 21-23 nov **2013** | Asistente | V.24 |
+| **RATS** | **da Vinci "Console Surgeon" — da Vinci System Training, Florida Hospital Celebration, Orlando** | **11 jun 2015** | — | **V.29** |
+| Hiperhidrosis / simpatectomía | 11th World Symposium of the International Society of Sympathetic Surgery, Santiago | 15-16 oct **2015** | **Coordinador y Moderador** | V.31 |
+| Broncoscopía intervencional (docencia) | Curso Internacional de Broncoscopía Intervencionista — Soc. Boliviana de Neumología / **WABIP**, La Paz | 11-12 jul **2019** | **Instructor** | V.43 |
+| RATS (docencia) | Webinar ALAT "Cirugía Robótica Torácica en LATAM" | 5 abr **2022** | **Director** | V.51 |
+| UVATS / URATS (docencia) | MasterClass UVATS / URATS, Santiago | 17 ago **2023** | **Director y Expositor** | V.63 |
+
+**"EBUS desde 2010" y "RATS desde 2015" quedan acreditados.** No son cifras redondeadas: son
+entradas fechadas, con institución y ciudad, contrastables con el resto del CV. Heidelberg (dic-2010)
+cae dentro de su fellowship en Puerta de Hierro (2010-2011) y seis meses antes del 44° SEPAR de
+Oviedo (17-20 jun 2011, V.13). Orlando (11 jun 2015) cae tres días después del 48° SEPAR de Gran
+Canaria (5-8 jun 2015, V.28). **No hace falta publicar ningún certificado** — David los conserva.
+
+### EBUS — la cadena documental completa (19-ago-2026)
+
+Era el claim más débil. Ya no lo es: **diez años de rastro, cada eslabón abierto en la fuente.**
+
+| Fecha | Hecho | Fuente |
+|---|---|---|
+| **dic 2010** | Workshop EBUS-TBNA, **Thoraxklinik am Universitätsklinikum Heidelberg** | CV 2024, V.12 |
+| dic 2012 | CLC adquiere el equipo de EBUS | nota de *Vivir Más*, may-2014 |
+| **may 2014** | Revista **Vivir Más** de CLC: es la voz técnica de la nota; ~30 pacientes a esa fecha | clinicalascondes.cl |
+| **may 2015** | **"Avances en videobroncoscopía", primer autor**, Rev Med Clin Condes, **con DOI** | Crossref |
+| nov 2017 | La misma nota, republicada en el blog de CLC | clinicalascondes.cl |
+| ago 2018 | Charla titulada **"EBUS"**, Auditorio CLC | savalnet.cl |
+| mar 2020 | **Comisión de Broncoscopía y Neumología Intervencionista de la SER** | serchile.cl + SciELO |
+
+**La nota de EBUS estaba mal fechada en `/docencia`.** Figura como *22 de noviembre de 2017*; esa es
+la **republicación** en el blog. El original es la revista *Vivir Más* de **mayo de 2014** — texto
+idéntico. Se comprobó abriendo las dos. Al reciclarla en 2017, CLC **borró los dos datos que
+envejecían**: "desde diciembre de 2012" y "alrededor de 30 pacientes". Por eso la de 2014 vale más.
+
+**Y la versión de 2014 no tiene el error de atribución.** La trampa registrada en §3.1 —la cita
+*"Yo entré a pabellón a las 18:30…"* marcada como del Dr. Lazo cuando habla el paciente— **solo
+existe en la versión de 2017**. Si alguna vez se cita esta nota, citar la de 2014.
+
+Evidencia adicional en fuente de terceros: trasplante **2012** · pleura **2015** ·
+hiperhidrosis **2016** (notas CLC).
 
 **Corrección importante (error mío, 17-ago):** ofrecí el resumen *"análisis de 79 casos del primer
 programa nacional"* como respaldo del claim de RATS. **No lo respalda.** David lo aclaró: ese es el
@@ -115,11 +156,27 @@ programa del **Hospital San Borja Arriarán, que partió en 2022**; el título d
 hospital público docente"*. Acredita el primer programa **en un hospital público**, no su práctica
 personal desde 2015. Es exactamente el tipo de conflación contra la que advierte la §3.1.
 
-**Lo que sí podría fechar 2015:** el CV lista *"[Asis.] Da Vinci Console Surgeon Training — Florida
-Hospital Celebration, Orlando"* como entrada #27, **entre** el 48° Congreso SEPAR (Gran Canaria,
-2015) y el 11.º Simposio ISSS (Santiago, **15-16 oct 2015**, verificado en isss.net). La lista es
-cronológica, así que la certificación cae en 2015. **El certificado de cirujano de consola es el
-documento que zanjaría el asunto** — pendiente de que David lo aporte.
+**Resuelto también:** la duda del "3° SRS LATAM". El CV 2024 dice **V.64 · 3º International and SRS
+LATAM Robotic Surgery Congress · Expositor · 23-25 ago 2023 · Río de Janeiro**. Coincide con el CV
+2026; lo que discrepa es el post de Instagram ("2do… COLCIR"), no el CV.
+
+### CV 2026 — fechas repobladas (19-ago-2026)
+
+Se trasladaron las fechas del CV 2024 al `CV_David_Lazo_2026.docx`. Emparejamiento por título
+normalizado, con siete correcciones manuales (los "Congreso Anual ACS Chile", que el CV 2026 abrevia)
+y un falso positivo descartado (V.13 SEPAR Oviedo se había emparejado con el 21° Congreso Colombiano).
+
+- **63 fechas insertadas** en formato `· mes año` al final de cada entrada. Total fechadas: **64 / 86**.
+- **Validación:** la lista es cronológica y las 63 fechas salen en **orden ascendente estricto, sin una
+  sola inversión**, de nov-2003 a oct-2023. Un emparejamiento falso habría roto el orden. Es la prueba
+  de que el mapeo es correcto.
+- **Corregido un rol inflado:** entrada #29 (11th World Symposium ISSS, oct-2015) decía `[Dir./Mod.]`;
+  el CV 2024 dice **"Coordinador y Moderador"**. Ahora `[Coord./Mod.]`. **Revisar el resto de roles
+  del CV 2026 contra el 2024 antes de difundirlo** — este apareció al azar, no en una revisión sistemática.
+- **22 entradas sin fecha**, todas posteriores al CV 2024 (#48, #56, #66-#86 salvo #77). Las tiene que
+  aportar David; no se marcaron dentro del documento para no dejarlo en estado no-entregable.
+
+PDF regenerado, 7 páginas.
 
 ### Publicaciones: 31 verificadas (2004-2023)
 
@@ -158,10 +215,15 @@ Errores ya cometidos, para no repetirlos:
 3. Inventé la paginación de un paper y adiviné un DOI.
 4. Repetí durante semanas "unas diez notas de Clínica Las Condes". Al abrirlas: **siete**.
    Una cifra mía sin comprobar se había vuelto dato del proyecto.
+5. Fechar una nota por su **republicación**. La de EBUS quedó como "22-nov-2017" porque esa es la
+   fecha que muestra el blog de CLC. El original es de **mayo de 2014** (revista *Vivir Más*), y lo
+   encontró David, no yo. **Antes de fechar una nota, buscar si es una republicación** — el CMS
+   muestra la fecha de la reedición, no la de la primera publicación.
 
 **También hay que verificar las fuentes ya verificadas:** la nota de CLC de 2016 dice "un día de
-hospitalización" cuando hoy la cirugía es ambulatoria, y la nota de EBUS atribuye al Dr. Lazo una
-cita que el texto pone en boca del paciente. **No reproducir ninguna de las dos.**
+hospitalización" cuando hoy la cirugía es ambulatoria. **No reproducir esa frase.** El error de
+atribución de la cita del paciente en la nota de EBUS **solo está en la versión de 2017**; la de
+mayo de 2014 es correcta y además más completa.
 
 ### 3.2 Registro sobrio
 

@@ -173,10 +173,183 @@ y un falso positivo descartado (V.13 SEPAR Oviedo se había emparejado con el 21
 - **Corregido un rol inflado:** entrada #29 (11th World Symposium ISSS, oct-2015) decía `[Dir./Mod.]`;
   el CV 2024 dice **"Coordinador y Moderador"**. Ahora `[Coord./Mod.]`. **Revisar el resto de roles
   del CV 2026 contra el 2024 antes de difundirlo** — este apareció al azar, no en una revisión sistemática.
-- **22 entradas sin fecha**, todas posteriores al CV 2024 (#48, #56, #66-#86 salvo #77). Las tiene que
-  aportar David; no se marcaron dentro del documento para no dejarlo en estado no-entregable.
+**Segunda pasada — 9 fechas más, todas en fuente externa:**
+
+| # | Entrada | Fecha | Fuente |
+|---|---|---|---|
+| 48 | XCIII Congreso Chileno de Cirugía — Coquimbo-La Serena | 7-10 **nov 2021** | socich.cl |
+| 56 | XCIV Chileno / XXVIII AIACT — Pucón | **nov 2022** | socich.cl (el mismo programa confirma el AIACT) |
+| 66 | 93° Congreso Argentino de Cirugía — Sheraton BA | 13-16 **nov 2023** | aac.org.ar |
+| 70 | 17° Congreso ALAT — Santiago | 10-13 **jul 2024** | alatorax.org |
+| 75 | 94° Congreso Argentino — Hilton Puerto Madero | 25-27 **nov 2024** | aac.org.ar |
+| 76 | 30° AIACT / **Sixth International Joint Meeting** — Barcelona | 19-22 **nov 2024** | thoracicsurgery2024.org |
+| 81 | 18° Congreso ALAT — Cancún | 9-12 **jul 2025** | alatorax.org |
+| 83 | XCVII Congreso Chileno — Pucón | 18-21 **nov 2025** | socich.cl |
+| 86 | 19° Congreso ALAT — Cartagena de Indias | 8-11 **jul 2026** | alatorax.org |
+
+**Hallazgo fuerte en el #76:** el programa oficial del *Sixth International Joint Meeting on Thoracic
+Surgery* (Barcelona) lista, en la sesión del AIACT Congress del **miércoles 20 de noviembre de 2024**
+moderada por Iñigo Royo Crespo y Miguel A. Mesa Guzmán, a **"David Lazo Pérez (Chile)"**. Es fuente
+externa, europea, indexable y con su nombre completo — la mejor credencial internacional documentada
+del expediente después de la regencia WABIP.
+
+**Total: 73 / 86 fechadas · 0 inversiones cronológicas.** El orden ascendente estricto sigue
+validando cada emparejamiento.
+
+**Ojo con un detalle de orden:** #75 (94° Argentino, 25-27 nov) va *antes* de #76 (Barcelona, 19-22
+nov) y ambas son de nov-2024, así que a nivel mes no hay inversión, pero **a nivel día el CV los
+tiene invertidos**. Corregirlo solo si se pasa a fechas con día.
+
+**Tercera pasada — 6 más.** David aclaró el criterio: **fechar el evento, no su participación** —
+él conserva los certificados que la acreditan. Eso baja la barra a "¿existió el evento y cuándo?".
+
+| # | Entrada | Fecha | Fuente |
+|---|---|---|---|
+| 68 | 66° Congreso Anual ACS Chile — Hotel del Mar, Viña | 9-12 **jun 2024** | congresoacs.cl |
+| 74 | XVII Congreso Boliviano de Neumología — La Paz | 16-19 **oct 2024** | alatorax.org |
+| 78 | VI Jornada de Actualización en Cirugía Torácica — Clínica Alemana La Dehesa | 5 **dic 2024** | alemanacursos.cl |
+| 82 | 21° Congreso Colombiano de Neumología (ASONEUMOCITO) — InterContinental Medellín | 17-20 **sep 2025** | asoneumocito.org |
+| 84 | XXXI Congreso AIACT — Santa Cruz de la Sierra | 7-8 **nov 2025** | SECT / SOPACI |
+| 85 | 1er Curso de Broncoscopía Intervencional CLC — WABIP / Ambu Academy | 18-19 **jun 2026** | CLC (inscripciones a `dlazo@clinicalascondes.cl`) |
+
+**Cuarta pasada — #69, aportada por David.** *3er Curso de Avances e Innovación en Medicina
+Respiratoria y Endoscópica (**AIRE 2024**)*, **21-22 jun 2024**, Hotel Sheraton de Guayaquil,
+organizado por el **Centro de Investigación Respiratorio (CIR)**. Confirmado de forma independiente
+que el evento existe y quién lo organiza (`eventoscir.com`, "Evento AIRE tercera edición, Curso de
+Neumología 2024 + Workshop, presencial"); **la fecha exacta viene del dato de David**, no de esa
+página. Corrobora igual la posición: cae en el hueco de nueve días entre el 66° ACS (9-12 jun) y el
+17° ALAT (10-13 jul). El CV la abrevia como "3er Curso AIRE" — **conviene poner el nombre completo**.
+
+**Quinta pasada — #80, desde un reel de Instagram.** *Curso "El ABC del EBUS y la Pleuroscopía"*,
+Miraflores (Lima), **may 2025**. Publicado por **@cardioperfusion** el **30 de mayo de 2025**, en
+pasado ("Así vivimos…"), con David y el Dr. Alejandro Sánchez (México) como los dos docentes. Se leyó
+con Claude in Chrome (Instagram no se deja abrir con WebFetch) y la fecha salió del
+`meta[name=description]` de la propia página.
+
+**Trampa evitada:** intenté deducir la fecha decodificando el shortcode del reel (los IDs de Instagram
+llevan el timestamp embebido). Puse un control con un post ya fechado — y el algoritmo lo situó diez
+años tarde. **Fórmula descartada, no ajustada hasta que cuadrara.** Regla: cuando un método derivado
+falla el control, se tira; no se calibra contra el resultado que uno quiere.
+
+**Sexta pasada — #79, desde el afiche.** *III Curso Teórico Práctico de Pared Torácica **MedXpert***,
+Santiago, **4 de marzo de 2025** (el afiche dice `04-03-2025`; contexto chileno, valor en CLP, luego
+dd-mm). Anunciado por **@torax_otorrinos_impchile** el 22-ene-2025. Expositores: **Dr. David Lazo
+(Chile)**, Dra. Gabriela Ambriz (México), Dr. José Matilla Sigüenza (Austria). Temas: reconstrucción
+de pared, pectus excavatum, fijación de costillas, práctica de fijación costal en muestras anatómicas.
+Organizan IMP Chile y MedXpert.
+
+> **El afiche lo lista dos veces: como expositor y como moderador** ("Moderador: Dr. David Lazo,
+> Cirujano de Tórax"). El CV lo marca solo `[Rel.]`; correspondería `[Rel./Mod.]`.
+
+**Séptima pasada — #73, desde el afiche que David publicó en LinkedIn.** *I Jornada Internacional de
+Neumología Intervencionista*, **Sociedad Peruana de Neumología**, **12 de septiembre de 2024**,
+presencial, 48 cupos, Av. Guardia Civil 236, San Isidro (Lima). Figura como **"Dr. David Lazo Pérez ·
+Cirujano de Tórax, Clínica MEDS – Chile"** con **dos intervenciones**: la charla *"Uso de criosonda"*
+(8:30-8:50) y el taller de broncoscopía avanzada, rotación *"Uso de criosonda"* (11:50-13:00).
+Coexpositores: Llontop Calderón (EsSalud), Moreira (SOLCA Quito), Villanueva Villegas (Dos de Mayo),
+Monge Espinoza (Hipólito Unanue), Bejarano Cacho (Clínica Internacional).
+
+> **El post decía "1 año"**, lo que a primera vista sugiere 2025. LinkedIn redondea a la baja: 23
+> meses se muestran como "1 año". La posición en el CV (entre el 17° ALAT de jul-2024 y el XVII
+> Boliviano de oct-2024) y la afiliación que le atribuyen (**Clínica MEDS**, que terminó en dic-2025)
+> fijan **sep-2024**. El CV lo titula "Jornadas de Actualización…"; el nombre oficial es
+> **I Jornada Internacional de Neumología Intervencionista**.
+
+**Octava pasada — #72, en la web oficial del Capítulo Chileno del ACS.** *Diplomado de Cirugía*,
+**versión 2024** (265 horas pedagógicas, 12-18 meses, online asincrónico; por eso va con año y sin
+mes). Director general: Dr. Mario Uribe Maturana, FACS, Gobernador del Capítulo Chileno. Certificado
+por el Capítulo Chileno del ACS, patrocinado por **CONACEM**. Fuente:
+`acseduca.com/curso/diplomado-de-cirugia` + `acseduca.online/material/2024/diplomadoacs/`.
+
+En el **Módulo Cirugía de Tórax** (directores: Dr. Raúl Berríos y Dra. Lorena Pérez) figura con **dos
+clases propias**:
+
+- **Clase 11 — Mediastinitis** · Dr. David Lazo P., FACS
+- **Clase 12 — Cirugía torácica robótica** · Dr. David Lazo P., FACS
+
+### FACS — confirmado por David. Y un error mío de bulto
+
+La web del Capítulo Chileno del ACS lo nombra **dos veces** como **"Dr. David Lazo P., FACS"** —
+en el listado de clases y en el equipo docente, con afiliación *"Hospital San Borja Arriarán. Clínica
+MEDS"*. David lo confirmó: **es Fellow of the American College of Surgeons.**
+
+**Error mío (19-ago-2026):** anuncié esto como "credencial nueva sin registrar" y afirmé que no
+estaba ni en el CV, ni en los seis dominios, ni en el JSON-LD. **Las tres cosas eran falsas.**
+
+- El **CV ya lo tenía**: tabla de Sociedades Científicas → *"American College of Surgeons · **Fellow
+  (FACS) desde 2020**"*. No lo vi porque estuve todo el día extrayendo el docx con `d.paragraphs`,
+  y **el contenido de las tablas no está en los párrafos**. Trabajé sobre ese archivo durante horas
+  sin leer su única tabla.
+- La **red ya tiene el ACS**: `memberOf` con *American College of Surgeons (ACS)* en 32 de 33 páginas,
+  y visible en `/perfil` en la bio y en el FAQ.
+
+**Regla: afirmar una ausencia exige la misma verificación que afirmar una presencia.** Un `grep` de
+diez segundos habría evitado las tres afirmaciones. Ver §3.1.
+
+**Lo que sí es cierto, y es el hallazgo real:** en toda la red se le llama **"miembro"** del ACS,
+nunca **Fellow**. Cero ocurrencias visibles de "FACS" en las 33 páginas y cero `honorificSuffix`.
+**No es lo mismo:** el fellowship del ACS se otorga tras revisión de credenciales, certificación y
+referencias; "miembro" es genérico. La red lo degrada.
+
+**Arreglo pendiente:** `honorificSuffix: "FACS"` en el `Physician`, y cambiar *"miembro del American
+College of Surgeons"* por *"Fellow del American College of Surgeons (FACS), desde 2020"* donde
+aparezca visible. También revisar el resto de la tabla del CV por si hay más membresías con fecha
+que la red no refleja (ISHLT 2020, IASLC 2014, ERS 2015, Soc. de Cirujanos de Chile 2016).
+
+**Total: 84 / 86 fechadas.**
+
+**2 sin fecha:** #67 Curso Internacional de Broncoscopía (Santiago) · #71 2° Curso de Actualización en
+Cirugía Torácica (MEDS/IMP).
+
+**Método que sí funciona para estos: el enlace directo.** Tres de tres — el reel del curso de Lima, el
+afiche de MedXpert y el dato del AIRE se resolvieron en minutos cuando David aportó la URL o la
+captura. Rastrear la cuenta de Instagram desde cero **no** funciona: el perfil de IMP Chile carga por
+scroll infinito y tras varias pasadas solo se llega a abril de 2026; el renderer se congela antes de
+alcanzar 2024. En LinkedIn tampoco: ver abajo.
+
+### LinkedIn: hay DOS perfiles, y el que revisé era el vacío (corregido 19-ago-2026)
+
+**Error mío, corregido el mismo día.** Escribí que "LinkedIn está vacío" tras abrir
+`linkedin.com/in/david-lazo-272a82317/` con su sesión: cero actividad, 0 seguidores, certificaciones
+en blanco. **Ese no es su perfil real.** David envió después una captura de un post suyo con **56
+reacciones, 2 comentarios y 1.598 impresiones**, publicado desde **"David Lazo Pérez ✓ · Cirujano
+Torácico y de Trasplante Pulmonar"**, con la insignia de verificado.
+
+**Conclusión: tiene un perfil duplicado.** El mismo patrón que ya arrastra en Doctoralia (2 fichas).
+El duplicado vacío es el que encuentro yo navegando desde el feed, así que probablemente sea también
+el que ven Google y los rastreadores de IA — lo que explicaría por qué su LinkedIn indexa mal.
+
+**Pendiente nuevo y concreto:** identificar la URL del perfil bueno, y cerrar o fusionar el
+duplicado `david-lazo-272a82317`. Hasta saber cuál es cuál, **no dar por buena ninguna afirmación
+sobre "su LinkedIn"** — ni la mía anterior.
+
+**Lección de método:** llegar a un perfil "por el camino obvio" (el enlace del propio feed) no prueba
+que sea el perfil canónico. Cuando un perfil aparece inesperadamente vacío, la hipótesis por defecto
+debe ser **duplicado**, no inactividad.
+
+**Nota de orden a nivel día** (invisible a nivel mes, que es como está el CV): #75 (94° Argentino,
+25-27 nov) figura antes de #76 (Barcelona, 19-22 nov), y #83 (XCVII Chileno, 18-21 nov) antes de #84
+(XXXI AIACT, 7-8 nov). Solo importa si algún día se pasa a fechas con día.
 
 PDF regenerado, 7 páginas.
+
+### No abrir secciones con una sola entrada (19-ago-2026)
+
+Creé en `/docencia` una sección **Conferencias** con una única entrada (la V Jornada de Clínica
+Alemana). David: **"una sola entrada es paupérrimo"**. Eliminada, con su JSON-LD.
+
+**Regla:** una sección nueva necesita **masa crítica antes de existir** — tres o cuatro entradas
+verificadas como mínimo. Una sección de una línea no comunica trayectoria: comunica que no hay más.
+Es la misma lógica del registro sobrio (§3.2): el continente también habla. Si aparecen suficientes
+programas públicos de congresos, se reabre; mientras tanto, los 86 congresos viven en el CV.
+
+Material verificado que quedó fuera por esto (guardado, no publicado):
+**V Jornada de Actualización en Cirugía Torácica**, Clínica Alemana Santiago, 25-26 oct 2023 ·
+invitado nacional · charla *"Opérculo torácico. ¿Es la hora de los cirujanos torácicos?"*, 25-oct
+11:30 · junto a Baste (CHU Rouen), Terra (Instituto do Câncer, São Paulo) y Smith (Hospital Italiano
+de Buenos Aires) · brochure en `alemanacursos.cl/contenido/Jornada-Actualizacion-Cirugia-Toracica/
+Brochure-Jornada-Actualizacion-Cirugia-Toracica.pdf` · le atribuyen "Clínica Meds". Confirma la
+fecha de V.65 del CV. **El PDF está en un servidor de cursos: conviene que David guarde una copia.**
 
 ### Publicaciones: 31 verificadas (2004-2023)
 

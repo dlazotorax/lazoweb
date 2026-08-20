@@ -296,10 +296,30 @@ College of Surgeons"* por *"Fellow del American College of Surgeons (FACS), desd
 aparezca visible. También revisar el resto de la tabla del CV por si hay más membresías con fecha
 que la red no refleja (ISHLT 2020, IASLC 2014, ERS 2015, Soc. de Cirujanos de Chile 2016).
 
-**Total: 84 / 86 fechadas.**
+**Novena pasada — #71, aportada por David.** *2° Curso de Actualización en Cirugía Torácica*,
+Clínica MEDS / IMP, Santiago, **26 de julio de 2024** (reel en su Instagram). Encaja en el hueco de
+trece días entre el 17° ALAT (10-13 jul) y el Diplomado ACS.
 
-**2 sin fecha:** #67 Curso Internacional de Broncoscopía (Santiago) · #71 2° Curso de Actualización en
-Cirugía Torácica (MEDS/IMP).
+## Estado final del CV: 85 / 86 fechadas · 0 inversiones cronológicas
+
+De **1 con año** a **85 con fecha**, en orden ascendente estricto de nov-2003 a jul-2026.
+
+**Falta una sola: #67 — "Curso Internacional de Broncoscopía — Santiago", [Dir./Rel.].**
+Ventana: entre nov-2023 (93° Argentino) y jun-2024 (66° ACS). **Hipótesis no verificada:** podría ser
+la **2ª edición del Curso WABIP/Chile**, porque al cerrar la 1ª (dic-2022) David escribió en LinkedIn
+*"SEGURO REPETIREMOS EL 2023!!!!"*. No confirmarlo sin fuente.
+
+### Cómo se resolvieron las 85 (para repetir el método)
+
+| Vía | Cuántas |
+|---|---|
+| **CV 2024 en PDF** (tenía todas las fechas; el 2026 las perdió) | 63 |
+| Webs oficiales de sociedades (ALAT, SOCICH, AAC, ACS Chile, AIACT, ASONEUMOCITO, Clínica Alemana) | 15 |
+| **Aportadas por David** (enlace, captura de afiche o dato directo) | 7 |
+
+**Lo más eficiente, con diferencia, fue que David mandara el enlace o la captura.** Rastrear cuentas
+de Instagram o LinkedIn desde cero **no** funciona: scroll infinito, el renderer se congela, y no se
+llega más atrás de unos meses. Cuando falte una fecha, **pedirle el enlace antes de buscar.**
 
 **Método que sí funciona para estos: el enlace directo.** Tres de tres — el reel del curso de Lima, el
 afiche de MedXpert y el dato del AIRE se resolvieron en minutos cuando David aportó la URL o la

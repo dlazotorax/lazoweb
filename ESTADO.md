@@ -315,17 +315,30 @@ en blanco. **Ese no es su perfil real.** David envió después una captura de un
 reacciones, 2 comentarios y 1.598 impresiones**, publicado desde **"David Lazo Pérez ✓ · Cirujano
 Torácico y de Trasplante Pulmonar"**, con la insignia de verificado.
 
-**Conclusión: tiene un perfil duplicado.** El mismo patrón que ya arrastra en Doctoralia (2 fichas).
-El duplicado vacío es el que encuentro yo navegando desde el feed, así que probablemente sea también
-el que ven Google y los rastreadores de IA — lo que explicaría por qué su LinkedIn indexa mal.
+**RESUELTO el mismo día.** Los dos perfiles, ya identificados:
 
-**Pendiente nuevo y concreto:** identificar la URL del perfil bueno, y cerrar o fusionar el
-duplicado `david-lazo-272a82317`. Hasta saber cuál es cuál, **no dar por buena ninguna afirmación
-sobre "su LinkedIn"** — ni la mía anterior.
+| Perfil | URL | Estado |
+|---|---|---|
+| ✅ **El bueno** | `linkedin.com/in/david-lazo-pérez-7b194748/` | *"David Lazo Pérez · Cirujano Torácico y de Trasplante Pulmonar"*, verificado, **20 publicaciones**, posts con 46-62 reacciones y hasta 1.598 impresiones |
+| ❌ **El duplicado** | `linkedin.com/in/david-lazo-272a82317/` | Cero actividad, 0 seguidores, certificaciones vacías |
+
+**La URL buena ya estaba en la red**, en el pie de `/perfil`, desde antes de esta sesión. La encontré
+mirando la propia página en producción, no navegando LinkedIn.
+
+**El dato que importa: la sesión de Chrome de David está abierta con la cuenta VACÍA.** Por eso el
+feed me llevó al duplicado, y por eso el perfil bueno se ve desde ahí con botón "Conectar" — como un
+tercero. Si esa es la cuenta que usa habitualmente, cualquier actividad nueva se publica en el perfil
+muerto.
+
+**Pendientes concretos:**
+1. Cerrar o fusionar el duplicado `david-lazo-272a82317` (mismo problema que las 2 fichas de Doctoralia).
+2. Comprobar desde qué cuenta se publica habitualmente.
+3. El perfil bueno **no tiene URL personalizada**: `7b194748` es sufijo automático. Cambiarla a algo
+   como `/in/dr-david-lazo-perez` mejora la señal de entidad.
 
 **Lección de método:** llegar a un perfil "por el camino obvio" (el enlace del propio feed) no prueba
-que sea el perfil canónico. Cuando un perfil aparece inesperadamente vacío, la hipótesis por defecto
-debe ser **duplicado**, no inactividad.
+que sea el canónico. Cuando un perfil aparece inesperadamente vacío, la hipótesis por defecto es
+**duplicado**, no inactividad. Y antes de investigar fuera, **mirar qué enlaza ya la propia red**.
 
 **Nota de orden a nivel día** (invisible a nivel mes, que es como está el CV): #75 (94° Argentino,
 25-27 nov) figura antes de #76 (Barcelona, 19-22 nov), y #83 (XCVII Chileno, 18-21 nov) antes de #84

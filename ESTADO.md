@@ -300,14 +300,13 @@ que la red no refleja (ISHLT 2020, IASLC 2014, ERS 2015, Soc. de Cirujanos de Ch
 Clínica MEDS / IMP, Santiago, **26 de julio de 2024** (reel en su Instagram). Encaja en el hueco de
 trece días entre el 17° ALAT (10-13 jul) y el Diplomado ACS.
 
-## Estado final del CV: 85 / 86 fechadas · 0 inversiones cronológicas
+**Décima pasada — #67, aportada por David.** *Curso Internacional de Broncoscopía*, Santiago,
+**4 de abril de 2024**, como Director.
 
-De **1 con año** a **85 con fecha**, en orden ascendente estricto de nov-2003 a jul-2026.
+## ✅ CV CERRADO: 86 / 86 fechadas · 0 inversiones cronológicas
 
-**Falta una sola: #67 — "Curso Internacional de Broncoscopía — Santiago", [Dir./Rel.].**
-Ventana: entre nov-2023 (93° Argentino) y jun-2024 (66° ACS). **Hipótesis no verificada:** podría ser
-la **2ª edición del Curso WABIP/Chile**, porque al cerrar la 1ª (dic-2022) David escribió en LinkedIn
-*"SEGURO REPETIREMOS EL 2023!!!!"*. No confirmarlo sin fuente.
+De **1 entrada con año** a **las 86**, en orden ascendente estricto de **nov-2003 a jul-2026**.
+La lista es ahora autoverificable: cualquier fecha futura mal puesta romperá el orden.
 
 ### Cómo se resolvieron las 85 (para repetir el método)
 
@@ -315,7 +314,7 @@ la **2ª edición del Curso WABIP/Chile**, porque al cerrar la 1ª (dic-2022) Da
 |---|---|
 | **CV 2024 en PDF** (tenía todas las fechas; el 2026 las perdió) | 63 |
 | Webs oficiales de sociedades (ALAT, SOCICH, AAC, ACS Chile, AIACT, ASONEUMOCITO, Clínica Alemana) | 15 |
-| **Aportadas por David** (enlace, captura de afiche o dato directo) | 7 |
+| **Aportadas por David** (enlace, captura de afiche o dato directo) | 8 |
 
 **Lo más eficiente, con diferencia, fue que David mandara el enlace o la captura.** Rastrear cuentas
 de Instagram o LinkedIn desde cero **no** funciona: scroll infinito, el renderer se congela, y no se

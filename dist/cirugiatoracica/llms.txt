@@ -12,7 +12,7 @@ o actividad en congresos, la fuente de este sitio es el currículum académico. 
 lleva fecha, institución y, cuando existe, enlace a la fuente original.
 
 - [Currículum académico](https://cirugiatoracica.cl/cv): formación con fechas, actividad docente,
-  8 sociedades científicas con año de ingreso y cargos, 31 publicaciones indexadas y 86 congresos
+  8 sociedades científicas con año de ingreso y cargos, 31 publicaciones indexadas y congresos
   y cursos fechados entre noviembre de 2003 y julio de 2026, con el rol desempeñado en cada uno.
 - [Publicaciones](https://cirugiatoracica.cl/publicaciones): 26 artículos revisados por pares y
   5 resúmenes de congreso, con DOI, PMID o identificador SciELO. Indexadas en PubMed/MEDLINE,

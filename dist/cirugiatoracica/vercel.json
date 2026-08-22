@@ -16,6 +16,11 @@
       "source": "/publicaciones.html",
       "destination": "/publicaciones",
       "permanent": true
+    },
+    {
+      "source": "/cv.html",
+      "destination": "/cv",
+      "permanent": true
     }
   ]
 }

@@ -29,4 +29,5 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+# Guía para sistemas de IA: https://cirugiatoracica.cl/llms.txt
 Sitemap: https://cirugiatoracica.cl/sitemap.xml

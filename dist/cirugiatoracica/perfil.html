@@ -26,6 +26,8 @@
   "@type": "Physician",
   "name": "Dr. David Lazo Pérez",
   "honorificSuffix": "FACS",
+  "mainEntityOfPage": {"@type": "ProfilePage", "@id": "https://cirugiatoracica.cl/perfil#page"},
+  "subjectOf": {"@type": "ProfilePage", "@id": "https://cirugiatoracica.cl/cv#page"},
   "jobTitle": "Cirujano Torácico",
   "medicalSpecialty": [
     "Cirugía Torácica",
@@ -708,6 +710,32 @@
       color: #fff; text-decoration: none; padding: 0.8rem 1.7rem; border-radius: 8px;
       font-size: 0.9rem; font-weight: 700; transition: transform 0.15s, box-shadow 0.2s; }
     .pub-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(8,145,178,0.28); }
+  
+  /* ── Submenú de navegación ── */
+  .nav-links .has-sub{position:relative}
+  .nav-links .has-sub>a::after{content:"\25BE";font-size:.62em;margin-left:.4em;opacity:.65;vertical-align:middle}
+  .nav-sub{position:absolute;top:100%;left:-1.1rem;min-width:200px;list-style:none;margin:0;
+    padding:.45rem 0;background:rgba(12,21,38,.97);backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.09);border-radius:9px;box-shadow:0 14px 36px rgba(0,0,0,.3);
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .18s ease,transform .18s ease,visibility .18s}
+  .nav-links .has-sub:hover .nav-sub,.nav-links .has-sub:focus-within .nav-sub{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-sub li{width:100%}
+  .nav-sub a{display:block;padding:.52rem 1.1rem;font-size:.81rem;white-space:nowrap}
+  nav.light .nav-sub{background:rgba(255,255,255,.98);border-color:var(--border);box-shadow:0 14px 36px rgba(12,21,38,.13)}
+  @media (max-width:640px){
+    .nav-sub{position:static!important;opacity:1!important;visibility:visible!important;transform:none!important;
+      background:none!important;backdrop-filter:none!important;border:none!important;box-shadow:none!important;
+      padding:0!important;min-width:0!important}
+    .nav-sub a{padding:.6rem 0 .6rem 1.05rem!important;font-size:.79rem!important;opacity:.75;
+      border-bottom:1px solid rgba(255,255,255,.06)!important}
+    nav.light .nav-sub a{border-bottom-color:var(--border)!important}
+    .nav-links .has-sub>a::after{display:none}
+  }
+  
+    .bio-src{font-size:.78rem;line-height:1.55;color:var(--muted);margin-top:1rem}
+    .bio-src a{color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(0,150,150,.3)}
+    .bio-src a:hover{border-bottom-color:var(--teal)}
   </style>
   <script type="application/ld+json">
 {
@@ -827,7 +855,12 @@
       <ul class="nav-links">
         <li><a href="#especialidades">Especialidades</a></li>
         <li><a href="#sobre">Sobre mí</a></li>
-        <li><a href="/publicaciones">Publicaciones</a></li>
+        <li class="has-sub">
+          <a href="/cv">Currículum académico</a>
+          <ul class="nav-sub">
+            <li><a href="/publicaciones">Publicaciones</a></li>
+          </ul>
+        </li>
         <li><a href="/docencia">Docencia</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="#contacto" class="nav-cta">Reservar hora →</a></li>
@@ -966,7 +999,7 @@
           <p>Con <strong>19 años de experiencia</strong> y más de 5.700 cirugías torácicas, es el cirujano con mayor experiencia en <strong>EBUS en Chile</strong> (desde 2010, +3.200 procedimientos) y en <strong>cirugía robótica torácica RATS</strong> (desde 2015, +200 cirugías robóticas).</p>
           <p><strong>Regente para Chile</strong> de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP). <strong>Fellow del American College of Surgeons (FACS)</strong> desde 2020. Miembro de IASLC, European Respiratory Society e ISHLT.</p>
           <p>Activo en formación médica continua, desarrollo de programas quirúrgicos avanzados e innovación tecnológica en cirugía torácica a nivel latinoamericano.</p>
-          <p>Dirigió entre 2014 y 2022 el Programa de Perfeccionamiento en Cirugía Toracoscópica para Cirujanos Generales de la <strong>Escuela de Postgrado de la Universidad de Chile</strong>, e integra el comité académico del programa de subespecialidad en Cirugía de Tórax de la Universidad Finis Terrae. El detalle está en <a href="/docencia">docencia y menciones en medios especializados</a>.</p>
+          <p>Dirigió entre 2014 y 2022 el Programa de Perfeccionamiento en Cirugía Toracoscópica para Cirujanos Generales de la <strong>Escuela de Postgrado de la Universidad de Chile</strong>, e integra el comité académico del programa de subespecialidad en Cirugía de Tórax de la Universidad Finis Terrae. El detalle está en <a href="/docencia">docencia y menciones en medios especializados</a>, y la trayectoria completa &mdash;formación, sociedades y 86 congresos fechados&mdash; en el <a href="/cv">currículum académico</a>.</p>
         </div>
         <div>
           <div class="credentials-box">
@@ -993,19 +1026,17 @@
         </div>
         <div>
           <p class="bio-eyebrow">Especialista</p>
-          <h2 class="bio-name">Dr. David Lazo Pérez</h2>
+          <p class="bio-name">Dr. David Lazo Pérez</p>
           <p class="bio-role">Cirujano Torácico · Broncoscopía Intervencional</p>
           <p class="bio-text">
-            Médico-cirujano de la <strong>Pontificia Universidad Católica de Chile</strong>, con especialización en Cirugía Torácica por la <strong>Universidad de Chile</strong> y formación en Trasplante Pulmonar en el <strong>Hospital Universitario Puerta de Hierro Majadahonda</strong>, España.
-          </p>
-          <p class="bio-text">
-            Con 19 años de experiencia, es el cirujano con mayor experiencia en <strong>EBUS en Chile</strong> (desde 2010, +3.200 procedimientos) y pionero en la técnica <strong>CryoEBUS</strong> a nivel latinoamericano. Regente para Chile de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP).
+            Atiende en <strong>Clínica Las Condes</strong> y en el <strong>Hospital Clínico San Borja Arriarán</strong>. Formación, sociedades científicas, publicaciones y congresos, en el <a href="/cv">currículum académico</a>.
           </p>
           <div class="bio-creds">
             <div class="bio-cred"><div class="bio-cred-n">+5.700</div><div class="bio-cred-l">cirugías torácicas totales</div></div>
             <div class="bio-cred"><div class="bio-cred-n">+3.200</div><div class="bio-cred-l">procedimientos EBUS desde 2010</div></div>
             <div class="bio-cred"><div class="bio-cred-n">19</div><div class="bio-cred-l">años de experiencia clínica</div></div>
           </div>
+            <p class="bio-src">Formación, sociedades científicas y 86 congresos fechados en el <a href="https://cirugiatoracica.cl/cv">currículum académico</a>.</p>
         </div>
       </div>
     </div>

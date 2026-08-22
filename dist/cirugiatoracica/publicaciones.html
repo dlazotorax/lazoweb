@@ -25,6 +25,7 @@
   "@context": "https://schema.org",
   "@type": "Physician",
   "name": "Dr. David Lazo Pérez",
+  "subjectOf": {"@type": "ProfilePage", "@id": "https://cirugiatoracica.cl/cv#page"},
   "honorificSuffix": "FACS",
   "jobTitle": "Cirujano Torácico",
   "medicalSpecialty": [
@@ -725,6 +726,28 @@
     .pub-orcid { font-size: 0.86rem; color: var(--muted); margin-top: 0.7rem; }
     .pub-orcid a { color: var(--teal); text-decoration: none; }
     .pub-orcid a:hover { text-decoration: underline; }
+  
+  /* ── Submenú de navegación ── */
+  .nav-links .has-sub{position:relative}
+  .nav-links .has-sub>a::after{content:"\25BE";font-size:.62em;margin-left:.4em;opacity:.65;vertical-align:middle}
+  .nav-sub{position:absolute;top:100%;left:-1.1rem;min-width:200px;list-style:none;margin:0;
+    padding:.45rem 0;background:rgba(12,21,38,.97);backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.09);border-radius:9px;box-shadow:0 14px 36px rgba(0,0,0,.3);
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .18s ease,transform .18s ease,visibility .18s}
+  .nav-links .has-sub:hover .nav-sub,.nav-links .has-sub:focus-within .nav-sub{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-sub li{width:100%}
+  .nav-sub a{display:block;padding:.52rem 1.1rem;font-size:.81rem;white-space:nowrap}
+  nav.light .nav-sub{background:rgba(255,255,255,.98);border-color:var(--border);box-shadow:0 14px 36px rgba(12,21,38,.13)}
+  @media (max-width:640px){
+    .nav-sub{position:static!important;opacity:1!important;visibility:visible!important;transform:none!important;
+      background:none!important;backdrop-filter:none!important;border:none!important;box-shadow:none!important;
+      padding:0!important;min-width:0!important}
+    .nav-sub a{padding:.6rem 0 .6rem 1.05rem!important;font-size:.79rem!important;opacity:.75;
+      border-bottom:1px solid rgba(255,255,255,.06)!important}
+    nav.light .nav-sub a{border-bottom-color:var(--border)!important}
+    .nav-links .has-sub>a::after{display:none}
+  }
   </style>
   <script type="application/ld+json">
 {
@@ -1932,7 +1955,12 @@
       <ul class="nav-links">
         <li><a href="/perfil#especialidades">Especialidades</a></li>
         <li><a href="/perfil#sobre">Sobre mí</a></li>
-        <li><a href="/publicaciones">Publicaciones</a></li>
+        <li class="has-sub">
+          <a href="/cv">Currículum académico</a>
+          <ul class="nav-sub">
+            <li><a href="/publicaciones">Publicaciones</a></li>
+          </ul>
+        </li>
         <li><a href="/docencia">Docencia</a></li>
         <li><a href="/perfil#contacto">Contacto</a></li>
         <li><a href="/perfil#contacto" class="nav-cta">Reservar hora →</a></li>

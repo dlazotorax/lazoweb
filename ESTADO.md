@@ -60,9 +60,32 @@ Docencia · Contacto · Reservar hora. Submenú en CSS puro, sin JS.
 formación, credenciales y cifras (551 palabras para una sola trayectoria). Ahora hay una sola bio;
 la segunda sección quedó como tarjeta con foto y cifras.
 
-> **Pendiente detectado, no tocado:** `broncoscopia/index.html` tiene el mismo problema — dos
-> `bio-text` seguidos que repiten "EBUS desde 2010 (+3.200 procedimientos)". Revisar si se repite
-> en los otros dominios.
+### Auditoría completa de la red (20-ago-2026) — 4 hallazgos, todos corregidos
+
+Barrido de las 34 páginas buscando errores no detectados antes.
+
+**Limpio:** cifras coherentes en toda la red (5.700 / 3.200 / 200 / 19 años, sin una sola
+contradicción) · fechas de inicio consistentes (EBUS 2010 en 13 páginas, RATS 2015 en 5) ·
+**0 enlaces internos rotos** · un solo `<h1>` por página · ningún `alt` vacío · los 6 sitemaps
+cuadran exactamente con las páginas reales · `robots.txt` en los 6 dominios · MEDS ya no figura
+como afiliación vigente.
+
+**Corregidos:**
+
+1. **`rats.cl` contaba la misma cifra dos veces** en la barra del hero: *"+200 cirugías robóticas
+   torácicas realizadas"* y *"+200 cirugías RATS torácicas desde 2015"*. Ahora: **+200 RATS ·
+   2015 inicio · +5.700 torácicas · 19 años**. Sin repetición y con un dato más.
+2. **`broncoscopia/index.html`** repetía la regencia WABIP y "+3.200 desde 2010" en dos párrafos
+   seguidos — mismo patrón que `/perfil`. Segundo párrafo aligerado.
+3. **`/links` sin `lastReviewed`.** Añadidos `dateModified`, `@id`, `url` e `inLanguage`.
+4. **`dist/index.html` eliminado.** Era una página de trabajo del primer commit
+   (*"Rediseños Dr. Lazo — Vista General"*), huérfana, sin `canonical` ni `noindex`, y **enlazaba a
+   `hub.html`, que ya no existe**. No estaba expuesta porque los Root Directory apuntan a
+   `dist/<dominio>/`, pero se habría publicado sola si alguien tocaba esa configuración.
+
+**Revalidación tras los arreglos:** 114/114 JSON-LD válidos · 0 páginas huérfanas · 0 sin
+`lastReviewed` · 0 párrafos repetidos dentro de una misma página · cifras únicas por concepto.
+**34 páginas.**
 
 ### Despliegue — cómo funciona ahora
 

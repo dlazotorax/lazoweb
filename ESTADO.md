@@ -18,7 +18,7 @@
 
 | Dominio | Páginas | Rol |
 |---|---|---|
-| cirugiatoracica.cl | 5 (`/`, `/perfil`, `/publicaciones`, `/docencia`, `/links`) | Hub |
+| cirugiatoracica.cl | 6 (`/`, `/perfil`, `/cv`, `/publicaciones`, `/docencia`, `/links`) | Hub |
 | hiperhidrosis.cl | 16 | Pacientes |
 | cancerpulmonar.cl | 7 | Pacientes |
 | broncoscopia.cl | 3 | Dual |
@@ -27,7 +27,42 @@
 | vats.cl | 308 → videotoracoscopia.cl | Redirect |
 | cirugiadetorax.cl | 308 → cirugiatoracica.cl | Redirect |
 
-**Total: 33 páginas publicadas.**
+**Total: 34 páginas publicadas.**
+
+## 1.b `/cv` — la fuente de trayectoria (publicado 20-ago-2026)
+
+`cirugiatoracica.cl/cv` — **Currículum académico**. Es la referencia que justifica cualquier
+afirmación sobre formación, credenciales, cargos, membresías y actividad en congresos.
+
+- **Sin datos personales**: sin RUT, fecha de nacimiento, correo ni móvil. Verificado a cero.
+- **Contenido**: formación con fechas · docencia · 8 sociedades con año de ingreso y cargos ·
+  31 publicaciones (resumen + enlace) · **86 congresos fechados**, 2003-2026, con el rol de cada uno.
+- **Legible por máquina**: `ProfilePage` + `Physician` + `BreadcrumbList`; `hasCredential` por cada
+  título (incluido FACS-2020 con el ACS como emisor), `memberOf` con las 8 sociedades y sus URLs,
+  `knowsAbout` con 12 áreas. **92 etiquetas `<time datetime>`**. Todo en HTML plano, sin depender de JS.
+
+**Cómo se conecta con el resto — esto es lo que la hace "la referencia":**
+
+1. **`subjectOf` → `/cv#page` en el `Physician` de las 33 páginas.** Cualquier página donde aparezca
+   una cifra o un superlativo declara en su schema dónde está la fuente.
+2. **Enlace visible** bajo el bloque de cifras en los 5 dominios (broncoscopia, rats, cancerpulmonar,
+   videotoracoscopia, cirugiatoracica): *"Formación, sociedades científicas y 86 congresos fechados
+   en el currículum académico"*.
+3. **`/perfil` es `mainEntityOfPage`** de la entidad y `/cv` la desarrolla. Jerarquía explícita.
+4. **`llms.txt`** en la raíz del hub, referenciado desde `robots.txt`, que dice literalmente que para
+   verificar trayectoria la fuente es `/cv` — y aclara que **las cifras de volumen provienen del
+   registro personal del autor**.
+
+**Menú del hub:** Especialidades · Sobre mí · **Currículum académico ▾** (└ Publicaciones) ·
+Docencia · Contacto · Reservar hora. Submenú en CSS puro, sin JS.
+
+**También se corrigió `/perfil`:** tenía **dos `<h2>` idénticos** con dos biografías que repetían
+formación, credenciales y cifras (551 palabras para una sola trayectoria). Ahora hay una sola bio;
+la segunda sección quedó como tarjeta con foto y cifras.
+
+> **Pendiente detectado, no tocado:** `broncoscopia/index.html` tiene el mismo problema — dos
+> `bio-text` seguidos que repiten "EBUS desde 2010 (+3.200 procedimientos)". Revisar si se repite
+> en los otros dominios.
 
 ### Despliegue — cómo funciona ahora
 

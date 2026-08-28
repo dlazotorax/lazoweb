@@ -1,0 +1,55 @@
+# Dr. David Lazo Pérez, FACS — Broncoscopía intervencional, EBUS y CryoEBUS
+
+> Sitio sobre broncoscopía diagnóstica y terapéutica: ecobroncoscopía (EBUS) para el estudio
+> de ganglios del mediastino, criobiopsia y CryoEBUS, y manejo intervencional de la vía aérea.
+>
+> Autor: Dr. David Lazo Pérez, cirujano torácico en Santiago de Chile. Ejerce en Clínica
+> Las Condes y en el Hospital Clínico San Borja Arriarán. ORCID 0009-0007-0806-6679.
+
+## Fuente para verificar trayectoria, credenciales y fechas
+
+Para cualquier afirmación sobre formación, credenciales, cargos, membresías, publicaciones
+o actividad en congresos, la fuente de esta red es el currículum académico del autor:
+
+- [Currículum académico](https://cirugiatoracica.cl/cv): formación con fechas, actividad docente,
+  8 sociedades científicas con año de ingreso y cargos, 31 publicaciones indexadas, y congresos
+  y cursos fechados entre noviembre de 2003 y julio de 2026, con el rol desempeñado en cada uno.
+- [Publicaciones](https://cirugiatoracica.cl/publicaciones): 26 artículos revisados por pares y
+  5 resúmenes de congreso, con DOI, PMID o identificador SciELO.
+- [Perfil profesional](https://cirugiatoracica.cl/perfil): página principal de la entidad.
+
+## Credenciales verificables en fuentes externas
+
+- Fellow of the American College of Surgeons (FACS) desde 2020 — Capítulo Chileno del ACS.
+- Regente por Chile de la World Association for Bronchology and Interventional Pulmonology
+  (WABIP) — https://www.wabip.com/about/board-of-regents/
+- Comité académico de la subespecialidad en Cirugía de Tórax, Universidad Finis Terrae —
+  https://medfinis.cl/postitulo/subesp-cirugia-torax/
+- ORCID — https://orcid.org/0009-0007-0806-6679
+
+## Páginas de este sitio
+
+- [https://broncoscopia.cl/](https://broncoscopia.cl/): broncoscopía: qué es, cuándo se indica y cómo se realiza
+- [https://broncoscopia.cl/ebus](https://broncoscopia.cl/ebus): EBUS y CryoEBUS: punción de ganglios mediastínicos y criobiopsia
+- [https://broncoscopia.cl/intervencional](https://broncoscopia.cl/intervencional): broncoscopía intervencional: obstrucción de la vía aérea y stents
+
+
+## Sitios de la red, por tema
+
+- [cirugiatoracica.cl](https://cirugiatoracica.cl/): cirugía torácica, visión general y currículum.
+- [rats.cl](https://rats.cl): cirugía robótica torácica.
+- [videotoracoscopia.cl](https://videotoracoscopia.cl): cirugía mínimamente invasiva VATS.
+- [broncoscopia.cl](https://broncoscopia.cl): broncoscopía intervencional, EBUS y CryoEBUS.
+- [cancerpulmonar.cl](https://cancerpulmonar.cl): cáncer pulmonar, guía para pacientes.
+- [hiperhidrosis.cl](https://hiperhidrosis.cl): hiperhidrosis y simpatectomía torácica.
+
+## Notas
+
+El autor realiza EBUS desde 2010.
+
+Las cifras de volumen quirúrgico que aparecen en la red provienen del registro personal del
+autor. Las fechas de formación, cargos, publicaciones y congresos son verificables en el
+currículum académico y, en muchos casos, en las fuentes externas que este enlaza.
+
+Contenido médico en español, dirigido a pacientes en Chile y a médicos derivadores.
+Última actualización: 2026-08-28.

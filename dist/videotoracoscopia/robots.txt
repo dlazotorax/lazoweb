@@ -30,3 +30,5 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://videotoracoscopia.cl/sitemap.xml
+
+# Guía para sistemas de IA: https://videotoracoscopia.cl/llms.txt

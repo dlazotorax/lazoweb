@@ -560,6 +560,35 @@ Cuenta de GSC: **`dr.david.lazo@gmail.com`** (authuser=1); `dlazo.torax@` no tie
 de vocabulario del 2-ago, y `/cirugia-hiperhidrosis/` en **60,7** pese a la reescritura completa.
 Ahí el problema es autoridad, no on-page.
 
+### 5.e Etiquetas «eyebrow» — limpieza (29-ago-2026)
+
+Las etiquetas en versalitas cian sobre cada titular eran el *tell* visual más
+reconocible de la red. Criterio, aplicado etiqueta por etiqueta (nunca con sed):
+
+1. Si repite lo que dice el `h2` (o su bajada) → se quita.
+2. Si la etiqueta es mejor que el `h2` → se fusionan y gana la etiqueta.
+3. Si cumple función real (cambio de audiencia, navegación) → se conserva,
+   reestilizada sin versalitas ni tracking:
+   `text-transform:none;letter-spacing:0;font-size:0.8rem;font-weight:600;`
+
+Antes de tocar cada una: comprobar que su texto no está en el JSON-LD de la
+página y que ninguna ancla depende de ella. Renderizar antes y después.
+
+**Hecho** (`class="eyebrow"` y equivalentes inline):
+
+| Página | Antes | Después | Detalle |
+|---|---|---|---|
+| broncoscopia/index | 8 | 1 | commit `04b462c`; se conserva «Para médicos referentes» (criterio 3) |
+| rats/index | 4 | 0 | 2 quitadas · 2 fusiones («Qué se puede operar con cirugía robótica», «Preguntas frecuentes sobre cirugía robótica») |
+| cancerpulmonar/index | 3 | 0 | 2 quitadas · 1 fusión («Preguntas frecuentes sobre el cáncer pulmonar») |
+| cirugiatoracica/perfil | 5 | 0 | 3 quitadas · 2 fusiones («Formación y trayectoria del Dr. David Lazo Pérez», «Preguntas frecuentes sobre la atención»). El h2-claim «Cirugía Torácica de Vanguardia» intacto (§7) |
+| cv · docencia · publicaciones | 1+1+1 | 1+1+1 | **No eran decorativas**: son el enlace de retorno «← Dr. David Lazo Pérez» a `/perfil` (cv con BreadcrumbList). Conservadas sin versalitas (criterio 3) |
+
+**Pendiente — familias no tocadas en esta pasada, se deciden aparte:**
+`cta-eyebrow` (29) — probablemente se quedan: en el CTA la etiqueta sí introduce
+un cambio de contexto · `sec-eyebrow` (12) · `bio-eyebrow` (4, p. ej. «Especialista»
+en la tarjeta de bio de /perfil) · `hero-eyebrow` (2) · `page-nav-eyebrow` (2).
+
 ### GA4 — primera medición real
 
 80 sesiones · 25 usuarios nuevos · 329 vistas. **Cuidado:** 70% "Direct" con 2 s de interacción y

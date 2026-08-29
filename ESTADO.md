@@ -581,7 +581,7 @@ página y que ninguna ancla depende de ella. Renderizar antes y después.
 | broncoscopia/index | 8 | 1 | commit `04b462c`; se conserva «Para médicos referentes» (criterio 3) |
 | rats/index | 4 | 0 | 2 quitadas · 2 fusiones («Qué se puede operar con cirugía robótica», «Preguntas frecuentes sobre cirugía robótica») |
 | cancerpulmonar/index | 3 | 0 | 2 quitadas · 1 fusión («Preguntas frecuentes sobre el cáncer pulmonar») |
-| cirugiatoracica/perfil | 5 | 0 | 3 quitadas · 2 fusiones («Formación y trayectoria del Dr. David Lazo Pérez», «Preguntas frecuentes sobre la atención»). El h2-claim «Cirugía Torácica de Vanguardia» intacto (§7) |
+| cirugiatoracica/perfil | 5 | 0 | 3 quitadas · 2 fusiones («Formación y trayectoria» — sin el nombre, por longitud, decisión de David — y «Preguntas frecuentes sobre la atención»). El h2-claim «Cirugía Torácica de Vanguardia» intacto (§7) |
 | cv · docencia · publicaciones | 1+1+1 | 1+1+1 | **No eran decorativas**: son el enlace de retorno «← Dr. David Lazo Pérez» a `/perfil` (cv con BreadcrumbList). Conservadas sin versalitas (criterio 3) |
 
 **Pendiente — fuera del inventario del encargo (detectado al cerrar):**

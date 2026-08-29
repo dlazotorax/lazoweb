@@ -584,6 +584,12 @@ página y que ninguna ancla depende de ella. Renderizar antes y después.
 | cirugiatoracica/perfil | 5 | 0 | 3 quitadas · 2 fusiones («Formación y trayectoria del Dr. David Lazo Pérez», «Preguntas frecuentes sobre la atención»). El h2-claim «Cirugía Torácica de Vanguardia» intacto (§7) |
 | cv · docencia · publicaciones | 1+1+1 | 1+1+1 | **No eran decorativas**: son el enlace de retorno «← Dr. David Lazo Pérez» a `/perfil` (cv con BreadcrumbList). Conservadas sin versalitas (criterio 3) |
 
+**Pendiente — fuera del inventario del encargo (detectado al cerrar):**
+`cirugiatoracica/index.html` tiene **7** `class="eyebrow"` del rediseño 3a — ojo:
+una de ellas ES el `h2` SEO «Enfermedades que tratamos» (el titular visible grande
+es un div); ahí la etiqueta no se puede quitar sin mover el h2. Y las 16 páginas de
+`hiperhidrosis.cl` suman **~20** más. Revisar con el mismo criterio, página a página.
+
 **Pendiente — familias no tocadas en esta pasada, se deciden aparte:**
 `cta-eyebrow` (29) — probablemente se quedan: en el CTA la etiqueta sí introduce
 un cambio de contexto · `sec-eyebrow` (12) · `bio-eyebrow` (4, p. ej. «Especialista»

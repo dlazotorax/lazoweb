@@ -180,8 +180,8 @@
   "reviewedBy": {
     "@id": "https://cirugiatoracica.cl/#david-lazo"
   },
-  "lastReviewed": "2026-08-06",
-  "dateModified": "2026-08-06",
+  "lastReviewed": "2026-08-28",
+  "dateModified": "2026-08-28",
   "specialty": "https://schema.org/PulmonaryMedicine",
   "isPartOf": {
     "@type": "WebSite",
@@ -612,6 +612,23 @@
     .exam-icon svg{width:21px;height:21px}
     .risk-card-icon,.sym-icon,.factor-icon,.callout-icon,.exam-icon{color:#0891b2}
     .nav-logo-icon svg,.nav-logo-mark svg{width:19px;height:19px;color:#fff}
+      /* ── FAQ ── */
+    .faq-list { max-width: 760px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex;
+      align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 0;
+      text-align: left; font-family: inherit; font-size: 0.95rem; font-weight: 600;
+      color: var(--navy); transition: color 0.2s; }
+    .faq-q:hover { color: var(--teal); }
+    .faq-arrow { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      border: 1.5px solid var(--border); color: var(--slate); display: flex; align-items: center;
+      justify-content: center; font-size: 0.9rem; transition: all 0.3s; }
+    .faq-item.open .faq-arrow { background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
+      transition: max-height 0.35s ease, padding 0.35s; }
+    .faq-item.open .faq-a { max-height: 480px; padding-bottom: 1.25rem; }
+    .faq-h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
+      margin: 0 0 1.8rem; line-height: 1.2; }
   </style>
   <!-- Google Analytics 4 · red Dr. David Lazo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
@@ -910,10 +927,10 @@
     <li><strong>SBRT / SABR (radiocirugía):</strong> Radioterapia estereotáctica ablativa para tumores pequeños en pacientes no aptos para cirugía. Puede lograr tasas de control local comparables a la cirugía en estadio I.</li>
     <li><strong>Concurrente con quimio:</strong> En estadio III no operable, como parte del tratamiento curativo.</li>
     <li><strong>Paliativa:</strong> Para controlar síntomas como dolor óseo, obstrucción bronquial o metástasis cerebrales.</li>
-    <li><strong>Radioterapia craneal profiláctica:</strong> En CPCP (cáncer microcítico) que responde al tratamiento inicial.</li>
+    <li><strong>Radioterapia craneal profiláctica:</strong> En CPCP (cáncer de células pequeñas) que responde al tratamiento inicial.</li>
   </ul>
 
-  <h2>Tratamiento del CPCP (cáncer microcítico)</h2>
+  <h2>Tratamiento del CPCP (cáncer de células pequeñas)</h2>
   <p>
     El cáncer de pulmón de células pequeñas tiene un tratamiento diferente al CPCNP. Se divide en dos categorías:
   </p>
@@ -978,6 +995,35 @@
   </section>
 
   
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="inner">
+    <h2 class="faq-h2">Preguntas frecuentes sobre el tratamiento</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Qué significa "EGFR wild type" o "ALK no mutado"?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Que el tumor no tiene esa alteración molecular. No es una mala noticia por sí misma: significa que las terapias dirigidas contra EGFR o ALK no aplican, y que el tratamiento se orienta según otros marcadores, en especial el nivel de PD-L1 y otras mutaciones como KRAS. Por eso el panel molecular completo se pide antes de decidir.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Para qué sirve el PD-L1?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Es un marcador que orienta si la inmunoterapia tiene más probabilidad de funcionar.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Qué es el osimertinib y cuándo se usa?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Es un medicamento oral dirigido contra la mutación de EGFR. Se usa en estadio IV con EGFR mutado, y también después de la cirugía en estadios tempranos con EGFR positivo, donde ha demostrado reducir las recaídas.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Qué es el sotorasib y está disponible en Chile?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Es una terapia dirigida oral contra la mutación KRAS G12C, una de las alteraciones frecuentes en adenocarcinoma pulmonar. Se indica en enfermedad avanzada cuando el panel molecular detecta esa mutación, tras una primera línea de tratamiento. En Chile está disponible desde 2024.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Un cáncer de pulmón en estadio IV se puede operar?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">La cirugía tiene un rol en casos puntuales, como la enfermedad oligometastásica (pocas metástasis, controlables), e idealmente debe ser avalada por un comité multidisciplinario, como parte de una estrategia con intención curativa. En la gran mayoría de los casos, sin embargo, el tratamiento del estadio IV es sistémico: terapia dirigida, inmunoterapia o quimioterapia.</div>
+        </div>
+    </div>
+  </div>
+</section>
+
   <!-- ─── CTA CONTACTO UNIFICADO ─── -->
   <section class="cta-unified" id="contacto">
     <p class="cta-eyebrow">Primer paso</p>
@@ -1039,5 +1085,63 @@
     Información educativa basada en NCCN Guidelines® for Non-Small Cell Lung Cancer, Version 5.2026 (marzo 2026). Los tratamientos deben ser indicados y supervisados por un médico especialista. No reemplaza la consulta médica.
   </div>
 </footer>
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (b) {
+      b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
+    });
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://cancerpulmonar.cl/tratamiento#faq",
+  "isPartOf": {
+    "@id": "https://cancerpulmonar.cl/tratamiento#webpage"
+  },
+  "inLanguage": "es",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué significa \"EGFR wild type\" o \"ALK no mutado\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Que el tumor no tiene esa alteración molecular. No es una mala noticia por sí misma: significa que las terapias dirigidas contra EGFR o ALK no aplican, y que el tratamiento se orienta según otros marcadores, en especial el nivel de PD-L1 y otras mutaciones como KRAS. Por eso el panel molecular completo se pide antes de decidir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Para qué sirve el PD-L1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es un marcador que orienta si la inmunoterapia tiene más probabilidad de funcionar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es el osimertinib y cuándo se usa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es un medicamento oral dirigido contra la mutación de EGFR. Se usa en estadio IV con EGFR mutado, y también después de la cirugía en estadios tempranos con EGFR positivo, donde ha demostrado reducir las recaídas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es el sotorasib y está disponible en Chile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es una terapia dirigida oral contra la mutación KRAS G12C, una de las alteraciones frecuentes en adenocarcinoma pulmonar. Se indica en enfermedad avanzada cuando el panel molecular detecta esa mutación, tras una primera línea de tratamiento. En Chile está disponible desde 2024."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Un cáncer de pulmón en estadio IV se puede operar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La cirugía tiene un rol en casos puntuales, como la enfermedad oligometastásica (pocas metástasis, controlables), e idealmente debe ser avalada por un comité multidisciplinario, como parte de una estrategia con intención curativa. En la gran mayoría de los casos, sin embargo, el tratamiento del estadio IV es sistémico: terapia dirigida, inmunoterapia o quimioterapia."
+      }
+    }
+  ]
+}
+  </script>
 </body>
 </html>

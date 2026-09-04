@@ -166,8 +166,8 @@
   "reviewedBy": {
     "@id": "https://cirugiatoracica.cl/#david-lazo"
   },
-  "lastReviewed": "2026-08-06",
-  "dateModified": "2026-08-06",
+  "lastReviewed": "2026-08-28",
+  "dateModified": "2026-08-28",
   "specialty": "https://schema.org/PulmonaryMedicine",
   "isPartOf": {
     "@type": "WebSite",
@@ -626,6 +626,23 @@
     .exam-icon svg{width:21px;height:21px}
     .risk-card-icon,.sym-icon,.factor-icon,.callout-icon,.exam-icon{color:#0891b2}
     .nav-logo-icon svg,.nav-logo-mark svg{width:19px;height:19px;color:#fff}
+      /* ── FAQ ── */
+    .faq-list { max-width: 760px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex;
+      align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 0;
+      text-align: left; font-family: inherit; font-size: 0.95rem; font-weight: 600;
+      color: var(--navy); transition: color 0.2s; }
+    .faq-q:hover { color: var(--teal); }
+    .faq-arrow { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      border: 1.5px solid var(--border); color: var(--slate); display: flex; align-items: center;
+      justify-content: center; font-size: 0.9rem; transition: all 0.3s; }
+    .faq-item.open .faq-arrow { background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
+      transition: max-height 0.35s ease, padding 0.35s; }
+    .faq-item.open .faq-a { max-height: 480px; padding-bottom: 1.25rem; }
+    .faq-h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
+      margin: 0 0 1.8rem; line-height: 1.2; }
   </style>
   <!-- Google Analytics 4 · red Dr. David Lazo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
@@ -716,7 +733,7 @@
 
   <div class="survival-section">
     <div class="survival-header">
-      <h3>Sobrevida a 5 años · CPCNP (Cáncer No Microcítico)</h3>
+      <h3>Sobrevida a 5 años · CPCNP (Cáncer de Células No Pequeñas)</h3>
       <span class="survival-badge">IASLC 9ª Edición · 2023</span>
     </div>
 
@@ -954,6 +971,27 @@
   </section>
 
   
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="inner">
+    <h2 class="faq-h2">Preguntas frecuentes sobre la sobrevida</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Cuánto tiempo de vida tiene una persona con cáncer de pulmón en etapa 4?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">No hay una cifra que valga para una persona. Los datos poblacionales de la IASLC muestran una sobrevida a 5 años del 10 % en IVA y menor al 5 % en IVB, pero fueron obtenidos antes de que las terapias dirigidas y la inmunoterapia cambiaran el pronóstico en pacientes con marcadores favorables. El pronóstico real depende del tipo de tumor, sus marcadores moleculares y la respuesta al tratamiento.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Qué significa "sobrevida a 5 años"?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Es el porcentaje de pacientes con ese estadio que seguían vivos cinco años después del diagnóstico, en una base de decenas de miles de casos. Sirve como referencia, no como sentencia: un caso individual puede estar por encima o por debajo.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Detectarlo antes cambia mucho las posibilidades?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Es la variable que más pesa. En estadio IA1 la sobrevida a 5 años es del 92 %; en IVB, menor al 5 %. Por eso el screening con TAC de baja dosis en personas de alto riesgo permite detectar tumores cuando todavía son operables.</div>
+        </div>
+    </div>
+  </div>
+</section>
+
   <!-- ─── CTA CONTACTO UNIFICADO ─── -->
   <section class="cta-unified" id="contacto">
     <p class="cta-eyebrow">Primer paso</p>
@@ -1016,5 +1054,47 @@
     Datos de sobrevida basados en IASLC 9ª edición TNM (2023) y literatura científica actualizada. Son datos estadísticos poblacionales que no predicen el resultado individual de ningún paciente. No reemplaza la consulta médica con su especialista.
   </div>
 </footer>
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (b) {
+      b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
+    });
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://cancerpulmonar.cl/sobrevida#faq",
+  "isPartOf": {
+    "@id": "https://cancerpulmonar.cl/sobrevida#webpage"
+  },
+  "inLanguage": "es",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo de vida tiene una persona con cáncer de pulmón en etapa 4?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No hay una cifra que valga para una persona. Los datos poblacionales de la IASLC muestran una sobrevida a 5 años del 10 % en IVA y menor al 5 % en IVB, pero fueron obtenidos antes de que las terapias dirigidas y la inmunoterapia cambiaran el pronóstico en pacientes con marcadores favorables. El pronóstico real depende del tipo de tumor, sus marcadores moleculares y la respuesta al tratamiento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué significa \"sobrevida a 5 años\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es el porcentaje de pacientes con ese estadio que seguían vivos cinco años después del diagnóstico, en una base de decenas de miles de casos. Sirve como referencia, no como sentencia: un caso individual puede estar por encima o por debajo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Detectarlo antes cambia mucho las posibilidades?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es la variable que más pesa. En estadio IA1 la sobrevida a 5 años es del 92 %; en IVB, menor al 5 %. Por eso el screening con TAC de baja dosis en personas de alto riesgo permite detectar tumores cuando todavía son operables."
+      }
+    }
+  ]
+}
+  </script>
 </body>
 </html>

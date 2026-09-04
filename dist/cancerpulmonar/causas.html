@@ -180,8 +180,8 @@
   "reviewedBy": {
     "@id": "https://cirugiatoracica.cl/#david-lazo"
   },
-  "lastReviewed": "2026-08-06",
-  "dateModified": "2026-08-06",
+  "lastReviewed": "2026-08-28",
+  "dateModified": "2026-08-28",
   "specialty": "https://schema.org/PulmonaryMedicine",
   "isPartOf": {
     "@type": "WebSite",
@@ -595,6 +595,23 @@
     .exam-icon svg{width:21px;height:21px}
     .risk-card-icon,.sym-icon,.factor-icon,.callout-icon,.exam-icon{color:#0891b2}
     .nav-logo-icon svg,.nav-logo-mark svg{width:19px;height:19px;color:#fff}
+      /* ── FAQ ── */
+    .faq-list { max-width: 760px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex;
+      align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 0;
+      text-align: left; font-family: inherit; font-size: 0.95rem; font-weight: 600;
+      color: var(--navy); transition: color 0.2s; }
+    .faq-q:hover { color: var(--teal); }
+    .faq-arrow { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      border: 1.5px solid var(--border); color: var(--slate); display: flex; align-items: center;
+      justify-content: center; font-size: 0.9rem; transition: all 0.3s; }
+    .faq-item.open .faq-arrow { background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
+      transition: max-height 0.35s ease, padding 0.35s; }
+    .faq-item.open .faq-a { max-height: 480px; padding-bottom: 1.25rem; }
+    .faq-h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
+      margin: 0 0 1.8rem; line-height: 1.2; }
   </style>
   <!-- Google Analytics 4 · red Dr. David Lazo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
@@ -894,6 +911,27 @@
   </section>
 
   
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="inner">
+    <h2 class="faq-h2">Preguntas frecuentes sobre las causas</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Cuáles son los principales factores de riesgo?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">El tabaquismo es el principal, incluido el pasivo. Le siguen la exposición al radón, la exposición ocupacional (asbesto, sílice y otros), la contaminación ambiental, los antecedentes familiares y las enfermedades pulmonares previas como la EPOC o la fibrosis.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Puede tener cáncer de pulmón alguien que nunca fumó?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Sí. En Chile, cerca de uno de cada tres pacientes con cáncer pulmonar nunca fumó. En ellos predominan los adenocarcinomas y son más frecuentes las mutaciones EGFR y ALK, que tienen tratamientos dirigidos. Otros factores en juego son la exposición a biomasa, el radón, el arsénico y la contaminación del aire.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Si dejo de fumar, ¿baja el riesgo de cáncer de pulmón?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Sí, y a cualquier edad. El riesgo empieza a disminuir desde el primer año y sigue bajando durante los años siguientes, aunque no vuelve al de quien nunca fumó. Por eso quienes fumaron mucho y dejaron hace menos de 15 años siguen siendo candidatos a los programas de screening con TAC de baja dosis.</div>
+        </div>
+    </div>
+  </div>
+</section>
+
   <!-- ─── CTA CONTACTO UNIFICADO ─── -->
   <section class="cta-unified" id="contacto">
     <p class="cta-eyebrow">Primer paso</p>
@@ -955,5 +993,47 @@
     Información educativa basada en guías NCCN y evidencia científica actualizada. No reemplaza la consulta médica. Consulte siempre con su médico especialista.
   </div>
 </footer>
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (b) {
+      b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
+    });
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://cancerpulmonar.cl/causas#faq",
+  "isPartOf": {
+    "@id": "https://cancerpulmonar.cl/causas#webpage"
+  },
+  "inLanguage": "es",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuáles son los principales factores de riesgo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El tabaquismo es el principal, incluido el pasivo. Le siguen la exposición al radón, la exposición ocupacional (asbesto, sílice y otros), la contaminación ambiental, los antecedentes familiares y las enfermedades pulmonares previas como la EPOC o la fibrosis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puede tener cáncer de pulmón alguien que nunca fumó?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. En Chile, cerca de uno de cada tres pacientes con cáncer pulmonar nunca fumó. En ellos predominan los adenocarcinomas y son más frecuentes las mutaciones EGFR y ALK, que tienen tratamientos dirigidos. Otros factores en juego son la exposición a biomasa, el radón, el arsénico y la contaminación del aire."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Si dejo de fumar, ¿baja el riesgo de cáncer de pulmón?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, y a cualquier edad. El riesgo empieza a disminuir desde el primer año y sigue bajando durante los años siguientes, aunque no vuelve al de quien nunca fumó. Por eso quienes fumaron mucho y dejaron hace menos de 15 años siguen siendo candidatos a los programas de screening con TAC de baja dosis."
+      }
+    }
+  ]
+}
+  </script>
 </body>
 </html>

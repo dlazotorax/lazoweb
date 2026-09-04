@@ -180,8 +180,8 @@
   "reviewedBy": {
     "@id": "https://cirugiatoracica.cl/#david-lazo"
   },
-  "lastReviewed": "2026-08-06",
-  "dateModified": "2026-08-06",
+  "lastReviewed": "2026-08-28",
+  "dateModified": "2026-08-28",
   "specialty": "https://schema.org/PulmonaryMedicine",
   "isPartOf": {
     "@type": "WebSite",
@@ -626,6 +626,24 @@
     .exam-icon svg{width:21px;height:21px}
     .risk-card-icon,.sym-icon,.factor-icon,.callout-icon,.exam-icon{color:#0891b2}
     .nav-logo-icon svg,.nav-logo-mark svg{width:19px;height:19px;color:#fff}
+  
+    /* ── FAQ ── */
+    .faq-list { max-width: 760px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex;
+      align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 0;
+      text-align: left; font-family: inherit; font-size: 0.95rem; font-weight: 600;
+      color: var(--navy); transition: color 0.2s; }
+    .faq-q:hover { color: var(--teal); }
+    .faq-arrow { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      border: 1.5px solid var(--border); color: var(--slate); display: flex; align-items: center;
+      justify-content: center; font-size: 0.9rem; transition: all 0.3s; }
+    .faq-item.open .faq-arrow { background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
+      transition: max-height 0.35s ease, padding 0.35s; }
+    .faq-item.open .faq-a { max-height: 480px; padding-bottom: 1.25rem; }
+    .faq-h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
+      margin: 0 0 1.8rem; line-height: 1.2; }
   </style>
   <!-- Google Analytics 4 · red Dr. David Lazo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
@@ -805,7 +823,7 @@
 
   <div class="grouping-wrap">
     <div class="grouping-header">
-      <h3>Grupos de Estadio · CPCNP · TNM 9ª edición</h3>
+      <h3>Grupos de Estadio · CPCNP (células no pequeñas, también llamado no microcítico) · TNM 9ª edición</h3>
       <span class="tnm-badge">IASLC 2023</span>
     </div>
     <table class="grouping-table">
@@ -907,6 +925,35 @@
 
 </main>
 
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="inner">
+    <h2 class="faq-h2">Preguntas frecuentes sobre la etapificación</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Qué significa TNM en el cáncer de pulmón?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Es el sistema internacional para describir cuánto se ha extendido el cáncer. La T describe el tumor (tamaño e invasión local), la N si hay ganglios comprometidos, y la M si hay metástasis a distancia. Combinando las tres se obtiene el estadio, de I a IV.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Cuáles son los estadios del cáncer de pulmón de células no pequeñas?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Van del estadio I (tumor pequeño y localizado) al IV (con metástasis). Los estadios I y II se consideran tempranos y en general operables; el III es localmente avanzado y muy heterogéneo; el IV es enfermedad diseminada, donde el tratamiento es sistémico. En esta página está la tabla completa de la 9ª edición TNM con cada subgrupo.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Cómo se lee un código como T2N1M0?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Cada letra lleva su categoría. T2N1M0 significa tumor entre 3 y 5 cm o con ciertas invasiones locales (T2), ganglios comprometidos solo del mismo lado y cercanos al tumor (N1) y sin metástasis (M0). Ese conjunto corresponde a un estadio IIB según la 9ª edición.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Qué diferencia hay entre estadificación clínica y patológica?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">La clínica se hace antes del tratamiento, con imágenes (TAC, PET-CT) y procedimientos como el EBUS. La patológica se hace después de la cirugía, con el análisis del tumor y los ganglios resecados durante ella, y es la más precisa. Pueden no coincidir, y la patológica es la que manda para el tratamiento posterior.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Cómo se sabe si los ganglios mediastínicos o hiliares están comprometidos por el cáncer?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Con una sospecha de compromiso de los ganglios en el TAC de tórax con contraste y/o el PET-CT, el paso siguiente es realizar una punción y biopsia de ellos por EBUS; en algunos casos muy seleccionados se recurre a la mediastinoscopía. Este es el paso que más cambia el plan de tratamiento.</div>
+        </div>
+    </div>
+  </div>
+</section>
+
 <!-- BIO DR. LAZO -->
 <section class="bio-section-light" id="dr-lazo">
   <div class="bio-wrap">
@@ -999,5 +1046,63 @@
     Clasificación TNM basada en: AJCC Cancer Staging System, 9ª edición (© 2024, American College of Surgeons). Guía clínica: NCCN Guidelines® for Non-Small Cell Lung Cancer, Version 5.2026 (marzo 2026). No reemplaza la consulta médica especializada.
   </div>
 </footer>
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (b) {
+      b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
+    });
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://cancerpulmonar.cl/etapificacion#faq",
+  "isPartOf": {
+    "@id": "https://cancerpulmonar.cl/etapificacion#webpage"
+  },
+  "inLanguage": "es",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué significa TNM en el cáncer de pulmón?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es el sistema internacional para describir cuánto se ha extendido el cáncer. La T describe el tumor (tamaño e invasión local), la N si hay ganglios comprometidos, y la M si hay metástasis a distancia. Combinando las tres se obtiene el estadio, de I a IV."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuáles son los estadios del cáncer de pulmón de células no pequeñas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Van del estadio I (tumor pequeño y localizado) al IV (con metástasis). Los estadios I y II se consideran tempranos y en general operables; el III es localmente avanzado y muy heterogéneo; el IV es enfermedad diseminada, donde el tratamiento es sistémico. En esta página está la tabla completa de la 9ª edición TNM con cada subgrupo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se lee un código como T2N1M0?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cada letra lleva su categoría. T2N1M0 significa tumor entre 3 y 5 cm o con ciertas invasiones locales (T2), ganglios comprometidos solo del mismo lado y cercanos al tumor (N1) y sin metástasis (M0). Ese conjunto corresponde a un estadio IIB según la 9ª edición."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre estadificación clínica y patológica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La clínica se hace antes del tratamiento, con imágenes (TAC, PET-CT) y procedimientos como el EBUS. La patológica se hace después de la cirugía, con el análisis del tumor y los ganglios resecados durante ella, y es la más precisa. Pueden no coincidir, y la patológica es la que manda para el tratamiento posterior."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se sabe si los ganglios mediastínicos o hiliares están comprometidos por el cáncer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con una sospecha de compromiso de los ganglios en el TAC de tórax con contraste y/o el PET-CT, el paso siguiente es realizar una punción y biopsia de ellos por EBUS; en algunos casos muy seleccionados se recurre a la mediastinoscopía. Este es el paso que más cambia el plan de tratamiento."
+      }
+    }
+  ]
+}
+  </script>
 </body>
 </html>

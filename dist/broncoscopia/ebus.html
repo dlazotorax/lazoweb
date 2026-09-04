@@ -176,8 +176,8 @@
   "reviewedBy": {
     "@id": "https://cirugiatoracica.cl/#david-lazo"
   },
-  "lastReviewed": "2026-08-06",
-  "dateModified": "2026-08-06",
+  "lastReviewed": "2026-08-28",
+  "dateModified": "2026-08-28",
   "specialty": "https://schema.org/PulmonaryMedicine",
   "isPartOf": {
     "@type": "WebSite",
@@ -1110,6 +1110,23 @@ footer p { color: rgba(255,255,255,0.32) !important; }
     .bio-src{font-size:.78rem;line-height:1.55;color:var(--muted);margin-top:1rem}
     .bio-src a{color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(0,150,150,.3)}
     .bio-src a:hover{border-bottom-color:var(--teal)}
+      /* ── FAQ ── */
+    .faq-list { max-width: 760px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex;
+      align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 0;
+      text-align: left; font-family: inherit; font-size: 0.95rem; font-weight: 600;
+      color: var(--navy); transition: color 0.2s; }
+    .faq-q:hover { color: var(--teal); }
+    .faq-arrow { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      border: 1.5px solid var(--border); color: var(--slate); display: flex; align-items: center;
+      justify-content: center; font-size: 0.9rem; transition: all 0.3s; }
+    .faq-item.open .faq-arrow { background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
+      transition: max-height 0.35s ease, padding 0.35s; }
+    .faq-item.open .faq-a { max-height: 480px; padding-bottom: 1.25rem; }
+    .faq-h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
+      margin: 0 0 1.8rem; line-height: 1.2; }
   </style>
   <!-- Google Analytics 4 · red Dr. David Lazo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
@@ -1485,6 +1502,35 @@ footer p { color: rgba(255,255,255,0.32) !important; }
   </div>
 
 
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="inner">
+    <h2 class="faq-h2">Preguntas frecuentes sobre el EBUS</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Qué es el EBUS en medicina?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Es una broncoscopía con una sonda de ecografía en la punta. Permite ver, a través de la pared del bronquio, los ganglios y lesiones del mediastino, y puncionarlos con una aguja fina bajo visión directa. Su uso principal es determinar si un cáncer de pulmón ha llegado a los ganglios.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Qué diferencia hay entre EBUS y una broncoscopía común?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">La broncoscopía convencional ve el interior de la vía aérea. El EBUS añade ecografía y permite ver y biopsiar lo que está fuera del bronquio: ganglios, masas mediastínicas y lesiones adyacentes. Es un procedimiento distinto, con un equipo distinto.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿EBUS y endosonografía bronquial son lo mismo?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Sí. EBUS es la sigla en inglés de *endobronchial ultrasound*; en español se llama ecobroncoscopía o endosonografía bronquial. Es el mismo examen.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿El EBUS duele? ¿Se hace con anestesia?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Se realiza con sedación, sin dolor durante el procedimiento, y de forma ambulatoria.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Quién hace el EBUS: el neumólogo o el cirujano torácico?<div class="faq-arrow">+</div></button>
+          <div class="faq-a">Ambas especialidades lo realizan; lo que importa es la formación específica y el volumen del operador. El cirujano torácico tiene la ventaja de poder resolver en el mismo equipo lo que el EBUS encuentre, desde la mediastinoscopía hasta la cirugía.</div>
+        </div>
+    </div>
+  </div>
+</section>
+
   <!-- DR. LAZO BIO -->
   <section class="section" id="dr-lazo" style="background:#fff;">
     <div class="inner" style="max-width:1100px;margin:0 auto;padding:0 2.5rem;">
@@ -1621,6 +1667,64 @@ footer p { color: rgba(255,255,255,0.32) !important; }
 
     window.addEventListener('scroll', updateActive, { passive: true });
     updateActive();
+  </script>
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (b) {
+      b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
+    });
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://broncoscopia.cl/ebus#faq",
+  "isPartOf": {
+    "@id": "https://broncoscopia.cl/ebus#webpage"
+  },
+  "inLanguage": "es",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es el EBUS en medicina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es una broncoscopía con una sonda de ecografía en la punta. Permite ver, a través de la pared del bronquio, los ganglios y lesiones del mediastino, y puncionarlos con una aguja fina bajo visión directa. Su uso principal es determinar si un cáncer de pulmón ha llegado a los ganglios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre EBUS y una broncoscopía común?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La broncoscopía convencional ve el interior de la vía aérea. El EBUS añade ecografía y permite ver y biopsiar lo que está fuera del bronquio: ganglios, masas mediastínicas y lesiones adyacentes. Es un procedimiento distinto, con un equipo distinto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿EBUS y endosonografía bronquial son lo mismo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. EBUS es la sigla en inglés de *endobronchial ultrasound*; en español se llama ecobroncoscopía o endosonografía bronquial. Es el mismo examen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El EBUS duele? ¿Se hace con anestesia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se realiza con sedación, sin dolor durante el procedimiento, y de forma ambulatoria."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Quién hace el EBUS: el neumólogo o el cirujano torácico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ambas especialidades lo realizan; lo que importa es la formación específica y el volumen del operador. El cirujano torácico tiene la ventaja de poder resolver en el mismo equipo lo que el EBUS encuentre, desde la mediastinoscopía hasta la cirugía."
+      }
+    }
+  ]
+}
   </script>
 </body>
 </html>

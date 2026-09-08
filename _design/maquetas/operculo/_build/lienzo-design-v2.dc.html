@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:#F6F5F1;color:#0B0B0B;font-family:'Public Sans',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#0047FF;text-decoration:none}
+  a:hover{text-decoration:underline}
+  details summary::-webkit-details-marker{display:none}
+</style>
+</helmet>
+<div style="background:#F6F5F1">
+
+  <div style="background:#0B0B0B;color:#F6F5F1;padding:7px 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase">
+      <span>Cirugía torácica robótica · Santiago de Chile</span>
+      <span style="color:#8F8F8F">Maqueta de rediseño · no publicada</span>
+    </div>
+  </div>
+
+  <header style="border-bottom:3px solid #0B0B0B">
+    <div style="max-width:1280px;margin:0 auto;padding:20px 24px 0;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+      <div>
+        <p style="font-size:10.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#0047FF;margin-bottom:6px">RATS · Dr. David Lazo Pérez</p>
+        <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(46px,9vw,132px);line-height:0.82;letter-spacing:0.005em">Opérculo torácico</h1>
+      </div>
+      <a href="#contacto" style="background:#0047FF;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:14px 18px;margin-bottom:8px" style-hover="background:#0B0B0B;text-decoration:none">Agendar consulta</a>
+    </div>
+    <div style="max-width:1280px;margin:0 auto;padding:14px 24px 0">
+      <p style="font-size:13px;border-top:1px solid #0B0B0B;padding-top:10px;padding-bottom:14px">Compresión del plexo braquial, la arteria o la vena subclavia en la salida del tórax · Resección robótica de la primera costilla · Clínica Las Condes y Hospital Clínico San Borja Arriarán</p>
+    </div>
+  </header>
+
+  <nav style="position:sticky;top:0;z-index:50;background:#0B0B0B;color:#F6F5F1">
+    <div style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;align-items:stretch">
+      <button onClick="{{ goIndex }}" style="background:none;border:none;border-right:1px solid #333;cursor:pointer;color:#F6F5F1;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:14px 18px" style-hover="background:#0047FF">Portada<sc-if value="{{ isIndex }}" hint-placeholder-val="{{ true }}"><span style="display:block;height:3px;background:#0047FF;margin:10px -18px -14px"></span></sc-if></button>
+      <button onClick="{{ goCausas }}" style="background:none;border:none;border-right:1px solid #333;cursor:pointer;color:#F6F5F1;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:14px 18px" style-hover="background:#0047FF">01 Causas<sc-if value="{{ isCausas }}" hint-placeholder-val="{{ false }}"><span style="display:block;height:3px;background:#0047FF;margin:10px -18px -14px"></span></sc-if></button>
+      <button onClick="{{ goClinica }}" style="background:none;border:none;border-right:1px solid #333;cursor:pointer;color:#F6F5F1;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:14px 18px" style-hover="background:#0047FF">02 Clínica<sc-if value="{{ isClinica }}" hint-placeholder-val="{{ false }}"><span style="display:block;height:3px;background:#0047FF;margin:10px -18px -14px"></span></sc-if></button>
+      <button onClick="{{ goEstudio }}" style="background:none;border:none;border-right:1px solid #333;cursor:pointer;color:#F6F5F1;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:14px 18px" style-hover="background:#0047FF">03 Estudio<sc-if value="{{ isEstudio }}" hint-placeholder-val="{{ false }}"><span style="display:block;height:3px;background:#0047FF;margin:10px -18px -14px"></span></sc-if></button>
+      <button onClick="{{ goTratamiento }}" style="background:none;border:none;border-right:1px solid #333;cursor:pointer;color:#F6F5F1;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;padding:14px 18px" style-hover="background:#0047FF">04 Tratamiento<sc-if value="{{ isTratamiento }}" hint-placeholder-val="{{ false }}"><span style="display:block;height:3px;background:#0047FF;margin:10px -18px -14px"></span></sc-if></button>
+    </div>
+  </nav>
+
+  <sc-if value="{{ isIndex }}" hint-placeholder-val="{{ true }}">
+  <main style="max-width:1280px;margin:0 auto;padding:0 24px">
+
+    <section style="padding:40px 0 32px;border-bottom:3px solid #0B0B0B">
+      <div style="display:flex;flex-wrap:wrap;gap:32px">
+        <div style="flex:1 1 620px">
+          <p style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#0047FF;margin-bottom:12px">Resolución robótica</p>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6.4vw,88px);line-height:0.88;max-width:900px">Se reseca la primera costilla desde el interior del tórax</h2>
+          <p style="font-size:19px;font-weight:500;margin-top:20px;padding-top:16px;border-top:1px solid #0B0B0B;max-width:760px">Cuando la primera costilla o los músculos escalenos comprimen el plexo braquial, la arteria o la vena subclavia, la descompresión puede hacerse por vía robótica transtorácica: sin incisión en el cuello ni en la axila y con visión directa y magnificada de las estructuras que hay que liberar.</p>
+        </div>
+        <aside style="flex:1 1 260px;max-width:340px;border:2px solid #0B0B0B;padding:18px">
+          <p style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:12px">Ficha</p>
+          <dl style="font-size:13.5px;display:flex;flex-direction:column;gap:10px">
+            <div><dt style="font-weight:700">Variantes</dt><dd>Neurogénica &gt; 95 % · Venosa ~3 % · Arterial ~1 %</dd></div>
+            <div><dt style="font-weight:700">Vía</dt><dd>Robótica transtorácica, 3–4 puertos &lt; 2 cm</dd></div>
+            <div><dt style="font-weight:700">Sistema</dt><dd>Da Vinci</dd></div>
+            <div><dt style="font-weight:700">Centros</dt><dd>Clínica Las Condes · Hospital Clínico San Borja Arriarán</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§1</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Qué es el síndrome del opérculo torácico</h2>
+      </div>
+      <p style="font-size:17px;font-weight:500;max-width:920px;margin-bottom:28px">Es el conjunto de síntomas y signos que produce la compresión de las estructuras neurovasculares del brazo —plexo braquial, arteria subclavia y vena subclavia— a su paso por el espacio que forman la clavícula, la primera costilla y los músculos escalenos. Según cuál sea la estructura comprimida, existen tres variantes: <strong>neurogénica</strong> (más del 95 % de los casos), <strong>venosa</strong> (alrededor del 3 %) y <strong>arterial</strong> (cerca del 1 %).</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px">
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:#0047FF;line-height:1">Espacio 01</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Triángulo interescalénico</h3>
+          <p style="font-size:15px">Entre el escaleno anterior, el escaleno medio y la primera costilla. Por aquí pasan el plexo braquial y la arteria subclavia: es el sitio de compresión del SOT neurogénico y del arterial.</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:#0047FF;line-height:1">Espacio 02</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Espacio costoclavicular</h3>
+          <p style="font-size:15px">Entre la clavícula y la primera costilla. Por aquí pasa la vena subclavia, por delante del escaleno anterior: es el sitio de compresión del SOT venoso.</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:#0047FF;line-height:1">Espacio 03</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Espacio del pectoral menor</h3>
+          <p style="font-size:15px">Bajo el tendón del pectoral menor, ya fuera del tórax. Su estrechamiento por hipertrofia muscular es una causa menos frecuente de compresión, sobre todo venosa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:3px solid #0B0B0B">
+      <p style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:16px">Índice de la sección</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;background:#0B0B0B;border:2px solid #0B0B0B">
+        <button onClick="{{ goCausas }}" style="text-align:left;background:#F6F5F1;border:none;cursor:pointer;padding:20px;font-family:'Public Sans',sans-serif" style-hover="background:#0047FF;color:#fff">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:0.9">01</p>
+          <h3 style="font-size:17px;font-weight:700;margin-bottom:6px">Causas</h3>
+          <p style="font-size:14px">Costilla cervical, primera costilla anómala, bandas fibrosas de Roos, anomalías musculares y trauma.</p>
+        </button>
+        <button onClick="{{ goClinica }}" style="text-align:left;background:#F6F5F1;border:none;cursor:pointer;padding:20px;font-family:'Public Sans',sans-serif" style-hover="background:#0047FF;color:#fff">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:0.9">02</p>
+          <h3 style="font-size:17px;font-weight:700;margin-bottom:6px">Clínica</h3>
+          <p style="font-size:14px">Cómo se presenta cada variante: neurogénica, venosa (Paget-Schroetter) y arterial.</p>
+        </button>
+        <button onClick="{{ goEstudio }}" style="text-align:left;background:#F6F5F1;border:none;cursor:pointer;padding:20px;font-family:'Public Sans',sans-serif" style-hover="background:#0047FF;color:#fff">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:0.9">03</p>
+          <h3 style="font-size:17px;font-weight:700;margin-bottom:6px">Estudio</h3>
+          <p style="font-size:14px">Radiografía, EMG, Doppler, angioTC/angioRM con maniobras y el bloqueo con toxina botulínica.</p>
+        </button>
+        <button onClick="{{ goTratamiento }}" style="text-align:left;background:#F6F5F1;border:none;cursor:pointer;padding:20px;font-family:'Public Sans',sans-serif" style-hover="background:#0047FF;color:#fff">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:0.9">04</p>
+          <h3 style="font-size:17px;font-weight:700;margin-bottom:6px">Tratamiento</h3>
+          <p style="font-size:14px">Terapia física, cirugía abierta y la resección robótica transtorácica de la primera costilla.</p>
+        </button>
+      </div>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§2</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Por qué un cirujano torácico</h2>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:32px">
+        <div style="flex:1 1 460px;columns:2;column-gap:32px;column-rule:1px solid #C9C7C1;font-size:15.5px">
+          <p style="margin-bottom:12px">Durante décadas, en Chile, la cirugía del opérculo torácico no atrajo a los cirujanos torácicos y quedó en manos de la cirugía vascular. Las técnicas mínimamente invasivas cambiaron eso: la primera costilla se puede abordar desde el interior del tórax, el territorio habitual del cirujano torácico, con la videotoracoscopía primero y con la plataforma robótica después.</p>
+          <p>El manejo sigue siendo multidisciplinario —fisiatría, kinesiología, neurología, cirugía vascular— y el cirujano torácico aporta la vía de acceso que evita las incisiones en el cuello y la axila y la tracción del plexo braquial.</p>
+        </div>
+        <figure style="flex:1 1 300px;max-width:420px">
+          <img src="uploads/operculo/imgs/pabellon-robot-dr-lazo.webp" alt="Dr. David Lazo en pabellón, junto al sistema robótico Da Vinci acoplado al paciente" style="width:100%;display:block;border:2px solid #0B0B0B" loading="lazy" />
+          <figcaption style="font-size:12px;font-weight:500;margin-top:8px;padding-top:8px;border-top:1px solid #0B0B0B">Pabellón de cirugía robótica. Foto del autor.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section style="margin:32px -24px;background:#0047FF;color:#fff;padding:48px 24px">
+      <div style="max-width:1232px;margin:0 auto">
+        <p style="font-size:10.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:14px">La técnica</p>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5.4vw,76px);line-height:0.9;max-width:1000px;margin-bottom:20px">Resección de la primera costilla desde el interior del tórax</h2>
+        <p style="font-size:16.5px;max-width:820px;margin-bottom:32px">Con el sistema Da Vinci, la primera costilla se aborda por tres o cuatro puertos en el costado, por debajo de la pleura. La cámara 3D magnificada muestra la costilla completa y, ordenados sobre ella, la vena subclavia, el escaleno anterior, la arteria subclavia, el plexo braquial y el escaleno medio. Los escalenos se desinsertan, la costilla se desarticula por delante y se secciona por detrás, cerca de la vértebra, y se retira. Ninguna estructura neurovascular se retrae ni se tracciona.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;border-top:2px solid #fff;padding-top:20px">
+          <div><p style="font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1;margin-bottom:6px">01</p><h3 style="font-size:15.5px;font-weight:700;margin-bottom:4px">Sin incisión en el cuello ni en la axila</h3><p style="font-size:14.5px">Los puertos quedan en el costado del tórax.</p></div>
+          <div><p style="font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1;margin-bottom:6px">02</p><h3 style="font-size:15.5px;font-weight:700;margin-bottom:4px">Sin tracción del plexo</h3><p style="font-size:14.5px">El plexo se ve desde abajo y no se manipula para llegar a la costilla.</p></div>
+          <div><p style="font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1;margin-bottom:6px">03</p><h3 style="font-size:15.5px;font-weight:700;margin-bottom:4px">Costilla completa a la vista</h3><p style="font-size:14.5px">Desde la unión esternal hasta la vértebra, bajo magnificación.</p></div>
+          <div><p style="font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1;margin-bottom:6px">04</p><h3 style="font-size:15.5px;font-weight:700;margin-bottom:4px">Escalenectomía bajo visión directa</h3><p style="font-size:14.5px">Con el nervio frénico y el plexo identificados.</p></div>
+        </div>
+        <div style="margin-top:32px;border:2px dashed rgba(255,255,255,0.6);aspect-ratio:16/9;max-width:720px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px">
+          <div>
+            <p style="font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1;margin-bottom:6px">Vídeo: resección robótica de la primera costilla</p>
+            <p style="font-size:12.5px">Espacio reservado para el vídeo que el autor está produciendo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:8px 0 32px;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§3</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Un mismo mecanismo, una misma solución</h2>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-bottom:24px">En las tres variantes, cuando la compresión depende de la primera costilla o de los escalenos, el tratamiento definitivo es el mismo: liberar el espacio resecando la costilla y seccionando los escalenos, y eso es lo que se hace con el robot. Hay situaciones en que la vía robótica no basta por sí sola y la cirugía se planifica en conjunto con <strong>cirugía vascular</strong>, en el mismo acto o en tiempos sucesivos:</p>
+      <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+        <li style="font-size:15px;border-top:2px solid #0B0B0B;padding-top:10px"><strong>Costilla cervical o bandas anómalas supraclaviculares o cervicales</strong>, que requieren un abordaje supraclavicular complementario.</li>
+        <li style="font-size:15px;border-top:2px solid #0B0B0B;padding-top:10px"><strong>Trombosis venosa o arterial activa</strong>: trombólisis o trombectomía antes de la descompresión y eventual venoplastía después.</li>
+        <li style="font-size:15px;border-top:2px solid #0B0B0B;padding-top:10px"><strong>Aneurisma o dilatación postestenótica de la arteria subclavia</strong>, que exige reparación arterial.</li>
+        <li style="font-size:15px;border-top:2px solid #0B0B0B;padding-top:10px"><strong>Neurólisis del plexo braquial</strong> cuando hay fibrosis perineural que la vía torácica no alcanza.</li>
+      </ul>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:8px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§4</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Para médicos derivadores</h2>
+      </div>
+      <p style="font-size:14px;font-weight:500;margin-bottom:24px">Neurólogos, fisiatras, traumatólogos, cirujanos vasculares y médicos del deporte</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px">
+        <div>
+          <h3 style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;background:#0B0B0B;color:#F6F5F1;padding:6px 8px;margin-bottom:12px">Perfil de derivación</h3>
+          <ul style="padding-left:18px;font-size:14.5px;display:flex;flex-direction:column;gap:8px">
+            <li>Síntomas neurológicos de extremidad superior de predominio cubital, sin causa cervical ni periférica, que no mejoran tras terapia física dirigida.</li>
+            <li>Atrofia intrínseca de la mano con compromiso del tronco inferior del plexo.</li>
+            <li>Trombosis de esfuerzo de la vena subclavia (Paget-Schroetter), idealmente precoz tras la trombólisis.</li>
+            <li>Isquemia digital, embolias distales o asimetría de pulsos con la abducción en paciente joven.</li>
+            <li>Costilla cervical sintomática.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;background:#0B0B0B;color:#F6F5F1;padding:6px 8px;margin-bottom:12px">Qué adjuntar</h3>
+          <ul style="padding-left:18px;font-size:14.5px;display:flex;flex-direction:column;gap:8px">
+            <li>Radiografía de tórax y columna cervical.</li>
+            <li>AngioTC o angioRM con maniobras provocativas (brazos en reposo y en abducción).</li>
+            <li>Electromiografía y conducción nerviosa de extremidad superior.</li>
+            <li>Ecografía Doppler dinámica en las formas vasculares.</li>
+            <li>Resumen de la terapia física realizada y su duración.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;background:#0B0B0B;color:#F6F5F1;padding:6px 8px;margin-bottom:12px">Coordinación</h3>
+          <ul style="padding-left:18px;font-size:14.5px;display:flex;flex-direction:column;gap:8px">
+            <li>Neurogénico: evaluación electiva; la indicación se define con el estudio completo y, si hace falta, un bloqueo diagnóstico de escalenos.</li>
+            <li>Venoso: descompresión programada precoz tras la trombólisis, coordinada con cirugía vascular.</li>
+            <li>Arterial: evaluación prioritaria y planificación conjunta con cirugía vascular.</li>
+            <li>El autor ha dictado conferencias sobre este tema en Chile y en el extranjero; su trayectoria académica está en el <a href="https://cirugiatoracica.cl/cv">currículum académico</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:32px 0">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:16px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§5</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Preguntas frecuentes</h2>
+      </div>
+      <div style="max-width:900px">
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Qué es el síndrome del opérculo torácico?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Es la compresión del plexo braquial, la arteria subclavia o la vena subclavia en el espacio que forman la primera costilla, la clavícula y los músculos escalenos, a la salida del tórax hacia el brazo. Según la estructura comprimida se clasifica en neurogénico, venoso o arterial.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Cómo se opera el opérculo torácico con robot?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Por tres o cuatro incisiones de menos de dos centímetros en el costado del tórax. El robot aborda la primera costilla desde el interior, secciona los escalenos anterior y medio y reseca la costilla desde su unión anterior hasta cerca de la vértebra, bajo visión 3D magnificada, sin incisión en el cuello ni en la axila y sin traccionar el plexo braquial.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿La cirugía robótica sirve para los tres tipos: neurogénico, venoso y arterial?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Sí, siempre que la compresión dependa de la primera costilla o de los escalenos, que es el mecanismo habitual en las tres variantes. Si además hay una costilla cervical, bandas anómalas en el cuello, una trombosis activa o un aneurisma de la arteria subclavia, la resección robótica se combina con cirugía vascular.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Siempre hay que operar?</summary>
+          <p style="font-size:15.5px;margin-top:10px">No. En la forma neurogénica el primer tratamiento es la terapia física durante varios meses; la cirugía se indica cuando no controla los síntomas o hay déficit neurológico progresivo. En las formas venosa y arterial la indicación es más precoz, porque el riesgo es vascular.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Dónde se realiza esta cirugía en Chile?</summary>
+          <p style="font-size:15.5px;margin-top:10px">El Dr. David Lazo realiza cirugía torácica robótica en Clínica Las Condes y en el Hospital Clínico San Borja Arriarán, en Santiago. La evaluación inicial puede hacerse en consulta presencial o por telemedicina.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isCausas }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width:1280px;margin:0 auto;padding:0 24px">
+    <section style="padding:40px 0 32px;border-bottom:3px solid #0B0B0B">
+      <p style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#0047FF;margin-bottom:12px">01 · Causas</p>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6.4vw,88px);line-height:0.88;max-width:1000px">Lo que estrecha el espacio define la variante y la vía</h2>
+      <p style="font-size:19px;font-weight:500;margin-top:20px;padding-top:16px;border-top:1px solid #0B0B0B;max-width:800px">Anomalías óseas, bandas fibromusculares, alteraciones de los escalenos y del pectoral menor, y trauma. Lo que estrecha el espacio define la variante clínica y también la vía quirúrgica.</p>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§1</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Anomalías óseas</h2>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-bottom:28px">Son la causa más reconocible y la que con mayor frecuencia se asocia a las formas vasculares. Se detectan en una radiografía simple y condicionan la planificación quirúrgica: definen si la vía robótica transtorácica basta por sí sola o si hace falta un abordaje supraclavicular complementario.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px">
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#0047FF;line-height:1">Costilla cervical</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Costilla supernumeraria desde C7</h3>
+          <p style="font-size:15px">Presente en menos del 1 % de la población, más frecuente en mujeres. Es el hallazgo característico del SOT arterial: la arteria subclavia pasa sobre ella y se estenosa, con dilatación postestenótica, aneurisma y embolias. Puede ser completa o incompleta, unida a la primera costilla por una banda fibrosa.</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#0047FF;line-height:1">Primera costilla anómala</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Alteración del espacio costoclavicular</h3>
+          <p style="font-size:15px">Una primera costilla hipoplásica, fusionada o de inserción anómala estrecha el espacio entre la clavícula y la costilla, donde pasa la vena subclavia. Es un mecanismo del SOT venoso y del síndrome de Paget-Schroetter.</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#0047FF;line-height:1">Apófisis de C7</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Apófisis prominente o elongada</h3>
+          <p style="font-size:15px">Una apófisis transversa de C7 alargada actúa como una costilla cervical rudimentaria y suele acompañarse de una banda fibrosa hacia la primera costilla, con compresión del plexo o de la arteria.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§2</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Bandas fibromusculares: la clasificación de Roos</h2>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-bottom:24px">Roos describió siete tipos de bandas fibrosas y musculares anómalas en el opérculo, a partir de más de 2.300 pacientes evaluados y 980 operaciones. Son la causa más frecuente del SOT neurogénico y no se ven en la radiografía: se identifican durante la cirugía. Su distribución se correlaciona con la variante clínica.</p>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:14.5px;min-width:640px">
+          <thead>
+            <tr style="background:#0B0B0B;color:#F6F5F1">
+              <th style="text-align:left;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;padding:10px 12px">Tipo</th>
+              <th style="text-align:left;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;padding:10px 12px">Presentación</th>
+              <th style="text-align:left;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;padding:10px 12px">Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:12px;border-bottom:1px solid #0B0B0B;font-family:'Bebas Neue',sans-serif;font-size:22px">I</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Neurogénico-arterial</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Costilla cervical larga con banda que se inserta hacia el tubérculo del escaleno.</td></tr>
+            <tr><td style="padding:12px;border-bottom:1px solid #0B0B0B;font-family:'Bebas Neue',sans-serif;font-size:22px">II</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Neurogénico-arterial</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Costilla cervical corta con una banda larga de inserción similar al tipo I.</td></tr>
+            <tr><td style="padding:12px;border-bottom:1px solid #0B0B0B;font-family:'Bebas Neue',sans-serif;font-size:22px">III</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Neurogénico</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Banda miofascial con el trayecto de una costilla cervical, insertada cerca del tubérculo del escaleno; comprime las ramas C8-T1 del plexo.</td></tr>
+            <tr><td style="padding:12px;border-bottom:1px solid #0B0B0B;font-family:'Bebas Neue',sans-serif;font-size:22px">IV</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Neurogénico-arterial</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Banda en V formada por las fibras posteriores del escaleno anterior y las anteriores del escaleno medio, sobre el espacio neuroarterial.</td></tr>
+            <tr><td style="padding:12px;border-bottom:1px solid #0B0B0B;font-family:'Bebas Neue',sans-serif;font-size:22px">V</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Neurogénico-arterial</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Escaleno mínimo: fibras independientes de origen escalénico que se insertan en la primera costilla entre la arteria y el plexo.</td></tr>
+            <tr><td style="padding:12px;border-bottom:1px solid #0B0B0B;font-family:'Bebas Neue',sans-serif;font-size:22px">VI</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Neurogénico-arterial</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Similar al tipo V, pero las fibras se insertan en la fascia de Sibson sin alcanzar la primera costilla.</td></tr>
+            <tr><td style="padding:12px;border-bottom:1px solid #0B0B0B;font-family:'Bebas Neue',sans-serif;font-size:22px">VII</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Venoso</td><td style="padding:12px;border-bottom:1px solid #0B0B0B">Banda en V formada por un componente costoclavicular hipertrófico por delante y las fibras anteriores del escaleno anterior, insertada en la primera costilla por detrás de la vena.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:#0047FF;color:#fff;padding:28px;margin-top:32px">
+        <p style="font-size:10.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:12px">Qué cambia con el robot</p>
+        <p style="font-size:16px;margin-bottom:10px">Las bandas de Roos y los escalenos anómalos se insertan en la primera costilla. Al abordarla desde el interior del tórax bajo magnificación, se ven las inserciones de los escalenos y de las bandas sobre la costilla y se seccionan bajo visión directa junto con ella, sin tener que retraer el plexo para descubrirlas.</p>
+        <p style="font-size:16px">Las bandas de tipo I y II —asociadas a costilla cervical— y las que nacen en el cuello quedan fuera del campo torácico: en esos casos la resección robótica se complementa con un abordaje supraclavicular. Por eso el estudio previo con imagen es lo que define la vía.</p>
+      </div>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§3</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Anomalías musculares y trauma</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px">
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#0047FF;line-height:1">Escalenos</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Alteraciones del triángulo interescalénico</h3>
+          <p style="font-size:15px">Fusiones musculares, músculos supernumerarios, cambios histológicos e hipertrofia de los escalenos anterior y medio. Afectan sobre todo a la arteria subclavia y al plexo braquial.</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#0047FF;line-height:1">Pectoral menor</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Espacio subcoracoideo</h3>
+          <p style="font-size:15px">La hipertrofia severa del pectoral menor —fisicoculturistas, levantadores de pesas— estrecha el espacio bajo su tendón. Es causa principalmente de compresión venosa y se trata por separado (tenotomía del pectoral menor).</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#0047FF;line-height:1">Trauma agudo</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Hiperextensión-flexión del cuello</h3>
+          <p style="font-size:15px">Accidentes de tránsito (latigazo cervical), fracturas de clavícula o de primera costilla y los cambios inflamatorios crónicos que dejan. Se asocia con mayor frecuencia al SOT neurogénico, pero puede producir cualquiera de las tres variantes.</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#0047FF;line-height:1">Trauma crónico</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Movimientos repetitivos</h3>
+          <p style="font-size:15px">Uso repetido del cuello y las extremidades superiores: apiladores de cajas, lanzadores de béisbol, nadadores, músicos. También puede asociarse a cualquiera de las tres variantes.</p>
+        </div>
+      </div>
+      <div style="margin-top:32px;border-top:2px solid #0B0B0B;padding-top:12px">
+        <p style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px">Fuentes</p>
+        <ol style="padding-left:20px;font-size:13px;color:#3A3A3A;line-height:1.65">
+          <li>Connolly MR, Auchincloss HG. Anatomy and Embryology of the Thoracic Outlet. <em>Thorac Surg Clin. 2021;31(1):1-10.</em></li>
+          <li>Roos DB. Congenital anomalies associated with thoracic outlet syndrome. <em>Am J Surg. 1976;132(6):771-8.</em></li>
+          <li>Martinez BD, et al. Computer-assisted instrumentation during endoscopic transaxillary first rib resection for thoracic outlet syndrome. <em>Vascular. 2005;13(6):327-35.</em></li>
+          <li>Hussain MA, Aljabri B, Al-Omran M. Vascular Thoracic Outlet Syndrome. <em>Semin Thorac Cardiovasc Surg. 2016;28(1):151-7.</em></li>
+          <li>Nguyen LL, Soo Hoo AJ. Evaluation and Management of Arterial Thoracic Outlet Syndrome. <em>Thorac Surg Clin. 2021;31(1):45-54.</em></li>
+        </ol>
+      </div>
+    </section>
+
+    <section style="padding:32px 0">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:16px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§4</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Preguntas frecuentes sobre las causas</h2>
+      </div>
+      <div style="max-width:900px">
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Qué causa el síndrome del opérculo torácico?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Cualquier estructura que estreche el espacio entre la clavícula, la primera costilla y los escalenos: una costilla cervical, una primera costilla anómala, una apófisis transversa de C7 elongada, bandas fibrosas o musculares anómalas, hipertrofia de los escalenos o del pectoral menor, y las secuelas de un traumatismo agudo o repetitivo.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿La costilla cervical siempre da síntomas?</summary>
+          <p style="font-size:15.5px;margin-top:10px">No. Está presente en menos del 1 % de la población y la mayoría de las personas que la tienen no desarrollan síntomas. Cuando los produce, es la causa característica de la variante arterial.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Se ven las bandas fibrosas en los exámenes?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Habitualmente no. Las bandas de Roos son estructuras fibromusculares que no aparecen en la radiografía y rara vez en la tomografía; se identifican durante la cirugía, en las inserciones de los escalenos sobre la primera costilla.</p>
+        </details>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:12px;margin-top:32px;flex-wrap:wrap">
+        <button onClick="{{ goIndex }}" style="background:none;border:2px solid #0B0B0B;padding:12px 16px;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#0B0B0B" style-hover="background:#0B0B0B;color:#F6F5F1">← Portada</button>
+        <button onClick="{{ goClinica }}" style="background:none;border:2px solid #0B0B0B;padding:12px 16px;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#0B0B0B" style-hover="background:#0B0B0B;color:#F6F5F1">02 Clínica →</button>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isClinica }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width:1280px;margin:0 auto;padding:0 24px">
+    <section style="padding:40px 0 32px;border-bottom:3px solid #0B0B0B">
+      <p style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#0047FF;margin-bottom:12px">02 · Clínica</p>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6.4vw,88px);line-height:0.88;max-width:1000px">Tres variantes comparten el mecanismo y difieren en la urgencia</h2>
+      <p style="font-size:19px;font-weight:500;margin-top:20px;padding-top:16px;border-top:1px solid #0B0B0B;max-width:800px">Cómo se presenta cada variante —neurogénica, venosa y arterial—, qué la agrava y con qué se confunde. Las tres comparten el mecanismo; difieren en la urgencia.</p>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§1</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Tres variantes, tres formas de presentarse</h2>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-bottom:28px">El síndrome se clasifica por la estructura comprimida. La variante neurogénica es la más frecuente con diferencia; las vasculares son raras, pero son las que exigen actuar antes.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+        <div style="border-top:6px solid #0047FF;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1">Neurogénico <span style="color:#0047FF">&gt;95 %</span></p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 10px">Compresión del plexo braquial</h3>
+          <ul style="padding-left:18px;font-size:15px;display:flex;flex-direction:column;gap:6px">
+            <li>Dolor, parestesias y debilidad de la extremidad superior afectada, con frecuencia de predominio cubital (cuarto y quinto dedo).</li>
+            <li>Se agrava con la elevación o el uso sostenido de los brazos y con las maniobras provocativas: rotación del cuello, abducción del brazo.</li>
+            <li>Sensibilidad a la palpación de los escalenos.</li>
+            <li>Atrofia muscular de la mano: rara, propia de casos avanzados.</li>
+          </ul>
+        </div>
+        <div style="border-top:6px solid #0047FF;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1">Venoso <span style="color:#0047FF">~3 %</span></p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 10px">Compresión de la vena subclavia</h3>
+          <ul style="padding-left:18px;font-size:15px;display:flex;flex-direction:column;gap:6px">
+            <li>Fatiga de los antebrazos con el esfuerzo.</li>
+            <li>Aumento de volumen de antebrazo, mano y dedos con cianosis, parestesias, dolor y edema.</li>
+            <li>Circulación colateral venosa visible en hombro y cuello.</li>
+            <li>Trombosis venosa profunda de esfuerzo: <strong>síndrome de Paget-Schroetter</strong>, típico de personas jóvenes y deportistas, de inicio brusco.</li>
+            <li>Tromboembolismo pulmonar y gangrena venosa: raros.</li>
+          </ul>
+        </div>
+        <div style="border-top:6px solid #0047FF;padding-top:12px">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1">Arterial <span style="color:#0047FF">~1 %</span></p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 10px">Compresión de la arteria subclavia</h3>
+          <ul style="padding-left:18px;font-size:15px;display:flex;flex-direction:column;gap:6px">
+            <li>Dolor, palidez, parestesias y frialdad de la extremidad: isquemia.</li>
+            <li>Diferencia de pulsos y de presión arterial entre ambos brazos.</li>
+            <li>Soplo subclavio, masa pulsátil supraclavicular.</li>
+            <li>A diferencia del neurogénico, no hay sensibilidad a la palpación de los escalenos.</li>
+            <li>La estenosis o trombosis de la subclavia puede derivar en embolias digitales y aneurisma postestenótico.</li>
+          </ul>
+        </div>
+      </div>
+      <div style="background:#0047FF;color:#fff;padding:28px;margin-top:32px">
+        <p style="font-size:10.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:12px">Qué cambia con el robot</p>
+        <p style="font-size:16px;margin-bottom:10px">Las tres variantes comparten el mecanismo —la primera costilla y los escalenos— y por eso comparten la solución: resecar la costilla y seccionar los escalenos, hoy por vía robótica transtorácica. Lo que cambia entre una y otra es la urgencia y lo que hay que hacer antes o después de la descompresión.</p>
+        <p style="font-size:16px">En el SOT venoso con trombosis de esfuerzo, la secuencia es trombólisis dirigida por catéter y descompresión precoz; en series robóticas publicadas, una parte de los pacientes requiere venoplastía posterior para completar la permeabilidad. En el arterial, la dilatación o el aneurisma de la subclavia se reparan con cirugía vascular en el mismo plan.</p>
+      </div>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§2</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Con qué se confunde</h2>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-bottom:24px">El SOT neurogénico llega tarde a diagnóstico con frecuencia, después de un largo estudio por otras causas. Los síntomas se superponen con varias entidades más comunes, y descartarlas es parte del diagnóstico.</p>
+      <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px">
+        <li style="font-size:15px;border-top:2px solid #0B0B0B;padding-top:10px"><strong>Radiculopatía cervical</strong> C8-T1, por hernia discal o espondilosis.</li>
+        <li style="font-size:15px;border-top:2px solid #0B0B0B;padding-top:10px"><strong>Síndrome del túnel carpiano</strong> y <strong>neuropatía cubital en el codo</strong>.</li>
+        <li style="font-size:15px;border-top:2px solid #0B0B0B;padding-top:10px"><strong>Patología del hombro</strong>: manguito rotador, capsulitis, inestabilidad.</li>
+        <li style="font-size:15px;border-top:2px solid #0B0B0B;padding-top:10px"><strong>Síndrome del pectoral menor</strong>, que puede coexistir con el SOT y tratarse por separado.</li>
+        <li style="font-size:15px;border-top:2px solid #0B0B0B;padding-top:10px"><strong>Distrofia simpática refleja</strong> y dolor miofascial de la cintura escapular.</li>
+        <li style="font-size:15px;border-top:2px solid #0B0B0B;padding-top:10px"><strong>Trombosis venosa por catéter</strong> en la forma venosa; <strong>vasculitis</strong> y <strong>Raynaud</strong> en la arterial.</li>
+      </ul>
+      <div style="margin-top:32px;border-top:2px solid #0B0B0B;padding-top:12px">
+        <p style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px">Fuentes</p>
+        <ol style="padding-left:20px;font-size:13px;color:#3A3A3A;line-height:1.65">
+          <li>Hussain MA, Aljabri B, Al-Omran M. Vascular Thoracic Outlet Syndrome. <em>Semin Thorac Cardiovasc Surg. 2016;28(1):151-7.</em></li>
+          <li>Cook JR, Thompson RW. Evaluation and Management of Venous Thoracic Outlet Syndrome. <em>Thorac Surg Clin. 2021;31(1):27-44.</em></li>
+          <li>Nguyen LL, Soo Hoo AJ. Evaluation and Management of Arterial Thoracic Outlet Syndrome. <em>Thorac Surg Clin. 2021;31(1):45-54.</em></li>
+          <li>Burt BM. Thoracic outlet syndrome for thoracic surgeons. <em>J Thorac Cardiovasc Surg. 2018;156(3):1318-1323.e1.</em></li>
+        </ol>
+      </div>
+    </section>
+
+    <section style="padding:32px 0">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:16px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§3</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Preguntas frecuentes sobre los síntomas</h2>
+      </div>
+      <div style="max-width:900px">
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Cuáles son los síntomas del opérculo torácico neurogénico?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Dolor, hormigueo y debilidad del brazo y la mano, habitualmente en el borde cubital, que se agravan al trabajar con los brazos elevados o con la rotación del cuello. La atrofia de la musculatura de la mano es rara y aparece en casos avanzados.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Qué es el síndrome de Paget-Schroetter?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Es la trombosis de esfuerzo de la vena subclavia: la expresión más grave del opérculo torácico venoso. Se presenta en personas jóvenes y deportistas como un brazo hinchado, pesado y azulado de inicio brusco, con venas visibles en hombro y pecho.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Cómo sé si la compresión es arterial?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Por frialdad, palidez y dolor de la mano o los dedos, diferencia de pulsos o de presión entre ambos brazos, y un soplo o una masa pulsátil sobre la clavícula. Casi siempre hay una costilla cervical o una primera costilla anómala.</p>
+        </details>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:12px;margin-top:32px;flex-wrap:wrap">
+        <button onClick="{{ goCausas }}" style="background:none;border:2px solid #0B0B0B;padding:12px 16px;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#0B0B0B" style-hover="background:#0B0B0B;color:#F6F5F1">← 01 Causas</button>
+        <button onClick="{{ goEstudio }}" style="background:none;border:2px solid #0B0B0B;padding:12px 16px;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#0B0B0B" style-hover="background:#0B0B0B;color:#F6F5F1">03 Estudio →</button>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isEstudio }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width:1280px;margin:0 auto;padding:0 24px">
+    <section style="padding:40px 0 32px;border-bottom:3px solid #0B0B0B">
+      <p style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#0047FF;margin-bottom:12px">03 · Estudio</p>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6.4vw,88px);line-height:0.88;max-width:1000px">Descartar lo que se parece y decidir la vía quirúrgica</h2>
+      <p style="font-size:19px;font-weight:500;margin-top:20px;padding-top:16px;border-top:1px solid #0B0B0B;max-width:820px">Radiografía, electromiografía, registro de volumen de pulso, Doppler y angioTC o angioRM con maniobras provocativas. El objetivo del estudio es doble: descartar lo que se parece y decidir la vía quirúrgica.</p>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§1</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Los exámenes y para qué sirve cada uno</h2>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-bottom:28px">El diagnóstico es clínico. Ningún examen lo confirma por sí solo: el estudio identifica la causa anatómica, define la variante, descarta los diagnósticos diferenciales y —esto es lo que interesa al cirujano— establece si la compresión depende de la primera costilla y los escalenos o de estructuras que exigen otra vía.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px">
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#0047FF">Todo SOT</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Radiografía de tórax y columna cervical</h3>
+          <p style="font-size:15px">Costilla cervical, primera costilla anómala, apófisis transversa de C7 elongada, fracturas antiguas de clavícula y callos óseos.</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#0047FF">Sospecha neurogénica</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Electromiografía y conducción nerviosa</h3>
+          <p style="font-size:15px">Sirven sobre todo para descartar túnel carpiano, neuropatía cubital y radiculopatía. En el SOT neurogénico verdadero pueden mostrar compromiso del tronco inferior del plexo (nervio cutáneo antebraquial medial, cubital).</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#0047FF">Sospecha arterial</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Registro de volumen de pulso (PVR)</h3>
+          <p style="font-size:15px">Pletismografía segmentaria de ambas extremidades, en reposo y con el brazo en abducción: documenta la caída de presión y de la onda de pulso del lado comprimido.</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#0047FF">SOT vasculares</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Ecografía Doppler / dúplex</h3>
+          <p style="font-size:15px">Muestra trombos y aneurismas y, de forma dinámica, la oclusión del vaso con el brazo elevado (aumento de la velocidad del flujo arterial, cese del flujo venoso).</p>
+        </div>
+        <div style="border-top:6px solid #0047FF;padding-top:12px;background:#EDEBE6;padding:12px">
+          <p style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#0047FF">Todo SOT · decide la vía</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">AngioTC o angioRM con maniobras provocativas</h3>
+          <p style="font-size:15px">Con los brazos en reposo y en abducción. Muestra la compresión dinámica de la arteria o la vena, el sitio exacto y la relación con la costilla y los escalenos. Es el examen que planifica la cirugía.</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#0047FF">Solo neurogénico</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Bloqueo de escalenos con toxina botulínica</h3>
+          <p style="font-size:15px">Inyección guiada en el escaleno anterior. Alivio transitorio de los síntomas en una parte de los pacientes; se usa como prueba diagnóstica previa a la cirugía y como puente terapéutico.</p>
+        </div>
+      </div>
+      <div style="background:#0047FF;color:#fff;padding:28px;margin-top:32px">
+        <p style="font-size:10.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:12px">Qué cambia con el robot</p>
+        <p style="font-size:16px">La angioTC o la angioRM con maniobras es el examen que decide la vía. Si la compresión está en la primera costilla y en los escalenos, la resección robótica transtorácica la resuelve. Si hay costilla cervical, bandas cervicales o una lesión vascular que reparar, el plan incluye un abordaje supraclavicular o la cirugía vascular. La imagen se lee pensando en esa decisión.</p>
+      </div>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§2</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Toxina botulínica: qué dice la evidencia</h2>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-bottom:28px">Una revisión sistemática de 2023 reunió ocho estudios (un ensayo aleatorizado, una cohorte prospectiva y seis retrospectivas) con 716 procedimientos en al menos 497 pacientes con SOT presumiblemente neurogénico.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2px;background:#0B0B0B;border:2px solid #0B0B0B">
+        <div style="background:#F6F5F1;padding:18px"><p style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.9;color:#0047FF">716</p><p style="font-size:13.5px">procedimientos en ≥ 497 pacientes, 8 estudios</p><p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B;margin-top:8px">Kök 2023</p></div>
+        <div style="background:#F6F5F1;padding:18px"><p style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.9;color:#0047FF">46–63 %</p><p style="font-size:13.5px">de los procedimientos primarios con reducción de síntomas</p><p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B;margin-top:8px">Kök 2023</p></div>
+        <div style="background:#F6F5F1;padding:18px"><p style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.9;color:#0047FF">1–6</p><p style="font-size:13.5px">meses de duración del alivio sintomático</p><p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B;margin-top:8px">Kök 2023</p></div>
+        <div style="background:#F6F5F1;padding:18px"><p style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.9;color:#0047FF">0</p><p style="font-size:13.5px">complicaciones mayores reportadas</p><p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B;margin-top:8px">Kök 2023</p></div>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-top:28px">La conclusión de los autores: con evidencia de calidad limitada, la toxina puede dar un alivio breve en algunos pacientes neurogénicos, y su papel como herramienta diagnóstica sigue poco explorado. En la práctica, una buena respuesta al bloqueo orienta hacia la cirugía; una mala respuesta no la descarta.</p>
+      <div style="margin-top:32px;border-top:2px solid #0B0B0B;padding-top:12px">
+        <p style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px">Fuentes</p>
+        <ol style="padding-left:20px;font-size:13px;color:#3A3A3A;line-height:1.65">
+          <li>Hussain MA, Aljabri B, Al-Omran M. Vascular Thoracic Outlet Syndrome. <em>Semin Thorac Cardiovasc Surg. 2016;28(1):151-7.</em></li>
+          <li>Kök M, et al. Systematic Review on Botulinum Toxin Injections as Diagnostic or Therapeutic Tool in Thoracic Outlet Syndrome. <em>Ann Vasc Surg. 2023;96:347-356.</em></li>
+          <li>Cook JR, Thompson RW. Evaluation and Management of Venous Thoracic Outlet Syndrome. <em>Thorac Surg Clin. 2021;31(1):27-44.</em></li>
+          <li>Nguyen LL, Soo Hoo AJ. Evaluation and Management of Arterial Thoracic Outlet Syndrome. <em>Thorac Surg Clin. 2021;31(1):45-54.</em></li>
+        </ol>
+      </div>
+    </section>
+
+    <section style="padding:32px 0">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:16px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§3</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Preguntas frecuentes sobre el estudio</h2>
+      </div>
+      <div style="max-width:900px">
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Qué examen confirma el opérculo torácico?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Ninguno por sí solo: el diagnóstico es clínico. La angioTC o la angioRM con los brazos en reposo y en abducción muestra la compresión dinámica y el sitio exacto, y es el examen que planifica la cirugía. La electromiografía sirve sobre todo para descartar otras neuropatías.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Para qué sirve la toxina botulínica en el opérculo torácico?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Se inyecta en el escaleno anterior como prueba: si los síntomas se alivian de forma transitoria, apoya el diagnóstico y orienta a la cirugía. Solo se usa en la variante neurogénica y el alivio, cuando ocurre, dura de uno a seis meses.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Qué exámenes debo llevar a la consulta?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Radiografía de tórax y columna cervical, angioTC o angioRM con maniobras, electromiografía con conducción nerviosa y, si se sospecha compromiso vascular, ecografía Doppler dinámica.</p>
+        </details>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:12px;margin-top:32px;flex-wrap:wrap">
+        <button onClick="{{ goClinica }}" style="background:none;border:2px solid #0B0B0B;padding:12px 16px;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#0B0B0B" style-hover="background:#0B0B0B;color:#F6F5F1">← 02 Clínica</button>
+        <button onClick="{{ goTratamiento }}" style="background:none;border:2px solid #0B0B0B;padding:12px 16px;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#0B0B0B" style-hover="background:#0B0B0B;color:#F6F5F1">04 Tratamiento →</button>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isTratamiento }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width:1280px;margin:0 auto;padding:0 24px">
+    <section style="padding:40px 0 32px;border-bottom:3px solid #0B0B0B">
+      <p style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#0047FF;margin-bottom:12px">04 · Tratamiento</p>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6.4vw,88px);line-height:0.88;max-width:1000px">Terapia física, cirugía vascular y resección robótica</h2>
+      <p style="font-size:19px;font-weight:500;margin-top:20px;padding-top:16px;border-top:1px solid #0B0B0B;max-width:840px">Terapia física primero en la variante neurogénica; trombólisis y descompresión precoz en la venosa; reparación arterial en la arterial. Y en las tres, cuando la compresión depende de la primera costilla y los escalenos, la resección robótica transtorácica.</p>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§1</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Un manejo multidisciplinario</h2>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-bottom:28px">El síndrome del opérculo torácico se trata en equipo: cirugía torácica, fisiatría y kinesiología, neurología, cirugía vascular y radiología intervencional. El cirujano torácico coordina la evaluación y aporta la vía robótica transtorácica; la terapia física es el primer escalón en la variante neurogénica, y la cirugía vascular entra cuando hay una lesión del vaso que reparar.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px">
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#0047FF">Primer escalón · neurogénico</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 10px">Terapia física</h3>
+          <ul style="padding-left:18px;font-size:15px;display:flex;flex-direction:column;gap:6px">
+            <li>Masoterapia y ultratermia.</li>
+            <li>Ejercicios cervicales y elongación de los escalenos.</li>
+            <li>Fortalecimiento del trapecio y de la cintura escapular.</li>
+            <li>Corrección postural y ergonomía; analgesia.</li>
+            <li>Bloqueo con toxina botulínica en casos seleccionados.</li>
+          </ul>
+          <p style="font-size:15px;margin-top:10px">Varios meses de tratamiento bien realizado antes de plantear la cirugía, salvo déficit neurológico progresivo.</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#0047FF">Venoso</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Anticoagulación y trombólisis</h3>
+          <p style="font-size:15px">En la trombosis de esfuerzo: anticoagulación, venografía y trombólisis farmacomecánica dirigida por catéter, seguidas de descompresión quirúrgica precoz. Tras la resección de la costilla, una parte de los pacientes necesita venoplastía con balón para completar la permeabilidad.</p>
+        </div>
+        <div style="border-top:6px solid #0B0B0B;padding-top:12px">
+          <p style="font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#0047FF">Arterial</p>
+          <h3 style="font-size:16px;font-weight:700;margin:6px 0 8px">Descompresión y reparación arterial</h3>
+          <p style="font-size:15px">Con dilatación de la subclavia sin complicaciones basta la descompresión y vigilancia; con aneurisma o embolias distales se añade reconstrucción arterial, tromboembolectomía o bypass, con cirugía vascular.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:32px 0;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§2</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Las vías quirúrgicas</h2>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-bottom:24px">La primera costilla puede resecarse por encima de la clavícula, por la axila o desde el interior del tórax. Cada vía tiene su lugar; la diferencia principal está en cómo se ve la costilla y cuánto hay que manipular el plexo braquial para llegar a ella.</p>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:780px">
+          <thead>
+            <tr style="background:#0B0B0B;color:#F6F5F1">
+              <th style="text-align:left;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;padding:10px 12px">Vía</th>
+              <th style="text-align:left;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;padding:10px 12px">Incisión</th>
+              <th style="text-align:left;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;padding:10px 12px">Qué permite</th>
+              <th style="text-align:left;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;padding:10px 12px">Plexo braquial</th>
+              <th style="text-align:left;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;padding:10px 12px">Cuándo se prefiere</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:12px;border-bottom:1px solid #0B0B0B;vertical-align:top"><strong>Supraclavicular / infraclavicular</strong></td>
+              <td style="padding:12px;border-bottom:1px solid #0B0B0B;vertical-align:top">Una, sobre o bajo la clavícula</td>
+              <td style="padding:12px;border-bottom:1px solid #0B0B0B;vertical-align:top">Reparaciones arteriales o venosas, neurólisis del plexo, resección de costillas cervicales y bandas cervicales</td>
+              <td style="padding:12px;border-bottom:1px solid #0B0B0B;vertical-align:top">Se expone y se moviliza directamente</td>
+              <td style="padding:12px;border-bottom:1px solid #0B0B0B;vertical-align:top">Costilla cervical, lesión vascular que reparar</td>
+            </tr>
+            <tr>
+              <td style="padding:12px;border-bottom:1px solid #0B0B0B;vertical-align:top"><strong>Transaxilar</strong> (Roos)</td>
+              <td style="padding:12px;border-bottom:1px solid #0B0B0B;vertical-align:top">Una, en la axila</td>
+              <td style="padding:12px;border-bottom:1px solid #0B0B0B;vertical-align:top">Resección de la primera costilla y escalenectomía parcial; versión videoasistida descrita</td>
+              <td style="padding:12px;border-bottom:1px solid #0B0B0B;vertical-align:top">Se retrae para exponer la costilla</td>
+              <td style="padding:12px;border-bottom:1px solid #0B0B0B;vertical-align:top">Vía clásica del neurogénico y del venoso sin anomalías asociadas</td>
+            </tr>
+            <tr style="background:#0047FF;color:#fff">
+              <td style="padding:12px;vertical-align:top"><strong>Mínimamente invasiva transtorácica</strong> (VATS / RATS)</td>
+              <td style="padding:12px;vertical-align:top">Tres o cuatro puertos de menos de 2 cm en el costado</td>
+              <td style="padding:12px;vertical-align:top">Resección completa de la primera costilla, desarticulación costoesternal y sección de los escalenos bajo visión magnificada</td>
+              <td style="padding:12px;vertical-align:top">Se ve desde abajo; no se retrae ni se manipula</td>
+              <td style="padding:12px;vertical-align:top">Compresión por primera costilla o escalenos, en las tres variantes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section style="margin:32px -24px;background:#0B0B0B;color:#F6F5F1;padding:48px 24px">
+      <div style="max-width:1232px;margin:0 auto">
+        <p style="font-size:10.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#7FA0FF;margin-bottom:14px">Paso a paso</p>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5.4vw,72px);line-height:0.9;max-width:1000px;margin-bottom:36px">Resección robótica transtorácica de la primera costilla</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:40px">
+          <ol style="flex:1 1 480px;list-style:none">
+            <li style="border-top:1px solid #333;padding:18px 0;display:flex;gap:20px">
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#7FA0FF">01</span>
+              <div><h3 style="font-size:16px;font-weight:700;margin-bottom:4px">Posición y puertos</h3><p style="font-size:15px;color:#CFCFCF">Decúbito lateral. Tres o cuatro puertos en el costado del tórax, con el pulmón excluido. El robot se acopla y el cirujano opera desde la consola.</p></div>
+            </li>
+            <li style="border-top:1px solid #333;padding:18px 0;display:flex;gap:20px">
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#7FA0FF">02</span>
+              <div><h3 style="font-size:16px;font-weight:700;margin-bottom:4px">Exposición desde el interior</h3><p style="font-size:15px;color:#CFCFCF">Se abre la pleura parietal sobre la primera costilla. Bajo magnificación 3D se identifican, ordenados sobre ella, la vena subclavia, el escaleno anterior, la arteria subclavia, el plexo braquial y el escaleno medio.</p></div>
+            </li>
+            <li style="border-top:1px solid #333;padding:18px 0;display:flex;gap:20px">
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#7FA0FF">03</span>
+              <div><h3 style="font-size:16px;font-weight:700;margin-bottom:4px">Sección de los escalenos</h3><p style="font-size:15px;color:#CFCFCF">Los escalenos anterior y medio se desinsertan de la costilla con instrumental articulado, con el nervio frénico y el plexo a la vista y sin retraerlos.</p></div>
+            </li>
+            <li style="border-top:1px solid #333;padding:18px 0;display:flex;gap:20px">
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#7FA0FF">04</span>
+              <div><h3 style="font-size:16px;font-weight:700;margin-bottom:4px">Desarticulación y resección</h3><p style="font-size:15px;color:#CFCFCF">La costilla se desarticula de la unión costoesternal por delante y se secciona por detrás, cerca de la apófisis transversa, para no dejar un muñón posterior que vuelva a comprimir. Se retira por un puerto.</p></div>
+            </li>
+            <li style="border-top:1px solid #333;border-bottom:1px solid #333;padding:18px 0;display:flex;gap:20px">
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#7FA0FF">05</span>
+              <div><h3 style="font-size:16px;font-weight:700;margin-bottom:4px">Comprobación y cierre</h3><p style="font-size:15px;color:#CFCFCF">Se verifica que vena, arteria y plexo quedaron libres en todo su trayecto. Drenaje pleural fino que se retira antes del alta.</p></div>
+            </li>
+          </ol>
+          <div style="flex:1 1 300px;max-width:400px">
+            <div style="border:2px dashed #444;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px">
+              <div>
+                <p style="font-family:'Bebas Neue',sans-serif;font-size:24px;line-height:1;margin-bottom:6px">Vídeo: resección robótica</p>
+                <p style="font-size:12.5px;color:#9A9A9A">Espacio reservado para el vídeo del autor, en producción.</p>
+              </div>
+            </div>
+            <figure style="margin-top:20px">
+              <img src="uploads/operculo/imgs/marcacion-puertos.webp" alt="Marcación preoperatoria de los puertos robóticos en el costado del paciente" style="width:100%;display:block" loading="lazy" />
+              <figcaption style="font-size:12px;color:#9A9A9A;margin-top:8px;padding-top:8px;border-top:1px solid #333">Marcación de los puertos en el costado del tórax. Foto del autor <em>(confirmar)</em>.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:8px 0 32px;border-bottom:1px solid #0B0B0B">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:24px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§3</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Resultados publicados de la vía robótica</h2>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-bottom:28px">Las series robóticas transtorácicas publicadas son todavía de un solo centro y sin comparación aleatorizada con las vías clásicas, pero coinciden en dos hallazgos: la exposición completa del opérculo sin retracción neurovascular y la ausencia de lesiones neurovasculares.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2px;background:#0B0B0B;border:2px solid #0B0B0B">
+        <div style="background:#F6F5F1;padding:18px"><p style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.9;color:#0047FF">83</p><p style="font-size:13.5px">resecciones robóticas por Paget-Schroetter: sin complicaciones quirúrgicas ni lesión neurovascular</p><p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B;margin-top:8px">Gharagozloo 2019</p></div>
+        <div style="background:#F6F5F1;padding:18px"><p style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.9;color:#0047FF">100 %</p><p style="font-size:13.5px">de permeabilidad de la vena subclavia a 24 meses de mediana de seguimiento</p><p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B;margin-top:8px">Gharagozloo 2019</p></div>
+        <div style="background:#F6F5F1;padding:18px"><p style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.9;color:#0047FF">31 %</p><p style="font-size:13.5px">necesitó angioplastía (24 %) o stent (7 %) tras la resección para completar la permeabilidad</p><p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B;margin-top:8px">Gharagozloo 2019</p></div>
+        <div style="background:#F6F5F1;padding:18px"><p style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:0.9;color:#0047FF">4 días</p><p style="font-size:13.5px">de hospitalización (mediana); 128 min de tiempo operatorio medio</p><p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B;margin-top:8px">Gharagozloo 2019</p></div>
+      </div>
+      <p style="font-size:16.5px;max-width:920px;margin-top:28px">Burt describe la técnica robótica transtorácica como la que ofrece «una exposición incontestable de la anatomía del opérculo y libertad de toda retracción neurovascular». La revisión de técnica de Costantino y Schumacher anticipa que las vías mínimamente invasivas serán cada vez más comunes a medida que más cirujanos adquieran experiencia toracoscópica y robótica, y que faltan datos a largo plazo para establecer su equivalencia o superioridad frente a la cirugía abierta.</p>
+      <div style="background:#0047FF;color:#fff;padding:28px;margin-top:32px">
+        <p style="font-size:10.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:12px">Qué cambia con el robot</p>
+        <p style="font-size:16px">Frente a la vía transaxilar, el robot no trabaja en túnel: la costilla se ve entera, con las estructuras neurovasculares por encima, sin retraerlas. Frente a la vía supraclavicular, evita la disección del cuello y el riesgo sobre el frénico y el conducto torácico. Lo que no puede hacer es resecar una costilla cervical ni reparar un vaso: por eso el plan quirúrgico se define con la imagen y, cuando corresponde, con cirugía vascular en el mismo acto.</p>
+      </div>
+      <div style="margin-top:32px;border-top:2px solid #0B0B0B;padding-top:12px">
+        <p style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px">Fuentes</p>
+        <ol style="padding-left:20px;font-size:13px;color:#3A3A3A;line-height:1.65">
+          <li>Burt BM. Thoracic outlet syndrome for thoracic surgeons. <em>J Thorac Cardiovasc Surg. 2018;156(3):1318-1323.e1.</em></li>
+          <li>Burt BM, Palivela N, Goodman MB. Transthoracic Robotic First Rib Resection: Technique Crystallized. <em>Ann Thorac Surg. 2020;110(1):e71-e73.</em></li>
+          <li>Gharagozloo F, Meyer M, Tempesta B, Gruessner S. Robotic transthoracic first-rib resection for Paget-Schroetter syndrome. <em>Eur J Cardiothorac Surg. 2019;55(3):434-439.</em></li>
+          <li>Costantino CL, Schumacher LY. Surgical Technique: Minimally Invasive First-Rib Resection. <em>Thorac Surg Clin. 2021;31(1):81-87.</em></li>
+          <li>Kara HV, Balderson SS, Tong BC, D'Amico TA. Video assisted transaxillary first rib resection in treatment of thoracic outlet syndrome (TOS). <em>Ann Cardiothorac Surg. 2016;5(1):67-9.</em></li>
+          <li>Cook JR, Thompson RW. Evaluation and Management of Venous Thoracic Outlet Syndrome. <em>Thorac Surg Clin. 2021;31(1):27-44.</em></li>
+          <li>Nguyen LL, Soo Hoo AJ. Evaluation and Management of Arterial Thoracic Outlet Syndrome. <em>Thorac Surg Clin. 2021;31(1):45-54.</em></li>
+        </ol>
+      </div>
+    </section>
+
+    <section style="padding:32px 0">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:2px solid #0B0B0B;padding-bottom:8px;margin-bottom:16px">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;color:#0047FF">§4</span>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.4vw,46px);line-height:1">Preguntas frecuentes sobre el tratamiento</h2>
+      </div>
+      <div style="max-width:900px">
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Cuándo se opera el opérculo torácico?</summary>
+          <p style="font-size:15.5px;margin-top:10px">En la variante neurogénica, cuando varios meses de terapia física bien realizada no controlan los síntomas o hay déficit neurológico progresivo. En la venosa, de forma precoz tras la trombólisis de la trombosis de esfuerzo. En la arterial, ante estenosis, aneurisma o embolias, con planificación conjunta con cirugía vascular.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Qué ventajas tiene la resección robótica de la primera costilla?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Se hace desde el interior del tórax por tres o cuatro puertos pequeños: sin incisión en el cuello ni en la axila, con la costilla completa a la vista bajo magnificación 3D y sin retraer el plexo braquial ni los vasos subclavios. Las series publicadas no reportan lesiones neurovasculares.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Cuánto dura la recuperación?</summary>
+          <p style="font-size:15.5px;margin-top:10px">La hospitalización es corta —en la serie robótica más grande publicada, cuatro días de mediana— y el retorno a la actividad es progresivo. En la variante venosa se mantiene anticoagulación durante unos meses y se controla la permeabilidad de la vena. El plan se define caso a caso.</p>
+        </details>
+        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
+          <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">¿Cuándo se necesita además un cirujano vascular?</summary>
+          <p style="font-size:15.5px;margin-top:10px">Cuando hay una lesión del vaso que tratar o reparar: trombosis activa que requiere trombólisis, estenosis venosa residual que necesite venoplastía, o dilatación, aneurisma o embolias de la arteria subclavia. También cuando hay una costilla cervical, que se reseca por vía supraclavicular.</p>
+        </details>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:12px;margin-top:32px;flex-wrap:wrap">
+        <button onClick="{{ goEstudio }}" style="background:none;border:2px solid #0B0B0B;padding:12px 16px;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#0B0B0B" style-hover="background:#0B0B0B;color:#F6F5F1">← 03 Estudio</button>
+        <a href="#contacto" style="border:2px solid #0047FF;background:#0047FF;color:#fff;padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase" style-hover="background:#0B0B0B;border-color:#0B0B0B;text-decoration:none">Agendar consulta →</a>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <section id="contacto" style="border-top:3px solid #0B0B0B;background:#EDEBE6;padding:48px 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 24px">
+      <p style="font-size:10.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#0047FF;margin-bottom:12px">Primer paso</p>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5vw,68px);line-height:0.9;margin-bottom:32px">Hable directamente con el especialista</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px">
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <img src="https://rats.cl/imgs/foto-dr-lazo.jpg" alt="Dr. David Lazo Pérez, cirujano torácico" style="width:96px;height:96px;object-fit:cover;object-position:center 10%;border:2px solid #0B0B0B" loading="lazy" />
+          <div>
+            <p style="font-size:17px;font-weight:700">Dr. David Lazo Pérez</p>
+            <p style="font-size:14px;color:#3A3A3A">Cirujano Torácico · FACS</p>
+            <p style="font-size:13px;color:#3A3A3A;margin-top:8px;line-height:1.5">Clínica Las Condes<br />Hospital Clínico San Borja Arriarán</p>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;background:#0B0B0B;color:#F6F5F1;padding:6px 8px;margin-bottom:12px">Agendar consulta</h3>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener" style="font-size:15px;font-weight:500;border-bottom:1px solid #0B0B0B;padding-bottom:8px">Clínica Las Condes — reservar hora presencial →</a>
+            <a href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener" style="font-size:15px;font-weight:500;border-bottom:1px solid #0B0B0B;padding-bottom:8px">Telemedicina — consulta online, todo Chile →</a>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;background:#0B0B0B;color:#F6F5F1;padding:6px 8px;margin-bottom:12px">Perfiles</h3>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener" style="font-size:15px;font-weight:500;border-bottom:1px solid #0B0B0B;padding-bottom:8px">LinkedIn</a>
+            <a href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener" style="font-size:15px;font-weight:500;border-bottom:1px solid #0B0B0B;padding-bottom:8px">Instagram · @dr.david.lazo.p</a>
+            <a href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener" style="font-size:15px;font-weight:500;border-bottom:1px solid #0B0B0B;padding-bottom:8px">Doctoralia · perfil y reseñas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0B0B0B;color:#F6F5F1;padding:40px 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 24px">
+      <p style="font-size:10.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#8F8F8F;margin-bottom:16px">Red Dr. David Lazo</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px 28px;padding-bottom:24px;border-bottom:1px solid #333">
+        <a href="https://rats.cl" style="font-size:14px;color:#F6F5F1">Robótica</a>
+        <a href="https://cancerpulmonar.cl" style="font-size:14px;color:#F6F5F1">Cáncer Pulmonar</a>
+        <a href="https://broncoscopia.cl" style="font-size:14px;color:#F6F5F1">Broncoscopía</a>
+        <a href="https://videotoracoscopia.cl" style="font-size:14px;color:#F6F5F1">Videotoracoscopía</a>
+        <a href="https://hiperhidrosis.cl" style="font-size:14px;color:#F6F5F1">Hiperhidrosis</a>
+        <a href="https://cirugiatoracica.cl" style="font-size:14px;color:#F6F5F1">cirugiatoracica.cl</a>
+      </div>
+      <p style="font-size:13px;color:#9A9A9A;margin-top:20px">© 2026 · Dr. David Lazo Pérez · Cirujano Torácico · Santiago, Chile</p>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: 'index' };
+  go(p) { this.setState({ page: p }); window.scrollTo(0, 0); }
+  renderVals() {
+    const p = this.state.page;
+    return {
+      isIndex: p === 'index',
+      isCausas: p === 'causas',
+      isClinica: p === 'clinica',
+      isEstudio: p === 'estudio',
+      isTratamiento: p === 'tratamiento',
+      goIndex: () => this.go('index'),
+      goCausas: () => this.go('causas'),
+      goClinica: () => this.go('clinica'),
+      goEstudio: () => this.go('estudio'),
+      goTratamiento: () => this.go('tratamiento')
+    };
+  }
+}
+</script>
+</body>
+</html>

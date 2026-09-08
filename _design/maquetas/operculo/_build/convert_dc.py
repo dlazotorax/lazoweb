@@ -5,7 +5,7 @@ import re, json, html as H, sys
 sys.path.insert(0, '/tmp/claude-0/-home-claude/7e55ec31-f280-5494-b928-ae7e5af92107/scratchpad')
 from parts import PHYS
 
-DC = open('/tmp/claude-0/-home-claude/7e55ec31-f280-5494-b928-ae7e5af92107/scratchpad/redis/Operculo Toracico v2.dc.html', encoding='utf-8').read()
+DC = open('/home/claude/lazoweb/_design/maquetas/operculo/_build/lienzo-design-v2.dc.html', encoding='utf-8').read()
 V1 = open('/home/claude/lazoweb/_design/maquetas/operculo/_build/v1-descartada.html', encoding='utf-8').read()
 GA4 = re.search(r'<!-- Google Analytics 4.*?\}, true\);\n  </script>\n', V1, re.S).group(0)
 OUT = '/home/claude/lazoweb/_design/maquetas/operculo/'

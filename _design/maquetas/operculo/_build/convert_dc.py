@@ -12,6 +12,8 @@ OUT = '/home/claude/lazoweb/_design/maquetas/operculo/'
 BASE = 'https://rats.cl/operculo-toracico'
 TODAY = '2026-09-08'
 MAQUETA = True
+ACCENT = '#C4500E'   # naranjo levemente oscuro (David, 8-sep); el lienzo trae #0047FF
+DC = DC.replace('#0047FF', ACCENT).replace('#0047ff', ACCENT)
 
 PAGES = {  # key: (archivo, url, title, description, name, migas)
  'index': ('index.html', BASE, 'Opérculo torácico: cirugía robótica · Dr. David Lazo',

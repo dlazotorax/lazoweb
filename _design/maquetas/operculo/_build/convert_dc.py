@@ -84,7 +84,11 @@ def nav_for(active):
 
 def convert_main(s):
     s = buttons_to_links(hoverize(s))
-    s = s.replace('uploads/operculo/imgs/', 'imgs/')
+    # En el sitio publicado la ruta debe ser absoluta: con cleanUrls la portada
+    # se sirve en /operculo-toracico SIN barra final, y un src relativo 'imgs/'
+    # resuelve contra la raiz del dominio (404). En la maqueta local se mantiene
+    # relativo para poder abrirla como archivo.
+    s = s.replace('uploads/operculo/imgs/', 'imgs/' if MAQUETA else '/operculo-toracico/imgs/')
     return s
 
 def faqs_from(main_html):

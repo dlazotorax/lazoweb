@@ -1,7 +1,7 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
 > **Léeme primero.** Estado actual, reglas y pendientes. Evita proponer cosas ya hechas.
-> **Última actualización: 17 ago 2026.**
+> **Última actualización: 13 sep 2026** (maqueta opérculo; el resto sin cambios desde 17-ago).
 > El detalle cronológico de cada sesión está en **`ESTADO-historico.md`**. Consúltalo solo
 > cuando necesites saber *por qué* algo quedó como quedó.
 
@@ -638,6 +638,20 @@ cancerpulmonar 668 KB · **rats 1.150 KB** (venía de 6.413 KB).
 | 4 | `hiperhidrosis.cl` no nombra `OAI-SearchBot` ni `ChatGPT-User` en robots.txt | Cosmético: el comodín ya los cubre |
 | 5 | No existe `llms.txt` en ningún dominio | |
 | 6 | `videotoracoscopia.cl` es el único sin `FAQPage` | |
+
+### Maqueta `rats.cl/operculo-toracico` — lista para revisión final, NO publicada (13-sep-2026)
+
+- Fuente: `_design/maquetas/operculo/` (5 páginas: portada, causas, clínica, estudio, tratamiento). Se
+  generan desde `_build/lienzo-design-v2.dc.html` con `_build/convert_dc.py`; no editar los HTML a mano.
+- Contenido revisado por David página por página (8–13 sep). Textos clínicos: PPT de David, Kök 2023,
+  Donahue 2020, Burt 2020 (PubMed) y criterio del autor. Regla de David: **nada clínico sin bibliografía**.
+- Acento `#C4500E`; 20 imágenes en `imgs/` (ilustraciones de David + fotos propias).
+- **Para publicar (solo con el OK explícito de David):** copiar a `dist/rats/operculo-toracico/`
+  (con `imgs/`), poner `MAQUETA = False` en `convert_dc.py` (enlaces absolutos) y quitar el comentario
+  MAQUETA del `<head>`; enlazar desde la tarjeta "Síndrome del Opérculo Torácico" de `dist/rats/index.html`,
+  la tarjeta "Opérculo torácico" del hub `dist/cirugiatoracica/index.html` y videotoracoscopia.cl;
+  añadir las 5 URL a `dist/rats/sitemap.xml` y `llms.txt`; `audit.py`; commit; push.
+- Vídeo del autor: pendiente (David lo produce aparte); ya no hay espacio reservado en la página.
 
 ### Tres dudas del CV pendientes de David
 

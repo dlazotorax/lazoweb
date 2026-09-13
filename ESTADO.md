@@ -1,7 +1,7 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
 > **Léeme primero.** Estado actual, reglas y pendientes. Evita proponer cosas ya hechas.
-> **Última actualización: 13 sep 2026** (maqueta opérculo; el resto sin cambios desde 17-ago).
+> **Última actualización: 13 sep 2026** (opérculo publicado; el resto sin cambios desde 17-ago).
 > El detalle cronológico de cada sesión está en **`ESTADO-historico.md`**. Consúltalo solo
 > cuando necesites saber *por qué* algo quedó como quedó.
 
@@ -639,7 +639,15 @@ cancerpulmonar 668 KB · **rats 1.150 KB** (venía de 6.413 KB).
 | 5 | No existe `llms.txt` en ningún dominio | |
 | 6 | `videotoracoscopia.cl` es el único sin `FAQPage` | |
 
-### `rats.cl/operculo-toracico` — PREPARADO en el repo, pendiente de push (13-sep-2026)
+### `rats.cl/operculo-toracico` — PUBLICADO (13-sep-2026)
+
+- **En producción** (commits `3ffab67` y anteriores). Tras la revisión de David sobre la maqueta:
+  **H1 propio por subpágina** (Causas / Síntomas / Estudio / Tratamiento del opérculo torácico;
+  la portada conserva el masthead) y **sinónimos en español** —«síndrome de la salida torácica»,
+  «síndrome del desfiladero torácico»— visibles en la portada (§2) y declarados en el
+  `alternateName` solo de la portada (regla 3.3). Todo generado desde el lienzo con `convert_dc.py`.
+- **Pendiente tras publicar:** solicitar indexación de las 5 URL en GSC (David) · vídeo del autor
+  para `tratamiento` (en producción; irá con `VideoObject`).
 
 - Sección de 5 páginas en `dist/rats/operculo-toracico/` (`index`, `causas`, `clinica`, `estudio`,
   `tratamiento` + `imgs/`, 20 webp). David revisó y aprobó el contenido página por página (8–13 sep).

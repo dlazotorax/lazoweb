@@ -10,4 +10,44 @@
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/" />
   </url>
 
+  <url>
+    <loc>https://rats.cl/operculo-toracico</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/operculo-toracico" />
+  </url>
+
+  <url>
+    <loc>https://rats.cl/operculo-toracico/causas</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/operculo-toracico/causas" />
+  </url>
+
+  <url>
+    <loc>https://rats.cl/operculo-toracico/clinica</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/operculo-toracico/clinica" />
+  </url>
+
+  <url>
+    <loc>https://rats.cl/operculo-toracico/estudio</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/operculo-toracico/estudio" />
+  </url>
+
+  <url>
+    <loc>https://rats.cl/operculo-toracico/tratamiento</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/operculo-toracico/tratamiento" />
+  </url>
+
 </urlset>

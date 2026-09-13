@@ -30,6 +30,11 @@ o actividad en congresos, la fuente de esta red es el currículum académico del
 ## Páginas de este sitio
 
 - [https://rats.cl/](https://rats.cl/): cirugía torácica robótica: qué es, para qué se usa y cómo se compara con VATS
+- [https://rats.cl/operculo-toracico](https://rats.cl/operculo-toracico): síndrome del opérculo torácico — qué es el opérculo, qué es el síndrome y su resolución robótica
+- [https://rats.cl/operculo-toracico/causas](https://rats.cl/operculo-toracico/causas): causas — anomalías óseas, bandas de Roos, anomalías musculares y trauma
+- [https://rats.cl/operculo-toracico/clinica](https://rats.cl/operculo-toracico/clinica): clínica — variantes neurogénica, venosa y arterial; diagnóstico diferencial
+- [https://rats.cl/operculo-toracico/estudio](https://rats.cl/operculo-toracico/estudio): estudio — radiografía, EMG, PVR, Doppler, angioTC; papel de la toxina botulínica
+- [https://rats.cl/operculo-toracico/tratamiento](https://rats.cl/operculo-toracico/tratamiento): tratamiento — manejo por urgencia, por qué se reseca la primera costilla, vías, transaxilar vs RATS, resultados publicados
 
 
 ## Sitios de la red, por tema

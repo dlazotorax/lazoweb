@@ -1,17 +1,22 @@
 # -*- coding: utf-8 -*-
-"""Convierte el lienzo de Claude Design (Operculo Toracico v2.dc.html) en 5 páginas estáticas
-para _design/maquetas/operculo/ (maqueta, no publicada)."""
-import re, json, html as H, sys
-sys.path.insert(0, '/tmp/claude-0/-home-claude/7e55ec31-f280-5494-b928-ae7e5af92107/scratchpad')
+"""Convierte el lienzo de Claude Design (lienzo-design-v2.dc.html) en 5 páginas estáticas.
+Uso, desde la raíz del repo:
+  python3 _design/maquetas/operculo/_build/convert_dc.py            # maqueta → _design/maquetas/operculo/
+  python3 _design/maquetas/operculo/_build/convert_dc.py --publicar # sitio   → dist/rats/operculo-toracico/
+La fuente de verdad es el lienzo; no editar los HTML generados a mano."""
+import re, json, html as H, sys, os, shutil
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..', '..'))
+sys.path.insert(0, HERE)
 from parts import PHYS
 
-DC = open('/home/claude/lazoweb/_design/maquetas/operculo/_build/lienzo-design-v2.dc.html', encoding='utf-8').read()
-V1 = open('/home/claude/lazoweb/_design/maquetas/operculo/_build/v1-descartada.html', encoding='utf-8').read()
+MAQUETA = '--publicar' not in sys.argv
+DC = open(os.path.join(HERE, 'lienzo-design-v2.dc.html'), encoding='utf-8').read()
+V1 = open(os.path.join(HERE, 'v1-descartada.html'), encoding='utf-8').read()
 GA4 = re.search(r'<!-- Google Analytics 4.*?\}, true\);\n  </script>\n', V1, re.S).group(0)
-OUT = '/home/claude/lazoweb/_design/maquetas/operculo/'
+OUT = os.path.join(ROOT, '_design/maquetas/operculo/') if MAQUETA else os.path.join(ROOT, 'dist/rats/operculo-toracico/')
 BASE = 'https://rats.cl/operculo-toracico'
-TODAY = '2026-09-08'
-MAQUETA = True
+TODAY = '2026-09-13'
 ACCENT = '#C4500E'   # naranjo levemente oscuro (David, 8-sep); el lienzo trae #0047FF
 DC = DC.replace('#0047FF', ACCENT).replace('#0047ff', ACCENT)
 
@@ -126,7 +131,7 @@ def build(key):
   <meta name="author" content="Dr. David Lazo Pérez" />
   <link rel="canonical" href="{url}" />
   {fonts}
-<!-- MAQUETA · no publicada · {TODAY} · diseño: lienzo Claude Design "Operculo Toracico v2" · pendiente de revisión de David -->
+{'<!-- MAQUETA · no publicada · '+TODAY+' · pendiente de revisión de David -->' if MAQUETA else ''}
   <style>
 {helmet_css.strip()}
   img {{ height: auto; max-width: 100%; }}
@@ -137,6 +142,7 @@ def build(key):
 '''
     doc = head + PHYS + ld(faq) + ld(web) + GA4 + '</head>\n<body>\n<div style="background:#F6F5F1">\n' + strip_html + nav_html + '\n' + main_html + '\n' + tail_html + '\n</div>\n</body>\n</html>\n'
     assert '{{' not in doc and 'sc-if' not in doc and 'onClick' not in doc and 'style-hover' not in doc, key
+    os.makedirs(OUT, exist_ok=True)
     open(OUT + fname, 'w', encoding='utf-8').write(doc)
     words = len(re.sub(r'<[^>]+>', ' ', re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', doc, flags=re.S)).split())
     print(fname, len(doc), 'bytes', words, 'palabras', len(faqs), 'FAQ')
@@ -145,3 +151,10 @@ def build(key):
 for k in PAGES: hoverize(mains[k]);
 hoverize(nav); hoverize(tail); hoverize(strip_hdr)
 for k in PAGES: build(k)
+# imágenes: se copian junto a las páginas (en la maqueta ya están ahí)
+src = os.path.join(ROOT, '_design/maquetas/operculo/imgs'); dst = os.path.join(OUT, 'imgs')
+if os.path.abspath(src) != os.path.abspath(dst):
+    os.makedirs(dst, exist_ok=True)
+    for f in os.listdir(src):
+        if f.endswith('.webp'): shutil.copy2(os.path.join(src, f), dst)
+    print('imgs copiadas a', dst)

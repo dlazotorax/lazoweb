@@ -22,7 +22,7 @@
 | hiperhidrosis.cl | 16 | Pacientes |
 | cancerpulmonar.cl | 7 | Pacientes |
 | broncoscopia.cl | 3 | Dual |
-| rats.cl | 1 | Médicos referentes |
+| rats.cl | 6 (`/` + `/operculo-toracico` y 4 subpáginas) | Médicos referentes |
 | videotoracoscopia.cl | 1 | VATS — dominio principal desde jul-2026 |
 | vats.cl | 308 → videotoracoscopia.cl | Redirect |
 | cirugiadetorax.cl | 308 → cirugiatoracica.cl | Redirect |
@@ -639,19 +639,19 @@ cancerpulmonar 668 KB · **rats 1.150 KB** (venía de 6.413 KB).
 | 5 | No existe `llms.txt` en ningún dominio | |
 | 6 | `videotoracoscopia.cl` es el único sin `FAQPage` | |
 
-### Maqueta `rats.cl/operculo-toracico` — lista para revisión final, NO publicada (13-sep-2026)
+### `rats.cl/operculo-toracico` — PREPARADO en el repo, pendiente de push (13-sep-2026)
 
-- Fuente: `_design/maquetas/operculo/` (5 páginas: portada, causas, clínica, estudio, tratamiento). Se
-  generan desde `_build/lienzo-design-v2.dc.html` con `_build/convert_dc.py`; no editar los HTML a mano.
-- Contenido revisado por David página por página (8–13 sep). Textos clínicos: PPT de David, Kök 2023,
-  Donahue 2020, Burt 2020 (PubMed) y criterio del autor. Regla de David: **nada clínico sin bibliografía**.
-- Acento `#C4500E`; 20 imágenes en `imgs/` (ilustraciones de David + fotos propias).
-- **Para publicar (solo con el OK explícito de David):** copiar a `dist/rats/operculo-toracico/`
-  (con `imgs/`), poner `MAQUETA = False` en `convert_dc.py` (enlaces absolutos) y quitar el comentario
-  MAQUETA del `<head>`; enlazar desde la tarjeta "Síndrome del Opérculo Torácico" de `dist/rats/index.html`,
-  la tarjeta "Opérculo torácico" del hub `dist/cirugiatoracica/index.html` y videotoracoscopia.cl;
-  añadir las 5 URL a `dist/rats/sitemap.xml` y `llms.txt`; `audit.py`; commit; push.
-- Vídeo del autor: pendiente (David lo produce aparte); ya no hay espacio reservado en la página.
+- Sección de 5 páginas en `dist/rats/operculo-toracico/` (`index`, `causas`, `clinica`, `estudio`,
+  `tratamiento` + `imgs/`, 20 webp). David revisó y aprobó el contenido página por página (8–13 sep).
+- **Fuente de verdad:** `_design/maquetas/operculo/_build/lienzo-design-v2.dc.html` (lienzo Claude Design).
+  Se regenera con `python3 _design/maquetas/operculo/_build/convert_dc.py --publicar` (sin flag genera la
+  maqueta en `_design/maquetas/operculo/`). **No editar los HTML generados a mano.**
+- Textos clínicos: PPT de David, Kök 2023, Donahue 2020, Burt 2020 (verificados en texto completo o PubMed)
+  y criterio del autor. Regla de David (12-sep): **nada clínico sin bibliografía, y no preguntar**.
+- Enlaces de entrada añadidos: tarjeta "Síndrome del Opérculo Torácico" en `dist/rats/index.html`,
+  tarjeta "Opérculo torácico" del hub (`dist/cirugiatoracica/index.html`) y pie de `dist/videotoracoscopia/index.html`.
+  Sitemap y `llms.txt` de rats.cl actualizados. `audit.py`: 39 páginas, todo correcto.
+- Pendiente tras publicar: vídeo del autor (en producción; se insertará en `tratamiento`), y Search Console.
 
 ### Tres dudas del CV pendientes de David
 

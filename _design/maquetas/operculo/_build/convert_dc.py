@@ -38,6 +38,15 @@ PAGES = {  # key: (archivo, url, title, description, name, migas)
    'Tratamiento del síndrome del opérculo torácico', 'Tratamiento'),
 }
 GO = {'goIndex':'index','goCausas':'causas','goClinica':'clinica','goEstudio':'estudio','goTratamiento':'tratamiento'}
+
+# H1 por página (13-sep-2026): cada URL con su propia consulta; la portada conserva el masthead original.
+H1S = {'index': 'Opérculo torácico', 'causas': 'Causas del opérculo torácico',
+       'clinica': 'Síntomas del opérculo torácico', 'estudio': 'Estudio del opérculo torácico',
+       'tratamiento': 'Tratamiento del opérculo torácico'}
+
+# Sinónimos en español, visibles en el texto de la portada (§2); por la regla
+# schema-visible solo se declaran en el alternateName de la portada.
+SINONIMOS_ES = ['Síndrome de la salida torácica', 'Síndrome del desfiladero torácico']
 def href(key):
     if MAQUETA: return PAGES[key][0]
     return PAGES[key][1]
@@ -108,6 +117,9 @@ def build(key):
         # El rotulo 'Maqueta de rediseno · no publicada' solo tiene sentido en la maqueta.
         strip_html = re.sub(r'<span style="color:#8F8F8F">Maqueta de rediseño · no publicada</span>\s*', '', strip_html)
         assert 'Maqueta de rediseño' not in strip_html
+    if H1S[key] != 'Opérculo torácico':
+        assert strip_html.count('>Opérculo torácico</h1>') == 1
+        strip_html = strip_html.replace('>Opérculo torácico</h1>', f'>{H1S[key]}</h1>')
     faqs = faqs_from(main_html)
     assert faqs, key
     crumbs = [('Cirugía torácica robótica','https://rats.cl/'),('Opérculo torácico',BASE)] + ([(crumb,url)] if crumb else [])
@@ -119,6 +131,9 @@ def build(key):
       "isPartOf":{"@type":"WebSite","@id":"https://rats.cl/#website","url":"https://rats.cl/","name":"RATS.cl","inLanguage":"es-CL"},
       "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":u} for i,(n,u) in enumerate(crumbs)]},
       "description":desc}
+    if key == 'index':
+        assert all(s.lower() in re.sub(r'<[^>]+>','',main_html).lower() for s in SINONIMOS_ES), 'sinónimos no visibles en la portada'
+        web['about']['alternateName'] += SINONIMOS_ES
     faq = {"@context":"https://schema.org","@type":"FAQPage","@id":url+"#faq","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs]}
     hover_css = '\n'.join(f'  .{c}:hover{{{css}}}' for css,c in hover_classes.items())
     head = f'''<!DOCTYPE html>

@@ -104,6 +104,10 @@ def build(key):
     nav_html = nav_for(key)
     tail_html = hoverize(tail)
     strip_html = hoverize(strip_hdr)
+    if not MAQUETA:
+        # El rotulo 'Maqueta de rediseno · no publicada' solo tiene sentido en la maqueta.
+        strip_html = re.sub(r'<span style="color:#8F8F8F">Maqueta de rediseño · no publicada</span>\s*', '', strip_html)
+        assert 'Maqueta de rediseño' not in strip_html
     faqs = faqs_from(main_html)
     assert faqs, key
     crumbs = [('Cirugía torácica robótica','https://rats.cl/'),('Opérculo torácico',BASE)] + ([(crumb,url)] if crumb else [])

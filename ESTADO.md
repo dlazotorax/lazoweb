@@ -1,7 +1,7 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
 > **Léeme primero.** Estado actual, reglas y pendientes. Evita proponer cosas ya hechas.
-> **Última actualización: 13 sep 2026** (opérculo publicado; el resto sin cambios desde 17-ago).
+> **Última actualización: 20 sep 2026** (entidad y eyebrows de hiperhidrosis.cl; opérculo publicado el 13-sep).
 > El detalle cronológico de cada sesión está en **`ESTADO-historico.md`**. Consúltalo solo
 > cuando necesites saber *por qué* algo quedó como quedó.
 
@@ -115,8 +115,11 @@ la raíz (`ESTADO.md`, `scripts/`) dan **0 despliegues**. Los CANCELED no consum
 ## 2. Identidad — datos canónicos
 
 - **ORCID:** `0009-0007-0806-6679`
-- **`@id` de la entidad:** `https://cirugiatoracica.cl/#david-lazo` — presente en las 33 páginas.
-  **Nunca crear un `@id` local por dominio.**
+- **`@id` de la entidad:** `https://cirugiatoracica.cl/#david-lazo` — presente en las 38 páginas
+  con `Physician` (`/links` no lo lleva). **Nunca crear un `@id` local por dominio.**
+- **El `@id` compartido obliga a que los datos colgados de él coincidan.** Los motores consolidan
+  por `@id`: si dos dominios le cuelgan valores distintos, la misma entidad llega con dos versiones.
+  Corregido en hiperhidrosis.cl el **20-sep-2026** — ver §5.f.
 - **Indexación del nombre:** SciELO → `Lazo P` · PubMed → **`Lazo P D`** · Elsevier → `P. David Lazo`.
   Buscar "Lazo D" o "David Lazo" devuelve cero; resuelto con "also known as" en ORCID.
 - **Homonimia:** su hermano Diego es el "Lazo D" de PubMed. La huella real de David son 5 artículos ahí.
@@ -349,10 +352,11 @@ nunca **Fellow**. Cero ocurrencias visibles de "FACS" en las 33 páginas y cero 
 **No es lo mismo:** el fellowship del ACS se otorga tras revisión de credenciales, certificación y
 referencias; "miembro" es genérico. La red lo degrada.
 
-**Arreglo pendiente:** `honorificSuffix: "FACS"` en el `Physician`, y cambiar *"miembro del American
-College of Surgeons"* por *"Fellow del American College of Surgeons (FACS), desde 2020"* donde
-aparezca visible. También revisar el resto de la tabla del CV por si hay más membresías con fecha
-que la red no refleja (ISHLT 2020, IASLC 2014, ERS 2015, Soc. de Cirujanos de Chile 2016).
+**`honorificSuffix: "FACS"` ya está en los 6 dominios** (verificado en producción el 20-sep-2026).
+Queda pendiente solo cambiar *"miembro del American College of Surgeons"* por *"Fellow del American
+College of Surgeons (FACS), desde 2020"* donde aparezca visible, y revisar el resto de la tabla del
+CV por si hay más membresías con fecha que la red no refleja (ISHLT 2020, IASLC 2014, ERS 2015,
+Soc. de Cirujanos de Chile 2016).
 
 **Novena pasada — #71, aportada por David.** *2° Curso de Actualización en Cirugía Torácica*,
 Clínica MEDS / IMP, Santiago, **26 de julio de 2024** (reel en su Instagram). Encaja en el hueco de
@@ -583,17 +587,55 @@ página y que ninguna ancla depende de ella. Renderizar antes y después.
 | cancerpulmonar/index | 3 | 0 | 2 quitadas · 1 fusión («Preguntas frecuentes sobre el cáncer pulmonar») |
 | cirugiatoracica/perfil | 5 | 0 | 3 quitadas · 2 fusiones («Formación y trayectoria» — sin el nombre, por longitud, decisión de David — y «Preguntas frecuentes sobre la atención»). El h2-claim «Cirugía Torácica de Vanguardia» intacto (§7) |
 | cv · docencia · publicaciones | 1+1+1 | 1+1+1 | **No eran decorativas**: son el enlace de retorno «← Dr. David Lazo Pérez» a `/perfil` (cv con BreadcrumbList). Conservadas sin versalitas (criterio 3) |
+| hiperhidrosis (16 pág.) | 20 | 10 | 20-sep-2026, commit `4bf65c7`. 10 quitadas por criterio 1 · 10 conservadas por criterio 3 y reestilizadas en `assets/site.css`. Detalle abajo |
+
+**hiperhidrosis.cl (20-sep-2026) — el conteo correcto es 20, no 36.** La cifra de 36 sale de
+sumar las **16 `cta-eyebrow`** (una por página), que son **otra familia** y siguen en pie por la
+decisión de más abajo. `class="eyebrow"` en el cuerpo: **20**.
+
+- **Quitadas (10)** — repetían el `h` vecino o eran relleno valorativo: portada ×4 («Entender la
+  condición», «Autoevaluación», «Alternativas reales», «Recursos»), `/blog/` («Recursos»),
+  `/cirugia-hiperhidrosis/` («Tratamiento quirúrgico»), `/rubor-facial-patologico/` («Otra cara de
+  la condición»), `/sobre-la-hiperhidrosis/` ×2 y `/test-nivel-de-severidad/` («Autoevaluación»).
+- **Conservadas (10)** — criterio 3, ubican la página dentro de una serie: los 7 «Blog · ‹tema›»
+  de los posts y los 3 «Grados de severidad» de leve/moderada/severa.
+- También se eliminó `.navy-panel__head .eyebrow`, que quedó huérfana.
 
 **Pendiente — fuera del inventario del encargo (detectado al cerrar):**
 `cirugiatoracica/index.html` tiene **7** `class="eyebrow"` del rediseño 3a — ojo:
 una de ellas ES el `h2` SEO «Enfermedades que tratamos» (el titular visible grande
-es un div); ahí la etiqueta no se puede quitar sin mover el h2. Y las 16 páginas de
-`hiperhidrosis.cl` suman **~20** más. Revisar con el mismo criterio, página a página.
+es un div); ahí la etiqueta no se puede quitar sin mover el h2.
 
 **Pendiente — familias no tocadas en esta pasada, se deciden aparte:**
 `cta-eyebrow` (29) — probablemente se quedan: en el CTA la etiqueta sí introduce
 un cambio de contexto · `sec-eyebrow` (12) · `bio-eyebrow` (4, p. ej. «Especialista»
 en la tarjeta de bio de /perfil) · `hero-eyebrow` (2) · `page-nav-eyebrow` (2).
+
+### 5.f Entidad `Physician` de hiperhidrosis.cl alineada con el hub (20-sep-2026)
+
+Los 6 dominios comparten el `@id` `https://cirugiatoracica.cl/#david-lazo`, pero hiperhidrosis.cl
+le colgaba datos distintos en sus 16 páginas: **el mismo identificador llegaba a los motores con dos
+nombres**. Corregido copiando lo que los otros cinco dominios ya publican — no es una afirmación
+nueva, así que no requería aprobación. Commit `7c817c1`.
+
+| Campo | Antes (las 16) | Ahora |
+|---|---|---|
+| `name` | «Dr. David Lazo» | **«Dr. David Lazo Pérez»** |
+| `medicalSpecialty` | `schema.org/Surgical` | los 3 valores del hub |
+| `jobTitle` · `knowsAbout` (9) · `worksFor` (2 `Hospital`) · `availableService` | ausentes | **añadidos, idénticos al hub** |
+
+- **`hasCredential` se dejó fuera a propósito.** Declara *«Cirugía Torácica — Universidad de
+  Chile»* y ese texto **no está visible en ninguna de las 16 páginas** («Universidad de Chile» en
+  0/16; «Cirugía Torácica» solo en 1/16). Ponerlo infringiría la §3.3. Si alguna vez se quiere,
+  primero tiene que aparecer en el texto.
+- **`availableService` sí entró**: el box «Agendar consulta · Clínica Las Condes · Telemedicina»
+  está visible en las 16.
+- Intactos `@id`, `subjectOf`, `honorificSuffix`, `memberOf`, `sameAs`, `alumniOf`, `affiliation`,
+  `description` (propia del vertical), `address`, `areaServed`, `identifier`, `image` y `url`.
+
+> **Detalle menor sin resolver:** el `url` del `Physician` es `https://cirugiatoracica.cl` en
+> hiperhidrosis y `https://cirugiatoracica.cl/` (con barra) en el hub. No se tocó porque estaba
+> fuera del encargo; conviene unificarlo cuando se toque el schema del hub.
 
 ### GA4 — primera medición real
 
@@ -634,10 +676,41 @@ cancerpulmonar 668 KB · **rats 1.150 KB** (venía de 6.413 KB).
 |---|---|---|
 | 1 | Acordeón de FAQ en el resto de hiperhidrosis.cl | Verificado 17-ago: `rubor-facial-patologico` no tiene ni un `.faq-q` |
 | 2 | `/rats-vs-vats` — contenido nuevo | Verificado 17-ago: `dist/rats/` solo tiene `index.html` |
-| 3 | 7 páginas bajo 400 palabras (todas en hiperhidrosis.cl) | |
-| 4 | `hiperhidrosis.cl` no nombra `OAI-SearchBot` ni `ChatGPT-User` en robots.txt | Cosmético: el comodín ya los cubre |
-| 5 | No existe `llms.txt` en ningún dominio | |
-| 6 | `videotoracoscopia.cl` es el único sin `FAQPage` | |
+| 3 | **14** de las 16 páginas de hiperhidrosis.cl bajo 400 palabras | Medido el 20-sep-2026 (antes se decía 7). **Ninguna es plantilla vacía** — ver §6.b antes de escribir nada |
+| 4 | `videotoracoscopia.cl` es el único sin `FAQPage` | |
+
+> Los antiguos #4 (`hiperhidrosis.cl` sin `OAI-SearchBot`/`ChatGPT-User`) y #5 (no existe
+> `llms.txt`) **se eliminan: ambos están hechos**, verificados en producción el 20-sep-2026.
+> Los 6 dominios sirven `robots.txt` con los 9 bots de IA y `llms.txt` como `text/plain`.
+
+### 6.b Contenido de hiperhidrosis.cl — diagnóstico (20-sep-2026)
+
+Medido con el CTA y la navegación excluidos. **14 de 16 bajo 400 palabras, pero ninguna es
+plantilla con relleno**: todas tienen texto propio. La cifra baja tiene tres causas distintas y
+cada una pide una respuesta distinta —o ninguna.
+
+| Tipo | Páginas | Qué pasa |
+|---|---|---|
+| **Estructural, no es déficit** | `/blog/` (índice de los 7 posts) · `/test-nivel-de-severidad/` (herramienta: 10 enunciados + 40 radios, **en HTML plano**) · `/` (hub de tarjetas hacia el test, los tratamientos y el blog) | Contar palabras aquí no mide nada. **No ampliar.** |
+| **Texto real corto, con contenido clínico específico** | `/hiperhidrosis-localizada-leve/` (cloruro de aluminio: mecanismo, pauta nocturna, 98% de efectividad, irritación) · `/hiperhidrosis-localizada-severa/` (simpatectomía, videotoracoscopía, quién la hace, plantar experimental) | Son cortas de verdad. **`leve` es la única genuinamente subdesarrollada**: su hermana `moderada` (317 pal.) da a cada tratamiento su `h2` con posología y cifras; `leve` explica uno solo en prosa corrida y sin subtítulos. `severa` es corta **a propósito**: deriva a `/cirugia-hiperhidrosis/` (1.144 pal.) |
+| **Posts de 2020-21, artículos reales** | los 7 de `/20xx/` | Tienen estructura y contenido propios. El problema no es el tamaño: es el **registro**. Tutean, exclaman («¡Dile adiós a la hiperhidrosis!», «¡Recuerda seguirnos en nuestro Instagram!») y cierran con llamadas a redes. Choca con la §3.2 y con el resto de la red rediseñada |
+
+**Las dos largas:** `/cirugia-hiperhidrosis/` (1.144 pal., 9 FAQ) y `/sobre-la-hiperhidrosis/`
+(877 pal.). Son las que sostienen el dominio.
+
+**Hallazgo de arquitectura:** el sitio se organiza por **grado de severidad** (leve/moderada/severa),
+pero la demanda de búsqueda está en el **nombre del tratamiento**. «Toxina botulínica»,
+«iontoforesis» y «medicación oral» no tienen página propia: viven en una línea de la portada y
+dentro de `/hiperhidrosis-localizada-moderada/`. Es el hueco más grande del dominio, y no se
+resuelve alargando las páginas que ya existen.
+
+**Fuera de alcance por la §3.4:** no se amplían `/2020/11/13/sudoracion-compensatoria…/` ni
+`/rubor-facial-patologico/`. Son las dos que mejor rankean; es una decisión, no un error.
+
+> **Discrepancia menor detectada:** el post de sudoración compensatoria vive en `/2020/11/13/`
+> pero su `datePublished` dice `2020-11-14`. Un día de diferencia entre la URL y el schema. No se
+> tocó: corregir el schema sería adivinar cuál de las dos es la buena, y mover la URL rompería
+> enlaces.
 
 ### `rats.cl/operculo-toracico` — PUBLICADO (13-sep-2026)
 

@@ -1,7 +1,8 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
 > **Léeme primero.** Estado actual, reglas y pendientes. Evita proponer cosas ya hechas.
-> **Última actualización: 20 sep 2026** (entidad y eyebrows de hiperhidrosis.cl; opérculo publicado el 13-sep).
+> **Última actualización: 22 sep 2026** (correcciones del reanálisis del 20-sep: backlinks cancelados, Doctoralia,
+> cuenta GSC, opérculo indexado, `/docencia`; medición de Instagram vía Metricool).
 > El detalle cronológico de cada sesión está en **`ESTADO-historico.md`**. Consúltalo solo
 > cuando necesites saber *por qué* algo quedó como quedó.
 
@@ -124,7 +125,7 @@ la raíz (`ESTADO.md`, `scripts/`) dan **0 despliegues**. Los CANCELED no consum
   Buscar "Lazo D" o "David Lazo" devuelve cero; resuelto con "also known as" en ORCID.
 - **Homonimia:** su hermano Diego es el "Lazo D" de PubMed. La huella real de David son 5 artículos ahí.
 - **Afiliación vigente:** Clínica Las Condes (desde ene-2026) + Hospital Clínico San Borja Arriarán
-  (desde oct-2022). **MEDS terminó en dic-2025** — sigue apareciendo en LinkedIn indexado y en la
+  (desde oct-2022). **MEDS terminó en dic-2025** — ya no aparece en la SERP del nombre (20-sep-2026); sigue en la
   ficha del 94° Congreso Argentino.
 - **Formación:** Médico-Cirujano PUC (2004) · Esp. Cirugía Torácica U. de Chile / INT (2009) ·
   Fellowship Trasplante Pulmonar, H.U. Puerta de Hierro Majadahonda (2010-2011).
@@ -529,6 +530,12 @@ Todo lo que va en JSON-LD **debe estar visible en la página**. Hubo un `FAQPage
 - **No soltar vats.cl:** un .cl de 4 letras, pagado hasta 2028, es el atajo que se dice en voz alta.
 - **Los claims de «pionero» y «referente» se quedan** (decisión de David, 17-ago). Ver §7.
 - **Graphify no aplica**: indexa grafos de dependencias de código; aquí es HTML estático.
+- **NO pedir backlinks a sociedades científicas ni instituciones** (WABIP, SOCICH, Finis Terrae,
+  HCSBA ni ninguna otra). Decisión de David, 20-sep-2026, **definitiva**: que una sociedad enlace
+  a un médico en particular es recomendarlo, y es impropio. No reproponer en ninguna forma —
+  ni correos, ni plantillas, ni «notas institucionales». Ver `claude/decision-no-pedir-backlinks.md`.
+- **No desmentir la nota de FALP** («primera cirugía robótica de tórax del país», 2022). Decisión de
+  David, 20-sep-2026. Cronología real en `claude/cronologia-robotica-toracica-chile.md`.
 
 ---
 
@@ -558,7 +565,13 @@ Todo lo que va en JSON-LD **debe estar visible en la página**. Hubo un `FAQPage
 | **Total** | **1.022** | **21** | |
 
 Venía de 700/10 el 5-ago y 558/8 el 30-jul. **rats.cl es el mejor activo.**
-Cuenta de GSC: **`dr.david.lazo@gmail.com`** (authuser=1); `dlazo.torax@` no tiene propiedades.
+Cuenta de GSC: **`dr.david.lazo@gmail.com`**; `dlazo.torax@` no tiene propiedades. **Ojo:** al
+20-sep-2026 esa cuenta es `authuser=0`; `authuser=1` resuelve a `dlazo.torax@` (sin acceso).
+
+**Lectura del 20-sep-2026 (3 meses, 19-jun → 18-sep):** red **3.405 impr / 68 clics**, 370 en IA
+generativa de Google. rats.cl 705/21/**6,7** · cirugiatoracica 802/18/20,6 · cancerpulmonar
+690/15/29,1 · hiperhidrosis 507/5/42,2 · videotoracoscopia 371/3/7,8 · broncoscopia 330/6/13,6.
+Ningún dominio retrocedió. Detalle en `claude/reanalisis-2026-09-20.md`.
 
 **Lo que no se movió, para no engañarse:** `cirugía de tórax` sigue en **82,9** pese al cambio
 de vocabulario del 2-ago, y `/cirugia-hiperhidrosis/` en **60,7** pese a la reescritura completa.
@@ -657,18 +670,21 @@ cancerpulmonar 668 KB · **rats 1.150 KB** (venía de 6.413 KB).
 
 | # | Qué | Por qué importa |
 |---|---|---|
-| 1 | **Pedir el enlace a WABIP, SOCICH y Finis Terrae** | Única vía de backlink institucional. Backlinks actuales: **cero**. Ya existe `/docencia` como URL concreta que pedirles que enlacen |
-| 2 | **GBP: conseguir reseñas** | Tiene **0**; en Doctoralia tiene 58. Es la ficha que sale al googlear su nombre |
+| 1 | **ORCID: borrar el duplicado y cargar la regencia WABIP** (ver #5 y #6) | Es la fuente de autoridad externa más fuerte que controla él entero. Sube a #1 tras cancelar los backlinks (§4) |
+| 2 | **GBP: conseguir reseñas** | Tiene **0** (20-sep). Es la ficha que sale al googlear su nombre |
 | 3 | **GA4: marcar conversiones** | `reserva_presencial` y `reserva_telemedicina` como eventos clave + los 6 dominios en Admin → Flujos de datos |
-| 4 | **Fusionar las 2 fichas de Doctoralia** | 58 reseñas partidas |
+| 4 | **Fusionar las 2 fichas de Doctoralia y conseguir reseñas** | **1 opinión en total, no 58** (verificado 20-sep): `/david-rene-lazo-perez` 1 (feb-2024), `/david-rene-lazo-perez-3` (la completa) 0. Doctoralia es el #1 de «cirujano torácico Santiago» y lo nombra en el snippet. No se sabe de dónde salió el 58: no reusarlo |
 | 5 | **ORCID: borrar el duplicado** "Resistencia a ciprofloxacino" (marca 32, son 31) | 2 minutos |
 | 6 | **ORCID: cargar la regencia WABIP** | Su credencial internacional más fuerte, ausente del registro |
-| 7 | **LinkedIn: sigue indexado como "Clínica MEDS"** | Aparece así en las respuestas de IA |
+| 7 | ~~LinkedIn indexado como «Clínica MEDS»~~ | **Cerrado 20-sep-2026**: ya no aparece en la SERP del nombre. Sigue pendiente cerrar el perfil duplicado y la URL personalizada (§2, LinkedIn) |
 | 8 | **@hiperhidrosis.cl (IG): cambiar el enlace de beacons.page** | Debería ir a hiperhidrosis.cl o al perfil |
 | 9 | GBP: cargar horario y categoría | Google lo pide en el panel |
 | 10 | Cerrar el convenio para publicar la sección de cobertura | El hueco más grande de "cirugía hiperhidrosis" |
 | 11 | CV: corregir coautores omitidos | #17 lista 4 de 14; #14 lista 4 de 9 ("Yévene" → **Yévenes**); #18 falta Clavero JM |
 | 12 | TopDoctors: reactivar | "no es posible contactar" |
+
+| 13 | **Instagram @dr.david.lazo.p: cadencia** | Metricool (conectado 7-sep-2026): **2.437 seguidores, planos** (+4 en dos semanas). 4 reels entre jul y sep (9-jul, 9-ago, 16-ago, 14-sep) y **0 historias**. Cada reel alcanza 440-975 cuentas; entre reels, el alcance cae a menos de 15 al día. El problema es la frecuencia, no la calidad |
+| 14 | **Verificar que `/docencia` entró en Google** | No estaba indexada («Google no reconoce esta URL»); indexación solicitada el 20-sep-2026. Sitemap correcto. Si a las 2-3 semanas sigue fuera, revisar enlazado interno |
 
 ### De Claude
 
@@ -719,7 +735,9 @@ resuelve alargando las páginas que ya existen.
   la portada conserva el masthead) y **sinónimos en español** —«síndrome de la salida torácica»,
   «síndrome del desfiladero torácico»— visibles en la portada (§2) y declarados en el
   `alternateName` solo de la portada (regla 3.3). Todo generado desde el lienzo con `convert_dc.py`.
-- **Pendiente tras publicar:** solicitar indexación de las 5 URL en GSC (David) · vídeo del autor
+- **Indexación: hecha sola** — 6/6 URL de rats.cl indexadas al 20-sep, sin solicitarla. 7 de las 10
+  consultas principales ya son del opérculo, pero anatómicas/académicas y con 0 clics.
+- **Pendiente tras publicar:** vídeo del autor
   para `tratamiento` (en producción; irá con `VideoObject`).
 
 - Sección de 5 páginas en `dist/rats/operculo-toracico/` (`index`, `causas`, `clinica`, `estudio`,
@@ -732,7 +750,7 @@ resuelve alargando las páginas que ya existen.
 - Enlaces de entrada añadidos: tarjeta "Síndrome del Opérculo Torácico" en `dist/rats/index.html`,
   tarjeta "Opérculo torácico" del hub (`dist/cirugiatoracica/index.html`) y pie de `dist/videotoracoscopia/index.html`.
   Sitemap y `llms.txt` de rats.cl actualizados. `audit.py`: 39 páginas, todo correcto.
-- Pendiente tras publicar: vídeo del autor (en producción; se insertará en `tratamiento`), y Search Console.
+- Pendiente tras publicar: vídeo del autor (en producción; se insertará en `tratamiento`).
 
 ### Tres dudas del CV pendientes de David
 
@@ -761,8 +779,13 @@ El tercero es el diagnóstico: buscando su nombre + "publicaciones", la IA no en
 `/publicaciones` —31 referencias con `ScholarlyArticle`— y responde que no hay datos. Los
 directorios de terceros tapan sus propios sitios.
 
-**El on-page está resuelto.** Lo que falta son dominios externos que lo respalden. Por eso el
-pendiente #1 de David es el único que mueve la aguja.
+**El on-page está resuelto.** Lo que falta son dominios externos que lo respalden.
+
+**Actualización 20-sep-2026:** la vía institucional (pedir enlaces a sociedades) está **cerrada
+por norma profesional** — ver §4. El diagnóstico sigue en pie, pero la conclusión ya no es «pedir
+enlaces». Lo que queda, sin pedirle nada a nadie: **ORCID** (regencia WABIP, duplicado),
+**Wikidata** (entidad factual), **directorios propios** (Doctoralia, GBP, TopDoctors, CTSNet) con
+reseñas de pacientes, y **producción indexada** con DOI. Y aceptar que el resto es lento.
 
 ### Sobre el claim de EBUS y Clínica Alemana
 

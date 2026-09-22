@@ -235,6 +235,7 @@ que el resto es lento.
 | 8 | Acordeón de FAQ en `rubor-facial-patologico` (tiene `FAQPage` visible, falta la interfaz) | |
 | 9 | Eyebrows: 7 `class="eyebrow"` en `cirugiatoracica/index.html` (una **es** el `h2` «Enfermedades que tratamos»); familias `cta-/sec-/bio-/hero-/page-nav-eyebrow` sin decidir | Criterio en el histórico |
 | 10 | Menores: `url` del `Physician` con/sin barra final (hiperhidrosis vs hub); post SC en `/2020/11/13/` con `datePublished` 2020-11-14 (no tocar sin saber cuál es la buena) | |
+| 11 | **cancerpulmonar.cl — pendientes tras alinear a NCCN NSCLC v9.2026 (22-sep):** (a) sobrevida por estadio: las cifras publicadas coinciden con la **8ª ed.** y se atribuyen a la 9ª → abrir la publicación IASLC 9ª ed. (JTO) o retirar; (b) screening «50–80 años / ≤15 años sin fumar» es USPSTF, no NCCN → verificar en NCCN *Lung Cancer Screening*; (c) frecuencias de la tabla de biomarcadores sin fuente (EGFR «Chile/LATAM», HER2 IHC3+ 5–10 %, MET, PD-L1); (d) nunca fumadores «15–20 %» vs «1 de cada 3 en Chile» (causas); (e) «sotorasib en Chile desde 2024» y «>60 % en III–IV»; (f) CPCP: cirugía en el párrafo de enfermedad extendida y atezolizumab en limitada → revisar con NCCN SCLC | Nada se publica sin fuente primaria (§1.1) |
 
 ---
 

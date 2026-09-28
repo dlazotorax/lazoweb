@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobrevida del cáncer pulmonar por estadio TNM</title>
-  <meta name="description" content="Datos de sobrevida del cáncer pulmonar por estadio según la clasificación TNM 9ª edición (IASLC 2023). Factores pronósticos y perspectivas de recuperación." />
+  <meta name="description" content="Datos de sobrevida del cáncer pulmonar por estadio según la clasificación TNM 9ª edición (IASLC 2024). Factores pronósticos y perspectivas de recuperación." />
   <link rel="canonical" href="https://cancerpulmonar.cl/sobrevida" />
   <script type="application/ld+json">
 {
@@ -166,8 +166,8 @@
   "reviewedBy": {
     "@id": "https://cirugiatoracica.cl/#david-lazo"
   },
-  "lastReviewed": "2026-08-28",
-  "dateModified": "2026-08-28",
+  "lastReviewed": "2026-09-28",
+  "dateModified": "2026-09-28",
   "specialty": "https://schema.org/PulmonaryMedicine",
   "isPartOf": {
     "@type": "WebSite",
@@ -176,7 +176,7 @@
     "name": "CancerPulmonar.cl",
     "inLanguage": "es-CL"
   },
-  "description": "Datos de sobrevida del cáncer pulmonar por estadio según la clasificación TNM 9ª edición (IASLC 2023). Factores pronósticos y perspectivas de recuperación."
+  "description": "Datos de sobrevida del cáncer pulmonar por estadio según la clasificación TNM 9ª edición (IASLC 2024). Factores pronósticos y perspectivas de recuperación."
 }
   </script>
 <meta name="keywords" content="sobrevida cáncer pulmonar, pronóstico cáncer pulmón, supervivencia por estadio TNM, factores pronósticos" />
@@ -185,13 +185,13 @@
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Dr. David Lazo Pérez — Cáncer Pulmonar" />
   <meta property="og:title" content="Sobrevida del cáncer pulmonar por estadio TNM" />
-  <meta property="og:description" content="Datos de sobrevida del cáncer pulmonar por estadio según la clasificación TNM 9ª edición (IASLC 2023). Factores pronósticos y perspectivas de recuperación." />
+  <meta property="og:description" content="Datos de sobrevida del cáncer pulmonar por estadio según la clasificación TNM 9ª edición (IASLC 2024). Factores pronósticos y perspectivas de recuperación." />
   <meta property="og:url" content="https://cancerpulmonar.cl/sobrevida" />
   <meta property="og:image" content="https://cancerpulmonar.cl/imgs/foto-dr-lazo.jpg" />
   <meta property="og:locale" content="es_CL" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sobrevida del cáncer pulmonar por estadio TNM" />
-  <meta name="twitter:description" content="Datos de sobrevida del cáncer pulmonar por estadio según la clasificación TNM 9ª edición (IASLC 2023). Factores pronósticos y perspectivas de recuperación." />
+  <meta name="twitter:description" content="Datos de sobrevida del cáncer pulmonar por estadio según la clasificación TNM 9ª edición (IASLC 2024). Factores pronósticos y perspectivas de recuperación." />
   <meta name="twitter:image" content="https://cancerpulmonar.cl/imgs/foto-dr-lazo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -288,12 +288,8 @@
     .surv-pct { min-width:48px; text-align:right; font-size:0.9rem; font-weight:700; }
 
     /* Colors by survival rate */
-    .s-ia1 .surv-bar-fill { background:linear-gradient(90deg,#059669,#34d399); }
-    .s-ia1 .surv-pct { color:#34d399; }
-    .s-ia2 .surv-bar-fill { background:linear-gradient(90deg,#059669,#34d399); }
-    .s-ia2 .surv-pct { color:#34d399; }
-    .s-ia3 .surv-bar-fill { background:linear-gradient(90deg,#0284c7,#22d3ee); }
-    .s-ia3 .surv-pct { color:#22d3ee; }
+    .s-ia .surv-bar-fill { background:linear-gradient(90deg,#059669,#34d399); }
+    .s-ia .surv-pct { color:#34d399; }
     .s-ib .surv-bar-fill { background:linear-gradient(90deg,#0284c7,#22d3ee); }
     .s-ib .surv-pct { color:#22d3ee; }
     .s-iia .surv-bar-fill { background:linear-gradient(90deg,#0891b2,#67e8f9); }
@@ -732,123 +728,105 @@
 
   <h2>Sobrevida a 5 años por estadio TNM 9ª edición</h2>
   <p>
-    Los datos siguientes provienen de la base de datos internacional de la <strong>IASLC</strong> (International Association for the Study of Lung Cancer), que recopiló más de 100.000 casos de cáncer pulmonar para establecer la 9ª edición de la clasificación TNM (2023). Representan el estándar mundial más actualizado.
+    Los datos siguientes provienen de la base de datos internacional de la <strong>IASLC</strong> (International Association for the Study of Lung Cancer), que registró 124.581 casos de cáncer pulmonar (76.518 analizables) para establecer la 9ª edición de la clasificación TNM. Las propuestas se publicaron en 2024 y la 9ª edición rige desde enero de 2025. Representan el estándar mundial más actualizado.
   </p>
 
   <div class="survival-section">
     <div class="survival-header">
       <h3>Sobrevida a 5 años · CPCNP (Cáncer de Células No Pequeñas)</h3>
-      <span class="survival-badge">IASLC 9ª Edición · 2023</span>
+      <span class="survival-badge">IASLC 9ª Edición · Estadio clínico</span>
     </div>
 
-    <div class="survival-row s-ia1">
-      <div class="surv-stage"><span class="surv-stage-pill sp-ia">IA1</span></div>
+    <div class="survival-row s-ia">
+      <div class="surv-stage"><span class="surv-stage-pill sp-ia">IA</span></div>
       <div class="surv-bar-wrap">
-        <div class="surv-label">Tumor ≤1 cm · Sin ganglios · Sin metástasis</div>
-        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:92%;"></div></div>
+        <div class="surv-label">T1 (≤3 cm) · N0 · M0 · IC 95&nbsp;% 82–83 · n&nbsp;=&nbsp;22.676</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:82%;"></div></div>
       </div>
-      <div class="surv-pct">92%</div>
-    </div>
-
-    <div class="survival-row s-ia2">
-      <div class="surv-stage"><span class="surv-stage-pill sp-ia">IA2</span></div>
-      <div class="surv-bar-wrap">
-        <div class="surv-label">Tumor 1–2 cm · Sin ganglios</div>
-        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:83%;"></div></div>
-      </div>
-      <div class="surv-pct">83%</div>
-    </div>
-
-    <div class="survival-row s-ia3">
-      <div class="surv-stage"><span class="surv-stage-pill sp-ia">IA3</span></div>
-      <div class="surv-bar-wrap">
-        <div class="surv-label">Tumor 2–3 cm · Sin ganglios</div>
-        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:77%;"></div></div>
-      </div>
-      <div class="surv-pct">77%</div>
+      <div class="surv-pct">82%</div>
     </div>
 
     <div class="survival-row s-ib">
       <div class="surv-stage"><span class="surv-stage-pill sp-ib">IB</span></div>
       <div class="surv-bar-wrap">
-        <div class="surv-label">Tumor 3–4 cm · Sin ganglios</div>
-        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:68%;"></div></div>
+        <div class="surv-label">T2a (3–4 cm) · N0 · M0 · IC 95&nbsp;% 67–70 · n&nbsp;=&nbsp;5.577</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:69%;"></div></div>
       </div>
-      <div class="surv-pct">68%</div>
+      <div class="surv-pct">69%</div>
     </div>
 
     <div class="survival-row s-iia">
       <div class="surv-stage"><span class="surv-stage-pill sp-iia">IIA</span></div>
       <div class="surv-bar-wrap">
-        <div class="surv-label">Tumor 4–5 cm · Sin ganglios</div>
-        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:60%;"></div></div>
+        <div class="surv-label">T2b (4–5 cm) N0 · o T1 N1 · IC 95&nbsp;% 60–64 · n&nbsp;=&nbsp;3.331</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:62%;"></div></div>
       </div>
-      <div class="surv-pct">60%</div>
+      <div class="surv-pct">62%</div>
     </div>
 
     <div class="survival-row s-iib">
       <div class="surv-stage"><span class="surv-stage-pill sp-iib">IIB</span></div>
       <div class="surv-bar-wrap">
-        <div class="surv-label">Tumor 5–7 cm o ganglios ipsilaterales</div>
-        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:53%;"></div></div>
+        <div class="surv-label">T3 N0 · T2 N1 · T1 N2a · IC 95&nbsp;% 53–56 · n&nbsp;=&nbsp;4.285</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:54%;"></div></div>
       </div>
-      <div class="surv-pct">53%</div>
+      <div class="surv-pct">54%</div>
     </div>
 
     <div class="survival-row s-iiia">
       <div class="surv-stage"><span class="surv-stage-pill sp-iiia">IIIA</span></div>
       <div class="surv-bar-wrap">
-        <div class="surv-label">Ganglios mediastínicos ipsilaterales</div>
-        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:36%;"></div></div>
+        <div class="surv-label">T4 N0 · T3–T4 N1 · T2–T3 N2a · T1 N2b · IC 95&nbsp;% 42–46 · n&nbsp;=&nbsp;3.725</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:44%;"></div></div>
       </div>
-      <div class="surv-pct">36%</div>
+      <div class="surv-pct">44%</div>
     </div>
 
     <div class="survival-row s-iiib">
       <div class="surv-stage"><span class="surv-stage-pill sp-iiib">IIIB</span></div>
       <div class="surv-bar-wrap">
-        <div class="surv-label">Ganglios contralaterales / supraclaviculares</div>
-        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:26%;"></div></div>
+        <div class="surv-label">T1–T2 N3 · T2–T3 N2b · T4 N2a–N2b · IC 95&nbsp;% 28–34 · n&nbsp;=&nbsp;1.592</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:31%;"></div></div>
       </div>
-      <div class="surv-pct">26%</div>
+      <div class="surv-pct">31%</div>
     </div>
 
     <div class="survival-row s-iiic">
       <div class="surv-stage"><span class="surv-stage-pill sp-iiic">IIIC</span></div>
       <div class="surv-bar-wrap">
-        <div class="surv-label">Tumor avanzado + ganglios contralaterales</div>
-        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:13%;"></div></div>
+        <div class="surv-label">T3–T4 N3 · IC 95&nbsp;% 16–25 · n&nbsp;=&nbsp;682</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:21%;"></div></div>
       </div>
-      <div class="surv-pct">13%</div>
+      <div class="surv-pct">21%</div>
     </div>
 
     <div class="survival-row s-iva">
       <div class="surv-stage"><span class="surv-stage-pill sp-iva">IVA</span></div>
       <div class="surv-bar-wrap">
-        <div class="surv-label">Metástasis en un órgano / derrame pleural</div>
-        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:10%;"></div></div>
+        <div class="surv-label">M1a o M1b · IC 95&nbsp;% 16–19 · n&nbsp;=&nbsp;8.341</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:18%;"></div></div>
       </div>
-      <div class="surv-pct">10%</div>
+      <div class="surv-pct">18%</div>
     </div>
 
     <div class="survival-row s-ivb">
       <div class="surv-stage"><span class="surv-stage-pill sp-ivb">IVB</span></div>
       <div class="surv-bar-wrap">
-        <div class="surv-label">Metástasis en múltiples órganos</div>
-        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:4%;"></div></div>
+        <div class="surv-label">M1c1 o M1c2 · IC 95&nbsp;% 6–8 · n&nbsp;=&nbsp;7.899</div>
+        <div class="surv-bar-track"><div class="surv-bar-fill" style="width:7%;"></div></div>
       </div>
-      <div class="surv-pct">&lt;5%</div>
+      <div class="surv-pct">7%</div>
     </div>
 
   </div>
 
   <p style="font-size:0.82rem; color:rgba(143,163,188,0.6); margin-top:-1rem; margin-bottom:2rem;">
-    Fuente: IASLC Staging Project, 9ª edición (2023). Datos de sobrevida observada. Los datos del estadio IV no incluyen el impacto de las nuevas terapias dirigidas e inmunoterapia, que pueden mejorar significativamente estos números en pacientes con marcadores moleculares favorables.
+    Fuente: Rami-Porta R, Nishimura KK, Giroux DJ, Detterbeck F, et al. The IASLC Lung Cancer Staging Project: Proposals for Revision of the TNM Stage Groups in the Forthcoming (Ninth) Edition of the TNM Classification for Lung Cancer. <em>J Thorac Oncol</em> 2024;19(7):1007-1027. <a href="https://doi.org/10.1016/j.jtho.2024.02.011" target="_blank" rel="noopener">DOI 10.1016/j.jtho.2024.02.011</a>. Sobrevida global (OS) por estadio clínico. Los datos del estadio IV no incluyen el impacto de las nuevas terapias dirigidas e inmunoterapia, que pueden mejorar significativamente estos números en pacientes con marcadores moleculares favorables.
   </p>
 
   <h2>El impacto del diagnóstico precoz</h2>
   <p>
-    La diferencia entre detectar el cáncer en estadio IA1 (92% de sobrevida) versus estadio IVB (&lt;5%) es enorme. Esto explica por qué el <strong>screening con TAC de baja dosis</strong> en personas de alto riesgo puede salvar vidas: permite detectar tumores pequeños, antes de que den síntomas, cuando todavía son totalmente operables.
+    La diferencia entre detectar el cáncer en estadio IA (82% de sobrevida) versus estadio IVB (7%) es enorme. Esto explica por qué el <strong>screening con TAC de baja dosis</strong> en personas de alto riesgo puede salvar vidas: permite detectar tumores pequeños, antes de que den síntomas, cuando todavía son totalmente operables.
   </p>
   <p>
     Desafortunadamente, más del 60% de los cánceres pulmonares en Chile se diagnostican en estadio III o IV, cuando las posibilidades de curación son menores. Esta es la principal razón por la que la mortalidad del cáncer pulmonar sigue siendo alta.
@@ -982,7 +960,7 @@
     <div class="faq-list">
         <div class="faq-item">
           <button class="faq-q">¿Cuánto tiempo de vida tiene una persona con cáncer de pulmón en etapa IV?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">No hay una cifra que valga para una persona. Los datos poblacionales de la IASLC muestran una sobrevida a 5 años del 10 % en IVA y menor al 5 % en IVB, pero fueron obtenidos antes de que las terapias dirigidas y la inmunoterapia cambiaran el pronóstico en pacientes con marcadores favorables. El pronóstico real depende del tipo de tumor, sus marcadores moleculares y la respuesta al tratamiento.</div>
+          <div class="faq-a">No hay una cifra que valga para una persona. Los datos poblacionales de la IASLC muestran una sobrevida a 5 años del 18 % en IVA y 7 % en IVB, pero fueron obtenidos antes de que las terapias dirigidas y la inmunoterapia cambiaran el pronóstico en pacientes con marcadores favorables. El pronóstico real depende del tipo de tumor, sus marcadores moleculares y la respuesta al tratamiento.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q">¿Qué significa "sobrevida a 5 años"?<div class="faq-arrow">+</div></button>
@@ -990,7 +968,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-q">¿Detectarlo antes cambia mucho las posibilidades?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Es la variable que más pesa. En estadio IA1 la sobrevida a 5 años es del 92 %; en IVB, menor al 5 %. Por eso el screening con TAC de baja dosis en personas de alto riesgo permite detectar tumores cuando todavía son operables.</div>
+          <div class="faq-a">Es la variable que más pesa. En estadio IA la sobrevida a 5 años es del 82 %; en IVB, 7 %. Por eso el screening con TAC de baja dosis en personas de alto riesgo permite detectar tumores cuando todavía son operables.</div>
         </div>
     </div>
   </div>
@@ -1055,7 +1033,7 @@
     </div>
   </div>
   <div class="footer-disclaimer">
-    Datos de sobrevida basados en IASLC 9ª edición TNM (2023) y literatura científica actualizada. Son datos estadísticos poblacionales que no predicen el resultado individual de ningún paciente. No reemplaza la consulta médica con su especialista.
+    Datos de sobrevida basados en IASLC 9ª edición TNM (Rami-Porta 2024) y literatura científica actualizada. Son datos estadísticos poblacionales que no predicen el resultado individual de ningún paciente. No reemplaza la consulta médica con su especialista.
   </div>
 </footer>
   <script>
@@ -1078,7 +1056,7 @@
       "name": "¿Cuánto tiempo de vida tiene una persona con cáncer de pulmón en etapa IV?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No hay una cifra que valga para una persona. Los datos poblacionales de la IASLC muestran una sobrevida a 5 años del 10 % en IVA y menor al 5 % en IVB, pero fueron obtenidos antes de que las terapias dirigidas y la inmunoterapia cambiaran el pronóstico en pacientes con marcadores favorables. El pronóstico real depende del tipo de tumor, sus marcadores moleculares y la respuesta al tratamiento."
+        "text": "No hay una cifra que valga para una persona. Los datos poblacionales de la IASLC muestran una sobrevida a 5 años del 18 % en IVA y 7 % en IVB, pero fueron obtenidos antes de que las terapias dirigidas y la inmunoterapia cambiaran el pronóstico en pacientes con marcadores favorables. El pronóstico real depende del tipo de tumor, sus marcadores moleculares y la respuesta al tratamiento."
       }
     },
     {
@@ -1094,7 +1072,7 @@
       "name": "¿Detectarlo antes cambia mucho las posibilidades?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es la variable que más pesa. En estadio IA1 la sobrevida a 5 años es del 92 %; en IVB, menor al 5 %. Por eso el screening con TAC de baja dosis en personas de alto riesgo permite detectar tumores cuando todavía son operables."
+        "text": "Es la variable que más pesa. En estadio IA la sobrevida a 5 años es del 82 %; en IVB, 7 %. Por eso el screening con TAC de baja dosis en personas de alto riesgo permite detectar tumores cuando todavía son operables."
       }
     }
   ]

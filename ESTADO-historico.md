@@ -1207,6 +1207,54 @@ enlaces que moverían la aguja son los mismos de §17 y dependen de David:
 
 ---
 
+## 19. cancerpulmonar.cl — cierre del pendiente nº 11 tras NCCN v9.2026 (28-sep-2026)
+
+Un commit por tarea: `bc29df2` (A) · `0d71559` (B) · `8b294e3` (D) · `72fc0b1` (E) · `e1da834` (F) · `4fd9bbd` (G).
+
+- **A · `/causas`, screening.** Los criterios 50-80 años · ≥20 paquetes-año · fuma o dejó hace ≤15
+  años son literalmente la recomendación **USPSTF 2021, grado B**. Atribución cambiada de NCCN a
+  USPSTF con enlace. La guía NCCN de screening exige registro y no se abrió: no se escribe nada
+  sobre ella. El pie genérico «basada en guías NCCN» se conserva.
+- **B · `/causas`, nunca fumadores.** Garrido J. et al., *BMC Cancer* 2024;24(1):951
+  (DOI 10.1186/s12885-024-12737-1), abierto en PMC el 28-sep: la cifra literal es **«10–20%»**
+  (el sitio decía 15-20 %; se alinea a la fuente). Cohorte chilena: 200 nunca fumadores de 673
+  pacientes con CPCNP reclutados en centros de salud (2015-2018, incluye escamosos: no es solo
+  adenocarcinoma). Orrego C. et al., *Rev Med Chil* 2025;153(2):104-110
+  (DOI 10.4067/s0034-98872025000200104): 67,7 % con antecedente de tabaquismo — dato entregado por
+  David; SciELO no fue accesible desde el contenedor. Ambas cifras en el mismo bloque, con alcance
+  («cohortes hospitalarias chilenas, no población general»). FAQ visible y `FAQPage` iguales.
+- **C · sotorasib.** «En Chile está disponible desde 2024» **se queda**: decisión de David,
+  28-sep-2026. Respaldo interno (no publicar): LUMAKRAS, registro ISP `F-28265/24`, titular
+  TECNOFARMA S.A., CPNM avanzado KRAS G12C tras ≥1 línea sistémica. La afirmación «>60 % en III-IV»
+  estaba en `/sobrevida` (bloque «El impacto del diagnóstico precoz»), no en `/tratamiento`: pasa a
+  pendiente de David.
+- **D · `/tratamiento`, CPCP** (aprobado por David, 28-sep). Atezolizumab retirado de enfermedad
+  limitada; queda durvalumab de consolidación tras quimiorradioterapia concurrente con cita a
+  ADRIATIC (Cheng Y. et al., *N Engl J Med* 2024;391(14):1313-1327, DOI 10.1056/NEJMoa2404873;
+  SG 55,9 vs 33,4 meses, HR 0,73). «La cirugía es excepcional (solo en estadio IA muy
+  seleccionado)» trasladada de extendida a limitada, texto intacto. Sin FAQ afectadas.
+- **E · `/sobrevida`.** Las 11 cifras publicadas eran de la 8.ª edición (Goldstraw 2016). Tabla
+  reemplazada por la Figura 3 (estadio clínico) de Rami-Porta R. et al., *J Thorac Oncol*
+  2024;19(7):1007-1027, DOI 10.1016/j.jtho.2024.02.011: **9 filas** (IA única; la fuente no
+  desagrega IA1-IA3), con IC 95 % y n. IVB = 7 % (adiós «<5 %»). Actualizados badge, intro
+  (124.581 registrados / 76.518 analizables; rige desde ene-2025), pie con cita completa, bloque de
+  diagnóstico precoz, FAQ 1 y 3 visibles y en `FAQPage`, y las descripciones meta
+  («IASLC 2023» → «IASLC 2024»). Nota: el resumen de PubMed dice **58.193** con estadio clínico;
+  el prompt de la tarea decía 58.108. No se publicó ninguno de los dos.
+- **F · `/etapificacion`.** «Vigente desde 2024» → enero de 2025; «publicó… en 2023» → *J Thorac
+  Oncol* 2024;19(7):1007-1027 (en línea 4-mar-2024); «más de 100.000» → 124.581 / 76.518. También
+  el hero («IASLC 2023») y el badge de la tabla de grupos. T3 y T4 con los descriptores añadidos en
+  la 9.ª edición. Cita completa al pie. Tabla T/N/M y grupos no se tocaron.
+- **G · `/tratamiento`, biomarcadores.** Columna «Frecuencia» eliminada (decisión de David,
+  28-sep-2026). La tabla tenía **14 filas, no 11**. Sin cifras en otro lugar de la página.
+
+Propuesta abierta (E2): tabla de sobrevida **patológica** (Figura 4, 39.192 operados, M0, sin
+neoadyuvancia, tiempo desde la cirugía): IA 88 % (88–89) · IB 78 % (77–79) · IIA 68 % (66–70) ·
+IIB 61 % (59–62) · IIIA 50 % (49–52) · IIIB 35 % (32–37) · IIIC 21 % (9–34). Solo si David la pide,
+en tabla aparte rotulada «tras cirugía con resección completa».
+
+---
+
 # ARCHIVO — `ESTADO.md` completo al 22-sep-2026 (antes de la reestructuración)
 
 > Copia literal de la versión larga (835 líneas) que se reemplazó el 22-sep-2026 por el `ESTADO.md`

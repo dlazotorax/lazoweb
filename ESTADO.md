@@ -1,6 +1,6 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
-> **Última actualización: 22 sep 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
+> **Última actualización: 28 sep 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
 > métricas vigentes y pendientes. Todo lo narrativo (sesiones, razonamientos, cómo se llegó a cada
 > dato) está en **`ESTADO-historico.md`**; la versión larga de este archivo, tal como estaba al
 > 22-sep-2026, está al final de ese histórico.
@@ -60,6 +60,8 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
 | neumotorax.cl y derramepleural.cl **fuera** del set: llegan por urgencia, no por búsqueda | — |
 | Categoría GBP «Cirujano torácico» **no existe**; se usa «Cirujano cardiovascular y torácico» + Servicios | ago-2026 |
 | No hay huella de PBN (duplicación real de prosa 3-10%, solo el pie) | ago-2026 |
+| cancerpulmonar `/tratamiento`: **«sotorasib en Chile está disponible desde 2024» se queda** tal cual. Respaldo interno (no publicar): LUMAKRAS, ISP `F-28265/24` | 28-sep-2026 |
+| cancerpulmonar `/tratamiento`: **sin columna de frecuencias** en la tabla de biomarcadores (14 filas). No reintroducirla | 28-sep-2026 |
 | Hero de `/publicaciones` (imagen IA con taza STS) **se mantiene** por decisión de David hasta tener foto real de congreso | ago-2026 |
 
 ---
@@ -220,6 +222,8 @@ que el resto es lento.
 | 10 | CV: coautores omitidos (#17 lista 4 de 14; #14 4 de 9, «Yévene» → **Yévenes**; #18 falta Clavero JM); nombre completo «AIRE 2024»; #79 MedXpert `[Rel./Mod.]`; revisar roles del CV 2026 contra el 2024 | |
 | 11 | Tres dudas del CV: ¿«Osteosíntesis Pared Torácica» (may-2023) = #58? · ¿«Webinar SBCT-GBOT-ALAT» (sep-2021) = #47? · #64: CV dice «3° SRS LATAM, Río» y su post dice «2do… COLCIR» | |
 | 12 | Guardar copia del brochure de la V Jornada Clínica Alemana (oct-2023) | Está en un servidor de cursos |
+| 13 | cancerpulmonar `/sobrevida`, bloque «El impacto del diagnóstico precoz»: «más del 60 % de los cánceres pulmonares en Chile se diagnostican en estadio III o IV» **no tiene fuente**. ¿Retirar o dar fuente? | No tocar hasta que decida (§1.1) |
+| 14 | ¿Añadir en `/sobrevida` la tabla de sobrevida **patológica** 9.ª ed. (Rami-Porta 2024, Fig. 4)? Cifras en `ESTADO-historico.md` §19 | Por defecto no; tabla aparte si la pide |
 
 ### De Claude
 
@@ -235,7 +239,10 @@ que el resto es lento.
 | 8 | Acordeón de FAQ en `rubor-facial-patologico` (tiene `FAQPage` visible, falta la interfaz) | |
 | 9 | Eyebrows: 7 `class="eyebrow"` en `cirugiatoracica/index.html` (una **es** el `h2` «Enfermedades que tratamos»); familias `cta-/sec-/bio-/hero-/page-nav-eyebrow` sin decidir | Criterio en el histórico |
 | 10 | Menores: `url` del `Physician` con/sin barra final (hiperhidrosis vs hub); post SC en `/2020/11/13/` con `datePublished` 2020-11-14 (no tocar sin saber cuál es la buena) | |
-| 11 | **cancerpulmonar.cl — pendientes tras alinear a NCCN NSCLC v9.2026 (22-sep):** (a) sobrevida por estadio: las cifras publicadas coinciden con la **8ª ed.** y se atribuyen a la 9ª → abrir la publicación IASLC 9ª ed. (JTO) o retirar; (b) screening «50–80 años / ≤15 años sin fumar» es USPSTF, no NCCN → verificar en NCCN *Lung Cancer Screening*; (c) frecuencias de la tabla de biomarcadores sin fuente (EGFR «Chile/LATAM», HER2 IHC3+ 5–10 %, MET, PD-L1); (d) nunca fumadores «15–20 %» vs «1 de cada 3 en Chile» (causas); (e) «sotorasib en Chile desde 2024» y «>60 % en III–IV»; (f) CPCP: cirugía en el párrafo de enfermedad extendida y atezolizumab en limitada → revisar con NCCN SCLC | Nada se publica sin fuente primaria (§1.1) |
+
+El antiguo nº 11 (cancerpulmonar.cl tras NCCN v9.2026) se cerró completo el 28-sep-2026: sobrevida con las
+cifras reales de la 9.ª ed. (Rami-Porta 2024, DOI 10.1016/j.jtho.2024.02.011), sotorasib y columna de
+frecuencias por decisión de David (§2; la tabla tenía 14 filas, no 11). Detalle en `ESTADO-historico.md` §19.
 
 ---
 

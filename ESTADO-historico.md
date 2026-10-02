@@ -1255,6 +1255,18 @@ en tabla aparte rotulada «tras cirugía con resección completa».
 
 ---
 
+## 20. hiperhidrosis.cl — `/cirugia-hiperhidrosis/` (2-oct-2026)
+
+2-oct-2026 · `/cirugia-hiperhidrosis/`: nueva frase de SC aprobada por David y sin negritas en toda
+la página. Fuentes internas en el doc del proyecto `bibliografia-simpatectomia-2026-09-30.md`; por
+decisión de David no se publican en la página.
+
+Commit `929c419`. Eran 23 etiquetas `<strong>`, no 19 (`grep -c` cuenta líneas). Sin cambios en
+las cifras de éxito, el enlace al post de 2020, la frase de obesidad, «ojo los deportistas de alto
+rendimiento» ni el JSON-LD salvo `lastReviewed`/`dateModified`.
+
+---
+
 # ARCHIVO — `ESTADO.md` completo al 22-sep-2026 (antes de la reestructuración)
 
 > Copia literal de la versión larga (835 líneas) que se reemplazó el 22-sep-2026 por el `ESTADO.md`

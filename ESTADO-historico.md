@@ -1267,6 +1267,18 @@ rendimiento» ni el JSON-LD salvo `lastReviewed`/`dateModified`.
 
 ---
 
+## 21. cirugiatoracica.cl — `/docencia`: notas CLC de hiperhidrosis (3-oct-2026)
+
+3-oct-2026 · `/docencia`: +3 notas CLC de hiperhidrosis (2018, 2019, 2020), aprobadas por David. Total CLC
+hiperhidrosis en `/docencia`: 7.
+
+Commit `965e885`. «Cuando transpirar es un gran problema» (8-ene-2020) · «Cirugía de hiperhidrosis: «Fue un
+cambio muy positivo en mi vida»» (26-feb-2019) · «Hiperhidrosis: el sudor sí sirve» (20-feb-2018; título del
+`<title>`, el h1 de CLC dice «Hipehidrosis»). Fechas bajo el título de cada nota, no la de la barra «Popular»
+(27-sep-2023). Un `Article` JSON-LD por nota; `dateModified` y `<lastmod>` 2026-10-03, `lastReviewed` intacto.
+
+---
+
 # ARCHIVO — `ESTADO.md` completo al 22-sep-2026 (antes de la reestructuración)
 
 > Copia literal de la versión larga (835 líneas) que se reemplazó el 22-sep-2026 por el `ESTADO.md`

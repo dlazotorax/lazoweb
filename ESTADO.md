@@ -80,9 +80,6 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
   Se ejecuta desde el Root Directory. Un commit a un dominio da
   1 READY + 6 CANCELED; commits a la raíz (`ESTADO.md`, `scripts/`) no despliegan. Tope Hobby: 100
   despliegues/día.
-- **El último commit de cada push debe tocar el dominio que se quiere publicar** (el Ignored Build Step
-  compara `HEAD^..HEAD`). Un push que termina en un commit solo de `ESTADO.md` no despliega nada.
-  **Vigente hasta confirmar que el nuevo filtro funciona.**
 - **CDN:** 40-90 s. Revalidar con `?v=N`. **«Redeploy» del panel no publica código nuevo** (reconstruye
   el mismo commit).
 - **`scripts/audit.py`:** anidado HTML, JSON-LD parseable, cada Q/A de `FAQPage` visible, recursos

@@ -75,7 +75,9 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
 - **Flujo:** clonar fresco → editar → `audit.py` → commit → push a `main`.
 - **Vercel Hobby**, 7 proyectos sobre el mismo repo. Ignored Build Step: **`ignoreCommand` en cada
   `dist/*/vercel.json`: `git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD ./`** (compara contra el
-  último despliegue exitoso; sobrescribe el campo del panel). Se ejecuta desde el Root Directory. Un commit a un dominio da
+  último despliegue exitoso; sobrescribe el campo del panel), envuelto en `if git cat-file -e …; else exit 1`:
+  si ese SHA no está en el clon superficial de Vercel, despliega en vez de fallar (vats falló así el 12-oct).
+  Se ejecuta desde el Root Directory. Un commit a un dominio da
   1 READY + 6 CANCELED; commits a la raíz (`ESTADO.md`, `scripts/`) no despliegan. Tope Hobby: 100
   despliegues/día.
 - **El último commit de cada push debe tocar el dominio que se quiere publicar** (el Ignored Build Step

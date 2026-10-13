@@ -73,12 +73,14 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
   antes de decir que algo «no está publicado», mirarlo en `dist/`.
 - **Token:** `Paginas web/.github-token` (fine-grained, solo lazoweb). **Nunca commitearlo.**
 - **Flujo:** clonar fresco → editar → `audit.py` → commit → push a `main`.
-- **Vercel Hobby**, 7 proyectos sobre el mismo repo, cada uno con **Ignored Build Step**
-  `git diff --quiet HEAD^ HEAD ./` (se ejecuta desde el Root Directory). Un commit a un dominio da
+- **Vercel Hobby**, 7 proyectos sobre el mismo repo. Ignored Build Step: **`ignoreCommand` en cada
+  `dist/*/vercel.json`: `git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD ./`** (compara contra el
+  último despliegue exitoso; sobrescribe el campo del panel). Se ejecuta desde el Root Directory. Un commit a un dominio da
   1 READY + 6 CANCELED; commits a la raíz (`ESTADO.md`, `scripts/`) no despliegan. Tope Hobby: 100
   despliegues/día.
 - **El último commit de cada push debe tocar el dominio que se quiere publicar** (el Ignored Build Step
   compara `HEAD^..HEAD`). Un push que termina en un commit solo de `ESTADO.md` no despliega nada.
+  **Vigente hasta confirmar que el nuevo filtro funciona.**
 - **CDN:** 40-90 s. Revalidar con `?v=N`. **«Redeploy» del panel no publica código nuevo** (reconstruye
   el mismo commit).
 - **`scripts/audit.py`:** anidado HTML, JSON-LD parseable, cada Q/A de `FAQPage` visible, recursos
@@ -231,7 +233,7 @@ que el resto es lento.
 
 | # | Qué | Nota |
 |---|---|---|
-| 1 | Verificar si **`/docencia`** entró en Google (indexación solicitada 20-sep). Si a 2-3 semanas sigue fuera: enlazado interno | Revisar ~4-oct |
+| 1 | **cancerpulmonar.cl:** reindexación de 4 páginas solicitada el 12-oct | Verificar |
 | 2 | **Medir IA** de nuevo (incluido Gemini sin sesión) para ver efecto de la entidad unificada | |
 | 3 | **cancerpulmonar.cl:** FAQ publicadas el 4-sep (7 páginas) y aun así no citado. Propuesta: preguntas quirúrgicas que solo responde un cirujano torácico (operabilidad, lobectomía vs segmentectomía, VATS/RATS en cáncer, recuperación, EBUS en la decisión). Con bibliografía y validación de David | Borrador por hacer |
 | 4 | **hiperhidrosis.cl:** decidir si se invierte. Si sí: páginas por **tratamiento** (toxina botulínica, iontoforesis, medicación oral), reescribir `/hiperhidrosis-localizada-leve/` y pasar los 7 posts 2020-21 a registro sobrio (tutean y exclaman). **No ampliar** `/blog/`, `/test…/`, `/`, ni los posts de SC y rubor (§1.4) | Decisión de David |
@@ -241,6 +243,8 @@ que el resto es lento.
 | 8 | Acordeón de FAQ en `rubor-facial-patologico` (tiene `FAQPage` visible, falta la interfaz) | |
 | 9 | Eyebrows: 7 `class="eyebrow"` en `cirugiatoracica/index.html` (una **es** el `h2` «Enfermedades que tratamos»); familias `cta-/sec-/bio-/hero-/page-nav-eyebrow` sin decidir | Criterio en el histórico |
 | 10 | Menores: `url` del `Physician` con/sin barra final (hiperhidrosis vs hub); post SC en `/2020/11/13/` con `datePublished` 2020-11-14 (no tocar sin saber cuál es la buena) | |
+
+El antiguo nº 1 (`/docencia` en Google) se cerró el 12-oct-2026: indexada.
 
 El antiguo nº 11 (cancerpulmonar.cl tras NCCN v9.2026) se cerró completo el 28-sep-2026: sobrevida con las
 cifras reales de la 9.ª ed. (Rami-Porta 2024, DOI 10.1016/j.jtho.2024.02.011), sotorasib y columna de

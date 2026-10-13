@@ -62,6 +62,7 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
 | No hay huella de PBN (duplicación real de prosa 3-10%, solo el pie) | ago-2026 |
 | cancerpulmonar `/tratamiento`: **«sotorasib en Chile está disponible desde 2024» se queda** tal cual. Respaldo interno (no publicar): LUMAKRAS, ISP `F-28265/24` | 28-sep-2026 |
 | cancerpulmonar `/tratamiento`: **sin columna de frecuencias** en la tabla de biomarcadores (14 filas). No reintroducirla | 28-sep-2026 |
+| **hiperhidrosis.cl sin HCSBA**: en HCSBA no hay capacidad para operar patología no grave. Afiliación solo CLC en ese dominio (JSON-LD, `llms.txt` y texto); excepción a la coincidencia del `@id` (§5) | 12-oct-2026 |
 | Hero de `/publicaciones` (imagen IA con taza STS) **se mantiene** por decisión de David hasta tener foto real de congreso | ago-2026 |
 
 ---

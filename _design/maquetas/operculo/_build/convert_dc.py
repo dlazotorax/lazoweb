@@ -17,6 +17,7 @@ GA4 = re.search(r'<!-- Google Analytics 4.*?\}, true\);\n  </script>\n', V1, re.
 OUT = os.path.join(ROOT, '_design/maquetas/operculo/') if MAQUETA else os.path.join(ROOT, 'dist/rats/operculo-toracico/')
 BASE = 'https://rats.cl/operculo-toracico'
 TODAY = '2026-09-13'
+MODIFIED = {'tratamiento': '2026-10-13'}   # dateModified por página (cambios no clínicos); lastReviewed sigue en TODAY
 ACCENT = '#C4500E'   # naranjo levemente oscuro (David, 8-sep); el lienzo trae #0047FF
 DC = DC.replace('#0047FF', ACCENT).replace('#0047ff', ACCENT)
 
@@ -127,7 +128,7 @@ def build(key):
       "about":{"@type":"MedicalCondition","name":"Síndrome del opérculo torácico","alternateName":["Thoracic outlet syndrome","TOS","SOT"],
                "possibleTreatment":{"@type":"MedicalProcedure","name":"Resección robótica de la primera costilla","procedureType":"https://schema.org/SurgicalProcedure"}},
       "author":{"@id":"https://cirugiatoracica.cl/#david-lazo"},"reviewedBy":{"@id":"https://cirugiatoracica.cl/#david-lazo"},
-      "lastReviewed":TODAY,"dateModified":TODAY,"specialty":"https://schema.org/Surgical",
+      "lastReviewed":TODAY,"dateModified":MODIFIED.get(key, TODAY),"specialty":"https://schema.org/Surgical",
       "isPartOf":{"@type":"WebSite","@id":"https://rats.cl/#website","url":"https://rats.cl/","name":"RATS.cl","inLanguage":"es-CL"},
       "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":u} for i,(n,u) in enumerate(crumbs)]},
       "description":desc}

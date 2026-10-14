@@ -163,7 +163,19 @@ def build(key):
 {hover_css}
   </style>
 '''
-    doc = head + PHYS + ld(faq) + ld(web) + GA4 + '</head>\n<body>\n<div style="background:#F6F5F1">\n' + strip_html + nav_html + '\n' + main_html + '\n' + tail_html + '\n</div>\n</body>\n</html>\n'
+    extra = ''
+    if key == 'tratamiento':
+        # VideoObject: nombre visible en el figcaption del bloque "La técnica"; uploadDate según David
+        extra = ld({"@context":"https://schema.org","@type":"VideoObject","@id":url+"#video",
+            "name":"Resección robótica transtorácica de la primera costilla",
+            "description":"Resección robótica transtorácica de la primera costilla en el síndrome del opérculo torácico, por tres puertos de 8 mm desde el interior del tórax.",
+            "thumbnailUrl":"https://i.ytimg.com/vi/eh7PLkHmMCQ/hq2.jpg",
+            "uploadDate":"2026-10-14",
+            "embedUrl":"https://www.youtube-nocookie.com/embed/eh7PLkHmMCQ",
+            "url":"https://www.youtube.com/shorts/eh7PLkHmMCQ",
+            "inLanguage":"es-CL",
+            "author":{"@id":"https://cirugiatoracica.cl/#david-lazo"}})
+    doc = head + PHYS + ld(faq) + ld(web) + extra + GA4 + '</head>\n<body>\n<div style="background:#F6F5F1">\n' + strip_html + nav_html + '\n' + main_html + '\n' + tail_html + '\n</div>\n</body>\n</html>\n'
     assert '{{' not in doc and 'sc-if' not in doc and 'onClick' not in doc and 'style-hover' not in doc, key
     os.makedirs(OUT, exist_ok=True)
     open(OUT + fname, 'w', encoding='utf-8').write(doc)

@@ -92,6 +92,10 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
   archivo `<clave>.txt` en la raíz de los 6 dominios con contenido (vats y cirugiadetorax solo redirigen).
   Tras cada push, **cuando Vercel ya desplegó**: `python3 scripts/indexnow.py` (avisa solo URLs del sitemap
   cuyo HTML cambió en `HEAD^..HEAD`; `--desde SHA`, `--todo`, `--dry-run`).
+  **Corre desde el Mac de David** (la nube y el shell remoto no tienen salida a `api.indexnow.org`).
+  Envío inicial `--todo` el 14-oct-2026: 39 URLs, HTTP 200 en los 6.
+- **Bing Webmaster Tools** (cuenta `dr.david.lazo@`): 7 propiedades importadas de Search Console el
+  14-oct-2026 (falta cirugiadetorax, solo redirige). Sitemaps de los 6 enviados a mano ese día.
 
 ---
 
@@ -232,7 +236,6 @@ que el resto es lento.
 | 12 | Guardar copia del brochure de la V Jornada Clínica Alemana (oct-2023) | Está en un servidor de cursos |
 | 13 | cancerpulmonar `/sobrevida`, bloque «El impacto del diagnóstico precoz»: «más del 60 % de los cánceres pulmonares en Chile se diagnostican en estadio III o IV» **no tiene fuente**. ¿Retirar o dar fuente? | No tocar hasta que decida (§1.1) |
 | 14 | ¿Añadir en `/sobrevida` la tabla de sobrevida **patológica** 9.ª ed. (Rami-Porta 2024, Fig. 4)? Cifras en `ESTADO-historico.md` §19 | Por defecto no; tabla aparte si la pide |
-| 15 | **Bing Webmaster Tools:** importar las propiedades desde Search Console con `dr.david.lazo@` (Copilot usa el índice de Bing; ChatGPT Search se apoya en él) | Luego Claude corre `indexnow.py --todo` una vez |
 
 ### De Claude
 

@@ -10,7 +10,7 @@
   <meta property="og:title" content="Cirugía torácica robótica RATS · Dr. David Lazo" />
   <meta property="og:description" content="Cirugía torácica robótica con sistema Da Vinci. Máxima precisión, mínima invasión. Dr. David Lazo — cirugía robótica torácica en Chile desde 2015." />
   <meta property="og:url" content="https://rats.cl/" />
-  <meta property="og:image" content="https://rats.cl/imgs/hero-davinci.jpg" />
+  <meta property="og:image" content="https://rats.cl/imgs/hero-sala-robotica.jpg" />
   <meta property="og:locale" content="es_CL" />
   <meta name="keywords" content="cirugía robótica torácica, RATS, Da Vinci, lobectomía robótica, timectomía, cirugía mínimamente invasiva, Dr David Lazo, Santiago Chile, Clínica Las Condes" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -209,8 +209,20 @@
     .secnav a:first-child{border-left:1px solid var(--rule)}
     .secnav a:hover{background:var(--accent);text-decoration:none}
 
+    /* hero: cabecera oscura con foto a todo el ancho */
+    .mast-dark{background:var(--ink);color:var(--paper);border-bottom:0;padding-top:22px}
+    .mast-dark .kicker{color:var(--accent-lt)}
+    .mast-dark h1{font-family:var(--display);font-weight:400;font-size:clamp(50px,9.4vw,138px);line-height:.82;margin:6px 0 18px}
+    .mast-dark h1 span{color:var(--accent-lt)}
+    .mast-photo-band{margin:0}
+    .mast-photo-band img{width:100%;aspect-ratio:21/9;object-fit:cover}
+    .mast-dark .mast-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;padding-bottom:16px}
+    .mast-dark .mast-row{border-top:0;margin-top:0}
+    .mast-dark .mast-sub{border:0;margin:0;padding:0}
+    .mast-dark .btn{margin:0}
+    @media (max-width:700px){.mast-photo-band img{aspect-ratio:4/3}}
     /* apertura */
-    .open{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px;align-items:center;padding:32px 0;border-bottom:1px solid var(--ink)}
+    .open{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;align-items:center;padding:32px 0;border-bottom:1px solid var(--ink)}
     .open-lead{font-size:19px;font-weight:500;line-height:1.5;margin-bottom:22px;max-width:520px}
     .open-btns{display:flex;flex-wrap:wrap;gap:10px}
     .figure{margin:0;border:2px solid var(--ink);background:var(--ink)}
@@ -442,16 +454,22 @@
     </div>
   </div>
 
-  <header class="mast" id="inicio">
+  <header class="mast mast-dark" id="inicio">
     <div class="wrap">
-      <div class="mast-top">
-        <div>
-          <p class="kicker">RATS · Dr. David Lazo Pérez</p>
-          <h1>Cirugía Torácica <span>Robótica</span></h1>
-        </div>
-        <a href="#contacto" class="btn">Agendar consulta</a>
-      </div>
+      <p class="kicker">RATS · Dr. David Lazo Pérez</p>
+      <h1>Cirugía Torácica <span>Robótica</span></h1>
+    </div>
+    <figure class="mast-photo-band">
+      <picture>
+          <source media="(max-width:700px)" srcset="imgs/hero-sala-robotica-m.webp" type="image/webp" />
+          <source media="(max-width:700px)" srcset="imgs/hero-sala-robotica-m.jpg" />
+          <source srcset="imgs/hero-sala-robotica.webp" type="image/webp" />
+          <img src="imgs/hero-sala-robotica.jpg" alt="Dr. David Lazo en la consola del sistema Da Vinci durante una cirugía torácica robótica, con los brazos acoplados al paciente" width="1800" height="771" fetchpriority="high" decoding="async" />
+        </picture>
+    </figure>
+    <div class="wrap mast-row">
       <p class="mast-sub">Sistema Da Vinci · Clínica Las Condes · Santiago</p>
+      <a href="#contacto" class="btn">Agendar consulta</a>
     </div>
   </header>
 
@@ -475,12 +493,7 @@
           <a href="#davinci" class="btn btn-line">¿Cómo funciona?</a>
         </div>
       </div>
-      <figure class="figure">
-        <picture>
-          <source srcset="imgs/hero-davinci.webp" type="image/webp" />
-          <img src="imgs/hero-davinci.jpg" alt="Pabellón de cirugía robótica con la consola del sistema Da Vinci en primer plano" width="2400" height="1800" fetchpriority="high" decoding="async" />
-        </picture>
-      </figure>
+
     </section>
 
     <div class="grid stats">

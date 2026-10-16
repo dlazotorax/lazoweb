@@ -1,6 +1,6 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
-> **Última actualización: 14 oct 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
+> **Última actualización: 16 oct 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
 > métricas vigentes y pendientes. Todo lo narrativo (sesiones, razonamientos, cómo se llegó a cada
 > dato) está en **`ESTADO-historico.md`**; la versión larga de este archivo, tal como estaba al
 > 22-sep-2026, está al final de ese histórico.
@@ -126,7 +126,9 @@ un `h1`, canonical sin www, 0 JSON-LD inválidos, contenido sin JS, 89 pares FAQ
 - `lastReviewed` = fecha del último cambio clínico real (`git log`), no la de hoy. `/links` y
   `/publicaciones` no lo llevan a propósito. `<lastmod>` del sitemap = fecha del cambio de archivo.
 - `img { height: auto; }` obligatorio si `<img>` lleva `width`/`height`. WebP en fondos vía `image-set()`.
-- Estilo: Arial/Figtree, teal `#0891b2`, navy `#0c1526`, serif `DM Serif Display`.
+- Estilo: Arial/Figtree, teal `#0891b2`, navy `#0c1526`, serif `DM Serif Display`. **Excepción: rats.cl** (portada y
+  opérculo) usa el sistema editorial del opérculo: Bebas Neue + Public Sans, hueso `#F6F5F1`, negro `#0B0B0B`.
+  Acento: portada teal azul `#0E7490` (`#67D3E8` sobre negro); opérculo óxido `#C4500E`.
 
 **`/cv` es la fuente de trayectoria.** `Physician` de las demás páginas apunta a ella con
 `subjectOf → /cv#page`; `/perfil` es `mainEntityOfPage`. Enlace visible bajo el bloque de cifras en

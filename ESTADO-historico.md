@@ -1279,6 +1279,19 @@ cambio muy positivo en mi vida»» (26-feb-2019) · «Hiperhidrosis: el sudor s�
 
 ---
 
+## 22. rats.cl — portada con el estilo del opérculo (16-oct-2026)
+
+Pedido de David: portada de rats.cl con la estética de `/operculo-toracico`, admitiendo otra paleta. Commit
+`e0f794f`. Bebas Neue + Public Sans, fondo hueso, filetes negros, secciones §1-§5, navegación fija numerada,
+contacto y pie idénticos al opérculo. Textos, JSON-LD, `FAQPage` y GA4 sin cambios; `#agenda` (ancla rota)
+→ `#contacto`. 69 KB → 40 KB. `dateModified`/`lastmod` 2026-10-16; `lastReviewed` intacto.
+
+Acento elegido por David entre cuatro vistas previas: **teal azul `#0E7490`** (variante `#67D3E8` sobre negro).
+Descartados: verde azulado `#0B6E6A`, cobalto `#1F49C7`, pizarra `#2B4C65`/`#3B5971`. Las páginas del opérculo
+siguen en óxido `#C4500E` (se generan desde el lienzo; no se tocaron).
+
+---
+
 # ARCHIVO — `ESTADO.md` completo al 22-sep-2026 (antes de la reestructuración)
 
 > Copia literal de la versión larga (835 líneas) que se reemplazó el 22-sep-2026 por el `ESTADO.md`

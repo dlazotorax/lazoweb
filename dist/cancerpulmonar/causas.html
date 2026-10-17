@@ -193,430 +193,368 @@
   "description": "Causas del cáncer pulmonar: tabaquismo, radón, exposición ocupacional y otros factores de riesgo. Quiénes deben hacerse screening. Información para pacientes."
 }
   </script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/estilo.css" />
   <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    /* Los atributos width/height protegen del CLS; height:auto evita que
-       fijen el alto y pisen el aspect-ratio o el alto que define el CSS. */
-    img { height: auto; }
-    :root {
-      --navy:      #0c1526;
-      --teal-deep: #0c4a6e;
-      --teal:      #0891b2;
-      --teal-dark: #0e7490;
-      --teal-lt:   #22d3ee;
-      --teal-pale: #ecfeff;
-      --teal-mid:  #cffafe;
-      --bg:        #ffffff;
-      --bg2:       #f4f8fb;
-      --bg3:       #edf2f7;
-      --bg4:       #dce8f0;
-      --text:      #1a2b3c;
-      --slate:     #3a5068;
-      --muted:     #607d93;
-      --border:    #dce8f0;
-      --accent:    #0891b2;
-      --accent2:   #0891b2;
-      --accent-lt: #22d3ee;
-      --warm:      #d97706;
-      --amber-pale:#fffbeb;
-      --amber-mid: #fde68a;
-      --success:   #059669;
-      --danger:    #dc2626;
-      --purple:    #7c3aed;
-      --radius:    14px;
-      --serif:     'DM Serif Display', serif;
-      --sans:      'Plus Jakarta Sans', system-ui, sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-
-    .topbar { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.08); padding:0.5rem 2.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; }
-    .topbar-left { font-size:0.72rem; color:rgba(255,255,255,0.38); }
-    .topbar-links { display:flex; gap:1.5rem; }
-    .topbar-links a { font-size:0.72rem; color:rgba(255,255,255,0.38); text-decoration:none; transition:color 0.2s; }
-    .topbar-links a:hover { color:var(--accent2); }
-    nav { position:sticky; top:0; z-index:300; background:rgba(255,255,255,0.97); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); padding:0 2.5rem; height:66px; display:flex; align-items:center; justify-content:space-between; }
-    .nav-logo { display:flex; align-items:center; gap:0.6rem; text-decoration:none; color:var(--text); } .nav-logo-text { color: var(--text); }
-    .nav-logo-icon { width:32px; height:32px; border-radius:8px; background: var(--teal-deep); display:flex; align-items:center; justify-content:center; font-size:1rem; }
-    .nav-logo-text { font-size:0.95rem; font-weight:700; }
-    .nav-logo-text span { color:var(--accent2); }
-    .nav-links { display:flex; gap:1.8rem; list-style:none; }
-    .nav-links a { font-size:0.85rem; font-weight:500; color:var(--slate); text-decoration:none; transition:color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color:var(--teal); }
-    .nav-cta { background:var(--accent); color:#fff; padding:0.5rem 1.25rem; border-radius:8px; font-size:0.85rem; font-weight:600; text-decoration:none; transition:background 0.2s; }
-    .nav-cta:hover { background:var(--accent2); }
-
-    .breadcrumb { background:var(--bg2); border-bottom:1px solid var(--border); padding:0.8rem 2.5rem; }
-    .breadcrumb-inner { max-width:900px; margin:0 auto; display:flex; gap:0.5rem; align-items:center; }
-    .breadcrumb a { font-size:0.78rem; color:var(--text-muted); text-decoration:none; }
-    .breadcrumb a:hover { color:var(--accent2); }
-    .breadcrumb span { font-size:0.78rem; color:rgba(143,163,188,0.4); }
-    .breadcrumb-current { font-size:0.78rem; color:var(--accent2); }
-
-    .page-hero { padding:4rem 2.5rem 3rem; background: linear-gradient(180deg,#f4f8fb 0%,#fff 100%); border-bottom:1px solid var(--border); }
-    .page-hero-inner { max-width:900px; margin:0 auto; }
-    .page-hero-tag { font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.75rem; }
-    .page-hero h1 { font-family:var(--serif); font-size:clamp(2rem,4vw,3rem); font-weight:700; line-height:1.15; margin-bottom:1rem; }
-    .page-hero h1 span { color:var(--accent2); }
-    .page-hero-lead { font-size:1.05rem; color:var(--text-muted); line-height:1.75; max-width:650px; }
-
-    .content { max-width:900px; margin:0 auto; padding:4rem 2.5rem; }
-    .content h2 { font-family:var(--serif); font-size:1.7rem; font-weight:700; margin:3rem 0 1rem; line-height:1.2; }
-    .content h2:first-child { margin-top:0; }
-    .content h3 { font-size:1.1rem; font-weight:700; margin:2rem 0 0.65rem; color:var(--accent2); }
-    .content p { font-size:0.97rem; color:var(--text-muted); line-height:1.8; margin-bottom:1rem; }
-    .content strong { color:var(--text); }
-    .content ul { padding-left:1.4rem; margin-bottom:1rem; }
-    .content li { font-size:0.95rem; color:var(--text-muted); line-height:1.75; margin-bottom:0.4rem; }
-
-    /* RISK CARDS */
-    .risk-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin:2rem 0; }
-    .risk-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; transition:border-color 0.2s, transform 0.2s; }
-    .risk-card:hover { border-color:rgba(6,182,212,0.25); transform:translateY(-2px); }
-    .risk-card-icon { font-size:1.75rem; margin-bottom:0.75rem; }
-    .risk-card-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:0.3rem; }
-    .risk-card h3 { font-size:0.97rem; font-weight:700; margin-bottom:0.5rem; color:var(--text); }
-    .risk-card p { font-size:0.85rem; color:var(--text-muted); line-height:1.6; margin:0; }
-    .risk-high { border-color:rgba(239,68,68,0.2); }
-    .risk-med { border-color:rgba(245,158,11,0.2); }
-    .risk-low { border-color:rgba(8,145,178,0.15); }
-    .risk-badge { display:inline-block; font-size:0.68rem; font-weight:700; padding:0.15rem 0.5rem; border-radius:4px; margin-bottom:0.5rem; }
-    .rb-high { background:rgba(239,68,68,0.15); color:#f87171; }
-    .rb-med { background:rgba(245,158,11,0.15); color:var(--warm); }
-    .rb-low { background:rgba(8,145,178,0.15); color:var(--accent2); }
-
-    /* SMOKING BAR */
-    .smoking-stat { background:var(--bg2); border:1px solid rgba(239,68,68,0.2); border-radius:var(--radius); padding:2rem; margin:2rem 0; }
-    .smoking-stat h3 { font-size:1rem; font-weight:700; margin-bottom:1.5rem; }
-    .stat-bar-row { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
-    .stat-bar-label { width:160px; font-size:0.83rem; color:var(--text-muted); flex-shrink:0; }
-    .stat-bar-track { flex:1; background:rgba(255,255,255,0.06); border-radius:4px; height:10px; overflow:hidden; }
-    .stat-bar-fill { height:100%; border-radius:4px; transition:width 1s ease; }
-    .stat-bar-pct { font-size:0.83rem; font-weight:700; width:40px; text-align:right; }
-
-    /* SCREENING BOX */
-    .screening-box { background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(8,145,178,0.08)); border:1px solid rgba(16,185,129,0.25); border-radius:var(--radius); padding:2rem; margin:2rem 0; }
-    .screening-box h3 { font-size:1.1rem; font-weight:700; color:#34d399; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
-    .screening-criteria { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin:1rem 0; }
-    .screening-item { background:rgba(255,255,255,0.04); border-radius:10px; padding:1rem; }
-    .screening-item .si-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#34d399; margin-bottom:0.3rem; }
-    .screening-item .si-val { font-size:0.95rem; font-weight:600; }
-    .screening-item .si-note { font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem; }
-    .screening-box p { font-size:0.9rem; color:var(--text-muted); line-height:1.7; margin-top:1rem; }
-
-    /* CALLOUT */
-    .callout { background:rgba(8,145,178,0.08); border:1px solid rgba(6,182,212,0.2); border-radius:var(--radius); padding:1.5rem 2rem; margin:2rem 0; display:flex; gap:1rem; align-items:flex-start; }
-    .callout-icon { font-size:1.4rem; flex-shrink:0; }
-    .callout h4 { font-size:0.95rem; font-weight:700; color:var(--accent2); margin-bottom:0.4rem; }
-    .callout p { font-size:0.875rem; color:var(--text-muted); margin:0; line-height:1.65; }
-
-    .page-nav { display:flex; justify-content:space-between; gap:1rem; padding:3rem 2.5rem; border-top:1px solid var(--border); max-width:900px; margin:0 auto; }
-    .page-nav-link { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; text-decoration:none; color:var(--text); flex:1; transition:border-color 0.2s, transform 0.15s; }
-    .page-nav-link:hover { border-color:rgba(6,182,212,0.3); transform:translateY(-2px); }
-    .page-nav-link.next { text-align:right; }
-    .pnl-label { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); margin-bottom:0.3rem; }
-    .pnl-title { font-size:0.95rem; font-weight:600; }
-
-    footer { background:var(--navy); border-top:1px solid rgba(255,255,255,0.06); padding:2rem 2.5rem; }
-    .footer-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-    .footer-brand { font-size:0.875rem; color:rgba(255,255,255,0.4); }
-    .footer-brand strong { color:rgba(255,255,255,0.7); }
-    .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
-    .footer-links a { font-size:0.8rem; color:rgba(255,255,255,0.35); text-decoration:none; }
-    .footer-links a:hover { color:var(--teal-lt); }
-    .footer-disclaimer { max-width:1100px; margin:1.25rem auto 0; font-size:0.75rem; color:rgba(255,255,255,0.25); line-height:1.6; border-top:1px solid var(--border); padding-top:1.25rem; }
-
-    @media(max-width:768px) {
-      nav { padding:0 1.25rem; } .nav-links { display:none; }
-      .topbar, .breadcrumb { padding-left:1.25rem; padding-right:1.25rem; }
-      .page-hero, .content { padding-left:1.25rem; padding-right:1.25rem; }
-      .page-nav { flex-direction:column; padding:2rem 1.25rem; }
-      .page-nav-link.next { text-align:left; }
-    }
-  
-    .bio-section-light { padding: 5rem 2.5rem; background: #fff; }
-    .bio-section-light .bio-wrap { display: grid; grid-template-columns: 240px 1fr; gap: 3.5rem; align-items: start; max-width: 1100px; margin: 0 auto; }
-    .bio-section-light .bio-photo { border-radius: 18px; overflow: hidden; box-shadow: 0 16px 48px rgba(12,21,38,0.15); }
-    .bio-section-light .bio-photo img { width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; object-position: center 10%; }
-    @media (max-width: 768px) { .bio-section-light .bio-wrap { grid-template-columns: 1fr; } }
-
-/* ══ CTA CONTACTO UNIFICADO ══ */
-    .cta-unified {
-      background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 60%, #0369a1 100%);
-      padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden;
-    }
-    .cta-unified::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(34,211,238,0.08), transparent 70%); pointer-events:none; }
-    .cta-unified > * { position: relative; z-index: 2; }
-    .cta-unified .cta-eyebrow { font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#22d3ee; margin-bottom:0.75rem; }
-    .cta-unified .cta-title { font-family:'DM Serif Display',serif; font-size:clamp(1.8rem,3vw,2.6rem); color:#fff; letter-spacing:-0.02em; margin-bottom:2rem; }
-    .cta-unified .cta-contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:980px; margin:0 auto; align-items:stretch; }
-    .cta-unified .contact-card { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:1.5rem; text-align:left; transition:background 0.2s; }
-    .cta-unified .contact-card:hover { background:rgba(255,255,255,0.11); }
-    .cta-unified .contact-card h4 { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#22d3ee; margin-bottom:0.75rem; }
-    .cta-unified .ccontact-links { display:flex; flex-direction:column; gap:0.65rem; margin-top:0.5rem; }
-    .cta-unified .ccontact-link { display:flex; align-items:center; gap:0.75rem; text-decoration:none; padding:0.6rem 0.75rem; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); transition:background 0.2s, border-color 0.2s; }
-    .cta-unified .ccontact-link:hover { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2); }
-    .cta-unified .ccontact-ico { font-size:1.1rem; flex-shrink:0; }
-    .cta-unified .ccontact-label { display:block; font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.4); }
-    .cta-unified .ccontact-val { display:block; font-size:0.82rem; font-weight:600; color:rgba(255,255,255,0.85); margin-top:0.1rem; }
-    @media (max-width: 768px) { .cta-unified .cta-contact-grid { grid-template-columns:1fr; } }
-
-      .authority-bio { font-size: 0.75rem; color: rgba(255,255,255,0.28); margin-top: 0.75rem; max-width: 680px; line-height: 1.5; }
-  
-    /* ── Hamburger button (desktop: hidden) ── */
-    .nav-hamburger {
-      display: none;
+.lg{--navy:#1A1950;--teal-deep:#2B2A6B;--teal:#2B2A6B;--teal-dark:#2B2A6B;--teal-lt:#F28A6E;
+--teal-pale:#F2F1FB;--teal-mid:#FFE3D9;--bg:#fff;--bg2:#F2F1FB;--bg3:#ECEAF8;--bg4:#E2E0F3;--text:#1A1950;
+--slate:#4D4C80;--muted:#5E5D8C;--text-muted:#4D4C80;--border:#E2E0F3;--accent:#2B2A6B;--accent2:#B23A22;
+--accent-lt:#F28A6E;--radius:22px;--serif:var(--display);--sans:'DM Sans',system-ui,sans-serif;
+font-family:var(--sans);color:var(--ink);line-height:1.65}
+.lg *, .lg *::before, .lg *::after{box-sizing: border-box; margin: 0; padding: 0;}
+.lg img{height: auto;}
+.lg .topbar{background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.08); padding:0.5rem 2.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;}
+.lg .topbar-left{font-size:0.72rem; color:rgba(255,255,255,0.38);}
+.lg .topbar-links{display:flex; gap:1.5rem;}
+.lg .topbar-links a{font-size:0.72rem; color:rgba(255,255,255,0.38); text-decoration:none; transition:color 0.2s;}
+.lg .topbar-links a:hover{color:var(--accent2);}
+.lg nav{position:sticky; top:0; z-index:300; background:rgba(255,255,255,0.97); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); padding:0 2.5rem; height:66px; display:flex; align-items:center; justify-content:space-between;}
+.lg .nav-logo{display:flex; align-items:center; gap:0.6rem; text-decoration:none; color:var(--text);}
+.lg .nav-logo-text{color: var(--text);}
+.lg .nav-logo-icon{width:32px; height:32px; border-radius:8px; background: var(--teal-deep); display:flex; align-items:center; justify-content:center; font-size:1rem;}
+.lg .nav-logo-text{font-size:0.95rem; font-weight:700;}
+.lg .nav-logo-text span{color:var(--accent2);}
+.lg .nav-links{display:flex; gap:1.8rem; list-style:none;}
+.lg .nav-links a{font-size:0.85rem; font-weight:500; color:var(--slate); text-decoration:none; transition:color 0.2s;}
+.lg .nav-links a:hover, .lg .nav-links a.active{color:var(--teal);}
+.lg .nav-cta{background:var(--accent); color:#fff; padding:0.5rem 1.25rem; border-radius:8px; font-size:0.85rem; font-weight:600; text-decoration:none; transition:background 0.2s;}
+.lg .nav-cta:hover{background:var(--accent2);}
+.lg .breadcrumb{background:var(--bg2); border-bottom:1px solid var(--border); padding:0.8rem 2.5rem;}
+.lg .breadcrumb-inner{max-width:900px; margin:0 auto; display:flex; gap:0.5rem; align-items:center;}
+.lg .breadcrumb a{font-size:0.78rem; color:var(--text-muted); text-decoration:none;}
+.lg .breadcrumb a:hover{color:var(--accent2);}
+.lg .breadcrumb span{font-size:0.78rem; color:rgba(77,76,128,0.4);}
+.lg .breadcrumb-current{font-size:0.78rem; color:var(--accent2);}
+.lg .page-hero{padding:4rem 2.5rem 3rem; background: linear-gradient(180deg,#F2F1FB 0%,#fff 100%); border-bottom:1px solid var(--border);}
+.lg .page-hero-inner{max-width:900px; margin:0 auto;}
+.lg .page-hero-tag{font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.75rem;}
+.lg .page-hero h1{font-family:var(--serif); font-size:clamp(2rem,4vw,3rem); font-weight:700; line-height:1.15; margin-bottom:1rem;}
+.lg .page-hero h1 span{color:var(--accent2);}
+.lg .page-hero-lead{font-size:1.05rem; color:var(--text-muted); line-height:1.75; max-width:650px;}
+.lg .content{max-width:900px; margin:0 auto; padding:4rem 2.5rem;}
+.lg .content h2{font-family:var(--serif); font-size:1.7rem; font-weight:700; margin:3rem 0 1rem; line-height:1.2;}
+.lg .content h2:first-child{margin-top:0;}
+.lg .content h3{font-size:1.1rem; font-weight:700; margin:2rem 0 0.65rem; color:var(--accent2);}
+.lg .content p{font-size:0.97rem; color:var(--text-muted); line-height:1.8; margin-bottom:1rem;}
+.lg .content strong{color:var(--text);}
+.lg .content ul{padding-left:1.4rem; margin-bottom:1rem;}
+.lg .content li{font-size:0.95rem; color:var(--text-muted); line-height:1.75; margin-bottom:0.4rem;}
+.lg .risk-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin:2rem 0;}
+.lg .risk-card{background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; transition:border-color 0.2s, transform 0.2s;}
+.lg .risk-card:hover{border-color:rgba(43,42,107,0.25); transform:translateY(-2px);}
+.lg .risk-card-icon{font-size:1.75rem; margin-bottom:0.75rem;}
+.lg .risk-card-label{font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:0.3rem;}
+.lg .risk-card h3{font-size:0.97rem; font-weight:700; margin-bottom:0.5rem; color:var(--text);}
+.lg .risk-card p{font-size:0.85rem; color:var(--text-muted); line-height:1.6; margin:0;}
+.lg .risk-high{border-color:rgba(239,68,68,0.2);}
+.lg .risk-med{border-color:rgba(245,158,11,0.2);}
+.lg .risk-low{border-color:rgba(43,42,107,0.15);}
+.lg .risk-badge{display:inline-block; font-size:0.68rem; font-weight:700; padding:0.15rem 0.5rem; border-radius:4px; margin-bottom:0.5rem;}
+.lg .rb-high{background:rgba(239,68,68,0.15); color:#B23A22;}
+.lg .rb-med{background:rgba(245,158,11,0.15); color:var(--warm);}
+.lg .rb-low{background:rgba(43,42,107,0.15); color:var(--accent2);}
+.lg .smoking-stat{background:var(--bg2); border:1px solid rgba(239,68,68,0.2); border-radius:var(--radius); padding:2rem; margin:2rem 0;}
+.lg .smoking-stat h3{font-size:1rem; font-weight:700; margin-bottom:1.5rem;}
+.lg .stat-bar-row{display:flex; align-items:center; gap:1rem; margin-bottom:1rem;}
+.lg .stat-bar-label{width:160px; font-size:0.83rem; color:var(--text-muted); flex-shrink:0;}
+.lg .stat-bar-track{flex:1; background:rgba(255,255,255,0.06); border-radius:4px; height:10px; overflow:hidden;}
+.lg .stat-bar-fill{height:100%; border-radius:4px; transition:width 1s ease;}
+.lg .stat-bar-pct{font-size:0.83rem; font-weight:700; width:40px; text-align:right;}
+.lg .screening-box{background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(43,42,107,0.08)); border:1px solid rgba(16,185,129,0.25); border-radius:var(--radius); padding:2rem; margin:2rem 0;}
+.lg .screening-box h3{font-size:1.1rem; font-weight:700; color:#1D6B45; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;}
+.lg .screening-criteria{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin:1rem 0;}
+.lg .screening-item{background:rgba(255,255,255,0.04); border-radius:10px; padding:1rem;}
+.lg .screening-item .si-label{font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#1D6B45; margin-bottom:0.3rem;}
+.lg .screening-item .si-val{font-size:0.95rem; font-weight:600;}
+.lg .screening-item .si-note{font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;}
+.lg .screening-box p{font-size:0.9rem; color:var(--text-muted); line-height:1.7; margin-top:1rem;}
+.lg .callout{background:rgba(43,42,107,0.08); border:1px solid rgba(43,42,107,0.2); border-radius:var(--radius); padding:1.5rem 2rem; margin:2rem 0; display:flex; gap:1rem; align-items:flex-start;}
+.lg .callout-icon{font-size:1.4rem; flex-shrink:0;}
+.lg .callout h4{font-size:0.95rem; font-weight:700; color:var(--accent2); margin-bottom:0.4rem;}
+.lg .callout p{font-size:0.875rem; color:var(--text-muted); margin:0; line-height:1.65;}
+.lg .page-nav{display:flex; justify-content:space-between; gap:1rem; padding:3rem 2.5rem; border-top:1px solid var(--border); max-width:900px; margin:0 auto;}
+.lg .page-nav-link{background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; text-decoration:none; color:var(--text); flex:1; transition:border-color 0.2s, transform 0.15s;}
+.lg .page-nav-link:hover{border-color:rgba(43,42,107,0.3); transform:translateY(-2px);}
+.lg .page-nav-link.next{text-align:right;}
+.lg .pnl-label{font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); margin-bottom:0.3rem;}
+.lg .pnl-title{font-size:0.95rem; font-weight:600;}
+.lg footer{background:var(--navy); border-top:1px solid rgba(255,255,255,0.06); padding:2rem 2.5rem;}
+.lg .footer-inner{max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;}
+.lg .footer-brand{font-size:0.875rem; color:rgba(255,255,255,0.4);}
+.lg .footer-brand strong{color:rgba(255,255,255,0.7);}
+.lg .footer-links{display:flex; gap:1.5rem; flex-wrap:wrap;}
+.lg .footer-links a{font-size:0.8rem; color:rgba(255,255,255,0.35); text-decoration:none;}
+.lg .footer-links a:hover{color:var(--teal-lt);}
+.lg .footer-disclaimer{max-width:1100px; margin:1.25rem auto 0; font-size:0.75rem; color:rgba(255,255,255,0.25); line-height:1.6; border-top:1px solid var(--border); padding-top:1.25rem;}
+@media(max-width:768px){.lg nav{padding:0 1.25rem;}
+.lg .nav-links{display:none;}
+.lg .topbar, .lg .breadcrumb{padding-left:1.25rem; padding-right:1.25rem;}
+.lg .page-hero, .lg .content{padding-left:1.25rem; padding-right:1.25rem;}
+.lg .page-nav{flex-direction:column; padding:2rem 1.25rem;}
+.lg .page-nav-link.next{text-align:left;}}
+.lg .bio-section-light{padding: 5rem 2.5rem; background: #fff;}
+.lg .bio-section-light .bio-wrap{display: grid; grid-template-columns: 240px 1fr; gap: 3.5rem; align-items: start; max-width: 1100px; margin: 0 auto;}
+.lg .bio-section-light .bio-photo{border-radius: 18px; overflow: hidden; box-shadow: 0 16px 48px rgba(26,25,80,0.15);}
+.lg .bio-section-light .bio-photo img{width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; object-position: center 10%;}
+@media (max-width: 768px){.lg .bio-section-light .bio-wrap{grid-template-columns: 1fr;}}
+.lg .cta-unified{background: linear-gradient(135deg, #2B2A6B 0%, #2B2A6B 60%, #2B2A6B 100%);
+      padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden;}
+.lg .cta-unified::before{content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(242,138,110,0.08), transparent 70%); pointer-events:none;}
+.lg .cta-unified > *{position: relative; z-index: 2;}
+.lg .cta-unified .cta-eyebrow{font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#F28A6E; margin-bottom:0.75rem;}
+.lg .cta-unified .cta-title{font-family:var(--display); font-size:clamp(1.8rem,3vw,2.6rem); color:#fff; letter-spacing:-0.02em; margin-bottom:2rem;}
+.lg .cta-unified .cta-contact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:980px; margin:0 auto; align-items:stretch;}
+.lg .cta-unified .contact-card{background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:1.5rem; text-align:left; transition:background 0.2s;}
+.lg .cta-unified .contact-card:hover{background:rgba(255,255,255,0.11);}
+.lg .cta-unified .contact-card h4{font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#F28A6E; margin-bottom:0.75rem;}
+.lg .cta-unified .ccontact-links{display:flex; flex-direction:column; gap:0.65rem; margin-top:0.5rem;}
+.lg .cta-unified .ccontact-link{display:flex; align-items:center; gap:0.75rem; text-decoration:none; padding:0.6rem 0.75rem; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); transition:background 0.2s, border-color 0.2s;}
+.lg .cta-unified .ccontact-link:hover{background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2);}
+.lg .cta-unified .ccontact-ico{font-size:1.1rem; flex-shrink:0;}
+.lg .cta-unified .ccontact-label{display:block; font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.4);}
+.lg .cta-unified .ccontact-val{display:block; font-size:0.82rem; font-weight:600; color:rgba(255,255,255,0.85); margin-top:0.1rem;}
+@media (max-width: 768px){.lg .cta-unified .cta-contact-grid{grid-template-columns:1fr;}}
+.lg .authority-bio{font-size: 0.75rem; color: rgba(255,255,255,0.28); margin-top: 0.75rem; max-width: 680px; line-height: 1.5;}
+.lg .nav-hamburger{display: none;
       background: none; border: none; cursor: pointer;
       padding: 0.4rem; flex-direction: column;
-      gap: 5px; align-items: center; flex-shrink: 0;
-    }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
+      gap: 5px; align-items: center; flex-shrink: 0;}
+.lg .nav-hamburger span{display: block; width: 22px; height: 2px;
       background: #fff; border-radius: 2px;
       transition: transform 0.25s, opacity 0.2s;
-      pointer-events: none;
-    }
-    nav.light .nav-hamburger span { background: var(--navy, #0c1526); }
-    nav.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
-    nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* ═══════════════════════════════════════════════
-       MOBILE RESPONSIVE  ·  max-width 768px
-       Injected last — overrides all rules above
-    ═══════════════════════════════════════════════ */
-    @media (max-width: 768px) {
-
-      /* Global */
-      html, body { overflow-x: hidden; }
-      *, *::before, *::after { box-sizing: border-box; }
-      img, video, iframe { max-width: 100%; height: auto; display: block; }
-
-      /* Typography floor */
-      p, li, td, th, blockquote, figcaption, .hero-lead, .hero-sub,
-      .alert-strip p, .card-desc, .esp-card p, .benefit-card p { font-size: max(14px, 0.9rem) !important; line-height: 1.65 !important; }
-
-      /* ── Navigation ── */
-      nav {
-        padding-left: 1rem !important;
+      pointer-events: none;}
+.lg nav.light .nav-hamburger span{background: var(--navy, #1A1950);}
+.lg nav.nav-open .nav-hamburger span:nth-child(1){transform: translateY(7px) rotate(45deg);}
+.lg nav.nav-open .nav-hamburger span:nth-child(2){opacity: 0;}
+.lg nav.nav-open .nav-hamburger span:nth-child(3){transform: translateY(-7px) rotate(-45deg);}
+@media (max-width: 768px){.lg *, .lg *::before, .lg *::after{box-sizing: border-box;}
+.lg img, .lg video, .lg iframe{max-width: 100%; height: auto; display: block;}
+.lg p, .lg li, .lg td, .lg th, .lg blockquote, .lg figcaption, .lg .hero-lead, .lg .hero-sub, .lg .alert-strip p, .lg .card-desc, .lg .esp-card p, .lg .benefit-card p{font-size: max(14px, 0.9rem) !important; line-height: 1.65 !important;}
+.lg nav{padding-left: 1rem !important;
         padding-right: 1rem !important;
         position: relative;
         flex-wrap: nowrap !important;
         display: flex !important;
-        align-items: center !important;
-      }
-      .nav-hamburger { display: flex !important; margin-left: auto; }
-      .nav-cta { display: none !important; }
-
-      /* Nav links: hidden by default, drop down when .nav-open */
-      .nav-links {
-        display: none !important;
+        align-items: center !important;}
+.lg .nav-hamburger{display: flex !important; margin-left: auto;}
+.lg .nav-cta{display: none !important;}
+.lg .nav-links{display: none !important;
         flex-direction: column !important;
         position: absolute !important;
         top: 100% !important; left: 0 !important; right: 0 !important;
-        background: var(--navy, #0c1526) !important;
+        background: var(--navy, #1A1950) !important;
         padding: 0.75rem 1.25rem 1.25rem !important;
         gap: 0 !important;
         z-index: 9999 !important;
         box-shadow: 0 12px 40px rgba(0,0,0,0.45) !important;
         border-top: 1px solid rgba(255,255,255,0.07) !important;
-        list-style: none !important;
-      }
-      nav.nav-open .nav-links { display: flex !important; }
-      .nav-links li { width: 100%; }
-      .nav-links a {
-        display: block !important;
+        list-style: none !important;}
+.lg nav.nav-open .nav-links{display: flex !important;}
+.lg .nav-links li{width: 100%;}
+.lg .nav-links a{display: block !important;
         padding: 0.7rem 0 !important;
         border-bottom: 1px solid rgba(255,255,255,0.06) !important;
         color: rgba(255,255,255,0.85) !important;
         font-size: 0.9rem !important;
         font-weight: 500 !important;
         text-decoration: none !important;
-        width: 100% !important;
-      }
-      .nav-links li:last-child a { border-bottom: none !important; }
-
-      /* ── Topbar & breadcrumb ── */
-      .topbar, .breadcrumb {
-        padding-left: 1rem !important;
+        width: 100% !important;}
+.lg .nav-links li:last-child a{border-bottom: none !important;}
+.lg .topbar, .lg .breadcrumb{padding-left: 1rem !important;
         padding-right: 1rem !important;
         font-size: 0.72rem !important;
-        white-space: normal !important;
-      }
-
-      /* ── Sections & inner containers ── */
-      .section, section {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-      }
-      .inner, .page-hero, .content, .sec,
-      .article-hero, .article-hero-inner,
-      .cta-bottom, .cta-section, .main-wrap { padding-left: 1rem !important; padding-right: 1rem !important; }
-
-      /* ── Footer ── */
-      footer {
-        padding-left: 1rem !important; padding-right: 1rem !important;
+        white-space: normal !important;}
+.lg .section, .lg section{padding-left: 1rem !important;
+        padding-right: 1rem !important;}
+.lg .inner, .lg .page-hero, .lg .content, .lg .sec, .lg .article-hero, .lg .article-hero-inner, .lg .cta-bottom, .lg .cta-section, .lg .main-wrap{padding-left: 1rem !important; padding-right: 1rem !important;}
+.lg footer{padding-left: 1rem !important; padding-right: 1rem !important;
         flex-direction: column !important;
         gap: 1.25rem !important;
-        text-align: center !important;
-      }
-      .footer-links { flex-wrap: wrap !important; justify-content: center !important; gap: 0.75rem !important; }
-      .footer-inner, .footer-brand { flex-direction: column !important; gap: 1rem !important; text-align: center !important; }
-
-      /* ── Hero sections ── */
-      .hero { min-height: 90vh !important; }
-      .hero-content { padding: 6rem 1rem 2rem !important; }
-      .hero-inner { padding: 6rem 1rem 3rem !important; }
-      .hero-h1, .hero h1 { font-size: clamp(2rem, 8vw, 3rem) !important; }
-      h1 { font-size: clamp(1.9rem, 7.5vw, 3rem) !important; }
-      h2 { font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important; }
-      .hero-btns, .hero-ctas, .hero-actions, .hero-cta-group {
-        flex-direction: column !important;
+        text-align: center !important;}
+.lg .footer-links{flex-wrap: wrap !important; justify-content: center !important; gap: 0.75rem !important;}
+.lg .footer-inner, .lg .footer-brand{flex-direction: column !important; gap: 1rem !important; text-align: center !important;}
+.lg .hero{min-height: 90vh !important;}
+.lg .hero-content{padding: 6rem 1rem 2rem !important;}
+.lg .hero-inner{padding: 6rem 1rem 3rem !important;}
+.lg .hero-h1, .lg .hero h1{font-size: clamp(2rem, 8vw, 3rem) !important;}
+.lg h1{font-size: clamp(1.9rem, 7.5vw, 3rem) !important;}
+.lg h2{font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important;}
+.lg .hero-btns, .lg .hero-ctas, .lg .hero-actions, .lg .hero-cta-group{flex-direction: column !important;
         gap: 0.75rem !important;
-        width: 100% !important;
-      }
-
-      /* ── Buttons ── */
-      .btn-primary, .btn-ghost, .btn-outline,
-      .btn-hero-primary, .btn-hero-secondary {
-        width: 100% !important;
+        width: 100% !important;}
+.lg .btn-primary, .lg .btn-ghost, .lg .btn-outline, .lg .btn-hero-primary, .lg .btn-hero-secondary{width: 100% !important;
         text-align: center !important;
         justify-content: center !important;
-        box-sizing: border-box !important;
-      }
-
-      /* ── ALL GRIDS → single column ── */
-      .esp-grid, .cards-grid, .about-grid, .audience-grid,
-      .bio-wrap, .benefits-grid, .proc-grid, .davinci-grid,
-      .ebus-grid, .ebus-cards, .ablacion-cards,
-      .two-col, .medicos-grid, .interv-grid,
-      .approach-grid, .pathology-grid,
-      .rigida-grid, .crio-grid, .crio-uses-grid, .tech-grid,
-      .types-grid, .tnm-intro, .cryo-mechanic, .alcance-list,
-      .study-grid, .equipo-grid, .img-list-block,
-      .stent-vs-grid, .indic-two-col, .complic-grid,
-      .stent-evidence, .eco-grid, .abl-card-body, .abl-row,
-      .contact-grid, .page-body, .services-row, .indic-grid,
-      .proc-table-grid, .hero-inner-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .path-two-col { column-count: 1 !important; columns: 1 !important; }
-      .img-list-block.reverse { direction: ltr !important; }
-      .sidebar { display: none !important; }
-      .abl-desc-col { border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important; }
-      .proc-col:first-child { border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important; }
-
-      /* ── Bio credentials: 2 columns on mobile ── */
-      .bio-creds { grid-template-columns: 1fr 1fr !important; }
-      .bio-section-light .bio-wrap { grid-template-columns: 1fr !important; }
-
-      /* ── Statsbar ── */
-      .statsbar {
-        grid-template-columns: 1fr 1fr !important;
-        padding: 1.25rem 1rem !important;
-      }
-      .stats-strip { grid-template-columns: 1fr 1fr !important; }
-      .stat {
-        border-right: none !important;
+        box-sizing: border-box !important;}
+.lg .esp-grid, .lg .cards-grid, .lg .about-grid, .lg .audience-grid, .lg .bio-wrap, .lg .benefits-grid, .lg .proc-grid, .lg .davinci-grid, .lg .ebus-grid, .lg .ebus-cards, .lg .ablacion-cards, .lg .two-col, .lg .medicos-grid, .lg .interv-grid, .lg .approach-grid, .lg .pathology-grid, .lg .rigida-grid, .lg .crio-grid, .lg .crio-uses-grid, .lg .tech-grid, .lg .types-grid, .lg .tnm-intro, .lg .cryo-mechanic, .lg .alcance-list, .lg .study-grid, .lg .equipo-grid, .lg .img-list-block, .lg .stent-vs-grid, .lg .indic-two-col, .lg .complic-grid, .lg .stent-evidence, .lg .eco-grid, .lg .abl-card-body, .lg .abl-row, .lg .contact-grid, .lg .page-body, .lg .services-row, .lg .indic-grid, .lg .proc-table-grid, .lg .hero-inner-grid{grid-template-columns: 1fr !important;}
+.lg .path-two-col{column-count: 1 !important; columns: 1 !important;}
+.lg .img-list-block.reverse{direction: ltr !important;}
+.lg .sidebar{display: none !important;}
+.lg .abl-desc-col{border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important;}
+.lg .proc-col:first-child{border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important;}
+.lg .bio-creds{grid-template-columns: 1fr 1fr !important;}
+.lg .bio-section-light .bio-wrap{grid-template-columns: 1fr !important;}
+.lg .statsbar{grid-template-columns: 1fr 1fr !important;
+        padding: 1.25rem 1rem !important;}
+.lg .stats-strip{grid-template-columns: 1fr 1fr !important;}
+.lg .stat{border-right: none !important;
         border-bottom: 1px solid rgba(255,255,255,0.07) !important;
-        padding-bottom: 1rem !important;
-      }
-      .stat:last-child { border-bottom: none !important; padding-bottom: 0 !important; }
-      .hero-statsbar {
-        flex-direction: column !important;
+        padding-bottom: 1rem !important;}
+.lg .stat:last-child{border-bottom: none !important; padding-bottom: 0 !important;}
+.lg .hero-statsbar{flex-direction: column !important;
         padding: 1.25rem 1rem !important;
-        gap: 1rem !important;
-      }
-      .hero-stat {
-        border-right: none !important;
+        gap: 1rem !important;}
+.lg .hero-stat{border-right: none !important;
         border-bottom: 1px solid rgba(255,255,255,0.1) !important;
-        padding-bottom: 0.75rem !important;
-      }
-      .hero-stat:last-child { border-bottom: none !important; }
-
-      /* ── CTA contact grid (Hable con el especialista) ── */
-      .cta-contact-grid, .cta-unified .cta-contact-grid,
-      .ccontact-links {
-        grid-template-columns: 1fr !important;
-        flex-direction: column !important;
-      }
-      .contact-card { display: block !important; }
-
-      /* ── Tables ── */
-      table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
-      .grouping-table { font-size: 0.78rem !important; }
-      .grouping-table td, .grouping-table th { padding: 0.4rem 0.5rem !important; }
-
-      /* ── Misc layout fixes ── */
-      .alert-strip { flex-direction: column !important; gap: 0.75rem !important; }
-      .doctor-wrap, .bio-wrap-row { flex-direction: column !important; align-items: flex-start !important; gap: 1.5rem !important; }
-      .survival-row { flex-wrap: wrap !important; }
-      .aquire-strip, .abl-card-header { flex-direction: column !important; gap: 1rem !important; }
-      .as-sep { display: none !important; }
-      .page-nav { flex-direction: column !important; padding: 2rem 1rem !important; gap: 1rem !important; }
-      .page-nav-link.next { text-align: left !important; }
-      .evidence-strip { grid-template-columns: 1fr 1fr !important; }
-      .abl-card-kpis { gap: 1rem !important; flex-wrap: wrap !important; }
-      .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; }
-    }
-
-  
-    /* ── Box de perfil dentro del bloque biográfico ── */
-    .perfil-box {
-      display: flex; align-items: center; gap: 0.85rem;
+        padding-bottom: 0.75rem !important;}
+.lg .hero-stat:last-child{border-bottom: none !important;}
+.lg .cta-contact-grid, .lg .cta-unified .cta-contact-grid, .lg .ccontact-links{grid-template-columns: 1fr !important;
+        flex-direction: column !important;}
+.lg .contact-card{display: block !important;}
+.lg table{display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%;}
+.lg .grouping-table{font-size: 0.78rem !important;}
+.lg .grouping-table td, .lg .grouping-table th{padding: 0.4rem 0.5rem !important;}
+.lg .alert-strip{flex-direction: column !important; gap: 0.75rem !important;}
+.lg .doctor-wrap, .lg .bio-wrap-row{flex-direction: column !important; align-items: flex-start !important; gap: 1.5rem !important;}
+.lg .survival-row{flex-wrap: wrap !important;}
+.lg .aquire-strip, .lg .abl-card-header{flex-direction: column !important; gap: 1rem !important;}
+.lg .as-sep{display: none !important;}
+.lg .page-nav{flex-direction: column !important; padding: 2rem 1rem !important; gap: 1rem !important;}
+.lg .page-nav-link.next{text-align: left !important;}
+.lg .evidence-strip{grid-template-columns: 1fr 1fr !important;}
+.lg .abl-card-kpis{gap: 1rem !important; flex-wrap: wrap !important;}
+.lg .hero-stats{flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important;}}
+.lg .perfil-box{display: flex; align-items: center; gap: 0.85rem;
       margin-top: 1.5rem; padding: 0.9rem 1.1rem; max-width: 430px;
       background: var(--teal-pale); color: var(--teal-dark);
       border: 1px solid var(--teal); border-left: 4px solid var(--teal);
       border-radius: 10px; text-decoration: none;
-      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-    }
-    .perfil-box:hover {
-      background: #fff;
-      box-shadow: 0 8px 24px rgba(8,145,178,0.18);
-      transform: translateY(-2px);
-    }
-    .perfil-box-txt { flex: 1; }
-    .perfil-box-t {
-      display: block; font-size: 0.84rem; font-weight: 700;
-      color: var(--navy); letter-spacing: -0.01em;
-    }
-    .perfil-box-s {
-      display: block; font-size: 0.74rem; line-height: 1.45;
-      color: var(--muted); margin-top: 0.15rem;
-    }
-    @media (max-width: 768px) { .perfil-box { max-width: 100%; } }
-
-    /* Iconos SVG que reemplazan a los emojis: tamaño equivalente */
-    .risk-card-icon svg{width:28px;height:28px} .sym-icon svg{width:24px;height:24px}
-    .factor-icon svg{width:24px;height:24px} .callout-icon svg{width:23px;height:23px}
-    .exam-icon svg{width:21px;height:21px}
-    .risk-card-icon,.sym-icon,.factor-icon,.callout-icon,.exam-icon{color:#0891b2}
-    .nav-logo-icon svg,.nav-logo-mark svg{width:19px;height:19px;color:#fff}
-      /* ── FAQ ── */
-    #faq { padding: 3.5rem 2.5rem; background: #f4f8fb; }
-    #faq .inner { max-width: 980px; margin: 0 auto; }
-    @media (max-width: 720px) { #faq { padding: 2.5rem 1.25rem; } }
-
-    .faq-list { max-width: 760px; }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;}
+.lg .perfil-box:hover{background: #fff;
+      box-shadow: 0 8px 24px rgba(43,42,107,0.18);
+      transform: translateY(-2px);}
+.lg .perfil-box-txt{flex: 1;}
+.lg .perfil-box-t{display: block; font-size: 0.84rem; font-weight: 700;
+      color: var(--navy); letter-spacing: -0.01em;}
+.lg .perfil-box-s{display: block; font-size: 0.74rem; line-height: 1.45;
+      color: var(--muted); margin-top: 0.15rem;}
+@media (max-width: 768px){.lg .perfil-box{max-width: 100%;}}
+.lg .risk-card-icon svg{width:28px;height:28px}
+.lg .sym-icon svg{width:24px;height:24px}
+.lg .factor-icon svg{width:24px;height:24px}
+.lg .callout-icon svg{width:23px;height:23px}
+.lg .exam-icon svg{width:21px;height:21px}
+.lg .risk-card-icon, .lg .sym-icon, .lg .factor-icon, .lg .callout-icon, .lg .exam-icon{color:#2B2A6B}
+.lg .nav-logo-icon svg, .lg .nav-logo-mark svg{width:19px;height:19px;color:#fff}
+.lg #faq{padding: 3.5rem 2.5rem; background: #F2F1FB;}
+.lg #faq .inner{max-width: 980px; margin: 0 auto;}
+@media (max-width: 720px){.lg #faq{padding: 2.5rem 1.25rem;}}
+.lg .faq-list{max-width: 760px;}
+.lg .faq-item{border-bottom: 1px solid var(--border);}
+.lg .faq-q{width: 100%; background: none; border: none; cursor: pointer; display: flex;
       align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 0;
       text-align: left; font-family: inherit; font-size: 0.95rem; font-weight: 600;
-      color: var(--navy); transition: color 0.2s; }
-    .faq-q:hover { color: var(--teal); }
-    .faq-arrow { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      color: var(--navy); transition: color 0.2s;}
+.lg .faq-q:hover{color: var(--teal);}
+.lg .faq-arrow{flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
       border: 1.5px solid var(--border); color: var(--slate); display: flex; align-items: center;
-      justify-content: center; font-size: 0.9rem; transition: all 0.3s; }
-    .faq-item.open .faq-arrow { background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
-      transition: max-height 0.35s ease, padding 0.35s; }
-    .faq-item.open .faq-a { max-height: 480px; padding-bottom: 1.25rem; }
-    .faq-h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
-      margin: 0 0 1.8rem; line-height: 1.2; }
-  </style>
+      justify-content: center; font-size: 0.9rem; transition: all 0.3s;}
+.lg .faq-item.open .faq-arrow{background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg);}
+.lg .faq-a{max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
+      transition: max-height 0.35s ease, padding 0.35s;}
+.lg .faq-item.open .faq-a{max-height: 480px; padding-bottom: 1.25rem;}
+.lg .faq-h2{font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
+      margin: 0 0 1.8rem; line-height: 1.2;}
+/* --- capa F2 sobre el contenido --- */
+/* hero */
+.hero h1 span{color:#fff}
+/* contenedor */
+.lg{padding-top:4px}
+.lg .content,.lg .tnm-section,.lg .descriptor-section,.lg .survival-section{max-width:none}
+.lg .content{margin:0;padding:0}
+.lg .content > p,.lg .content > ul,.lg .content > ol{max-width:940px}
+/* tipografía */
+.lg h2,.lg .content h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.6vw,40px);letter-spacing:-.02em;color:var(--ink);line-height:1.1;margin:56px 0 16px}
+.lg .content h2:first-child{margin-top:8px}
+.lg h3,.lg h4,.lg .content h3{font-family:var(--display);letter-spacing:-.01em}
+.lg .content h3{font-size:22px;font-weight:800;color:var(--accent-text);margin:32px 0 12px}
+.lg .content p,.lg .content li{color:var(--ink);font-size:16px;line-height:1.75}
+.lg .content strong{color:var(--ink)}
+.lg a{color:var(--ink)}
+/* tarjetas: sin bordes, fondo suave, radio grande */
+.lg .symptom-card,.lg .step-body,.lg .exam-item,.lg .risk-card,.lg .type-card,.lg .tnm-section,.lg .tnm-letter-card,
+.lg .descriptor-section,.lg .grouping-wrap,.lg .process-card,.lg .survival-section,.lg .factor-card,.lg .stage-block,
+.lg .modality-card,.lg .bio-table-wrap,.lg .smoking-stat{border:none;border-radius:26px;background:var(--soft)}
+.lg .exam-header,.lg .exam-body{background:var(--soft)}
+.lg .risk-card:hover{transform:none}
+.lg .sym-alert,.lg .factor-negative{background:var(--soft2)}
+/* recuadros destacados: durazno, sin borde */
+.lg .callout,.lg .ebus-box,.lg .screening-box,.lg .robots-box,.lg .hope-box{background:var(--soft2);border:none;border-radius:26px}
+.lg .callout h4,.lg .ebus-box h3,.lg .screening-box h3,.lg .screening-box h4,.lg .robots-box h3,.lg .robots-box h4,.lg .hope-box h3,.lg .hope-box h4{color:var(--accent-text)}
+.lg .callout-icon,.lg .risk-card-icon,.lg .sym-icon,.lg .factor-icon,.lg .exam-icon{color:var(--accent-text)}
+/* pasos numerados */
+.lg .step-num{background:var(--accent);border:none;border-radius:50%;color:var(--ink);font-weight:800}
+.lg .step:not(:last-child)::after{background:var(--soft2)}
+/* tablas */
+.lg table th{color:var(--muted)}
+.lg .descriptor-header,.lg .tnm-header,.lg .survival-header,.lg .stage-block-header,.lg .bio-table-header{background:transparent;border:none}
+.lg tr,.lg td,.lg th{border-color:#fff!important}
+/* escala de estadios (temprano → avanzado) */
+.lg .stage-ia,.lg .stage-ib,.lg .sc-ia1,.lg .sc-ia2,.lg .sc-ia3,.lg .sc-ib,.lg .sc-0,.lg .sp-ia,.lg .sp-ib,.lg .sp-green,.lg .tx-surgery{background:#DDF1E5!important;color:#1D6B45!important}
+.lg .stage-iia,.lg .stage-iib,.lg .sc-iia,.lg .sc-iib,.lg .sp-iia,.lg .sp-iib,.lg .sp-amber{background:#FCEBC9!important;color:#7A5200!important}
+.lg .stage-iiia,.lg .stage-iiib,.lg .stage-iiic,.lg .sc-iiia,.lg .sc-iiib,.lg .sc-iiic,.lg .sp-iiia,.lg .sp-iiib,.lg .sp-iiic{background:var(--soft2)!important;color:var(--accent-text)!important}
+.lg .stage-iva,.lg .stage-ivb,.lg .sc-iva,.lg .sc-ivb,.lg .sp-iva,.lg .sp-ivb,.lg .sp-red{background:#F6D0CC!important;color:#8E1B1B!important}
+.lg .s-ia .surv-bar-fill{background:#2E9E6B}.lg .s-ib .surv-bar-fill{background:#57B585}
+.lg .s-iia .surv-bar-fill{background:#D9A23A}.lg .s-iib .surv-bar-fill{background:#E6B455}
+.lg .s-iiia .surv-bar-fill{background:#F28A6E}.lg .s-iiib .surv-bar-fill{background:#E46D4D}.lg .s-iiic .surv-bar-fill{background:#D2553A}
+.lg .s-iva .surv-bar-fill{background:#B23A22}.lg .s-ivb .surv-bar-fill{background:#8E1B1B}
+.lg .surv-bar-track{background:#fff;border-radius:99px}
+.lg .surv-bar-fill{border-radius:99px}
+.lg .s-ia .surv-pct,.lg .s-ib .surv-pct{color:#1D6B45}.lg .s-iia .surv-pct,.lg .s-iib .surv-pct{color:#7A5200}
+.lg .s-iiia .surv-pct,.lg .s-iiib .surv-pct,.lg .s-iiic .surv-pct{color:var(--accent-text)}.lg .s-iva .surv-pct,.lg .s-ivb .surv-pct{color:#8E1B1B}
+/* portada */
+.hero-photo{border-radius:26px;filter:none;aspect-ratio:16/10;object-fit:cover;box-shadow:0 18px 40px rgba(26,25,80,.25)}
+.hero-actions{margin-top:24px}
+.lg .alert-wrap .inner{max-width:none;padding:0}
+.lg .alert-strip{background:var(--soft2);border:none;border-radius:26px;box-shadow:none;transform:none;max-width:none;padding:26px 30px}
+.lg .alert-strip strong{color:var(--accent-text);font-size:17px}
+.lg .alert-strip p{color:var(--ink)}
+.lg .alert-ico{color:var(--accent-text)}
+.lg .home-cards{padding-top:40px}
+.lg .home-cards .inner{max-width:none;padding:0}
+.lg .home-cards .section-lead{color:var(--ink);font-size:17px;margin-bottom:24px}
+.lg .subpage-card{border:none;background:var(--soft);border-radius:26px;padding:28px}
+.lg .subpage-card::before{display:none}
+.lg .subpage-card:hover{transform:none;box-shadow:none;background:var(--soft2)}
+.lg .card-num{color:var(--accent-text);font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.06em}
+.lg .card-title{font-family:var(--display);font-weight:800;font-size:23px;line-height:1.15;color:var(--ink)}
+.lg .card-desc{color:var(--ink)}
+.lg .card-arrow{color:var(--ink);font-weight:700}
+.bio .txt.src{font-size:14px;color:var(--muted)}
+@media (max-width:860px){.hero-photo{max-width:100%!important;width:100%}}
+.lg .alert-wrap{padding:0;margin:0;background:none}
+#main-content > .wrap:first-child{padding-top:16px}
+/* tablas en móvil: filas como tarjetas */
+@media (max-width:640px){
+.lg table.stk{display:block!important;min-width:0!important;width:100%!important;overflow:visible!important;border-spacing:0}
+.lg table.stk thead{display:none}
+.lg table.stk tbody{display:block}
+.lg table.stk tr{display:block;background:#fff;border-radius:18px;margin:8px 0;padding:12px 14px}
+.lg table.stk td{display:block;padding:2px 0!important;border:none!important;background:none!important;font-size:15px!important}
+.lg table.stk td[data-l]::before{content:attr(data-l);display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.lg table.stk td[data-c="0"]::before{display:none}
+.lg table.stk td[data-c="0"]{font-weight:700;margin-bottom:2px}
+.lg table.grouping-table.stk td[data-c="1"],.lg table.grouping-table.stk td[data-c="2"],.lg table.grouping-table.stk td[data-c="3"]{display:inline-block;margin-right:16px}
+.lg table.grouping-table.stk td::before,.lg table.desc-table.stk td::before{display:none!important}
+.lg table.grouping-table.stk td[data-c="0"]{display:block}
+.lg table.grouping-table.stk td[data-c="4"]{margin-top:4px}
+.lg .tnm-section,.lg .grouping-wrap,.lg .bio-table-wrap,.lg .descriptor-section{overflow:visible}
+
+}
+
+</style>
   <!-- Google Analytics 4 · red Dr. David Lazo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
   <script>
@@ -642,53 +580,44 @@
 </head>
 <body>
 
-<div class="topbar">
-  <span class="topbar-left">Información para pacientes · Santiago, Chile</span>
+<div class="topbar"><div class="wrap">
+  <span>Información para pacientes · Santiago, Chile</span>
   <div class="topbar-links">
     <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
-    <a href="https://rats.cl">Cirugía Robótica</a>
-    <a href="https://broncoscopia.cl">Broncoscopía</a>
-    <a href="https://videotoracoscopia.cl">Videotoracoscopía</a>
-    <a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
+<a href="https://rats.cl">Cirugía Robótica</a>
+<a href="https://broncoscopia.cl">Broncoscopía</a>
+<a href="https://videotoracoscopia.cl">Videotoracoscopía</a>
+<a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
   </div>
-</div>
+</div></div>
 
-<header>
+<header class="site-header">
 <nav>
-  <a href="/" class="nav-logo">
-    <div class="nav-logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"/><path d="M12 11c0-2.6-2-4-3.6-4C6.4 7 5 8.6 5 11.4c0 3.6 1.6 7.6 3.6 7.6 1.8 0 3.4-1.4 3.4-4z"/><path d="M12 11c0-2.6 2-4 3.6-4C17.6 7 19 8.6 19 11.4c0 3.6-1.6 7.6-3.6 7.6-1.8 0-3.4-1.4-3.4-4z"/></svg></div>
-    <div class="nav-logo-text">Cáncer <span>Pulmonar</span></div>
-  </a>
+  <a href="/" class="logo">Cáncer <span>Pulmonar</span></a>
+  <button class="nav-toggle" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="/que-es">¿Qué es?</a></li>
     <li><a href="/causas" class="active">Causas</a></li>
     <li><a href="/diagnostico">Diagnóstico</a></li>
+    <li><a href="/nodulo-pulmonar">Nódulo pulmonar</a></li>
     <li><a href="/etapificacion">Etapificación</a></li>
     <li><a href="/tratamiento">Tratamiento</a></li>
     <li><a href="/sobrevida">Sobrevida</a></li>
   </ul>
   <a href="https://cirugiatoracica.cl/#contacto" class="nav-cta">Consultar al especialista</a>
-    <button class="nav-hamburger" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
-  </nav>
+</nav>
 </header>
 
 <main id="main-content">
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="/">Inicio</a>
-    <span>›</span>
-    <span class="breadcrumb-current">Causas y factores de riesgo</span>
-  </div>
-</div>
-
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="page-hero-tag">02 · Causas y Riesgos</div>
+<div class="wrap"><div class="crumbs"><a href="/">Inicio</a> › <span class="current">Causas y factores de riesgo</span></div></div>
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-tag">02 · Causas y Riesgos</div>
     <h1>¿Cómo se produce y quién tiene <span>más riesgo</span>?</h1>
-    <p class="page-hero-lead">El cáncer pulmonar no aparece "de la nada". Conocer los factores de riesgo te permite tomar acciones preventivas y saber si debes hacerte exámenes de detección precoz.</p>
+    <p>El cáncer pulmonar no aparece "de la nada". Conocer los factores de riesgo te permite tomar acciones preventivas y saber si debes hacerte exámenes de detección precoz.</p>
   </div>
 </div>
-
+<section class="section"><div class="wrap lg">
 <div class="content">
 
   <h2>¿Cómo se origina el cáncer pulmonar?</h2>
@@ -702,8 +631,8 @@
   <div class="callout">
     <div class="callout-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.1"/></svg></div>
     <div>
-      <h4>Importante: no todos los fumadores desarrollan cáncer</h4>
-      <p>Fumar es el principal factor de riesgo, pero no el único, y no todos los fumadores enferman. Tampoco todos los casos ocurren en fumadores: a nivel internacional, un 10-20% de los diagnósticos de cáncer pulmonar corresponde a personas que <strong>nunca han fumado</strong> (Garrido J. et al., <em>BMC Cancer</em> 2024;24(1):951, <a href="https://doi.org/10.1186/s12885-024-12737-1" target="_blank" rel="noopener">DOI</a>). En cohortes hospitalarias chilenas —no en la población general— la proporción es cercana a uno de cada tres: 200 de 673 pacientes (29,7%) en Garrido 2024; 67,7% con antecedente de tabaquismo en Orrego C. et al., <em>Rev Med Chil</em> 2025;153(2):104-110 (<a href="https://doi.org/10.4067/s0034-98872025000200104" target="_blank" rel="noopener">DOI</a>). Esto sugiere que otros factores también son importantes.</p>
+      <h4>Importante: no sólo los fumadores desarrollan cáncer</h4>
+      <p>Fumar es el principal factor de riesgo, pero no el único. Tampoco todos los casos ocurren en fumadores: a nivel internacional, un 10-20% de los diagnósticos de cáncer pulmonar corresponde a personas que <strong>nunca han fumado</strong> (Garrido J. et al., <em>BMC Cancer</em> 2024;24(1):951, <a href="https://doi.org/10.1186/s12885-024-12737-1" target="_blank" rel="noopener">DOI</a>). En cohortes hospitalarias chilenas —no en la población general— la proporción es cercana a uno de cada tres: 200 de 673 pacientes (29,7%) en Garrido 2024; 67,7% con antecedente de tabaquismo en Orrego C. et al., <em>Rev Med Chil</em> 2025;153(2):104-110 (<a href="https://doi.org/10.4067/s0034-98872025000200104" target="_blank" rel="noopener">DOI</a>). Esto sugiere que otros factores también son importantes.</p>
     </div>
   </div>
 
@@ -784,7 +713,7 @@
     <div class="stat-bar-row">
       <div class="stat-bar-label">Nunca fumó</div>
       <div class="stat-bar-track"><div class="stat-bar-fill" style="width:5%;background:#34d399;"></div></div>
-      <div class="stat-bar-pct" style="color:#34d399;">Base</div>
+      <div class="stat-bar-pct" style="color:#1D6B45;">Base</div>
     </div>
     <div class="stat-bar-row">
       <div class="stat-bar-label">Exfumador &gt;10 años</div>
@@ -804,9 +733,9 @@
     <div class="stat-bar-row">
       <div class="stat-bar-label">Fumador intenso (&gt;30 p-a)</div>
       <div class="stat-bar-track"><div class="stat-bar-fill" style="width:100%;background:#ef4444;"></div></div>
-      <div class="stat-bar-pct" style="color:#ef4444;">20–30×</div>
+      <div class="stat-bar-pct" style="color:#B23A22;">20–30×</div>
     </div>
-    <p style="font-size:0.78rem;color:rgba(143,163,188,0.6);margin-top:1rem;">p-a = paquetes-año (cajetillas/día × años fumando). El riesgo disminuye al dejar de fumar, pero no vuelve al nivel basal.</p>
+    <p style="font-size:0.78rem;color:rgba(77,76,128,0.6);margin-top:1rem;">p-a = paquetes-año (cajetillas/día × años fumando). El riesgo disminuye al dejar de fumar, pero no vuelve al nivel basal.</p>
   </div>
 
   <h2>Dejar de fumar sí reduce el riesgo</h2>
@@ -852,7 +781,7 @@
       </div>
     </div>
     <p>
-      El TAC de baja dosis detecta nódulos pulmonares pequeños que podrían ser cáncer en estadio muy precoz. Un resultado "positivo" no significa necesariamente cáncer — la mayoría de los nódulos detectados son benignos y se monitorean en el tiempo.
+      El TAC de baja dosis detecta <a href="/nodulo-pulmonar">nódulos pulmonares</a> pequeños que podrían ser cáncer en estadio muy precoz. Un resultado "positivo" no significa necesariamente cáncer — la mayoría de los nódulos detectados son benignos y se monitorean en el tiempo.
     </p>
     <p>
       <strong>Consulta con tu médico</strong> si cumples estos criterios para que te derive al programa de detección precoz correspondiente.
@@ -868,140 +797,76 @@
   </p>
 
 </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="pager">
+    <a href="/que-es"><div class="k">← Anterior</div><div class="t">¿Qué es el cáncer pulmonar?</div></a>
+    <a href="/diagnostico" class="next"><div class="k">Siguiente →</div><div class="t">Diagnóstico</div></a>
+  </div>
+</div></section>
+</main>
 
-<div class="page-nav">
-  <a href="/que-es" class="page-nav-link">
-    <div class="pnl-label">← Anterior</div>
-    <div class="pnl-title">¿Qué es el cáncer pulmonar?</div>
-  </a>
-  <a href="/diagnostico" class="page-nav-link next">
-    <div class="pnl-label">Siguiente →</div>
-    <div class="pnl-title">Diagnóstico</div>
-  </a>
-</div>
-
-  </main>
-
-  <section class="bio-section-light" id="dr-lazo">
-    <div class="bio-wrap">
-      <div class="bio-photo">
-        <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en cáncer pulmonar en Clínica Las Condes" loading="lazy" width="800" height="800" decoding="async"/>
+<section class="section" id="dr-lazo"><div class="wrap">
+  <div class="bio">
+    <img alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en cáncer pulmonar en Clínica Las Condes" decoding="async" height="800" loading="lazy" src="imgs/foto-dr-lazo-bio.jpg" width="800"/>
+    <div>
+      <p class="eyebrow">Tu especialista</p>
+      <h2>Dr. David Lazo Pérez</h2>
+      <p class="role">Cirujano Torácico · Oncología Torácica</p>
+      <p class="txt">Cirujano torácico con 19 años de experiencia especializado en <strong>oncología torácica y cirugía mínimamente invasiva</strong>. Realiza lobectomías, segmentectomías y resecciones pulmonares con técnicas robóticas (Da Vinci) y videotoracoscopía (VATS), logrando mejores resultados oncológicos con menor impacto en el paciente.</p>
+      <div class="actions">
+        <a class="btn" href="https://cirugiatoracica.cl/#contacto">Solicitar hora →</a>
+        <a class="perfil" href="https://cirugiatoracica.cl/perfil"><b>Perfil profesional completo</b><span>Formación, cargos, sociedades científicas y publicaciones</span></a>
       </div>
-      <div>
-        <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#0891b2;margin-bottom:0.75rem;">Tu especialista</p>
-        <h2 style="font-family:'DM Serif Display',serif;font-size:2rem;color:#1a2b3c;letter-spacing:-0.02em;margin-bottom:0.3rem;">Dr. David Lazo Pérez</h2>
-        <p style="font-size:0.9rem;font-weight:600;color:#0e7490;margin-bottom:1rem;">Cirujano Torácico · Oncología Torácica</p>
-
-        <p style="font-size:0.9rem;line-height:1.8;color:#3a5068;margin-bottom:1rem;text-wrap:pretty;">Cirujano torácico con 19 años de experiencia especializado en <strong style="color:#1a2b3c;">oncología torácica y cirugía mínimamente invasiva</strong>. Realiza lobectomías, segmentectomías y resecciones pulmonares con técnicas robóticas (Da Vinci) y videotoracoscopía (VATS), logrando mejores resultados oncológicos con menor impacto en el paciente.</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;">
-          <div style="background:#f4f8fb;border:1px solid #dce8f0;border-radius:10px;padding:0.9rem;text-align:center;"><div style="font-size:1.4rem;font-weight:800;color:#0891b2;letter-spacing:-0.03em;">+5.700</div><div style="font-size:0.68rem;color:#607d93;margin-top:0.15rem;line-height:1.3;">cirugías torácicas</div></div>
-          <div style="background:#f4f8fb;border:1px solid #dce8f0;border-radius:10px;padding:0.9rem;text-align:center;"><div style="font-size:1.4rem;font-weight:800;color:#0891b2;letter-spacing:-0.03em;">+3.200</div><div style="font-size:0.68rem;color:#607d93;margin-top:0.15rem;line-height:1.3;">EBUS desde 2010</div></div>
-          <div style="background:#f4f8fb;border:1px solid #dce8f0;border-radius:10px;padding:0.9rem;text-align:center;"><div style="font-size:1.4rem;font-weight:800;color:#0891b2;letter-spacing:-0.03em;">19</div><div style="font-size:0.68rem;color:#607d93;margin-top:0.15rem;line-height:1.3;">años de experiencia</div></div>
-        </div>
-        <div style="margin-top:1.5rem;">
-          <a href="https://cirugiatoracica.cl/#contacto" style="display:inline-flex;align-items:center;gap:0.5rem;background:#0891b2;color:#fff;text-decoration:none;padding:0.75rem 1.5rem;border-radius:8px;font-size:0.88rem;font-weight:700;">Solicitar hora →</a>
-        </div>
-      
-          <a class="perfil-box" href="https://cirugiatoracica.cl/perfil">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span class="perfil-box-txt">
-              <span class="perfil-box-t">Perfil profesional completo</span>
-              <span class="perfil-box-s">Formación, cargos, sociedades científicas y publicaciones</span>
-            </span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-    </div>
-  </section>
-
-  
-<!-- FAQ -->
-<section class="section section-alt" id="faq">
-  <div class="inner">
-    <h2 class="faq-h2">Preguntas frecuentes sobre las causas</h2>
-    <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q">¿Cuáles son los principales factores de riesgo?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">El tabaquismo es el principal, incluido el pasivo. Le siguen la exposición al radón, la exposición ocupacional (asbesto, sílice y otros), la contaminación ambiental, los antecedentes familiares y las enfermedades pulmonares previas como la EPOC o la fibrosis.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Puede tener cáncer de pulmón alguien que nunca fumó?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Sí. En cohortes hospitalarias chilenas, cerca de uno de cada tres pacientes con cáncer pulmonar nunca fumó (Garrido 2024; Orrego 2025); no es un dato de población general. A nivel internacional, la cifra es de 10-20%. En ellos predominan los adenocarcinomas y son más frecuentes las mutaciones EGFR y ALK, que tienen tratamientos dirigidos. Otros factores en juego son la exposición a biomasa, el radón, el arsénico y la contaminación del aire.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Si dejo de fumar, ¿baja el riesgo de cáncer de pulmón?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Sí, y a cualquier edad. El riesgo empieza a disminuir desde el primer año y sigue bajando durante los años siguientes, aunque no vuelve al de quien nunca fumó. Por eso quienes fumaron mucho y dejaron hace menos de 15 años siguen siendo candidatos a los programas de screening con TAC de baja dosis.</div>
-        </div>
     </div>
   </div>
-</section>
+</div></section>
 
-  <!-- ─── CTA CONTACTO UNIFICADO ─── -->
-  <section class="cta-unified" id="contacto">
-    <p class="cta-eyebrow">Primer paso</p>
-    <h2 class="cta-title">Hable directamente<br>con el especialista</h2>
-    <div class="cta-contact-grid">
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.5rem;">
-        <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico, experto en tratamiento quirúrgico del cáncer de pulmón" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 10%;border:3px solid rgba(255,255,255,0.2);margin:0;" loading="lazy" width="800" height="800" decoding="async">
-        <div style="text-align:center;">
-          <p style="font-size:0.88rem;font-weight:700;color:#fff;margin-bottom:0.2rem;">Dr. David Lazo Pérez</p>
-          <p style="font-size:0.75rem;color:rgba(255,255,255,0.55);">Cirujano Torácico</p>
-        </div>
-      </div>
-      <div class="contact-card">
-        <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Agendar consulta</h4>
-        <div class="ccontact-links">
-          <a class="ccontact-link" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener">
-            <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 8v6M9 11h6M9 21v-3h6v3"/></svg></span>
-            <div><span class="ccontact-label">Clínica Las Condes</span><span class="ccontact-val">Reservar hora presencial →</span></div>
-          </a>
-          <a class="ccontact-link" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">
-            <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/></svg></span>
-            <div><span class="ccontact-label">Telemedicina</span><span class="ccontact-val">Consulta online — todo Chile →</span></div>
-          </a>
-        </div>
-      </div>
-      <div class="contact-card">
-        <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>Redes sociales</h4>
-        <div class="ccontact-links">
-          <a class="ccontact-link" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener">
-            <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            <div><span class="ccontact-label">LinkedIn</span><span class="ccontact-val">Dr. David Lazo Pérez</span></div>
-          </a>
-          <a class="ccontact-link" href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener">
-            <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            <div><span class="ccontact-label">Instagram</span><span class="ccontact-val">@dr.david.lazo.p</span></div>
-          </a>
-          <a class="ccontact-link" href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener">
-            <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5z"/></svg>
-            <div><span class="ccontact-label">Doctoralia</span><span class="ccontact-val">Ver perfil y reseñas →</span></div>
-          </a>
-        </div>
-      </div>
+<section class="section" id="faq"><div class="wrap">
+  <h2 class="h2">Preguntas frecuentes sobre las causas</h2>
+  <div class="faq">
+    <details><summary>¿Cuáles son los principales factores de riesgo?</summary><p>El tabaquismo es el principal, incluido el pasivo. Le siguen la exposición al radón, la exposición ocupacional (asbesto, sílice y otros), la contaminación ambiental, los antecedentes familiares y las enfermedades pulmonares previas como la EPOC o la fibrosis.</p></details>
+    <details><summary>¿Puede tener cáncer de pulmón alguien que nunca fumó?</summary><p>Sí. En cohortes hospitalarias chilenas, cerca de uno de cada tres pacientes con cáncer pulmonar nunca fumó (Garrido 2024; Orrego 2025); no es un dato de población general. A nivel internacional, la cifra es de 10-20%. En ellos predominan los adenocarcinomas y son más frecuentes las mutaciones EGFR y ALK, que tienen tratamientos dirigidos. Otros factores en juego son la exposición a biomasa, el radón, el arsénico y la contaminación del aire.</p></details>
+    <details><summary>Si dejo de fumar, ¿baja el riesgo de cáncer de pulmón?</summary><p>Sí, y a cualquier edad. El riesgo empieza a disminuir desde el primer año y sigue bajando durante los años siguientes, aunque no vuelve al de quien nunca fumó. Por eso quienes fumaron mucho y dejaron hace menos de 15 años siguen siendo candidatos a los programas de screening con TAC de baja dosis.</p></details>
+  </div>
+</div></section>
+
+
+<section class="section" id="contacto"><div class="wrap">
+  <div class="cta">
+    <div>
+      <p class="eyebrow">Primer paso</p>
+      <h2>Hable directamente<br>con el especialista</h2>
+      <div class="who"><img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico, experto en tratamiento quirúrgico del cáncer de pulmón" loading="lazy" width="800" height="800" decoding="async"><div><b>Dr. David Lazo Pérez</b><span>Cirujano Torácico</span></div></div>
     </div>
-  </section>
+    <div class="cta-col">
+      <h3>Agendar consulta</h3>
+      <a class="cl dark" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&amp;apellidoPat=LAZO&amp;apellidoMat=PEREZ" target="_blank" rel="noopener"><b>Clínica Las Condes</b><span>Reservar hora presencial →</span></a>
+      <a class="cl" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener"><b>Telemedicina</b><span>Consulta online — todo Chile →</span></a>
+    </div>
+    <div class="cta-col">
+      <h3>Redes sociales</h3>
+      <a class="cl light" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener"><b>LinkedIn</b><span>Dr. David Lazo Pérez</span></a>
+      <a class="cl light" href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener"><b>Instagram</b><span>@dr.david.lazo.p</span></a>
+      <a class="cl light" href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener"><b>Doctoralia</b><span>Ver perfil y reseñas →</span></a>
+    </div>
+  </div>
+</div></section>
 
-
-  <footer>
-  <div class="footer-inner">
+<footer class="site-footer"><div class="wrap">
+  <div class="footer-top">
     <div class="footer-brand"><strong>cancerpulmonar.cl</strong> · Dr. David Lazo</div>
-        <div class="footer-links">
+    <div class="footer-links">
       <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
-      <a href="https://rats.cl">rats.cl</a>
-      <a href="https://broncoscopia.cl">broncoscopia.cl</a>
-      <a href="https://videotoracoscopia.cl">videotoracoscopia.cl</a>
-      <a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
+<a href="https://rats.cl">rats.cl</a>
+<a href="https://broncoscopia.cl">broncoscopia.cl</a>
+<a href="https://videotoracoscopia.cl">videotoracoscopia.cl</a>
+<a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
     </div>
   </div>
-  <div class="footer-disclaimer">
-    Información educativa basada en guías NCCN y evidencia científica actualizada. No reemplaza la consulta médica. Consulte siempre con su médico especialista.
-  </div>
-</footer>
-  <script>
-    document.querySelectorAll('.faq-q').forEach(function (b) {
-      b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
-    });
-  </script>
+  <div class="footer-disclaimer">Información educativa basada en guías NCCN y evidencia científica actualizada. No reemplaza la consulta médica. Consulte siempre con su médico especialista.</div>
+</div></footer>
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",

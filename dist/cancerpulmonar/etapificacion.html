@@ -193,462 +193,393 @@
   "description": "Etapificación del cáncer pulmonar: descriptores T, N y M y grupos de estadio AJCC 9ª edición 2024, con tabla por estadio. Según NCCN v9.2026."
 }
   </script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/estilo.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    /* Los atributos width/height protegen del CLS; height:auto evita que
-       fijen el alto y pisen el aspect-ratio o el alto que define el CSS. */
-    img { height: auto; }
-    :root {
-      --navy:      #0c1526;
-      --teal-deep: #0c4a6e;
-      --teal:      #0891b2;
-      --teal-dark: #0e7490;
-      --teal-lt:   #22d3ee;
-      --teal-pale: #ecfeff;
-      --teal-mid:  #cffafe;
-      --bg:        #ffffff;
-      --bg2:       #f4f8fb;
-      --bg3:       #edf2f7;
-      --bg4:       #dce8f0;
-      --text:      #1a2b3c;
-      --slate:     #3a5068;
-      --muted:     #607d93;
-      --border:    #dce8f0;
-      --accent:    #0891b2;
-      --accent2:   #0891b2;
-      --accent-lt: #22d3ee;
-      --warm:      #d97706;
-      --success:   #059669;
-      --danger:    #dc2626;
-      --radius:    14px;
-      --serif:     'DM Serif Display', serif;
-      --sans:      'Plus Jakarta Sans', system-ui, sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-
-    /* TOPBAR */
-    .topbar { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-    .topbar-left { font-size: 0.72rem; color: rgba(255,255,255,0.38); }
-    .topbar-links { display: flex; gap: 1.5rem; }
-    .topbar-links a { font-size: 0.72rem; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
-    .topbar-links a:hover { color: rgba(255,255,255,0.8); }
-
-    /* NAV */
-    nav { position: sticky; top: 0; z-index: 300; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 66px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .nav-logo-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--teal-deep); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
-    .nav-logo-text { font-size: 0.95rem; font-weight: 700; color: var(--text); }
-    .nav-logo-text span { color: var(--accent); }
-    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
-    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--slate); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
-    .nav-cta { background: var(--accent); color: #fff; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--teal-dark); }
-
-    /* BREADCRUMB */
-    .breadcrumb { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0.8rem 2.5rem; }
-    .breadcrumb-inner { max-width: 980px; margin: 0 auto; display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
-    .breadcrumb a { font-size: 0.78rem; color: var(--teal); text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .breadcrumb span { font-size: 0.78rem; color: rgba(0,0,0,0.2); }
-    .breadcrumb-current { font-size: 0.78rem; color: var(--muted); }
-
-    /* PAGE HERO */
-    .page-hero { padding: 4rem 2.5rem 3rem; background: linear-gradient(180deg,#f4f8fb 0%,#fff 100%); border-bottom: 1px solid var(--border); }
-    .page-hero-inner { max-width: 980px; margin: 0 auto; }
-    .page-hero-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
-    .page-hero h1 { font-family: var(--serif); font-size: clamp(1.9rem,4vw,3rem); line-height: 1.15; margin-bottom: 1rem; color: var(--text); }
-    .page-hero h1 span { color: var(--accent); }
-    .page-hero-lead { font-size: 1.05rem; color: var(--muted); line-height: 1.75; max-width: 700px; }
-
-    /* CONTENT */
-    .content { max-width: 980px; margin: 0 auto; padding: 4rem 2.5rem; }
-    .content h2 { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; margin: 3rem 0 1rem; line-height: 1.2; color: var(--text); }
-    .content h2:first-child { margin-top: 0; }
-    .content h3 { font-size: 1.1rem; font-weight: 700; margin: 2rem 0 0.65rem; color: var(--teal-dark); }
-    .content p { font-size: 0.97rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
-    .content strong { color: var(--text); }
-    .content ul { padding-left: 1.4rem; margin-bottom: 1rem; }
-    .content li { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.4rem; }
-
-    /* TNM INTRO CARDS */
-    .tnm-intro { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 2rem 0; }
-    .tnm-letter-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; }
-    .tnm-big { font-size: 3.5rem; font-weight: 800; line-height: 1; margin-bottom: 0.5rem; font-family: var(--serif); }
-    .tnm-t { color: var(--accent); }
-    .tnm-n { color: var(--warm); }
-    .tnm-m { color: #dc2626; }
-    .tnm-letter-card h4 { font-size: 0.97rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text); }
-    .tnm-letter-card p { font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.6; }
-
-    /* DESCRIPTOR TABLES */
-    .descriptor-section { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 2rem 0; }
-    .descriptor-header { padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 1rem; background: var(--bg3); }
-    .descriptor-letter { font-size: 1.5rem; font-weight: 800; font-family: var(--serif); }
-    .descriptor-title { font-size: 0.95rem; font-weight: 700; color: var(--text); }
-    .desc-table { width: 100%; border-collapse: collapse; }
-    .desc-table th { padding: 0.65rem 1.25rem; font-size: 0.75rem; font-weight: 700; color: var(--muted); text-align: left; border-bottom: 1px solid var(--border); background: var(--bg3); text-transform: uppercase; letter-spacing: 0.06em; }
-    .desc-table td { padding: 0.75rem 1.25rem; font-size: 0.875rem; color: var(--slate); border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; }
-    .desc-table tr:last-child td { border-bottom: none; }
-    .desc-table tr:hover td { background: var(--teal-pale); }
-    .code { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 0.85rem; }
-    .code-t { color: var(--teal-dark); }
-    .code-n { color: var(--warm); }
-    .code-m { color: #dc2626; }
-
-    /* GROUPING TABLE */
-    .grouping-wrap { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 2rem 0; }
-    .grouping-header { padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg3); }
-    .grouping-header h3 { font-size: 0.97rem; font-weight: 700; margin: 0; color: var(--text); }
-    .tnm-badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--teal-pale); color: var(--teal-dark); padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid var(--teal-mid); }
-    .grouping-table { width: 100%; border-collapse: collapse; }
-    .grouping-table th { padding: 0.65rem 1rem; font-size: 0.75rem; font-weight: 700; color: var(--teal-dark); text-align: left; border-bottom: 1px solid var(--border); background: var(--teal-pale); text-transform: uppercase; letter-spacing: 0.06em; }
-    .grouping-table td { padding: 0.7rem 1rem; font-size: 0.85rem; color: var(--slate); border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5; }
-    .grouping-table tr:last-child td { border-bottom: none; }
-    .grouping-table tr:hover td { background: var(--teal-pale); }
-    .stage-chip { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700; }
-    .sc-oculto { background: #dcfce7; color: #166534; }
-    .sc-ia1  { background: #dcfce7; color: #166534; }
-    .sc-ia2  { background: #d1fae5; color: #065f46; }
-    .sc-ia3  { background: #a7f3d0; color: #065f46; }
-    .sc-ib   { background: var(--teal-pale); color: var(--teal-dark); }
-    .sc-iia  { background: var(--teal-pale); color: var(--teal-dark); }
-    .sc-iib  { background: #cffafe; color: #0e7490; }
-    .sc-iiia { background: #fef3c7; color: #92400e; }
-    .sc-iiib { background: #fde68a; color: #78350f; }
-    .sc-iiic { background: #fee2e2; color: #991b1b; }
-    .sc-iva  { background: #fecaca; color: #b91c1c; }
-    .sc-ivb  { background: #fca5a5; color: #991b1b; }
-
-    /* PROCESS CARDS */
-    .process-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1rem; margin: 1.5rem 0; }
-    .process-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
-    .pc-badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.75rem; display: inline-block; }
-    .pc-clinical { background: var(--teal-pale); color: var(--teal-dark); border: 1px solid var(--teal-mid); }
-    .pc-patho    { background: #dcfce7; color: #166534; }
-    .pc-retreat  { background: #fef3c7; color: #92400e; }
-    .pc-path     { background: #ede9fe; color: #5b21b6; }
-    .process-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
-    .process-card p { font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.65; }
-    .process-prefix { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1rem; color: var(--teal-dark); margin-bottom: 0.3rem; }
-
-    /* CALLOUT */
-    .callout { background: rgba(8,145,178,0.05); border: 1px solid rgba(8,145,178,0.18); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; display: flex; gap: 1rem; align-items: flex-start; }
-    .callout-icon { font-size: 1.4rem; flex-shrink: 0; }
-    .callout h4 { font-size: 0.95rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 0.4rem; }
-    .callout p { font-size: 0.875rem; color: var(--muted); margin: 0; line-height: 1.65; }
-
-    /* PAGE NAV */
-    .page-nav { display: flex; justify-content: space-between; gap: 1rem; padding: 3rem 2.5rem; border-top: 1px solid var(--border); max-width: 980px; margin: 0 auto; }
-    .page-nav-link { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; text-decoration: none; color: var(--text); flex: 1; transition: border-color 0.2s, transform 0.15s; }
-    .page-nav-link:hover { border-color: rgba(8,145,178,0.35); transform: translateY(-2px); }
-    .page-nav-link.next { text-align: right; }
-    .pnl-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.3rem; }
-    .pnl-title { font-size: 0.95rem; font-weight: 600; color: var(--text); }
-
-    /* BIO */
-    .bio-section-light { padding: 5rem 2.5rem; background: #fff; }
-    .bio-section-light .bio-wrap { display: grid; grid-template-columns: 240px 1fr; gap: 3.5rem; align-items: start; max-width: 1100px; margin: 0 auto; }
-    .bio-section-light .bio-photo { border-radius: 18px; overflow: hidden; box-shadow: 0 16px 48px rgba(12,21,38,0.15); }
-    .bio-section-light .bio-photo img { width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; object-position: center 10%; }
-    @media (max-width: 768px) { .bio-section-light .bio-wrap { grid-template-columns: 1fr; } }
-
-    /* CTA */
-    .cta-unified { background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 60%, #0369a1 100%); padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
-    .cta-unified::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(34,211,238,0.08), transparent 70%); pointer-events:none; }
-    .cta-unified > * { position: relative; z-index: 2; }
-    .cta-unified .cta-eyebrow { font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#22d3ee; margin-bottom:0.75rem; }
-    .cta-unified .cta-title { font-family: var(--serif); font-size:clamp(1.8rem,3vw,2.6rem); color:#fff; letter-spacing:-0.02em; margin-bottom:2rem; }
-    .cta-unified .cta-contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:980px; margin:0 auto; align-items:stretch; }
-    .cta-unified .contact-card { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:1.5rem; text-align:left; transition:background 0.2s; }
-    .cta-unified .contact-card:hover { background:rgba(255,255,255,0.11); }
-    .cta-unified .contact-card h4 { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#22d3ee; margin-bottom:0.75rem; }
-    .cta-unified .ccontact-links { display:flex; flex-direction:column; gap:0.65rem; margin-top:0.5rem; }
-    .cta-unified .ccontact-link { display:flex; align-items:center; gap:0.75rem; text-decoration:none; padding:0.6rem 0.75rem; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); transition:background 0.2s, border-color 0.2s; }
-    .cta-unified .ccontact-link:hover { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2); }
-    .cta-unified .ccontact-ico { font-size:1.1rem; flex-shrink:0; }
-    .cta-unified .ccontact-label { display:block; font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.4); }
-    .cta-unified .ccontact-val { display:block; font-size:0.82rem; font-weight:600; color:rgba(255,255,255,0.85); margin-top:0.1rem; }
-
-    /* FOOTER */
-    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 2rem 2.5rem; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .footer-brand { font-size: 0.875rem; color: rgba(255,255,255,0.4); }
-    .footer-brand strong { color: rgba(255,255,255,0.7); }
-    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.35); text-decoration: none; }
-    .footer-links a:hover { color: var(--teal-lt); }
-    .footer-disclaimer { max-width: 1100px; margin: 1.25rem auto 0; font-size: 0.75rem; color: rgba(255,255,255,0.25); line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.25rem; }
-
-    @media(max-width: 768px) {
-      nav { padding: 0 1.25rem; } .nav-links { display: none; }
-      .topbar, .breadcrumb { padding-left: 1.25rem; padding-right: 1.25rem; }
-      .page-hero, .content { padding-left: 1.25rem; padding-right: 1.25rem; }
-      .tnm-intro { grid-template-columns: 1fr; }
-      .page-nav { flex-direction: column; padding: 2rem 1.25rem; }
-      .page-nav-link.next { text-align: left; }
-      .grouping-table { font-size: 0.8rem; }
-      .grouping-table td, .grouping-table th { padding: 0.6rem 0.75rem; }
-      .cta-unified .cta-contact-grid { grid-template-columns: 1fr; }
-    }
-      .authority-bio { font-size: 0.75rem; color: rgba(255,255,255,0.28); margin-top: 0.75rem; max-width: 680px; line-height: 1.5; }
-  
-    /* ── Hamburger button (desktop: hidden) ── */
-    .nav-hamburger {
-      display: none;
+.lg{--navy:#1A1950;--teal-deep:#2B2A6B;--teal:#2B2A6B;--teal-dark:#2B2A6B;--teal-lt:#F28A6E;
+--teal-pale:#F2F1FB;--teal-mid:#FFE3D9;--bg:#fff;--bg2:#F2F1FB;--bg3:#ECEAF8;--bg4:#E2E0F3;--text:#1A1950;
+--slate:#4D4C80;--muted:#5E5D8C;--text-muted:#4D4C80;--border:#E2E0F3;--accent:#2B2A6B;--accent2:#B23A22;
+--accent-lt:#F28A6E;--radius:22px;--serif:var(--display);--sans:'DM Sans',system-ui,sans-serif;
+font-family:var(--sans);color:var(--ink);line-height:1.65}
+.lg *, .lg *::before, .lg *::after{box-sizing: border-box; margin: 0; padding: 0;}
+.lg img{height: auto;}
+.lg .topbar{background: var(--navy); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;}
+.lg .topbar-left{font-size: 0.72rem; color: rgba(255,255,255,0.38);}
+.lg .topbar-links{display: flex; gap: 1.5rem;}
+.lg .topbar-links a{font-size: 0.72rem; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s;}
+.lg .topbar-links a:hover{color: rgba(255,255,255,0.8);}
+.lg nav{position: sticky; top: 0; z-index: 300; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 2.5rem; height: 66px; display: flex; align-items: center; justify-content: space-between;}
+.lg .nav-logo{display: flex; align-items: center; gap: 0.6rem; text-decoration: none;}
+.lg .nav-logo-icon{width: 32px; height: 32px; border-radius: 8px; background: var(--teal-deep); display: flex; align-items: center; justify-content: center; font-size: 1rem;}
+.lg .nav-logo-text{font-size: 0.95rem; font-weight: 700; color: var(--text);}
+.lg .nav-logo-text span{color: var(--accent);}
+.lg .nav-links{display: flex; gap: 1.8rem; list-style: none;}
+.lg .nav-links a{font-size: 0.85rem; font-weight: 500; color: var(--slate); text-decoration: none; transition: color 0.2s;}
+.lg .nav-links a:hover, .lg .nav-links a.active{color: var(--teal);}
+.lg .nav-cta{background: var(--accent); color: #fff; padding: 0.5rem 1.25rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.2s;}
+.lg .nav-cta:hover{background: var(--teal-dark);}
+.lg .breadcrumb{background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0.8rem 2.5rem;}
+.lg .breadcrumb-inner{max-width: 980px; margin: 0 auto; display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;}
+.lg .breadcrumb a{font-size: 0.78rem; color: var(--teal); text-decoration: none;}
+.lg .breadcrumb a:hover{text-decoration: underline;}
+.lg .breadcrumb span{font-size: 0.78rem; color: rgba(0,0,0,0.2);}
+.lg .breadcrumb-current{font-size: 0.78rem; color: var(--muted);}
+.lg .page-hero{padding: 4rem 2.5rem 3rem; background: linear-gradient(180deg,#F2F1FB 0%,#fff 100%); border-bottom: 1px solid var(--border);}
+.lg .page-hero-inner{max-width: 980px; margin: 0 auto;}
+.lg .page-hero-tag{font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;}
+.lg .page-hero h1{font-family: var(--serif); font-size: clamp(1.9rem,4vw,3rem); line-height: 1.15; margin-bottom: 1rem; color: var(--text);}
+.lg .page-hero h1 span{color: var(--accent);}
+.lg .page-hero-lead{font-size: 1.05rem; color: var(--muted); line-height: 1.75; max-width: 700px;}
+.lg .content{max-width: 980px; margin: 0 auto; padding: 4rem 2.5rem;}
+.lg .content h2{font-family: var(--serif); font-size: 1.7rem; font-weight: 700; margin: 3rem 0 1rem; line-height: 1.2; color: var(--text);}
+.lg .content h2:first-child{margin-top: 0;}
+.lg .content h3{font-size: 1.1rem; font-weight: 700; margin: 2rem 0 0.65rem; color: var(--teal-dark);}
+.lg .content p{font-size: 0.97rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem;}
+.lg .content strong{color: var(--text);}
+.lg .content ul{padding-left: 1.4rem; margin-bottom: 1rem;}
+.lg .content li{font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.4rem;}
+.lg .tnm-intro{display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 2rem 0;}
+.lg .tnm-letter-card{background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center;}
+.lg .tnm-big{font-size: 3.5rem; font-weight: 800; line-height: 1; margin-bottom: 0.5rem; font-family: var(--serif);}
+.lg .tnm-t{color: var(--accent);}
+.lg .tnm-n{color: var(--warm);}
+.lg .tnm-m{color: #B23A22;}
+.lg .tnm-letter-card h4{font-size: 0.97rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text);}
+.lg .tnm-letter-card p{font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.6;}
+.lg .descriptor-section{background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 2rem 0;}
+.lg .descriptor-header{padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 1rem; background: var(--bg3);}
+.lg .descriptor-letter{font-size: 1.5rem; font-weight: 800; font-family: var(--serif);}
+.lg .descriptor-title{font-size: 0.95rem; font-weight: 700; color: var(--text);}
+.lg .desc-table{width: 100%; border-collapse: collapse;}
+.lg .desc-table th{padding: 0.65rem 1.25rem; font-size: 0.75rem; font-weight: 700; color: var(--muted); text-align: left; border-bottom: 1px solid var(--border); background: var(--bg3); text-transform: uppercase; letter-spacing: 0.06em;}
+.lg .desc-table td{padding: 0.75rem 1.25rem; font-size: 0.875rem; color: var(--slate); border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55;}
+.lg .desc-table tr:last-child td{border-bottom: none;}
+.lg .desc-table tr:hover td{background: var(--teal-pale);}
+.lg .code{font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 0.85rem;}
+.lg .code-t{color: var(--teal-dark);}
+.lg .code-n{color: var(--warm);}
+.lg .code-m{color: #B23A22;}
+.lg .grouping-wrap{background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 2rem 0;}
+.lg .grouping-header{padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg3);}
+.lg .grouping-header h3{font-size: 0.97rem; font-weight: 700; margin: 0; color: var(--text);}
+.lg .tnm-badge{font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--teal-pale); color: var(--teal-dark); padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid var(--teal-mid);}
+.lg .grouping-table{width: 100%; border-collapse: collapse;}
+.lg .grouping-table th{padding: 0.65rem 1rem; font-size: 0.75rem; font-weight: 700; color: var(--teal-dark); text-align: left; border-bottom: 1px solid var(--border); background: var(--teal-pale); text-transform: uppercase; letter-spacing: 0.06em;}
+.lg .grouping-table td{padding: 0.7rem 1rem; font-size: 0.85rem; color: var(--slate); border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5;}
+.lg .grouping-table tr:last-child td{border-bottom: none;}
+.lg .grouping-table tr:hover td{background: var(--teal-pale);}
+.lg .stage-chip{display: inline-block; padding: 0.2rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700;}
+.lg .sc-oculto{background: #dcfce7; color: #166534;}
+.lg .sc-ia1{background: #dcfce7; color: #166534;}
+.lg .sc-ia2{background: #d1fae5; color: #065f46;}
+.lg .sc-ia3{background: #a7f3d0; color: #065f46;}
+.lg .sc-ib{background: var(--teal-pale); color: var(--teal-dark);}
+.lg .sc-iia{background: var(--teal-pale); color: var(--teal-dark);}
+.lg .sc-iib{background: #FFE3D9; color: #2B2A6B;}
+.lg .sc-iiia{background: #fef3c7; color: #92400e;}
+.lg .sc-iiib{background: #fde68a; color: #78350f;}
+.lg .sc-iiic{background: #fee2e2; color: #991b1b;}
+.lg .sc-iva{background: #fecaca; color: #b91c1c;}
+.lg .sc-ivb{background: #fca5a5; color: #991b1b;}
+.lg .process-grid{display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1rem; margin: 1.5rem 0;}
+.lg .process-card{background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;}
+.lg .pc-badge{font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.75rem; display: inline-block;}
+.lg .pc-clinical{background: var(--teal-pale); color: var(--teal-dark); border: 1px solid var(--teal-mid);}
+.lg .pc-patho{background: #dcfce7; color: #166534;}
+.lg .pc-retreat{background: #fef3c7; color: #92400e;}
+.lg .pc-path{background: #ede9fe; color: #5b21b6;}
+.lg .process-card h4{font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text);}
+.lg .process-card p{font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.65;}
+.lg .process-prefix{font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1rem; color: var(--teal-dark); margin-bottom: 0.3rem;}
+.lg .callout{background: rgba(43,42,107,0.05); border: 1px solid rgba(43,42,107,0.18); border-radius: var(--radius); padding: 1.5rem 2rem; margin: 2rem 0; display: flex; gap: 1rem; align-items: flex-start;}
+.lg .callout-icon{font-size: 1.4rem; flex-shrink: 0;}
+.lg .callout h4{font-size: 0.95rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 0.4rem;}
+.lg .callout p{font-size: 0.875rem; color: var(--muted); margin: 0; line-height: 1.65;}
+.lg .page-nav{display: flex; justify-content: space-between; gap: 1rem; padding: 3rem 2.5rem; border-top: 1px solid var(--border); max-width: 980px; margin: 0 auto;}
+.lg .page-nav-link{background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; text-decoration: none; color: var(--text); flex: 1; transition: border-color 0.2s, transform 0.15s;}
+.lg .page-nav-link:hover{border-color: rgba(43,42,107,0.35); transform: translateY(-2px);}
+.lg .page-nav-link.next{text-align: right;}
+.lg .pnl-label{font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.3rem;}
+.lg .pnl-title{font-size: 0.95rem; font-weight: 600; color: var(--text);}
+.lg .bio-section-light{padding: 5rem 2.5rem; background: #fff;}
+.lg .bio-section-light .bio-wrap{display: grid; grid-template-columns: 240px 1fr; gap: 3.5rem; align-items: start; max-width: 1100px; margin: 0 auto;}
+.lg .bio-section-light .bio-photo{border-radius: 18px; overflow: hidden; box-shadow: 0 16px 48px rgba(26,25,80,0.15);}
+.lg .bio-section-light .bio-photo img{width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; object-position: center 10%;}
+@media (max-width: 768px){.lg .bio-section-light .bio-wrap{grid-template-columns: 1fr;}}
+.lg .cta-unified{background: linear-gradient(135deg, #2B2A6B 0%, #2B2A6B 60%, #2B2A6B 100%); padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden;}
+.lg .cta-unified::before{content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(242,138,110,0.08), transparent 70%); pointer-events:none;}
+.lg .cta-unified > *{position: relative; z-index: 2;}
+.lg .cta-unified .cta-eyebrow{font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#F28A6E; margin-bottom:0.75rem;}
+.lg .cta-unified .cta-title{font-family: var(--serif); font-size:clamp(1.8rem,3vw,2.6rem); color:#fff; letter-spacing:-0.02em; margin-bottom:2rem;}
+.lg .cta-unified .cta-contact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:980px; margin:0 auto; align-items:stretch;}
+.lg .cta-unified .contact-card{background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:1.5rem; text-align:left; transition:background 0.2s;}
+.lg .cta-unified .contact-card:hover{background:rgba(255,255,255,0.11);}
+.lg .cta-unified .contact-card h4{font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#F28A6E; margin-bottom:0.75rem;}
+.lg .cta-unified .ccontact-links{display:flex; flex-direction:column; gap:0.65rem; margin-top:0.5rem;}
+.lg .cta-unified .ccontact-link{display:flex; align-items:center; gap:0.75rem; text-decoration:none; padding:0.6rem 0.75rem; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); transition:background 0.2s, border-color 0.2s;}
+.lg .cta-unified .ccontact-link:hover{background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2);}
+.lg .cta-unified .ccontact-ico{font-size:1.1rem; flex-shrink:0;}
+.lg .cta-unified .ccontact-label{display:block; font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.4);}
+.lg .cta-unified .ccontact-val{display:block; font-size:0.82rem; font-weight:600; color:rgba(255,255,255,0.85); margin-top:0.1rem;}
+.lg footer{background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 2rem 2.5rem;}
+.lg .footer-inner{max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;}
+.lg .footer-brand{font-size: 0.875rem; color: rgba(255,255,255,0.4);}
+.lg .footer-brand strong{color: rgba(255,255,255,0.7);}
+.lg .footer-links{display: flex; gap: 1.5rem; flex-wrap: wrap;}
+.lg .footer-links a{font-size: 0.8rem; color: rgba(255,255,255,0.35); text-decoration: none;}
+.lg .footer-links a:hover{color: var(--teal-lt);}
+.lg .footer-disclaimer{max-width: 1100px; margin: 1.25rem auto 0; font-size: 0.75rem; color: rgba(255,255,255,0.25); line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.25rem;}
+@media(max-width: 768px){.lg nav{padding: 0 1.25rem;}
+.lg .nav-links{display: none;}
+.lg .topbar, .lg .breadcrumb{padding-left: 1.25rem; padding-right: 1.25rem;}
+.lg .page-hero, .lg .content{padding-left: 1.25rem; padding-right: 1.25rem;}
+.lg .tnm-intro{grid-template-columns: 1fr;}
+.lg .page-nav{flex-direction: column; padding: 2rem 1.25rem;}
+.lg .page-nav-link.next{text-align: left;}
+.lg .grouping-table{font-size: 0.8rem;}
+.lg .grouping-table td, .lg .grouping-table th{padding: 0.6rem 0.75rem;}
+.lg .cta-unified .cta-contact-grid{grid-template-columns: 1fr;}}
+.lg .authority-bio{font-size: 0.75rem; color: rgba(255,255,255,0.28); margin-top: 0.75rem; max-width: 680px; line-height: 1.5;}
+.lg .nav-hamburger{display: none;
       background: none; border: none; cursor: pointer;
       padding: 0.4rem; flex-direction: column;
-      gap: 5px; align-items: center; flex-shrink: 0;
-    }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
+      gap: 5px; align-items: center; flex-shrink: 0;}
+.lg .nav-hamburger span{display: block; width: 22px; height: 2px;
       background: #fff; border-radius: 2px;
       transition: transform 0.25s, opacity 0.2s;
-      pointer-events: none;
-    }
-    nav.light .nav-hamburger span { background: var(--navy, #0c1526); }
-    nav.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
-    nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* ═══════════════════════════════════════════════
-       MOBILE RESPONSIVE  ·  max-width 768px
-       Injected last — overrides all rules above
-    ═══════════════════════════════════════════════ */
-    @media (max-width: 768px) {
-
-      /* Global */
-      html, body { overflow-x: hidden; }
-      *, *::before, *::after { box-sizing: border-box; }
-      img, video, iframe { max-width: 100%; height: auto; display: block; }
-
-      /* Typography floor */
-      p, li, td, th, blockquote, figcaption, .hero-lead, .hero-sub,
-      .alert-strip p, .card-desc, .esp-card p, .benefit-card p { font-size: max(14px, 0.9rem) !important; line-height: 1.65 !important; }
-
-      /* ── Navigation ── */
-      nav {
-        padding-left: 1rem !important;
+      pointer-events: none;}
+.lg nav.light .nav-hamburger span{background: var(--navy, #1A1950);}
+.lg nav.nav-open .nav-hamburger span:nth-child(1){transform: translateY(7px) rotate(45deg);}
+.lg nav.nav-open .nav-hamburger span:nth-child(2){opacity: 0;}
+.lg nav.nav-open .nav-hamburger span:nth-child(3){transform: translateY(-7px) rotate(-45deg);}
+@media (max-width: 768px){.lg *, .lg *::before, .lg *::after{box-sizing: border-box;}
+.lg img, .lg video, .lg iframe{max-width: 100%; height: auto; display: block;}
+.lg p, .lg li, .lg td, .lg th, .lg blockquote, .lg figcaption, .lg .hero-lead, .lg .hero-sub, .lg .alert-strip p, .lg .card-desc, .lg .esp-card p, .lg .benefit-card p{font-size: max(14px, 0.9rem) !important; line-height: 1.65 !important;}
+.lg nav{padding-left: 1rem !important;
         padding-right: 1rem !important;
         position: relative;
         flex-wrap: nowrap !important;
         display: flex !important;
-        align-items: center !important;
-      }
-      .nav-hamburger { display: flex !important; margin-left: auto; }
-      .nav-cta { display: none !important; }
-
-      /* Nav links: hidden by default, drop down when .nav-open */
-      .nav-links {
-        display: none !important;
+        align-items: center !important;}
+.lg .nav-hamburger{display: flex !important; margin-left: auto;}
+.lg .nav-cta{display: none !important;}
+.lg .nav-links{display: none !important;
         flex-direction: column !important;
         position: absolute !important;
         top: 100% !important; left: 0 !important; right: 0 !important;
-        background: var(--navy, #0c1526) !important;
+        background: var(--navy, #1A1950) !important;
         padding: 0.75rem 1.25rem 1.25rem !important;
         gap: 0 !important;
         z-index: 9999 !important;
         box-shadow: 0 12px 40px rgba(0,0,0,0.45) !important;
         border-top: 1px solid rgba(255,255,255,0.07) !important;
-        list-style: none !important;
-      }
-      nav.nav-open .nav-links { display: flex !important; }
-      .nav-links li { width: 100%; }
-      .nav-links a {
-        display: block !important;
+        list-style: none !important;}
+.lg nav.nav-open .nav-links{display: flex !important;}
+.lg .nav-links li{width: 100%;}
+.lg .nav-links a{display: block !important;
         padding: 0.7rem 0 !important;
         border-bottom: 1px solid rgba(255,255,255,0.06) !important;
         color: rgba(255,255,255,0.85) !important;
         font-size: 0.9rem !important;
         font-weight: 500 !important;
         text-decoration: none !important;
-        width: 100% !important;
-      }
-      .nav-links li:last-child a { border-bottom: none !important; }
-
-      /* ── Topbar & breadcrumb ── */
-      .topbar, .breadcrumb {
-        padding-left: 1rem !important;
+        width: 100% !important;}
+.lg .nav-links li:last-child a{border-bottom: none !important;}
+.lg .topbar, .lg .breadcrumb{padding-left: 1rem !important;
         padding-right: 1rem !important;
         font-size: 0.72rem !important;
-        white-space: normal !important;
-      }
-
-      /* ── Sections & inner containers ── */
-      .section, section {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-      }
-      .inner, .page-hero, .content, .sec,
-      .article-hero, .article-hero-inner,
-      .cta-bottom, .cta-section, .main-wrap { padding-left: 1rem !important; padding-right: 1rem !important; }
-
-      /* ── Footer ── */
-      footer {
-        padding-left: 1rem !important; padding-right: 1rem !important;
+        white-space: normal !important;}
+.lg .section, .lg section{padding-left: 1rem !important;
+        padding-right: 1rem !important;}
+.lg .inner, .lg .page-hero, .lg .content, .lg .sec, .lg .article-hero, .lg .article-hero-inner, .lg .cta-bottom, .lg .cta-section, .lg .main-wrap{padding-left: 1rem !important; padding-right: 1rem !important;}
+.lg footer{padding-left: 1rem !important; padding-right: 1rem !important;
         flex-direction: column !important;
         gap: 1.25rem !important;
-        text-align: center !important;
-      }
-      .footer-links { flex-wrap: wrap !important; justify-content: center !important; gap: 0.75rem !important; }
-      .footer-inner, .footer-brand { flex-direction: column !important; gap: 1rem !important; text-align: center !important; }
-
-      /* ── Hero sections ── */
-      .hero { min-height: 90vh !important; }
-      .hero-content { padding: 6rem 1rem 2rem !important; }
-      .hero-inner { padding: 6rem 1rem 3rem !important; }
-      .hero-h1, .hero h1 { font-size: clamp(2rem, 8vw, 3rem) !important; }
-      h1 { font-size: clamp(1.9rem, 7.5vw, 3rem) !important; }
-      h2 { font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important; }
-      .hero-btns, .hero-ctas, .hero-actions, .hero-cta-group {
-        flex-direction: column !important;
+        text-align: center !important;}
+.lg .footer-links{flex-wrap: wrap !important; justify-content: center !important; gap: 0.75rem !important;}
+.lg .footer-inner, .lg .footer-brand{flex-direction: column !important; gap: 1rem !important; text-align: center !important;}
+.lg .hero{min-height: 90vh !important;}
+.lg .hero-content{padding: 6rem 1rem 2rem !important;}
+.lg .hero-inner{padding: 6rem 1rem 3rem !important;}
+.lg .hero-h1, .lg .hero h1{font-size: clamp(2rem, 8vw, 3rem) !important;}
+.lg h1{font-size: clamp(1.9rem, 7.5vw, 3rem) !important;}
+.lg h2{font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important;}
+.lg .hero-btns, .lg .hero-ctas, .lg .hero-actions, .lg .hero-cta-group{flex-direction: column !important;
         gap: 0.75rem !important;
-        width: 100% !important;
-      }
-
-      /* ── Buttons ── */
-      .btn-primary, .btn-ghost, .btn-outline,
-      .btn-hero-primary, .btn-hero-secondary {
-        width: 100% !important;
+        width: 100% !important;}
+.lg .btn-primary, .lg .btn-ghost, .lg .btn-outline, .lg .btn-hero-primary, .lg .btn-hero-secondary{width: 100% !important;
         text-align: center !important;
         justify-content: center !important;
-        box-sizing: border-box !important;
-      }
-
-      /* ── ALL GRIDS → single column ── */
-      .esp-grid, .cards-grid, .about-grid, .audience-grid,
-      .bio-wrap, .benefits-grid, .proc-grid, .davinci-grid,
-      .ebus-grid, .ebus-cards, .ablacion-cards,
-      .two-col, .medicos-grid, .interv-grid,
-      .approach-grid, .pathology-grid,
-      .rigida-grid, .crio-grid, .crio-uses-grid, .tech-grid,
-      .types-grid, .tnm-intro, .cryo-mechanic, .alcance-list,
-      .study-grid, .equipo-grid, .img-list-block,
-      .stent-vs-grid, .indic-two-col, .complic-grid,
-      .stent-evidence, .eco-grid, .abl-card-body, .abl-row,
-      .contact-grid, .page-body, .services-row, .indic-grid,
-      .proc-table-grid, .hero-inner-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .path-two-col { column-count: 1 !important; columns: 1 !important; }
-      .img-list-block.reverse { direction: ltr !important; }
-      .sidebar { display: none !important; }
-      .abl-desc-col { border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important; }
-      .proc-col:first-child { border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important; }
-
-      /* ── Bio credentials: 2 columns on mobile ── */
-      .bio-creds { grid-template-columns: 1fr 1fr !important; }
-      .bio-section-light .bio-wrap { grid-template-columns: 1fr !important; }
-
-      /* ── Statsbar ── */
-      .statsbar {
-        grid-template-columns: 1fr 1fr !important;
-        padding: 1.25rem 1rem !important;
-      }
-      .stats-strip { grid-template-columns: 1fr 1fr !important; }
-      .stat {
-        border-right: none !important;
+        box-sizing: border-box !important;}
+.lg .esp-grid, .lg .cards-grid, .lg .about-grid, .lg .audience-grid, .lg .bio-wrap, .lg .benefits-grid, .lg .proc-grid, .lg .davinci-grid, .lg .ebus-grid, .lg .ebus-cards, .lg .ablacion-cards, .lg .two-col, .lg .medicos-grid, .lg .interv-grid, .lg .approach-grid, .lg .pathology-grid, .lg .rigida-grid, .lg .crio-grid, .lg .crio-uses-grid, .lg .tech-grid, .lg .types-grid, .lg .tnm-intro, .lg .cryo-mechanic, .lg .alcance-list, .lg .study-grid, .lg .equipo-grid, .lg .img-list-block, .lg .stent-vs-grid, .lg .indic-two-col, .lg .complic-grid, .lg .stent-evidence, .lg .eco-grid, .lg .abl-card-body, .lg .abl-row, .lg .contact-grid, .lg .page-body, .lg .services-row, .lg .indic-grid, .lg .proc-table-grid, .lg .hero-inner-grid{grid-template-columns: 1fr !important;}
+.lg .path-two-col{column-count: 1 !important; columns: 1 !important;}
+.lg .img-list-block.reverse{direction: ltr !important;}
+.lg .sidebar{display: none !important;}
+.lg .abl-desc-col{border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important;}
+.lg .proc-col:first-child{border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important;}
+.lg .bio-creds{grid-template-columns: 1fr 1fr !important;}
+.lg .bio-section-light .bio-wrap{grid-template-columns: 1fr !important;}
+.lg .statsbar{grid-template-columns: 1fr 1fr !important;
+        padding: 1.25rem 1rem !important;}
+.lg .stats-strip{grid-template-columns: 1fr 1fr !important;}
+.lg .stat{border-right: none !important;
         border-bottom: 1px solid rgba(255,255,255,0.07) !important;
-        padding-bottom: 1rem !important;
-      }
-      .stat:last-child { border-bottom: none !important; padding-bottom: 0 !important; }
-      .hero-statsbar {
-        flex-direction: column !important;
+        padding-bottom: 1rem !important;}
+.lg .stat:last-child{border-bottom: none !important; padding-bottom: 0 !important;}
+.lg .hero-statsbar{flex-direction: column !important;
         padding: 1.25rem 1rem !important;
-        gap: 1rem !important;
-      }
-      .hero-stat {
-        border-right: none !important;
+        gap: 1rem !important;}
+.lg .hero-stat{border-right: none !important;
         border-bottom: 1px solid rgba(255,255,255,0.1) !important;
-        padding-bottom: 0.75rem !important;
-      }
-      .hero-stat:last-child { border-bottom: none !important; }
-
-      /* ── CTA contact grid (Hable con el especialista) ── */
-      .cta-contact-grid, .cta-unified .cta-contact-grid,
-      .ccontact-links {
-        grid-template-columns: 1fr !important;
-        flex-direction: column !important;
-      }
-      .contact-card { display: block !important; }
-
-      /* ── Tables ── */
-      table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
-      .grouping-table { font-size: 0.78rem !important; }
-      .grouping-table td, .grouping-table th { padding: 0.4rem 0.5rem !important; }
-
-      /* ── Misc layout fixes ── */
-      .alert-strip { flex-direction: column !important; gap: 0.75rem !important; }
-      .doctor-wrap, .bio-wrap-row { flex-direction: column !important; align-items: flex-start !important; gap: 1.5rem !important; }
-      .survival-row { flex-wrap: wrap !important; }
-      .aquire-strip, .abl-card-header { flex-direction: column !important; gap: 1rem !important; }
-      .as-sep { display: none !important; }
-      .page-nav { flex-direction: column !important; padding: 2rem 1rem !important; gap: 1rem !important; }
-      .page-nav-link.next { text-align: left !important; }
-      .evidence-strip { grid-template-columns: 1fr 1fr !important; }
-      .abl-card-kpis { gap: 1rem !important; flex-wrap: wrap !important; }
-      .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; }
-    }
-
-  
-    /* ── Box de perfil dentro del bloque biográfico ── */
-    .perfil-box {
-      display: flex; align-items: center; gap: 0.85rem;
+        padding-bottom: 0.75rem !important;}
+.lg .hero-stat:last-child{border-bottom: none !important;}
+.lg .cta-contact-grid, .lg .cta-unified .cta-contact-grid, .lg .ccontact-links{grid-template-columns: 1fr !important;
+        flex-direction: column !important;}
+.lg .contact-card{display: block !important;}
+.lg table{display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%;}
+.lg .grouping-table{font-size: 0.78rem !important;}
+.lg .grouping-table td, .lg .grouping-table th{padding: 0.4rem 0.5rem !important;}
+.lg .alert-strip{flex-direction: column !important; gap: 0.75rem !important;}
+.lg .doctor-wrap, .lg .bio-wrap-row{flex-direction: column !important; align-items: flex-start !important; gap: 1.5rem !important;}
+.lg .survival-row{flex-wrap: wrap !important;}
+.lg .aquire-strip, .lg .abl-card-header{flex-direction: column !important; gap: 1rem !important;}
+.lg .as-sep{display: none !important;}
+.lg .page-nav{flex-direction: column !important; padding: 2rem 1rem !important; gap: 1rem !important;}
+.lg .page-nav-link.next{text-align: left !important;}
+.lg .evidence-strip{grid-template-columns: 1fr 1fr !important;}
+.lg .abl-card-kpis{gap: 1rem !important; flex-wrap: wrap !important;}
+.lg .hero-stats{flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important;}}
+.lg .perfil-box{display: flex; align-items: center; gap: 0.85rem;
       margin-top: 1.5rem; padding: 0.9rem 1.1rem; max-width: 430px;
       background: var(--teal-pale); color: var(--teal-dark);
       border: 1px solid var(--teal); border-left: 4px solid var(--teal);
       border-radius: 10px; text-decoration: none;
-      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-    }
-    .perfil-box:hover {
-      background: #fff;
-      box-shadow: 0 8px 24px rgba(8,145,178,0.18);
-      transform: translateY(-2px);
-    }
-    .perfil-box-txt { flex: 1; }
-    .perfil-box-t {
-      display: block; font-size: 0.84rem; font-weight: 700;
-      color: var(--navy); letter-spacing: -0.01em;
-    }
-    .perfil-box-s {
-      display: block; font-size: 0.74rem; line-height: 1.45;
-      color: var(--muted); margin-top: 0.15rem;
-    }
-    @media (max-width: 768px) { .perfil-box { max-width: 100%; } }
-
-    /* Iconos SVG que reemplazan a los emojis: tamaño equivalente */
-    .risk-card-icon svg{width:28px;height:28px} .sym-icon svg{width:24px;height:24px}
-    .factor-icon svg{width:24px;height:24px} .callout-icon svg{width:23px;height:23px}
-    .exam-icon svg{width:21px;height:21px}
-    .risk-card-icon,.sym-icon,.factor-icon,.callout-icon,.exam-icon{color:#0891b2}
-    .nav-logo-icon svg,.nav-logo-mark svg{width:19px;height:19px;color:#fff}
-  
-    /* ── FAQ ── */
-    #faq { padding: 3.5rem 2.5rem; background: #f4f8fb; }
-    #faq .inner { max-width: 980px; margin: 0 auto; }
-    @media (max-width: 720px) { #faq { padding: 2.5rem 1.25rem; } }
-
-    .faq-list { max-width: 760px; }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;}
+.lg .perfil-box:hover{background: #fff;
+      box-shadow: 0 8px 24px rgba(43,42,107,0.18);
+      transform: translateY(-2px);}
+.lg .perfil-box-txt{flex: 1;}
+.lg .perfil-box-t{display: block; font-size: 0.84rem; font-weight: 700;
+      color: var(--navy); letter-spacing: -0.01em;}
+.lg .perfil-box-s{display: block; font-size: 0.74rem; line-height: 1.45;
+      color: var(--muted); margin-top: 0.15rem;}
+@media (max-width: 768px){.lg .perfil-box{max-width: 100%;}}
+.lg .risk-card-icon svg{width:28px;height:28px}
+.lg .sym-icon svg{width:24px;height:24px}
+.lg .factor-icon svg{width:24px;height:24px}
+.lg .callout-icon svg{width:23px;height:23px}
+.lg .exam-icon svg{width:21px;height:21px}
+.lg .risk-card-icon, .lg .sym-icon, .lg .factor-icon, .lg .callout-icon, .lg .exam-icon{color:#2B2A6B}
+.lg .nav-logo-icon svg, .lg .nav-logo-mark svg{width:19px;height:19px;color:#fff}
+.lg #faq{padding: 3.5rem 2.5rem; background: #F2F1FB;}
+.lg #faq .inner{max-width: 980px; margin: 0 auto;}
+@media (max-width: 720px){.lg #faq{padding: 2.5rem 1.25rem;}}
+.lg .faq-list{max-width: 760px;}
+.lg .faq-item{border-bottom: 1px solid var(--border);}
+.lg .faq-q{width: 100%; background: none; border: none; cursor: pointer; display: flex;
       align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 0;
       text-align: left; font-family: inherit; font-size: 0.95rem; font-weight: 600;
-      color: var(--navy); transition: color 0.2s; }
-    .faq-q:hover { color: var(--teal); }
-    .faq-arrow { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      color: var(--navy); transition: color 0.2s;}
+.lg .faq-q:hover{color: var(--teal);}
+.lg .faq-arrow{flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
       border: 1.5px solid var(--border); color: var(--slate); display: flex; align-items: center;
-      justify-content: center; font-size: 0.9rem; transition: all 0.3s; }
-    .faq-item.open .faq-arrow { background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
-      transition: max-height 0.35s ease, padding 0.35s; }
-    .faq-item.open .faq-a { max-height: 480px; padding-bottom: 1.25rem; }
-    .faq-h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
-      margin: 0 0 1.8rem; line-height: 1.2; }
-  </style>
+      justify-content: center; font-size: 0.9rem; transition: all 0.3s;}
+.lg .faq-item.open .faq-arrow{background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg);}
+.lg .faq-a{max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
+      transition: max-height 0.35s ease, padding 0.35s;}
+.lg .faq-item.open .faq-a{max-height: 480px; padding-bottom: 1.25rem;}
+.lg .faq-h2{font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
+      margin: 0 0 1.8rem; line-height: 1.2;}
+/* --- capa F2 sobre el contenido --- */
+/* hero */
+.hero h1 span{color:#fff}
+/* contenedor */
+.lg{padding-top:4px}
+.lg .content,.lg .tnm-section,.lg .descriptor-section,.lg .survival-section{max-width:none}
+.lg .content{margin:0;padding:0}
+.lg .content > p,.lg .content > ul,.lg .content > ol{max-width:940px}
+/* tipografía */
+.lg h2,.lg .content h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.6vw,40px);letter-spacing:-.02em;color:var(--ink);line-height:1.1;margin:56px 0 16px}
+.lg .content h2:first-child{margin-top:8px}
+.lg h3,.lg h4,.lg .content h3{font-family:var(--display);letter-spacing:-.01em}
+.lg .content h3{font-size:22px;font-weight:800;color:var(--accent-text);margin:32px 0 12px}
+.lg .content p,.lg .content li{color:var(--ink);font-size:16px;line-height:1.75}
+.lg .content strong{color:var(--ink)}
+.lg a{color:var(--ink)}
+/* tarjetas: sin bordes, fondo suave, radio grande */
+.lg .symptom-card,.lg .step-body,.lg .exam-item,.lg .risk-card,.lg .type-card,.lg .tnm-section,.lg .tnm-letter-card,
+.lg .descriptor-section,.lg .grouping-wrap,.lg .process-card,.lg .survival-section,.lg .factor-card,.lg .stage-block,
+.lg .modality-card,.lg .bio-table-wrap,.lg .smoking-stat{border:none;border-radius:26px;background:var(--soft)}
+.lg .exam-header,.lg .exam-body{background:var(--soft)}
+.lg .risk-card:hover{transform:none}
+.lg .sym-alert,.lg .factor-negative{background:var(--soft2)}
+/* recuadros destacados: durazno, sin borde */
+.lg .callout,.lg .ebus-box,.lg .screening-box,.lg .robots-box,.lg .hope-box{background:var(--soft2);border:none;border-radius:26px}
+.lg .callout h4,.lg .ebus-box h3,.lg .screening-box h3,.lg .screening-box h4,.lg .robots-box h3,.lg .robots-box h4,.lg .hope-box h3,.lg .hope-box h4{color:var(--accent-text)}
+.lg .callout-icon,.lg .risk-card-icon,.lg .sym-icon,.lg .factor-icon,.lg .exam-icon{color:var(--accent-text)}
+/* pasos numerados */
+.lg .step-num{background:var(--accent);border:none;border-radius:50%;color:var(--ink);font-weight:800}
+.lg .step:not(:last-child)::after{background:var(--soft2)}
+/* tablas */
+.lg table th{color:var(--muted)}
+.lg .descriptor-header,.lg .tnm-header,.lg .survival-header,.lg .stage-block-header,.lg .bio-table-header{background:transparent;border:none}
+.lg tr,.lg td,.lg th{border-color:#fff!important}
+/* escala de estadios (temprano → avanzado) */
+.lg .stage-ia,.lg .stage-ib,.lg .sc-ia1,.lg .sc-ia2,.lg .sc-ia3,.lg .sc-ib,.lg .sc-0,.lg .sp-ia,.lg .sp-ib,.lg .sp-green,.lg .tx-surgery{background:#DDF1E5!important;color:#1D6B45!important}
+.lg .stage-iia,.lg .stage-iib,.lg .sc-iia,.lg .sc-iib,.lg .sp-iia,.lg .sp-iib,.lg .sp-amber{background:#FCEBC9!important;color:#7A5200!important}
+.lg .stage-iiia,.lg .stage-iiib,.lg .stage-iiic,.lg .sc-iiia,.lg .sc-iiib,.lg .sc-iiic,.lg .sp-iiia,.lg .sp-iiib,.lg .sp-iiic{background:var(--soft2)!important;color:var(--accent-text)!important}
+.lg .stage-iva,.lg .stage-ivb,.lg .sc-iva,.lg .sc-ivb,.lg .sp-iva,.lg .sp-ivb,.lg .sp-red{background:#F6D0CC!important;color:#8E1B1B!important}
+.lg .s-ia .surv-bar-fill{background:#2E9E6B}.lg .s-ib .surv-bar-fill{background:#57B585}
+.lg .s-iia .surv-bar-fill{background:#D9A23A}.lg .s-iib .surv-bar-fill{background:#E6B455}
+.lg .s-iiia .surv-bar-fill{background:#F28A6E}.lg .s-iiib .surv-bar-fill{background:#E46D4D}.lg .s-iiic .surv-bar-fill{background:#D2553A}
+.lg .s-iva .surv-bar-fill{background:#B23A22}.lg .s-ivb .surv-bar-fill{background:#8E1B1B}
+.lg .surv-bar-track{background:#fff;border-radius:99px}
+.lg .surv-bar-fill{border-radius:99px}
+.lg .s-ia .surv-pct,.lg .s-ib .surv-pct{color:#1D6B45}.lg .s-iia .surv-pct,.lg .s-iib .surv-pct{color:#7A5200}
+.lg .s-iiia .surv-pct,.lg .s-iiib .surv-pct,.lg .s-iiic .surv-pct{color:var(--accent-text)}.lg .s-iva .surv-pct,.lg .s-ivb .surv-pct{color:#8E1B1B}
+/* portada */
+.hero-photo{border-radius:26px;filter:none;aspect-ratio:16/10;object-fit:cover;box-shadow:0 18px 40px rgba(26,25,80,.25)}
+.hero-actions{margin-top:24px}
+.lg .alert-wrap .inner{max-width:none;padding:0}
+.lg .alert-strip{background:var(--soft2);border:none;border-radius:26px;box-shadow:none;transform:none;max-width:none;padding:26px 30px}
+.lg .alert-strip strong{color:var(--accent-text);font-size:17px}
+.lg .alert-strip p{color:var(--ink)}
+.lg .alert-ico{color:var(--accent-text)}
+.lg .home-cards{padding-top:40px}
+.lg .home-cards .inner{max-width:none;padding:0}
+.lg .home-cards .section-lead{color:var(--ink);font-size:17px;margin-bottom:24px}
+.lg .subpage-card{border:none;background:var(--soft);border-radius:26px;padding:28px}
+.lg .subpage-card::before{display:none}
+.lg .subpage-card:hover{transform:none;box-shadow:none;background:var(--soft2)}
+.lg .card-num{color:var(--accent-text);font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.06em}
+.lg .card-title{font-family:var(--display);font-weight:800;font-size:23px;line-height:1.15;color:var(--ink)}
+.lg .card-desc{color:var(--ink)}
+.lg .card-arrow{color:var(--ink);font-weight:700}
+.bio .txt.src{font-size:14px;color:var(--muted)}
+@media (max-width:860px){.hero-photo{max-width:100%!important;width:100%}}
+.lg .alert-wrap{padding:0;margin:0;background:none}
+#main-content > .wrap:first-child{padding-top:16px}
+/* tablas en móvil: filas como tarjetas */
+@media (max-width:640px){
+.lg table.stk{display:block!important;min-width:0!important;width:100%!important;overflow:visible!important;border-spacing:0}
+.lg table.stk thead{display:none}
+.lg table.stk tbody{display:block}
+.lg table.stk tr{display:block;background:#fff;border-radius:18px;margin:8px 0;padding:12px 14px}
+.lg table.stk td{display:block;padding:2px 0!important;border:none!important;background:none!important;font-size:15px!important}
+.lg table.stk td[data-l]::before{content:attr(data-l);display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.lg table.stk td[data-c="0"]::before{display:none}
+.lg table.stk td[data-c="0"]{font-weight:700;margin-bottom:2px}
+.lg table.grouping-table.stk td[data-c="1"],.lg table.grouping-table.stk td[data-c="2"],.lg table.grouping-table.stk td[data-c="3"]{display:inline-block;margin-right:16px}
+.lg table.grouping-table.stk td::before,.lg table.desc-table.stk td::before{display:none!important}
+.lg table.grouping-table.stk td[data-c="0"]{display:block}
+.lg table.grouping-table.stk td[data-c="4"]{margin-top:4px}
+.lg .tnm-section,.lg .grouping-wrap,.lg .bio-table-wrap,.lg .descriptor-section{overflow:visible}
+
+}
+
+</style>
   <!-- Google Analytics 4 · red Dr. David Lazo -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
   <script>
@@ -674,53 +605,44 @@
 </head>
 <body>
 
-<div class="topbar">
-  <span class="topbar-left">Información para pacientes · Santiago, Chile</span>
+<div class="topbar"><div class="wrap">
+  <span>Información para pacientes · Santiago, Chile</span>
   <div class="topbar-links">
     <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
-    <a href="https://rats.cl">Cirugía Robótica</a>
-    <a href="https://broncoscopia.cl">Broncoscopía</a>
-    <a href="https://videotoracoscopia.cl">Videotoracoscopía</a>
-    <a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
+<a href="https://rats.cl">Cirugía Robótica</a>
+<a href="https://broncoscopia.cl">Broncoscopía</a>
+<a href="https://videotoracoscopia.cl">Videotoracoscopía</a>
+<a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
   </div>
-</div>
+</div></div>
 
-<header>
+<header class="site-header">
 <nav>
-  <a href="/" class="nav-logo">
-    <div class="nav-logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"/><path d="M12 11c0-2.6-2-4-3.6-4C6.4 7 5 8.6 5 11.4c0 3.6 1.6 7.6 3.6 7.6 1.8 0 3.4-1.4 3.4-4z"/><path d="M12 11c0-2.6 2-4 3.6-4C17.6 7 19 8.6 19 11.4c0 3.6-1.6 7.6-3.6 7.6-1.8 0-3.4-1.4-3.4-4z"/></svg></div>
-    <div class="nav-logo-text">Cáncer <span>Pulmonar</span></div>
-  </a>
+  <a href="/" class="logo">Cáncer <span>Pulmonar</span></a>
+  <button class="nav-toggle" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="/que-es">¿Qué es?</a></li>
     <li><a href="/causas">Causas</a></li>
     <li><a href="/diagnostico">Diagnóstico</a></li>
+    <li><a href="/nodulo-pulmonar">Nódulo pulmonar</a></li>
     <li><a href="/etapificacion" class="active">Etapificación</a></li>
     <li><a href="/tratamiento">Tratamiento</a></li>
     <li><a href="/sobrevida">Sobrevida</a></li>
   </ul>
   <a href="#contacto" class="nav-cta">Consultar al especialista</a>
-    <button class="nav-hamburger" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
-  </nav>
+</nav>
 </header>
 
 <main id="main-content">
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="/">Inicio</a>
-    <span>›</span>
-    <span class="breadcrumb-current">Etapificación TNM 9ª Edición</span>
+<div class="wrap"><div class="crumbs"><a href="/">Inicio</a> › <span class="current">Etapificación TNM 9ª Edición</span></div></div>
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-tag">Detalle técnico · Etapificación</div>
+    <h1>Clasificación <span>TNM 9ª Edición</span><br/>Cáncer Pulmonar</h1>
+    <p>La etapificación es el proceso que determina la extensión del cáncer pulmonar. La clasificación TNM (9ª edición IASLC, vigente desde enero de 2025) es el sistema universal que define el estadio y guía las decisiones de tratamiento.</p>
   </div>
 </div>
-
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="page-hero-tag">Detalle técnico · Etapificación</div>
-    <h1>Clasificación <span>TNM 9ª Edición</span><br>Cáncer Pulmonar</h1>
-    <p class="page-hero-lead">La etapificación es el proceso que determina la extensión del cáncer pulmonar. La clasificación TNM (9ª edición IASLC, vigente desde enero de 2025) es el sistema universal que define el estadio y guía las decisiones de tratamiento.</p>
-  </div>
-</div>
-
+<section class="section"><div class="wrap lg">
 <div class="content">
 
   <h2>¿Qué evalúa el sistema TNM?</h2>
@@ -759,22 +681,22 @@
       <span class="descriptor-letter tnm-t">T</span>
       <div class="descriptor-title">Descriptores del Tumor Primario — TNM 9ª edición</div>
     </div>
-    <table class="desc-table">
+    <table class="desc-table stk">
       <thead>
         <tr><th>Código</th><th>Definición (AJCC 9ª edición, 2024)</th></tr>
       </thead>
       <tbody>
-        <tr><td><span class="code code-t">TX</span></td><td>Tumor no puede evaluarse, o tumor demostrado por células malignas en esputo/lavado bronquial pero no visible con imágenes ni broncoscopía</td></tr>
-        <tr><td><span class="code code-t">T0</span></td><td>Sin evidencia de tumor primario</td></tr>
-        <tr><td><span class="code code-t">Tis</span></td><td>Carcinoma in situ espinocelular (SCIS) o adenocarcinoma in situ (AIS): patrón lepídico puro, ≤3 cm</td></tr>
-        <tr><td><span class="code code-t">T1mi</span></td><td><strong>Adenocarcinoma mínimamente invasor:</strong> adenocarcinoma ≤3 cm, patrón lepídico predominante, con componente invasivo ≤5 mm. Pronóstico excelente (Estadio IA1)</td></tr>
-        <tr><td><span class="code code-t">T1a</span></td><td>Tumor ≤ 1 cm, rodeado de pulmón/pleura visceral, sin invasión más proximal que bronquio lobar</td></tr>
-        <tr><td><span class="code code-t">T1b</span></td><td>Tumor &gt;1 cm pero ≤ 2 cm en su dimensión mayor</td></tr>
-        <tr><td><span class="code code-t">T1c</span></td><td>Tumor &gt;2 cm pero ≤ 3 cm en su dimensión mayor</td></tr>
-        <tr><td><span class="code code-t">T2a</span></td><td>Tumor &gt;3 cm pero ≤ 4 cm, O tumor ≤4 cm con: invasión de pleura visceral, lóbulo adyacente, bronquio principal (sin carina), o atelectasia hasta el hilio</td></tr>
-        <tr><td><span class="code code-t">T2b</span></td><td>Tumor &gt;4 cm pero ≤ 5 cm, con o sin las características de T2a</td></tr>
-        <tr><td><span class="code code-t">T3</span></td><td>Tumor &gt;5 cm pero ≤ 7 cm, O invasión de pleura parietal/pared torácica, pericardio, nervio frénico, vena ácigos, raíces nerviosas torácicas (T1, T2) o ganglio estrellado; O nódulo(s) en el <em>mismo</em> lóbulo</td></tr>
-        <tr><td><span class="code code-t">T4</span></td><td>Tumor &gt;7 cm, O invasión de mediastino, tráquea, carina, esófago, diafragma, corazón, grandes vasos, arterias supraaórticas, venas braquiocefálicas, vasos subclavios, cuerpo vertebral, lámina, canal raquídeo, raíces nerviosas cervicales o plexo braquial; O nódulo(s) en lóbulo ipsilateral <em>diferente</em></td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-t">TX</span></td><td data-c="1" data-l="Definición (AJCC 9ª edición, 2024)">Tumor no puede evaluarse, o tumor demostrado por células malignas en esputo/lavado bronquial pero no visible con imágenes ni broncoscopía</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-t">T0</span></td><td data-c="1" data-l="Definición (AJCC 9ª edición, 2024)">Sin evidencia de tumor primario</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-t">Tis</span></td><td data-c="1" data-l="Definición (AJCC 9ª edición, 2024)">Carcinoma in situ espinocelular (SCIS) o adenocarcinoma in situ (AIS): patrón lepídico puro, ≤3 cm</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-t">T1mi</span></td><td data-c="1" data-l="Definición (AJCC 9ª edición, 2024)"><strong>Adenocarcinoma mínimamente invasor:</strong> adenocarcinoma ≤3 cm, patrón lepídico predominante, con componente invasivo ≤5 mm. Pronóstico excelente (Estadio IA1)</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-t">T1a</span></td><td data-c="1" data-l="Definición (AJCC 9ª edición, 2024)">Tumor ≤ 1 cm, rodeado de pulmón/pleura visceral, sin invasión más proximal que bronquio lobar</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-t">T1b</span></td><td data-c="1" data-l="Definición (AJCC 9ª edición, 2024)">Tumor &gt;1 cm pero ≤ 2 cm en su dimensión mayor</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-t">T1c</span></td><td data-c="1" data-l="Definición (AJCC 9ª edición, 2024)">Tumor &gt;2 cm pero ≤ 3 cm en su dimensión mayor</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-t">T2a</span></td><td data-c="1" data-l="Definición (AJCC 9ª edición, 2024)">Tumor &gt;3 cm pero ≤ 4 cm, O tumor ≤4 cm con: invasión de pleura visceral, lóbulo adyacente, bronquio principal (sin carina), o atelectasia hasta el hilio</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-t">T2b</span></td><td data-c="1" data-l="Definición (AJCC 9ª edición, 2024)">Tumor &gt;4 cm pero ≤ 5 cm, con o sin las características de T2a</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-t">T3</span></td><td data-c="1" data-l="Definición (AJCC 9ª edición, 2024)">Tumor &gt;5 cm pero ≤ 7 cm, O invasión de pleura parietal/pared torácica, pericardio, nervio frénico, vena ácigos, raíces nerviosas torácicas (T1, T2) o ganglio estrellado; O nódulo(s) en el <em>mismo</em> lóbulo</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-t">T4</span></td><td data-c="1" data-l="Definición (AJCC 9ª edición, 2024)">Tumor &gt;7 cm, O invasión de mediastino, tráquea, carina, esófago, diafragma, corazón, grandes vasos, arterias supraaórticas, venas braquiocefálicas, vasos subclavios, cuerpo vertebral, lámina, canal raquídeo, raíces nerviosas cervicales o plexo braquial; O nódulo(s) en lóbulo ipsilateral <em>diferente</em></td></tr>
       </tbody>
     </table>
   </div>
@@ -786,17 +708,17 @@
       <span class="descriptor-letter tnm-n">N</span>
       <div class="descriptor-title">Descriptores Ganglionares — TNM 9ª edición</div>
     </div>
-    <table class="desc-table">
+    <table class="desc-table stk">
       <thead>
         <tr><th>Código</th><th>Definición</th></tr>
       </thead>
       <tbody>
-        <tr><td><span class="code code-n">NX</span></td><td>Los ganglios linfáticos regionales no pueden evaluarse</td></tr>
-        <tr><td><span class="code code-n">N0</span></td><td>Sin compromiso tumoral de ganglios linfáticos regionales</td></tr>
-        <tr><td><span class="code code-n">N1</span></td><td>Compromiso de estaciones peribronquiales, hiliares ipsilaterales e intrapulmonares</td></tr>
-        <tr><td><span class="code code-n">N2a</span></td><td>Compromiso de <strong>una sola</strong> estación ganglionar mediastínica ipsilateral o de la estación subcarina</td></tr>
-        <tr><td><span class="code code-n">N2b</span></td><td>Compromiso de <strong>múltiples</strong> estaciones ganglionares mediastínicas ipsilaterales o subcarina + otra estación</td></tr>
-        <tr><td><span class="code code-n">N3</span></td><td>Compromiso de ganglios mediastínicos contralaterales, hiliares contralaterales, escalenos o supraclaviculares (ipsi o contralaterales)</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-n">NX</span></td><td data-c="1" data-l="Definición">Los ganglios linfáticos regionales no pueden evaluarse</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-n">N0</span></td><td data-c="1" data-l="Definición">Sin compromiso tumoral de ganglios linfáticos regionales</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-n">N1</span></td><td data-c="1" data-l="Definición">Compromiso de estaciones peribronquiales, hiliares ipsilaterales e intrapulmonares</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-n">N2a</span></td><td data-c="1" data-l="Definición">Compromiso de <strong>una sola</strong> estación ganglionar mediastínica ipsilateral o de la estación subcarina</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-n">N2b</span></td><td data-c="1" data-l="Definición">Compromiso de <strong>múltiples</strong> estaciones ganglionares mediastínicas ipsilaterales o subcarina + otra estación</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-n">N3</span></td><td data-c="1" data-l="Definición">Compromiso de ganglios mediastínicos contralaterales, hiliares contralaterales, escalenos o supraclaviculares (ipsi o contralaterales)</td></tr>
       </tbody>
     </table>
   </div>
@@ -808,16 +730,16 @@
       <span class="descriptor-letter tnm-m">M</span>
       <div class="descriptor-title">Descriptores de Metástasis — TNM 9ª edición</div>
     </div>
-    <table class="desc-table">
+    <table class="desc-table stk">
       <thead>
         <tr><th>Código</th><th>Definición</th></tr>
       </thead>
       <tbody>
-        <tr><td><span class="code code-m">cM0</span></td><td>Sin metástasis a distancia</td></tr>
-        <tr><td><span class="code code-m">M1a</span></td><td>Nódulo(s) en pulmón contralateral; nódulos pleurales/pericárdicos; derrame pleural maligno; derrame pericárdico maligno</td></tr>
-        <tr><td><span class="code code-m">M1b</span></td><td>Metástasis extratoráxica única en un solo sistema orgánico</td></tr>
-        <tr><td><span class="code code-m">M1c1</span></td><td><strong>Múltiples metástasis extratoráxicas en un solo sistema orgánico</strong> (p.ej. varias metástasis óseas)</td></tr>
-        <tr><td><span class="code code-m">M1c2</span></td><td><strong>Múltiples metástasis extratoráxicas en múltiples sistemas orgánicos</strong> (p.ej. hígado + hueso + cerebro)</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-m">cM0</span></td><td data-c="1" data-l="Definición">Sin metástasis a distancia</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-m">M1a</span></td><td data-c="1" data-l="Definición">Nódulo(s) en pulmón contralateral; nódulos pleurales/pericárdicos; derrame pleural maligno; derrame pericárdico maligno</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-m">M1b</span></td><td data-c="1" data-l="Definición">Metástasis extratoráxica única en un solo sistema orgánico</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-m">M1c1</span></td><td data-c="1" data-l="Definición"><strong>Múltiples metástasis extratoráxicas en un solo sistema orgánico</strong> (p.ej. varias metástasis óseas)</td></tr>
+        <tr><td data-c="0" data-l="Código"><span class="code code-m">M1c2</span></td><td data-c="1" data-l="Definición"><strong>Múltiples metástasis extratoráxicas en múltiples sistemas orgánicos</strong> (p.ej. hígado + hueso + cerebro)</td></tr>
       </tbody>
     </table>
   </div>
@@ -830,36 +752,36 @@
       <h3>Grupos de Estadio · CPCNP (células no pequeñas, también llamado no microcítico) · TNM 9ª edición</h3>
       <span class="tnm-badge">IASLC 2024</span>
     </div>
-    <table class="grouping-table">
+    <table class="grouping-table stk">
       <thead>
         <tr><th>Estadio</th><th>T</th><th>N</th><th>M</th><th>Descripción clínica</th></tr>
       </thead>
       <tbody>
-        <tr><td><span class="stage-chip sc-oculto">Oculto</span></td><td><span class="code code-t">TX</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Células malignas en esputo, tumor no visible con imágenes</td></tr>
-        <tr><td><span class="stage-chip sc-ia1">0</span></td><td><span class="code code-t">Tis</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Carcinoma in situ</td></tr>
-        <tr><td rowspan="2"><span class="stage-chip sc-ia1">IA1</span></td><td><span class="code code-t">T1mi</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Adenocarcinoma mínimamente invasor (≤3 cm, ≤5 mm invasión)</td></tr>
-        <tr><td><span class="code code-t">T1a</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor ≤ 1 cm, sin ganglios ni metástasis</td></tr>
-        <tr><td><span class="stage-chip sc-ia2">IA2</span></td><td><span class="code code-t">T1b</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor 1–2 cm</td></tr>
-        <tr><td><span class="stage-chip sc-ia3">IA3</span></td><td><span class="code code-t">T1c</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor 2–3 cm</td></tr>
-        <tr><td><span class="stage-chip sc-ib">IB</span></td><td><span class="code code-t">T2a</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor 3–4 cm</td></tr>
-        <tr><td rowspan="2"><span class="stage-chip sc-iia">IIA</span></td><td><span class="code code-t">T2b</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor 4–5 cm</td></tr>
-        <tr><td><span class="code code-t">T1</span></td><td><span class="code code-n">N1</span></td><td><span class="code code-m">M0</span></td><td>Tumor ≤3 cm con ganglios hiliares ipsilaterales</td></tr>
-        <tr><td rowspan="3"><span class="stage-chip sc-iib">IIB</span></td><td><span class="code code-t">T1</span></td><td><span class="code code-n">N2a</span></td><td><span class="code code-m">M0</span></td><td>Tumor ≤3 cm con una sola estación mediastínica</td></tr>
-        <tr><td><span class="code code-t">T2a–T2b</span></td><td><span class="code code-n">N1</span></td><td><span class="code code-m">M0</span></td><td>Tumor 3–5 cm con ganglios hiliares</td></tr>
-        <tr><td><span class="code code-t">T3</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor 5–7 cm o invasión pared torácica/pericardio</td></tr>
-        <tr><td rowspan="4"><span class="stage-chip sc-iiia">IIIA</span></td><td><span class="code code-t">T1</span></td><td><span class="code code-n">N2b</span></td><td><span class="code code-m">M0</span></td><td>Tumor ≤3 cm con múltiples estaciones mediastínicas</td></tr>
-        <tr><td><span class="code code-t">T2–T3</span></td><td><span class="code code-n">N2a</span></td><td><span class="code code-m">M0</span></td><td>Tumor 3–7 cm con una sola estación mediastínica</td></tr>
-        <tr><td><span class="code code-t">T3–T4</span></td><td><span class="code code-n">N1</span></td><td><span class="code code-m">M0</span></td><td>Tumor localmente avanzado con N1</td></tr>
-        <tr><td><span class="code code-t">T4</span></td><td><span class="code code-n">N0</span></td><td><span class="code code-m">M0</span></td><td>Tumor muy avanzado sin ganglios</td></tr>
-        <tr><td rowspan="3"><span class="stage-chip sc-iiib">IIIB</span></td><td><span class="code code-t">T1–T2</span></td><td><span class="code code-n">N3</span></td><td><span class="code code-m">M0</span></td><td>Tumor T1-T2 con ganglios contralaterales/supraclaviculares</td></tr>
-        <tr><td><span class="code code-t">T2–T3</span></td><td><span class="code code-n">N2b</span></td><td><span class="code code-m">M0</span></td><td>Tumor 3–7 cm con múltiples estaciones mediastínicas</td></tr>
-        <tr><td><span class="code code-t">T4</span></td><td><span class="code code-n">N2a–N2b</span></td><td><span class="code code-m">M0</span></td><td>Tumor T4 con ganglios mediastínicos ipsilaterales</td></tr>
-        <tr><td rowspan="2"><span class="stage-chip sc-iiic">IIIC</span></td><td><span class="code code-t">T3</span></td><td><span class="code code-n">N3</span></td><td><span class="code code-m">M0</span></td><td>Tumor 5–7 cm + ganglios contralaterales</td></tr>
-        <tr><td><span class="code code-t">T4</span></td><td><span class="code code-n">N3</span></td><td><span class="code code-m">M0</span></td><td>Tumor avanzado + cualquier ganglio contralateral</td></tr>
-        <tr><td rowspan="2"><span class="stage-chip sc-iva">IVA</span></td><td>Cualquier T</td><td>Cualquier N</td><td><span class="code code-m">M1a</span></td><td>Derrame pleural/pericárdico maligno o nódulo contralateral</td></tr>
-        <tr><td>Cualquier T</td><td>Cualquier N</td><td><span class="code code-m">M1b</span></td><td>Metástasis extratoráxica única</td></tr>
-        <tr><td rowspan="2"><span class="stage-chip sc-ivb">IVB</span></td><td>Cualquier T</td><td>Cualquier N</td><td><span class="code code-m">M1c1</span></td><td>Múltiples metástasis en un solo sistema orgánico</td></tr>
-        <tr><td>Cualquier T</td><td>Cualquier N</td><td><span class="code code-m">M1c2</span></td><td>Múltiples metástasis en múltiples sistemas orgánicos</td></tr>
+        <tr><td data-c="0" data-l="Estadio"><span class="stage-chip sc-oculto">Oculto</span></td><td data-c="1" data-l="T"><span class="code code-t">TX</span></td><td data-c="2" data-l="N"><span class="code code-n">N0</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Células malignas en esputo, tumor no visible con imágenes</td></tr>
+        <tr><td data-c="0" data-l="Estadio"><span class="stage-chip sc-ia1">0</span></td><td data-c="1" data-l="T"><span class="code code-t">Tis</span></td><td data-c="2" data-l="N"><span class="code code-n">N0</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Carcinoma in situ</td></tr>
+        <tr><td rowspan="2" data-c="0" data-l="Estadio"><span class="stage-chip sc-ia1">IA1</span></td><td data-c="1" data-l="T"><span class="code code-t">T1mi</span></td><td data-c="2" data-l="N"><span class="code code-n">N0</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Adenocarcinoma mínimamente invasor (≤3 cm, ≤5 mm invasión)</td></tr>
+        <tr><td data-c="1" data-l="T"><span class="code code-t">T1a</span></td><td data-c="2" data-l="N"><span class="code code-n">N0</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor ≤ 1 cm, sin ganglios ni metástasis</td></tr>
+        <tr><td data-c="0" data-l="Estadio"><span class="stage-chip sc-ia2">IA2</span></td><td data-c="1" data-l="T"><span class="code code-t">T1b</span></td><td data-c="2" data-l="N"><span class="code code-n">N0</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor 1–2 cm</td></tr>
+        <tr><td data-c="0" data-l="Estadio"><span class="stage-chip sc-ia3">IA3</span></td><td data-c="1" data-l="T"><span class="code code-t">T1c</span></td><td data-c="2" data-l="N"><span class="code code-n">N0</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor 2–3 cm</td></tr>
+        <tr><td data-c="0" data-l="Estadio"><span class="stage-chip sc-ib">IB</span></td><td data-c="1" data-l="T"><span class="code code-t">T2a</span></td><td data-c="2" data-l="N"><span class="code code-n">N0</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor 3–4 cm</td></tr>
+        <tr><td rowspan="2" data-c="0" data-l="Estadio"><span class="stage-chip sc-iia">IIA</span></td><td data-c="1" data-l="T"><span class="code code-t">T2b</span></td><td data-c="2" data-l="N"><span class="code code-n">N0</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor 4–5 cm</td></tr>
+        <tr><td data-c="1" data-l="T"><span class="code code-t">T1</span></td><td data-c="2" data-l="N"><span class="code code-n">N1</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor ≤3 cm con ganglios hiliares ipsilaterales</td></tr>
+        <tr><td rowspan="3" data-c="0" data-l="Estadio"><span class="stage-chip sc-iib">IIB</span></td><td data-c="1" data-l="T"><span class="code code-t">T1</span></td><td data-c="2" data-l="N"><span class="code code-n">N2a</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor ≤3 cm con una sola estación mediastínica</td></tr>
+        <tr><td data-c="1" data-l="T"><span class="code code-t">T2a–T2b</span></td><td data-c="2" data-l="N"><span class="code code-n">N1</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor 3–5 cm con ganglios hiliares</td></tr>
+        <tr><td data-c="1" data-l="T"><span class="code code-t">T3</span></td><td data-c="2" data-l="N"><span class="code code-n">N0</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor 5–7 cm o invasión pared torácica/pericardio</td></tr>
+        <tr><td rowspan="4" data-c="0" data-l="Estadio"><span class="stage-chip sc-iiia">IIIA</span></td><td data-c="1" data-l="T"><span class="code code-t">T1</span></td><td data-c="2" data-l="N"><span class="code code-n">N2b</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor ≤3 cm con múltiples estaciones mediastínicas</td></tr>
+        <tr><td data-c="1" data-l="T"><span class="code code-t">T2–T3</span></td><td data-c="2" data-l="N"><span class="code code-n">N2a</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor 3–7 cm con una sola estación mediastínica</td></tr>
+        <tr><td data-c="1" data-l="T"><span class="code code-t">T3–T4</span></td><td data-c="2" data-l="N"><span class="code code-n">N1</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor localmente avanzado con N1</td></tr>
+        <tr><td data-c="1" data-l="T"><span class="code code-t">T4</span></td><td data-c="2" data-l="N"><span class="code code-n">N0</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor muy avanzado sin ganglios</td></tr>
+        <tr><td rowspan="3" data-c="0" data-l="Estadio"><span class="stage-chip sc-iiib">IIIB</span></td><td data-c="1" data-l="T"><span class="code code-t">T1–T2</span></td><td data-c="2" data-l="N"><span class="code code-n">N3</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor T1-T2 con ganglios contralaterales/supraclaviculares</td></tr>
+        <tr><td data-c="1" data-l="T"><span class="code code-t">T2–T3</span></td><td data-c="2" data-l="N"><span class="code code-n">N2b</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor 3–7 cm con múltiples estaciones mediastínicas</td></tr>
+        <tr><td data-c="1" data-l="T"><span class="code code-t">T4</span></td><td data-c="2" data-l="N"><span class="code code-n">N2a–N2b</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor T4 con ganglios mediastínicos ipsilaterales</td></tr>
+        <tr><td rowspan="2" data-c="0" data-l="Estadio"><span class="stage-chip sc-iiic">IIIC</span></td><td data-c="1" data-l="T"><span class="code code-t">T3</span></td><td data-c="2" data-l="N"><span class="code code-n">N3</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor 5–7 cm + ganglios contralaterales</td></tr>
+        <tr><td data-c="1" data-l="T"><span class="code code-t">T4</span></td><td data-c="2" data-l="N"><span class="code code-n">N3</span></td><td data-c="3" data-l="M"><span class="code code-m">M0</span></td><td data-c="4" data-l="Descripción clínica">Tumor avanzado + cualquier ganglio contralateral</td></tr>
+        <tr><td rowspan="2" data-c="0" data-l="Estadio"><span class="stage-chip sc-iva">IVA</span></td><td data-c="1" data-l="T">Cualquier T</td><td data-c="2" data-l="N">Cualquier N</td><td data-c="3" data-l="M"><span class="code code-m">M1a</span></td><td data-c="4" data-l="Descripción clínica">Derrame pleural/pericárdico maligno o nódulo contralateral</td></tr>
+        <tr><td data-c="1" data-l="T">Cualquier T</td><td data-c="2" data-l="N">Cualquier N</td><td data-c="3" data-l="M"><span class="code code-m">M1b</span></td><td data-c="4" data-l="Descripción clínica">Metástasis extratoráxica única</td></tr>
+        <tr><td rowspan="2" data-c="0" data-l="Estadio"><span class="stage-chip sc-ivb">IVB</span></td><td data-c="1" data-l="T">Cualquier T</td><td data-c="2" data-l="N">Cualquier N</td><td data-c="3" data-l="M"><span class="code code-m">M1c1</span></td><td data-c="4" data-l="Descripción clínica">Múltiples metástasis en un solo sistema orgánico</td></tr>
+        <tr><td data-c="1" data-l="T">Cualquier T</td><td data-c="2" data-l="N">Cualquier N</td><td data-c="3" data-l="M"><span class="code code-m">M1c2</span></td><td data-c="4" data-l="Descripción clínica">Múltiples metástasis en múltiples sistemas orgánicos</td></tr>
       </tbody>
     </table>
   </div>
@@ -915,146 +837,78 @@
   </div>
 
 </div>
-
-<div class="page-nav">
-  <a href="/diagnostico" class="page-nav-link">
-    <div class="pnl-label">← Anterior</div>
-    <div class="pnl-title">Diagnóstico</div>
-  </a>
-  <a href="/sobrevida" class="page-nav-link next">
-    <div class="pnl-label">Siguiente →</div>
-    <div class="pnl-title">Sobrevida por estadio</div>
-  </a>
-</div>
-
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="pager">
+    <a href="/diagnostico"><div class="k">← Anterior</div><div class="t">Diagnóstico</div></a>
+    <a href="/sobrevida" class="next"><div class="k">Siguiente →</div><div class="t">Sobrevida por estadio</div></a>
+  </div>
+</div></section>
 </main>
 
-<!-- FAQ -->
-<section class="section section-alt" id="faq">
-  <div class="inner">
-    <h2 class="faq-h2">Preguntas frecuentes sobre la etapificación</h2>
-    <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q">¿Qué significa TNM en el cáncer de pulmón?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Es el sistema internacional para describir cuánto se ha extendido el cáncer. La T describe el tumor (tamaño e invasión local), la N si hay ganglios comprometidos, y la M si hay metástasis a distancia. Combinando las tres se obtiene el estadio, de I a IV.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Cuáles son los estadios del cáncer de pulmón de células no pequeñas?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Van del estadio I (tumor pequeño y localizado) al IV (con metástasis). Los estadios I y II se consideran tempranos y en general operables; el III es localmente avanzado y muy heterogéneo; el IV es enfermedad diseminada, donde el tratamiento es sistémico. En esta página está la tabla completa de la 9ª edición TNM con cada subgrupo.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Cómo se lee un código como T2N1M0?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Cada letra lleva su categoría. T2N1M0 significa tumor entre 3 y 5 cm o con ciertas invasiones locales (T2), ganglios comprometidos solo del mismo lado y cercanos al tumor (N1) y sin metástasis (M0). Ese conjunto corresponde a un estadio IIB según la 9ª edición.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Qué diferencia hay entre estadificación clínica y patológica?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">La clínica se hace antes del tratamiento, con imágenes (TAC, PET-CT) y procedimientos como el EBUS. La patológica se hace después de la cirugía, con el análisis del tumor y los ganglios resecados durante ella, y es la más precisa. Pueden no coincidir, y la patológica es la que manda para el tratamiento posterior.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Cómo se sabe si los ganglios mediastínicos o hiliares están comprometidos por el cáncer?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Con una sospecha de compromiso de los ganglios en el TAC de tórax con contraste y/o el PET-CT, el paso siguiente es realizar una punción y biopsia de ellos por EBUS; en algunos casos muy seleccionados se recurre a la mediastinoscopía. Este es el paso que más cambia el plan de tratamiento.</div>
-        </div>
-    </div>
+<section class="section" id="faq"><div class="wrap">
+  <h2 class="h2">Preguntas frecuentes sobre la etapificación</h2>
+  <div class="faq">
+    <details><summary>¿Qué significa TNM en el cáncer de pulmón?</summary><p>Es el sistema internacional para describir cuánto se ha extendido el cáncer. La T describe el tumor (tamaño e invasión local), la N si hay ganglios comprometidos, y la M si hay metástasis a distancia. Combinando las tres se obtiene el estadio, de I a IV.</p></details>
+    <details><summary>¿Cuáles son los estadios del cáncer de pulmón de células no pequeñas?</summary><p>Van del estadio I (tumor pequeño y localizado) al IV (con metástasis). Los estadios I y II se consideran tempranos y en general operables; el III es localmente avanzado y muy heterogéneo; el IV es enfermedad diseminada, donde el tratamiento es sistémico. En esta página está la tabla completa de la 9ª edición TNM con cada subgrupo.</p></details>
+    <details><summary>¿Cómo se lee un código como T2N1M0?</summary><p>Cada letra lleva su categoría. T2N1M0 significa tumor entre 3 y 5 cm o con ciertas invasiones locales (T2), ganglios comprometidos solo del mismo lado y cercanos al tumor (N1) y sin metástasis (M0). Ese conjunto corresponde a un estadio IIB según la 9ª edición.</p></details>
+    <details><summary>¿Qué diferencia hay entre estadificación clínica y patológica?</summary><p>La clínica se hace antes del tratamiento, con imágenes (TAC, PET-CT) y procedimientos como el EBUS. La patológica se hace después de la cirugía, con el análisis del tumor y los ganglios resecados durante ella, y es la más precisa. Pueden no coincidir, y la patológica es la que manda para el tratamiento posterior.</p></details>
+    <details><summary>¿Cómo se sabe si los ganglios mediastínicos o hiliares están comprometidos por el cáncer?</summary><p>Con una sospecha de compromiso de los ganglios en el TAC de tórax con contraste y/o el PET-CT, el paso siguiente es realizar una punción y biopsia de ellos por EBUS; en algunos casos muy seleccionados se recurre a la mediastinoscopía. Este es el paso que más cambia el plan de tratamiento.</p></details>
   </div>
-</section>
+</div></section>
 
-<!-- BIO DR. LAZO -->
-<section class="bio-section-light" id="dr-lazo">
-  <div class="bio-wrap">
-    <div class="bio-photo">
-      <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en cáncer pulmonar en Clínica Las Condes" loading="lazy" width="800" height="800" decoding="async"/>
-    </div>
+<section class="section" id="dr-lazo"><div class="wrap">
+  <div class="bio">
+    <img alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en cáncer pulmonar en Clínica Las Condes" decoding="async" height="800" loading="lazy" src="imgs/foto-dr-lazo-bio.jpg" width="800"/>
     <div>
-      <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#0891b2;margin-bottom:0.75rem;">Tu especialista</p>
-      <h2 style="font-family:'DM Serif Display',serif;font-size:2rem;color:#1a2b3c;letter-spacing:-0.02em;margin-bottom:0.3rem;">Dr. David Lazo Pérez</h2>
-      <p style="font-size:0.9rem;font-weight:600;color:#0e7490;margin-bottom:1rem;">Cirujano Torácico · Oncología Torácica</p>
-      <p style="font-size:0.9rem;line-height:1.8;color:#3a5068;margin-bottom:1rem;text-wrap:pretty;">Cirujano torácico con 19 años de experiencia especializado en <strong style="color:#1a2b3c;">oncología torácica y cirugía mínimamente invasiva</strong>. Realiza lobectomías, segmentectomías y resecciones pulmonares con técnicas robóticas (Da Vinci) y videotoracoscopía (VATS). Su trabajo en oncología torácica y trasplante pulmonar está documentado en <a href="https://cirugiatoracica.cl/publicaciones" style="color:#0891b2;">26 artículos revisados por pares</a>.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;">
-        <div style="background:#f4f8fb;border:1px solid #dce8f0;border-radius:10px;padding:0.9rem;text-align:center;"><div style="font-size:1.4rem;font-weight:800;color:#0891b2;letter-spacing:-0.03em;">+5.700</div><div style="font-size:0.68rem;color:#607d93;margin-top:0.15rem;line-height:1.3;">cirugías torácicas</div></div>
-        <div style="background:#f4f8fb;border:1px solid #dce8f0;border-radius:10px;padding:0.9rem;text-align:center;"><div style="font-size:1.4rem;font-weight:800;color:#0891b2;letter-spacing:-0.03em;">+3.200</div><div style="font-size:0.68rem;color:#607d93;margin-top:0.15rem;line-height:1.3;">EBUS desde 2010</div></div>
-        <div style="background:#f4f8fb;border:1px solid #dce8f0;border-radius:10px;padding:0.9rem;text-align:center;"><div style="font-size:1.4rem;font-weight:800;color:#0891b2;letter-spacing:-0.03em;">19</div><div style="font-size:0.68rem;color:#607d93;margin-top:0.15rem;line-height:1.3;">años de experiencia</div></div>
-      </div>
-      <div style="margin-top:1.5rem;">
-        <a href="#contacto" style="display:inline-flex;align-items:center;gap:0.5rem;background:#0891b2;color:#fff;text-decoration:none;padding:0.75rem 1.5rem;border-radius:8px;font-size:0.88rem;font-weight:700;">Solicitar hora →</a>
-      </div>
-    
-          <a class="perfil-box" href="https://cirugiatoracica.cl/perfil">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span class="perfil-box-txt">
-              <span class="perfil-box-t">Perfil profesional completo</span>
-              <span class="perfil-box-s">Formación, cargos, sociedades científicas y publicaciones</span>
-            </span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-  </div>
-</section>
-
-<!-- CTA CONTACTO -->
-<section class="cta-unified" id="contacto">
-  <p class="cta-eyebrow">Primer paso</p>
-  <h2 class="cta-title">Hable directamente<br>con el especialista</h2>
-  <div class="cta-contact-grid">
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.5rem;">
-      <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico, experto en tratamiento quirúrgico del cáncer de pulmón" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 10%;border:3px solid rgba(255,255,255,0.2);margin:0;" loading="lazy" width="800" height="800" decoding="async">
-      <div style="text-align:center;">
-        <p style="font-size:0.88rem;font-weight:700;color:#fff;margin-bottom:0.2rem;">Dr. David Lazo Pérez</p>
-        <p style="font-size:0.75rem;color:rgba(255,255,255,0.55);">Cirujano Torácico</p>
-      </div>
-    </div>
-    <div class="contact-card">
-      <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Agendar consulta</h4>
-      <div class="ccontact-links">
-        <a class="ccontact-link" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener">
-          <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 8v6M9 11h6M9 21v-3h6v3"/></svg></span>
-          <div><span class="ccontact-label">Clínica Las Condes</span><span class="ccontact-val">Reservar hora presencial →</span></div>
-        </a>
-        <a class="ccontact-link" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">
-          <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/></svg></span>
-          <div><span class="ccontact-label">Telemedicina</span><span class="ccontact-val">Consulta online — todo Chile →</span></div>
-        </a>
-      </div>
-    </div>
-    <div class="contact-card">
-      <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>Redes sociales</h4>
-      <div class="ccontact-links">
-        <a class="ccontact-link" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener">
-          <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          <div><span class="ccontact-label">LinkedIn</span><span class="ccontact-val">Dr. David Lazo Pérez</span></div>
-        </a>
-        <a class="ccontact-link" href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener">
-          <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          <div><span class="ccontact-label">Instagram</span><span class="ccontact-val">@dr.david.lazo.p</span></div>
-        </a>
-        <a class="ccontact-link" href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener">
-          <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5z"/></svg>
-          <div><span class="ccontact-label">Doctoralia</span><span class="ccontact-val">Ver perfil y reseñas →</span></div>
-        </a>
+      <p class="eyebrow">Tu especialista</p>
+      <h2>Dr. David Lazo Pérez</h2>
+      <p class="role">Cirujano Torácico · Oncología Torácica</p>
+      <p class="txt">Cirujano torácico con 19 años de experiencia especializado en <strong>oncología torácica y cirugía mínimamente invasiva</strong>. Realiza lobectomías, segmentectomías y resecciones pulmonares con técnicas robóticas (Da Vinci) y videotoracoscopía (VATS). Su trabajo en oncología torácica y trasplante pulmonar está documentado en <a href="https://cirugiatoracica.cl/publicaciones">26 artículos revisados por pares</a>.</p>
+      <div class="actions">
+        <a class="btn" href="#contacto">Solicitar hora →</a>
+        <a class="perfil" href="https://cirugiatoracica.cl/perfil"><b>Perfil profesional completo</b><span>Formación, cargos, sociedades científicas y publicaciones</span></a>
       </div>
     </div>
   </div>
-</section>
+</div></section>
 
-<footer>
-  <div class="footer-inner">
+
+<section class="section" id="contacto"><div class="wrap">
+  <div class="cta">
+    <div>
+      <p class="eyebrow">Primer paso</p>
+      <h2>Hable directamente<br>con el especialista</h2>
+      <div class="who"><img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico, experto en tratamiento quirúrgico del cáncer de pulmón" loading="lazy" width="800" height="800" decoding="async"><div><b>Dr. David Lazo Pérez</b><span>Cirujano Torácico</span></div></div>
+    </div>
+    <div class="cta-col">
+      <h3>Agendar consulta</h3>
+      <a class="cl dark" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&amp;apellidoPat=LAZO&amp;apellidoMat=PEREZ" target="_blank" rel="noopener"><b>Clínica Las Condes</b><span>Reservar hora presencial →</span></a>
+      <a class="cl" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener"><b>Telemedicina</b><span>Consulta online — todo Chile →</span></a>
+    </div>
+    <div class="cta-col">
+      <h3>Redes sociales</h3>
+      <a class="cl light" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener"><b>LinkedIn</b><span>Dr. David Lazo Pérez</span></a>
+      <a class="cl light" href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener"><b>Instagram</b><span>@dr.david.lazo.p</span></a>
+      <a class="cl light" href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener"><b>Doctoralia</b><span>Ver perfil y reseñas →</span></a>
+    </div>
+  </div>
+</div></section>
+
+<footer class="site-footer"><div class="wrap">
+  <div class="footer-top">
     <div class="footer-brand"><strong>cancerpulmonar.cl</strong> · Información para pacientes</div>
     <div class="footer-links">
       <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
-      <a href="https://rats.cl">rats.cl</a>
-      <a href="https://broncoscopia.cl">broncoscopia.cl</a>
-      <a href="https://videotoracoscopia.cl">videotoracoscopia.cl</a>
-      <a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
+<a href="https://rats.cl">rats.cl</a>
+<a href="https://broncoscopia.cl">broncoscopia.cl</a>
+<a href="https://videotoracoscopia.cl">videotoracoscopia.cl</a>
+<a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
     </div>
   </div>
-  <div class="footer-disclaimer">
-    Clasificación TNM basada en: AJCC Cancer Staging System, 9ª edición (© 2024, American College of Surgeons). Grupos de estadio: Rami-Porta R, Nishimura KK, Giroux DJ, Detterbeck F, et al. The IASLC Lung Cancer Staging Project: Proposals for Revision of the TNM Stage Groups in the Forthcoming (Ninth) Edition of the TNM Classification for Lung Cancer. <em>J Thorac Oncol</em> 2024;19(7):1007-1027. <a href="https://doi.org/10.1016/j.jtho.2024.02.011" target="_blank" rel="noopener">DOI 10.1016/j.jtho.2024.02.011</a>. Guía clínica: NCCN Guidelines® for Non-Small Cell Lung Cancer, Version 9.2026 (septiembre 2026). No reemplaza la consulta médica especializada.
-  </div>
-</footer>
-  <script>
-    document.querySelectorAll('.faq-q').forEach(function (b) {
-      b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
-    });
-  </script>
+  <div class="footer-disclaimer">Clasificación TNM basada en: AJCC Cancer Staging System, 9ª edición (© 2024, American College of Surgeons). Grupos de estadio: Rami-Porta R, Nishimura KK, Giroux DJ, Detterbeck F, et al. The IASLC Lung Cancer Staging Project: Proposals for Revision of the TNM Stage Groups in the Forthcoming (Ninth) Edition of the TNM Classification for Lung Cancer. <em>J Thorac Oncol</em> 2024;19(7):1007-1027. <a href="https://doi.org/10.1016/j.jtho.2024.02.011" rel="noopener" target="_blank">DOI 10.1016/j.jtho.2024.02.011</a>. Guía clínica: NCCN Guidelines® for Non-Small Cell Lung Cancer, Version 9.2026 (septiembre 2026). No reemplaza la consulta médica especializada.</div>
+</div></footer>
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",

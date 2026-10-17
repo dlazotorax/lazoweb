@@ -159,546 +159,443 @@
   ]
 }
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/estilo.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    /* Los atributos width/height protegen del CLS; height:auto evita que
-       fijen el alto y pisen el aspect-ratio o el alto que define el CSS. */
-    img { height: auto; }
-    :root {
-      --navy:      #0c1526;
-      --teal-deep: #0c4a6e;
-      --teal:      #0891b2;
-      --teal-dark: #0e7490;
-      --teal-lt:   #22d3ee;
-      --teal-pale: #ecfeff;
-      --teal-mid:  #cffafe;
-      --amber:     #d97706;
-      --amber-pale:#fffbeb;
-      --amber-mid: #fde68a;
-      --bg:        #ffffff;
-      --bg-alt:    #f4f8fb;
-      --text:      #1a2b3c;
-      --slate:     #3a5068;
-      --muted:     #607d93;
-      --border:    #dce8f0;
-      --serif:     'DM Serif Display', serif;
-      --sans:      'Plus Jakarta Sans', system-ui, sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 500;
+.lg{--navy:#1A1950;--teal-deep:#2B2A6B;--teal:#2B2A6B;--teal-dark:#2B2A6B;--teal-lt:#F28A6E;
+--teal-pale:#F2F1FB;--teal-mid:#FFE3D9;--bg:#fff;--bg2:#F2F1FB;--bg3:#ECEAF8;--bg4:#E2E0F3;--text:#1A1950;
+--slate:#4D4C80;--muted:#5E5D8C;--text-muted:#4D4C80;--border:#E2E0F3;--accent:#2B2A6B;--accent2:#B23A22;
+--accent-lt:#F28A6E;--radius:22px;--serif:var(--display);--sans:'DM Sans',system-ui,sans-serif;
+font-family:var(--sans);color:var(--ink);line-height:1.65}
+.lg *, .lg *::before, .lg *::after{box-sizing: border-box; margin: 0; padding: 0;}
+.lg img{height: auto;}
+.lg nav{position: sticky; top: 0; z-index: 500;
       height: 66px; padding: 0 2.5rem;
       background: rgba(255,255,255,0.96); backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
-      box-shadow: 0 1px 0 var(--border);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .nav-logo-mark {
-      width: 32px; height: 32px; border-radius: 8px;
+      box-shadow: 0 1px 0 var(--border);}
+.lg .nav-logo{display: flex; align-items: center; gap: 0.6rem; text-decoration: none;}
+.lg .nav-logo-mark{width: 32px; height: 32px; border-radius: 8px;
       background: var(--teal-deep);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; color: #fff;
-    }
-    .nav-logo-text { font-size: 0.88rem; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; }
-    .nav-logo-text span { color: var(--teal); }
-    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
-    .nav-links a { font-size: 0.83rem; font-weight: 500; color: var(--slate); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--teal); }
-    .nav-cta { background: var(--teal); color: #fff; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.83rem; font-weight: 700; text-decoration: none; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--teal-dark); }
-    .topbar { background: var(--navy); padding: 0.42rem 2.5rem; display: flex; justify-content: flex-end; gap: 1.25rem; flex-wrap: wrap; }
-    .topbar a { font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
-    .topbar a:hover { color: rgba(255,255,255,0.8); }
-    .topbar span { color: rgba(255,255,255,0.15); }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end;
-      position: relative; overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
+      font-size: 1rem; color: #fff;}
+.lg .nav-logo-text{font-size: 0.88rem; font-weight: 800; color: var(--navy); letter-spacing: -0.01em;}
+.lg .nav-logo-text span{color: var(--teal);}
+.lg .nav-links{display: flex; gap: 1.75rem; list-style: none;}
+.lg .nav-links a{font-size: 0.83rem; font-weight: 500; color: var(--slate); text-decoration: none; transition: color 0.2s;}
+.lg .nav-links a:hover{color: var(--teal);}
+.lg .nav-cta{background: var(--teal); color: #fff; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.83rem; font-weight: 700; text-decoration: none; transition: background 0.2s;}
+.lg .nav-cta:hover{background: var(--teal-dark);}
+.lg .topbar{background: var(--navy); padding: 0.42rem 2.5rem; display: flex; justify-content: flex-end; gap: 1.25rem; flex-wrap: wrap;}
+.lg .topbar a{font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s;}
+.lg .topbar a:hover{color: rgba(255,255,255,0.8);}
+.lg .topbar span{color: rgba(255,255,255,0.15);}
+.lg .hero{min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end;
+      position: relative; overflow: hidden;}
+.lg .hero-bg{position: absolute; inset: 0;
       background-image: url('imgs/hero-petct.png');
       background-image: image-set(url('imgs/hero-petct.webp') type('image/webp'), url('imgs/hero-petct.png') type('image/png'));
-      background-color: #0c1526;
-      background-size: cover; background-position: center 30%;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(12,21,38,0.96) 0%, rgba(12,21,38,0.88) 40%, rgba(12,21,38,0.55) 70%, rgba(12,21,38,0.25) 100%);
-    }
-    .hero-inner { max-width: 780px; position: relative; z-index: 2; margin: 0 auto 0 0; padding: 9rem 2.5rem 5rem; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(8,145,178,0.15); border: 1px solid rgba(34,211,238,0.25);
+      background-color: #1A1950;
+      background-size: cover; background-position: center 30%;}
+.lg .hero-overlay{position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(26,25,80,0.96) 0%, rgba(26,25,80,0.88) 40%, rgba(26,25,80,0.55) 70%, rgba(26,25,80,0.25) 100%);}
+.lg .hero-inner{max-width: 780px; position: relative; z-index: 2; margin: 0 auto 0 0; padding: 9rem 2.5rem 5rem;}
+.lg .hero-badge{display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(43,42,107,0.15); border: 1px solid rgba(242,138,110,0.25);
       border-radius: 100px; padding: 0.35rem 0.95rem;
       font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--teal-lt); margin-bottom: 1.75rem;
-    }
-    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-lt); animation: blink 2.5s infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-    .hero h1 {
-      font-family: var(--serif);
+      color: var(--teal-lt); margin-bottom: 1.75rem;}
+.lg .hero-badge-dot{width: 6px; height: 6px; border-radius: 50%; background: var(--teal-lt); animation: blink 2.5s infinite;}
+@keyframes blink{ 0%,100%{opacity:1} 50%{opacity:0.3} }
+.lg .hero h1{font-family: var(--serif);
       font-size: clamp(3rem, 6vw, 5rem);
       line-height: 1.08; letter-spacing: -0.025em; color: #fff;
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 span { color: var(--teal-lt); font-style: italic; }
-    .hero-lead { font-size: 1.05rem; color: rgba(255,255,255,0.68); max-width: 520px; margin-bottom: 2.5rem; line-height: 1.75; }
-    .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-    .hero-stat-num { font-family: var(--serif); font-size: 2.2rem; color: var(--teal-lt); line-height: 1; margin-bottom: 0.2rem; }
-    .hero-stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.42); line-height: 1.45; }
-    .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--teal); color: #fff; text-decoration: none; padding: 0.85rem 1.75rem; border-radius: 8px; font-size: 0.9rem; font-weight: 700; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; }
-    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 8px 28px rgba(8,145,178,0.35); }
-    .btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: rgba(255,255,255,0.75); text-decoration: none; padding: 0.85rem 1.75rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; border: 1.5px solid rgba(255,255,255,0.2); transition: border-color 0.2s, color 0.2s; }
-    .btn-outline:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
-
-    /* ALERT */
-    .alert-wrap { background: var(--bg-alt); padding: 0 2.5rem 0; }
-    .alert-strip {
-      max-width: 1100px; margin: 0 auto;
+      margin-bottom: 1.5rem;}
+.lg .hero h1 span{color: var(--teal-lt); font-style: italic;}
+.lg .hero-lead{font-size: 1.05rem; color: rgba(255,255,255,0.68); max-width: 520px; margin-bottom: 2.5rem; line-height: 1.75;}
+.lg .hero-stats{display: flex; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2.5rem;}
+.lg .hero-stat-num{font-family: var(--serif); font-size: 2.2rem; color: var(--teal-lt); line-height: 1; margin-bottom: 0.2rem;}
+.lg .hero-stat-label{font-size: 0.75rem; color: rgba(255,255,255,0.42); line-height: 1.45;}
+.lg .hero-ctas{display: flex; gap: 0.75rem; flex-wrap: wrap;}
+.lg .btn-primary{display: inline-flex; align-items: center; gap: 0.5rem; background: var(--teal); color: #fff; text-decoration: none; padding: 0.85rem 1.75rem; border-radius: 8px; font-size: 0.9rem; font-weight: 700; transition: background 0.2s, transform 0.15s, box-shadow 0.2s;}
+.lg .btn-primary:hover{background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 8px 28px rgba(43,42,107,0.35);}
+.lg .btn-outline{display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: rgba(255,255,255,0.75); text-decoration: none; padding: 0.85rem 1.75rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; border: 1.5px solid rgba(255,255,255,0.2); transition: border-color 0.2s, color 0.2s;}
+.lg .btn-outline:hover{border-color: rgba(255,255,255,0.5); color: #fff;}
+.lg .alert-wrap{background: var(--bg-alt); padding: 0 2.5rem 0;}
+.lg .alert-strip{max-width: 1100px; margin: 0 auto;
       background: var(--amber-pale); border: 1px solid var(--amber-mid); border-radius: 14px;
       padding: 1.5rem 2rem; display: flex; gap: 1.25rem; align-items: flex-start;
-      transform: translateY(-2rem); box-shadow: 0 8px 32px rgba(217,119,6,0.08);
-    }
-    .alert-ico { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .alert-strip strong { color: var(--amber); font-weight: 700; display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
-    .alert-strip p { font-size: 0.85rem; color: var(--slate); line-height: 1.65; }
-
-    /* SECTIONS */
-    .section { padding: 5.5rem 2.5rem; }
-    .section-alt { background: var(--bg-alt); }
-    .section-dark { background: var(--navy); }
-    .inner { max-width: 1100px; margin: 0 auto; }
-    .eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
-    .eyebrow-w { color: var(--teal-lt); }
-    h2.section-title { font-family: var(--serif); font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1.18; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 1rem; }
-    h2.section-title.w { color: #fff; }
-    .section-lead { font-size: 1rem; line-height: 1.78; color: var(--slate); max-width: 620px; margin-bottom: 3rem; }
-    .section-lead.w { color: rgba(255,255,255,0.55); }
-
-    /* SUBPAGE CARDS */
-    .cards-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
-    .subpage-card {
-      background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;
+      transform: translateY(-2rem); box-shadow: 0 8px 32px rgba(217,119,6,0.08);}
+.lg .alert-ico{font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem;}
+.lg .alert-strip strong{color: var(--amber); font-weight: 700; display: block; margin-bottom: 0.3rem; font-size: 0.95rem;}
+.lg .alert-strip p{font-size: 0.85rem; color: var(--slate); line-height: 1.65;}
+.lg .section{padding: 5.5rem 2.5rem;}
+.lg .section-alt{background: var(--bg-alt);}
+.lg .section-dark{background: var(--navy);}
+.lg .inner{max-width: 1100px; margin: 0 auto;}
+.lg .eyebrow{font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem;}
+.lg .eyebrow-w{color: var(--teal-lt);}
+.lg h2.section-title{font-family: var(--serif); font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1.18; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 1rem;}
+.lg h2.section-title.w{color: #fff;}
+.lg .section-lead{font-size: 1rem; line-height: 1.78; color: var(--slate); max-width: 620px; margin-bottom: 3rem;}
+.lg .section-lead.w{color: rgba(255,255,255,0.55);}
+.lg .cards-grid{display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem;}
+.lg .subpage-card{background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;
       text-decoration: none; color: inherit; display: flex; flex-direction: column;
       position: relative; overflow: hidden;
-      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-    }
-    .subpage-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;}
+.lg .subpage-card::before{content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
       background: linear-gradient(90deg, var(--teal), var(--teal-lt));
-      transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
-    }
-    .subpage-card:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(8,145,178,0.1); }
-    .subpage-card:hover::before { transform: scaleX(1); }
-    .card-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
-    .card-title { font-family: var(--serif); font-size: 1.2rem; color: var(--navy); margin-bottom: 0.6rem; letter-spacing: -0.01em; }
-    .card-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.65; flex: 1; }
-    .card-arrow { margin-top: 1.25rem; font-size: 0.8rem; font-weight: 700; color: var(--teal); display: inline-flex; align-items: center; gap: 0.3rem; transition: gap 0.2s; }
-    .subpage-card:hover .card-arrow { gap: 0.55rem; }
-
-    /* DR SECTION */
-    .doctor-wrap {
-      display: flex; gap: 4rem; align-items: center;
-      background: var(--bg-alt); border: 1px solid var(--border); border-radius: 20px; padding: 3rem;
-    }
-    .doctor-photo {
-      flex-shrink: 0; width: 180px; height: 220px;
+      transform: scaleX(0); transform-origin: left; transition: transform 0.3s;}
+.lg .subpage-card:hover{border-color: var(--teal); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(43,42,107,0.1);}
+.lg .subpage-card:hover::before{transform: scaleX(1);}
+.lg .card-num{font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem;}
+.lg .card-title{font-family: var(--serif); font-size: 1.2rem; color: var(--navy); margin-bottom: 0.6rem; letter-spacing: -0.01em;}
+.lg .card-desc{font-size: 0.83rem; color: var(--muted); line-height: 1.65; flex: 1;}
+.lg .card-arrow{margin-top: 1.25rem; font-size: 0.8rem; font-weight: 700; color: var(--teal); display: inline-flex; align-items: center; gap: 0.3rem; transition: gap 0.2s;}
+.lg .subpage-card:hover .card-arrow{gap: 0.55rem;}
+.lg .doctor-wrap{display: flex; gap: 4rem; align-items: center;
+      background: var(--bg-alt); border: 1px solid var(--border); border-radius: 20px; padding: 3rem;}
+.lg .doctor-photo{flex-shrink: 0; width: 180px; height: 220px;
       border-radius: 16px; overflow: hidden;
-      box-shadow: 0 16px 48px rgba(12,21,38,0.16);
-    }
-    .doctor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 10%; display: block; }
-    .doctor-content { flex: 1; }
-    .doctor-content h2 { font-family: var(--serif); font-size: 1.9rem; color: var(--navy); margin-bottom: 0.4rem; letter-spacing: -0.02em; }
-    .doctor-content .role { font-size: 0.9rem; font-weight: 600; color: var(--teal-dark); margin-bottom: 1rem; }
-    .doctor-content p { font-size: 0.9rem; color: var(--slate); line-height: 1.78; margin-bottom: 1rem; text-wrap: pretty; }
-    .doctor-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; }
-    .doctor-tag { background: var(--teal-pale); border: 1px solid var(--teal-mid); color: var(--teal-dark); padding: 0.28rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; }
-
-    /* ECO LINKS */
-    .eco-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 2rem; }
-    .eco-card {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 16px 48px rgba(26,25,80,0.16);}
+.lg .doctor-photo img{width: 100%; height: 100%; object-fit: cover; object-position: center 10%; display: block;}
+.lg .doctor-content{flex: 1;}
+.lg .doctor-content h2{font-family: var(--serif); font-size: 1.9rem; color: var(--navy); margin-bottom: 0.4rem; letter-spacing: -0.02em;}
+.lg .doctor-content .role{font-size: 0.9rem; font-weight: 600; color: var(--teal-dark); margin-bottom: 1rem;}
+.lg .doctor-content p{font-size: 0.9rem; color: var(--slate); line-height: 1.78; margin-bottom: 1rem; text-wrap: pretty;}
+.lg .doctor-tags{display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem;}
+.lg .doctor-tag{background: var(--teal-pale); border: 1px solid var(--teal-mid); color: var(--teal-dark); padding: 0.28rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600;}
+.lg .eco-grid{display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 2rem;}
+.lg .eco-card{background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
       border-radius: 12px; padding: 1.5rem;
       text-decoration: none; color: inherit;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .eco-card:hover { border-color: rgba(8,145,178,0.4); background: rgba(8,145,178,0.06); }
-    .eco-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-lt); margin-bottom: 0.5rem; }
-    .eco-title { font-size: 0.9rem; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 0.35rem; }
-    .eco-desc { font-size: 0.78rem; color: rgba(255,255,255,0.42); line-height: 1.55; }
-
-    /* FOOTER */
-    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 2.5rem; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .footer-brand { font-size: 0.85rem; color: rgba(255,255,255,0.4); }
-    .footer-brand strong { color: rgba(255,255,255,0.7); }
-    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.32); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--teal-lt); }
-    .footer-disclaimer { max-width: 1100px; margin: 1.25rem auto 0; font-size: 0.72rem; color: rgba(255,255,255,0.22); line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.25rem; }
-
-    /* RESPONSIVE */
-    @media (max-width: 960px) {
-      .cards-grid { grid-template-columns: 1fr 1fr; }
-      .eco-grid { grid-template-columns: 1fr 1fr; }
-      .doctor-wrap { flex-direction: column; align-items: flex-start; gap: 2rem; }
-    }
-    @media (max-width: 640px) {
-      nav { padding: 0 1.25rem; }
-      .nav-links { display: none; }
-      .topbar { padding: 0.4rem 1.25rem; }
-      .hero { min-height: 85vh; }
-      .hero-inner { padding: 7rem 1.25rem 4rem; }
-      .section { padding: 4rem 1.25rem; }
-      .cards-grid, .eco-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap: 1.5rem; }
-      .alert-strip { flex-direction: column; gap: 0.75rem; }
-    }
-  
-    /* ── BIO DR. LAZO (shared) ── */
-    .bio-wrap { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; align-items: start; }
-    .bio-photo { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(12,21,38,0.2); }
-    .bio-photo img { width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; object-position: center 10%; }
-    .bio-name { font-family: var(--serif,'DM Serif Display',serif); font-size: 2.2rem; color: var(--navy,#0c1526); letter-spacing: -0.02em; margin-bottom: 0.3rem; }
-    .bio-role { font-size: 0.95rem; font-weight: 600; color: var(--teal-dark,#0e7490); margin-bottom: 1rem; }
-    .bio-insts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .bio-inst { font-size: 0.78rem; font-weight: 600; color: var(--slate,#3a5068); padding: 0.3rem 0.85rem; border-radius: 6px; background: var(--bg-alt,#f4f8fb); border: 1px solid var(--border,#dce8f0); }
-    .bio-text { font-size: 0.93rem; line-height: 1.8; color: var(--slate,#3a5068); margin-bottom: 1.5rem; max-width: 580px; text-wrap: pretty; }
-    .bio-creds { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.85rem; }
-    .bio-cred { background: var(--bg-alt,#f4f8fb); border: 1px solid var(--border,#dce8f0); border-radius: 10px; padding: 1rem; text-align: center; }
-    .bio-cred-n { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: var(--teal,#0891b2); }
-    .bio-cred-l { font-size: 0.7rem; color: var(--muted,#607d93); margin-top: 0.15rem; line-height: 1.3; }
-    .bio-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal,#0891b2); margin-bottom: 0.75rem; }
-    @media (max-width: 960px) { .bio-wrap { grid-template-columns: 1fr; gap: 2.5rem; } .bio-creds { grid-template-columns: repeat(3,1fr); } }
-
-  
-    /* ══ CTA CONTACTO UNIFICADO ══ */
-    .cta-unified {
-      background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 60%, #0369a1 100%);
-      padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden;
-    }
-    .cta-unified::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(34,211,238,0.08), transparent 70%); pointer-events:none; }
-    .cta-unified > * { position: relative; z-index: 2; }
-    .cta-unified .cta-eyebrow { font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#22d3ee; margin-bottom:0.75rem; }
-    .cta-unified .cta-title { font-family:'DM Serif Display',serif; font-size:clamp(1.8rem,3vw,2.6rem); color:#fff; letter-spacing:-0.02em; margin-bottom:2rem; }
-    .cta-unified .cta-contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:980px; margin:0 auto; align-items:stretch; }
-    .cta-unified .contact-card { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:1.5rem; text-align:left; transition:background 0.2s; }
-    .cta-unified .contact-card:hover { background:rgba(255,255,255,0.11); }
-    .cta-unified .contact-card h4 { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#22d3ee; margin-bottom:0.75rem; }
-    .cta-unified .ccontact-links { display:flex; flex-direction:column; gap:0.65rem; margin-top:0.5rem; }
-    .cta-unified .ccontact-link { display:flex; align-items:center; gap:0.75rem; text-decoration:none; padding:0.6rem 0.75rem; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); transition:background 0.2s, border-color 0.2s; }
-    .cta-unified .ccontact-link:hover { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2); }
-    .cta-unified .ccontact-ico { font-size:1.1rem; flex-shrink:0; }
-    .cta-unified .ccontact-label { display:block; font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.4); }
-    .cta-unified .ccontact-val { display:block; font-size:0.82rem; font-weight:600; color:rgba(255,255,255,0.85); margin-top:0.1rem; }
-    @media (max-width: 768px) { .cta-unified .cta-contact-grid { grid-template-columns:1fr; } }
-
-      .authority-bio { font-size: 0.75rem; color: rgba(255,255,255,0.28); margin-top: 0.75rem; max-width: 680px; line-height: 1.5; }
-  
-    /* ── Hamburger button (desktop: hidden) ── */
-    .nav-hamburger {
-      display: none;
+      transition: border-color 0.2s, background 0.2s;}
+.lg .eco-card:hover{border-color: rgba(43,42,107,0.4); background: rgba(43,42,107,0.06);}
+.lg .eco-tag{font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-lt); margin-bottom: 0.5rem;}
+.lg .eco-title{font-size: 0.9rem; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 0.35rem;}
+.lg .eco-desc{font-size: 0.78rem; color: rgba(255,255,255,0.42); line-height: 1.55;}
+.lg footer{background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 2.5rem;}
+.lg .footer-inner{max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;}
+.lg .footer-brand{font-size: 0.85rem; color: rgba(255,255,255,0.4);}
+.lg .footer-brand strong{color: rgba(255,255,255,0.7);}
+.lg .footer-links{display: flex; gap: 1.5rem; flex-wrap: wrap;}
+.lg .footer-links a{font-size: 0.78rem; color: rgba(255,255,255,0.32); text-decoration: none; transition: color 0.2s;}
+.lg .footer-links a:hover{color: var(--teal-lt);}
+.lg .footer-disclaimer{max-width: 1100px; margin: 1.25rem auto 0; font-size: 0.72rem; color: rgba(255,255,255,0.22); line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.25rem;}
+@media (max-width: 960px){.lg .cards-grid{grid-template-columns: 1fr 1fr;}
+.lg .eco-grid{grid-template-columns: 1fr 1fr;}
+.lg .doctor-wrap{flex-direction: column; align-items: flex-start; gap: 2rem;}}
+@media (max-width: 640px){.lg nav{padding: 0 1.25rem;}
+.lg .nav-links{display: none;}
+.lg .topbar{padding: 0.4rem 1.25rem;}
+.lg .hero{min-height: 85vh;}
+.lg .hero-inner{padding: 7rem 1.25rem 4rem;}
+.lg .section{padding: 4rem 1.25rem;}
+.lg .cards-grid, .lg .eco-grid{grid-template-columns: 1fr;}
+.lg .hero-stats{gap: 1.5rem;}
+.lg .alert-strip{flex-direction: column; gap: 0.75rem;}}
+.lg .bio-wrap{display: grid; grid-template-columns: 260px 1fr; gap: 4rem; align-items: start;}
+.lg .bio-photo{border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(26,25,80,0.2);}
+.lg .bio-photo img{width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; object-position: center 10%;}
+.lg .bio-name{font-family: var(--serif,var(--display)); font-size: 2.2rem; color: var(--navy,#1A1950); letter-spacing: -0.02em; margin-bottom: 0.3rem;}
+.lg .bio-role{font-size: 0.95rem; font-weight: 600; color: var(--teal-dark,#2B2A6B); margin-bottom: 1rem;}
+.lg .bio-insts{display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;}
+.lg .bio-inst{font-size: 0.78rem; font-weight: 600; color: var(--slate,#4D4C80); padding: 0.3rem 0.85rem; border-radius: 6px; background: var(--bg-alt,#F2F1FB); border: 1px solid var(--border,#E2E0F3);}
+.lg .bio-text{font-size: 0.93rem; line-height: 1.8; color: var(--slate,#4D4C80); margin-bottom: 1.5rem; max-width: 580px; text-wrap: pretty;}
+.lg .bio-creds{display: grid; grid-template-columns: repeat(3,1fr); gap: 0.85rem;}
+.lg .bio-cred{background: var(--bg-alt,#F2F1FB); border: 1px solid var(--border,#E2E0F3); border-radius: 10px; padding: 1rem; text-align: center;}
+.lg .bio-cred-n{font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: var(--teal,#2B2A6B);}
+.lg .bio-cred-l{font-size: 0.7rem; color: var(--muted,#5E5D8C); margin-top: 0.15rem; line-height: 1.3;}
+.lg .bio-eyebrow{font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal,#2B2A6B); margin-bottom: 0.75rem;}
+@media (max-width: 960px){.lg .bio-wrap{grid-template-columns: 1fr; gap: 2.5rem;}
+.lg .bio-creds{grid-template-columns: repeat(3,1fr);}}
+.lg .cta-unified{background: linear-gradient(135deg, #2B2A6B 0%, #2B2A6B 60%, #2B2A6B 100%);
+      padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden;}
+.lg .cta-unified::before{content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(242,138,110,0.08), transparent 70%); pointer-events:none;}
+.lg .cta-unified > *{position: relative; z-index: 2;}
+.lg .cta-unified .cta-eyebrow{font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#F28A6E; margin-bottom:0.75rem;}
+.lg .cta-unified .cta-title{font-family:var(--display); font-size:clamp(1.8rem,3vw,2.6rem); color:#fff; letter-spacing:-0.02em; margin-bottom:2rem;}
+.lg .cta-unified .cta-contact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:980px; margin:0 auto; align-items:stretch;}
+.lg .cta-unified .contact-card{background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:1.5rem; text-align:left; transition:background 0.2s;}
+.lg .cta-unified .contact-card:hover{background:rgba(255,255,255,0.11);}
+.lg .cta-unified .contact-card h4{font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#F28A6E; margin-bottom:0.75rem;}
+.lg .cta-unified .ccontact-links{display:flex; flex-direction:column; gap:0.65rem; margin-top:0.5rem;}
+.lg .cta-unified .ccontact-link{display:flex; align-items:center; gap:0.75rem; text-decoration:none; padding:0.6rem 0.75rem; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); transition:background 0.2s, border-color 0.2s;}
+.lg .cta-unified .ccontact-link:hover{background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2);}
+.lg .cta-unified .ccontact-ico{font-size:1.1rem; flex-shrink:0;}
+.lg .cta-unified .ccontact-label{display:block; font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.4);}
+.lg .cta-unified .ccontact-val{display:block; font-size:0.82rem; font-weight:600; color:rgba(255,255,255,0.85); margin-top:0.1rem;}
+@media (max-width: 768px){.lg .cta-unified .cta-contact-grid{grid-template-columns:1fr;}}
+.lg .authority-bio{font-size: 0.75rem; color: rgba(255,255,255,0.28); margin-top: 0.75rem; max-width: 680px; line-height: 1.5;}
+.lg .nav-hamburger{display: none;
       background: none; border: none; cursor: pointer;
       padding: 0.4rem; flex-direction: column;
-      gap: 5px; align-items: center; flex-shrink: 0;
-    }
-    .nav-hamburger span {
-      display: block; width: 22px; height: 2px;
+      gap: 5px; align-items: center; flex-shrink: 0;}
+.lg .nav-hamburger span{display: block; width: 22px; height: 2px;
       background: #fff; border-radius: 2px;
       transition: transform 0.25s, opacity 0.2s;
-      pointer-events: none;
-    }
-    nav.light .nav-hamburger span { background: var(--navy, #0c1526); }
-    nav.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
-    nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* ═══════════════════════════════════════════════
-       MOBILE RESPONSIVE  ·  max-width 768px
-       Injected last — overrides all rules above
-    ═══════════════════════════════════════════════ */
-    @media (max-width: 768px) {
-
-      /* Global */
-      html, body { overflow-x: hidden; }
-      *, *::before, *::after { box-sizing: border-box; }
-      img, video, iframe { max-width: 100%; height: auto; display: block; }
-
-      /* Typography floor */
-      p, li, td, th, blockquote, figcaption, .hero-lead, .hero-sub,
-      .alert-strip p, .card-desc, .esp-card p, .benefit-card p { font-size: max(14px, 0.9rem) !important; line-height: 1.65 !important; }
-
-      /* ── Navigation ── */
-      nav {
-        padding-left: 1rem !important;
+      pointer-events: none;}
+.lg nav.light .nav-hamburger span{background: var(--navy, #1A1950);}
+.lg nav.nav-open .nav-hamburger span:nth-child(1){transform: translateY(7px) rotate(45deg);}
+.lg nav.nav-open .nav-hamburger span:nth-child(2){opacity: 0;}
+.lg nav.nav-open .nav-hamburger span:nth-child(3){transform: translateY(-7px) rotate(-45deg);}
+@media (max-width: 768px){.lg *, .lg *::before, .lg *::after{box-sizing: border-box;}
+.lg img, .lg video, .lg iframe{max-width: 100%; height: auto; display: block;}
+.lg p, .lg li, .lg td, .lg th, .lg blockquote, .lg figcaption, .lg .hero-lead, .lg .hero-sub, .lg .alert-strip p, .lg .card-desc, .lg .esp-card p, .lg .benefit-card p{font-size: max(14px, 0.9rem) !important; line-height: 1.65 !important;}
+.lg nav{padding-left: 1rem !important;
         padding-right: 1rem !important;
         position: relative;
         flex-wrap: nowrap !important;
         display: flex !important;
-        align-items: center !important;
-      }
-      .nav-hamburger { display: flex !important; margin-left: auto; }
-      .nav-cta { display: none !important; }
-
-      /* Nav links: hidden by default, drop down when .nav-open */
-      .nav-links {
-        display: none !important;
+        align-items: center !important;}
+.lg .nav-hamburger{display: flex !important; margin-left: auto;}
+.lg .nav-cta{display: none !important;}
+.lg .nav-links{display: none !important;
         flex-direction: column !important;
         position: absolute !important;
         top: 100% !important; left: 0 !important; right: 0 !important;
-        background: var(--navy, #0c1526) !important;
+        background: var(--navy, #1A1950) !important;
         padding: 0.75rem 1.25rem 1.25rem !important;
         gap: 0 !important;
         z-index: 9999 !important;
         box-shadow: 0 12px 40px rgba(0,0,0,0.45) !important;
         border-top: 1px solid rgba(255,255,255,0.07) !important;
-        list-style: none !important;
-      }
-      nav.nav-open .nav-links { display: flex !important; }
-      .nav-links li { width: 100%; }
-      .nav-links a {
-        display: block !important;
+        list-style: none !important;}
+.lg nav.nav-open .nav-links{display: flex !important;}
+.lg .nav-links li{width: 100%;}
+.lg .nav-links a{display: block !important;
         padding: 0.7rem 0 !important;
         border-bottom: 1px solid rgba(255,255,255,0.06) !important;
         color: rgba(255,255,255,0.85) !important;
         font-size: 0.9rem !important;
         font-weight: 500 !important;
         text-decoration: none !important;
-        width: 100% !important;
-      }
-      .nav-links li:last-child a { border-bottom: none !important; }
-
-      /* ── Topbar & breadcrumb ── */
-      .topbar, .breadcrumb {
-        padding-left: 1rem !important;
+        width: 100% !important;}
+.lg .nav-links li:last-child a{border-bottom: none !important;}
+.lg .topbar, .lg .breadcrumb{padding-left: 1rem !important;
         padding-right: 1rem !important;
         font-size: 0.72rem !important;
-        white-space: normal !important;
-      }
-
-      /* ── Sections & inner containers ── */
-      .section, section {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-      }
-      .inner, .page-hero, .content, .sec,
-      .article-hero, .article-hero-inner,
-      .cta-bottom, .cta-section, .main-wrap { padding-left: 1rem !important; padding-right: 1rem !important; }
-
-      /* ── Footer ── */
-      footer {
-        padding-left: 1rem !important; padding-right: 1rem !important;
+        white-space: normal !important;}
+.lg .section, .lg section{padding-left: 1rem !important;
+        padding-right: 1rem !important;}
+.lg .inner, .lg .page-hero, .lg .content, .lg .sec, .lg .article-hero, .lg .article-hero-inner, .lg .cta-bottom, .lg .cta-section, .lg .main-wrap{padding-left: 1rem !important; padding-right: 1rem !important;}
+.lg footer{padding-left: 1rem !important; padding-right: 1rem !important;
         flex-direction: column !important;
         gap: 1.25rem !important;
-        text-align: center !important;
-      }
-      .footer-links { flex-wrap: wrap !important; justify-content: center !important; gap: 0.75rem !important; }
-      .footer-inner, .footer-brand { flex-direction: column !important; gap: 1rem !important; text-align: center !important; }
-
-      /* ── Hero sections ── */
-      .hero { min-height: 90vh !important; }
-      .hero-content { padding: 6rem 1rem 2rem !important; }
-      .hero-inner { padding: 6rem 1rem 3rem !important; }
-      .hero-h1, .hero h1 { font-size: clamp(2rem, 8vw, 3rem) !important; }
-      h1 { font-size: clamp(1.9rem, 7.5vw, 3rem) !important; }
-      h2 { font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important; }
-      .hero-btns, .hero-ctas, .hero-actions, .hero-cta-group {
-        flex-direction: column !important;
+        text-align: center !important;}
+.lg .footer-links{flex-wrap: wrap !important; justify-content: center !important; gap: 0.75rem !important;}
+.lg .footer-inner, .lg .footer-brand{flex-direction: column !important; gap: 1rem !important; text-align: center !important;}
+.lg .hero{min-height: 90vh !important;}
+.lg .hero-content{padding: 6rem 1rem 2rem !important;}
+.lg .hero-inner{padding: 6rem 1rem 3rem !important;}
+.lg .hero-h1, .lg .hero h1{font-size: clamp(2rem, 8vw, 3rem) !important;}
+.lg h1{font-size: clamp(1.9rem, 7.5vw, 3rem) !important;}
+.lg h2{font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important;}
+.lg .hero-btns, .lg .hero-ctas, .lg .hero-actions, .lg .hero-cta-group{flex-direction: column !important;
         gap: 0.75rem !important;
-        width: 100% !important;
-      }
-
-      /* ── Buttons ── */
-      .btn-primary, .btn-ghost, .btn-outline,
-      .btn-hero-primary, .btn-hero-secondary {
-        width: 100% !important;
+        width: 100% !important;}
+.lg .btn-primary, .lg .btn-ghost, .lg .btn-outline, .lg .btn-hero-primary, .lg .btn-hero-secondary{width: 100% !important;
         text-align: center !important;
         justify-content: center !important;
-        box-sizing: border-box !important;
-      }
-
-      /* ── ALL GRIDS → single column ── */
-      .esp-grid, .cards-grid, .about-grid, .audience-grid,
-      .bio-wrap, .benefits-grid, .proc-grid, .davinci-grid,
-      .ebus-grid, .ebus-cards, .ablacion-cards,
-      .two-col, .medicos-grid, .interv-grid,
-      .approach-grid, .pathology-grid,
-      .rigida-grid, .crio-grid, .crio-uses-grid, .tech-grid,
-      .types-grid, .tnm-intro, .cryo-mechanic, .alcance-list,
-      .study-grid, .equipo-grid, .img-list-block,
-      .stent-vs-grid, .indic-two-col, .complic-grid,
-      .stent-evidence, .eco-grid, .abl-card-body, .abl-row,
-      .contact-grid, .page-body, .services-row, .indic-grid,
-      .proc-table-grid, .hero-inner-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .path-two-col { column-count: 1 !important; columns: 1 !important; }
-      .img-list-block.reverse { direction: ltr !important; }
-      .sidebar { display: none !important; }
-      .abl-desc-col { border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important; }
-      .proc-col:first-child { border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important; }
-
-      /* ── Bio credentials: 2 columns on mobile ── */
-      .bio-creds { grid-template-columns: 1fr 1fr !important; }
-      .bio-section-light .bio-wrap { grid-template-columns: 1fr !important; }
-
-      /* ── Statsbar ── */
-      .statsbar {
-        grid-template-columns: 1fr 1fr !important;
-        padding: 1.25rem 1rem !important;
-      }
-      .stats-strip { grid-template-columns: 1fr 1fr !important; }
-      .stat {
-        border-right: none !important;
+        box-sizing: border-box !important;}
+.lg .esp-grid, .lg .cards-grid, .lg .about-grid, .lg .audience-grid, .lg .bio-wrap, .lg .benefits-grid, .lg .proc-grid, .lg .davinci-grid, .lg .ebus-grid, .lg .ebus-cards, .lg .ablacion-cards, .lg .two-col, .lg .medicos-grid, .lg .interv-grid, .lg .approach-grid, .lg .pathology-grid, .lg .rigida-grid, .lg .crio-grid, .lg .crio-uses-grid, .lg .tech-grid, .lg .types-grid, .lg .tnm-intro, .lg .cryo-mechanic, .lg .alcance-list, .lg .study-grid, .lg .equipo-grid, .lg .img-list-block, .lg .stent-vs-grid, .lg .indic-two-col, .lg .complic-grid, .lg .stent-evidence, .lg .eco-grid, .lg .abl-card-body, .lg .abl-row, .lg .contact-grid, .lg .page-body, .lg .services-row, .lg .indic-grid, .lg .proc-table-grid, .lg .hero-inner-grid{grid-template-columns: 1fr !important;}
+.lg .path-two-col{column-count: 1 !important; columns: 1 !important;}
+.lg .img-list-block.reverse{direction: ltr !important;}
+.lg .sidebar{display: none !important;}
+.lg .abl-desc-col{border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important;}
+.lg .proc-col:first-child{border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important;}
+.lg .bio-creds{grid-template-columns: 1fr 1fr !important;}
+.lg .bio-section-light .bio-wrap{grid-template-columns: 1fr !important;}
+.lg .statsbar{grid-template-columns: 1fr 1fr !important;
+        padding: 1.25rem 1rem !important;}
+.lg .stats-strip{grid-template-columns: 1fr 1fr !important;}
+.lg .stat{border-right: none !important;
         border-bottom: 1px solid rgba(255,255,255,0.07) !important;
-        padding-bottom: 1rem !important;
-      }
-      .stat:last-child { border-bottom: none !important; padding-bottom: 0 !important; }
-      .hero-statsbar {
-        flex-direction: column !important;
+        padding-bottom: 1rem !important;}
+.lg .stat:last-child{border-bottom: none !important; padding-bottom: 0 !important;}
+.lg .hero-statsbar{flex-direction: column !important;
         padding: 1.25rem 1rem !important;
-        gap: 1rem !important;
-      }
-      .hero-stat {
-        border-right: none !important;
+        gap: 1rem !important;}
+.lg .hero-stat{border-right: none !important;
         border-bottom: 1px solid rgba(255,255,255,0.1) !important;
-        padding-bottom: 0.75rem !important;
-      }
-      .hero-stat:last-child { border-bottom: none !important; }
-
-      /* ── CTA contact grid (Hable con el especialista) ── */
-      .cta-contact-grid, .cta-unified .cta-contact-grid,
-      .ccontact-links {
-        grid-template-columns: 1fr !important;
-        flex-direction: column !important;
-      }
-      .contact-card { display: block !important; }
-
-      /* ── Tables ── */
-      table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
-      .grouping-table { font-size: 0.78rem !important; }
-      .grouping-table td, .grouping-table th { padding: 0.4rem 0.5rem !important; }
-
-      /* ── Misc layout fixes ── */
-      .alert-strip { flex-direction: column !important; gap: 0.75rem !important; }
-      .doctor-wrap, .bio-wrap-row { flex-direction: column !important; align-items: flex-start !important; gap: 1.5rem !important; }
-      .survival-row { flex-wrap: wrap !important; }
-      .aquire-strip, .abl-card-header { flex-direction: column !important; gap: 1rem !important; }
-      .as-sep { display: none !important; }
-      .page-nav { flex-direction: column !important; padding: 2rem 1rem !important; gap: 1rem !important; }
-      .page-nav-link.next { text-align: left !important; }
-      .evidence-strip { grid-template-columns: 1fr 1fr !important; }
-      .abl-card-kpis { gap: 1rem !important; flex-wrap: wrap !important; }
-      .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; }
-
-      /* ── Bio author grid mobile fix ── */
-      .bio-author-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-      }
-      .bio-author-grid > div {
-        width: 100% !important;
+        padding-bottom: 0.75rem !important;}
+.lg .hero-stat:last-child{border-bottom: none !important;}
+.lg .cta-contact-grid, .lg .cta-unified .cta-contact-grid, .lg .ccontact-links{grid-template-columns: 1fr !important;
+        flex-direction: column !important;}
+.lg .contact-card{display: block !important;}
+.lg table{display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%;}
+.lg .grouping-table{font-size: 0.78rem !important;}
+.lg .grouping-table td, .lg .grouping-table th{padding: 0.4rem 0.5rem !important;}
+.lg .alert-strip{flex-direction: column !important; gap: 0.75rem !important;}
+.lg .doctor-wrap, .lg .bio-wrap-row{flex-direction: column !important; align-items: flex-start !important; gap: 1.5rem !important;}
+.lg .survival-row{flex-wrap: wrap !important;}
+.lg .aquire-strip, .lg .abl-card-header{flex-direction: column !important; gap: 1rem !important;}
+.lg .as-sep{display: none !important;}
+.lg .page-nav{flex-direction: column !important; padding: 2rem 1rem !important; gap: 1rem !important;}
+.lg .page-nav-link.next{text-align: left !important;}
+.lg .evidence-strip{grid-template-columns: 1fr 1fr !important;}
+.lg .abl-card-kpis{gap: 1rem !important; flex-wrap: wrap !important;}
+.lg .hero-stats{flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important;}
+.lg .bio-author-grid{grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;}
+.lg .bio-author-grid > div{width: 100% !important;
         max-width: 100% !important;
         overflow: hidden !important;
-        padding-right: 0 !important;
-      }
-
-      /* ── Bio wrap (Sobre el autor) mobile fix ── */
-      .bio-wrap {
-        grid-template-columns: 1fr !important;
+        padding-right: 0 !important;}
+.lg .bio-wrap{grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
         width: 100% !important;
-        overflow: hidden !important;
-      }
-      .bio-wrap > div {
-        width: 100% !important;
+        overflow: hidden !important;}
+.lg .bio-wrap > div{width: 100% !important;
         max-width: 100% !important;
         overflow: hidden !important;
-        padding-right: 0 !important;
-      }
-      .bio-name { font-size: 1.8rem !important; }
-    }
-
-  
-    /* ── FAQ (visible, marcado con JSON-LD) ── */
-    .faq-list { max-width: 760px; }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex;
+        padding-right: 0 !important;}
+.lg .bio-name{font-size: 1.8rem !important;}}
+.lg .faq-list{max-width: 760px;}
+.lg .faq-item{border-bottom: 1px solid var(--border);}
+.lg .faq-q{width: 100%; background: none; border: none; cursor: pointer; display: flex;
       align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 0;
       text-align: left; font-family: var(--sans); font-size: 0.95rem; font-weight: 600;
-      color: var(--navy); transition: color 0.2s; }
-    .faq-q:hover { color: var(--teal); }
-    .faq-arrow { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+      color: var(--navy); transition: color 0.2s;}
+.lg .faq-q:hover{color: var(--teal);}
+.lg .faq-arrow{flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
       border: 1.5px solid var(--border); color: var(--muted); display: flex; align-items: center;
-      justify-content: center; font-size: 0.9rem; transition: all 0.3s; }
-    .faq-item.open .faq-arrow { background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
-      transition: max-height 0.35s ease, padding 0.35s; }
-    .faq-item.open .faq-a { max-height: 420px; padding-bottom: 1.25rem; }
-    .faq-h2 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
-      margin: 0 0 1.8rem; line-height: 1.2; }
-
-  
-    /* ── Publicaciones (satélite) ── */
-    .pubs-list { max-width: 820px; }
-    .pubs-item { border-left: 3px solid var(--teal); padding: 0.2rem 0 0.2rem 1.2rem; margin-bottom: 1.35rem; }
-    .pubs-title { font-weight: 700; color: var(--navy); font-size: 0.95rem; line-height: 1.45; margin-bottom: 0.35rem; }
-    .pubs-authors { font-size: 0.8rem; color: var(--slate); margin-bottom: 0.25rem; }
-    .pubs-authors strong { color: var(--navy); }
-    .pubs-meta { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
-    .pubs-meta a { color: var(--teal); text-decoration: none; font-weight: 600; }
-    .pubs-meta a:hover { text-decoration: underline; }
-    .pubs-intro { font-size: 0.9rem; color: var(--slate); max-width: 660px; line-height: 1.75; margin-bottom: 1.5rem; }
-    .pubs-all { display: inline-block; margin-top: 0.6rem; font-size: 0.87rem; font-weight: 700; color: var(--teal); text-decoration: none; }
-    .pubs-all:hover { text-decoration: underline; }
-  
-    /* ── Box de perfil dentro del bloque biográfico ── */
-    .perfil-box {
-      display: flex; align-items: center; gap: 0.85rem;
+      justify-content: center; font-size: 0.9rem; transition: all 0.3s;}
+.lg .faq-item.open .faq-arrow{background: var(--teal); border-color: var(--teal); color: #fff; transform: rotate(45deg);}
+.lg .faq-a{max-height: 0; overflow: hidden; font-size: 0.88rem; line-height: 1.78; color: var(--slate);
+      transition: max-height 0.35s ease, padding 0.35s;}
+.lg .faq-item.open .faq-a{max-height: 420px; padding-bottom: 1.25rem;}
+.lg .faq-h2{font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy);
+      margin: 0 0 1.8rem; line-height: 1.2;}
+.lg .pubs-list{max-width: 820px;}
+.lg .pubs-item{border-left: 3px solid var(--teal); padding: 0.2rem 0 0.2rem 1.2rem; margin-bottom: 1.35rem;}
+.lg .pubs-title{font-weight: 700; color: var(--navy); font-size: 0.95rem; line-height: 1.45; margin-bottom: 0.35rem;}
+.lg .pubs-authors{font-size: 0.8rem; color: var(--slate); margin-bottom: 0.25rem;}
+.lg .pubs-authors strong{color: var(--navy);}
+.lg .pubs-meta{font-size: 0.8rem; color: var(--muted); line-height: 1.6;}
+.lg .pubs-meta a{color: var(--teal); text-decoration: none; font-weight: 600;}
+.lg .pubs-meta a:hover{text-decoration: underline;}
+.lg .pubs-intro{font-size: 0.9rem; color: var(--slate); max-width: 660px; line-height: 1.75; margin-bottom: 1.5rem;}
+.lg .pubs-all{display: inline-block; margin-top: 0.6rem; font-size: 0.87rem; font-weight: 700; color: var(--teal); text-decoration: none;}
+.lg .pubs-all:hover{text-decoration: underline;}
+.lg .perfil-box{display: flex; align-items: center; gap: 0.85rem;
       margin-top: 1.5rem; padding: 0.9rem 1.1rem; max-width: 430px;
       background: var(--teal-pale); color: var(--teal-dark);
       border: 1px solid var(--teal); border-left: 4px solid var(--teal);
       border-radius: 10px; text-decoration: none;
-      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-    }
-    .perfil-box:hover {
-      background: #fff;
-      box-shadow: 0 8px 24px rgba(8,145,178,0.18);
-      transform: translateY(-2px);
-    }
-    .perfil-box-txt { flex: 1; }
-    .perfil-box-t {
-      display: block; font-size: 0.84rem; font-weight: 700;
-      color: var(--navy); letter-spacing: -0.01em;
-    }
-    .perfil-box-s {
-      display: block; font-size: 0.74rem; line-height: 1.45;
-      color: var(--muted); margin-top: 0.15rem;
-    }
-    @media (max-width: 768px) { .perfil-box { max-width: 100%; } }
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;}
+.lg .perfil-box:hover{background: #fff;
+      box-shadow: 0 8px 24px rgba(43,42,107,0.18);
+      transform: translateY(-2px);}
+.lg .perfil-box-txt{flex: 1;}
+.lg .perfil-box-t{display: block; font-size: 0.84rem; font-weight: 700;
+      color: var(--navy); letter-spacing: -0.01em;}
+.lg .perfil-box-s{display: block; font-size: 0.74rem; line-height: 1.45;
+      color: var(--muted); margin-top: 0.15rem;}
+@media (max-width: 768px){.lg .perfil-box{max-width: 100%;}}
+.lg .risk-card-icon svg{width:28px;height:28px}
+.lg .sym-icon svg{width:24px;height:24px}
+.lg .factor-icon svg{width:24px;height:24px}
+.lg .callout-icon svg{width:23px;height:23px}
+.lg .exam-icon svg{width:21px;height:21px}
+.lg .risk-card-icon, .lg .sym-icon, .lg .factor-icon, .lg .callout-icon, .lg .exam-icon{color:#2B2A6B}
+.lg .nav-logo-icon svg, .lg .nav-logo-mark svg{width:19px;height:19px;color:#fff}
+.lg .bio-src{font-size:.78rem;line-height:1.55;color:var(--muted);margin-top:1rem}
+.lg .bio-src a{color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(0,150,150,.3)}
+.lg .bio-src a:hover{border-bottom-color:var(--teal)}
+/* --- capa F2 sobre el contenido --- */
+/* hero */
+.hero h1 span{color:#fff}
+/* contenedor */
+.lg{padding-top:4px}
+.lg .content,.lg .tnm-section,.lg .descriptor-section,.lg .survival-section{max-width:none}
+.lg .content{margin:0;padding:0}
+.lg .content > p,.lg .content > ul,.lg .content > ol{max-width:940px}
+/* tipografía */
+.lg h2,.lg .content h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.6vw,40px);letter-spacing:-.02em;color:var(--ink);line-height:1.1;margin:56px 0 16px}
+.lg .content h2:first-child{margin-top:8px}
+.lg h3,.lg h4,.lg .content h3{font-family:var(--display);letter-spacing:-.01em}
+.lg .content h3{font-size:22px;font-weight:800;color:var(--accent-text);margin:32px 0 12px}
+.lg .content p,.lg .content li{color:var(--ink);font-size:16px;line-height:1.75}
+.lg .content strong{color:var(--ink)}
+.lg a{color:var(--ink)}
+/* tarjetas: sin bordes, fondo suave, radio grande */
+.lg .symptom-card,.lg .step-body,.lg .exam-item,.lg .risk-card,.lg .type-card,.lg .tnm-section,.lg .tnm-letter-card,
+.lg .descriptor-section,.lg .grouping-wrap,.lg .process-card,.lg .survival-section,.lg .factor-card,.lg .stage-block,
+.lg .modality-card,.lg .bio-table-wrap,.lg .smoking-stat{border:none;border-radius:26px;background:var(--soft)}
+.lg .exam-header,.lg .exam-body{background:var(--soft)}
+.lg .risk-card:hover{transform:none}
+.lg .sym-alert,.lg .factor-negative{background:var(--soft2)}
+/* recuadros destacados: durazno, sin borde */
+.lg .callout,.lg .ebus-box,.lg .screening-box,.lg .robots-box,.lg .hope-box{background:var(--soft2);border:none;border-radius:26px}
+.lg .callout h4,.lg .ebus-box h3,.lg .screening-box h3,.lg .screening-box h4,.lg .robots-box h3,.lg .robots-box h4,.lg .hope-box h3,.lg .hope-box h4{color:var(--accent-text)}
+.lg .callout-icon,.lg .risk-card-icon,.lg .sym-icon,.lg .factor-icon,.lg .exam-icon{color:var(--accent-text)}
+/* pasos numerados */
+.lg .step-num{background:var(--accent);border:none;border-radius:50%;color:var(--ink);font-weight:800}
+.lg .step:not(:last-child)::after{background:var(--soft2)}
+/* tablas */
+.lg table th{color:var(--muted)}
+.lg .descriptor-header,.lg .tnm-header,.lg .survival-header,.lg .stage-block-header,.lg .bio-table-header{background:transparent;border:none}
+.lg tr,.lg td,.lg th{border-color:#fff!important}
+/* escala de estadios (temprano → avanzado) */
+.lg .stage-ia,.lg .stage-ib,.lg .sc-ia1,.lg .sc-ia2,.lg .sc-ia3,.lg .sc-ib,.lg .sc-0,.lg .sp-ia,.lg .sp-ib,.lg .sp-green,.lg .tx-surgery{background:#DDF1E5!important;color:#1D6B45!important}
+.lg .stage-iia,.lg .stage-iib,.lg .sc-iia,.lg .sc-iib,.lg .sp-iia,.lg .sp-iib,.lg .sp-amber{background:#FCEBC9!important;color:#7A5200!important}
+.lg .stage-iiia,.lg .stage-iiib,.lg .stage-iiic,.lg .sc-iiia,.lg .sc-iiib,.lg .sc-iiic,.lg .sp-iiia,.lg .sp-iiib,.lg .sp-iiic{background:var(--soft2)!important;color:var(--accent-text)!important}
+.lg .stage-iva,.lg .stage-ivb,.lg .sc-iva,.lg .sc-ivb,.lg .sp-iva,.lg .sp-ivb,.lg .sp-red{background:#F6D0CC!important;color:#8E1B1B!important}
+.lg .s-ia .surv-bar-fill{background:#2E9E6B}.lg .s-ib .surv-bar-fill{background:#57B585}
+.lg .s-iia .surv-bar-fill{background:#D9A23A}.lg .s-iib .surv-bar-fill{background:#E6B455}
+.lg .s-iiia .surv-bar-fill{background:#F28A6E}.lg .s-iiib .surv-bar-fill{background:#E46D4D}.lg .s-iiic .surv-bar-fill{background:#D2553A}
+.lg .s-iva .surv-bar-fill{background:#B23A22}.lg .s-ivb .surv-bar-fill{background:#8E1B1B}
+.lg .surv-bar-track{background:#fff;border-radius:99px}
+.lg .surv-bar-fill{border-radius:99px}
+.lg .s-ia .surv-pct,.lg .s-ib .surv-pct{color:#1D6B45}.lg .s-iia .surv-pct,.lg .s-iib .surv-pct{color:#7A5200}
+.lg .s-iiia .surv-pct,.lg .s-iiib .surv-pct,.lg .s-iiic .surv-pct{color:var(--accent-text)}.lg .s-iva .surv-pct,.lg .s-ivb .surv-pct{color:#8E1B1B}
+/* portada */
+.hero-photo{border-radius:26px;filter:none;aspect-ratio:16/10;object-fit:cover;box-shadow:0 18px 40px rgba(26,25,80,.25)}
+.hero-actions{margin-top:24px}
+.lg .alert-wrap .inner{max-width:none;padding:0}
+.lg .alert-strip{background:var(--soft2);border:none;border-radius:26px;box-shadow:none;transform:none;max-width:none;padding:26px 30px}
+.lg .alert-strip strong{color:var(--accent-text);font-size:17px}
+.lg .alert-strip p{color:var(--ink)}
+.lg .alert-ico{color:var(--accent-text)}
+.lg .home-cards{padding-top:40px}
+.lg .home-cards .inner{max-width:none;padding:0}
+.lg .home-cards .section-lead{color:var(--ink);font-size:17px;margin-bottom:24px}
+.lg .subpage-card{border:none;background:var(--soft);border-radius:26px;padding:28px}
+.lg .subpage-card::before{display:none}
+.lg .subpage-card:hover{transform:none;box-shadow:none;background:var(--soft2)}
+.lg .card-num{color:var(--accent-text);font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.06em}
+.lg .card-title{font-family:var(--display);font-weight:800;font-size:23px;line-height:1.15;color:var(--ink)}
+.lg .card-desc{color:var(--ink)}
+.lg .card-arrow{color:var(--ink);font-weight:700}
+.bio .txt.src{font-size:14px;color:var(--muted)}
+@media (max-width:860px){.hero-photo{max-width:100%!important;width:100%}}
+.lg .alert-wrap{padding:0;margin:0;background:none}
+#main-content > .wrap:first-child{padding-top:16px}
+/* tablas en móvil: filas como tarjetas */
+@media (max-width:640px){
+.lg table.stk{display:block!important;min-width:0!important;width:100%!important;overflow:visible!important;border-spacing:0}
+.lg table.stk thead{display:none}
+.lg table.stk tbody{display:block}
+.lg table.stk tr{display:block;background:#fff;border-radius:18px;margin:8px 0;padding:12px 14px}
+.lg table.stk td{display:block;padding:2px 0!important;border:none!important;background:none!important;font-size:15px!important}
+.lg table.stk td[data-l]::before{content:attr(data-l);display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.lg table.stk td[data-c="0"]::before{display:none}
+.lg table.stk td[data-c="0"]{font-weight:700;margin-bottom:2px}
+.lg table.grouping-table.stk td[data-c="1"],.lg table.grouping-table.stk td[data-c="2"],.lg table.grouping-table.stk td[data-c="3"]{display:inline-block;margin-right:16px}
+.lg table.grouping-table.stk td::before,.lg table.desc-table.stk td::before{display:none!important}
+.lg table.grouping-table.stk td[data-c="0"]{display:block}
+.lg table.grouping-table.stk td[data-c="4"]{margin-top:4px}
+.lg .tnm-section,.lg .grouping-wrap,.lg .bio-table-wrap,.lg .descriptor-section{overflow:visible}
 
-    /* Iconos SVG que reemplazan a los emojis: tamaño equivalente */
-    .risk-card-icon svg{width:28px;height:28px} .sym-icon svg{width:24px;height:24px}
-    .factor-icon svg{width:24px;height:24px} .callout-icon svg{width:23px;height:23px}
-    .exam-icon svg{width:21px;height:21px}
-    .risk-card-icon,.sym-icon,.factor-icon,.callout-icon,.exam-icon{color:#0891b2}
-    .nav-logo-icon svg,.nav-logo-mark svg{width:19px;height:19px;color:#fff}
-  
-    .bio-src{font-size:.78rem;line-height:1.55;color:var(--muted);margin-top:1rem}
-    .bio-src a{color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(0,150,150,.3)}
-    .bio-src a:hover{border-bottom-color:var(--teal)}
-  </style>
+}
+
+</style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1047,59 +944,52 @@
 </head>
 <body>
 
-    <!-- TOPBAR -->
-    <div class="topbar">
-      <a href="https://rats.cl">Robótica</a>
-      <span>·</span>
-      <a href="https://cancerpulmonar.cl">Cáncer Pulmonar</a>
-      <span>·</span>
-      <a href="https://broncoscopia.cl">Broncoscopía</a>
-      <span>·</span>
-      <a href="https://videotoracoscopia.cl">Videotoracoscopía</a>
-      <span>·</span>
-      <a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
+<div class="topbar"><div class="wrap">
+  <span></span>
+  <div class="topbar-links">
+    <a href="https://rats.cl">Robótica</a>
+<span>·</span>
+<a href="https://cancerpulmonar.cl">Cáncer Pulmonar</a>
+<span>·</span>
+<a href="https://broncoscopia.cl">Broncoscopía</a>
+<span>·</span>
+<a href="https://videotoracoscopia.cl">Videotoracoscopía</a>
+<span>·</span>
+<a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
+  </div>
+</div></div>
+
+<header class="site-header">
+<nav>
+  <a href="#inicio" class="logo">Cáncer <span>Pulmonar</span></a>
+  <button class="nav-toggle" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/que-es">¿Qué es?</a></li>
+    <li><a href="/causas">Causas</a></li>
+    <li><a href="/diagnostico">Diagnóstico</a></li>
+    <li><a href="/nodulo-pulmonar">Nódulo pulmonar</a></li>
+    <li><a href="/etapificacion">Etapificación</a></li>
+    <li><a href="/tratamiento">Tratamiento</a></li>
+    <li><a href="/sobrevida">Sobrevida</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Consultar</a>
+</nav>
+</header>
+
+<main id="main-content">
+<div class="wrap">
+  <div class="hero has-img" id="inicio">
+    <div class="hero-txt">
+    <div class="hero-tag">Oncología Torácica · Santiago, Chile</div>
+    <h1><span>Cáncer Pulmonar</span></h1>
+    <p>Diagnóstico, Etapificación y Tratamiento.</p>
+    <div class="hero-actions"><a class="btn" href="#contacto">Solicitar consulta →</a></div>
     </div>
-
-  <!-- NAV -->
-  <header>
-  <nav>
-    <a class="nav-logo" href="#inicio">
-      <div class="nav-logo-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"/><path d="M12 11c0-2.6-2-4-3.6-4C6.4 7 5 8.6 5 11.4c0 3.6 1.6 7.6 3.6 7.6 1.8 0 3.4-1.4 3.4-4z"/><path d="M12 11c0-2.6 2-4 3.6-4C17.6 7 19 8.6 19 11.4c0 3.6-1.6 7.6-3.6 7.6-1.8 0-3.4-1.4-3.4-4z"/></svg></div>
-      <span class="nav-logo-text">Cáncer <span>Pulmonar</span></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="/que-es">¿Qué es?</a></li>
-      <li><a href="/causas">Causas</a></li>
-      <li><a href="/diagnostico">Diagnóstico</a></li>
-      <li><a href="/etapificacion">Etapificación</a></li>
-      <li><a href="/tratamiento">Tratamiento</a></li>
-      <li><a href="/sobrevida">Sobrevida</a></li>
-    </ul>
-    <a href="#contacto" class="nav-cta">Consultar</a>
-    <button class="nav-hamburger" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
-  </nav>
-  </header>
-
-  <main id="main-content">
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-inner">
-      <div class="hero-badge">
-        <div class="hero-badge-dot"></div>
-        Oncología Torácica · Santiago, Chile
-      </div>
-      <h1><span>Cáncer Pulmonar</span></h1>
-      <p class="hero-lead">Diagnóstico, Etapificación y Tratamiento.</p>
-      <div class="hero-ctas">
-        <a href="#contacto" class="btn-primary">Solicitar consulta →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ALERT -->
-  <div class="alert-wrap">
+    <img class="hero-img hero-photo" src="imgs/hero-petct.webp" alt="" width="1408" height="768" decoding="async" fetchpriority="high" />
+  </div>
+</div>
+<section class="section"><div class="wrap lg">
+<div class="alert-wrap">
     <div class="inner">
       <div class="alert-strip">
         <div class="alert-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4M12 16.8v.1"/></svg></div>
@@ -1110,9 +1000,7 @@
       </div>
     </div>
   </div>
-
-  <!-- SUBPAGE CARDS -->
-  <section class="section section-alt" style="padding-top:2rem;">
+<div class="home-cards">
     <div class="inner">
       <h2 class="section-title">Explora por sección</h2>
       <p class="section-lead">Seis secciones para entender el cáncer pulmonar desde el principio hasta el tratamiento y la recuperación.</p>
@@ -1155,194 +1043,115 @@
         </a>
       </div>
     </div>
-  </section>
+  </div>
+</div></section>
 
-  <!-- DR LAZO -->
-
-
-  
-  <!-- DR. LAZO BIO -->
-  <section class="section" id="dr-lazo" style="background:#fff;">
-    <div class="inner" style="max-width:1100px;margin:0 auto;padding:0 2.5rem;">
-      <div class="bio-wrap">
-        <div class="bio-photo">
-          <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en cáncer pulmonar en Clínica Las Condes" loading="lazy" width="800" height="800" decoding="async"/>
-        </div>
-        <div>
-          <p class="bio-eyebrow">Especialista</p>
-          <h2 class="bio-name">Dr. David Lazo Pérez</h2>
-          <p class="bio-role">Cirujano Torácico · Broncoscopía Intervencional</p>
-          <p class="bio-text">
-            Cirujano torácico dedicado a la patología oncológica del tórax: etapificación mediastínica, resecciones pulmonares anatómicas y cirugía mínimamente invasiva del cáncer pulmonar. Miembro de la <strong>International Association for the Study of Lung Cancer (IASLC)</strong>. Formado en la PUC de Chile y la Universidad de Chile, con fellowship en trasplante pulmonar en el Hospital Puerta de Hierro Majadahonda, España.</p>
-          <p class="bio-text">
-            Con 19 años de experiencia, es el cirujano con mayor experiencia en <strong>EBUS en Chile</strong> (desde 2010, +3.200 procedimientos) y pionero en la técnica <strong>CryoEBUS</strong> a nivel latinoamericano. Regente para Chile de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP).
-          </p>
-          <div class="bio-creds">
-            <div class="bio-cred"><div class="bio-cred-n">+5.700</div><div class="bio-cred-l">cirugías torácicas totales</div></div>
-            <div class="bio-cred"><div class="bio-cred-n">+3.200</div><div class="bio-cred-l">procedimientos EBUS desde 2010</div></div>
-            <div class="bio-cred"><div class="bio-cred-n">19</div><div class="bio-cred-l">años de experiencia clínica</div></div>
-          </div>
-            <p class="bio-src">Formación, sociedades científicas y congresos fechados en el <a href="https://cirugiatoracica.cl/cv">currículum académico</a>.</p>
-        
-          <a class="perfil-box" href="https://cirugiatoracica.cl/perfil">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span class="perfil-box-txt">
-              <span class="perfil-box-t">Perfil profesional completo</span>
-              <span class="perfil-box-s">Formación, cargos, sociedades científicas y publicaciones</span>
-            </span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
+<section class="section" id="dr-lazo"><div class="wrap">
+  <div class="bio">
+    <img alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en cáncer pulmonar en Clínica Las Condes" decoding="async" height="800" loading="lazy" src="imgs/foto-dr-lazo-bio.jpg" width="800"/>
+    <div>
+      <p class="eyebrow">Especialista</p>
+      <h2>Dr. David Lazo Pérez</h2>
+      <p class="role">Cirujano Torácico · Broncoscopía Intervencional</p>
+      <p class="txt">Cirujano torácico dedicado a la patología oncológica del tórax: etapificación mediastínica, resecciones pulmonares anatómicas y cirugía mínimamente invasiva del cáncer pulmonar. Miembro de la <strong>International Association for the Study of Lung Cancer (IASLC)</strong>. Formado en la PUC de Chile y la Universidad de Chile, con fellowship en trasplante pulmonar en el Hospital Puerta de Hierro Majadahonda, España.</p>
+      <p class="txt">Con 19 años de experiencia, es el cirujano con mayor experiencia en <strong>EBUS en Chile</strong> (desde 2010, +3.200 procedimientos) y pionero en la técnica <strong>CryoEBUS</strong> a nivel latinoamericano. Regente para Chile de la Asociación Mundial de Broncología y Neumología Intervencionista (WABIP).</p>
+      <p class="txt src">Formación, sociedades científicas y congresos fechados en el <a href="https://cirugiatoracica.cl/cv">currículum académico</a>.</p>
+      <div class="actions">
+        <a class="perfil" href="https://cirugiatoracica.cl/perfil"><b>Perfil profesional completo</b><span>Formación, cargos, sociedades científicas y publicaciones</span></a>
       </div>
     </div>
-  </section>
+  </div>
+</div></section>
+</main>
 
-
-
-  </main>
-
-  <!-- FOOTER -->
-
-  <!-- ─── CTA CONTACTO UNIFICADO ─── -->
-  
-    <!-- Publicaciones — visible; respaldada por JSON-LD ScholarlyArticle -->
-    <section class="section section-alt" id="publicaciones">
-      <div class="inner">
-        <h2 class="section-title">Publicaciones en oncología torácica</h2>
-        <p class="pubs-intro">Artículos revisados por pares del Dr. David Lazo Pérez sobre cáncer pulmonar, nódulos, etapificación y diagnóstico molecular. Cada referencia enlaza a su registro oficial.</p>
-        <div class="pubs-list">
-          <div class="pubs-item">
-            <div class="pubs-title">Experiencia inicial de detección de mutaciones en biopsia tumoral y líquida de pacientes con adenocarcinoma pulmonar</div>
-            <div class="pubs-authors">Clavero R JM, Moreno M, Quiroz T, Figueroa M, Ibarra Á, <strong>Lazo D</strong>, Rodríguez D P, Hurtado C.</div>
-            <div class="pubs-meta"><em>Revista Médica Clínica Las Condes</em>. 2022;33(1):68-74. · <a href="https://www.elsevier.es/es-revista-revista-medica-clinica-las-condes-202-articulo-experiencia-inicial-deteccion-mutaciones-biopsia-S0716864022000098" target="_blank" rel="noopener">Texto completo</a> · <a href="https://doi.org/10.1016/j.rmclc.2021.12.005" target="_blank" rel="noopener">DOI</a></div>
-          </div>
-          <div class="pubs-item">
-            <div class="pubs-title">Resección por videotoracoscopía de nódulos pulmonares marcados con lipiodol. Experiencia en dos centros universitarios</div>
-            <div class="pubs-authors">Vega S J, Zárate G I, Rodríguez G H, <strong>Lazo P D</strong>, Undurraga M F, Clavero R JM, Alarcón O F, O'Brien S A, Rodríguez D P.</div>
-            <div class="pubs-meta"><em>Revista Chilena de Enfermedades Respiratorias</em>. 2021;37(3):197-202. · <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482021000300197" target="_blank" rel="noopener">SciELO</a></div>
-          </div>
-          <div class="pubs-item">
-            <div class="pubs-title">Manejo de los nódulos pulmonares subsólidos. Resultados quirúrgicos basados en algoritmo local</div>
-            <div class="pubs-authors">Vega S J, Marqués H M, San-Martín P V, Pruzzo G M, Alarcón O F, Clavero R JM, <strong>Lazo P D</strong>, Undurraga M F, Rodríguez D P.</div>
-            <div class="pubs-meta"><em>Revista Chilena de Enfermedades Respiratorias</em>. 2021;37(2):107-114. · <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482021000200107" target="_blank" rel="noopener">SciELO</a></div>
-          </div>
-          <div class="pubs-item">
-            <div class="pubs-title">Marcación de nódulos pulmonares con lipiodol bajo tomografía computada. Experiencia local y correlación anatomopatológica</div>
-            <div class="pubs-authors">O'Brien S A, Ramírez Ch M, Loyola M MA, Astudillo J J, <strong>Lazo P D</strong>, Rodríguez D P, Clavero R JM.</div>
-            <div class="pubs-meta"><em>Revista Chilena de Radiología</em>. 2018;24(4):129-133. · <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-93082018000400129" target="_blank" rel="noopener">SciELO</a></div>
-          </div>
-          <div class="pubs-item">
-            <div class="pubs-title">Caracterización de nódulos pulmonares resecados. Experiencia de manejo por un programa multidisciplinario</div>
-            <div class="pubs-authors">Vega S J, <strong>Lazo P D</strong>, Undurraga M F, Clavero R JM, Rodríguez D P.</div>
-            <div class="pubs-meta"><em>Revista Médica de Chile</em>. 2018;146(11):1261-1268. · <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872018001101261" target="_blank" rel="noopener">SciELO</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/30725039/" target="_blank" rel="noopener">PubMed PMID:&nbsp;30725039</a> · <a href="https://doi.org/10.4067/S0034-98872018001101261" target="_blank" rel="noopener">DOI</a></div>
-          </div>
-          <div class="pubs-item">
-            <div class="pubs-title">Rendimiento del PET/CT en la etapificación del cáncer pulmonar</div>
-            <div class="pubs-authors">Ladrón de Guevara H D, Furnaro L F, Yévenes A S, Clavero R JM, <strong>Lazo P D</strong>, Rodríguez D P, Piottante B A, Pefaur D R, Pardo B C.</div>
-            <div class="pubs-meta"><em>Revista Médica de Chile</em>. 2015;143(1):22-29. · <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0034-98872015000100003" target="_blank" rel="noopener">SciELO</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/25860265/" target="_blank" rel="noopener">PubMed PMID:&nbsp;25860265</a> · <a href="https://doi.org/10.4067/S0034-98872015000100003" target="_blank" rel="noopener">DOI</a></div>
-          </div>
-        </div>
-        <a class="pubs-all" href="https://cirugiatoracica.cl/publicaciones">Ver las 31 publicaciones del Dr. Lazo →</a>
-      </div>
-    </section>
-
-    <section class="cta-unified" id="contacto">
-    <p class="cta-eyebrow">Primer paso</p>
-    <h2 class="cta-title">Hable directamente<br>con el especialista</h2>
-    <div class="cta-contact-grid">
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.5rem;">
-        <img src="imgs/foto-dr-lazo.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico, experto en tratamiento quirúrgico del cáncer de pulmón" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 10%;border:3px solid rgba(255,255,255,0.2);margin:0;" loading="lazy" width="1007" height="1388" decoding="async">
-        <div style="text-align:center;">
-          <p style="font-size:0.88rem;font-weight:700;color:#fff;margin-bottom:0.2rem;">Dr. David Lazo Pérez</p>
-          <p style="font-size:0.75rem;color:rgba(255,255,255,0.55);">Cirujano Torácico</p>
-        </div>
-      </div>
-      <div class="contact-card">
-        <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Agendar consulta</h4>
-        <div class="ccontact-links">
-          <a class="ccontact-link" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener">
-            <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 8v6M9 11h6M9 21v-3h6v3"/></svg></span>
-            <div><span class="ccontact-label">Clínica Las Condes</span><span class="ccontact-val">Reservar hora presencial →</span></div>
-          </a>
-          <a class="ccontact-link" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">
-            <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/></svg></span>
-            <div><span class="ccontact-label">Telemedicina</span><span class="ccontact-val">Consulta online — todo Chile →</span></div>
-          </a>
-        </div>
-      </div>
-      <div class="contact-card">
-        <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>Redes sociales</h4>
-        <div class="ccontact-links">
-          <a class="ccontact-link" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener">
-            <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            <div><span class="ccontact-label">LinkedIn</span><span class="ccontact-val">Dr. David Lazo Pérez</span></div>
-          </a>
-          <a class="ccontact-link" href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener">
-            <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            <div><span class="ccontact-label">Instagram</span><span class="ccontact-val">@dr.david.lazo.p</span></div>
-          </a>
-          <a class="ccontact-link" href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener">
-            <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5z"/></svg>
-            <div><span class="ccontact-label">Doctoralia</span><span class="ccontact-val">Ver perfil y reseñas →</span></div>
-          </a>
-        </div>
-      </div>
+<section class="section" id="publicaciones"><div class="wrap">
+  <h2 class="h2">Publicaciones en oncología torácica</h2>
+  <p class="pubs-intro">Artículos revisados por pares del Dr. David Lazo Pérez sobre cáncer pulmonar, nódulos, etapificación y diagnóstico molecular. Cada referencia enlaza a su registro oficial.</p>
+  <div class="pubs">
+    <div class="pub">
+      <div class="pub-t">Experiencia inicial de detección de mutaciones en biopsia tumoral y líquida de pacientes con adenocarcinoma pulmonar</div>
+      <div class="pub-a">Clavero R JM, Moreno M, Quiroz T, Figueroa M, Ibarra Á, <strong>Lazo D</strong>, Rodríguez D P, Hurtado C.</div>
+      <div class="pub-m"><em>Revista Médica Clínica Las Condes</em>. 2022;33(1):68-74. · <a href="https://www.elsevier.es/es-revista-revista-medica-clinica-las-condes-202-articulo-experiencia-inicial-deteccion-mutaciones-biopsia-S0716864022000098" rel="noopener" target="_blank">Texto completo</a> · <a href="https://doi.org/10.1016/j.rmclc.2021.12.005" rel="noopener" target="_blank">DOI</a></div>
     </div>
-  </section>
+    <div class="pub">
+      <div class="pub-t">Resección por videotoracoscopía de nódulos pulmonares marcados con lipiodol. Experiencia en dos centros universitarios</div>
+      <div class="pub-a">Vega S J, Zárate G I, Rodríguez G H, <strong>Lazo P D</strong>, Undurraga M F, Clavero R JM, Alarcón O F, O'Brien S A, Rodríguez D P.</div>
+      <div class="pub-m"><em>Revista Chilena de Enfermedades Respiratorias</em>. 2021;37(3):197-202. · <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&amp;pid=S0717-73482021000300197" rel="noopener" target="_blank">SciELO</a></div>
+    </div>
+    <div class="pub">
+      <div class="pub-t">Manejo de los nódulos pulmonares subsólidos. Resultados quirúrgicos basados en algoritmo local</div>
+      <div class="pub-a">Vega S J, Marqués H M, San-Martín P V, Pruzzo G M, Alarcón O F, Clavero R JM, <strong>Lazo P D</strong>, Undurraga M F, Rodríguez D P.</div>
+      <div class="pub-m"><em>Revista Chilena de Enfermedades Respiratorias</em>. 2021;37(2):107-114. · <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&amp;pid=S0717-73482021000200107" rel="noopener" target="_blank">SciELO</a></div>
+    </div>
+    <div class="pub">
+      <div class="pub-t">Marcación de nódulos pulmonares con lipiodol bajo tomografía computada. Experiencia local y correlación anatomopatológica</div>
+      <div class="pub-a">O'Brien S A, Ramírez Ch M, Loyola M MA, Astudillo J J, <strong>Lazo P D</strong>, Rodríguez D P, Clavero R JM.</div>
+      <div class="pub-m"><em>Revista Chilena de Radiología</em>. 2018;24(4):129-133. · <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&amp;pid=S0717-93082018000400129" rel="noopener" target="_blank">SciELO</a></div>
+    </div>
+    <div class="pub">
+      <div class="pub-t">Caracterización de nódulos pulmonares resecados. Experiencia de manejo por un programa multidisciplinario</div>
+      <div class="pub-a">Vega S J, <strong>Lazo P D</strong>, Undurraga M F, Clavero R JM, Rodríguez D P.</div>
+      <div class="pub-m"><em>Revista Médica de Chile</em>. 2018;146(11):1261-1268. · <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&amp;pid=S0034-98872018001101261" rel="noopener" target="_blank">SciELO</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/30725039/" rel="noopener" target="_blank">PubMed PMID: 30725039</a> · <a href="https://doi.org/10.4067/S0034-98872018001101261" rel="noopener" target="_blank">DOI</a></div>
+    </div>
+    <div class="pub">
+      <div class="pub-t">Rendimiento del PET/CT en la etapificación del cáncer pulmonar</div>
+      <div class="pub-a">Ladrón de Guevara H D, Furnaro L F, Yévenes A S, Clavero R JM, <strong>Lazo P D</strong>, Rodríguez D P, Piottante B A, Pefaur D R, Pardo B C.</div>
+      <div class="pub-m"><em>Revista Médica de Chile</em>. 2015;143(1):22-29. · <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&amp;pid=S0034-98872015000100003" rel="noopener" target="_blank">SciELO</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/25860265/" rel="noopener" target="_blank">PubMed PMID: 25860265</a> · <a href="https://doi.org/10.4067/S0034-98872015000100003" rel="noopener" target="_blank">DOI</a></div>
+    </div>
+  </div>
+  <a class="more" href="https://cirugiatoracica.cl/publicaciones">Ver las 31 publicaciones del Dr. Lazo →</a>
+</div></section>
 
+
+<section class="section" id="contacto"><div class="wrap">
+  <div class="cta">
+    <div>
+      <p class="eyebrow">Primer paso</p>
+      <h2>Hable directamente<br>con el especialista</h2>
+      <div class="who"><img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico, experto en tratamiento quirúrgico del cáncer de pulmón" loading="lazy" width="800" height="800" decoding="async"><div><b>Dr. David Lazo Pérez</b><span>Cirujano Torácico</span></div></div>
+    </div>
+    <div class="cta-col">
+      <h3>Agendar consulta</h3>
+      <a class="cl dark" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&amp;apellidoPat=LAZO&amp;apellidoMat=PEREZ" target="_blank" rel="noopener"><b>Clínica Las Condes</b><span>Reservar hora presencial →</span></a>
+      <a class="cl" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener"><b>Telemedicina</b><span>Consulta online — todo Chile →</span></a>
+    </div>
+    <div class="cta-col">
+      <h3>Redes sociales</h3>
+      <a class="cl light" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener"><b>LinkedIn</b><span>Dr. David Lazo Pérez</span></a>
+      <a class="cl light" href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener"><b>Instagram</b><span>@dr.david.lazo.p</span></a>
+      <a class="cl light" href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener"><b>Doctoralia</b><span>Ver perfil y reseñas →</span></a>
+    </div>
+  </div>
+</div></section>
+
+<section class="section" id="faq"><div class="wrap">
+  <h2 class="h2">Preguntas frecuentes sobre el cáncer pulmonar</h2>
+  <div class="faq">
+    <details><summary>¿El cáncer de pulmón siempre se puede operar?</summary><p>No. La cirugía es el tratamiento de elección en las etapas resecables, pero la indicación depende de la etapificación (extensión del tumor y compromiso ganglionar), de la función pulmonar y del estado general. En etapas avanzadas el tratamiento puede ser quimioterapia, inmunoterapia, radioterapia o una combinación. Por eso la etapificación correcta es el paso decisivo.</p></details>
+    <details><summary>Me encontraron un nódulo pulmonar. ¿Es cáncer?</summary><p>La mayoría de los <a href="/nodulo-pulmonar">nódulos pulmonares</a> no son cáncer. El manejo depende del tamaño, la forma, la densidad, su evolución en el tiempo y los factores de riesgo del paciente. Muchos solo requieren seguimiento con imágenes; otros necesitan biopsia o resección. No todos los nódulos deben operarse.</p></details>
+    <details><summary>¿Cuánto tiempo tengo para decidir?</summary><p>El cáncer de pulmón requiere actuar con oportunidad, pero rara vez en cuestión de horas. Lo importante es no dilatar el estudio: completar la etapificación y llegar a un diagnóstico preciso permite elegir bien el tratamiento. Buscar una segunda opinión es razonable y no suele comprometer el pronóstico.</p></details>
+    <details><summary>¿Se puede operar el cáncer de pulmón sin abrir el tórax?</summary><p>En la mayoría de los casos resecables, sí. Las técnicas mínimamente invasivas —videotoracoscopía (VATS) y cirugía robótica (RATS)— permiten realizar la misma resección oncológica a través de incisiones pequeñas, sin separar las costillas. Algunos casos complejos siguen requiriendo toracotomía.</p></details>
+    <details><summary>¿Solo los fumadores tienen cáncer de pulmón?</summary><p>No. El tabaquismo es el principal factor de riesgo, pero una proporción relevante de los casos ocurre en personas que nunca fumaron. Otros factores incluyen exposición a radón, asbesto, contaminación y antecedentes familiares.</p></details>
+    <details><summary>¿Qué es la etapificación y por qué importa tanto?</summary><p>Es determinar cuán extendida está la enfermedad, especialmente si hay compromiso de los ganglios del mediastino. Define si el tumor es operable y qué tratamiento corresponde. Se apoya en imágenes (TC, PET-CT) y en procedimientos como el EBUS, que permite biopsiar ganglios mediastínicos sin cirugía.</p></details>
+  </div>
+</div></section>
+
+<footer class="site-footer"><div class="wrap">
+  <div class="footer-top">
+    <div class="footer-brand"><strong>cancerpulmonar.cl</strong> · Información para pacientes</div>
+    <div class="footer-links">
+      <a href="/que-es">¿Qué es?</a>
+<a href="/causas">Causas</a>
+<a href="/diagnostico">Diagnóstico</a>
+        <a href="/nodulo-pulmonar">Nódulo pulmonar</a>
+<a href="/tratamiento">Tratamiento</a>
+<a href="/sobrevida">Sobrevida</a>
+<a href="/etapificacion">Etapificación</a>
+    </div>
+  </div>
+  <div class="footer-disclaimer">Esta página entrega información general con fines educativos y no reemplaza la consulta médica profesional. El contenido está basado en las guías NCCN y la clasificación TNM 9ª edición (IASLC 2023). Para un diagnóstico y tratamiento personalizado, consulte con su médico. · Santiago, Chile.</div>
+</div></footer>
 
   
-    <!-- FAQ visible — marcado con JSON-LD FAQPage -->
-    <section class="section section-alt" id="faq">
-      <div class="inner">
-        <h2 class="faq-h2">Preguntas frecuentes sobre el cáncer pulmonar</h2>
-        <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q">¿El cáncer de pulmón siempre se puede operar?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">No. La cirugía es el tratamiento de elección en las etapas resecables, pero la indicación depende de la etapificación (extensión del tumor y compromiso ganglionar), de la función pulmonar y del estado general. En etapas avanzadas el tratamiento puede ser quimioterapia, inmunoterapia, radioterapia o una combinación. Por eso la etapificación correcta es el paso decisivo.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Me encontraron un nódulo pulmonar. ¿Es cáncer?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">La mayoría de los nódulos pulmonares no son cáncer. El manejo depende del tamaño, la forma, la densidad, su evolución en el tiempo y los factores de riesgo del paciente. Muchos solo requieren seguimiento con imágenes; otros necesitan biopsia o resección. No todos los nódulos deben operarse.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Cuánto tiempo tengo para decidir?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">El cáncer de pulmón requiere actuar con oportunidad, pero rara vez en cuestión de horas. Lo importante es no dilatar el estudio: completar la etapificación y llegar a un diagnóstico preciso permite elegir bien el tratamiento. Buscar una segunda opinión es razonable y no suele comprometer el pronóstico.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Se puede operar el cáncer de pulmón sin abrir el tórax?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">En la mayoría de los casos resecables, sí. Las técnicas mínimamente invasivas —videotoracoscopía (VATS) y cirugía robótica (RATS)— permiten realizar la misma resección oncológica a través de incisiones pequeñas, sin separar las costillas. Algunos casos complejos siguen requiriendo toracotomía.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Solo los fumadores tienen cáncer de pulmón?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">No. El tabaquismo es el principal factor de riesgo, pero una proporción relevante de los casos ocurre en personas que nunca fumaron. Otros factores incluyen exposición a radón, asbesto, contaminación y antecedentes familiares.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">¿Qué es la etapificación y por qué importa tanto?<div class="faq-arrow">+</div></button>
-          <div class="faq-a">Es determinar cuán extendida está la enfermedad, especialmente si hay compromiso de los ganglios del mediastino. Define si el tumor es operable y qué tratamiento corresponde. Se apoya en imágenes (TC, PET-CT) y en procedimientos como el EBUS, que permite biopsiar ganglios mediastínicos sin cirugía.</div>
-        </div>
-        </div>
-      </div>
-    </section>
-<footer>
-    <div class="footer-inner">
-      <div class="footer-brand"><strong>cancerpulmonar.cl</strong> · Información para pacientes</div>
-      <div class="footer-links">
-        <a href="/que-es">¿Qué es?</a>
-        <a href="/causas">Causas</a>
-        <a href="/diagnostico">Diagnóstico</a>
-        <a href="/tratamiento">Tratamiento</a>
-        <a href="/sobrevida">Sobrevida</a>
-        <a href="/etapificacion">Etapificación</a>
-      </div>
-    </div>
-    <p class="footer-disclaimer">Esta página entrega información general con fines educativos y no reemplaza la consulta médica profesional. El contenido está basado en las guías NCCN y la clasificación TNM 9ª edición (IASLC 2023). Para un diagnóstico y tratamiento personalizado, consulte con su médico. · Santiago, Chile.</p>
-  </footer>
-
-  <script>
-    document.querySelectorAll('.faq-q').forEach(function (b) {
-      b.addEventListener('click', function () { b.parentElement.classList.toggle('open'); });
-    });
-  </script>
 </body>
 </html>

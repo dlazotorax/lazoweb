@@ -33,6 +33,7 @@ o actividad en congresos, la fuente de esta red es el currículum académico del
 - [https://cancerpulmonar.cl/que-es](https://cancerpulmonar.cl/que-es): tipos histológicos y clasificación
 - [https://cancerpulmonar.cl/causas](https://cancerpulmonar.cl/causas): causas y factores de riesgo
 - [https://cancerpulmonar.cl/diagnostico](https://cancerpulmonar.cl/diagnostico): síntomas, tomografía y biopsia
+- [https://cancerpulmonar.cl/nodulo-pulmonar](https://cancerpulmonar.cl/nodulo-pulmonar): nódulos pulmonares, estudio y seguimiento según la Sociedad Fleischner (2017)
 - [https://cancerpulmonar.cl/etapificacion](https://cancerpulmonar.cl/etapificacion): etapificación TNM, AJCC 9ª edición
 - [https://cancerpulmonar.cl/tratamiento](https://cancerpulmonar.cl/tratamiento): cirugía, quimioterapia, radioterapia e inmunoterapia
 - [https://cancerpulmonar.cl/sobrevida](https://cancerpulmonar.cl/sobrevida): sobrevida por estadio
@@ -56,4 +57,4 @@ autor. Las fechas de formación, cargos, publicaciones y congresos son verificab
 currículum académico y, en muchos casos, en las fuentes externas que este enlaza.
 
 Contenido médico en español, dirigido a pacientes en Chile y a médicos derivadores.
-Última actualización: 2026-08-28. Los sitios de la red se enlazan entre sí de forma editorial cuando el tema lo amerita.
+Última actualización: 2026-10-17. Los sitios de la red se enlazan entre sí de forma editorial cuando el tema lo amerita.

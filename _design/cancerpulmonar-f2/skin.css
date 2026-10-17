@@ -1,0 +1,85 @@
+/* hero */
+.hero h1 span{color:#fff}
+/* contenedor */
+.lg{padding-top:4px}
+.lg .content,.lg .tnm-section,.lg .descriptor-section,.lg .survival-section{max-width:none}
+.lg .content{margin:0;padding:0}
+.lg .content > p,.lg .content > ul,.lg .content > ol{max-width:940px}
+/* tipografía */
+.lg h2,.lg .content h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.6vw,40px);letter-spacing:-.02em;color:var(--ink);line-height:1.1;margin:56px 0 16px}
+.lg .content h2:first-child{margin-top:8px}
+.lg h3,.lg h4,.lg .content h3{font-family:var(--display);letter-spacing:-.01em}
+.lg .content h3{font-size:22px;font-weight:800;color:var(--accent-text);margin:32px 0 12px}
+.lg .content p,.lg .content li{color:var(--ink);font-size:16px;line-height:1.75}
+.lg .content strong{color:var(--ink)}
+.lg a{color:var(--ink)}
+/* tarjetas: sin bordes, fondo suave, radio grande */
+.lg .symptom-card,.lg .step-body,.lg .exam-item,.lg .risk-card,.lg .type-card,.lg .tnm-section,.lg .tnm-letter-card,
+.lg .descriptor-section,.lg .grouping-wrap,.lg .process-card,.lg .survival-section,.lg .factor-card,.lg .stage-block,
+.lg .modality-card,.lg .bio-table-wrap,.lg .smoking-stat{border:none;border-radius:26px;background:var(--soft)}
+.lg .exam-header,.lg .exam-body{background:var(--soft)}
+.lg .risk-card:hover{transform:none}
+.lg .sym-alert,.lg .factor-negative{background:var(--soft2)}
+/* recuadros destacados: durazno, sin borde */
+.lg .callout,.lg .ebus-box,.lg .screening-box,.lg .robots-box,.lg .hope-box{background:var(--soft2);border:none;border-radius:26px}
+.lg .callout h4,.lg .ebus-box h3,.lg .screening-box h3,.lg .screening-box h4,.lg .robots-box h3,.lg .robots-box h4,.lg .hope-box h3,.lg .hope-box h4{color:var(--accent-text)}
+.lg .callout-icon,.lg .risk-card-icon,.lg .sym-icon,.lg .factor-icon,.lg .exam-icon{color:var(--accent-text)}
+/* pasos numerados */
+.lg .step-num{background:var(--accent);border:none;border-radius:50%;color:var(--ink);font-weight:800}
+.lg .step:not(:last-child)::after{background:var(--soft2)}
+/* tablas */
+.lg table th{color:var(--muted)}
+.lg .descriptor-header,.lg .tnm-header,.lg .survival-header,.lg .stage-block-header,.lg .bio-table-header{background:transparent;border:none}
+.lg tr,.lg td,.lg th{border-color:#fff!important}
+/* escala de estadios (temprano → avanzado) */
+.lg .stage-ia,.lg .stage-ib,.lg .sc-ia1,.lg .sc-ia2,.lg .sc-ia3,.lg .sc-ib,.lg .sc-0,.lg .sp-ia,.lg .sp-ib,.lg .sp-green,.lg .tx-surgery{background:#DDF1E5!important;color:#1D6B45!important}
+.lg .stage-iia,.lg .stage-iib,.lg .sc-iia,.lg .sc-iib,.lg .sp-iia,.lg .sp-iib,.lg .sp-amber{background:#FCEBC9!important;color:#7A5200!important}
+.lg .stage-iiia,.lg .stage-iiib,.lg .stage-iiic,.lg .sc-iiia,.lg .sc-iiib,.lg .sc-iiic,.lg .sp-iiia,.lg .sp-iiib,.lg .sp-iiic{background:var(--soft2)!important;color:var(--accent-text)!important}
+.lg .stage-iva,.lg .stage-ivb,.lg .sc-iva,.lg .sc-ivb,.lg .sp-iva,.lg .sp-ivb,.lg .sp-red{background:#F6D0CC!important;color:#8E1B1B!important}
+.lg .s-ia .surv-bar-fill{background:#2E9E6B}.lg .s-ib .surv-bar-fill{background:#57B585}
+.lg .s-iia .surv-bar-fill{background:#D9A23A}.lg .s-iib .surv-bar-fill{background:#E6B455}
+.lg .s-iiia .surv-bar-fill{background:#F28A6E}.lg .s-iiib .surv-bar-fill{background:#E46D4D}.lg .s-iiic .surv-bar-fill{background:#D2553A}
+.lg .s-iva .surv-bar-fill{background:#B23A22}.lg .s-ivb .surv-bar-fill{background:#8E1B1B}
+.lg .surv-bar-track{background:#fff;border-radius:99px}
+.lg .surv-bar-fill{border-radius:99px}
+.lg .s-ia .surv-pct,.lg .s-ib .surv-pct{color:#1D6B45}.lg .s-iia .surv-pct,.lg .s-iib .surv-pct{color:#7A5200}
+.lg .s-iiia .surv-pct,.lg .s-iiib .surv-pct,.lg .s-iiic .surv-pct{color:var(--accent-text)}.lg .s-iva .surv-pct,.lg .s-ivb .surv-pct{color:#8E1B1B}
+/* portada */
+.hero-photo{border-radius:26px;filter:none;aspect-ratio:16/10;object-fit:cover;box-shadow:0 18px 40px rgba(26,25,80,.25)}
+.hero-actions{margin-top:24px}
+.lg .alert-wrap .inner{max-width:none;padding:0}
+.lg .alert-strip{background:var(--soft2);border:none;border-radius:26px;box-shadow:none;transform:none;max-width:none;padding:26px 30px}
+.lg .alert-strip strong{color:var(--accent-text);font-size:17px}
+.lg .alert-strip p{color:var(--ink)}
+.lg .alert-ico{color:var(--accent-text)}
+.lg .home-cards{padding-top:40px}
+.lg .home-cards .inner{max-width:none;padding:0}
+.lg .home-cards .section-lead{color:var(--ink);font-size:17px;margin-bottom:24px}
+.lg .subpage-card{border:none;background:var(--soft);border-radius:26px;padding:28px}
+.lg .subpage-card::before{display:none}
+.lg .subpage-card:hover{transform:none;box-shadow:none;background:var(--soft2)}
+.lg .card-num{color:var(--accent-text);font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.06em}
+.lg .card-title{font-family:var(--display);font-weight:800;font-size:23px;line-height:1.15;color:var(--ink)}
+.lg .card-desc{color:var(--ink)}
+.lg .card-arrow{color:var(--ink);font-weight:700}
+.bio .txt.src{font-size:14px;color:var(--muted)}
+@media (max-width:860px){.hero-photo{max-width:100%!important;width:100%}}
+.lg .alert-wrap{padding:0;margin:0;background:none}
+#main-content > .wrap:first-child{padding-top:16px}
+/* tablas en móvil: filas como tarjetas */
+@media (max-width:640px){
+.lg table.stk{display:block!important;min-width:0!important;width:100%!important;overflow:visible!important;border-spacing:0}
+.lg table.stk thead{display:none}
+.lg table.stk tbody{display:block}
+.lg table.stk tr{display:block;background:#fff;border-radius:18px;margin:8px 0;padding:12px 14px}
+.lg table.stk td{display:block;padding:2px 0!important;border:none!important;background:none!important;font-size:15px!important}
+.lg table.stk td[data-l]::before{content:attr(data-l);display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.lg table.stk td[data-c="0"]::before{display:none}
+.lg table.stk td[data-c="0"]{font-weight:700;margin-bottom:2px}
+.lg table.grouping-table.stk td[data-c="1"],.lg table.grouping-table.stk td[data-c="2"],.lg table.grouping-table.stk td[data-c="3"]{display:inline-block;margin-right:16px}
+.lg table.grouping-table.stk td::before,.lg table.desc-table.stk td::before{display:none!important}
+.lg table.grouping-table.stk td[data-c="0"]{display:block}
+.lg table.grouping-table.stk td[data-c="4"]{margin-top:4px}
+.lg .tnm-section,.lg .grouping-wrap,.lg .bio-table-wrap,.lg .descriptor-section{overflow:visible}
+
+}

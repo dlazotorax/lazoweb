@@ -1,6 +1,6 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
-> **Última actualización: 16 oct 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
+> **Última actualización: 17 oct 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
 > métricas vigentes y pendientes. Todo lo narrativo (sesiones, razonamientos, cómo se llegó a cada
 > dato) está en **`ESTADO-historico.md`**; la versión larga de este archivo, tal como estaba al
 > 22-sep-2026, está al final de ese histórico.
@@ -62,6 +62,9 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
 | No hay huella de PBN (duplicación real de prosa 3-10%, solo el pie) | ago-2026 |
 | cancerpulmonar `/tratamiento`: **«sotorasib en Chile está disponible desde 2024» se queda** tal cual. Respaldo interno (no publicar): LUMAKRAS, ISP `F-28265/24` | 28-sep-2026 |
 | cancerpulmonar `/tratamiento`: **sin columna de frecuencias** en la tabla de biomarcadores (14 filas). No reintroducirla | 28-sep-2026 |
+| cancerpulmonar.cl: **diseño F2 Índigo + coral** (Bricolage Grotesque + DM Sans, `/estilo.css` compartido). Sin círculos en los hero. El texto existente no se tocó salvo lo pedido por David | 17-oct-2026 |
+| cancerpulmonar.cl: **sin cifras en la bio** (+5.700 cirugías, +3.200 EBUS, 19 años) en las 8 páginas. Las frases del párrafo de la bio («19 años de experiencia», «mejores resultados oncológicos», «mayor experiencia en EBUS en Chile» en la portada) **se quedan** | 17-oct-2026 |
+| cancerpulmonar `/nodulo-pulmonar`: cirugía de nódulos pequeños **no va aquí**: marcación con lipiodol → videotoracoscopia.cl; con ICG → rats.cl (material reservado en `Paginas web/reservado-cirugia-nodulos.html`). Sin menciones a CLC en el contenido | 17-oct-2026 |
 | **hiperhidrosis.cl sin HCSBA**: en HCSBA no hay capacidad para operar patología no grave. Afiliación solo CLC en ese dominio (JSON-LD, `llms.txt` y texto); excepción a la coincidencia del `@id` (§5) | 12-oct-2026 |
 | Hero de `/publicaciones` (imagen IA con taza STS) **se mantiene** por decisión de David hasta tener foto real de congreso | ago-2026 |
 
@@ -88,6 +91,9 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
   falla. **No detecta problemas de renderizado.**
 - **Opérculo:** la fuente es `_design/maquetas/operculo/_build/lienzo-design-v2.dc.html`; se regenera con
   `python3 _design/maquetas/operculo/_build/convert_dc.py --publicar`. **No editar los HTML generados.**
+- **cancerpulmonar.cl (desde 17-oct-2026):** cada página = `/estilo.css` (diseño F2) + su `<style>` propio acotado a `.lg`
+  (contenido antiguo recoloreado). **Se editan los HTML de `dist/` directamente.** Los scripts de la migración
+  están en `_design/cancerpulmonar-f2/` solo como referencia (`build3.py` parte de los HTML anteriores).
 - **IndexNow** (Bing, Yandex, Seznam, Naver; Google no lo usa): clave `6563e7c4261c09942fb4341c9d6b5312`,
   archivo `<clave>.txt` en la raíz de los 6 dominios con contenido (vats y cirugiadetorax solo redirigen).
   Tras cada push, **cuando Vercel ya desplegó**: `python3 scripts/indexnow.py` (avisa solo URLs del sitemap
@@ -105,7 +111,7 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
 |---|---|---|
 | cirugiatoracica.cl | 6 (`/`, `/perfil`, `/cv`, `/publicaciones`, `/docencia`, `/links`) | Hub |
 | rats.cl | 6 (`/` + `/operculo-toracico` y 4 subpáginas) | Médicos referentes |
-| cancerpulmonar.cl | 7 | Pacientes |
+| cancerpulmonar.cl | 8 (incl. `/nodulo-pulmonar`, 17-oct-2026) | Pacientes |
 | broncoscopia.cl | 3 | Dual |
 | hiperhidrosis.cl | 16 | Pacientes |
 | videotoracoscopia.cl | 1 | VATS |
@@ -238,6 +244,7 @@ que el resto es lento.
 | 12 | Guardar copia del brochure de la V Jornada Clínica Alemana (oct-2023) | Está en un servidor de cursos |
 | 13 | cancerpulmonar `/sobrevida`, bloque «El impacto del diagnóstico precoz»: «más del 60 % de los cánceres pulmonares en Chile se diagnostican en estadio III o IV» **no tiene fuente**. ¿Retirar o dar fuente? | No tocar hasta que decida (§1.1) |
 | 14 | ¿Añadir en `/sobrevida` la tabla de sobrevida **patológica** 9.ª ed. (Rami-Porta 2024, Fig. 4)? Cifras en `ESTADO-historico.md` §19 | Por defecto no; tabla aparte si la pide |
+| 15 | `/nodulo-pulmonar`, por confirmar: licencia de las figuras de Vega 2021 (SciELO); que los casos de las láminas 20/22 son suyos; origen de las miniaturas de bordes (lámina 13) | Publicada el 17-oct con ellas |
 
 ### De Claude
 

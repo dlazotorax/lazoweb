@@ -15,10 +15,6 @@
   <meta property="og:url" content="https://cirugiatoracica.cl/links" />
   <meta property="og:image" content="https://cirugiatoracica.cl/links/david-lazo.jpg" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
-
   <!-- JSON-LD ProfilePage -->
   <script type="application/ld+json">
 {
@@ -49,207 +45,6 @@
   "dateModified": "2026-08-20"
 }
   </script>
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    /* Los atributos width/height protegen del CLS; height:auto evita que
-       fijen el alto y pisen el aspect-ratio o el alto que define el CSS. */
-    img { height: auto; }
-
-    :root {
-      --bg:        #0a0f1a;
-      --bg2:       #0f1829;
-      --bg3:       #14233f;
-      --accent:    #2563eb;
-      --accent2:   #3b82f6;
-      --accent-g:  #60a5fa;
-      --text:      #f1f5f9;
-      --text-muted:#94a3b8;
-      --border:    rgba(255,255,255,0.08);
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
-    }
-    /* glow estático y sobrio (sin drift) */
-    body::before {
-      content: '';
-      position: fixed; top: -160px; left: 50%; width: 680px; height: 500px;
-      margin-left: -340px;
-      background: radial-gradient(ellipse 60% 55% at 50% 40%, rgba(37,99,235,0.32), rgba(37,99,235,0.08) 45%, transparent 70%);
-      pointer-events: none; z-index: 0;
-    }
-
-    .wrap {
-      position: relative; z-index: 1;
-      max-width: 440px;
-      margin: 0 auto;
-      padding: 3.25rem 1.4rem 3rem;
-    }
-
-    /* ── ENTRADA ── */
-    @keyframes rise { from { opacity:0; transform: translateY(14px); } to { opacity:1; transform:none; } }
-    @keyframes shimmer { 0% { transform: translateX(-120%); } 65%,100% { transform: translateX(230%); } }
-    @keyframes pulseDot { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.45; transform:scale(.7); } }
-    .anim { opacity: 0; animation: rise 0.55s cubic-bezier(0.22,1,0.36,1) forwards; }
-    @media (prefers-reduced-motion: reduce) {
-      .anim { animation: none; opacity: 1; }
-      .shine, .dot { animation: none !important; }
-    }
-
-    /* ── PERFIL ── */
-    .profile { text-align: center; margin-bottom: 1.6rem; }
-    .av {
-      position: relative; width: 128px; height: 128px; margin: 0 auto 1.25rem;
-    }
-    .av .ring {
-      position: absolute; inset: -5px; border-radius: 50%;
-      background: conic-gradient(from 0deg, #2563eb, #3b82f6, #60a5fa, #2563eb);
-    }
-    .av .inner {
-      position: absolute; inset: 0; border-radius: 50%; padding: 4px; background: var(--bg);
-    }
-    .av .inner img {
-      width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: 50% 40%; display: block;
-    }
-    .av .badge {
-      position: absolute; right: 6px; bottom: 6px; width: 30px; height: 30px;
-      border-radius: 50%; background: var(--accent); border: 3px solid var(--bg);
-      display: flex; align-items: center; justify-content: center; z-index: 2;
-      box-shadow: 0 4px 12px rgba(37,99,235,0.5);
-    }
-    .av .badge svg { width: 15px; height: 15px; stroke: #fff; }
-
-    .profile h1 {
-      font-family: 'Fraunces', serif;
-      font-size: 1.9rem; font-weight: 600;
-      letter-spacing: -0.02em; line-height: 1.1;
-    }
-    .role {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin-top: 0.65rem;
-      font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-g);
-    }
-    .role span { width: 18px; height: 1px; background: rgba(96,165,250,0.5); }
-    .tagline {
-      color: var(--text-muted); font-size: 0.84rem; line-height: 1.6;
-      margin: 0.85rem auto 0; max-width: 330px;
-    }
-    .loc {
-      display: inline-flex; align-items: center; gap: 7px; margin-top: 1.1rem;
-      background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3);
-      color: #bcd2f7; padding: 0.35rem 0.9rem; border-radius: 999px;
-      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
-    }
-    .loc svg { width: 12px; height: 12px; stroke: var(--accent-g); fill: none; }
-
-    /* ── CREDIBILIDAD ── */
-    .trust {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;
-      margin: 0 0 1.75rem;
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 16px; padding: 1rem 0.5rem;
-    }
-    .trust-item { text-align: center; position: relative; }
-    .trust-item:not(:last-child)::after {
-      content: ''; position: absolute; right: 0; top: 15%; height: 70%; width: 1px; background: var(--border);
-    }
-    .trust-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--accent-g); line-height: 1; }
-    .trust-lbl { font-size: 0.64rem; color: var(--text-muted); margin-top: 0.35rem; line-height: 1.35; padding: 0 0.2rem; }
-
-    /* ── SECTION LABEL ── */
-    .group-label {
-      display: flex; align-items: center; gap: 10px;
-      margin: 1.9rem 0 0.8rem; padding-left: 2px;
-      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--accent-g); font-weight: 700;
-    }
-    .group-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(96,165,250,0.3), transparent); }
-    .group-label.muted { color: var(--text-muted); }
-    .group-label.muted::after { background: linear-gradient(90deg, rgba(148,163,184,0.3), transparent); }
-
-    /* ── LINK CARD ── */
-    .link {
-      display: flex; align-items: center; gap: 14px;
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 16px; padding: 0.9rem 1rem; margin-bottom: 0.7rem;
-      text-decoration: none; color: var(--text);
-      transition: border-color 0.2s, transform 0.2s, background 0.2s, box-shadow 0.2s;
-    }
-    .link:hover { border-color: rgba(96,165,250,0.45); background: var(--bg3); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
-    .link-ic {
-      width: 42px; height: 42px; min-width: 42px; border-radius: 11px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .link-ic svg { width: 20px; height: 20px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .ic-pac { background: rgba(96,165,250,0.14); }
-    .ic-pac svg { stroke: var(--accent-g); }
-    .ic-med { background: rgba(129,140,248,0.14); }
-    .ic-med svg { stroke: #a5b4fc; }
-    .ic-web { background: rgba(37,99,235,0.14); }
-    .ic-web svg { stroke: var(--accent-g); }
-    .link-body { flex: 1; min-width: 0; }
-    .link-title { display: block; font-size: 0.9rem; font-weight: 600; line-height: 1.3; }
-    .link-sub { display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.12rem; }
-    .arr { color: var(--text-muted); font-size: 1rem; transition: transform 0.2s, color 0.2s; }
-    .link:hover .arr { transform: translateX(3px); color: var(--accent-g); }
-
-    /* CTA primario */
-    .link.prime {
-      position: relative; overflow: hidden;
-      background: linear-gradient(135deg, #2563eb, #3b82f6 55%, #2563eb);
-      border-color: rgba(96,165,250,0.5); color: #fff;
-      border-radius: 18px; padding: 1rem;
-      box-shadow: 0 14px 32px -14px rgba(37,99,235,0.8);
-    }
-    .link.prime:hover { box-shadow: 0 18px 40px -12px rgba(37,99,235,0.7); transform: translateY(-2px); }
-    .link.prime .link-ic { background: rgba(255,255,255,0.2); }
-    .link.prime .link-ic svg { stroke: #fff; }
-    .link.prime .link-title { font-size: 0.96rem; font-weight: 700; }
-    .link.prime .link-sub { color: rgba(255,255,255,0.85); }
-    .link.prime .arr { color: rgba(255,255,255,0.9); }
-    .shine {
-      position: absolute; top: 0; left: 0; width: 55%; height: 100%;
-      background: linear-gradient(105deg, transparent, rgba(255,255,255,0.25), transparent);
-      animation: shimmer 6s ease-in-out infinite; pointer-events: none;
-    }
-
-    /* CTA telemedicina (elevado, sin shimmer) */
-    .link.tele {
-      background: linear-gradient(135deg, #274a85, #2f579a 55%, #21406f);
-      border-color: rgba(96,165,250,0.35);
-      box-shadow: 0 12px 30px -16px rgba(37,99,235,0.6);
-    }
-    .link.tele .link-ic { background: rgba(37,99,235,0.16); }
-    .link.tele .link-ic svg { stroke: var(--accent-g); }
-    .dot { width: 6px; height: 6px; border-radius: 50%; background: #34d399; animation: pulseDot 2s ease-in-out infinite; display: inline-block; }
-    .sub-live { display: flex; align-items: center; gap: 6px; }
-
-    /* ── SOCIAL ── */
-    .social { display: flex; justify-content: center; gap: 13px; margin-top: 2rem; }
-    .social a {
-      width: 48px; height: 48px; border-radius: 14px;
-      background: var(--bg2); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center; color: var(--text-muted);
-      transition: color 0.2s, border-color 0.2s, transform 0.2s, background 0.2s;
-    }
-    .social a:hover { color: var(--accent-g); border-color: rgba(96,165,250,0.45); background: var(--bg3); transform: translateY(-3px); }
-    .social svg { width: 22px; height: 22px; }
-
-    /* ── FOOTER ── */
-    footer { text-align: center; margin-top: 2.1rem; padding-top: 1.4rem; border-top: 1px solid var(--border); }
-    footer a { color: var(--accent-g); text-decoration: none; font-weight: 600; font-size: 0.88rem; }
-    .foot-copy { font-size: 0.72rem; color: #6b7a93; margin-top: 0.5rem; line-height: 1.5; }
-  </style>
   <!-- Google Analytics 4 · red Dr. David Lazo Pérez -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
   <script>
@@ -272,37 +67,96 @@
       }
     }, true);
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+
+:root{color-scheme:dark;--bg:#0B0D0F;--card:#15181B;--line:rgba(255,255,255,.12);--fg:#fff;--mut:rgba(255,255,255,.66);--acc:#1F6FEB;--acc-h:#1A5FCC;--sans:'Red Hat Display',Arial,sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:46vh;z-index:-1;background:linear-gradient(180deg,rgba(11,13,15,.2),var(--bg)),url(/imgs/hero-pab-cirugiatoracica-1600.webp) 50% 85%/cover;opacity:.45}
+a{color:inherit}
+:focus-visible{outline:2px solid #9CC3FF;outline-offset:3px}
+.wrap{max-width:520px;margin:0 auto;padding:48px max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px));display:grid;gap:10px}
+.profile{display:grid;justify-items:center;text-align:center;gap:10px;margin-bottom:10px}
+.av{position:relative;width:120px;height:120px}
+.av .ring{position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(255,255,255,.3)}
+.av .inner{width:120px;height:120px;border-radius:50%;overflow:hidden;background:#222}
+.av img{width:100%;height:100%;object-fit:cover;display:block}
+.badge{position:absolute;right:-2px;bottom:4px;width:30px;height:30px;border-radius:50%;background:var(--acc);display:grid;place-items:center;border:2px solid var(--bg)}
+.badge svg{width:15px;height:15px;color:#fff;fill:currentColor}
+h1{font:700 32px/1.05 var(--sans);letter-spacing:-.02em;margin:6px 0 0}
+.role{font:500 11.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#BBD6FF}
+.role span{display:none}
+.tagline{margin:0;color:var(--mut);max-width:40ch;font-size:15px}
+.loc{display:flex;gap:6px;align-items:center;color:var(--mut);font-size:14px}
+.loc svg{width:14px;height:14px}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:8px 0 10px}
+.trust-item{padding:14px 6px;text-align:center}
+.trust-item+.trust-item{border-left:1px solid var(--line)}
+.trust-num{font:700 24px/1 var(--sans);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.trust-lbl{margin-top:6px;font:500 10px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.link{position:relative;display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;padding:14px 16px;border-radius:8px;background:var(--card);border:1px solid var(--line);text-decoration:none;transition:border-color .2s,background .2s}
+.link:hover{border-color:rgba(255,255,255,.35)}
+.link.prime{background:var(--acc);border-color:var(--acc)}
+.link.prime:hover{background:var(--acc-h)}
+.link.tele{background:#fff;color:#171A1C;border-color:#fff}
+.link.tele .link-sub{color:#5C5E62}
+.shine{display:none}
+.link-ic{width:40px;height:40px;border-radius:6px;display:grid;place-items:center;background:rgba(255,255,255,.08)}
+.link.tele .link-ic{background:#F4F4F4}
+.link-ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.loc svg{fill:none;stroke:currentColor;stroke-width:1.8}
+.link-body{display:grid;gap:2px;min-width:0}
+.link-title{font:600 15.5px/1.25 var(--sans)}
+.link-sub{font-size:13.5px;color:var(--mut)}
+.link.prime .link-sub{color:rgba(255,255,255,.85)}
+.sub-live{display:flex;align-items:center;gap:6px}
+.dot{width:7px;height:7px;border-radius:50%;background:#22A06B}
+.arr{font:500 16px/1 var(--mono);opacity:.8}
+.group-label{margin:18px 0 2px;font:500 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#BBD6FF}
+.group-label.muted{color:var(--mut)}
+.social{display:flex;justify-content:center;gap:10px;margin-top:18px}
+.social a{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:#fff}
+.social a:hover{border-color:rgba(255,255,255,.4)}
+.social svg{width:18px;height:18px}
+footer{text-align:center;margin-top:18px;display:grid;gap:4px;font-size:13px;color:var(--mut)}
+footer a{color:#fff;font-weight:600;text-decoration:none}
+.foot-copy{margin:0}
+
+  </style>
 </head>
 <body>
-  <div class="wrap">
+<div class="wrap">
 
     <!-- ───────── PERFIL ───────── -->
     <div class="profile">
-      <div class="av anim" style="animation-delay:.02s">
+      <div class="av anim">
         <div class="ring"></div>
-        <div class="inner"><picture><source srcset="/links/david-lazo.webp" type="image/webp"><img src="/links/david-lazo.jpg" alt="Dr. David Lazo Pérez, cirujano torácico" / width="470" height="470" loading="lazy" decoding="async"></picture></div>
+        <div class="inner"><picture><source srcset="/links/david-lazo.webp" type="image/webp"><img src="/links/david-lazo.webp" alt="Dr. David Lazo Pérez, cirujano torácico" / width="470" height="470" loading="lazy" decoding="async"></picture></div>
         <div class="badge" title="Médico cirujano">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
         </div>
       </div>
-      <h1 class="anim" style="animation-delay:.06s">Dr. David Lazo Pérez</h1>
-      <div class="role anim" style="animation-delay:.10s"><span></span>Cirujano Torácico<span></span></div>
-      <p class="tagline anim" style="animation-delay:.14s">Cirugía robótica · Oncología torácica · Broncoscopía intervencional · Trasplante pulmonar</p>
-      <div class="loc anim" style="animation-delay:.18s">
+      <h1 class="anim">Dr. David Lazo Pérez</h1>
+      <div class="role anim"><span></span>Cirujano Torácico<span></span></div>
+      <p class="tagline anim">Cirugía robótica · Oncología torácica · Broncoscopía intervencional · Trasplante pulmonar</p>
+      <div class="loc anim">
         <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Santiago, Chile
       </div>
     </div>
 
     <!-- ───────── CREDIBILIDAD ───────── -->
-    <div class="trust anim" style="animation-delay:.22s">
+    <div class="trust anim">
       <div class="trust-item"><div class="trust-num">+5.700</div><div class="trust-lbl">Cirugías torácicas</div></div>
       <div class="trust-item"><div class="trust-num">+3.200</div><div class="trust-lbl">EBUS desde 2010</div></div>
       <div class="trust-item"><div class="trust-num">19</div><div class="trust-lbl">Años de experiencia</div></div>
     </div>
 
     <!-- ───────── CTA PRINCIPAL ───────── -->
-    <a class="link prime anim" style="animation-delay:.26s" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener">
+    <a class="link prime anim" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener">
       <span class="shine"></span>
       <span class="link-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
       <span class="link-body">
@@ -312,7 +166,7 @@
       <span class="arr">→</span>
     </a>
 
-    <a class="link tele anim" style="animation-delay:.30s" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">
+    <a class="link tele anim" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">
       <span class="link-ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
       <span class="link-body">
         <span class="link-title">Telemedicina · Consulta online</span>
@@ -322,49 +176,49 @@
     </a>
 
     <!-- ───────── INFORMACIÓN WEB (unificada) ───────── -->
-    <div class="group-label anim" style="animation-delay:.34s">Información web</div>
+    <div class="group-label anim">Información web</div>
 
-    <a class="link anim" style="animation-delay:.36s" href="https://cancerpulmonar.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
+    <a class="link anim" href="https://cancerpulmonar.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
       <span class="link-ic ic-pac"><svg viewBox="0 0 24 24"><path d="M12 2v6"/><path d="M9 8a3 3 0 0 0-3 3v4a4 4 0 0 0 8 0v-1a3 3 0 0 1 6 0v2"/><circle cx="6" cy="19" r="2"/></svg></span>
       <span class="link-body"><span class="link-title">Cáncer Pulmonar</span><span class="link-sub">Síntomas, diagnóstico y tratamiento</span></span>
       <span class="arr">→</span>
     </a>
-    <a class="link anim" style="animation-delay:.40s" href="https://hiperhidrosis.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
+    <a class="link anim" href="https://hiperhidrosis.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
       <span class="link-ic ic-pac"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span>
       <span class="link-body"><span class="link-title">Hiperhidrosis</span><span class="link-sub">Tratamiento quirúrgico definitivo</span></span>
       <span class="arr">→</span>
     </a>
-    <a class="link anim" style="animation-delay:.44s" href="https://broncoscopia.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
+    <a class="link anim" href="https://broncoscopia.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
       <span class="link-ic ic-pac"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></span>
       <span class="link-body"><span class="link-title">Broncoscopía</span><span class="link-sub">Qué es y cuándo se indica</span></span>
       <span class="arr">→</span>
     </a>
-    <a class="link anim" style="animation-delay:.48s" href="https://rats.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
+    <a class="link anim" href="https://rats.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
       <span class="link-ic ic-med"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 8V5a3 3 0 0 1 6 0v3"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/></svg></span>
       <span class="link-body"><span class="link-title">Cirugía Robótica Torácica (RATS)</span><span class="link-sub">Plataforma Da Vinci · desde 2015</span></span>
       <span class="arr">→</span>
     </a>
-    <a class="link anim" style="animation-delay:.52s" href="https://videotoracoscopia.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
+    <a class="link anim" href="https://videotoracoscopia.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
       <span class="link-ic ic-med"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M22 8l-6 4 6 4z"/></svg></span>
       <span class="link-body"><span class="link-title">Videotoracoscopía (VATS)</span><span class="link-sub">Cirugía mínimamente invasiva</span></span>
       <span class="arr">→</span>
     </a>
-    <a class="link anim" style="animation-delay:.56s" href="https://broncoscopia.cl/intervencional?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
+    <a class="link anim" href="https://broncoscopia.cl/intervencional?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
       <span class="link-ic ic-med"><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg></span>
       <span class="link-body"><span class="link-title">EBUS / CryoEBUS</span><span class="link-sub">Broncoscopía intervencional avanzada</span></span>
       <span class="arr">→</span>
     </a>
 
     <!-- ───────── SITIO OFICIAL ───────── -->
-    <div class="group-label muted anim" style="animation-delay:.60s">Sitio oficial</div>
-    <a class="link anim" style="animation-delay:.62s" href="https://cirugiatoracica.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
+    <div class="group-label muted anim">Sitio oficial</div>
+    <a class="link anim" href="https://cirugiatoracica.cl/?utm_source=linkinbio&utm_medium=bio&utm_campaign=links">
       <span class="link-ic ic-web"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
       <span class="link-body"><span class="link-title">cirugiatoracica.cl</span><span class="link-sub">Perfil completo, especialidades y trayectoria</span></span>
       <span class="arr">→</span>
     </a>
 
     <!-- ───────── SOCIAL ───────── -->
-    <div class="social anim" style="animation-delay:.66s">
+    <div class="social anim">
       <a href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
       </a>
@@ -376,7 +230,7 @@
       </a>
     </div>
 
-    <footer class="anim" style="animation-delay:.70s">
+    <footer class="anim">
       <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
       <p class="foot-copy">© 2026 Dr. David Lazo Pérez · Cirujano Torácico · Santiago, Chile</p>
     </footer>

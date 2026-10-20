@@ -12,9 +12,6 @@
   <meta property="og:url" content="https://cirugiatoracica.cl/" />
   <meta property="og:image" content="https://cirugiatoracica.cl/imgs/hero-pab-cirugiatoracica.jpg" />
   <meta property="og:locale" content="es_CL" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" imagesrcset="imgs/hero-pab-cirugiatoracica-1600.webp 1600w, imgs/hero-pab-cirugiatoracica-2400.webp 2400w" imagesizes="(min-width: 1200px) 1200px, 100vw" type="image/webp" fetchpriority="high" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="author" content="Dr. David Lazo Pérez" />
@@ -238,268 +235,6 @@
   ]
 }
   </script>
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    /* Los atributos width/height protegen del CLS; height:auto evita que
-       fijen el alto y pisen el aspect-ratio o el alto que define el CSS. */
-    img { height: auto; }
-    :root {
-      --azul:        #0B3B52;
-      --azul-hover:  #092F41;
-      --azul-prof:   #06202D;
-      --azul-alt:    #0F4A65;
-      --verde:       #12A594;
-      --verde-claro: #5AE6CE;
-      --verde-palido:#DCF2EE;
-      --verde-texto: #0B6357;
-      --tinta:       #0F2027;
-      --cuerpo:      #4A5A60;
-      --cuerpo-suave:#6B7A80;
-      --nav-texto:   #3C4C52;
-      --sup1:        #F1F7F6;
-      --sup2:        #F4F7F7;
-      --sup-azul:    #EAF2F8;
-      --sup-menta:   #E4F5F0;
-      --t1-frio:     #EAF2F8;
-      --t2-menta:    #EBF5EF;
-      --t3-marfil:   #F5F4EA;
-      --t4-verde:    #DFF3E8;
-      --t5-invierno: #F4F8F9;
-      --borde:       #EAEFEE;
-      --borde-fuerte:#C9D8D6;
-      --borde-tab:   #DCE5E4;
-      --topbar-texto:#9FC4CF;
-      --sans: 'Figtree', system-ui, sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--sans); background: #fff; color: var(--tinta); -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
-    img { max-width: 100%; }
-    .shell { max-width: 1200px; margin: 0 auto; }
-    [id] { scroll-margin-top: 96px; }
-
-    /* ── 1. BARRA DE RED CLÍNICA ── */
-    .topbar { background: var(--azul); }
-    .topbar-inner { display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 9px 40px; font: 500 12px/1 var(--sans); color: var(--topbar-texto); }
-    .topbar-inner strong { color: #fff; font-weight: 600; }
-    .topbar-inner a { color: var(--topbar-texto); text-decoration: none; transition: color 0.2s; }
-    .topbar-inner a:hover { color: #fff; }
-
-    /* ── 2. NAV ── */
-    nav { position: sticky; top: 0; z-index: 500; background: #fff; border-bottom: 1px solid var(--borde); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 40px; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo span { font: 700 17px/1 var(--sans); letter-spacing: -0.02em; color: var(--azul); }
-    .nav-right { display: flex; align-items: center; gap: 26px; }
-    .nav-links { display: flex; align-items: center; gap: 26px; list-style: none; }
-    .nav-links a { font: 500 15px/1 var(--sans); color: var(--nav-texto); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--verde); }
-    .nav-cta { display: inline-flex; align-items: center; height: 46px; padding: 0 24px; border-radius: 999px; background: var(--azul); color: #fff; font: 600 15px/1 var(--sans); text-decoration: none; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--azul-hover); }
-    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 10px; flex-direction: column; gap: 5px; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--azul); border-radius: 2px; transition: transform 0.25s, opacity 0.2s; pointer-events: none; }
-    nav.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
-    nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* ── 3. HERO ── */
-    .hero { display: flex; flex-direction: column; gap: 40px; padding: 64px 0 0; background: linear-gradient(180deg, #F1F7F6 0%, #fff 100%); }
-    .hero-top { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: end; padding: 0 40px; }
-    .hero-col-izq { display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
-    .hero-pill { display: inline-flex; padding: 7px 14px; border-radius: 999px; background: var(--verde-palido); color: var(--verde-texto); font: 600 12.5px/1 var(--sans); }
-    h1 { font: 700 54px/1.08 var(--sans); letter-spacing: -0.032em; color: var(--azul); text-wrap: balance; }
-    .hero-col-der { display: flex; flex-direction: column; gap: 18px; padding-bottom: 6px; }
-    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-pill { display: inline-flex; align-items: center; height: 52px; padding: 0 28px; border-radius: 999px; font: 600 15.5px/1 var(--sans); text-decoration: none; transition: background 0.2s, border-color 0.2s; }
-    .btn-pill--primario { background: var(--azul); color: #fff; }
-    .btn-pill--primario:hover { background: var(--azul-hover); }
-    .btn-pill--secundario { border: 1px solid var(--borde-fuerte); color: var(--azul); }
-    .btn-pill--secundario:hover { border-color: var(--azul); }
-
-    .hero-media { position: relative; }
-    .hero-foto { height: 540px; overflow: hidden; }
-    .hero-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 100%; display: block; }
-    .statcluster { position: absolute; bottom: 24px; display: flex; gap: 10px; }
-    .statcluster--izq { left: 40px; }
-    .statcluster--der { right: 40px; }
-    .statcard { display: flex; flex-direction: column; gap: 6px; padding: 16px 20px; width: 176px; border-radius: 18px; background: rgba(255,255,255,0.78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); box-shadow: 0 12px 32px rgba(11,59,82,0.18); }
-    .statcard-cifra { font: 700 24px/1 var(--sans); color: var(--azul); }
-    .statcard-lbl { font: 500 12.5px/1.3 var(--sans); color: var(--cuerpo-suave); }
-
-    /* ── ETIQUETAS Y TÍTULOS DE SECCIÓN ── */
-    .eyebrow { font: 700 13px/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--verde); }
-    h2.eyebrow { font: 700 13px/1 var(--sans); }
-    .sec-titulo { font: 800 38px/1.14 var(--sans); letter-spacing: -0.028em; color: var(--azul); text-wrap: balance; }
-
-    /* ── 4. QUÉ ES ── */
-    .que-es { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; padding: 72px 40px; }
-    .que-es-ilustracion { border-radius: 28px; overflow: hidden; background: var(--sup1); padding: 16px; }
-    .que-es-ilustracion img { width: 100%; display: block; }
-    .que-es-texto { display: flex; flex-direction: column; gap: 18px; }
-    .que-es-texto p { font: 400 16.5px/1.65 var(--sans); color: var(--cuerpo); text-wrap: pretty; }
-    .que-es-texto p strong { font-weight: 700; color: var(--tinta); }
-
-    /* ── 5. ENFERMEDADES — PESTAÑAS ── */
-    .enfermedades { margin: 0 40px; padding: 56px 44px; border-radius: 32px; background: var(--t1-frio); }
-    .enfermedades-head { display: flex; flex-direction: column; gap: 14px; max-width: 56ch; }
-    .enfermedades-head p { font: 400 16.5px/1.6 var(--sans); color: var(--cuerpo); }
-    .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 24px; }
-    .tab { display: inline-flex; align-items: center; height: 44px; padding: 0 22px; border-radius: 999px; font: 500 14px/1 var(--sans); background: #fff; color: var(--nav-texto); border: 1px solid var(--borde-tab); cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
-    .tab[aria-selected="true"] { background: var(--azul); color: #fff; font-weight: 600; border-color: var(--azul); }
-    .panel { display: grid; grid-template-columns: 1fr 1.25fr; gap: 40px; padding: 32px; border-radius: 24px; background: #fff; }
-    .panel[hidden] { display: none; }
-    .panel-info { display: flex; flex-direction: column; gap: 14px; }
-    .panel-nombre { font: 700 24px/1.2 var(--sans); letter-spacing: -0.02em; color: var(--azul); }
-    .panel-desc { font: 400 15.5px/1.5 var(--sans); color: var(--cuerpo-suave); }
-    .panel-lista { display: flex; flex-direction: column; }
-    .panel-lista li { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--borde); font: 400 15.5px/1.5 var(--sans); color: var(--nav-texto); list-style: none; }
-    .panel-lista li:last-child { border-bottom: none; }
-    .panel-lista li strong { font-weight: 700; color: var(--tinta); }
-    .panel-lista svg { flex: none; margin-top: 3px; }
-
-    /* ── 6. VÍAS DE ABORDAJE ── */
-    .abordajes { padding: 72px 40px 64px; }
-    .abordajes-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
-    .abordajes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .abordaje-card { display: flex; flex-direction: column; gap: 14px; min-height: 230px; padding: 26px; border-radius: 24px; background: var(--t2-menta); border: 1px solid transparent; text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s; }
-    .abordaje-card:hover { border-color: var(--borde-fuerte); box-shadow: 0 8px 24px rgba(11,59,82,0.08); }
-    .abordaje-card h3 { font: 700 18px/1.25 var(--sans); color: var(--azul); }
-    .abordaje-card p { flex: 1; font: 400 14.5px/1.55 var(--sans); color: var(--cuerpo-suave); }
-    .abordaje-link { font: 600 13.5px/1 var(--sans); color: var(--azul); }
-    .abordaje-card--destacada { background: var(--azul); border: 1px solid var(--azul); }
-    .abordaje-card--destacada:hover { border-color: var(--azul); }
-    .abordaje-card--destacada h3 { color: #fff; }
-    .abordaje-card--destacada p { color: #B7CDD7; }
-    .abordaje-card--destacada .abordaje-link { color: var(--verde-claro); }
-
-    /* ── 7. PROCEDIMIENTOS ── */
-    .procedimientos { padding: 0 40px 72px; }
-    .procedimientos-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 26px; }
-    .proc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .proc-card { padding: 24px; border-radius: 22px; background: var(--t3-marfil); display: flex; flex-direction: column; gap: 12px; }
-    .proc-card-titulo { font: 700 15.5px/1.3 var(--sans); color: var(--azul); }
-    .proc-card ul { display: flex; flex-direction: column; gap: 7px; list-style: none; }
-    .proc-card li { font: 400 14.5px/1.5 var(--sans); color: #5A6A70; }
-
-    /* ── 7b. FAQ ── */
-    .faq { padding: 0 40px 72px; }
-    .faq-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 26px; }
-    .faq-lista { display: flex; flex-direction: column; gap: 10px; }
-    .faq-item { border-radius: 18px; background: var(--t4-verde); overflow: hidden; }
-    .faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; cursor: pointer; list-style: none; font: 600 16.5px/1.4 var(--sans); color: var(--azul); }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: ''; flex: none; width: 10px; height: 10px; border-right: 2px solid var(--verde); border-bottom: 2px solid var(--verde); transform: rotate(45deg); transition: transform 0.2s; margin-top: -4px; }
-    .faq-item[open] summary::after { transform: rotate(225deg); margin-top: 4px; }
-    .faq-item p { padding: 0 24px 22px; font: 400 15.5px/1.65 var(--sans); color: var(--cuerpo); text-wrap: pretty; max-width: 75ch; }
-
-    /* ── 8. SOBRE EL AUTOR ── */
-    .autor { margin: 0 40px 72px; display: grid; grid-template-columns: 1fr 1.15fr; border-radius: 32px; overflow: hidden; background: var(--t5-invierno); }
-    .autor-foto { min-height: 440px; }
-    .autor-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; display: block; }
-    .autor-texto { padding: 48px; display: flex; flex-direction: column; gap: 16px; justify-content: center; align-items: flex-start; }
-    .autor-titulo { font: 800 34px/1.14 var(--sans); letter-spacing: -0.028em; color: var(--azul); }
-    .autor-sub { font: 500 14.5px/1.4 var(--sans); color: var(--cuerpo-suave); }
-    .autor-texto p { font: 400 16px/1.65 var(--sans); color: var(--cuerpo); text-wrap: pretty; }
-    .autor-texto p strong { font-weight: 700; color: var(--tinta); }
-    .btn-outline { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid var(--borde-fuerte); font: 600 14.5px/1 var(--sans); color: var(--azul); text-decoration: none; margin-top: 6px; transition: border-color 0.2s; }
-    .btn-outline:hover { border-color: var(--azul); }
-
-    /* ── 9. CONTACTO ── */
-    .contacto { margin: 0 40px 40px; padding: 56px 44px; border-radius: 32px; background: var(--azul); color: #fff; display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 32px; align-items: center; }
-    .contacto-izq { display: flex; flex-direction: column; gap: 16px; }
-    .contacto .eyebrow, .contacto h2.eyebrow { color: var(--verde-claro); }
-    .contacto-titulo { font: 800 40px/1.1 var(--sans); letter-spacing: -0.03em; color: #fff; text-wrap: balance; }
-    .contacto-der { display: flex; flex-direction: column; gap: 12px; }
-    .contacto-fila { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; border-radius: 20px; text-decoration: none; transition: filter 0.2s; }
-    .contacto-fila:hover { filter: brightness(1.07); }
-    .contacto-fila--reserva { background: var(--verde); }
-    .contacto-fila--alt { background: var(--azul-alt); }
-    .contacto-fila--red { background: #2E7FA3; }
-    .contacto-fila--red .cf-sub { color: #E0F0F6; }
-    .cf-titulo { font: 700 16px/1.2 var(--sans); color: #fff; }
-    .cf-sub { margin-top: 5px; font: 400 13.5px/1.2 var(--sans); }
-    .contacto-fila--reserva .cf-sub { color: #DAF6F1; }
-    .contacto-fila--alt .cf-sub { color: var(--topbar-texto); }
-    .cf-flecha { font: 600 18px/1 var(--sans); color: #fff; }
-    .contacto-fila--alt .cf-flecha { color: var(--verde-claro); }
-    .cf-izq { display: flex; align-items: center; gap: 14px; }
-    .cf-ico { flex: none; color: var(--verde-claro); }
-
-    /* ── 10. FOOTER ── */
-    footer { border-top: 1px solid var(--borde); }
-    .footer-inner { padding: 40px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
-    .footer-marca { display: flex; flex-direction: column; gap: 10px; }
-    .footer-marca-nombre { font: 700 16px/1 var(--sans); color: var(--azul); }
-    .footer-copy { font: 400 13.5px/1.5 var(--sans); color: var(--cuerpo-suave); }
-    .footer-col { display: flex; flex-direction: column; gap: 9px; font: 400 13.5px/1.4 var(--sans); color: var(--cuerpo-suave); }
-    .footer-col-titulo { font-weight: 700; color: var(--tinta); }
-    .footer-col a { color: var(--cuerpo-suave); text-decoration: none; }
-    .footer-col a:hover { text-decoration: underline; }
-
-    /* ══ RESPONSIVE 768–1024 ══ */
-    @media (max-width: 1024px) {
-      .hero-top { grid-template-columns: 1fr; align-items: start; gap: 28px; }
-      .hero-col-der { padding-bottom: 0; }
-      .statcluster { flex-direction: column; }
-      .que-es { grid-template-columns: 1fr; gap: 32px; }
-      .panel { grid-template-columns: 1fr; gap: 24px; }
-      .abordajes-grid { grid-template-columns: repeat(2, 1fr); }
-      .proc-grid { grid-template-columns: repeat(2, 1fr); }
-      .autor { grid-template-columns: 1fr; }
-      .autor-foto { min-height: 320px; max-height: 420px; overflow: hidden; }
-      .contacto { grid-template-columns: 1fr; gap: 32px; }
-    }
-
-    /* ══ RESPONSIVE <768 ══ */
-    @media (max-width: 768px) {
-      html, body { overflow-x: hidden; }
-      .topbar-inner { padding: 9px 16px; gap: 10px 14px; }
-      .nav-inner { padding: 12px 16px; }
-      .nav-links { display: none; }
-      nav.nav-open .nav-links { display: flex; flex-direction: column; align-items: stretch; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--borde); box-shadow: 0 16px 40px rgba(11,59,82,0.12); padding: 8px 16px 16px; }
-      nav { position: sticky; }
-      .nav-inner { position: relative; }
-      nav.nav-open .nav-links a { display: block; padding: 14px 0; border-bottom: 1px solid var(--borde); font-size: 15px; }
-      nav.nav-open .nav-links li:last-child a { border-bottom: none; }
-      .nav-hamburger { display: flex; padding: 6px; }
-      .nav-right { gap: 6px; }
-      .nav-cta { height: 44px; padding: 0 16px; font-size: 13.5px; white-space: nowrap; }
-      .nav-logo { gap: 7px; }
-      .nav-logo span { font-size: 15px; }
-      .nav-logo svg { width: 20px; height: 20px; }
-      .hero { padding-top: 40px; gap: 28px; }
-      .hero-top { padding: 0 16px; }
-      h1 { font-size: clamp(2rem, 8vw, 3rem); }
-      .hero-ctas { flex-direction: column; width: 100%; }
-      .btn-pill { justify-content: center; }
-      .hero-foto { height: 320px; }
-      .hero-foto img { object-position: 50% 100%; }
-      .statcluster { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 16px; }
-      .statcluster--izq { margin-top: 12px; }
-      .statcluster--der { margin-top: 10px; padding-bottom: 4px; }
-      .statcard { width: auto; }
-      .que-es { padding: 48px 16px; }
-      .sec-titulo { font-size: clamp(1.6rem, 6vw, 2.2rem); }
-      .enfermedades { margin: 0 16px; padding: 36px 20px; border-radius: 24px; }
-      .tabs { flex-wrap: nowrap; overflow-x: auto; margin: 24px -20px 20px; padding: 0 20px 4px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-      .tabs::-webkit-scrollbar { display: none; }
-      .tab { flex: none; }
-      .panel { padding: 24px 20px; }
-      .abordajes { padding: 48px 16px 40px; }
-      .abordajes-grid { grid-template-columns: 1fr; }
-      .abordaje-card { min-height: 0; }
-      .procedimientos { padding: 0 16px 48px; }
-      .faq { padding: 0 16px 48px; }
-      .faq-item summary { padding: 16px 18px; font-size: 15.5px; }
-      .faq-item p { padding: 0 18px 18px; }
-      .proc-grid { grid-template-columns: 1fr; }
-      .autor { margin: 0 16px 48px; }
-      .autor-texto { padding: 28px 20px; }
-      .contacto { margin: 0 16px 24px; padding: 36px 20px; border-radius: 24px; }
-      .contacto-titulo { font-size: clamp(1.7rem, 7vw, 2.4rem); }
-      .footer-inner { grid-template-columns: 1fr; gap: 28px; padding: 32px 16px; }
-    }
-  </style>
   <!-- Google Analytics 4 · red Dr. David Lazo Pérez -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
   <script>
@@ -522,530 +257,460 @@
       }
     }, true);
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+
+/* Layout: secciones a pantalla completa con foto (Tesla) alternadas con bandas blancas y gris claro; contenido en columna de 1200px */
+:root{
+  color-scheme: light;
+  --bg:#FFFFFF; --soft:#F4F4F4; --ink:#171A1C; --mut:#5C5E62; --line:#E2E3E3; --acc:#1F6FEB; --acc-h:#1A5FCC;
+  --sans:'Red Hat Display', Arial, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --g:max(16px, env(safe-area-inset-left, 0px)); --gr:max(16px, env(safe-area-inset-right, 0px));
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+[id]{scroll-margin-top:24px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:var(--g);padding-right:var(--gr)}
+.mono{font:500 11.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.eyebrow{font:500 11.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin:0}
+h1,h2,h3{text-wrap:balance}
+.h2{font:700 clamp(1.8rem,3.4vw,2.7rem)/1.06 var(--sans);letter-spacing:-.02em;margin:12px 0 12px}
+.lede{color:var(--mut);margin:0 0 24px;font-size:17px;max-width:60ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:42px;min-width:210px;padding:0 22px;border-radius:4px;font:600 14px/1 var(--sans);text-decoration:none;transition:background .2s}
+.btn--blue{background:var(--acc);color:#fff}
+.btn--blue:hover{background:var(--acc-h)}
+.btn--white{background:rgba(255,255,255,.92);color:var(--ink)}
+.btn--white:hover{background:#fff}
+.btn--soft{background:var(--soft);color:var(--ink)}
+.btn--soft:hover{background:#E9E9E9}
+
+/* red */
+.net{background:var(--ink)}
+.net .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 22px;padding-block:8px}
+.net a{font:500 11px/1.6 var(--mono);letter-spacing:.1em;color:#B8BCBF;text-decoration:none}
+.net a:hover{color:#fff}
+
+/* nav sobre la foto */
+.top{position:relative}
+nav{position:absolute;left:0;right:0;top:0;z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px}
+.brand{font:800 15px/1 var(--sans);letter-spacing:.04em;color:#fff;text-decoration:none;text-transform:uppercase}
+.navl{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.navl a{display:block;color:#fff;text-decoration:none;font:600 14px/1 var(--sans);padding:10px 12px;border-radius:4px}
+.navl a:hover{background:rgba(255,255,255,.16)}
+.nav-cta{color:#fff;text-decoration:none;font:600 14px/1 var(--sans);padding:10px 14px;border-radius:4px;background:rgba(255,255,255,.16)}
+.nav-cta:hover{background:rgba(255,255,255,.26)}
+@media (max-width:900px){.navl{display:none}}
+
+/* slides a pantalla completa */
+.slide{position:relative;min-height:min(92svh,900px);display:grid;grid-template-rows:auto 1fr auto;isolation:isolate;overflow:hidden;color:#fff;text-align:center}
+.slide > img,.slide > picture,.slide > picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.pair.solo{grid-template-columns:1fr}
+.slide::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.05) 38%,rgba(0,0,0,.05) 62%,rgba(0,0,0,.5))}
+.slide .head{padding:112px var(--gr) 0 var(--g)}
+.slide h1,.slide h2{font:700 clamp(2rem,4.6vw,3.5rem)/1.06 var(--sans);letter-spacing:-.02em;margin:0 auto;max-width:22ch}
+.slide .sub{margin:14px auto 0;font-size:17px;max-width:52ch;opacity:.95}
+.slide h1,.slide h2,.slide .sub,.slide .dom{text-shadow:0 1px 3px rgba(0,0,0,.55),0 2px 22px rgba(0,0,0,.45)}
+.slide .dom{display:block;margin:0 0 12px;color:rgba(255,255,255,.8)}
+.slide .bot{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;padding:0 var(--gr) 56px var(--g)}
+@media (max-width:640px){.slide .btn{flex:1 1 220px;min-width:0}}
+
+/* cifras */
+.specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));text-align:center;padding-block:52px;gap:24px 0}
+.specs b{display:block;font:700 clamp(1.9rem,3.4vw,2.7rem)/1 var(--sans);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.specs span{display:block;margin-top:10px}
+.specs-note{text-align:center;padding-bottom:40px;margin:-16px 0 0}
+.specs-note a{color:var(--mut)}
+@media (max-width:760px){.specs{grid-template-columns:1fr 1fr}}
+
+
+/* hero: la foto panorámica arriba, completa; el texto entra sobre su borde inferior */
+.hero{--ph:min(46.4vw,72svh);position:relative;display:grid;grid-template-rows:auto 1fr auto;isolation:isolate;overflow:hidden;color:#fff;background:#0B0D0F}
+.hero picture{position:absolute;inset:0 0 auto 0;height:var(--ph);z-index:-2}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 82%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(11,13,15,.5) 0%,rgba(11,13,15,0) 18%,rgba(11,13,15,0) calc(var(--ph) - 200px),rgba(11,13,15,.75) calc(var(--ph) - 70px),#0B0D0F var(--ph)),
+  linear-gradient(90deg,rgba(11,13,15,.45) 0%,rgba(11,13,15,0) 40%)}
+.hero nav{position:relative}
+.hero > .wrap,.hero nav .wrap{width:100%}
+.nav-btn{min-width:0;height:38px;white-space:nowrap}
+@media (max-width:420px){.nav-btn{padding:0 12px;font-size:13px}.brand{font-size:13px}}
+.hero-body{display:grid;gap:22px;padding-top:calc(var(--ph) - 250px);padding-bottom:44px}
+.hero-eyebrow{color:#BBD6FF;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.hero h1{text-shadow:0 2px 24px rgba(0,0,0,.45)}
+.hero h1{font:700 clamp(2.3rem,4.6vw,4.2rem)/1 var(--sans);letter-spacing:-.03em;margin:0;max-width:20ch}
+.hero-acts{display:flex;gap:12px;flex-wrap:wrap}
+.hero-bar{border-top:1px solid rgba(255,255,255,.14)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding-block:22px 26px}
+.hero-stats b{display:block;font:700 clamp(1.5rem,2.6vw,2.1rem)/1 var(--sans);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.hero-stats span{display:block;margin-top:8px;color:rgba(255,255,255,.75);font-size:10.5px}
+@media (max-width:760px){
+  .hero{--ph:min(50svh,400px)}
+  .hero img{object-position:48% 88%}
+  .hero-body{padding-top:calc(var(--ph) - 130px)}
+  .hero-stats{grid-template-columns:1fr 1fr;row-gap:18px}
+  .hero-acts .btn{flex:1 1 220px;min-width:0}
+}
+
+/* qué es */
+.what{padding-block:96px}
+.what .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.what-body{display:grid;gap:18px;font-size:18px;line-height:1.65;max-width:60ch}
+.what-body p{margin:0}
+.what-body strong{font-weight:700}
+.defs{margin:24px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.defs div{padding:14px 0;border-bottom:1px solid var(--line);display:grid;gap:4px}
+.defs dd{margin:0;font-size:16px}
+@media (max-width:900px){.what .wrap{grid-template-columns:1fr;gap:28px}.what{padding-block:64px}}
+
+/* mapa anatómico */
+.anatomy{background:var(--soft);padding-block:96px}
+.anat-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:48px;align-items:center}
+.anat-fig{background:#fff;border-radius:12px;padding:22px 8px 8px;margin:0}
+.anat-fig figcaption{text-align:center;padding:10px 0 6px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.tab{appearance:none;border:0;background:#fff;color:var(--mut);height:36px;padding:0 14px;border-radius:4px;font:600 13.5px/1 var(--sans);cursor:pointer}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff}
+.panel h3{font:700 24px/1.15 var(--sans);margin:0 0 4px;letter-spacing:-.01em}
+.panel .sub{margin:0 0 16px;color:var(--mut)}
+.panel ul{margin:0;padding:0;list-style:none;background:#fff;border-radius:10px}
+.panel li{padding:14px 18px;border-bottom:1px solid var(--line);font-size:15.5px}
+.panel li:last-child{border-bottom:0}
+.panel li a{color:var(--acc)}
+@media (max-width:900px){.anat-grid{grid-template-columns:1fr;gap:28px}.anatomy{padding-block:64px}}
+
+/* SVG anatómico */
+.thx{width:100%;height:auto;display:block;user-select:none}
+.thx .g{cursor:pointer;transition:opacity .25s}
+.thx .lbl{cursor:pointer}
+.thx .hit{fill:none;stroke:transparent;stroke-width:22}
+.thx text{font:600 13px var(--mono);letter-spacing:.1em}
+.thx .lung{fill:#EBA9A1;stroke:#B9675F;stroke-width:1.2}
+.thx .fiss{fill:none;stroke:#B9675F;stroke-width:1.3}
+.thx .pleura{fill:none;stroke:#8DB3D9;stroke-width:5;opacity:.65}
+.thx .tree{fill:none;stroke:#F6E3DC;stroke-linecap:round;opacity:.9}
+.thx .trach,.thx .bron{fill:#F3EEE6;stroke:#A99C8B;stroke-width:1.1}
+.thx .ring{fill:none;stroke:#C8BBA8;stroke-width:1.4}
+.thx .heart{fill:#B9473F;stroke:#8A2F29;stroke-width:1}
+.thx .aorta{fill:none;stroke:#8A2F29;stroke-width:17;stroke-linecap:round}
+.thx .aorta-in{fill:none;stroke:#C9443B;stroke-width:14;stroke-linecap:round}
+.thx .svc,.thx .pa{fill:none;stroke:#2F4E7A;stroke-width:13;stroke-linecap:round}
+.thx .svc-in{fill:none;stroke:#4D74AD;stroke-width:10;stroke-linecap:round}
+.thx .pa-in{fill:none;stroke:#5B83BD;stroke-width:10;stroke-linecap:round}
+.thx .thymus{fill:#F2D9A8;stroke:#D2B26E;stroke-width:1;opacity:.75}
+.thx .vert{fill:#EFE8DA;stroke:#BDB09A;stroke-width:.8}
+.thx .chain{fill:none;stroke:#E2B13B;stroke-width:2.2}
+.thx .gang{fill:#F1C64F;stroke:#B98B1C;stroke-width:1}
+.thx .rib,.thx .clav{fill:none;stroke:#BFB29C;stroke-width:9;stroke-linecap:round;opacity:.85}
+.thx .rib-in,.thx .clav-in{fill:none;stroke:#F3EDE1;stroke-width:6.6;stroke-linecap:round;opacity:.95}
+.thx .cart{fill:none;stroke:#9FB9C6;stroke-width:7;stroke-linecap:round;opacity:.7}
+.thx .cart-in{fill:none;stroke:#DCEAF0;stroke-width:4.6;stroke-linecap:round}
+.thx .sternum{fill:#F3EDE1;stroke:#BFB29C;stroke-width:1.1}
+.thx .eso{fill:none;stroke:#C98B6E;stroke-width:6;opacity:.55}
+.thx .diaph{fill:none;stroke:#B2584C;stroke-width:4;opacity:.8}
+.thx .r1{fill:none;stroke:#9C8B6C;stroke-width:11;stroke-linecap:round}
+.thx .r1-in{fill:none;stroke:#F6EBD3;stroke-width:8;stroke-linecap:round}
+.thx .scal{fill:none;stroke:#A9574D;stroke-width:11;stroke-linecap:round;opacity:.85}
+.thx .plex{fill:none;stroke:#E2B13B;stroke-width:3.2;stroke-linecap:round}
+.thx .subcl{fill:none;stroke:#8A2F29;stroke-width:9;stroke-linecap:round}
+.thx .lbl text{fill:var(--mut)}
+.thx .lbl path{fill:none;stroke:#9A9C9F;stroke-width:.8}
+.thx .lbl circle{fill:var(--ink)}
+.thx.has-sel .g{opacity:.32}
+.thx.has-sel .g.active{opacity:1}
+.thx .lbl.active text{fill:var(--acc)}
+.thx .lbl.active path{stroke:var(--acc)}
+.thx .lbl.active circle{fill:var(--acc)}
+.mini{max-width:280px;margin:0 auto}
+.mini .rib{stroke-width:5}.mini .rib-in{stroke-width:3}
+.mini .cut{fill:none;stroke:var(--acc);stroke-width:3.2;stroke-linecap:round}
+.mini .port{fill:var(--acc)}
+.mini .air{fill:none;stroke:var(--acc);stroke-width:2.2;stroke-dasharray:4 3}
+.mini .ster{fill:#F3EDE1;stroke:#BFB29C}
+
+/* técnicas sin foto: dos columnas blancas */
+.pair{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.pair > div{padding:72px var(--gr) 72px var(--g);text-align:center;display:grid;gap:12px;justify-items:center;align-content:start}
+.pair > div + div{border-left:1px solid var(--line)}
+.pair h2{font:700 clamp(1.7rem,3vw,2.4rem)/1.08 var(--sans);letter-spacing:-.02em;margin:0}
+.pair p{margin:0;color:var(--mut);max-width:44ch}
+.pair .mini{width:100%;margin:14px 0}
+@media (max-width:760px){.pair{grid-template-columns:1fr}.pair > div + div{border-left:0;border-top:1px solid var(--line)}.pair > div{padding-block:56px}}
+
+/* catálogo */
+.catalog{background:var(--soft);padding-block:96px}
+.cat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.cat{background:#fff;border-radius:10px;padding:22px;display:grid;gap:10px;align-content:start}
+.cat h3{margin:0;font:700 17px/1.25 var(--sans)}
+.cat ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px;color:#3C3F42}
+.cat a{color:var(--acc)}
+@media (max-width:900px){.cat-grid{grid-template-columns:1fr 1fr}.catalog{padding-block:64px}}
+@media (max-width:560px){.cat-grid{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{padding-block:96px}
+.faq-list{margin-top:28px;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 24px;gap:16px;align-items:center;padding:22px 0;font:600 clamp(1.02rem,1.5vw,1.2rem)/1.35 var(--sans)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"";width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);justify-self:center;transition:transform .2s}
+.faq-item[open] summary::after{transform:rotate(225deg)}
+.faq-item p{margin:0;padding:0 40px 24px 0;color:#3C3F42;max-width:74ch}
+@media (max-width:640px){.faq{padding-block:64px}}
+
+/* autor */
+.author{display:grid;grid-template-columns:1fr 1fr;background:var(--soft)}
+.author-photo{position:relative;min-height:560px}
+.author-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.author-body{padding:72px max(var(--gr),56px) 72px 56px;display:grid;gap:20px;align-content:center;max-width:640px}
+.author-body h2{font:700 clamp(1.9rem,3.2vw,2.7rem)/1.04 var(--sans);letter-spacing:-.02em;margin:0}
+.fields{margin:0;display:grid;grid-template-columns:140px 1fr;border-top:1px solid #D6D7D7}
+.fields dt,.fields dd{margin:0;padding:12px 0;border-bottom:1px solid #D6D7D7}
+.fields dt{padding-right:14px}
+.fields dd{font-size:15.5px}
+.fields a{color:var(--acc);text-decoration:none}
+.fields a:hover{text-decoration:underline}
+@media (max-width:900px){.author{grid-template-columns:1fr}.author-photo{min-height:380px}.author-body{padding:40px var(--gr) 48px var(--g)}}
+@media (max-width:520px){.fields{grid-template-columns:1fr}.fields dt{border-bottom:0;padding-bottom:0}.fields dd{padding-top:4px}}
+
+/* contacto */
+.contact{padding-block:104px 72px;text-align:center}
+.contact h2{font:700 clamp(2rem,4.2vw,3.2rem)/1.06 var(--sans);letter-spacing:-.02em;margin:12px auto 28px;max-width:20ch}
+.contact .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.contact .alt{display:flex;gap:6px 24px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.contact .alt a{text-decoration:none;color:var(--mut)}
+.contact .alt a:hover{color:var(--ink)}
+@media (max-width:640px){.contact .btn{flex:1 1 220px;min-width:0}}
+
+/* footer */
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:36px 44px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px;font-size:13.5px;color:var(--mut)}
+footer b{display:block;color:var(--ink);margin-bottom:8px}
+footer a{display:block;color:var(--mut);text-decoration:none;padding:2px 0}
+footer a:hover{color:var(--ink)}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+/* menú en pantallas angostas */
+.nav-toggle{display:none;appearance:none;background:none;border:0;color:#fff;cursor:pointer;padding:10px;margin-right:-10px}
+.nav-toggle span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .25s,opacity .2s}
+.nav-toggle span+span{margin-top:5px}
+@media (max-width:900px){
+  .nav-toggle{display:block}
+  nav .wrap{position:relative;flex-wrap:wrap}
+  nav.open .navl{display:flex;flex-direction:column;position:absolute;top:100%;left:var(--g);right:var(--gr);z-index:30;background:#15181B;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:6px}
+  nav.open .navl a{padding:14px 12px}
+  nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.open .nav-toggle span:nth-child(2){opacity:0}
+  nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+
+  </style>
 </head>
 <body>
+<div class="net"><div class="wrap">
+  <a href="https://rats.cl">rats.cl</a><a href="https://cancerpulmonar.cl">cancerpulmonar.cl</a><a href="https://broncoscopia.cl">broncoscopia.cl</a><a href="https://videotoracoscopia.cl">videotoracoscopia.cl</a><a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
+</div></div>
 
-  <header>
-    <!-- BARRA DE RED CLÍNICA -->
-    <div class="topbar">
-      <div class="shell topbar-inner">
-        <a href="https://rats.cl">rats.cl</a>
-        <a href="https://cancerpulmonar.cl">cancerpulmonar.cl</a>
-        <a href="https://broncoscopia.cl">broncoscopia.cl</a>
-        <a href="https://videotoracoscopia.cl">videotoracoscopia.cl</a>
-        <a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
-      </div>
-    </div>
+<main id="inicio">
+<section class="hero">
+  <picture>
+    <source type="image/webp" srcset="imgs/hero-pab-cirugiatoracica-1600.webp 1600w, imgs/hero-pab-cirugiatoracica-2400.webp 2400w" sizes="100vw">
+    <img src="imgs/hero-pab-cirugiatoracica-2400.webp" alt="Pabellón de cirugía torácica con sistema robótico Da Vinci, Clínica Las Condes" width="2400" height="1079" fetchpriority="high">
+  </picture>
+  <nav><div class="wrap">
+    <a class="brand" href="#inicio">CirugiaToracica.cl</a>
+    <ul class="navl"><li><a href="#que-es">Qué es</a></li><li><a href="#como-puedo-ayudarte">Enfermedades</a></li><li><a href="#abordajes">Técnicas</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contacto">Contacto</a></li></ul>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" onclick="var n=this.closest('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button>
+  </div></nav>
+  <div class="wrap hero-body">
+    <span class="mono hero-eyebrow">Cirugía Torácica · Santiago</span>
+    <h1>Cirugía Torácica: ¿Qué hacemos y cómo te podemos ayudar?</h1>
+    <div class="hero-acts"><a class="btn btn--blue" href="#contacto">Agenda tu consulta</a><a class="btn btn--white" href="#como-puedo-ayudarte">Ver condiciones que tratamos</a></div>
+  </div>
+  <div class="hero-bar"><div class="wrap hero-stats">
+    <div><b>+5.700</b><span class="mono">Cirugías torácicas realizadas</span></div>
+    <div><b>+3.200</b><span class="mono">EBUS desde 2010</span></div>
+    <div><b>+200</b><span class="mono">RATS robóticas desde 2015</span></div>
+    <div><b>19</b><span class="mono">Años de experiencia</span></div>
+  </div></div>
+</section>
 
-    <!-- NAV -->
-    <nav id="nav">
-      <div class="shell nav-inner">
-        <a class="nav-logo" href="/">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="1.6" aria-hidden="true"><path d="M12 3v8"></path><path d="M12 11c0-2.6-2-4-3.6-4C6.4 7 5 8.6 5 11.4c0 3.6 1.6 7.6 3.6 7.6 1.8 0 3.4-1.4 3.4-4z"></path><path d="M12 11c0-2.6 2-4 3.6-4C17.6 7 19 8.6 19 11.4c0 3.6-1.6 7.6-3.6 7.6-1.8 0-3.4-1.4-3.4-4z"></path></svg>
-          <span>CirugiaToracica.cl</span>
-        </a>
-        <div class="nav-right">
-          <ul class="nav-links">
-            <li><a href="#que-es">Qué es</a></li>
-            <li><a href="#como-puedo-ayudarte">Enfermedades</a></li>
-            <li><a href="#tecnicas">Técnicas</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-          <a href="#contacto" class="nav-cta">Agenda tu consulta</a>
-          <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" onclick="const n=this.closest('nav');n.classList.toggle('nav-open');this.setAttribute('aria-expanded',n.classList.contains('nav-open'))"><span></span><span></span><span></span></button>
-        </div>
-      </div>
-    </nav>
-  </header>
+<section class="what"><div class="wrap">
+  <div>
+    <p class="eyebrow">La especialidad</p>
+    <h2 id="que-es" class="h2">¿Qué es la cirugía de tórax o cirugía torácica?</h2>
+    <dl class="defs">
+      <div><dt class="mono">Campo</dt><dd>Órganos de la cavidad torácica, salvo corazón y grandes vasos</dd></div>
+      <div><dt class="mono">Técnicas</dt><dd>VATS · RATS · broncoscopía intervencionista · cirugía abierta</dd></div>
+    </dl>
+  </div>
+  <div class="what-body">
+    <p><strong>Cirugía de tórax</strong> y <strong>cirugía torácica</strong> son dos nombres para la misma especialidad quirúrgica.</p>
+    <p>Un <strong>cirujano torácico</strong> es el subespecialista que realiza procedimientos quirúrgicos sobre todos los órganos contenidos en la cavidad torácica, con excepción del corazón y los grandes vasos.</p>
+    <p>Lo que distingue a los cirujanos torácicos modernos es su dominio tanto de la cirugía tradicional como de las técnicas mínimamente invasivas de vanguardia: videotoracoscopía (VATS), cirugía robótica (RATS) y broncoscopía intervencionista avanzada.</p>
+  </div>
+</div></section>
 
-  <main id="main-content">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="shell" style="width:100%">
-      <div class="hero-top">
-        <div class="hero-col-izq">
-          <span class="hero-pill">Cirugía Torácica</span>
-          <h1>Cirugía Torácica: ¿Qué hacemos y cómo te podemos ayudar?</h1>
-        </div>
-        <div class="hero-col-der">
-          <div class="hero-ctas">
-            <a class="btn-pill btn-pill--primario" href="#contacto">Agenda tu consulta →</a>
-            <a class="btn-pill btn-pill--secundario" href="#como-puedo-ayudarte">Ver condiciones que tratamos</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-media">
-      <div class="hero-foto">
-        <picture>
-          <source type="image/webp" srcset="imgs/hero-pab-cirugiatoracica-1600.webp 1600w, imgs/hero-pab-cirugiatoracica-2400.webp 2400w" sizes="(min-width: 1200px) 1200px, 100vw" />
-          <img src="imgs/hero-pab-cirugiatoracica.jpg" alt="Pabellón de cirugía torácica con sistema robótico Da Vinci, Clínica Las Condes" loading="eager" fetchpriority="high" width="2400" height="1079" decoding="async"/>
-        </picture>
-      </div>
-      <div class="statcluster statcluster--izq">
-        <div class="statcard"><div class="statcard-cifra">+5.700</div><div class="statcard-lbl">cirugías torácicas realizadas</div></div>
-        <div class="statcard"><div class="statcard-cifra">+3.200</div><div class="statcard-lbl">EBUS desde 2010</div></div>
-      </div>
-      <div class="statcluster statcluster--der">
-        <div class="statcard"><div class="statcard-cifra">+200</div><div class="statcard-lbl">RATS robóticas desde 2015</div></div>
-        <div class="statcard"><div class="statcard-cifra">19</div><div class="statcard-lbl">años de experiencia</div></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="shell">
-
-  <!-- QUÉ ES -->
-  <section class="que-es">
-    <div class="que-es-ilustracion">
-      <picture>
-        <source type="image/webp"
-                srcset="imgs/cirugia-ilustracion-960.webp 960w, imgs/cirugia-ilustracion.webp 1408w"
-                sizes="(max-width: 768px) calc(100vw - 64px), (max-width: 1024px) calc(100vw - 112px), 455px" />
-        <img src="imgs/cirugia-ilustracion.jpg"
-             srcset="imgs/cirugia-ilustracion-960.jpg 960w, imgs/cirugia-ilustracion.jpg 1408w"
-             sizes="(max-width: 768px) calc(100vw - 64px), (max-width: 1024px) calc(100vw - 112px), 455px"
-             alt="Ilustración de técnicas de cirugía torácica: VATS, cirugía robótica y procedimientos mínimamente invasivos" loading="lazy" decoding="async" width="1408" height="768" />
-      </picture>
-    </div>
-    <div class="que-es-texto">
-      <span class="eyebrow">La especialidad</span>
-      <h2 id="que-es" class="sec-titulo">¿Qué es la cirugía de tórax o cirugía torácica?</h2>
-      <p><strong>Cirugía de tórax</strong> y <strong>cirugía torácica</strong> son dos nombres para la misma especialidad quirúrgica.</p>
-      <p>Un <strong>cirujano torácico</strong> es el subespecialista que realiza procedimientos quirúrgicos sobre todos los órganos contenidos en la cavidad torácica, con excepción del corazón y los grandes vasos.</p>
-      <p>Lo que distingue a los cirujanos torácicos modernos es su dominio tanto de la cirugía tradicional como de las técnicas mínimamente invasivas de vanguardia: videotoracoscopía (VATS), cirugía robótica (RATS) y broncoscopía intervencionista avanzada.</p>
-    </div>
-  </section>
-
-  <!-- ENFERMEDADES QUE TRATAMOS — PESTAÑAS -->
-  <section class="enfermedades">
-    <div class="enfermedades-head">
-      <h2 id="como-puedo-ayudarte" class="eyebrow">Enfermedades que tratamos</h2>
-      <div class="sec-titulo">Encuentra tu condición</div>
-      <p>Tratamos una amplia gama de enfermedades que afectan la función pulmonar y las estructuras del tórax.</p>
-    </div>
+<section class="anatomy"><div class="wrap anat-grid">
+  <figure class="anat-fig">
+    <svg class="thx has-sel" viewBox="-40 0 680 620" role="group" aria-label="Tórax, vista anterior: zonas que trata la cirugía torácica"><defs><clipPath id="tCclip"><path d="M268 84 C252 64 220 62 204 90 C178 138 150 228 138 330 C132 390 132 440 140 490 C168 470 212 444 250 444 C268 444 280 450 288 458 L286 330 C286 302 280 290 274 272 C282 222 282 142 268 84 Z"></path><path d="M332 86 C350 66 384 66 398 94 C424 142 452 232 462 332 C468 392 468 452 462 508 C436 494 410 486 386 488 C402 472 422 454 430 430 C434 398 426 360 400 330 C372 302 342 292 336 272 C326 222 324 142 332 86 Z"></path></clipPath></defs><g class="anat"><rect class="vert" x="284" y="14" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="42" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="70" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="98" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="126" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="154" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="182" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="210" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="238" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="266" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="294" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="322" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="350" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="378" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="406" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="434" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="462" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="490" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="518" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="546" width="32" height="22" rx="4"></rect><rect class="vert" x="284" y="574" width="32" height="22" rx="4"></rect><g class="g" data-i="1"><path class="pleura" d="M268 84 C252 64 220 62 204 90 C178 138 150 228 138 330 C132 390 132 440 140 490 C168 470 212 444 250 444 C268 444 280 450 288 458 L286 330 C286 302 280 290 274 272 C282 222 282 142 268 84 Z"></path><path class="pleura" d="M332 86 C350 66 384 66 398 94 C424 142 452 232 462 332 C468 392 468 452 462 508 C436 494 410 486 386 488 C402 472 422 454 430 430 C434 398 426 360 400 330 C372 302 342 292 336 272 C326 222 324 142 332 86 Z"></path></g><g class="g active" data-i="0"><path class="lung" d="M268 84 C252 64 220 62 204 90 C178 138 150 228 138 330 C132 390 132 440 140 490 C168 470 212 444 250 444 C268 444 280 450 288 458 L286 330 C286 302 280 290 274 272 C282 222 282 142 268 84 Z"></path><path class="lung" d="M332 86 C350 66 384 66 398 94 C424 142 452 232 462 332 C468 392 468 452 462 508 C436 494 410 486 386 488 C402 472 422 454 430 430 C434 398 426 360 400 330 C372 302 342 292 336 272 C326 222 324 142 332 86 Z"></path><path class="fiss" d="M140 320 C180 310 232 312 276 300"></path><path class="fiss" d="M276 214 C240 262 190 362 150 474"></path><path class="fiss" d="M336 192 C372 252 420 362 448 500"></path></g><g class="g" data-i="5"><g clip-path="url(#tCclip)"><path class="tree" stroke-width="4.20" d="M268.0 292.0 L247.1 265.2"></path><path class="tree" stroke-width="3.02" d="M247.1 265.2 L225.2 249.3"></path><path class="tree" stroke-width="2.18" d="M225.2 249.3 L206.1 243.9"></path><path class="tree" stroke-width="1.57" d="M206.1 243.9 L191.2 246.6"></path><path class="tree" stroke-width="1.13" d="M191.2 246.6 L181.0 252.7"></path><path class="tree" stroke-width="0.81" d="M181.0 252.7 L176.2 260.3"></path><path class="tree" stroke-width="0.59" d="M176.2 260.3 L175.3 267.2"></path><path class="tree" stroke-width="0.59" d="M176.2 260.3 L170.8 264.0"></path><path class="tree" stroke-width="0.81" d="M181.0 252.7 L172.6 253.7"></path><path class="tree" stroke-width="0.59" d="M172.6 253.7 L167.4 257.2"></path><path class="tree" stroke-width="0.59" d="M172.6 253.7 L167.0 251.9"></path><path class="tree" stroke-width="1.13" d="M191.2 246.6 L180.2 245.0"></path><path class="tree" stroke-width="0.81" d="M180.2 245.0 L171.8 246.9"></path><path class="tree" stroke-width="0.59" d="M171.8 246.9 L166.9 250.8"></path><path class="tree" stroke-width="0.59" d="M171.8 246.9 L166.0 245.9"></path><path class="tree" stroke-width="0.81" d="M180.2 245.0 L173.0 241.2"></path><path class="tree" stroke-width="0.59" d="M173.0 241.2 L166.8 241.0"></path><path class="tree" stroke-width="0.59" d="M173.0 241.2 L169.3 236.8"></path><path class="tree" stroke-width="1.57" d="M206.1 243.9 L195.1 234.8"></path><path class="tree" stroke-width="1.13" d="M195.1 234.8 L184.1 232.7"></path><path class="tree" stroke-width="0.81" d="M184.1 232.7 L175.7 233.8"></path><path class="tree" stroke-width="0.59" d="M175.7 233.8 L170.4 237.7"></path><path class="tree" stroke-width="0.59" d="M175.7 233.8 L169.8 231.8"></path><path class="tree" stroke-width="0.81" d="M184.1 232.7 L177.0 229.2"></path><path class="tree" stroke-width="0.59" d="M177.0 229.2 L170.9 229.0"></path><path class="tree" stroke-width="0.59" d="M177.0 229.2 L173.2 224.8"></path><path class="tree" stroke-width="1.13" d="M195.1 234.8 L190.8 225.2"></path><path class="tree" stroke-width="0.81" d="M190.8 225.2 L184.1 220.2"></path><path class="tree" stroke-width="0.59" d="M184.1 220.2 L178.1 218.6"></path><path class="tree" stroke-width="0.59" d="M184.1 220.2 L180.8 215.4"></path><path class="tree" stroke-width="0.81" d="M190.8 225.2 L191.0 217.4"></path><path class="tree" stroke-width="0.59" d="M191.0 217.4 L188.4 212.2"></path><path class="tree" stroke-width="0.59" d="M191.0 217.4 L193.4 212.5"></path><path class="tree" stroke-width="2.18" d="M225.2 249.3 L214.3 234.2"></path><path class="tree" stroke-width="1.57" d="M214.3 234.2 L203.0 226.1"></path><path class="tree" stroke-width="1.13" d="M203.0 226.1 L193.0 223.6"></path><path class="tree" stroke-width="0.81" d="M193.0 223.6 L185.3 225.7"></path><path class="tree" stroke-width="0.59" d="M185.3 225.7 L180.7 229.8"></path><path class="tree" stroke-width="0.59" d="M185.3 225.7 L179.5 224.8"></path><path class="tree" stroke-width="0.81" d="M193.0 223.6 L187.3 218.8"></path><path class="tree" stroke-width="0.59" d="M187.3 218.8 L182.2 216.6"></path><path class="tree" stroke-width="0.59" d="M187.3 218.8 L184.3 214.5"></path><path class="tree" stroke-width="1.13" d="M203.0 226.1 L197.5 218.0"></path><path class="tree" stroke-width="0.81" d="M197.5 218.0 L191.2 214.1"></path><path class="tree" stroke-width="0.59" d="M191.2 214.1 L185.9 213.2"></path><path class="tree" stroke-width="0.59" d="M191.2 214.1 L188.1 210.1"></path><path class="tree" stroke-width="0.81" d="M197.5 218.0 L196.0 211.3"></path><path class="tree" stroke-width="0.59" d="M196.0 211.3 L192.6 207.5"></path><path class="tree" stroke-width="0.59" d="M196.0 211.3 L197.1 206.7"></path><path class="tree" stroke-width="1.57" d="M214.3 234.2 L209.9 221.9"></path><path class="tree" stroke-width="1.13" d="M209.9 221.9 L203.5 214.5"></path><path class="tree" stroke-width="0.81" d="M203.5 214.5 L196.4 211.4"></path><path class="tree" stroke-width="0.59" d="M196.4 211.4 L190.7 211.3"></path><path class="tree" stroke-width="0.59" d="M196.4 211.4 L192.6 207.6"></path><path class="tree" stroke-width="0.81" d="M203.5 214.5 L201.2 207.6"></path><path class="tree" stroke-width="0.59" d="M201.2 207.6 L197.8 203.4"></path><path class="tree" stroke-width="0.59" d="M201.2 207.6 L201.4 202.5"></path><path class="tree" stroke-width="1.13" d="M209.9 221.9 L209.8 212.7"></path><path class="tree" stroke-width="0.81" d="M209.8 212.7 L207.2 206.3"></path><path class="tree" stroke-width="0.59" d="M207.2 206.3 L203.6 202.4"></path><path class="tree" stroke-width="0.59" d="M207.2 206.3 L206.9 201.3"></path><path class="tree" stroke-width="0.81" d="M209.8 212.7 L211.8 206.6"></path><path class="tree" stroke-width="0.59" d="M211.8 206.6 L211.3 201.8"></path><path class="tree" stroke-width="0.59" d="M211.8 206.6 L214.8 203.1"></path><path class="tree" stroke-width="3.02" d="M247.1 265.2 L236.9 242.0"></path><path class="tree" stroke-width="2.18" d="M236.9 242.0 L221.7 230.2"></path><path class="tree" stroke-width="1.57" d="M221.7 230.2 L207.1 227.8"></path><path class="tree" stroke-width="1.13" d="M207.1 227.8 L196.3 230.7"></path><path class="tree" stroke-width="0.81" d="M196.3 230.7 L189.4 236.1"></path><path class="tree" stroke-width="0.59" d="M189.4 236.1 L186.9 242.2"></path><path class="tree" stroke-width="0.59" d="M189.4 236.1 L183.4 237.4"></path><path class="tree" stroke-width="0.81" d="M196.3 230.7 L188.1 229.9"></path><path class="tree" stroke-width="0.59" d="M188.1 229.9 L182.4 232.0"></path><path class="tree" stroke-width="0.59" d="M188.1 229.9 L183.1 227.2"></path><path class="tree" stroke-width="1.13" d="M207.1 227.8 L198.2 222.1"></path><path class="tree" stroke-width="0.81" d="M198.2 222.1 L190.3 221.1"></path><path class="tree" stroke-width="0.59" d="M190.3 221.1 L184.5 222.4"></path><path class="tree" stroke-width="0.59" d="M190.3 221.1 L185.3 218.6"></path><path class="tree" stroke-width="0.81" d="M198.2 222.1 L193.8 216.1"></path><path class="tree" stroke-width="0.59" d="M193.8 216.1 L188.5 213.5"></path><path class="tree" stroke-width="0.59" d="M193.8 216.1 L192.6 210.7"></path><path class="tree" stroke-width="1.57" d="M221.7 230.2 L215.4 217.8"></path><path class="tree" stroke-width="1.13" d="M215.4 217.8 L207.7 210.1"></path><path class="tree" stroke-width="0.81" d="M207.7 210.1 L200.5 206.2"></path><path class="tree" stroke-width="0.59" d="M200.5 206.2 L194.6 205.1"></path><path class="tree" stroke-width="0.59" d="M200.5 206.2 L196.5 202.2"></path><path class="tree" stroke-width="0.81" d="M207.7 210.1 L204.0 203.3"></path><path class="tree" stroke-width="0.59" d="M204.0 203.3 L199.1 200.4"></path><path class="tree" stroke-width="0.59" d="M204.0 203.3 L203.8 198.0"></path><path class="tree" stroke-width="1.13" d="M215.4 217.8 L213.4 207.8"></path><path class="tree" stroke-width="0.81" d="M213.4 207.8 L209.0 201.7"></path><path class="tree" stroke-width="0.59" d="M209.0 201.7 L204.1 198.7"></path><path class="tree" stroke-width="0.59" d="M209.0 201.7 L207.5 196.5"></path><path class="tree" stroke-width="0.81" d="M213.4 207.8 L214.8 200.8"></path><path class="tree" stroke-width="0.59" d="M214.8 200.8 L214.1 195.3"></path><path class="tree" stroke-width="0.59" d="M214.8 200.8 L217.2 196.2"></path><path class="tree" stroke-width="2.18" d="M236.9 242.0 L237.6 223.9"></path><path class="tree" stroke-width="1.57" d="M237.6 223.9 L231.3 211.1"></path><path class="tree" stroke-width="1.13" d="M231.3 211.1 L222.1 204.6"></path><path class="tree" stroke-width="0.81" d="M222.1 204.6 L213.8 203.3"></path><path class="tree" stroke-width="0.59" d="M213.8 203.3 L207.6 204.1"></path><path class="tree" stroke-width="0.59" d="M213.8 203.3 L208.4 201.0"></path><path class="tree" stroke-width="0.81" d="M222.1 204.6 L218.1 197.8"></path><path class="tree" stroke-width="0.59" d="M218.1 197.8 L213.9 193.9"></path><path class="tree" stroke-width="0.59" d="M218.1 197.8 L216.7 192.6"></path><path class="tree" stroke-width="1.13" d="M231.3 211.1 L231.2 200.5"></path><path class="tree" stroke-width="0.81" d="M231.2 200.5 L227.9 193.4"></path><path class="tree" stroke-width="0.59" d="M227.9 193.4 L223.2 189.7"></path><path class="tree" stroke-width="0.59" d="M227.9 193.4 L227.7 187.8"></path><path class="tree" stroke-width="0.81" d="M231.2 200.5 L233.9 193.6"></path><path class="tree" stroke-width="0.59" d="M233.9 193.6 L233.5 188.2"></path><path class="tree" stroke-width="0.59" d="M233.9 193.6 L237.5 190.0"></path><path class="tree" stroke-width="1.57" d="M237.6 223.9 L243.9 212.1"></path><path class="tree" stroke-width="1.13" d="M243.9 212.1 L243.8 202.2"></path><path class="tree" stroke-width="0.81" d="M243.8 202.2 L240.8 194.9"></path><path class="tree" stroke-width="0.59" d="M240.8 194.9 L237.1 190.3"></path><path class="tree" stroke-width="0.59" d="M240.8 194.9 L240.3 189.3"></path><path class="tree" stroke-width="0.81" d="M243.8 202.2 L246.1 195.2"></path><path class="tree" stroke-width="0.59" d="M246.1 195.2 L246.4 189.3"></path><path class="tree" stroke-width="0.59" d="M246.1 195.2 L249.1 190.5"></path><path class="tree" stroke-width="1.13" d="M243.9 212.1 L251.3 206.5"></path><path class="tree" stroke-width="0.81" d="M251.3 206.5 L254.8 200.0"></path><path class="tree" stroke-width="0.59" d="M254.8 200.0 L256.1 194.3"></path><path class="tree" stroke-width="0.59" d="M254.8 200.0 L258.6 196.0"></path><path class="tree" stroke-width="0.81" d="M251.3 206.5 L258.1 204.8"></path><path class="tree" stroke-width="0.59" d="M258.1 204.8 L262.7 201.8"></path><path class="tree" stroke-width="0.59" d="M258.1 204.8 L263.3 205.0"></path><path class="tree" stroke-width="3.60" d="M262.0 300.0 L232.7 306.2"></path><path class="tree" stroke-width="2.59" d="M232.7 306.2 L213.8 319.9"></path><path class="tree" stroke-width="1.87" d="M213.8 319.9 L204.2 334.0"></path><path class="tree" stroke-width="1.34" d="M204.2 334.0 L200.7 346.7"></path><path class="tree" stroke-width="0.97" d="M200.7 346.7 L200.9 356.9"></path><path class="tree" stroke-width="0.70" d="M200.9 356.9 L204.5 364.0"></path><path class="tree" stroke-width="0.70" d="M200.9 356.9 L198.1 363.8"></path><path class="tree" stroke-width="0.97" d="M200.7 346.7 L195.8 355.0"></path><path class="tree" stroke-width="0.70" d="M195.8 355.0 L194.9 361.9"></path><path class="tree" stroke-width="0.70" d="M195.8 355.0 L190.7 359.1"></path><path class="tree" stroke-width="1.34" d="M204.2 334.0 L194.5 341.7"></path><path class="tree" stroke-width="0.97" d="M194.5 341.7 L189.1 349.8"></path><path class="tree" stroke-width="0.70" d="M189.1 349.8 L187.0 357.1"></path><path class="tree" stroke-width="0.70" d="M189.1 349.8 L183.6 354.4"></path><path class="tree" stroke-width="0.97" d="M194.5 341.7 L186.1 345.3"></path><path class="tree" stroke-width="0.70" d="M186.1 345.3 L181.9 350.5"></path><path class="tree" stroke-width="0.70" d="M186.1 345.3 L179.8 345.0"></path><path class="tree" stroke-width="1.87" d="M213.8 319.9 L198.5 324.9"></path><path class="tree" stroke-width="1.34" d="M198.5 324.9 L189.8 334.1"></path><path class="tree" stroke-width="0.97" d="M189.8 334.1 L187.4 343.9"></path><path class="tree" stroke-width="0.70" d="M187.4 343.9 L189.1 351.4"></path><path class="tree" stroke-width="0.70" d="M187.4 343.9 L183.0 349.6"></path><path class="tree" stroke-width="0.97" d="M189.8 334.1 L180.8 337.3"></path><path class="tree" stroke-width="0.70" d="M180.8 337.3 L175.1 342.0"></path><path class="tree" stroke-width="0.70" d="M180.8 337.3 L173.9 337.6"></path><path class="tree" stroke-width="1.34" d="M198.5 324.9 L186.7 323.4"></path><path class="tree" stroke-width="0.97" d="M186.7 323.4 L178.3 326.6"></path><path class="tree" stroke-width="0.70" d="M178.3 326.6 L173.1 330.9"></path><path class="tree" stroke-width="0.70" d="M178.3 326.6 L172.0 327.0"></path><path class="tree" stroke-width="0.97" d="M186.7 323.4 L179.6 318.8"></path><path class="tree" stroke-width="0.70" d="M179.6 318.8 L173.2 318.3"></path><path class="tree" stroke-width="0.70" d="M179.6 318.8 L176.4 313.6"></path><path class="tree" stroke-width="2.59" d="M232.7 306.2 L211.1 302.6"></path><path class="tree" stroke-width="1.87" d="M211.1 302.6 L194.6 305.9"></path><path class="tree" stroke-width="1.34" d="M194.6 305.9 L184.7 313.6"></path><path class="tree" stroke-width="0.97" d="M184.7 313.6 L180.5 322.1"></path><path class="tree" stroke-width="0.70" d="M180.5 322.1 L179.6 329.1"></path><path class="tree" stroke-width="0.70" d="M180.5 322.1 L176.0 327.0"></path><path class="tree" stroke-width="0.97" d="M184.7 313.6 L176.1 315.8"></path><path class="tree" stroke-width="0.70" d="M176.1 315.8 L171.0 320.7"></path><path class="tree" stroke-width="0.70" d="M176.1 315.8 L169.6 314.3"></path><path class="tree" stroke-width="1.34" d="M194.6 305.9 L183.1 303.4"></path><path class="tree" stroke-width="0.97" d="M183.1 303.4 L174.0 305.5"></path><path class="tree" stroke-width="0.70" d="M174.0 305.5 L168.9 310.0"></path><path class="tree" stroke-width="0.70" d="M174.0 305.5 L167.7 304.0"></path><path class="tree" stroke-width="0.97" d="M183.1 303.4 L175.9 298.5"></path><path class="tree" stroke-width="0.70" d="M175.9 298.5 L169.6 297.4"></path><path class="tree" stroke-width="0.70" d="M175.9 298.5 L172.6 293.4"></path><path class="tree" stroke-width="1.87" d="M211.1 302.6 L197.2 295.1"></path><path class="tree" stroke-width="1.34" d="M197.2 295.1 L185.2 294.0"></path><path class="tree" stroke-width="0.97" d="M185.2 294.0 L176.2 297.5"></path><path class="tree" stroke-width="0.70" d="M176.2 297.5 L171.2 302.4"></path><path class="tree" stroke-width="0.70" d="M176.2 297.5 L169.6 297.6"></path><path class="tree" stroke-width="0.97" d="M185.2 294.0 L177.3 289.5"></path><path class="tree" stroke-width="0.70" d="M177.3 289.5 L170.8 288.7"></path><path class="tree" stroke-width="0.70" d="M177.3 289.5 L173.3 284.8"></path><path class="tree" stroke-width="1.34" d="M197.2 295.1 L189.8 286.5"></path><path class="tree" stroke-width="0.97" d="M189.8 286.5 L181.9 283.1"></path><path class="tree" stroke-width="0.70" d="M181.9 283.1 L175.3 283.1"></path><path class="tree" stroke-width="0.70" d="M181.9 283.1 L177.5 278.7"></path><path class="tree" stroke-width="0.97" d="M189.8 286.5 L187.2 278.8"></path><path class="tree" stroke-width="0.70" d="M187.2 278.8 L182.9 274.5"></path><path class="tree" stroke-width="0.70" d="M187.2 278.8 L187.8 273.1"></path><path class="tree" stroke-width="4.40" d="M262.0 300.0 L244.8 342.7"></path><path class="tree" stroke-width="3.17" d="M244.8 342.7 L247.4 375.8"></path><path class="tree" stroke-width="2.28" d="M247.4 375.8 L258.0 398.8"></path><path class="tree" stroke-width="1.64" d="M258.0 398.8 L271.6 413.1"></path><path class="tree" stroke-width="1.18" d="M271.6 413.1 L284.6 419.6"></path><path class="tree" stroke-width="0.85" d="M284.6 419.6 L295.6 419.8"></path><path class="tree" stroke-width="0.61" d="M295.6 419.8 L303.9 417.4"></path><path class="tree" stroke-width="0.61" d="M295.6 419.8 L303.3 422.1"></path><path class="tree" stroke-width="0.85" d="M284.6 419.6 L291.4 427.4"></path><path class="tree" stroke-width="0.61" d="M291.4 427.4 L299.0 430.4"></path><path class="tree" stroke-width="0.61" d="M291.4 427.4 L293.5 434.8"></path><path class="tree" stroke-width="1.18" d="M271.6 413.1 L277.4 425.5"></path><path class="tree" stroke-width="0.85" d="M277.4 425.5 L286.1 431.7"></path><path class="tree" stroke-width="0.61" d="M286.1 431.7 L293.7 432.5"></path><path class="tree" stroke-width="0.61" d="M286.1 431.7 L289.4 438.0"></path><path class="tree" stroke-width="0.85" d="M277.4 425.5 L277.4 435.4"></path><path class="tree" stroke-width="0.61" d="M277.4 435.4 L280.8 442.3"></path><path class="tree" stroke-width="0.61" d="M277.4 435.4 L274.4 442.0"></path><path class="tree" stroke-width="1.64" d="M258.0 398.8 L260.5 417.2"></path><path class="tree" stroke-width="1.18" d="M260.5 417.2 L268.7 429.4"></path><path class="tree" stroke-width="0.85" d="M268.7 429.4 L276.9 436.2"></path><path class="tree" stroke-width="0.61" d="M276.9 436.2 L284.1 439.2"></path><path class="tree" stroke-width="0.61" d="M276.9 436.2 L281.1 442.2"></path><path class="tree" stroke-width="0.85" d="M268.7 429.4 L271.9 438.9"></path><path class="tree" stroke-width="0.61" d="M271.9 438.9 L276.2 444.8"></path><path class="tree" stroke-width="0.61" d="M271.9 438.9 L272.4 445.7"></path><path class="tree" stroke-width="1.18" d="M260.5 417.2 L256.7 430.4"></path><path class="tree" stroke-width="0.85" d="M256.7 430.4 L258.4 441.3"></path><path class="tree" stroke-width="0.61" d="M258.4 441.3 L262.1 448.4"></path><path class="tree" stroke-width="0.61" d="M258.4 441.3 L257.3 448.8"></path><path class="tree" stroke-width="0.85" d="M256.7 430.4 L250.4 438.6"></path><path class="tree" stroke-width="0.61" d="M250.4 438.6 L247.8 446.2"></path><path class="tree" stroke-width="0.61" d="M250.4 438.6 L244.3 442.9"></path><path class="tree" stroke-width="2.28" d="M247.4 375.8 L241.8 398.9"></path><path class="tree" stroke-width="1.64" d="M241.8 398.9 L243.6 416.9"></path><path class="tree" stroke-width="1.18" d="M243.6 416.9 L251.5 427.9"></path><path class="tree" stroke-width="0.85" d="M251.5 427.9 L260.8 433.0"></path><path class="tree" stroke-width="0.61" d="M260.8 433.0 L268.7 434.1"></path><path class="tree" stroke-width="0.61" d="M260.8 433.0 L265.8 438.7"></path><path class="tree" stroke-width="0.85" d="M251.5 427.9 L253.7 437.6"></path><path class="tree" stroke-width="0.61" d="M253.7 437.6 L257.3 444.1"></path><path class="tree" stroke-width="0.61" d="M253.7 437.6 L253.4 444.6"></path><path class="tree" stroke-width="1.18" d="M243.6 416.9 L238.9 428.8"></path><path class="tree" stroke-width="0.85" d="M238.9 428.8 L240.0 438.9"></path><path class="tree" stroke-width="0.61" d="M240.0 438.9 L243.4 446.3"></path><path class="tree" stroke-width="0.61" d="M240.0 438.9 L238.7 446.4"></path><path class="tree" stroke-width="0.85" d="M238.9 428.8 L232.1 435.5"></path><path class="tree" stroke-width="0.61" d="M232.1 435.5 L229.4 441.9"></path><path class="tree" stroke-width="0.61" d="M232.1 435.5 L226.1 438.1"></path><path class="tree" stroke-width="1.64" d="M241.8 398.9 L233.0 413.4"></path><path class="tree" stroke-width="1.18" d="M233.0 413.4 L230.3 426.2"></path><path class="tree" stroke-width="0.85" d="M230.3 426.2 L231.3 435.6"></path><path class="tree" stroke-width="0.61" d="M231.3 435.6 L234.5 442.1"></path><path class="tree" stroke-width="0.61" d="M231.3 435.6 L229.9 442.3"></path><path class="tree" stroke-width="0.85" d="M230.3 426.2 L226.0 434.0"></path><path class="tree" stroke-width="0.61" d="M226.0 434.0 L225.4 440.7"></path><path class="tree" stroke-width="0.61" d="M226.0 434.0 L221.1 438.0"></path><path class="tree" stroke-width="1.18" d="M233.0 413.4 L223.9 421.6"></path><path class="tree" stroke-width="0.85" d="M223.9 421.6 L221.1 430.0"></path><path class="tree" stroke-width="0.61" d="M221.1 430.0 L221.5 436.6"></path><path class="tree" stroke-width="0.61" d="M221.1 430.0 L217.3 434.9"></path><path class="tree" stroke-width="0.85" d="M223.9 421.6 L215.8 423.7"></path><path class="tree" stroke-width="0.61" d="M215.8 423.7 L210.6 426.8"></path><path class="tree" stroke-width="0.61" d="M215.8 423.7 L210.2 423.8"></path><path class="tree" stroke-width="3.17" d="M244.8 342.7 L222.4 364.4"></path><path class="tree" stroke-width="2.28" d="M222.4 364.4 L213.1 385.1"></path><path class="tree" stroke-width="1.64" d="M213.1 385.1 L211.6 403.1"></path><path class="tree" stroke-width="1.18" d="M211.6 403.1 L216.9 416.1"></path><path class="tree" stroke-width="0.85" d="M216.9 416.1 L224.6 424.1"></path><path class="tree" stroke-width="0.61" d="M224.6 424.1 L233.0 426.5"></path><path class="tree" stroke-width="0.61" d="M224.6 424.1 L227.1 431.9"></path><path class="tree" stroke-width="0.85" d="M216.9 416.1 L217.3 426.6"></path><path class="tree" stroke-width="0.61" d="M217.3 426.6 L221.0 433.7"></path><path class="tree" stroke-width="0.61" d="M217.3 426.6 L214.6 433.6"></path><path class="tree" stroke-width="1.18" d="M211.6 403.1 L205.2 414.7"></path><path class="tree" stroke-width="0.85" d="M205.2 414.7 L203.8 424.5"></path><path class="tree" stroke-width="0.61" d="M203.8 424.5 L205.7 431.8"></path><path class="tree" stroke-width="0.61" d="M203.8 424.5 L200.3 430.8"></path><path class="tree" stroke-width="0.85" d="M205.2 414.7 L198.2 421.0"></path><path class="tree" stroke-width="0.61" d="M198.2 421.0 L195.3 427.6"></path><path class="tree" stroke-width="0.61" d="M198.2 421.0 L191.8 423.4"></path><path class="tree" stroke-width="1.64" d="M213.1 385.1 L201.9 397.8"></path><path class="tree" stroke-width="1.18" d="M201.9 397.8 L198.3 410.4"></path><path class="tree" stroke-width="0.85" d="M198.3 410.4 L200.1 420.5"></path><path class="tree" stroke-width="0.61" d="M200.1 420.5 L205.1 427.1"></path><path class="tree" stroke-width="0.61" d="M200.1 420.5 L198.1 428.0"></path><path class="tree" stroke-width="0.85" d="M198.3 410.4 L192.1 417.9"></path><path class="tree" stroke-width="0.61" d="M192.1 417.9 L189.8 424.9"></path><path class="tree" stroke-width="0.61" d="M192.1 417.9 L186.1 421.4"></path><path class="tree" stroke-width="1.18" d="M201.9 397.8 L190.8 403.2"></path><path class="tree" stroke-width="0.85" d="M190.8 403.2 L185.2 411.2"></path><path class="tree" stroke-width="0.61" d="M185.2 411.2 L183.5 418.1"></path><path class="tree" stroke-width="0.61" d="M185.2 411.2 L179.8 415.2"></path><path class="tree" stroke-width="0.85" d="M190.8 403.2 L181.6 403.1"></path><path class="tree" stroke-width="0.61" d="M181.6 403.1 L174.8 405.6"></path><path class="tree" stroke-width="0.61" d="M181.6 403.1 L175.2 400.8"></path><path class="tree" stroke-width="2.28" d="M222.4 364.4 L202.9 373.3"></path><path class="tree" stroke-width="1.64" d="M202.9 373.3 L192.4 386.1"></path><path class="tree" stroke-width="1.18" d="M192.4 386.1 L190.1 398.9"></path><path class="tree" stroke-width="0.85" d="M190.1 398.9 L191.5 408.4"></path><path class="tree" stroke-width="0.61" d="M191.5 408.4 L195.6 414.1"></path><path class="tree" stroke-width="0.61" d="M191.5 408.4 L189.7 414.7"></path><path class="tree" stroke-width="0.85" d="M190.1 398.9 L185.9 406.9"></path><path class="tree" stroke-width="0.61" d="M185.9 406.9 L186.1 414.0"></path><path class="tree" stroke-width="0.61" d="M185.9 406.9 L180.6 410.9"></path><path class="tree" stroke-width="1.18" d="M192.4 386.1 L181.2 391.1"></path><path class="tree" stroke-width="0.85" d="M181.2 391.1 L174.9 398.2"></path><path class="tree" stroke-width="0.61" d="M174.9 398.2 L172.8 405.1"></path><path class="tree" stroke-width="0.61" d="M174.9 398.2 L168.9 401.4"></path><path class="tree" stroke-width="0.85" d="M181.2 391.1 L172.2 391.3"></path><path class="tree" stroke-width="0.61" d="M172.2 391.3 L166.3 394.7"></path><path class="tree" stroke-width="0.61" d="M172.2 391.3 L166.4 388.7"></path><path class="tree" stroke-width="1.64" d="M202.9 373.3 L187.3 373.6"></path><path class="tree" stroke-width="1.18" d="M187.3 373.6 L177.2 379.3"></path><path class="tree" stroke-width="0.85" d="M177.2 379.3 L172.2 386.5"></path><path class="tree" stroke-width="0.61" d="M172.2 386.5 L170.7 392.7"></path><path class="tree" stroke-width="0.61" d="M172.2 386.5 L167.3 390.0"></path><path class="tree" stroke-width="0.85" d="M177.2 379.3 L169.0 380.2"></path><path class="tree" stroke-width="0.61" d="M169.0 380.2 L163.8 383.3"></path><path class="tree" stroke-width="0.61" d="M169.0 380.2 L163.5 378.7"></path><path class="tree" stroke-width="1.18" d="M187.3 373.6 L177.4 369.1"></path><path class="tree" stroke-width="0.85" d="M177.4 369.1 L168.8 369.8"></path><path class="tree" stroke-width="0.61" d="M168.8 369.8 L162.8 372.6"></path><path class="tree" stroke-width="0.61" d="M168.8 369.8 L162.8 368.2"></path><path class="tree" stroke-width="0.85" d="M177.4 369.1 L172.2 363.0"></path><path class="tree" stroke-width="0.61" d="M172.2 363.0 L166.7 360.8"></path><path class="tree" stroke-width="0.61" d="M172.2 363.0 L170.8 357.6"></path><path class="tree" stroke-width="4.20" d="M352.0 288.0 L371.0 259.8"></path><path class="tree" stroke-width="3.02" d="M371.0 259.8 L377.4 233.6"></path><path class="tree" stroke-width="2.18" d="M377.4 233.6 L376.6 213.9"></path><path class="tree" stroke-width="1.57" d="M376.6 213.9 L370.8 200.9"></path><path class="tree" stroke-width="1.13" d="M370.8 200.9 L362.3 193.6"></path><path class="tree" stroke-width="0.81" d="M362.3 193.6 L354.6 190.5"></path><path class="tree" stroke-width="0.59" d="M354.6 190.5 L348.2 191.3"></path><path class="tree" stroke-width="0.59" d="M354.6 190.5 L350.5 186.0"></path><path class="tree" stroke-width="0.81" d="M362.3 193.6 L358.0 187.0"></path><path class="tree" stroke-width="0.59" d="M358.0 187.0 L353.6 183.5"></path><path class="tree" stroke-width="0.59" d="M358.0 187.0 L356.5 181.9"></path><path class="tree" stroke-width="1.13" d="M370.8 200.9 L370.7 190.3"></path><path class="tree" stroke-width="0.81" d="M370.7 190.3 L367.4 183.4"></path><path class="tree" stroke-width="0.59" d="M367.4 183.4 L362.7 179.9"></path><path class="tree" stroke-width="0.59" d="M367.4 183.4 L367.3 177.9"></path><path class="tree" stroke-width="0.81" d="M370.7 190.3 L373.3 183.6"></path><path class="tree" stroke-width="0.59" d="M373.3 183.6 L372.9 178.4"></path><path class="tree" stroke-width="0.59" d="M373.3 183.6 L376.8 180.2"></path><path class="tree" stroke-width="1.57" d="M376.6 213.9 L380.5 201.1"></path><path class="tree" stroke-width="1.13" d="M380.5 201.1 L379.9 190.7"></path><path class="tree" stroke-width="0.81" d="M379.9 190.7 L375.6 184.1"></path><path class="tree" stroke-width="0.59" d="M375.6 184.1 L370.3 180.7"></path><path class="tree" stroke-width="0.59" d="M375.6 184.1 L374.4 178.3"></path><path class="tree" stroke-width="0.81" d="M379.9 190.7 L382.8 183.9"></path><path class="tree" stroke-width="0.59" d="M382.8 183.9 L382.5 178.1"></path><path class="tree" stroke-width="0.59" d="M382.8 183.9 L386.7 180.1"></path><path class="tree" stroke-width="1.13" d="M380.5 201.1 L386.2 193.2"></path><path class="tree" stroke-width="0.81" d="M386.2 193.2 L387.6 186.2"></path><path class="tree" stroke-width="0.59" d="M387.6 186.2 L387.1 180.8"></path><path class="tree" stroke-width="0.59" d="M387.6 186.2 L389.9 181.6"></path><path class="tree" stroke-width="0.81" d="M386.2 193.2 L391.9 189.6"></path><path class="tree" stroke-width="0.59" d="M391.9 189.6 L395.1 185.6"></path><path class="tree" stroke-width="0.59" d="M391.9 189.6 L396.5 188.3"></path><path class="tree" stroke-width="2.18" d="M377.4 233.6 L386.1 217.2"></path><path class="tree" stroke-width="1.57" d="M386.1 217.2 L388.2 203.7"></path><path class="tree" stroke-width="1.13" d="M388.2 203.7 L385.3 193.6"></path><path class="tree" stroke-width="0.81" d="M385.3 193.6 L379.9 188.0"></path><path class="tree" stroke-width="0.59" d="M379.9 188.0 L374.5 186.2"></path><path class="tree" stroke-width="0.59" d="M379.9 188.0 L378.3 182.9"></path><path class="tree" stroke-width="0.81" d="M385.3 193.6 L386.3 186.4"></path><path class="tree" stroke-width="0.59" d="M386.3 186.4 L384.7 181.1"></path><path class="tree" stroke-width="0.59" d="M386.3 186.4 L389.1 182.0"></path><path class="tree" stroke-width="1.13" d="M388.2 203.7 L393.2 195.2"></path><path class="tree" stroke-width="0.81" d="M393.2 195.2 L393.7 187.6"></path><path class="tree" stroke-width="0.59" d="M393.7 187.6 L391.5 182.5"></path><path class="tree" stroke-width="0.59" d="M393.7 187.6 L396.2 183.0"></path><path class="tree" stroke-width="0.81" d="M393.2 195.2 L399.2 191.1"></path><path class="tree" stroke-width="0.59" d="M399.2 191.1 L401.6 186.2"></path><path class="tree" stroke-width="0.59" d="M399.2 191.1 L404.2 190.3"></path><path class="tree" stroke-width="1.57" d="M386.1 217.2 L395.3 208.3"></path><path class="tree" stroke-width="1.13" d="M395.3 208.3 L398.3 199.1"></path><path class="tree" stroke-width="0.81" d="M398.3 199.1 L397.0 191.6"></path><path class="tree" stroke-width="0.59" d="M397.0 191.6 L393.5 186.7"></path><path class="tree" stroke-width="0.59" d="M397.0 191.6 L398.4 186.1"></path><path class="tree" stroke-width="0.81" d="M398.3 199.1 L403.3 193.9"></path><path class="tree" stroke-width="0.59" d="M403.3 193.9 L404.6 188.8"></path><path class="tree" stroke-width="0.59" d="M403.3 193.9 L407.8 192.1"></path><path class="tree" stroke-width="1.13" d="M395.3 208.3 L403.9 205.2"></path><path class="tree" stroke-width="0.81" d="M403.9 205.2 L408.6 200.4"></path><path class="tree" stroke-width="0.59" d="M408.6 200.4 L411.0 195.7"></path><path class="tree" stroke-width="0.59" d="M408.6 200.4 L412.9 198.0"></path><path class="tree" stroke-width="0.81" d="M403.9 205.2 L410.2 205.6"></path><path class="tree" stroke-width="0.59" d="M410.2 205.6 L414.3 203.7"></path><path class="tree" stroke-width="0.59" d="M410.2 205.6 L413.9 207.8"></path><path class="tree" stroke-width="3.02" d="M371.0 259.8 L391.1 244.3"></path><path class="tree" stroke-width="2.18" d="M391.1 244.3 L401.9 228.9"></path><path class="tree" stroke-width="1.57" d="M401.9 228.9 L403.5 214.2"></path><path class="tree" stroke-width="1.13" d="M403.5 214.2 L399.1 204.1"></path><path class="tree" stroke-width="0.81" d="M399.1 204.1 L393.8 198.2"></path><path class="tree" stroke-width="0.59" d="M393.8 198.2 L388.3 195.6"></path><path class="tree" stroke-width="0.59" d="M393.8 198.2 L391.6 192.9"></path><path class="tree" stroke-width="0.81" d="M399.1 204.1 L398.3 196.6"></path><path class="tree" stroke-width="0.59" d="M398.3 196.6 L396.0 191.6"></path><path class="tree" stroke-width="0.59" d="M398.3 196.6 L399.1 191.5"></path><path class="tree" stroke-width="1.13" d="M403.5 214.2 L409.0 205.4"></path><path class="tree" stroke-width="0.81" d="M409.0 205.4 L410.3 197.9"></path><path class="tree" stroke-width="0.59" d="M410.3 197.9 L409.6 192.4"></path><path class="tree" stroke-width="0.59" d="M410.3 197.9 L412.5 193.2"></path><path class="tree" stroke-width="0.81" d="M409.0 205.4 L414.8 201.1"></path><path class="tree" stroke-width="0.59" d="M414.8 201.1 L418.0 196.6"></path><path class="tree" stroke-width="0.59" d="M414.8 201.1 L419.6 199.2"></path><path class="tree" stroke-width="1.57" d="M401.9 228.9 L414.2 222.3"></path><path class="tree" stroke-width="1.13" d="M414.2 222.3 L421.0 213.7"></path><path class="tree" stroke-width="0.81" d="M421.0 213.7 L422.9 205.6"></path><path class="tree" stroke-width="0.59" d="M422.9 205.6 L421.5 199.5"></path><path class="tree" stroke-width="0.59" d="M422.9 205.6 L426.3 200.9"></path><path class="tree" stroke-width="0.81" d="M421.0 213.7 L428.0 210.1"></path><path class="tree" stroke-width="0.59" d="M428.0 210.1 L431.8 205.2"></path><path class="tree" stroke-width="0.59" d="M428.0 210.1 L433.8 209.6"></path><path class="tree" stroke-width="1.13" d="M414.2 222.3 L424.3 220.8"></path><path class="tree" stroke-width="0.81" d="M424.3 220.8 L431.1 216.1"></path><path class="tree" stroke-width="0.59" d="M431.1 216.1 L434.1 210.6"></path><path class="tree" stroke-width="0.59" d="M431.1 216.1 L436.9 214.9"></path><path class="tree" stroke-width="0.81" d="M424.3 220.8 L431.8 222.9"></path><path class="tree" stroke-width="0.59" d="M431.8 222.9 L437.3 221.8"></path><path class="tree" stroke-width="0.59" d="M431.8 222.9 L435.8 226.3"></path><path class="tree" stroke-width="2.18" d="M391.1 244.3 L407.4 237.6"></path><path class="tree" stroke-width="1.57" d="M407.4 237.6 L418.1 228.9"></path><path class="tree" stroke-width="1.13" d="M418.1 228.9 L422.6 219.5"></path><path class="tree" stroke-width="0.81" d="M422.6 219.5 L422.8 211.7"></path><path class="tree" stroke-width="0.59" d="M422.8 211.7 L420.8 206.4"></path><path class="tree" stroke-width="0.59" d="M422.8 211.7 L424.9 206.8"></path><path class="tree" stroke-width="0.81" d="M422.6 219.5 L427.9 214.5"></path><path class="tree" stroke-width="0.59" d="M427.9 214.5 L430.6 209.9"></path><path class="tree" stroke-width="0.59" d="M427.9 214.5 L432.3 212.2"></path><path class="tree" stroke-width="1.13" d="M418.1 228.9 L427.4 226.1"></path><path class="tree" stroke-width="0.81" d="M427.4 226.1 L433.2 221.6"></path><path class="tree" stroke-width="0.59" d="M433.2 221.6 L436.3 216.9"></path><path class="tree" stroke-width="0.59" d="M433.2 221.6 L438.1 219.7"></path><path class="tree" stroke-width="0.81" d="M427.4 226.1 L434.2 226.3"></path><path class="tree" stroke-width="0.59" d="M434.2 226.3 L439.0 225.0"></path><path class="tree" stroke-width="0.59" d="M434.2 226.3 L438.7 227.8"></path><path class="tree" stroke-width="1.57" d="M407.4 237.6 L420.2 236.0"></path><path class="tree" stroke-width="1.13" d="M420.2 236.0 L429.6 232.0"></path><path class="tree" stroke-width="0.81" d="M429.6 232.0 L434.2 226.2"></path><path class="tree" stroke-width="0.59" d="M434.2 226.2 L435.3 220.9"></path><path class="tree" stroke-width="0.59" d="M434.2 226.2 L438.8 223.9"></path><path class="tree" stroke-width="0.81" d="M429.6 232.0 L436.5 232.2"></path><path class="tree" stroke-width="0.59" d="M436.5 232.2 L441.7 230.4"></path><path class="tree" stroke-width="0.59" d="M436.5 232.2 L441.3 234.1"></path><path class="tree" stroke-width="1.13" d="M420.2 236.0 L429.7 237.2"></path><path class="tree" stroke-width="0.81" d="M429.7 237.2 L436.2 234.8"></path><path class="tree" stroke-width="0.59" d="M436.2 234.8 L439.5 231.0"></path><path class="tree" stroke-width="0.59" d="M436.2 234.8 L440.9 235.4"></path><path class="tree" stroke-width="0.81" d="M429.7 237.2 L435.2 240.6"></path><path class="tree" stroke-width="0.59" d="M435.2 240.6 L440.1 241.2"></path><path class="tree" stroke-width="0.59" d="M435.2 240.6 L437.9 244.3"></path><path class="tree" stroke-width="3.60" d="M356.0 292.0 L384.5 301.3"></path><path class="tree" stroke-width="2.59" d="M384.5 301.3 L406.5 301.9"></path><path class="tree" stroke-width="1.87" d="M406.5 301.9 L422.1 294.6"></path><path class="tree" stroke-width="1.34" d="M422.1 294.6 L431.8 285.1"></path><path class="tree" stroke-width="0.97" d="M431.8 285.1 L434.9 275.5"></path><path class="tree" stroke-width="0.70" d="M434.9 275.5 L434.3 268.0"></path><path class="tree" stroke-width="0.70" d="M434.9 275.5 L439.3 269.9"></path><path class="tree" stroke-width="0.97" d="M431.8 285.1 L440.7 281.9"></path><path class="tree" stroke-width="0.70" d="M440.7 281.9 L446.5 277.1"></path><path class="tree" stroke-width="0.70" d="M440.7 281.9 L447.7 281.6"></path><path class="tree" stroke-width="1.34" d="M422.1 294.6 L434.7 292.9"></path><path class="tree" stroke-width="0.97" d="M434.7 292.9 L442.7 287.2"></path><path class="tree" stroke-width="0.70" d="M442.7 287.2 L446.8 280.5"></path><path class="tree" stroke-width="0.70" d="M442.7 287.2 L449.8 285.3"></path><path class="tree" stroke-width="0.97" d="M434.7 292.9 L443.5 295.8"></path><path class="tree" stroke-width="0.70" d="M443.5 295.8 L450.7 294.6"></path><path class="tree" stroke-width="0.70" d="M443.5 295.8 L448.6 300.4"></path><path class="tree" stroke-width="1.87" d="M406.5 301.9 L421.1 308.8"></path><path class="tree" stroke-width="1.34" d="M421.1 308.8 L434.0 308.5"></path><path class="tree" stroke-width="0.97" d="M434.0 308.5 L442.5 304.2"></path><path class="tree" stroke-width="0.70" d="M442.5 304.2 L446.8 298.5"></path><path class="tree" stroke-width="0.70" d="M442.5 304.2 L449.2 303.8"></path><path class="tree" stroke-width="0.97" d="M434.0 308.5 L442.3 311.9"></path><path class="tree" stroke-width="0.70" d="M442.3 311.9 L448.9 311.2"></path><path class="tree" stroke-width="0.70" d="M442.3 311.9 L446.5 316.4"></path><path class="tree" stroke-width="1.34" d="M421.1 308.8 L429.0 318.0"></path><path class="tree" stroke-width="0.97" d="M429.0 318.0 L437.7 321.4"></path><path class="tree" stroke-width="0.70" d="M437.7 321.4 L444.7 320.7"></path><path class="tree" stroke-width="0.70" d="M437.7 321.4 L442.3 326.3"></path><path class="tree" stroke-width="0.97" d="M429.0 318.0 L431.3 326.5"></path><path class="tree" stroke-width="0.70" d="M431.3 326.5 L436.0 331.6"></path><path class="tree" stroke-width="0.70" d="M431.3 326.5 L430.3 332.9"></path><path class="tree" stroke-width="2.59" d="M384.5 301.3 L401.9 312.5"></path><path class="tree" stroke-width="1.87" d="M401.9 312.5 L416.6 316.8"></path><path class="tree" stroke-width="1.34" d="M416.6 316.8 L427.6 316.3"></path><path class="tree" stroke-width="0.97" d="M427.6 316.3 L435.4 312.4"></path><path class="tree" stroke-width="0.70" d="M435.4 312.4 L439.6 307.1"></path><path class="tree" stroke-width="0.70" d="M435.4 312.4 L441.8 311.9"></path><path class="tree" stroke-width="0.97" d="M427.6 316.3 L435.3 318.9"></path><path class="tree" stroke-width="0.70" d="M435.3 318.9 L441.6 317.9"></path><path class="tree" stroke-width="0.70" d="M435.3 318.9 L439.6 323.2"></path><path class="tree" stroke-width="1.34" d="M416.6 316.8 L425.3 322.4"></path><path class="tree" stroke-width="0.97" d="M425.3 322.4 L433.0 324.4"></path><path class="tree" stroke-width="0.70" d="M433.0 324.4 L438.9 323.5"></path><path class="tree" stroke-width="0.70" d="M433.0 324.4 L437.6 327.5"></path><path class="tree" stroke-width="0.97" d="M425.3 322.4 L430.1 328.1"></path><path class="tree" stroke-width="0.70" d="M430.1 328.1 L435.3 330.7"></path><path class="tree" stroke-width="0.70" d="M430.1 328.1 L431.8 333.3"></path><path class="tree" stroke-width="1.87" d="M401.9 312.5 L411.6 323.1"></path><path class="tree" stroke-width="1.34" d="M411.6 323.1 L421.4 327.6"></path><path class="tree" stroke-width="0.97" d="M421.4 327.6 L429.4 327.8"></path><path class="tree" stroke-width="0.70" d="M429.4 327.8 L435.0 325.2"></path><path class="tree" stroke-width="0.70" d="M429.4 327.8 L434.7 330.3"></path><path class="tree" stroke-width="0.97" d="M421.4 327.6 L426.7 332.9"></path><path class="tree" stroke-width="0.70" d="M426.7 332.9 L431.7 335.3"></path><path class="tree" stroke-width="0.70" d="M426.7 332.9 L429.0 337.6"></path><path class="tree" stroke-width="1.34" d="M411.6 323.1 L415.3 332.6"></path><path class="tree" stroke-width="0.97" d="M415.3 332.6 L420.8 338.0"></path><path class="tree" stroke-width="0.70" d="M420.8 338.0 L426.6 339.5"></path><path class="tree" stroke-width="0.70" d="M420.8 338.0 L422.7 343.2"></path><path class="tree" stroke-width="0.97" d="M415.3 332.6 L415.2 339.8"></path><path class="tree" stroke-width="0.70" d="M415.2 339.8 L417.0 345.1"></path><path class="tree" stroke-width="0.70" d="M415.2 339.8 L413.4 344.8"></path><path class="tree" stroke-width="4.40" d="M356.0 292.0 L372.4 337.1"></path><path class="tree" stroke-width="3.17" d="M372.4 337.1 L398.1 363.7"></path><path class="tree" stroke-width="2.28" d="M398.1 363.7 L423.3 373.9"></path><path class="tree" stroke-width="1.64" d="M423.3 373.9 L443.0 374.9"></path><path class="tree" stroke-width="1.18" d="M443.0 374.9 L457.6 370.3"></path><path class="tree" stroke-width="0.85" d="M457.6 370.3 L465.8 361.9"></path><path class="tree" stroke-width="0.61" d="M465.8 361.9 L469.2 353.7"></path><path class="tree" stroke-width="0.61" d="M465.8 361.9 L473.2 358.2"></path><path class="tree" stroke-width="0.85" d="M457.6 370.3 L468.5 371.8"></path><path class="tree" stroke-width="0.61" d="M468.5 371.8 L476.4 369.9"></path><path class="tree" stroke-width="0.61" d="M468.5 371.8 L475.3 375.3"></path><path class="tree" stroke-width="1.18" d="M443.0 374.9 L456.4 380.2"></path><path class="tree" stroke-width="0.85" d="M456.4 380.2 L466.7 380.8"></path><path class="tree" stroke-width="0.61" d="M466.7 380.8 L474.1 378.3"></path><path class="tree" stroke-width="0.61" d="M466.7 380.8 L473.4 383.8"></path><path class="tree" stroke-width="0.85" d="M456.4 380.2 L464.0 386.2"></path><path class="tree" stroke-width="0.61" d="M464.0 386.2 L471.1 388.9"></path><path class="tree" stroke-width="0.61" d="M464.0 386.2 L468.2 391.9"></path><path class="tree" stroke-width="1.64" d="M423.3 373.9 L437.7 385.6"></path><path class="tree" stroke-width="1.18" d="M437.7 385.6 L451.2 389.8"></path><path class="tree" stroke-width="0.85" d="M451.2 389.8 L462.2 389.7"></path><path class="tree" stroke-width="0.61" d="M462.2 389.7 L470.0 386.9"></path><path class="tree" stroke-width="0.61" d="M462.2 389.7 L469.6 392.1"></path><path class="tree" stroke-width="0.85" d="M451.2 389.8 L459.9 395.4"></path><path class="tree" stroke-width="0.61" d="M459.9 395.4 L467.3 397.5"></path><path class="tree" stroke-width="0.61" d="M459.9 395.4 L464.6 400.9"></path><path class="tree" stroke-width="1.18" d="M437.7 385.6 L444.6 396.8"></path><path class="tree" stroke-width="0.85" d="M444.6 396.8 L452.5 402.6"></path><path class="tree" stroke-width="0.61" d="M452.5 402.6 L459.8 404.1"></path><path class="tree" stroke-width="0.61" d="M452.5 402.6 L456.2 408.6"></path><path class="tree" stroke-width="0.85" d="M444.6 396.8 L446.5 405.8"></path><path class="tree" stroke-width="0.61" d="M446.5 405.8 L450.9 411.4"></path><path class="tree" stroke-width="0.61" d="M446.5 405.8 L445.1 412.4"></path><path class="tree" stroke-width="2.28" d="M398.1 363.7 L407.9 387.3"></path><path class="tree" stroke-width="1.64" d="M407.9 387.3 L422.2 401.4"></path><path class="tree" stroke-width="1.18" d="M422.2 401.4 L436.0 406.2"></path><path class="tree" stroke-width="0.85" d="M436.0 406.2 L447.4 405.1"></path><path class="tree" stroke-width="0.61" d="M447.4 405.1 L454.7 400.2"></path><path class="tree" stroke-width="0.61" d="M447.4 405.1 L455.2 407.9"></path><path class="tree" stroke-width="0.85" d="M436.0 406.2 L444.1 413.3"></path><path class="tree" stroke-width="0.61" d="M444.1 413.3 L451.9 415.0"></path><path class="tree" stroke-width="0.61" d="M444.1 413.3 L446.9 420.3"></path><path class="tree" stroke-width="1.18" d="M422.2 401.4 L427.4 414.2"></path><path class="tree" stroke-width="0.85" d="M427.4 414.2 L435.3 420.3"></path><path class="tree" stroke-width="0.61" d="M435.3 420.3 L442.3 422.9"></path><path class="tree" stroke-width="0.61" d="M435.3 420.3 L439.5 425.9"></path><path class="tree" stroke-width="0.85" d="M427.4 414.2 L426.7 423.5"></path><path class="tree" stroke-width="0.61" d="M426.7 423.5 L429.6 430.4"></path><path class="tree" stroke-width="0.61" d="M426.7 423.5 L423.2 429.6"></path><path class="tree" stroke-width="1.64" d="M407.9 387.3 L408.5 406.2"></path><path class="tree" stroke-width="1.18" d="M408.5 406.2 L415.2 418.9"></path><path class="tree" stroke-width="0.85" d="M415.2 418.9 L423.3 426.4"></path><path class="tree" stroke-width="0.61" d="M423.3 426.4 L431.1 428.6"></path><path class="tree" stroke-width="0.61" d="M423.3 426.4 L426.3 433.4"></path><path class="tree" stroke-width="0.85" d="M415.2 418.9 L417.1 429.1"></path><path class="tree" stroke-width="0.61" d="M417.1 429.1 L422.1 435.4"></path><path class="tree" stroke-width="0.61" d="M417.1 429.1 L415.3 436.4"></path><path class="tree" stroke-width="1.18" d="M408.5 406.2 L403.5 418.8"></path><path class="tree" stroke-width="0.85" d="M403.5 418.8 L403.9 429.6"></path><path class="tree" stroke-width="0.61" d="M403.9 429.6 L406.9 436.8"></path><path class="tree" stroke-width="0.61" d="M403.9 429.6 L401.9 436.7"></path><path class="tree" stroke-width="0.85" d="M403.5 418.8 L396.5 426.2"></path><path class="tree" stroke-width="0.61" d="M396.5 426.2 L394.2 433.6"></path><path class="tree" stroke-width="0.61" d="M396.5 426.2 L389.8 429.0"></path><path class="tree" stroke-width="3.17" d="M372.4 337.1 L371.4 371.9"></path><path class="tree" stroke-width="2.28" d="M371.4 371.9 L382.0 396.7"></path><path class="tree" stroke-width="1.64" d="M382.0 396.7 L396.6 409.6"></path><path class="tree" stroke-width="1.18" d="M396.6 409.6 L411.6 413.8"></path><path class="tree" stroke-width="0.85" d="M411.6 413.8 L423.4 411.3"></path><path class="tree" stroke-width="0.61" d="M423.4 411.3 L430.6 406.0"></path><path class="tree" stroke-width="0.61" d="M423.4 411.3 L431.6 412.6"></path><path class="tree" stroke-width="0.85" d="M411.6 413.8 L420.2 421.2"></path><path class="tree" stroke-width="0.61" d="M420.2 421.2 L428.5 423.6"></path><path class="tree" stroke-width="0.61" d="M420.2 421.2 L423.9 428.5"></path><path class="tree" stroke-width="1.18" d="M396.6 409.6 L402.8 422.9"></path><path class="tree" stroke-width="0.85" d="M402.8 422.9 L410.6 430.0"></path><path class="tree" stroke-width="0.61" d="M410.6 430.0 L418.5 432.1"></path><path class="tree" stroke-width="0.61" d="M410.6 430.0 L413.5 437.2"></path><path class="tree" stroke-width="0.85" d="M402.8 422.9 L403.7 432.8"></path><path class="tree" stroke-width="0.61" d="M403.7 432.8 L408.0 438.8"></path><path class="tree" stroke-width="0.61" d="M403.7 432.8 L401.2 439.3"></path><path class="tree" stroke-width="1.64" d="M382.0 396.7 L381.9 415.0"></path><path class="tree" stroke-width="1.18" d="M381.9 415.0 L388.4 428.1"></path><path class="tree" stroke-width="0.85" d="M388.4 428.1 L397.1 435.3"></path><path class="tree" stroke-width="0.61" d="M397.1 435.3 L404.8 438.2"></path><path class="tree" stroke-width="0.61" d="M397.1 435.3 L401.4 441.8"></path><path class="tree" stroke-width="0.85" d="M388.4 428.1 L389.3 438.6"></path><path class="tree" stroke-width="0.61" d="M389.3 438.6 L392.9 445.7"></path><path class="tree" stroke-width="0.61" d="M389.3 438.6 L387.4 445.9"></path><path class="tree" stroke-width="1.18" d="M381.9 415.0 L376.4 427.6"></path><path class="tree" stroke-width="0.85" d="M376.4 427.6 L375.1 438.0"></path><path class="tree" stroke-width="0.61" d="M375.1 438.0 L377.9 445.8"></path><path class="tree" stroke-width="0.61" d="M375.1 438.0 L371.1 444.6"></path><path class="tree" stroke-width="0.85" d="M376.4 427.6 L370.2 435.3"></path><path class="tree" stroke-width="0.61" d="M370.2 435.3 L367.5 442.1"></path><path class="tree" stroke-width="0.61" d="M370.2 435.3 L364.6 439.3"></path><path class="tree" stroke-width="2.28" d="M371.4 371.9 L361.2 395.1"></path><path class="tree" stroke-width="1.64" d="M361.2 395.1 L361.5 414.2"></path><path class="tree" stroke-width="1.18" d="M361.5 414.2 L366.6 427.4"></path><path class="tree" stroke-width="0.85" d="M366.6 427.4 L373.2 435.8"></path><path class="tree" stroke-width="0.61" d="M373.2 435.8 L380.4 439.8"></path><path class="tree" stroke-width="0.61" d="M373.2 435.8 L375.7 443.1"></path><path class="tree" stroke-width="0.85" d="M366.6 427.4 L367.7 437.4"></path><path class="tree" stroke-width="0.61" d="M367.7 437.4 L371.4 444.0"></path><path class="tree" stroke-width="0.61" d="M367.7 437.4 L365.9 444.3"></path><path class="tree" stroke-width="1.18" d="M361.5 414.2 L357.5 426.9"></path><path class="tree" stroke-width="0.85" d="M357.5 426.9 L358.3 437.2"></path><path class="tree" stroke-width="0.61" d="M358.3 437.2 L362.7 444.0"></path><path class="tree" stroke-width="0.61" d="M358.3 437.2 L355.5 444.3"></path><path class="tree" stroke-width="0.85" d="M357.5 426.9 L351.6 434.6"></path><path class="tree" stroke-width="0.61" d="M351.6 434.6 L349.6 441.9"></path><path class="tree" stroke-width="0.61" d="M351.6 434.6 L345.6 438.4"></path><path class="tree" stroke-width="1.64" d="M361.2 395.1 L348.3 407.6"></path><path class="tree" stroke-width="1.18" d="M348.3 407.6 L344.4 420.9"></path><path class="tree" stroke-width="0.85" d="M344.4 420.9 L345.5 431.5"></path><path class="tree" stroke-width="0.61" d="M345.5 431.5 L348.5 438.9"></path><path class="tree" stroke-width="0.61" d="M345.5 431.5 L344.2 438.9"></path><path class="tree" stroke-width="0.85" d="M344.4 420.9 L338.6 429.0"></path><path class="tree" stroke-width="0.61" d="M338.6 429.0 L336.0 436.5"></path><path class="tree" stroke-width="0.61" d="M338.6 429.0 L332.9 433.8"></path><path class="tree" stroke-width="1.18" d="M348.3 407.6 L335.9 411.5"></path><path class="tree" stroke-width="0.85" d="M335.9 411.5 L328.0 417.0"></path><path class="tree" stroke-width="0.61" d="M328.0 417.0 L324.4 423.1"></path><path class="tree" stroke-width="0.61" d="M328.0 417.0 L321.4 418.4"></path><path class="tree" stroke-width="0.85" d="M335.9 411.5 L326.8 411.7"></path><path class="tree" stroke-width="0.61" d="M326.8 411.7 L320.6 414.1"></path><path class="tree" stroke-width="0.61" d="M326.8 411.7 L320.8 409.9"></path></g><path class="bron" d="M292 232 L256 292 L268 300 L300 248 Z"></path><path class="bron" d="M300 248 C320 262 340 276 352 296 L362 288 C348 266 326 248 308 232 Z"></path><path class="trach" d="M290 18 L310 18 L310 236 Q300 254 290 236 Z"></path><path class="ring" d="M291 30 q9 4 18 0"></path><path class="ring" d="M291 41 q9 4 18 0"></path><path class="ring" d="M291 52 q9 4 18 0"></path><path class="ring" d="M291 63 q9 4 18 0"></path><path class="ring" d="M291 74 q9 4 18 0"></path><path class="ring" d="M291 85 q9 4 18 0"></path><path class="ring" d="M291 96 q9 4 18 0"></path><path class="ring" d="M291 107 q9 4 18 0"></path><path class="ring" d="M291 118 q9 4 18 0"></path><path class="ring" d="M291 129 q9 4 18 0"></path><path class="ring" d="M291 140 q9 4 18 0"></path><path class="ring" d="M291 151 q9 4 18 0"></path><path class="ring" d="M291 162 q9 4 18 0"></path><path class="ring" d="M291 173 q9 4 18 0"></path><path class="ring" d="M291 184 q9 4 18 0"></path><path class="ring" d="M291 195 q9 4 18 0"></path><path class="ring" d="M291 206 q9 4 18 0"></path><path class="ring" d="M291 217 q9 4 18 0"></path></g><g class="g" data-i="2"><path class="thymus" d="M288 172 C276 204 282 250 298 270 C304 248 302 210 300 182 C302 210 300 250 312 270 C326 248 330 204 316 172 Z"></path><path class="svc" d="M282 150 L282 300"></path><path class="svc-in" d="M282 150 L282 300"></path><path class="aorta" d="M314 304 C306 262 304 224 318 210 C334 196 356 204 356 230 C356 300 344 384 336 476"></path><path class="aorta-in" d="M314 304 C306 262 304 224 318 210 C334 196 356 204 356 230 C356 300 344 384 336 476"></path><path class="pa" d="M322 304 C330 288 340 280 358 276"></path><path class="pa-in" d="M322 304 C330 288 340 280 358 276"></path><path class="heart" d="M296 296 C278 300 270 330 274 372 C278 420 300 452 338 462 C384 472 420 450 424 410 C428 362 398 318 352 302 C334 296 312 294 296 296 Z"></path></g><g class="g" data-i="4"><path class="hit" d="M274 94 L274 420"></path><path class="chain" d="M274 94 L274 420"></path><ellipse class="gang" cx="274" cy="104" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="274" cy="138" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="274" cy="172" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="274" cy="206" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="274" cy="240" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="274" cy="274" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="274" cy="308" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="274" cy="342" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="274" cy="376" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="274" cy="410" rx="3.4" ry="4.6"></ellipse><path class="hit" d="M326 94 L326 420"></path><path class="chain" d="M326 94 L326 420"></path><ellipse class="gang" cx="326" cy="104" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="326" cy="138" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="326" cy="172" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="326" cy="206" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="326" cy="240" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="326" cy="274" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="326" cy="308" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="326" cy="342" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="326" cy="376" rx="3.4" ry="4.6"></ellipse><ellipse class="gang" cx="326" cy="410" rx="3.4" ry="4.6"></ellipse></g><g class="g" data-i="3"><path class="eso" d="M306 22 C308 200 312 330 318 440 C322 480 336 500 352 514"></path><path class="diaph" d="M132 494 C170 446 230 430 280 452 C292 458 300 462 312 462 C350 462 410 452 468 514"></path><path class="rib" d="M280 96 C251 72 230 94 230 126 C230 158 258 180 260 186"></path><path class="rib" d="M320 96 C349 72 370 94 370 126 C370 158 342 180 340 186"></path><path class="rib" d="M280 130 C227.2 106 196 128 196 160 C196 192 237.6 216 253 225"></path><path class="rib" d="M320 130 C372.8 106 404 128 404 160 C404 192 362.4 216 347 225"></path><path class="rib" d="M280 164 C206.9 140 167 162 167 194 C167 226 220.2 252 246 264"></path><path class="rib" d="M320 164 C393.1 140 433 162 433 194 C433 226 379.8 252 354 264"></path><path class="rib" d="M280 198 C192.9 174 147 196 147 228 C147 260 208.2 288 239 303"></path><path class="rib" d="M320 198 C407.1 174 453 196 453 228 C453 260 391.8 288 361 303"></path><path class="rib" d="M280 232 C184.5 208 135 230 135 262 C135 294 201 324 232 342"></path><path class="rib" d="M320 232 C415.5 208 465 230 465 262 C465 294 399 324 368 342"></path><path class="rib" d="M280 266 C180.3 242 129 264 129 296 C129 328 197.4 360 225 381"></path><path class="rib" d="M320 266 C419.7 242 471 264 471 296 C471 328 402.6 360 375 381"></path><path class="rib" d="M280 300 C178.9 276 127 298 127 330 C127 362 196.2 396 218 420"></path><path class="rib" d="M320 300 C421.1 276 473 298 473 330 C473 362 403.8 396 382 420"></path><path class="rib" d="M280 334 C180.3 310 129 332 129 364 C129 396 197.4 432 211 459"></path><path class="rib" d="M320 334 C419.7 310 471 332 471 364 C471 396 402.6 432 389 459"></path><path class="rib" d="M280 368 C184.5 344 135 366 135 398 C135 430 201 468 204 498"></path><path class="rib" d="M320 368 C415.5 344 465 366 465 398 C465 430 399 468 396 498"></path><path class="rib" d="M280 402 C191.5 378 145 400 145 432 C145 464 207 504 197 537"></path><path class="rib" d="M320 402 C408.5 378 455 400 455 432 C455 464 393 504 403 537"></path><path class="rib-in" d="M280 96 C251 72 230 94 230 126 C230 158 258 180 260 186"></path><path class="rib-in" d="M320 96 C349 72 370 94 370 126 C370 158 342 180 340 186"></path><path class="rib-in" d="M280 130 C227.2 106 196 128 196 160 C196 192 237.6 216 253 225"></path><path class="rib-in" d="M320 130 C372.8 106 404 128 404 160 C404 192 362.4 216 347 225"></path><path class="rib-in" d="M280 164 C206.9 140 167 162 167 194 C167 226 220.2 252 246 264"></path><path class="rib-in" d="M320 164 C393.1 140 433 162 433 194 C433 226 379.8 252 354 264"></path><path class="rib-in" d="M280 198 C192.9 174 147 196 147 228 C147 260 208.2 288 239 303"></path><path class="rib-in" d="M320 198 C407.1 174 453 196 453 228 C453 260 391.8 288 361 303"></path><path class="rib-in" d="M280 232 C184.5 208 135 230 135 262 C135 294 201 324 232 342"></path><path class="rib-in" d="M320 232 C415.5 208 465 230 465 262 C465 294 399 324 368 342"></path><path class="rib-in" d="M280 266 C180.3 242 129 264 129 296 C129 328 197.4 360 225 381"></path><path class="rib-in" d="M320 266 C419.7 242 471 264 471 296 C471 328 402.6 360 375 381"></path><path class="rib-in" d="M280 300 C178.9 276 127 298 127 330 C127 362 196.2 396 218 420"></path><path class="rib-in" d="M320 300 C421.1 276 473 298 473 330 C473 362 403.8 396 382 420"></path><path class="rib-in" d="M280 334 C180.3 310 129 332 129 364 C129 396 197.4 432 211 459"></path><path class="rib-in" d="M320 334 C419.7 310 471 332 471 364 C471 396 402.6 432 389 459"></path><path class="rib-in" d="M280 368 C184.5 344 135 366 135 398 C135 430 201 468 204 498"></path><path class="rib-in" d="M320 368 C415.5 344 465 366 465 398 C465 430 399 468 396 498"></path><path class="rib-in" d="M280 402 C191.5 378 145 400 145 432 C145 464 207 504 197 537"></path><path class="rib-in" d="M320 402 C408.5 378 455 400 455 432 C455 464 393 504 403 537"></path><path class="cart" d="M260 186 Q278 176 286 114"></path><path class="cart" d="M340 186 Q322 176 314 114"></path><path class="cart" d="M253 225 Q274 215 286 144"></path><path class="cart" d="M347 225 Q326 215 314 144"></path><path class="cart" d="M246 264 Q270 254 286 174"></path><path class="cart" d="M354 264 Q330 254 314 174"></path><path class="cart" d="M239 303 Q266 293 286 204"></path><path class="cart" d="M361 303 Q334 293 314 204"></path><path class="cart" d="M232 342 Q262 332 286 234"></path><path class="cart" d="M368 342 Q338 332 314 234"></path><path class="cart" d="M225 381 Q258 371 286 264"></path><path class="cart" d="M375 381 Q342 371 314 264"></path><path class="cart" d="M218 420 Q254 410 286 294"></path><path class="cart" d="M382 420 Q346 410 314 294"></path><path class="cart" d="M296 362 C262 400 214 470 197 537"></path><path class="cart" d="M304 362 C338 400 386 470 403 537"></path><path class="cart-in" d="M260 186 Q278 176 286 114"></path><path class="cart-in" d="M340 186 Q322 176 314 114"></path><path class="cart-in" d="M253 225 Q274 215 286 144"></path><path class="cart-in" d="M347 225 Q326 215 314 144"></path><path class="cart-in" d="M246 264 Q270 254 286 174"></path><path class="cart-in" d="M354 264 Q330 254 314 174"></path><path class="cart-in" d="M239 303 Q266 293 286 204"></path><path class="cart-in" d="M361 303 Q334 293 314 204"></path><path class="cart-in" d="M232 342 Q262 332 286 234"></path><path class="cart-in" d="M368 342 Q338 332 314 234"></path><path class="cart-in" d="M225 381 Q258 371 286 264"></path><path class="cart-in" d="M375 381 Q342 371 314 264"></path><path class="cart-in" d="M218 420 Q254 410 286 294"></path><path class="cart-in" d="M382 420 Q346 410 314 294"></path><path class="cart-in" d="M296 362 C262 400 214 470 197 537"></path><path class="cart-in" d="M304 362 C338 400 386 470 403 537"></path><path class="sternum" d="M282 102 L318 102 L313 150 L287 150 Z"></path><path class="sternum" d="M288 153 L312 153 L310 332 L290 332 Z"></path><path class="sternum" d="M292 335 L308 335 L300 364 Z"></path><path class="clav" d="M290 98 C260 92 230 102 200 92 C180 86 160 86 142 96"></path><path class="clav" d="M310 98 C340 92 370 102 400 92 C420 86 440 86 458 96"></path><path class="clav-in" d="M290 98 C260 92 230 102 200 92 C180 86 160 86 142 96"></path><path class="clav-in" d="M310 98 C340 92 370 102 400 92 C420 86 440 86 458 96"></path></g></g><g class="lbl active" data-i="0"><path d="M-34 250 H112 L196 262"></path><circle cx="196" cy="262" r="3.2"></circle><text x="-34" y="243">PULMÓN</text></g><g class="g" data-i="6"><path class="hit" d="M280 96 C251.0 72 230 94 230 126 C230 158 258.0 180 260 186"/><path class="r1" d="M280 96 C251.0 72 230 94 230 126 C230 158 258.0 180 260 186"/><path class="r1-in" d="M280 96 C251.0 72 230 94 230 126 C230 158 258.0 180 260 186"/><path class="hit" d="M320 96 C349.0 72 370 94 370 126 C370 158 342.0 180 340 186"/><path class="r1" d="M320 96 C349.0 72 370 94 370 126 C370 158 342.0 180 340 186"/><path class="r1-in" d="M320 96 C349.0 72 370 94 370 126 C370 158 342.0 180 340 186"/><path class="scal" d="M266 34 C258 64 248 92 240 118"/><path class="scal" d="M334 34 C342 64 352 92 360 118"/><path class="plex" d="M262 50 C230 74 196 92 140 108"/><path class="plex" d="M268 58 C236 84 202 100 144 118"/><path class="plex" d="M274 68 C244 94 208 108 150 128"/><path class="plex" d="M338 50 C370 74 404 92 460 108"/><path class="plex" d="M332 58 C364 84 398 100 456 118"/><path class="plex" d="M326 68 C356 94 392 108 450 128"/><path class="subcl" d="M284 150 C266 124 246 118 222 120 C198 122 170 128 140 140"/><path class="subcl" d="M344 208 C344 160 360 128 380 122 C404 116 432 126 460 140"/></g><g class="lbl" data-i="1"><path d="M-34 420 H112 L137 420"></path><circle cx="137" cy="420" r="3.2"></circle><text x="-34" y="413">PLEURA</text></g><g class="lbl" data-i="3"><path d="M-34 150 H112 L168 172"></path><circle cx="168" cy="172" r="3.2"></circle><text x="-34" y="143">PARED TORÁCICA</text></g><g class="lbl" data-i="5"><path d="M634 56 H488 L300 96"></path><circle cx="300" cy="96" r="3.2"></circle><text x="634" y="49" text-anchor="end">VÍA AÉREA</text></g><g class="lbl" data-i="4"><path d="M634 156 H488 L326 172"></path><circle cx="326" cy="172" r="3.2"></circle><text x="634" y="149" text-anchor="end">CADENA SIMPÁTICA</text></g><g class="lbl" data-i="2"><path d="M634 388 H488 L392 396"></path><circle cx="392" cy="396" r="3.2"></circle><text x="634" y="381" text-anchor="end">MEDIASTINO</text></g><g class="lbl" data-i="3"><path d="M634 540 H488 L340 500"></path><circle cx="340" cy="500" r="3.2"></circle><text x="634" y="533" text-anchor="end">ESÓFAGO</text></g><g class="lbl" data-i="6"><path d="M-34 74 H112 L214 112"></path><circle cx="214" cy="112" r="3.2"></circle><text x="-34" y="67">OPÉRCULO TORÁCICO</text></g></svg>
+    <figcaption class="mono">Tórax, vista anterior · toca una estructura</figcaption>
+  </figure>
+  <div>
+    <h2 id="como-puedo-ayudarte" class="eyebrow">Enfermedades que tratamos</h2>
+    <div class="h2">Encuentra tu condición</div>
+    <p class="lede">Tratamos una amplia gama de enfermedades que afectan la función pulmonar y las estructuras del tórax.</p>
     <div class="tabs" role="tablist" aria-label="Categorías de enfermedades">
-      <button class="tab" id="tab-0" role="tab" aria-selected="true" aria-controls="panel-0">Patología Pulmonar</button>
-      <button class="tab" id="tab-1" role="tab" aria-selected="false" aria-controls="panel-1" tabindex="-1">Patología Pleural</button>
-      <button class="tab" id="tab-2" role="tab" aria-selected="false" aria-controls="panel-2" tabindex="-1">Patología Mediastínica</button>
-      <button class="tab" id="tab-3" role="tab" aria-selected="false" aria-controls="panel-3" tabindex="-1">Pared Torácica y Esófago</button>
+      <button class="tab" id="tab-0" role="tab" aria-selected="true" aria-controls="panel-0">Pulmonar</button>
+      <button class="tab" id="tab-1" role="tab" aria-selected="false" aria-controls="panel-1" tabindex="-1">Pleural</button>
+      <button class="tab" id="tab-2" role="tab" aria-selected="false" aria-controls="panel-2" tabindex="-1">Mediastínica</button>
+      <button class="tab" id="tab-3" role="tab" aria-selected="false" aria-controls="panel-3" tabindex="-1">Pared y esófago</button>
       <button class="tab" id="tab-4" role="tab" aria-selected="false" aria-controls="panel-4" tabindex="-1">Hiperhidrosis</button>
-      <button class="tab" id="tab-5" role="tab" aria-selected="false" aria-controls="panel-5" tabindex="-1">Broncoscopía Intervencionista</button>
+      <button class="tab" id="tab-5" role="tab" aria-selected="false" aria-controls="panel-5" tabindex="-1">Broncoscopía</button>
+      <button class="tab" id="tab-6" role="tab" aria-selected="false" aria-controls="panel-6" tabindex="-1">Opérculo torácico</button>
     </div>
+    <div class="panel" id="panel-0" role="tabpanel" aria-labelledby="tab-0"><h3>Patología Pulmonar</h3><p class="sub">Cáncer, nódulos y enfisema</p><ul><li>Cáncer pulmonar — lobectomía, segmentectomía, neumonectomía</li><li>Nódulo pulmonar solitario — estudio, biopsia y resección</li><li>Metástasis pulmonares</li><li>Enfisema bulloso — bullectomía</li><li>Quistes pulmonares y absceso complicado</li></ul></div>
+    <div class="panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" hidden><h3>Patología Pleural</h3><p class="sub">Neumotórax, derrame y empiema</p><ul><li>Neumotórax espontáneo primario y secundario</li><li>Derrame pleural — diagnóstico y pleurodesis</li><li>Empiema pleural — drenaje y decorticación por VATS</li><li>Mesotelioma pleural</li><li>Biopsia pleural</li></ul></div>
+    <div class="panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden><h3>Patología Mediastínica</h3><p class="sub">Timoma, quistes y estadificación</p><ul><li>Timoma — timectomía por VATS o robótica</li><li>Quistes mediastínicos</li><li>Tumores neurogénicos</li><li>Estadificación ganglionar — mediastinoscopia, EBUS</li></ul></div>
+    <div class="panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden><h3>Pared Torácica y Esófago</h3><p class="sub">Pectus, tumores y esofagectomía</p><ul><li>Pectus excavatum — operación de Nuss</li><li>Tumores de pared torácica</li><li>Cáncer de esófago — esofagectomía robótica</li></ul></div>
+    <div class="panel" id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden><h3>Hiperhidrosis</h3><p class="sub">Sudoración excesiva y rubor facial</p><ul><li>Hiperhidrosis palmar, axilar y plantar</li><li>Simpatectomía torácica por VATS</li><li>Rubor facial patológico (eritrofobia)</li></ul></div>
+    <div class="panel" id="panel-5" role="tabpanel" aria-labelledby="tab-5" hidden><h3>Broncoscopía Intervencionista</h3><p class="sub">Diagnóstico e intervención sin incisión</p><ul><li><strong>EBUS:</strong> estadificación y biopsia ganglionar mediastínica</li><li><strong>CryoEBUS:</strong> biopsia criogénica, pionero en Latinoamérica</li><li><strong>Broncoscopía rígida:</strong> manejo de obstrucción central y stents</li><li><strong>Crioterapia endobronquial:</strong> destrucción de tumores endobronquiales</li><li>Láser y electrocauterio endobronquial</li><li>Diagnóstico y tratamiento broncoscópico avanzado</li></ul></div>
+    <div class="panel" id="panel-6" role="tabpanel" aria-labelledby="tab-6" hidden><h3>Opérculo Torácico</h3><p class="sub">Primera costilla y escalenos</p><ul><li><a href="https://rats.cl/operculo-toracico">Resección robótica de primera costilla</a></li><li>Escalenectomía / descompresión neurovascular</li></ul></div>
+  </div>
+</div></section>
 
-    <div class="panel" id="panel-0" role="tabpanel" aria-labelledby="tab-0">
-      <div class="panel-info">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="1.5" aria-hidden="true"><path d="M12 3v8"></path><path d="M12 11c0-2.6-2-4-3.6-4C6.4 7 5 8.6 5 11.4c0 3.6 1.6 7.6 3.6 7.6 1.8 0 3.4-1.4 3.4-4z"></path><path d="M12 11c0-2.6 2-4 3.6-4C17.6 7 19 8.6 19 11.4c0 3.6-1.6 7.6-3.6 7.6-1.8 0-3.4-1.4-3.4-4z"></path></svg>
-        <div class="panel-nombre">Patología Pulmonar</div>
-        <div class="panel-desc">Cáncer, nódulos y enfisema</div>
-      </div>
-      <ul class="panel-lista">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Cáncer pulmonar — lobectomía, segmentectomía, neumonectomía</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Nódulo pulmonar solitario — estudio, biopsia y resección</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Metástasis pulmonares</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Enfisema bulloso — bullectomía</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Quistes pulmonares y absceso complicado</li>
-      </ul>
-    </div>
+<div id="abordajes">
+<section class="slide">
+  <img src="imgs/rats-consola.webp" alt="Consola del sistema robótico Da Vinci en pabellón" width="1400" height="1985" loading="lazy" style="object-position:50% 58%">
+  <div class="head"><span class="dom mono" style="color:rgba(255,255,255,.85)">Cirugía de Tórax: vías de abordaje</span><h2>Cirugía Robótica (RATS)</h2><p class="sub">Sistema Da Vinci: visión 3D amplificada 10×, 7 grados de libertad.</p></div>
+  <div></div>
+  <div class="bot"><a class="btn btn--blue" href="https://rats.cl">Conocer rats.cl</a></div>
+</section>
+<section class="slide">
+  <picture>
+    <source media="(max-width: 760px)" srcset="imgs/bronco-vertical.webp">
+    <img src="imgs/bronco-diptico.webp" alt="Broncoscopio flexible para diagnóstico endoscópico de las vías respiratorias y procedimiento CryoEBUS: biopsia mediastínica con criosonda guiada por ultrasonido endobronquial" width="2134" height="1036" loading="lazy" style="object-position:50% 50%">
+  </picture>
+  <div class="head"><h2>Broncoscopía</h2><p class="sub">Diagnóstico e intervención endobronquial sin incisión. EBUS, CryoEBUS, broncoscopía rígida y más.</p></div>
+  <div></div>
+  <div class="bot"><a class="btn btn--blue" href="https://broncoscopia.cl">Conocer broncoscopia.cl</a></div>
+</section>
+<section class="slide">
+  <picture>
+    <source media="(max-width: 760px)" srcset="imgs/vats-quirofano-vertical.webp">
+    <img src="imgs/vats-quirofano.webp" alt="Cirugía VATS uniportal" width="1600" height="1200" loading="lazy" style="object-position:30% 50%">
+  </picture>
+  <div class="head"><h2>Videotoracoscopía (VATS)</h2><p class="sub">Cirugía mínimamente invasiva con cámara HD. 1–3 incisiones de 1–2 cm, sin separar costillas.</p></div>
+  <div></div>
+  <div class="bot"><a class="btn btn--blue" href="https://videotoracoscopia.cl">Conocer videotoracoscopia.cl</a></div>
+</section>
+<section class="pair solo">
+  <div>
+    <span class="mono">Toracotomía · esternotomía</span>
+    <h2>Cirugía Abierta</h2>
+    <p>Toracotomía y esternotomía para casos de alta complejidad. Acceso directo y amplio al tórax.</p>
+    <svg class="mini thx" viewBox="80 60 440 420" aria-hidden="true"><g><path class="rib" d="M280 96 C251 72 230 94 230 126 C230 158 258 180 260 186"></path><path class="rib-in" d="M280 96 C251 72 230 94 230 126 C230 158 258 180 260 186"></path><path class="rib" d="M320 96 C349 72 370 94 370 126 C370 158 342 180 340 186"></path><path class="rib-in" d="M320 96 C349 72 370 94 370 126 C370 158 342 180 340 186"></path><path class="rib" d="M280 130 C227.2 106 196 128 196 160 C196 192 237.6 216 253 225"></path><path class="rib-in" d="M280 130 C227.2 106 196 128 196 160 C196 192 237.6 216 253 225"></path><path class="rib" d="M320 130 C372.8 106 404 128 404 160 C404 192 362.4 216 347 225"></path><path class="rib-in" d="M320 130 C372.8 106 404 128 404 160 C404 192 362.4 216 347 225"></path><path class="rib" d="M280 164 C206.9 140 167 162 167 194 C167 226 220.2 252 246 264"></path><path class="rib-in" d="M280 164 C206.9 140 167 162 167 194 C167 226 220.2 252 246 264"></path><path class="rib" d="M320 164 C393.1 140 433 162 433 194 C433 226 379.8 252 354 264"></path><path class="rib-in" d="M320 164 C393.1 140 433 162 433 194 C433 226 379.8 252 354 264"></path><path class="rib" d="M280 198 C192.9 174 147 196 147 228 C147 260 208.2 288 239 303"></path><path class="rib-in" d="M280 198 C192.9 174 147 196 147 228 C147 260 208.2 288 239 303"></path><path class="rib" d="M320 198 C407.1 174 453 196 453 228 C453 260 391.8 288 361 303"></path><path class="rib-in" d="M320 198 C407.1 174 453 196 453 228 C453 260 391.8 288 361 303"></path><path class="rib" d="M280 232 C184.5 208 135 230 135 262 C135 294 201 324 232 342"></path><path class="rib-in" d="M280 232 C184.5 208 135 230 135 262 C135 294 201 324 232 342"></path><path class="rib" d="M320 232 C415.5 208 465 230 465 262 C465 294 399 324 368 342"></path><path class="rib-in" d="M320 232 C415.5 208 465 230 465 262 C465 294 399 324 368 342"></path><path class="rib" d="M280 266 C180.3 242 129 264 129 296 C129 328 197.4 360 225 381"></path><path class="rib-in" d="M280 266 C180.3 242 129 264 129 296 C129 328 197.4 360 225 381"></path><path class="rib" d="M320 266 C419.7 242 471 264 471 296 C471 328 402.6 360 375 381"></path><path class="rib-in" d="M320 266 C419.7 242 471 264 471 296 C471 328 402.6 360 375 381"></path><path class="rib" d="M280 300 C178.9 276 127 298 127 330 C127 362 196.2 396 218 420"></path><path class="rib-in" d="M280 300 C178.9 276 127 298 127 330 C127 362 196.2 396 218 420"></path><path class="rib" d="M320 300 C421.1 276 473 298 473 330 C473 362 403.8 396 382 420"></path><path class="rib-in" d="M320 300 C421.1 276 473 298 473 330 C473 362 403.8 396 382 420"></path><path class="rib" d="M280 334 C180.3 310 129 332 129 364 C129 396 197.4 432 211 459"></path><path class="rib-in" d="M280 334 C180.3 310 129 332 129 364 C129 396 197.4 432 211 459"></path><path class="rib" d="M320 334 C419.7 310 471 332 471 364 C471 396 402.6 432 389 459"></path><path class="rib-in" d="M320 334 C419.7 310 471 332 471 364 C471 396 402.6 432 389 459"></path><path class="ster" d="M286 102 L314 102 L310 332 L290 332 Z"></path><path class="cut" d="M150 380 C190 410 250 412 290 392"></path><path class="cut" d="M300 108 V326"></path></g></svg>
+  </div>
+</section>
+</div>
 
-    <div class="panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" hidden>
-      <div class="panel-info">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="1.5" aria-hidden="true"><path d="M12 2 2 7.5l10 5 10-5z"></path><path d="m2 12.5 10 5 10-5"></path><path d="m2 17.5 10 5 10-5"></path></svg>
-        <div class="panel-nombre">Patología Pleural</div>
-        <div class="panel-desc">Neumotórax, derrame y empiema</div>
-      </div>
-      <ul class="panel-lista">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Neumotórax espontáneo primario y secundario</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Derrame pleural — diagnóstico y pleurodesis</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Empiema pleural — drenaje y decorticación por VATS</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Mesotelioma pleural</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Biopsia pleural</li>
-      </ul>
-    </div>
+<section class="catalog"><div class="wrap">
+  <p class="eyebrow">Catálogo</p>
+  <h2 id="tecnicas" class="h2">Cirugía Torácica: Procedimientos</h2>
+  <div class="cat-grid">
+    <div class="cat"><span class="mono">Pulmón</span><h3>Resecciones pulmonares oncológicas</h3><ul><li>Resección en cuña (wedge resection)</li><li>Segmentectomía anatómica</li><li>Lobectomía</li><li>Bilobectomía</li><li>Neumonectomía</li><li>Lobectomía con manguito (sleeve lobectomy)</li></ul></div>
+    <div class="cat"><span class="mono">Pulmón</span><h3>Resecciones pulmonares no oncológicas</h3><ul><li>Bullectomía / cirugía de reducción de volumen pulmonar (LVRS)</li><li>Biopsia pulmonar quirúrgica</li><li>Resección de secuestro pulmonar / MAQ</li></ul></div>
+    <div class="cat"><span class="mono">Pleura</span><h3>Procedimientos pleurales</h3><ul><li>Pleurodesis mecánica/química (talco)</li><li>Decorticación pleural / Pleurectomía</li><li>Biopsia pleural</li><li>Drenaje de empiema/hemotórax retenido</li></ul></div>
+    <div class="cat"><span class="mono">Mediastino</span><h3>Procedimientos mediastínicos</h3><ul><li>Timectomía</li><li>Resección de masas/quistes mediastínicos</li><li>Disección/estadificación ganglionar mediastínica</li><li>Biopsia de masas mediastínicas</li></ul></div>
+    <div class="cat"><span class="mono">Esófago</span><h3>Procedimientos esofágicos</h3><ul><li>Tiempo torácico de esofagectomía (Ivor Lewis / McKeown)</li><li>Enucleación de leiomioma esofágico</li><li>Diverticulectomía esofágica</li></ul></div>
+    <div class="cat"><span class="mono">Diafragma</span><h3>Procedimientos diafragmáticos</h3><ul><li>Plicatura diafragmática</li><li>Reparación de hernia diafragmática</li><li>Resección/reconstrucción diafragmática</li></ul></div>
+    <div class="cat"><span class="mono">Urgencia</span><h3>Trauma y urgencias</h3><ul><li>Drenaje y aseo de hemotórax retenido</li><li>Manejo de lesiones penetrantes torácicas</li><li>Manejo del Neumotórax (Espontáneo o Traumático)</li><li>Estabilización quirúrgica de fracturas costales</li></ul></div>
+    <div class="cat"><span class="mono">Pared · opérculo</span><h3>Pared torácica y opérculo torácico</h3><ul><li>Resección de tumores de pared torácica</li><li><a href="https://rats.cl/operculo-toracico">Resección robótica de primera costilla</a></li><li>Escalenectomía / descompresión neurovascular</li></ul></div>
+    <div class="cat"><span class="mono">Trasplante</span><h3>Trasplante</h3><ul><li>Trasplante Monopulmonar</li><li>Trasplante Bipulmonar</li></ul></div>
+    <div class="cat"><span class="mono">Simpático · pericardio</span><h3>Sistema nervioso simpático y pericardio</h3><ul><li>Simpatectomía torácica</li><li>Ventana pericárdica</li><li>Pericardiectomía</li></ul></div>
+    <div class="cat"><span class="mono">Vía aérea · conducto</span><h3>Vía aérea y conducto torácico</h3><ul><li>Resección traqueal/bronquial asistida</li><li>Ligadura del conducto torácico</li></ul></div>
+    <div class="cat"><span class="mono">Abordajes</span><h3>Vías de acceso</h3><ul><li><a href="https://videotoracoscopia.cl">Videotoracoscopía (VATS)</a></li><li><a href="https://rats.cl">Cirugía robótica (RATS)</a></li><li><a href="https://broncoscopia.cl">Broncoscopía intervencionista</a></li></ul></div>
+  </div>
+</div></section>
 
-    <div class="panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
-      <div class="panel-info">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="1.5" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2.5"></rect><path d="M12 4v16"></path></svg>
-        <div class="panel-nombre">Patología Mediastínica</div>
-        <div class="panel-desc">Timoma, quistes y estadificación</div>
-      </div>
-      <ul class="panel-lista">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Timoma — timectomía por VATS o robótica</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Quistes mediastínicos</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Tumores neurogénicos</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Estadificación ganglionar — mediastinoscopia, EBUS</li>
-      </ul>
-    </div>
+<section class="faq" id="faq"><div class="wrap">
+  <p class="eyebrow">FAQ</p>
+  <h2 class="h2">Preguntas frecuentes</h2>
+  <div class="faq-list">
+    <details class="faq-item"><summary>¿Qué es la cirugía torácica?</summary><p>Es la especialidad quirúrgica dedicada a las enfermedades del tórax: pulmón, pleura, mediastino, tráquea, pared torácica y esófago. Abarca desde la biopsia de un nódulo hasta la resección de un cáncer pulmonar, el manejo del neumotórax, los tumores del mediastino y el trasplante pulmonar.</p></details>
+    <details class="faq-item"><summary>¿Es lo mismo que cirugía cardíaca o cardiotorácica?</summary><p>No. La cirugía torácica general no opera el corazón ni los grandes vasos; eso corresponde a la cirugía cardíaca. En Chile ambas son especialidades separadas, con formación distinta. El término "cardiotorácico" se usa en otros países donde las dos se ejercen juntas.</p></details>
+    <details class="faq-item"><summary>¿Qué diferencia hay entre un cirujano de tórax y un broncopulmonar?</summary><p>El broncopulmonar (neumólogo) diagnostica y trata con medicamentos las enfermedades respiratorias; el cirujano torácico resuelve las que requieren pabellón: extirpar un tumor, tomar una biopsia quirúrgica, drenar la pleura, corregir un neumotórax. Habitualmente trabajan juntos sobre el mismo paciente.</p></details>
+    <details class="faq-item"><summary>¿Cuándo debo consultar a un cirujano de tórax?</summary><p>Cuando un examen de imagen muestra un nódulo o masa pulmonar, un tumor en el mediastino o líquido en la pleura; cuando hay sospecha o diagnóstico de cáncer de pulmón; ante neumotórax repetidos; o por sudoración excesiva de manos, axilas o rubor facial que no responde a tratamiento médico.</p></details>
+    <details class="faq-item"><summary>Me encontraron un nódulo pulmonar en un scanner. ¿Me tengo que operar?</summary><p>No necesariamente. La mayoría de los nódulos pulmonares son benignos. La conducta depende del tamaño, la densidad, la ubicación y los factores de riesgo del paciente: puede indicarse seguimiento con scanner, un PET-CT, una biopsia por broncoscopía o punción, o cirugía diagnóstica. Un nódulo detectado no equivale a un cáncer.</p></details>
+    <details class="faq-item"><summary>¿La cirugía de tórax significa que me van a abrir el pecho?</summary><p>En la mayoría de los casos, no. Hoy el estándar es la cirugía mínimamente invasiva: videotoracoscopía (VATS) o cirugía robótica (RATS), con dos a cuatro incisiones de entre 8 mm y 4 cm. La toracotomía abierta se reserva para tumores extensos o situaciones específicas.</p></details>
+    <details class="faq-item"><summary>¿Qué son la videotoracoscopía (VATS) y la cirugía robótica (RATS)?</summary><p>Son dos técnicas mínimamente invasivas. En la VATS se opera con una cámara e instrumentos largos a través de pequeñas incisiones. En la RATS el cirujano maneja brazos robóticos desde una consola, con visión 3D e instrumentos articulados, lo que aporta mayor precisión en la disección de ganglios y en espacios estrechos. Ambas evitan separar las costillas.</p></details>
+    <details class="faq-item"><summary>¿Necesito una interconsulta para ser evaluado?</summary><p>No es un requisito. Puedes consultar directamente. Sí ayuda llegar con las imágenes en disco o digital (radiografía, scanner, PET-CT), los informes y cualquier biopsia previa: eso permite resolver la conducta en la primera consulta en vez de citar a una segunda.</p></details>
+    <details class="faq-item"><summary>¿Tiene sentido pedir una segunda opinión?</summary><p>Sí, y es una práctica habitual en patología torácica oncológica. Ante un diagnóstico de cáncer, una indicación de cirugía abierta o una recomendación de "solo observar" un nódulo, una segunda opinión especializada puede reforzar o cambiar la conducta. Se puede realizar por telemedicina revisando las imágenes y biopsias existentes.</p></details>
+  </div>
+</div></section>
 
-    <div class="panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
-      <div class="panel-info">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="1.5" aria-hidden="true"><path d="M12 3 5 6v6.5c0 4.3 2.9 7.2 7 8.5 4.1-1.3 7-4.2 7-8.5V6z"></path></svg>
-        <div class="panel-nombre">Pared Torácica y Esófago</div>
-        <div class="panel-desc">Pectus, tumores y esofagectomía</div>
-      </div>
-      <ul class="panel-lista">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Pectus excavatum — operación de Nuss</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Tumores de pared torácica</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Cáncer de esófago — esofagectomía robótica</li>
-      </ul>
-    </div>
+<section class="author">
+  <div class="author-photo"><img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico en Clínica Las Condes, Santiago de Chile" width="800" height="800" loading="lazy" style="object-position:50% 25%"></div>
+  <div class="author-body">
+    <p class="eyebrow">Sobre el autor</p>
+    <h2>Dr. David Lazo Pérez</h2>
+    <dl class="fields">
+      <dt class="mono">Especialidad</dt><dd>Cirujano Torácico</dd>
+      <dt class="mono">Atiende en</dt><dd>Clínica Las Condes · Hospital Clínico San Borja Arriarán</dd>
+      <dt class="mono">Formación</dt><dd>Médico-cirujano, PUC de Chile · Cirugía Torácica, Universidad de Chile · Trasplante Pulmonar, Hospital Puerta de Hierro Majadahonda, España</dd>
+      <dt class="mono">Cargo</dt><dd><a href="/docencia#wabip">Regente por Chile de la Asociación Mundial de Broncología (WABIP)</a></dd>
+      <dt class="mono">Docencia</dt><dd>Programa de perfeccionamiento, Escuela de Postgrado U. de Chile (2014–2022) · Comité académico de la subespecialidad en Cirugía de Tórax, U. Finis Terrae</dd>
+      <dt class="mono">Producción</dt><dd><a href="/publicaciones">31 publicaciones indexadas</a></dd>
+    </dl>
+    <div><a class="btn btn--blue" href="/perfil">Ver perfil completo</a></div>
+  </div>
+</section>
 
-    <div class="panel" id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
-      <div class="panel-info">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="1.5" aria-hidden="true"><path d="M12 3c3.5 5 6 8.2 6 11a6 6 0 0 1-12 0c0-2.8 2.5-6 6-11z"></path></svg>
-        <div class="panel-nombre">Hiperhidrosis</div>
-        <div class="panel-desc">Sudoración excesiva y rubor facial</div>
-      </div>
-      <ul class="panel-lista">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Hiperhidrosis palmar, axilar y plantar</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Simpatectomía torácica por VATS</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Rubor facial patológico (eritrofobia)</li>
-      </ul>
-    </div>
+<section class="contact" id="contacto"><div class="wrap">
+  <p class="eyebrow">Primer paso</p>
+  <h2>Hable directamente con el especialista</h2>
+  <div class="row">
+    <a class="btn btn--blue" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&amp;apellidoPat=LAZO&amp;apellidoMat=PEREZ" target="_blank" rel="noopener">Clínica Las Condes · hora presencial</a>
+    <a class="btn btn--soft" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">Telemedicina · todo Chile</a>
+  </div>
+  <div class="alt mono">
+    <a href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener">Doctoralia</a>
+    <a href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener">Instagram · @dr.david.lazo.p</a>
+    <a href="https://orcid.org/0009-0007-0806-6679" target="_blank" rel="noopener">ORCID</a>
+  </div>
+</div></section>
+</main>
 
-    <div class="panel" id="panel-5" role="tabpanel" aria-labelledby="tab-5" hidden>
-      <div class="panel-info">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="4"></circle><path d="M10 10c3 3 4 5 4 11M7 5v4M5 7h4"></path></svg>
-        <div class="panel-nombre">Broncoscopía Intervencionista</div>
-        <div class="panel-desc">Diagnóstico e intervención sin incisión</div>
-      </div>
-      <ul class="panel-lista">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg><span><strong>EBUS:</strong> estadificación y biopsia ganglionar mediastínica</span></li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg><span><strong>CryoEBUS:</strong> biopsia criogénica, pionero en Latinoamérica</span></li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg><span><strong>Broncoscopía rígida:</strong> manejo de obstrucción central y stents</span></li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg><span><strong>Crioterapia endobronquial:</strong> destrucción de tumores endobronquiales</span></li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Láser y electrocauterio endobronquial</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="2" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>Diagnóstico y tratamiento broncoscópico avanzado</li>
-      </ul>
-    </div>
-  </section>
+<footer><div class="wrap">
+  <div><b>CirugiaToracica.cl</b>© 2026 · Dr. David Lazo Pérez · Cirugía Torácica · Santiago, Chile<br>Revisado por Dr. David Lazo Pérez, cirujano torácico — actualizado agosto 2026</div>
+  <div><b>Red clínica</b><a href="https://rats.cl">rats.cl</a><a href="https://cancerpulmonar.cl">cancerpulmonar.cl</a><a href="https://broncoscopia.cl">broncoscopia.cl</a><a href="https://videotoracoscopia.cl">videotoracoscopia.cl</a><a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a></div>
+  <div><b>Redes</b><a href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/">LinkedIn</a><a href="https://www.instagram.com/dr.david.lazo.p/">Instagram · @dr.david.lazo.p</a><a href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago">Doctoralia</a></div>
+</div></footer>
 
-  <!-- VÍAS DE ABORDAJE -->
-  <section class="abordajes">
-    <div class="abordajes-head">
-      <span class="eyebrow">Técnicas</span>
-      <h2 id="abordajes" class="sec-titulo">Cirugía de Tórax: vías de abordaje</h2>
-    </div>
-    <div class="abordajes-grid">
-      <a class="abordaje-card" href="https://cirugiatoracica.cl" target="_blank" rel="noopener">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="1.5" aria-hidden="true"><path d="M4 17 15 6l3 3L7 20z"></path><path d="M15 3h5v5"></path></svg>
-        <h3>Cirugía Abierta</h3>
-        <p>Toracotomía y esternotomía para casos de alta complejidad. Acceso directo y amplio al tórax.</p>
-        <span class="abordaje-link">cirugiatoracica.cl →</span>
-      </a>
-      <a class="abordaje-card" href="https://videotoracoscopia.cl" target="_blank" rel="noopener">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="13" height="10" rx="1.5"></rect><path d="M15 12l6-3.5v7z"></path></svg>
-        <h3>Videotoracoscopía (VATS)</h3>
-        <p>Cirugía mínimamente invasiva con cámara HD. 1–3 incisiones de 1–2 cm, sin separar costillas.</p>
-        <span class="abordaje-link">videotoracoscopia.cl →</span>
-      </a>
-      <a class="abordaje-card abordaje-card--destacada" href="https://rats.cl" target="_blank" rel="noopener">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5AE6CE" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="5" r="2.5"></circle><path d="M12 7.5V12M12 12l-5 5v4M12 12l5 5v4M5 21h4M15 21h4"></path></svg>
-        <h3>Cirugía Robótica (RATS)</h3>
-        <p>Sistema Da Vinci: visión 3D amplificada 10×, 7 grados de libertad. El programa más experimentado de Chile.</p>
-        <span class="abordaje-link">rats.cl →</span>
-      </a>
-      <a class="abordaje-card" href="https://broncoscopia.cl" target="_blank" rel="noopener">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#12A594" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="4"></circle><path d="M10 10c3 3 4 5 4 11M7 5v4M5 7h4"></path></svg>
-        <h3>Broncoscopía</h3>
-        <p>Diagnóstico e intervención endobronquial sin incisión. EBUS, CryoEBUS, broncoscopía rígida y más.</p>
-        <span class="abordaje-link">broncoscopia.cl →</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- PROCEDIMIENTOS — CATÁLOGO COMPLETO -->
-  <section class="procedimientos">
-    <div class="procedimientos-head">
-      <span class="eyebrow">Catálogo</span>
-      <h2 id="tecnicas" class="sec-titulo">Cirugía Torácica: Procedimientos</h2>
-    </div>
-    <div class="proc-grid">
-      <div class="proc-card">
-        <div class="proc-card-titulo">Resecciones pulmonares oncológicas</div>
-        <ul>
-          <li>Resección en cuña (wedge resection)</li>
-          <li>Segmentectomía anatómica</li>
-          <li>Lobectomía</li>
-          <li>Bilobectomía</li>
-          <li>Neumonectomía</li>
-          <li>Lobectomía con manguito (sleeve lobectomy)</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Resecciones pulmonares no oncológicas</div>
-        <ul>
-          <li>Bullectomía / cirugía de reducción de volumen pulmonar (LVRS)</li>
-          <li>Biopsia pulmonar quirúrgica</li>
-          <li>Resección de secuestro pulmonar / MAQ</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Procedimientos pleurales</div>
-        <ul>
-          <li>Pleurodesis mecánica/química (talco)</li>
-          <li>Decorticación pleural / Pleurectomía</li>
-          <li>Biopsia pleural</li>
-          <li>Drenaje de empiema/hemotórax retenido</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Procedimientos mediastínicos</div>
-        <ul>
-          <li>Timectomía</li>
-          <li>Resección de masas/quistes mediastínicos</li>
-          <li>Disección/estadificación ganglionar mediastínica</li>
-          <li>Biopsia de masas mediastínicas</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Procedimientos esofágicos</div>
-        <ul>
-          <li>Tiempo torácico de esofagectomía (Ivor Lewis / McKeown)</li>
-          <li>Enucleación de leiomioma esofágico</li>
-          <li>Diverticulectomía esofágica</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Procedimientos diafragmáticos</div>
-        <ul>
-          <li>Plicatura diafragmática</li>
-          <li>Reparación de hernia diafragmática</li>
-          <li>Resección/reconstrucción diafragmática</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Trauma y urgencias</div>
-        <ul>
-          <li>Drenaje y aseo de hemotórax retenido</li>
-          <li>Manejo de lesiones penetrantes torácicas</li>
-          <li>Manejo del Neumotórax (Espontáneo o Traumático)</li>
-          <li>Estabilización quirúrgica de fracturas costales</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Sistema nervioso simpático</div>
-        <ul>
-          <li>Simpatectomía torácica</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Procedimientos pericárdicos</div>
-        <ul>
-          <li>Ventana pericárdica</li>
-          <li>Pericardiectomía</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Vía aérea</div>
-        <ul>
-          <li>Resección traqueal/bronquial asistida</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Conducto torácico</div>
-        <ul>
-          <li>Ligadura del conducto torácico</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Pared torácica</div>
-        <ul>
-          <li>Resección de tumores de pared torácica</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Opérculo torácico</div>
-        <ul>
-          <li><a href="https://rats.cl/operculo-toracico">Resección robótica de primera costilla</a></li>
-          <li>Escalenectomía / descompresión neurovascular</li>
-        </ul>
-      </div>
-      <div class="proc-card">
-        <div class="proc-card-titulo">Trasplante</div>
-        <ul>
-          <li>Trasplante Monopulmonar</li>
-          <li>Trasplante Bipulmonar</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="faq-head">
-      <span class="eyebrow">FAQ</span>
-      <h2 class="sec-titulo">Preguntas frecuentes</h2>
-    </div>
-    <div class="faq-lista">
-      <details class="faq-item">
-        <summary>¿Qué es la cirugía torácica?</summary>
-        <p>Es la especialidad quirúrgica dedicada a las enfermedades del tórax: pulmón, pleura, mediastino, tráquea, pared torácica y esófago. Abarca desde la biopsia de un nódulo hasta la resección de un cáncer pulmonar, el manejo del neumotórax, los tumores del mediastino y el trasplante pulmonar.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Es lo mismo que cirugía cardíaca o cardiotorácica?</summary>
-        <p>No. La cirugía torácica general no opera el corazón ni los grandes vasos; eso corresponde a la cirugía cardíaca. En Chile ambas son especialidades separadas, con formación distinta. El término "cardiotorácico" se usa en otros países donde las dos se ejercen juntas.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Qué diferencia hay entre un cirujano de tórax y un broncopulmonar?</summary>
-        <p>El broncopulmonar (neumólogo) diagnostica y trata con medicamentos las enfermedades respiratorias; el cirujano torácico resuelve las que requieren pabellón: extirpar un tumor, tomar una biopsia quirúrgica, drenar la pleura, corregir un neumotórax. Habitualmente trabajan juntos sobre el mismo paciente.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Cuándo debo consultar a un cirujano de tórax?</summary>
-        <p>Cuando un examen de imagen muestra un nódulo o masa pulmonar, un tumor en el mediastino o líquido en la pleura; cuando hay sospecha o diagnóstico de cáncer de pulmón; ante neumotórax repetidos; o por sudoración excesiva de manos, axilas o rubor facial que no responde a tratamiento médico.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Me encontraron un nódulo pulmonar en un scanner. ¿Me tengo que operar?</summary>
-        <p>No necesariamente. La mayoría de los nódulos pulmonares son benignos. La conducta depende del tamaño, la densidad, la ubicación y los factores de riesgo del paciente: puede indicarse seguimiento con scanner, un PET-CT, una biopsia por broncoscopía o punción, o cirugía diagnóstica. Un nódulo detectado no equivale a un cáncer.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿La cirugía de tórax significa que me van a abrir el pecho?</summary>
-        <p>En la mayoría de los casos, no. Hoy el estándar es la cirugía mínimamente invasiva: videotoracoscopía (VATS) o cirugía robótica (RATS), con dos a cuatro incisiones de entre 8 mm y 4 cm. La toracotomía abierta se reserva para tumores extensos o situaciones específicas.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Qué son la videotoracoscopía (VATS) y la cirugía robótica (RATS)?</summary>
-        <p>Son dos técnicas mínimamente invasivas. En la VATS se opera con una cámara e instrumentos largos a través de pequeñas incisiones. En la RATS el cirujano maneja brazos robóticos desde una consola, con visión 3D e instrumentos articulados, lo que aporta mayor precisión en la disección de ganglios y en espacios estrechos. Ambas evitan separar las costillas.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Necesito una interconsulta para ser evaluado?</summary>
-        <p>No es un requisito. Puedes consultar directamente. Sí ayuda llegar con las imágenes en disco o digital (radiografía, scanner, PET-CT), los informes y cualquier biopsia previa: eso permite resolver la conducta en la primera consulta en vez de citar a una segunda.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Tiene sentido pedir una segunda opinión?</summary>
-        <p>Sí, y es una práctica habitual en patología torácica oncológica. Ante un diagnóstico de cáncer, una indicación de cirugía abierta o una recomendación de "solo observar" un nódulo, una segunda opinión especializada puede reforzar o cambiar la conducta. Se puede realizar por telemedicina revisando las imágenes y biopsias existentes.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- SOBRE EL AUTOR -->
-  <section class="autor">
-    <div class="autor-foto">
-      <img src="imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico en Clínica Las Condes, Santiago de Chile" loading="lazy" width="800" height="800" decoding="async"/>
-    </div>
-    <div class="autor-texto">
-      <span class="eyebrow">Sobre el autor</span>
-      <h2 class="autor-titulo">Dr. David Lazo Pérez</h2>
-      <div class="autor-sub">Cirujano Torácico · Clínica Las Condes · H. San Borja Arriarán</div>
-      <p>Médico-cirujano de la <strong>PUC de Chile</strong>, especialista en Cirugía Torácica por la <strong>Universidad de Chile</strong> y con formación en Trasplante Pulmonar en el <strong>Hospital Puerta de Hierro Majadahonda</strong>, España. Cubre el espectro completo de la patología torácica —pulmón, pleura, mediastino, pared y esófago— con 19 años de experiencia y más de 5.700 cirugías. Atiende en Clínica Las Condes y en el Hospital Clínico San Borja Arriarán.</p>
-      <p>Es <a href="/docencia#wabip">regente por Chile de la Asociación Mundial de Broncología (WABIP)</a> y formador de instructores en broncoscopía. Dirigió entre 2014 y 2022 un programa de perfeccionamiento en la Escuela de Postgrado de la Universidad de Chile e integra el comité académico de la subespecialidad en Cirugía de Tórax de la Universidad Finis Terrae. Su producción está reunida en <a href="/publicaciones">31 publicaciones indexadas</a>.</p>
-      <a class="btn-outline" href="/perfil">Ver perfil completo →</a>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section class="contacto" id="contacto">
-    <div class="contacto-izq">
-      <h2 class="eyebrow" style="margin:0">Primer paso</h2>
-      <div class="contacto-titulo">Hable directamente<br>con el especialista</div>
-    </div>
-    <div class="contacto-der">
-      <a class="contacto-fila contacto-fila--reserva" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener">
-        <div><div class="cf-titulo">Clínica Las Condes</div><div class="cf-sub">Reservar hora presencial</div></div>
-        <span class="cf-flecha">→</span>
-      </a>
-      <a class="contacto-fila contacto-fila--alt" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">
-        <div><div class="cf-titulo">Telemedicina</div><div class="cf-sub">Consulta online — todo Chile</div></div>
-        <span class="cf-flecha">→</span>
-      </a>
-      <a class="contacto-fila contacto-fila--alt" href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener">
-        <div><div class="cf-titulo">Doctoralia</div><div class="cf-sub">Ver perfil y reseñas</div></div>
-        <span class="cf-flecha">→</span>
-      </a>
-    </div>
-    <div class="contacto-der">
-      <a class="contacto-fila contacto-fila--alt contacto-fila--red" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener">
-        <div class="cf-izq">
-          <svg class="cf-ico" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          <div><div class="cf-titulo">LinkedIn</div><div class="cf-sub">Dr. David Lazo Pérez</div></div>
-        </div>
-        <span class="cf-flecha">→</span>
-      </a>
-      <a class="contacto-fila contacto-fila--alt contacto-fila--red" href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener">
-        <div class="cf-izq">
-          <svg class="cf-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          <div><div class="cf-titulo">Instagram</div><div class="cf-sub">@dr.david.lazo.p</div></div>
-        </div>
-        <span class="cf-flecha">→</span>
-      </a>
-      <a class="contacto-fila contacto-fila--alt contacto-fila--red" href="https://orcid.org/0009-0007-0806-6679" target="_blank" rel="noopener">
-        <div class="cf-izq">
-          <svg class="cf-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><text x="12" y="15.5" text-anchor="middle" font-family="Figtree, sans-serif" font-size="9.5" font-weight="700" fill="currentColor">iD</text></svg>
-          <div><div class="cf-titulo">ORCID</div><div class="cf-sub">Publicaciones científicas</div></div>
-        </div>
-        <span class="cf-flecha">→</span>
-      </a>
-    </div>
-  </section>
-
-  </div><!-- /shell -->
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="shell footer-inner">
-      <div class="footer-marca">
-        <span class="footer-marca-nombre">CirugiaToracica.cl</span>
-        <span class="footer-copy">© 2026 · Dr. David Lazo Pérez · Cirugía Torácica · Santiago, Chile</span>
-        <span class="footer-copy">Revisado por Dr. David Lazo Pérez, cirujano torácico — actualizado agosto 2026</span>
-      </div>
-      <div class="footer-col">
-        <span class="footer-col-titulo">Red clínica</span>
-        <a href="https://rats.cl">rats.cl</a>
-        <a href="https://cancerpulmonar.cl">cancerpulmonar.cl</a>
-        <a href="https://broncoscopia.cl">broncoscopia.cl</a>
-        <a href="https://videotoracoscopia.cl">videotoracoscopia.cl</a>
-        <a href="https://hiperhidrosis.cl">hiperhidrosis.cl</a>
-      </div>
-      <div class="footer-col">
-        <span class="footer-col-titulo">Redes</span>
-        <a href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener">Instagram · @dr.david.lazo.p</a>
-        <a href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener">Doctoralia</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
-      var panels = Array.prototype.slice.call(document.querySelectorAll('[role="tabpanel"]'));
-      function select(i) {
-        tabs.forEach(function (t, j) {
-          var on = i === j;
-          t.setAttribute('aria-selected', on ? 'true' : 'false');
-          t.tabIndex = on ? 0 : -1;
-          panels[j].hidden = !on;
-        });
-      }
-      tabs.forEach(function (t, i) {
-        t.addEventListener('click', function () { select(i); });
-        t.addEventListener('keydown', function (e) {
-          var n = null;
-          if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
-          else if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
-          else if (e.key === 'Home') n = 0;
-          else if (e.key === 'End') n = tabs.length - 1;
-          if (n !== null) { e.preventDefault(); select(n); tabs[n].focus(); }
-        });
-      });
-      document.querySelectorAll('.faq-item').forEach(function (d) {
-        d.addEventListener('toggle', function () {
-          if (d.open) document.querySelectorAll('.faq-item[open]').forEach(function (o) { if (o !== d) o.open = false; });
-        });
-      });
-      document.querySelectorAll('.nav-links a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          var nav = document.getElementById('nav');
-          nav.classList.remove('nav-open');
-          var b = nav.querySelector('.nav-hamburger');
-          if (b) b.setAttribute('aria-expanded', 'false');
-        });
-      });
-    })();
-  </script>
-
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]')),panels=[].slice.call(document.querySelectorAll('[role="tabpanel"]'));
+  var svg=document.querySelector('.anat-fig .thx');
+  function sel(i,focus){
+    tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;panels[j].hidden=!on;});
+    svg.querySelectorAll('.g,.lbl').forEach(function(g){g.classList.toggle('active',+g.dataset.i===i);});
+    if(focus)tabs[i].focus();
+  }
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){sel(i);});
+    t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight')n=(i+1)%tabs.length;else if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;if(n!==null){e.preventDefault();sel(n,true);}});});
+  svg.addEventListener('click',function(e){var g=e.target.closest('[data-i]');if(g)sel(+g.dataset.i);});
+  document.querySelectorAll('.faq-item').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)document.querySelectorAll('.faq-item[open]').forEach(function(o){if(o!==d)o.open=false;});});});
+})();
+</script>
 </body>
 </html>

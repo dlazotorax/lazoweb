@@ -22,20 +22,20 @@ ACCENT = '#C4500E'   # naranjo levemente oscuro (David, 8-sep); el lienzo trae #
 DC = DC.replace('#0047FF', ACCENT).replace('#0047ff', ACCENT)
 
 PAGES = {  # key: (archivo, url, title, description, name, migas)
- 'index': ('index.html', BASE, 'Opérculo torácico: cirugía robótica · Dr. David Lazo',
-   'Síndrome del opérculo torácico neurogénico, venoso y arterial: causas, clínica, estudio y resección robótica de la primera costilla. Dr. David Lazo, Santiago.',
+ 'index': ('index.html', BASE, 'Opérculo torácico: cirugía robótica · Dr. David Lazo Pérez',
+   'Síndrome del opérculo torácico neurogénico, venoso y arterial: causas, clínica, estudio y resección robótica de la primera costilla. Dr. David Lazo Pérez.',
    'Síndrome del opérculo torácico: resolución robótica', None),
- 'causas': ('causas.html', BASE+'/causas', 'Opérculo torácico: causas · Dr. David Lazo',
-   'Causas del síndrome del opérculo torácico: costilla cervical, primera costilla anómala, bandas de Roos, anomalías musculares y trauma. Dr. David Lazo.',
+ 'causas': ('causas.html', BASE+'/causas', 'Opérculo torácico: causas · Dr. David Lazo Pérez',
+   'Causas del síndrome del opérculo torácico: costilla cervical, primera costilla anómala, bandas de Roos, anomalías musculares y trauma. Dr. David Lazo Pérez.',
    'Causas del síndrome del opérculo torácico', 'Causas'),
- 'clinica': ('clinica.html', BASE+'/clinica', 'Opérculo torácico: síntomas y clínica · Dr. David Lazo',
-   'Clínica del opérculo torácico neurogénico, venoso (Paget-Schroetter) y arterial: síntomas, signos y diagnóstico diferencial. Dr. David Lazo, Santiago.',
+ 'clinica': ('clinica.html', BASE+'/clinica', 'Opérculo torácico: síntomas y clínica · Dr. David Lazo Pérez',
+   'Clínica del opérculo torácico neurogénico, venoso (Paget-Schroetter) y arterial: síntomas, signos y diagnóstico diferencial. Dr. David Lazo Pérez.',
    'Clínica del síndrome del opérculo torácico', 'Clínica'),
- 'estudio': ('estudio.html', BASE+'/estudio', 'Opérculo torácico: estudio y diagnóstico · Dr. David Lazo',
-   'Estudio del opérculo torácico: radiografía, EMG, PVR, Doppler, angioTC o angioRM con maniobras y bloqueo con toxina botulínica. Dr. David Lazo, Santiago.',
+ 'estudio': ('estudio.html', BASE+'/estudio', 'Opérculo torácico: diagnóstico · Dr. David Lazo Pérez',
+   'Estudio del opérculo torácico: radiografía, EMG, PVR, Doppler, angioTC o angioRM con maniobras y bloqueo con toxina botulínica. Dr. David Lazo Pérez.',
    'Estudio del síndrome del opérculo torácico', 'Estudio'),
- 'tratamiento': ('tratamiento.html', BASE+'/tratamiento', 'Opérculo torácico: tratamiento robótico · Dr. David Lazo',
-   'Tratamiento del opérculo torácico: terapia física, vías supraclavicular y transaxilar, y resección robótica de la primera costilla. Dr. David Lazo, Santiago.',
+ 'tratamiento': ('tratamiento.html', BASE+'/tratamiento', 'Opérculo torácico: tratamiento · Dr. David Lazo Pérez',
+   'Tratamiento del opérculo torácico: terapia física, vías supraclavicular y transaxilar, y resección robótica de la primera costilla. Dr. David Lazo Pérez.',
    'Tratamiento del síndrome del opérculo torácico', 'Tratamiento'),
 }
 GO = {'goIndex':'index','goCausas':'causas','goClinica':'clinica','goEstudio':'estudio','goTratamiento':'tratamiento'}

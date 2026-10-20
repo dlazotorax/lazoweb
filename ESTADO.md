@@ -67,6 +67,7 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
 | cancerpulmonar `/nodulo-pulmonar`: cirugía de nódulos pequeños **no va aquí**: marcación con lipiodol → videotoracoscopia.cl; con ICG → rats.cl (material reservado en `Paginas web/reservado-cirugia-nodulos.html`). Sin menciones a CLC en el contenido | 17-oct-2026 |
 | **hiperhidrosis.cl sin HCSBA**: en HCSBA no hay capacidad para operar patología no grave. Afiliación solo CLC en ese dominio (JSON-LD, `llms.txt` y texto); excepción a la coincidencia del `@id` (§5) | 12-oct-2026 |
 | Hero de `/publicaciones` (imagen IA con taza STS) **se mantiene** por decisión de David hasta tener foto real de congreso | ago-2026 |
+| **Nombre visible: siempre «Dr. David Lazo Pérez»** en títulos, metas, marca, pies, FAQ y `alt`. «el Dr. Lazo» solo como segunda mención en prosa; donde aparece, el `Physician` lleva `"alternateName": "Dr. Lazo"`. Fuentes generadas (opérculo, hiperhidrosis, cancerpulmonar F2) corregidas en `_design/` | 20-oct-2026 |
 
 ---
 

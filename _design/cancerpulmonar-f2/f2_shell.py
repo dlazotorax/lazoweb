@@ -67,7 +67,7 @@ CTA='''
 
 <footer class="site-footer"><div class="wrap">
   <div class="footer-top">
-    <div class="footer-brand">cancerpulmonar.cl · Dr. David Lazo</div>
+    <div class="footer-brand">cancerpulmonar.cl · Dr. David Lazo Pérez</div>
     <div class="footer-links">
       <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a>
       <a href="https://rats.cl">rats.cl</a>

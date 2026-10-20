@@ -29,7 +29,7 @@ CIRUGIATORACICA = "https://cirugiatoracica.cl"
 PHYSICIAN = {
     "@type": "Physician",
     "@id": f"{BASE}/#physician",
-    "name": "Dr. David Lazo",
+    "name": "Dr. David Lazo Pérez",
     "image": f"{BASE}/assets/foto-dr-lazo-bio.jpg",
     "medicalSpecialty": "https://schema.org/Surgical",
     "description": "Cirujano torácico especialista en hiperhidrosis y rubor facial patológico (eritrofobia). Médico-Cirujano de la Pontificia Universidad Católica de Chile, especialista en Cirugía General y Cirugía Torácica de la Universidad de Chile.",
@@ -222,7 +222,7 @@ FOOTER = f"""<footer class="site-footer">
   <div class="footer-grid">
     <div>
       <img src="/assets/logo-footer.png" alt="Hiperhidrosis.cl" class="site-footer__logo" width="194" height="142" loading="lazy">
-      <p class="site-footer__blurb">Portal de información sobre la sudoración excesiva y sus tratamientos en Chile. Dr. David Lazo, cirujano torácico — Clínica Las Condes.</p>
+      <p class="site-footer__blurb">Portal de información sobre la sudoración excesiva y sus tratamientos en Chile. Dr. David Lazo Pérez, cirujano torácico — Clínica Las Condes.</p>
     </div>
     <div>
       <div class="footer-col__title">Navegación</div>
@@ -289,7 +289,7 @@ def page(path, title, desc, hero, body, ld_nodes, ogimage="assets/logo-hd.png",
 def build_home():
     title = "Hiperhidrosis.cl — La sudoración excesiva tiene tratamiento"
     desc = ("Portal de información sobre la hiperhidrosis (sudoración excesiva) y sus tratamientos en Chile: "
-            "antitranspirantes, Botox, iontoforesis y cirugía. Dr. David Lazo, cirujano torácico.")
+            "antitranspirantes, Botox, iontoforesis y cirugía. Dr. David Lazo Pérez, cirujano torácico.")
     hero = """<!-- ===== HERO · Full-bleed dramático (maqueta 1a) ===== -->
 <header id="top" class="hero-full">
 """ + NAV + """
@@ -667,7 +667,7 @@ def build_cirugia():
     path = "cirugia-hiperhidrosis"
     title = "Cirugía de la hiperhidrosis: simpatectomía por videotoracoscopía | Hiperhidrosis.cl"
     desc = ("Simpatectomía por videotoracoscopía: procedimiento, resultados (éxito superior al 95%), sudoración "
-            "compensatoria, contraindicaciones, riesgos y complicaciones. Dr. David Lazo, cirujano torácico.")
+            "compensatoria, contraindicaciones, riesgos y complicaciones. Dr. David Lazo Pérez, cirujano torácico.")
     hero = subpage_hero("Tratamiento quirúrgico", "Cirugía de la hiperhidrosis",
                         "La cirugía de la hiperhidrosis consiste en la simpatectomía o simpaticotomía por videotoracoscopía.")
     body = f"""<section class="prose-section">

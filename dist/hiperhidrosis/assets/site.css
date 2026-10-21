@@ -95,6 +95,8 @@ img { display: block; max-width: 100%; height: auto; }
   font-weight: 500;
   color: var(--navy);
 }
+.site-nav__links > *, .site-nav__links .btn-pill { white-space: nowrap; }
+@media (max-width: 1180px) { .site-nav__links { gap: 16px; font-size: 14px; } }
 .navlink-d { opacity: .85; transition: opacity .2s ease; }
 .navlink-d:hover { opacity: 1 !important; }
 

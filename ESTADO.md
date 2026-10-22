@@ -1,6 +1,6 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
-> **Última actualización: 17 oct 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
+> **Última actualización: 21 oct 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
 > métricas vigentes y pendientes. Todo lo narrativo (sesiones, razonamientos, cómo se llegó a cada
 > dato) está en **`ESTADO-historico.md`**; la versión larga de este archivo, tal como estaba al
 > 22-sep-2026, está al final de ese histórico.
@@ -68,6 +68,7 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
 | **hiperhidrosis.cl sin HCSBA**: en HCSBA no hay capacidad para operar patología no grave. Afiliación solo CLC en ese dominio (JSON-LD, `llms.txt` y texto); excepción a la coincidencia del `@id` (§5) | 12-oct-2026 |
 | Hero de `/publicaciones` (imagen IA con taza STS) **se mantiene** por decisión de David hasta tener foto real de congreso | ago-2026 |
 | **Nombre visible: siempre «Dr. David Lazo Pérez»** en títulos, metas, marca, pies, FAQ y `alt`. «el Dr. Lazo» solo como segunda mención en prosa; donde aparece, el `Physician` lleva `"alternateName": "Dr. Lazo"`. Fuentes generadas (opérculo, hiperhidrosis, cancerpulmonar F2) corregidas en `_design/` | 20-oct-2026 |
+| broncoscopia.cl: **tipografía y paleta del hub** (Red Hat Display + JetBrains Mono para etiquetas; azul `#1F6FEB`, grafito `#0E1012`, gris `#F4F4F4`). Estructura, fotos y texto sin cambios. Se aplicó con `retipo.py` (copia en la carpeta local `maqueta-broncoscopia/sitio-actual-tipo-a/`). Las maquetas de rediseño A-F de esa carpeta quedaron descartadas | 21-oct-2026 |
 
 ---
 
@@ -133,7 +134,7 @@ un `h1`, canonical sin www, 0 JSON-LD inválidos, contenido sin JS, 89 pares FAQ
 - `lastReviewed` = fecha del último cambio clínico real (`git log`), no la de hoy. `/links` y
   `/publicaciones` no lo llevan a propósito. `<lastmod>` del sitemap = fecha del cambio de archivo.
 - `img { height: auto; }` obligatorio si `<img>` lleva `width`/`height`. WebP en fondos vía `image-set()`.
-- Estilo: Arial/Figtree, teal `#0891b2`, navy `#0c1526`, serif `DM Serif Display`. **Excepción: rats.cl** (portada y
+- Estilo: Arial/Figtree, teal `#0891b2`, navy `#0c1526`, serif `DM Serif Display`. **Excepción: broncoscopia.cl** (desde 21-oct-2026) usa el sistema del hub: Red Hat Display + JetBrains Mono, azul `#1F6FEB`, grafito `#0E1012`. **Excepción: rats.cl** (portada y
   opérculo) usa el sistema editorial del opérculo: Bebas Neue + Public Sans, hueso `#F6F5F1`, negro `#0B0B0B`.
   Acento: portada teal azul `#0E7490` (`#67D3E8` sobre negro); opérculo óxido `#C4500E`.
 

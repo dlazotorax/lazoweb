@@ -191,7 +191,7 @@
   </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -200,26 +200,26 @@
     img { height: auto; }
 
     :root {
-      --teal:      #0891b2;
-      --teal-dark: #0e7490;
-      --teal-deep: #164e63;
-      --teal-lt:   #22d3ee;
-      --teal-pale: #ecfeff;
-      --teal-mid:  #cffafe;
-      --navy:      #0f172a;
-      --navy2:     #1e293b;
-      --slate:     #334155;
-      --muted:     #64748b;
-      --border:    #e2e8f0;
-      --border2:   #cbd5e1;
+      --teal:      #1F6FEB;
+      --teal-dark: #1A5FCC;
+      --teal-deep: #14448F;
+      --teal-lt:   #8FB8FF;
+      --teal-pale: #EEF3FD;
+      --teal-mid:  #D6E4FB;
+      --navy:      #0E1012;
+      --navy2:     #1A1D20;
+      --slate:     #3D4044;
+      --muted:     #5C5E62;
+      --border:    #E2E3E3;
+      --border2:   #D0D2D3;
       --bg:        #ffffff;
-      --bg2:       #f8fafc;
-      --bg3:       #f1f5f9;
+      --bg2:       #F7F7F7;
+      --bg3:       #F4F4F4;
     }
 
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-family: 'Red Hat Display', -apple-system, sans-serif;
       background: var(--bg); color: var(--navy);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -244,7 +244,7 @@
     /* ═══ PAGE NAV ═══ */
     .page-nav {
       position: sticky; top: 0; z-index: 300;
-      background: rgba(15,23,42,0.97);
+      background: rgba(14,16,18,0.97);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       padding: 0 2.5rem;
@@ -288,7 +288,7 @@
 
     /* ═══ HERO ═══ */
     .hero {
-      background: linear-gradient(150deg, var(--navy) 0%, var(--teal-deep) 60%, #0369a1 100%);
+      background: linear-gradient(150deg, var(--navy) 0%, var(--teal-deep) 60%, #1A5FCC 100%);
       padding: 5rem 2.5rem 4rem;
       position: relative; overflow: hidden;
     }
@@ -308,7 +308,7 @@
       content: ''; display: block; width: 24px; height: 1px; background: var(--teal-lt);
     }
     .hero-h1 {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Red Hat Display', Arial, sans-serif;
       font-size: clamp(2.5rem, 5vw, 4rem);
       color: #fff; line-height: 1.1; letter-spacing: -0.03em;
       margin-bottom: 1.25rem;
@@ -328,8 +328,8 @@
       color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.05);
     }
     .hero-chip.on {
-      background: rgba(8,145,178,0.2); color: var(--teal-lt);
-      border-color: rgba(8,145,178,0.4);
+      background: rgba(31,111,235,0.2); color: var(--teal-lt);
+      border-color: rgba(31,111,235,0.4);
     }
     .hero-chip.soon {
       opacity: 0.4;
@@ -420,11 +420,11 @@
       background: var(--teal); color: #fff; font-size: 0.65rem; font-weight: 800;
     }
     .sec-eyebrow-num-w {
-      background: rgba(34,211,238,0.2); color: var(--teal-lt);
-      border: 1px solid rgba(34,211,238,0.4);
+      background: rgba(143,184,255,0.2); color: var(--teal-lt);
+      border: 1px solid rgba(143,184,255,0.4);
     }
     .sec-h2 {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Red Hat Display', Arial, sans-serif;
       font-size: clamp(1.8rem, 2.5vw, 2.4rem);
       letter-spacing: -0.02em; color: var(--navy); margin-bottom: 1rem;
     }
@@ -474,7 +474,7 @@
     }
     .as-stat { text-align: center; }
     .as-n {
-      font-family: 'DM Serif Display', serif; font-size: 2rem;
+      font-family: 'Red Hat Display', Arial, sans-serif; font-size: 2rem;
       color: var(--teal-lt); letter-spacing: -0.03em;
     }
     .as-l { font-size: 0.68rem; color: rgba(255,255,255,0.45); line-height: 1.35; margin-top: 0.1rem; max-width: 85px; }
@@ -503,7 +503,7 @@
       color: var(--muted); margin-bottom: 0.25rem;
     }
     .abl-card-name {
-      font-family: 'DM Serif Display', serif; font-size: 1.5rem; letter-spacing: -0.01em;
+      font-family: 'Red Hat Display', Arial, sans-serif; font-size: 1.5rem; letter-spacing: -0.01em;
     }
     .abl-card-kpis {
       display: flex; gap: 1.5rem; flex-wrap: wrap;
@@ -647,7 +647,7 @@
       background: var(--navy); border-radius: 14px; padding: 1.75rem 2rem;
       margin-bottom: 2rem; display: flex; gap: 1.25rem; align-items: flex-start;
     }
-    .stent-quote-mark { font-size: 3rem; color: var(--teal-lt); line-height: 1; flex-shrink: 0; font-family: 'DM Serif Display', serif; }
+    .stent-quote-mark { font-size: 3rem; color: var(--teal-lt); line-height: 1; flex-shrink: 0; font-family: 'Red Hat Display', Arial, sans-serif; }
     .stent-quote p { font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.65; font-style: italic; }
     .stent-quote cite { font-size: 0.72rem; color: rgba(255,255,255,0.35); font-style: normal; margin-top: 0.5rem; display: block; }
 
@@ -677,7 +677,7 @@
       display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;
     }
     .stent-vs-icon { font-size: 1.5rem; }
-    .stent-vs-name { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--navy); }
+    .stent-vs-name { font-family: 'Red Hat Display', Arial, sans-serif; font-size: 1.3rem; color: var(--navy); }
     .stent-vs-sub { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; }
     .stent-vs-rows { display: flex; flex-direction: column; gap: 0; }
     .stent-vs-row {
@@ -738,7 +738,7 @@
     }
     .complic-header.trans { background: #fef3c7; color: #92400e; }
     .complic-header.aguda { background: #fff1f2; color: #9f1239; }
-    .complic-header.tardia { background: #f1f5f9; color: var(--slate); }
+    .complic-header.tardia { background: #F4F4F4; color: var(--slate); }
     .complic-list { padding: 0.75rem 1rem; display: flex; flex-direction: column; gap: 0.3rem; }
     .complic-item { font-size: 0.78rem; color: var(--slate); line-height: 1.4; display: flex; gap: 0.4rem; }
     .complic-item::before { content: '·'; color: var(--muted); flex-shrink: 0; }
@@ -748,7 +748,7 @@
       margin-top: 2rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem;
     }
     .stent-ev-kpi { text-align: center; }
-    .stent-ev-n { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--teal-lt); letter-spacing: -0.03em; }
+    .stent-ev-n { font-family: 'Red Hat Display', Arial, sans-serif; font-size: 2.2rem; color: var(--teal-lt); letter-spacing: -0.03em; }
     .stent-ev-l { font-size: 0.7rem; color: rgba(255,255,255,0.45); line-height: 1.35; margin-top: 0.1rem; }
     .stent-ev-sep { width: 1px; background: rgba(255,255,255,0.1); align-self: stretch; }
     .stent-ev-text { }
@@ -781,7 +781,7 @@
       display: inline-block; margin-top: 0.75rem;
       color: var(--teal-lt); font-weight: 700; font-size: 0.9rem;
       text-decoration: none; word-break: break-all;
-      border-bottom: 1px solid rgba(34,211,238,0.3);
+      border-bottom: 1px solid rgba(143,184,255,0.3);
     }
     .ccontact-email:hover { border-color: var(--teal-lt); }
 
@@ -819,7 +819,7 @@
 
     /* ═══ CONTACTO / CTA ═══ */
     .cta-section {
-      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-dark) 60%, #0369a1 100%);
+      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-dark) 60%, #1A5FCC 100%);
       padding: 6rem 3rem; text-align: center; position: relative; overflow: hidden;
     }
     .cta-section::before {
@@ -840,7 +840,7 @@
       color: var(--teal-lt); margin-bottom: 1rem;
     }
     .cta-title {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Red Hat Display', Arial, sans-serif;
       font-size: clamp(2rem, 3.5vw, 3rem);
       color: #fff; letter-spacing: -0.02em; margin-bottom: 1.25rem;
     }
@@ -883,46 +883,46 @@
 
   
 /* ══ NAV ALIGNMENT OVERRIDE ══ */
-.topbar { background: #0c1526 !important; }
+.topbar { background: #0E1012 !important; }
 .page-nav {
   background: rgba(255,255,255,0.97) !important;
-  border-bottom: 1px solid #dce8f0 !important;
+  border-bottom: 1px solid #E2E3E3 !important;
   backdrop-filter: blur(20px) !important;
 }
-.page-nav-eyebrow { color: #0891b2 !important; }
-.page-nav-title { color: #1a2b3c !important; }
-.page-nav-links a { color: #3a5068 !important; }
+.page-nav-eyebrow { color: #1F6FEB !important; }
+.page-nav-title { color: #171A1C !important; }
+.page-nav-links a { color: #3D4044 !important; }
 .page-nav-links a:hover, .page-nav-links a.active { 
-  color: #0891b2 !important; 
-  background: rgba(8,145,178,0.07) !important; 
+  color: #1F6FEB !important; 
+  background: rgba(31,111,235,0.07) !important; 
 }
-.nav-cta { background: #0891b2 !important; color: #fff !important; }
-.nav-cta:hover { background: #0e7490 !important; }
-.page-nav-sep { background: #dce8f0 !important; }
-.page-nav-logo .page-nav-icon { background: #0c4a6e !important; }
-footer { background: #0c1526 !important; }
+.nav-cta { background: #1F6FEB !important; color: #fff !important; }
+.nav-cta:hover { background: #1A5FCC !important; }
+.page-nav-sep { background: #E2E3E3 !important; }
+.page-nav-logo .page-nav-icon { background: #14448F !important; }
+footer { background: #0E1012 !important; }
 .footer-links a { color: rgba(255,255,255,0.32) !important; }
-.footer-links a:hover { color: #22d3ee !important; }
+.footer-links a:hover { color: #8FB8FF !important; }
 footer p { color: rgba(255,255,255,0.32) !important; }
 .footer-network-label { color: rgba(255,255,255,0.2) !important; }
 .footer-network-links a { color: rgba(255,255,255,0.38) !important; }
-.footer-network-links a:hover { color: #22d3ee !important; }
+.footer-network-links a:hover { color: #8FB8FF !important; }
 
 
     /* ── BIO DR. LAZO (shared) ── */
     .bio-wrap { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; align-items: start; }
-    .bio-photo { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(12,21,38,0.2); }
+    .bio-photo { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(14,16,18,0.2); }
     .bio-photo img { width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; object-position: center 10%; }
-    .bio-name { font-family: var(--serif,'DM Serif Display',serif); font-size: 2.2rem; color: var(--navy,#0c1526); letter-spacing: -0.02em; margin-bottom: 0.3rem; }
-    .bio-role { font-size: 0.95rem; font-weight: 600; color: var(--teal-dark,#0e7490); margin-bottom: 1rem; }
+    .bio-name { font-family: var(--serif,'Red Hat Display',serif); font-size: 2.2rem; color: var(--navy,#0E1012); letter-spacing: -0.02em; margin-bottom: 0.3rem; }
+    .bio-role { font-size: 0.95rem; font-weight: 600; color: var(--teal-dark,#1A5FCC); margin-bottom: 1rem; }
     .bio-insts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .bio-inst { font-size: 0.78rem; font-weight: 600; color: var(--slate,#3a5068); padding: 0.3rem 0.85rem; border-radius: 6px; background: var(--bg-alt,#f4f8fb); border: 1px solid var(--border,#dce8f0); }
-    .bio-text { font-size: 0.93rem; line-height: 1.8; color: var(--slate,#3a5068); margin-bottom: 1.5rem; max-width: 580px; text-wrap: pretty; }
+    .bio-inst { font-size: 0.78rem; font-weight: 600; color: var(--slate,#3D4044); padding: 0.3rem 0.85rem; border-radius: 6px; background: var(--bg-alt,#F4F4F4); border: 1px solid var(--border,#E2E3E3); }
+    .bio-text { font-size: 0.93rem; line-height: 1.8; color: var(--slate,#3D4044); margin-bottom: 1.5rem; max-width: 580px; text-wrap: pretty; }
     .bio-creds { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.85rem; }
-    .bio-cred { background: var(--bg-alt,#f4f8fb); border: 1px solid var(--border,#dce8f0); border-radius: 10px; padding: 1rem; text-align: center; }
-    .bio-cred-n { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: var(--teal,#0891b2); }
-    .bio-cred-l { font-size: 0.7rem; color: var(--muted,#607d93); margin-top: 0.15rem; line-height: 1.3; }
-    .bio-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal,#0891b2); margin-bottom: 0.75rem; }
+    .bio-cred { background: var(--bg-alt,#F4F4F4); border: 1px solid var(--border,#E2E3E3); border-radius: 10px; padding: 1rem; text-align: center; }
+    .bio-cred-n { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: var(--teal,#1F6FEB); }
+    .bio-cred-l { font-size: 0.7rem; color: var(--muted,#5C5E62); margin-top: 0.15rem; line-height: 1.3; }
+    .bio-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal,#1F6FEB); margin-bottom: 0.75rem; }
     @media (max-width: 960px) { .bio-wrap { grid-template-columns: 1fr; gap: 2.5rem; } .bio-creds { grid-template-columns: repeat(3,1fr); } }
 
       .authority-bio { font-size: 0.75rem; color: rgba(255,255,255,0.28); margin-top: 0.75rem; max-width: 680px; line-height: 1.5; }
@@ -940,7 +940,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
       transition: transform 0.25s, opacity 0.2s;
       pointer-events: none;
     }
-    nav.light .nav-hamburger span { background: var(--navy, #0c1526); }
+    nav.light .nav-hamburger span { background: var(--navy, #0E1012); }
     nav.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
     nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -978,7 +978,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
         flex-direction: column !important;
         position: absolute !important;
         top: 100% !important; left: 0 !important; right: 0 !important;
-        background: var(--navy, #0c1526) !important;
+        background: var(--navy, #0E1012) !important;
         padding: 0.75rem 1.25rem 1.25rem !important;
         gap: 0 !important;
         z-index: 9999 !important;
@@ -1136,7 +1136,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
     }
     .perfil-box:hover {
       background: #fff;
-      box-shadow: 0 8px 24px rgba(8,145,178,0.18);
+      box-shadow: 0 8px 24px rgba(31,111,235,0.18);
       transform: translateY(-2px);
     }
     .perfil-box-txt { flex: 1; }
@@ -1154,7 +1154,7 @@ footer p { color: rgba(255,255,255,0.32) !important; }
     .adv-icon svg{width:20px;height:20px} .tech-pill-icon svg{width:19px;height:19px}
     .abl-card-icon svg{width:26px;height:26px} .stent-vs-icon svg{width:24px;height:24px}
     .abl-ico svg{width:20px;height:20px}
-    .adv-icon,.stent-vs-icon{color:#0891b2}
+    .adv-icon,.stent-vs-icon{color:#1F6FEB}
   
     .bio-src{font-size:.78rem;line-height:1.55;color:var(--muted);margin-top:1rem}
     .bio-src a{color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(0,150,150,.3)}
@@ -1182,6 +1182,10 @@ footer p { color: rgba(255,255,255,0.32) !important; }
       }
     }, true);
   </script>
+<style id="sistema-a">.hero-h1,.sec-h2,.as-n,.abl-card-name,.stent-quote-mark,.stent-vs-name,.stent-ev-n,.cta-title,.bio-name{font-weight:800!important;letter-spacing:-.025em!important}
+.hero-h1 em,.sec-h2 em,.as-n em,.abl-card-name em,.stent-quote-mark em,.stent-vs-name em,.stent-ev-n em,.cta-title em,.bio-name em,.hero-h1 i,.sec-h2 i,.as-n i,.abl-card-name i,.stent-quote-mark i,.stent-vs-name i,.stent-ev-n i,.cta-title i,.bio-name i{font-style:normal!important}
+.page-nav-eyebrow,.hero-eyebrow,.sidebar-label,.sidebar-soon,.sec-eyebrow,.abl-card-tag,.abl-desc-col h5,.abl-indic-col h5,.principle-box h4,.crio-use-tag,.crio-ev-table th,.indic-block-tag,.indic-sub-label,.complic-header,.ccontact-label,.cta-eyebrow,.contact-card h4,.bio-eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace!important;font-weight:500!important;letter-spacing:.14em!important}
+body{font-family:"Red Hat Display",Arial,sans-serif}p,li,td,.faq-a{font-weight:400}p strong,li strong,td strong,p b{font-weight:700}</style>
 </head>
 <body>
 

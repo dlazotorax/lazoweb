@@ -161,7 +161,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -170,23 +170,23 @@
     img { height: auto; }
 
     :root {
-      --navy:       #0c1526;
-      --navy2:      #1a2740;
-      --teal-deep:  #0c4a6e;
-      --teal:       #0891b2;
-      --teal-dark:  #0e7490;
-      --teal-lt:    #22d3ee;
-      --teal-pale:  #ecfeff;
-      --teal-mid:   #cffafe;
+      --navy:       #0E1012;
+      --navy2:      #1A1D20;
+      --teal-deep:  #14448F;
+      --teal:       #1F6FEB;
+      --teal-dark:  #1A5FCC;
+      --teal-lt:    #8FB8FF;
+      --teal-pale:  #EEF3FD;
+      --teal-mid:   #D6E4FB;
       --bg:         #ffffff;
-      --bg-alt:     #f4f8fb;
-      --bg-dark:    #0c1526;
-      --text:       #1a2b3c;
-      --slate:      #3a5068;
-      --muted:      #607d93;
-      --border:     #dce8f0;
-      --serif:      'DM Serif Display', serif;
-      --sans:       'Plus Jakarta Sans', system-ui, sans-serif;
+      --bg-alt:     #F4F4F4;
+      --bg-dark:    #0E1012;
+      --text:       #171A1C;
+      --slate:      #3D4044;
+      --muted:      #5C5E62;
+      --border:     #E2E3E3;
+      --serif:      'Red Hat Display', Arial, sans-serif;
+      --sans:       'Red Hat Display', Arial, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -207,7 +207,7 @@
       display: flex; align-items: center; justify-content: space-between;
       transition: box-shadow 0.3s;
     }
-    nav.scrolled { box-shadow: 0 2px 24px rgba(12,21,38,0.1); }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(14,16,18,0.1); }
     .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
     .nav-logo-mark {
       width: 34px; height: 34px; border-radius: 8px;
@@ -248,9 +248,9 @@
       position: absolute; inset: 0;
       background: linear-gradient(
         160deg,
-        rgba(12,21,38,0.88) 0%,
+        rgba(14,16,18,0.88) 0%,
         rgba(12,74,110,0.72) 50%,
-        rgba(12,21,38,0.55) 100%
+        rgba(14,16,18,0.55) 100%
       );
     }
     .hero-content {
@@ -261,7 +261,7 @@
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(34,211,238,0.12); border: 1px solid rgba(34,211,238,0.3);
+      background: rgba(143,184,255,0.12); border: 1px solid rgba(143,184,255,0.3);
       border-radius: 100px; padding: 0.35rem 1rem;
       font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--teal-lt); margin-bottom: 1.75rem;
@@ -288,7 +288,7 @@
       font-size: 0.9rem; font-weight: 700;
       transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
     }
-    .btn-hero-primary:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 8px 28px rgba(8,145,178,0.4); }
+    .btn-hero-primary:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 8px 28px rgba(31,111,235,0.4); }
     .btn-hero-secondary {
       display: inline-flex; align-items: center; gap: 0.5rem;
       background: rgba(255,255,255,0.1); color: #fff; text-decoration: none;
@@ -302,7 +302,7 @@
     /* Hero stats bar */
     .hero-statsbar {
       position: relative; z-index: 2;
-      background: rgba(12,21,38,0.8); backdrop-filter: blur(16px);
+      background: rgba(14,16,18,0.8); backdrop-filter: blur(16px);
       border-top: 1px solid rgba(255,255,255,0.08);
       padding: 1.5rem 2.5rem;
       display: flex; align-items: center; gap: 0;
@@ -358,7 +358,7 @@
     .step-text p { font-size: 0.84rem; line-height: 1.6; color: var(--muted); }
     .photo-frame {
       border-radius: 20px; overflow: hidden;
-      box-shadow: 0 24px 64px rgba(12,21,38,0.18);
+      box-shadow: 0 24px 64px rgba(14,16,18,0.18);
       aspect-ratio: 4/3;
     }
     .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -376,7 +376,7 @@
       background: var(--teal); transform: scaleX(0); transform-origin: left;
       transition: transform 0.3s;
     }
-    .svc-card:hover { border-color: var(--teal); box-shadow: 0 12px 40px rgba(8,145,178,0.1); transform: translateY(-3px); }
+    .svc-card:hover { border-color: var(--teal); box-shadow: 0 12px 40px rgba(31,111,235,0.1); transform: translateY(-3px); }
     .svc-card:hover::before { transform: scaleX(1); }
     .svc-icon {
       width: 44px; height: 44px; border-radius: 10px;
@@ -394,16 +394,16 @@
     .ebus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     .ebus-badge {
       display: inline-flex; align-items: center; gap: 0.6rem;
-      background: rgba(34,211,238,0.1); border: 1px solid rgba(34,211,238,0.25);
+      background: rgba(143,184,255,0.1); border: 1px solid rgba(143,184,255,0.25);
       border-radius: 100px; padding: 0.4rem 1rem;
       font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--teal-lt); margin-bottom: 1.5rem;
     }
     .ebus-pulse {
       width: 8px; height: 8px; border-radius: 50%; background: var(--teal-lt);
-      box-shadow: 0 0 0 0 rgba(34,211,238,0.4); animation: pulse 2s infinite;
+      box-shadow: 0 0 0 0 rgba(143,184,255,0.4); animation: pulse 2s infinite;
     }
-    @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(34,211,238,0.4)} 70%{box-shadow:0 0 0 10px rgba(34,211,238,0)} 100%{box-shadow:0 0 0 0 rgba(34,211,238,0)} }
+    @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(143,184,255,0.4)} 70%{box-shadow:0 0 0 10px rgba(143,184,255,0)} 100%{box-shadow:0 0 0 0 rgba(143,184,255,0)} }
     .ebus-cards { display: flex; flex-direction: column; gap: 0.9rem; }
     .ebus-card {
       background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
@@ -411,10 +411,10 @@
       display: flex; gap: 1rem; align-items: flex-start;
       transition: border-color 0.2s, background 0.2s;
     }
-    .ebus-card:hover { border-color: rgba(8,145,178,0.4); background: rgba(8,145,178,0.05); }
+    .ebus-card:hover { border-color: rgba(31,111,235,0.4); background: rgba(31,111,235,0.05); }
     .ebus-card-ico {
       flex-shrink: 0; width: 40px; height: 40px; border-radius: 9px;
-      background: rgba(8,145,178,0.2); border: 1px solid rgba(8,145,178,0.3);
+      background: rgba(31,111,235,0.2); border: 1px solid rgba(31,111,235,0.3);
       display: flex; align-items: center; justify-content: center; color: var(--teal-lt);
     }
     .ebus-card-ico svg { width: 20px; height: 20px; }
@@ -428,8 +428,8 @@
     .ebus-photo img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4/5; }
     .ebus-photo-tag {
       position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem;
-      background: rgba(12,21,38,0.85); backdrop-filter: blur(10px);
-      border: 1px solid rgba(34,211,238,0.2);
+      background: rgba(14,16,18,0.85); backdrop-filter: blur(10px);
+      border: 1px solid rgba(143,184,255,0.2);
       border-radius: 10px; padding: 0.85rem 1rem;
     }
     .ebus-photo-tag h5 { font-size: 0.82rem; font-weight: 700; color: #fff; margin-bottom: 0.15rem; }
@@ -441,7 +441,7 @@
       background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem;
       transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
-    .indic-card:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(8,145,178,0.1); }
+    .indic-card:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(31,111,235,0.1); }
     .indic-dot {
       width: 10px; height: 10px; border-radius: 50%; margin-bottom: 1rem;
     }
@@ -476,7 +476,7 @@
     .interv-visual { display: flex; flex-direction: column; gap: 1rem; }
     .interv-photo-lg {
       border-radius: 16px; overflow: hidden;
-      box-shadow: 0 16px 48px rgba(12,21,38,0.14);
+      box-shadow: 0 16px 48px rgba(14,16,18,0.14);
     }
     .interv-photo-lg img { width: 100%; object-fit: cover; display: block; aspect-ratio: 16/10; }
     .interv-stat-bar {
@@ -508,13 +508,13 @@
     .ref-table td { padding: 0.85rem 0.75rem; font-size: 0.84rem; color: var(--slate); border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
     .ref-table td:first-child { font-weight: 700; color: var(--navy); }
     .ref-table tr:last-child td { border-bottom: none; }
-    .ref-badge { display: inline-block; font-size: 0.64rem; font-weight: 700; padding: 0.18rem 0.5rem; border-radius: 4px; margin-left: 0.3rem; background: rgba(8,145,178,0.1); color: var(--teal-dark); letter-spacing: 0.04em; text-transform: uppercase; }
+    .ref-badge { display: inline-block; font-size: 0.64rem; font-weight: 700; padding: 0.18rem 0.5rem; border-radius: 4px; margin-left: 0.3rem; background: rgba(31,111,235,0.1); color: var(--teal-dark); letter-spacing: 0.04em; text-transform: uppercase; }
 
     /* ── BIO DR. LAZO ── */
     .bio-wrap { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; align-items: start; }
     .bio-photo {
       border-radius: 20px; overflow: hidden;
-      box-shadow: 0 20px 60px rgba(12,21,38,0.2);
+      box-shadow: 0 20px 60px rgba(14,16,18,0.2);
     }
     .bio-photo img { width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; object-position: center 10%; }
     .bio-name { font-family: var(--serif); font-size: 2.2rem; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 0.3rem; }
@@ -550,10 +550,10 @@
 
     /* ── CTA ── */
     .cta-section {
-      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-dark) 60%, #0369a1 100%);
+      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-dark) 60%, #1A5FCC 100%);
       padding: 7rem 2.5rem; text-align: center; position: relative; overflow: hidden;
     }
-    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(34,211,238,0.08), transparent 70%); pointer-events: none; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(143,184,255,0.08), transparent 70%); pointer-events: none; }
     .cta-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
     .cta-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 1rem; }
     .cta-title { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); color: #fff; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
@@ -608,17 +608,17 @@
   
     /* ══ CTA CONTACTO UNIFICADO ══ */
     .cta-unified {
-      background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 60%, #0369a1 100%);
+      background: linear-gradient(135deg, #14448F 0%, #1A5FCC 60%, #1A5FCC 100%);
       padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden;
     }
-    .cta-unified::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(34,211,238,0.08), transparent 70%); pointer-events:none; }
+    .cta-unified::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(143,184,255,0.08), transparent 70%); pointer-events:none; }
     .cta-unified > * { position: relative; z-index: 2; }
-    .cta-unified .cta-eyebrow { font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#22d3ee; margin-bottom:0.75rem; }
-    .cta-unified .cta-title { font-family:'DM Serif Display',serif; font-size:clamp(1.8rem,3vw,2.6rem); color:#fff; letter-spacing:-0.02em; margin-bottom:2rem; }
+    .cta-unified .cta-eyebrow { font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8FB8FF; margin-bottom:0.75rem; }
+    .cta-unified .cta-title { font-family:'Red Hat Display',serif; font-size:clamp(1.8rem,3vw,2.6rem); color:#fff; letter-spacing:-0.02em; margin-bottom:2rem; }
     .cta-unified .cta-contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:980px; margin:0 auto; align-items:stretch; }
     .cta-unified .contact-card { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:1.5rem; text-align:left; transition:background 0.2s; }
     .cta-unified .contact-card:hover { background:rgba(255,255,255,0.11); }
-    .cta-unified .contact-card h4 { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#22d3ee; margin-bottom:0.75rem; }
+    .cta-unified .contact-card h4 { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#8FB8FF; margin-bottom:0.75rem; }
     .cta-unified .ccontact-links { display:flex; flex-direction:column; gap:0.65rem; margin-top:0.5rem; }
     .cta-unified .ccontact-link { display:flex; align-items:center; gap:0.75rem; text-decoration:none; padding:0.6rem 0.75rem; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); transition:background 0.2s, border-color 0.2s; }
     .cta-unified .ccontact-link:hover { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2); }
@@ -642,7 +642,7 @@
       transition: transform 0.25s, opacity 0.2s;
       pointer-events: none;
     }
-    nav.light .nav-hamburger span { background: var(--navy, #0c1526); }
+    nav.light .nav-hamburger span { background: var(--navy, #0E1012); }
     nav.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
     nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -680,7 +680,7 @@
         flex-direction: column !important;
         position: absolute !important;
         top: 100% !important; left: 0 !important; right: 0 !important;
-        background: var(--navy, #0c1526) !important;
+        background: var(--navy, #0E1012) !important;
         padding: 0.75rem 1.25rem 1.25rem !important;
         gap: 0 !important;
         z-index: 9999 !important;
@@ -878,7 +878,7 @@
     }
     .perfil-box:hover {
       background: #fff;
-      box-shadow: 0 8px 24px rgba(8,145,178,0.18);
+      box-shadow: 0 8px 24px rgba(31,111,235,0.18);
       transform: translateY(-2px);
     }
     .perfil-box-txt { flex: 1; }
@@ -896,7 +896,7 @@
     .adv-icon svg{width:20px;height:20px} .tech-pill-icon svg{width:19px;height:19px}
     .abl-card-icon svg{width:26px;height:26px} .stent-vs-icon svg{width:24px;height:24px}
     .abl-ico svg{width:20px;height:20px}
-    .adv-icon,.stent-vs-icon{color:#0891b2}
+    .adv-icon,.stent-vs-icon{color:#1F6FEB}
   
     .bio-src{font-size:.78rem;line-height:1.55;color:var(--muted);margin-top:1rem}
     .bio-src a{color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(0,150,150,.3)}
@@ -1273,6 +1273,10 @@
       }
     }, true);
   </script>
+<style id="sistema-a">:root,.hero-h1,.hero-stat-num,.section-title,.istat-n,.bio-name,.cta-title,.cta-unified .cta-title{font-weight:800!important;letter-spacing:-.025em!important}
+:root em,.hero-h1 em,.hero-stat-num em,.section-title em,.istat-n em,.bio-name em,.cta-title em,.cta-unified .cta-title em,:root i,.hero-h1 i,.hero-stat-num i,.section-title i,.istat-n i,.bio-name i,.cta-title i,.cta-unified .cta-title i{font-style:normal!important}
+.hero-badge,.eyebrow,.ebus-badge,.tag-sm,.ref-table th,.ref-badge,.cta-eyebrow,.cta-contact-card h4,.cta-unified .cta-eyebrow,.cta-unified .contact-card h4,.cta-unified .ccontact-label{font-family:'JetBrains Mono',ui-monospace,monospace!important;font-weight:500!important;letter-spacing:.14em!important}
+body{font-family:"Red Hat Display",Arial,sans-serif}p,li,td,.faq-a{font-weight:400}p strong,li strong,td strong,p b{font-weight:700}</style>
 </head>
 <body>
 
@@ -1428,7 +1432,7 @@
             <div class="ebus-pulse"></div>
             Tecnología de punta · Único en Chile
           </div>
-          <h2 class="section-title section-title-w">CryoEBUS:<br><em style="color:#22d3ee;font-style:italic;">la criosonda que<br>lo cambia todo</em></h2>
+          <h2 class="section-title section-title-w">CryoEBUS:<br><em style="color:#8FB8FF;font-style:italic;">la criosonda que<br>lo cambia todo</em></h2>
           <p class="section-lead section-lead-w" style="margin-bottom:2rem;">
             Combina el ultrasonido endobronquial (EBUS) con una criosonda para obtener muestras de mayor tamaño. Diagnóstico de alta precisión en una sola sesión — cáncer pulmonar, linfomas y sarcoidosis.
           </p>
@@ -1481,13 +1485,13 @@
       <p class="section-lead">La broncoscopía permite diagnóstico y tratamiento en una amplia variedad de condiciones respiratorias.</p>
       <div class="indic-grid">
         <div class="indic-card">
-          <div class="indic-dot" style="background:#0891b2;"></div>
+          <div class="indic-dot" style="background:#1F6FEB;"></div>
           <h3>Nódulo pulmonar sospechoso</h3>
           <p>Biopsia guiada por navegación o radioscopia para nódulos periféricos o centrales. Diagnóstico sin toracotomía.</p>
           <span class="tag-sm tag-dx">Diagnóstico</span>
         </div>
         <div class="indic-card">
-          <div class="indic-dot" style="background:#0891b2;"></div>
+          <div class="indic-dot" style="background:#1F6FEB;"></div>
           <h3>Adenopatías mediastínicas</h3>
           <p>EBUS-TBNA para <a href="https://cancerpulmonar.cl/etapificacion">estadificación de cáncer pulmonar</a> y diagnóstico diferencial de linfomas, sarcoidosis y tuberculosis.</p>
           <span class="tag-sm tag-dx">Diagnóstico</span>
@@ -1505,7 +1509,7 @@
           <span class="tag-sm tag-tx">Tratamiento</span>
         </div>
         <div class="indic-card">
-          <div class="indic-dot" style="background:#0891b2;"></div>
+          <div class="indic-dot" style="background:#1F6FEB;"></div>
           <h3>Derrame pleural / Masa mediastínica</h3>
           <p>Estudio diagnóstico completo con muestras de calidad para análisis citológico, histológico y microbiológico.</p>
           <span class="tag-sm tag-dx">Diagnóstico</span>
@@ -1538,7 +1542,7 @@
             <div><h4>Crioterapia y Criobiopsia</h4><p>Congelación tisular para ablación tumoral y obtención de biopsias de mayor tamaño con mínimo daño mecánico.</p></div>
           </div>
           <div class="abl-row">
-            <div class="abl-ico" style="background:#f0f9ff;color:#0369a1;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="5"/><path d="M7 9h10M7 15h10"/></svg></div>
+            <div class="abl-ico" style="background:#f0f9ff;color:#1A5FCC;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="5"/><path d="M7 9h10M7 15h10"/></svg></div>
             <div><h4>Stents Traqueobronquiales</h4><p>Prótesis metálicas o de silicona para mantener la vía aérea permeable en obstrucciones malignas o cicatrizales.</p></div>
           </div>
           <div class="abl-row">
@@ -1577,7 +1581,7 @@
             <div class="ebus-pulse"></div>
             En uso desde 2025
           </div>
-          <h2 class="section-title section-title-w">Navegaci&oacute;n guiada por CBCT:<br><em style="color:#22d3ee;font-style:italic;">una tomograf&iacute;a<br>dentro del pabell&oacute;n</em></h2>
+          <h2 class="section-title section-title-w">Navegaci&oacute;n guiada por CBCT:<br><em style="color:#8FB8FF;font-style:italic;">una tomograf&iacute;a<br>dentro del pabell&oacute;n</em></h2>
           <p class="section-lead section-lead-w" style="margin-bottom:2rem;">
             El arco en C gira alrededor del paciente y reconstruye un volumen tridimensional del t&oacute;rax durante el procedimiento. La imagen no viene de una tomograf&iacute;a tomada d&iacute;as antes: se obtiene en el momento, con el broncoscopio ya dentro.
           </p>

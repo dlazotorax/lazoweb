@@ -215,7 +215,7 @@ EBUS Chile **#5**, y el AI Overview lo nombra · «David Lazo cirujano torácico
 cirujano torácico Santiago y cirugía hiperhidrosis Chile: **ausente**. Títulos aún sin «Pérez» (recrawl pendiente).
 
 **IA (22-oct), categoría / marca:** ChatGPT **sin sesión** 4/6 · 3/3 · Perplexity con sesión 4/6 · 3/3 · Modo IA
-con sesión 3/6 · 3/3. Gemini: sin dato (no respondió). Cáncer de pulmón entra en ChatGPT (vía Doctoralia) y
+con sesión 3/6 · 3/3 · Gemini Flash con sesión 2/6 · 3/3 (5-sep: 3/6; pierde cáncer de pulmón). Cáncer de pulmón entra en ChatGPT (vía Doctoralia) y
 Perplexity (vía hub). Hiperhidrosis y trasplante: ausente en todos. «Primer programa sistemático de RATS» y
 «mayor experiencia del país» se reproducen literal desde la bio de rats.cl (l. 630). MEDS residual en Modo IA
 y Perplexity, desde contenido de MEDS. ChatGPT cita un trabajo «16 pacientes HCSBA dic-2022–jul-2023» que no
@@ -263,7 +263,7 @@ que el resto es lento.
 |---|---|---|
 | 1 | **cancerpulmonar.cl:** reindexación de 4 páginas solicitada el 12-oct | Verificar |
 | 2 | **CTR:** `title`/`description` de cancerpulmonar `/sobrevida`, broncoscopia `/ebus`, videotoracoscopia `/` y rats `/operculo-toracico` (página 1, 200+ impr, 0-2 clics). Maqueta para David antes de publicar | Medición 22-oct. Absorbe el antiguo nº 5 y nº 6 |
-| 2b | Próxima medición IA: **Gemini** (no respondió el 22-oct) y Modo IA sin sesión | |
+| 2b | Próxima medición IA: Modo IA y Gemini **sin sesión**. Gemini con el panel oculto tarda 2-3 min/respuesta y parte del texto va en nodos que `innerText` de `main` no lee: recorrer shadow DOM | |
 | 3 | **cancerpulmonar.cl:** FAQ publicadas el 4-sep (7 páginas) y aun así no citado. Propuesta: preguntas quirúrgicas que solo responde un cirujano torácico (operabilidad, lobectomía vs segmentectomía, VATS/RATS en cáncer, recuperación, EBUS en la decisión). Con bibliografía y validación de David | Borrador por hacer |
 | 4 | **hiperhidrosis.cl:** decidir si se invierte. Si sí: páginas por **tratamiento** (toxina botulínica, iontoforesis, medicación oral), reescribir `/hiperhidrosis-localizada-leve/` y pasar los 7 posts 2020-21 a registro sobrio (tutean y exclaman). **No ampliar** `/blog/`, `/test…/`, `/`, ni los posts de SC y rubor (§1.4) | Decisión de David |
 | 5 | `videotoracoscopia.cl`: único sin `FAQPage` | |

@@ -1,6 +1,6 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
-> **Última actualización: 21 oct 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
+> **Última actualización: 22 oct 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
 > métricas vigentes y pendientes. Todo lo narrativo (sesiones, razonamientos, cómo se llegó a cada
 > dato) está en **`ESTADO-historico.md`**; la versión larga de este archivo, tal como estaba al
 > 22-sep-2026, está al final de ese histórico.
@@ -190,32 +190,41 @@ un `h1`, canonical sin www, 0 JSON-LD inválidos, contenido sin JS, 89 pares FAQ
 
 ## 6. Métricas vigentes (reemplazar en cada medición)
 
-**Search Console — 3 meses al 18-sep-2026** (impr / clics / posición / impresiones en IA de Google):
+Detalle de esta medición: doc del Project `claude/posicionamiento-revision-2026-10-22.md`.
+
+**Search Console — 3 meses al 20-oct-2026** (21-jul → 20-oct; impr / clics / posición / impresiones en
+IA de Google). GSC redondea sobre 1.000: tres cifras aproximadas.
 
 | Dominio | Impr | Clics | Pos | IA |
 |---|---|---|---|---|
-| cirugiatoracica.cl | 802 | 18 | 20,6 | 66 |
-| rats.cl | 705 | 21 | **6,7** | **153** |
-| cancerpulmonar.cl | 690 | 15 | 29,1 | 40 |
-| hiperhidrosis.cl | 507 | 5 | 42,2 | 28 |
-| videotoracoscopia.cl | 371 | 3 | 7,8 | 34 |
-| broncoscopia.cl | 330 | 6 | 13,6 | 49 |
-| **Red** | **3.405** | **68** | | **370** |
+| cancerpulmonar.cl | ~3.530 | 47 | 13,8 | **598** |
+| rats.cl | ~2.490 | 44 | **5,7** | **706** |
+| cirugiatoracica.cl | ~1.210 | 43 | 10,2 | 158 |
+| broncoscopia.cl | 983 | 23 | 9,1 | 210 |
+| videotoracoscopia.cl | 763 | 9 | 6,9 | 89 |
+| hiperhidrosis.cl | 655 | 8 | 36,3 | 54 |
+| **Red** | **~9.630** | **174** | | **1.815** |
 
-Hub por página: `/perfil` 331/15/5,9 · `/` 511/3/18,4 · `/cv` 10/0/5,9. «cirugía de tórax» sigue ~80.
-Opérculo: indexado solo; consultas anatómicas con 0 clics.
+(18-sep: 3.405 / 68 / IA 370.) Crecimiento por cancerpulmonar `/sobrevida`+`/etapificacion` y por el opérculo.
+Hub por página: `/perfil` 614/37/5,4 · `/` 755/4/13,9. «cirugía de tórax» sigue ~84; «hiperhidrosis» ~82.
+**Cuello de botella = CTR:** «adenocarcinoma pulmonar sobrevida» 242 impr pos 6,2 **0 clics** · «videotoracoscopia»
+278 pos 6,0 2 clics · «ebus» 219 pos 7,9 2 clics · «operculo toracico» 110 pos 11,9 0 clics.
 
-**SERP google.cl (20-sep):** videotoracoscopía Chile **#1** · EBUS Chile **#5** (broncoscopia.cl) ·
-cirugía robótica torácica Chile **#3** · «David Lazo cirujano torácico» 4 propios en top 10, MEDS ya no
-aparece · cirujano torácico Santiago y cirugía hiperhidrosis Chile: **ausente** (Doctoralia #1 lo nombra).
+**SERP google.cl (22-oct, `pws=0`):** videotoracoscopía Chile **#1** · cirugía robótica torácica Chile **#2** ·
+EBUS Chile **#5**, y el AI Overview lo nombra · «David Lazo cirujano torácico» 5 de 9 propios, sin MEDS ·
+cirujano torácico Santiago y cirugía hiperhidrosis Chile: **ausente**. Títulos aún sin «Pérez» (recrawl pendiente).
 
-**IA (13 y 20-sep):** citan rats.cl, el hub y, desde el 20-sep, broncoscopia.cl (nódulo/EBUS).
-**Nunca** han citado cancerpulmonar.cl ni hiperhidrosis.cl. Gemini sin sesión: sin medir.
+**IA (22-oct), categoría / marca:** ChatGPT **sin sesión** 4/6 · 3/3 · Perplexity con sesión 4/6 · 3/3 · Modo IA
+con sesión 3/6 · 3/3. Gemini: sin dato (no respondió). Cáncer de pulmón entra en ChatGPT (vía Doctoralia) y
+Perplexity (vía hub). Hiperhidrosis y trasplante: ausente en todos. «Primer programa sistemático de RATS» y
+«mayor experiencia del país» se reproducen literal desde la bio de rats.cl (l. 630). MEDS residual en Modo IA
+y Perplexity, desde contenido de MEDS. ChatGPT cita un trabajo «16 pacientes HCSBA dic-2022–jul-2023» que no
+está en la red: **no reutilizar sin abrir la fuente**.
 
-**Fichas (20-sep):** GBP **0 reseñas** (129 vistas/mes) · Doctoralia **1**.
+**Fichas (22-oct):** GBP **0 reseñas** (142 vistas/mes) · Doctoralia **1** (dos fichas).
 
-**Instagram (Metricool, 7-sep → 21-sep):** 2.437 seguidores, planos (+4). 4 reels jul-sep, 0 historias.
-Cada reel alcanza 440-975 cuentas; entre reels, <15/día.
+**Instagram (Metricool, 22-sep → 21-oct):** 2.443 seguidores (+6 en un mes). 2 reels, 0 historias, 0 feed.
+Alcance medio por reel 827; entre reels 2-21 cuentas/día.
 
 **GA4:** ~70% del tráfico «Direct» es bot (2 s de interacción). Filtro de bots y conversiones pendientes.
 
@@ -253,11 +262,11 @@ que el resto es lento.
 | # | Qué | Nota |
 |---|---|---|
 | 1 | **cancerpulmonar.cl:** reindexación de 4 páginas solicitada el 12-oct | Verificar |
-| 2 | **Medir IA** de nuevo (incluido Gemini sin sesión) para ver efecto de la entidad unificada | |
+| 2 | **CTR:** `title`/`description` de cancerpulmonar `/sobrevida`, broncoscopia `/ebus`, videotoracoscopia `/` y rats `/operculo-toracico` (página 1, 200+ impr, 0-2 clics). Maqueta para David antes de publicar | Medición 22-oct. Absorbe el antiguo nº 5 y nº 6 |
+| 2b | Próxima medición IA: **Gemini** (no respondió el 22-oct) y Modo IA sin sesión | |
 | 3 | **cancerpulmonar.cl:** FAQ publicadas el 4-sep (7 páginas) y aun así no citado. Propuesta: preguntas quirúrgicas que solo responde un cirujano torácico (operabilidad, lobectomía vs segmentectomía, VATS/RATS en cáncer, recuperación, EBUS en la decisión). Con bibliografía y validación de David | Borrador por hacer |
 | 4 | **hiperhidrosis.cl:** decidir si se invierte. Si sí: páginas por **tratamiento** (toxina botulínica, iontoforesis, medicación oral), reescribir `/hiperhidrosis-localizada-leve/` y pasar los 7 posts 2020-21 a registro sobrio (tutean y exclaman). **No ampliar** `/blog/`, `/test…/`, `/`, ni los posts de SC y rubor (§1.4) | Decisión de David |
-| 5 | `videotoracoscopia.cl`: único sin `FAQPage`; CTR 0,8% en pos 7,8 → revisar `title`/`description` | |
-| 6 | Opérculo: orientar `title`/`description` a intención de paciente (síntomas, tratamiento) | |
+| 5 | `videotoracoscopia.cl`: único sin `FAQPage` | |
 | 7 | `/rats-vs-vats` — contenido nuevo | |
 | 8 | Acordeón de FAQ en `rubor-facial-patologico` (tiene `FAQPage` visible, falta la interfaz) | |
 | 9 | Eyebrows: 7 `class="eyebrow"` en `cirugiatoracica/index.html` (una **es** el `h2` «Enfermedades que tratamos»); familias `cta-/sec-/bio-/hero-/page-nav-eyebrow` sin decidir | Criterio en el histórico |

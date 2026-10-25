@@ -1,6 +1,6 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
-> **Última actualización: 22 oct 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
+> **Última actualización: 25 oct 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
 > métricas vigentes y pendientes. Todo lo narrativo (sesiones, razonamientos, cómo se llegó a cada
 > dato) está en **`ESTADO-historico.md`**; la versión larga de este archivo, tal como estaba al
 > 22-sep-2026, está al final de ese histórico.
@@ -192,26 +192,26 @@ un `h1`, canonical sin www, 0 JSON-LD inválidos, contenido sin JS, 89 pares FAQ
 
 Detalle de esta medición: doc del Project `claude/posicionamiento-revision-2026-10-22.md`.
 
-**Search Console — 3 meses al 20-oct-2026** (21-jul → 20-oct; impr / clics / posición / impresiones en
-IA de Google). GSC redondea sobre 1.000: tres cifras aproximadas.
+**Search Console — 3 meses al 23-oct-2026** (24-jul → 23-oct; impr / clics / posición). Medido 25-oct.
+IA de Google no se volvió a medir (última: 20-oct, 1.815 en la red). GSC redondea sobre 1.000.
 
-| Dominio | Impr | Clics | Pos | IA |
-|---|---|---|---|---|
-| cancerpulmonar.cl | ~3.530 | 47 | 13,8 | **598** |
-| rats.cl | ~2.490 | 44 | **5,7** | **706** |
-| cirugiatoracica.cl | ~1.210 | 43 | 10,2 | 158 |
-| broncoscopia.cl | 983 | 23 | 9,1 | 210 |
-| videotoracoscopia.cl | 763 | 9 | 6,9 | 89 |
-| hiperhidrosis.cl | 655 | 8 | 36,3 | 54 |
-| **Red** | **~9.630** | **174** | | **1.815** |
+| Dominio | Impr | Clics | Pos |
+|---|---|---|---|
+| cancerpulmonar.cl | ~3.950 | 50 | 13,4 |
+| rats.cl | ~2.800 | 45 | **5,6** |
+| cirugiatoracica.cl | ~1.250 | 52 | 9,8 |
+| broncoscopia.cl | ~1.060 | 23 | 9,1 |
+| videotoracoscopia.cl | 807 | 10 | 6,8 |
+| hiperhidrosis.cl | 668 | 8 | 36,4 |
+| **Red** | **~10.540** | **188** | |
 
-(18-sep: 3.405 / 68 / IA 370.) Crecimiento por cancerpulmonar `/sobrevida`+`/etapificacion` y por el opérculo.
+(20-oct: ~9.630 / 174.) (18-sep: 3.405 / 68 / IA 370.) Crecimiento por cancerpulmonar `/sobrevida`+`/etapificacion` y por el opérculo.
 Hub por página: `/perfil` 614/37/5,4 · `/` 755/4/13,9. «cirugía de tórax» sigue ~84; «hiperhidrosis» ~82.
 **Cuello de botella = CTR:** «adenocarcinoma pulmonar sobrevida» 242 impr pos 6,2 **0 clics** · «videotoracoscopia»
 278 pos 6,0 2 clics · «ebus» 219 pos 7,9 2 clics · «operculo toracico» 110 pos 11,9 0 clics.
 
-**SERP google.cl (22-oct, `pws=0`):** videotoracoscopía Chile **#1** · cirugía robótica torácica Chile **#2** ·
-EBUS Chile **#5**, y el AI Overview lo nombra · «David Lazo cirujano torácico» 5 de 9 propios, sin MEDS ·
+**SERP google.cl (25-oct, `pws=0`):** videotoracoscopía Chile **#1** · cirugía robótica torácica Chile **#2** (oncotorax #1) ·
+EBUS Chile **#5** · adenocarcinoma pulmonar sobrevida **#3** (22-oct: AI Overview lo nombra en EBUS) · «David Lazo cirujano torácico» 5 de 9 propios, sin MEDS ·
 cirujano torácico Santiago y cirugía hiperhidrosis Chile: **ausente**. Títulos aún sin «Pérez» (recrawl pendiente).
 
 **IA (22-oct), categoría / marca:** ChatGPT **sin sesión** 4/6 · 3/3 · Perplexity con sesión 4/6 · 3/3 · Modo IA

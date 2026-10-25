@@ -119,7 +119,7 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
 | videotoracoscopia.cl | 1 | VATS |
 | vats.cl · cirugiadetorax.cl | 308 → videotoracoscopia.cl · 308 → cirugiatoracica.cl | Redirects |
 
-**39 páginas.** Auditoría en producción (20-sep-2026): 39/39 limpias — sitemaps cuadran, UTF-8 sin BOM,
+**40 páginas** (desde 17-oct-2026). Auditoría en producción (20-sep-2026): 39/39 limpias — sitemaps cuadran, UTF-8 sin BOM,
 un `h1`, canonical sin www, 0 JSON-LD inválidos, contenido sin JS, 89 pares FAQ todos visibles,
 `robots.txt` y `llms.txt` en los 6. `audit.py` al 22-sep: 0 hallazgos.
 

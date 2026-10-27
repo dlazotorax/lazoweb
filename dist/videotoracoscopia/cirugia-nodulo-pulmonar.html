@@ -757,6 +757,37 @@ figcaption{font-family:var(--font-mono);font-size:.72rem;line-height:1.5;color:v
       .tbl td{border:none;padding:3px 0}
       .tbl td[data-c]:not([data-c="0"])::before{content:attr(data-l);display:block;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--new);margin-top:8px}
     }
+
+/* ============================================================
+   NAVEGACIÓN DEL SITIO + PROCEDIMIENTOS (27-oct-2026)
+   ============================================================ */
+.sitenav{position:sticky;top:0;z-index:55;display:flex;align-items:center;gap:1.5rem;
+  padding:.85rem var(--pad-x);background:color-mix(in srgb,var(--bg) 90%,transparent);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.sitenav .nav-brand{font-family:var(--font-display);font-weight:800;font-stretch:110%;font-size:1.05rem;
+  letter-spacing:-.01em;color:var(--fg);text-decoration:none;white-space:nowrap;}
+.sitenav .nav-brand span{color:var(--new);}
+.sitenav .nav-links{list-style:none;margin:0 0 0 auto;padding:0;display:flex;flex-wrap:wrap;gap:.2rem 1.4rem;}
+.sitenav .nav-links a{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--bone-dim);text-decoration:none;padding:.3rem 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+.sitenav .nav-links a:hover,.sitenav .nav-links a[aria-current="page"]{color:var(--new);border-bottom-color:var(--new);}
+.nav-hamburger{display:none;background:none;border:1px solid var(--line);color:var(--fg);width:40px;height:36px;
+  align-items:center;justify-content:center;cursor:pointer;border-radius:4px;}
+.nav-hamburger svg{width:18px;height:18px;}
+@media (max-width:980px) and (min-width:769px){.sitenav .nav-links{gap:.2rem 1rem}.sitenav .nav-links a{font-size:.68rem;letter-spacing:.06em}}
+.proc-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,24px);margin-top:2.4rem;}
+.proc-card{display:flex;flex-direction:column;gap:.7rem;border:1px solid var(--line);border-top:3px solid var(--new);
+  background:var(--ink-2);padding:clamp(20px,2.2vw,30px);text-decoration:none;color:var(--fg);transition:transform .2s,border-color .2s;}
+.proc-card:hover{transform:translateY(-3px);border-color:var(--new);}
+.proc-card .pc-site{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-faint);}
+.proc-card h3{font-size:clamp(1.25rem,2vw,1.6rem);line-height:1.1;}
+.proc-card p{margin:0;font-size:.95rem;color:var(--bone-dim);max-width:none;}
+.proc-card .pc-go{margin-top:auto;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--new);}
+.ind-sub{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-faint);margin:3rem 0 0;}
+.ind-cell li a{color:var(--new);text-decoration:none;border-bottom:1px solid currentColor;}
+@media (max-width:880px){.proc-cards{grid-template-columns:1fr;}}
+@media (max-width:768px){.sitenav .nav-links{margin:0;}}
+section[id],header[id]{scroll-margin-top:72px}
   </style>
   <script type="application/ld+json">
 {
@@ -1116,6 +1147,13 @@ figcaption{font-family:var(--font-mono);font-size:.72rem;line-height:1.5;color:v
 </div>
 
 <div class="progress"></div>
+<nav class="sitenav" aria-label="Videotoracoscopía">
+  <a class="nav-brand" href="/">Videotoracoscopía<span>.cl</span></a>
+  <button class="nav-hamburger" type="button" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <ul class="nav-links"><li><a href="/#tesis">Qué es</a></li><li><a href="/#historia">Historia</a></li><li><a href="/#procedimientos">Procedimientos</a></li><li><a href="/cirugia-nodulo-pulmonar" aria-current="page">Nódulo pulmonar</a></li><li><a href="/#publicaciones">Publicaciones</a></li><li><a href="#contacto">Contacto</a></li></ul>
+</nav>
+<script>(function(){var n=document.querySelector('.sitenav'),b=n&&n.querySelector('.nav-hamburger');if(!b)return;b.addEventListener('click',function(){var o=n.classList.toggle('nav-open');b.setAttribute('aria-expanded',o);});n.addEventListener('click',function(e){if(e.target.closest('.nav-links a')){n.classList.remove('nav-open');b.setAttribute('aria-expanded','false');}});})();</script>
+
 <header class="hero sub-hero">
   <div class="wrap">
     <div class="hero-lower">

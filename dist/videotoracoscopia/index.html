@@ -301,6 +301,13 @@
   <a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
 </div>
 <div class="progress"></div>
+<nav class="sitenav" aria-label="Videotoracoscopía">
+  <a class="nav-brand" href="/">Videotoracoscopía<span>.cl</span></a>
+  <button class="nav-hamburger" type="button" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <ul class="nav-links"><li><a href="#tesis">Qué es</a></li><li><a href="#historia">Historia</a></li><li><a href="#procedimientos">Procedimientos</a></li><li><a href="/cirugia-nodulo-pulmonar">Nódulo pulmonar</a></li><li><a href="#publicaciones">Publicaciones</a></li><li><a href="#contacto">Contacto</a></li></ul>
+</nav>
+<script>(function(){var n=document.querySelector('.sitenav'),b=n&&n.querySelector('.nav-hamburger');if(!b)return;b.addEventListener('click',function(){var o=n.classList.toggle('nav-open');b.setAttribute('aria-expanded',o);});n.addEventListener('click',function(e){if(e.target.closest('.nav-links a')){n.classList.remove('nav-open');b.setAttribute('aria-expanded','false');}});})();</script>
+
 
 <!-- ============ HERO ============ -->
 <header class="hero" data-screen-label="01 Portada">
@@ -316,7 +323,7 @@
         </div>
       </div>
       <div class="hero-figure r d2">
-        <img src="media/image3_jpeg.jpg" alt="Cirugía VATS uniportal" width="1200" height="1600" loading="lazy" decoding="async">
+        <img src="media/image3_jpeg.jpg" alt="Cirugía VATS uniportal" width="1200" height="1600" fetchpriority="high" decoding="async">
         <span class="tag">Uniportal VATS</span>
       </div>
     </div>
@@ -325,7 +332,7 @@
 </header>
 
 <!-- ============ 01 TESIS ============ -->
-<section class="thesis scene" data-screen-label="02 La tesis">
+<section class="thesis scene" id="tesis" data-screen-label="02 La tesis">
   <div class="wrap">
     <div class="idx r">01 — La tesis</div>
     <p class="big r d1">La VATS ha dejado de ser una vía alternativa para consolidarse como el <span class="hl">estándar de oro</span> de la cirugía torácica.</p>
@@ -387,7 +394,7 @@ La caja torácica nunca se separa.</span>
 </section>
 
 <!-- ============ 03 TIMELINE ============ -->
-<section class="tl scene" data-screen-label="04 Línea de tiempo">
+<section class="tl scene" id="historia" data-screen-label="04 Línea de tiempo">
   <div class="wrap">
     <div class="idx r">03 — Una historia de más de 150 años</div>
     <p class="lede r d1">La toracoscopia nació, brilló, cayó en el olvido — y la tecnología la devolvió como protagonista.</p>
@@ -493,25 +500,31 @@ La caja torácica nunca se separa.</span>
 
 
 <!-- ============ 09 INDICACIONES ============ -->
-<section class="scene" data-screen-label="06 Indicaciones" style="border-top:1px solid var(--line)">
+<section class="scene" id="procedimientos" data-screen-label="06 Indicaciones" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="axis-head r"><h2>Hasta dónde<br>llega hoy</h2><span class="axis-num">05</span></div>
     <p class="lede r d1" style="margin-top:1.4rem">Lo que antes exigía abrir el tórax, hoy se resuelve por VATS en casi todo el mapa quirúrgico torácico.</p>
     <div class="ind-grid r d2">
-      <div class="ind-cell"><h4>Resección pulmonar oncológica</h4><ul><li>Resección en cuña</li><li>Segmentectomía anatómica</li><li>Lobectomía · bilobectomía</li><li>Neumonectomía</li><li>Lobectomía en manguito</li></ul></div>
+      <div class="ind-cell"><h4>Resección pulmonar oncológica</h4><ul><li><a href="/cirugia-nodulo-pulmonar">Resección en cuña</a></li><li><a href="/cirugia-nodulo-pulmonar">Segmentectomía anatómica</a></li><li>Lobectomía · bilobectomía</li><li>Neumonectomía</li><li>Lobectomía en manguito</li></ul></div>
       <div class="ind-cell"><h4>Pulmón no oncológico</h4><ul><li>Bullectomía / LVRS</li><li>Biopsia pulmonar quirúrgica</li><li>Secuestro pulmonar / MAQ</li></ul></div>
       <div class="ind-cell"><h4>Pleura</h4><ul><li>Pleurodesis (talco)</li><li>Decorticación</li><li>Biopsia pleural</li><li>Empiema / hemotórax retenido</li></ul></div>
       <div class="ind-cell"><h4>Mediastino</h4><ul><li>Timectomía</li><li>Masas y quistes</li><li>Estadificación ganglionar</li><li>Biopsia de masas</li></ul></div>
       <div class="ind-cell"><h4>Esófago</h4><ul><li>Esofagectomía (componente torácico)</li><li>Miotomía</li><li>Enucleación de leiomioma</li><li>Diverticulectomía</li></ul></div>
       <div class="ind-cell"><h4>Diafragma</h4><ul><li>Plicatura</li><li>Reparación de hernia</li><li>Resección / reconstrucción</li></ul></div>
       <div class="ind-cell"><h4>Trauma y urgencias</h4><ul><li>Hemotórax retenido</li><li>Lesiones penetrantes</li><li>Cuerpos extraños intratorácicos</li><li>Fracturas costales</li></ul></div>
-      <div class="ind-cell"><h4>Otros</h4><ul><li>Simpatectomía torácica</li><li>Ventana pericárdica</li><li>Ligadura del conducto torácico</li><li>Tumores de pared · 1.ª costilla</li></ul></div>
+      <div class="ind-cell"><h4>Otros</h4><ul><li><a href="https://hiperhidrosis.cl/cirugia-hiperhidrosis">Simpatectomía torácica</a></li><li>Ventana pericárdica</li><li>Ligadura del conducto torácico</li><li>Tumores de pared · 1.ª costilla</li></ul></div>
+    </div>
+    <p class="ind-sub r">Más información por procedimiento</p>
+    <div class="proc-cards r d2" style="margin-top:1.2rem">
+      <a class="proc-card" href="/cirugia-nodulo-pulmonar"><span class="pc-site">videotoracoscopia.cl</span><h3>Cirugía de los nódulos pulmonares</h3><p>Resección en cuña, segmentectomía o lobectomía, y localización del nódulo antes de la cirugía con lipiodol o verde de indocianina.</p><span class="pc-go">Ver procedimiento →</span></a>
+      <a class="proc-card" href="https://cancerpulmonar.cl/tratamiento"><span class="pc-site">cancerpulmonar.cl</span><h3>Cirugía del cáncer pulmonar</h3><p>Lobectomía y segmentectomía en el tratamiento del cáncer pulmonar, junto a quimioterapia, inmunoterapia y terapias dirigidas.</p><span class="pc-go">Ver tratamiento →</span></a>
+      <a class="proc-card" href="https://hiperhidrosis.cl/cirugia-hiperhidrosis"><span class="pc-site">hiperhidrosis.cl</span><h3>Simpatectomía torácica</h3><p>Simpatectomía por videotoracoscopía para la hiperhidrosis, en régimen ambulatorio.</p><span class="pc-go">Ver cirugía →</span></a>
     </div>
   </div>
 </section>
 
 <!-- ============ 10 CONTRAINDICACIONES ============ -->
-<section class="scene" data-screen-label="07 Cuándo no" style="border-top:1px solid var(--line)">
+<section class="scene" id="limites" data-screen-label="07 Cuándo no" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="axis-head r"><h2>Los límites</h2><span class="axis-num">06</span></div>
     <p class="lede r d1" style="margin-top:1.4rem">Ser el estándar no significa servir para todo. Saber cuándo <i>no</i> operar por VATS es parte de dominarla.</p>

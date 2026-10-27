@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nódulo pulmonar: cirugía y marcación · Dr. David Lazo Pérez</title>
+  <meta name="description" content="Tipos de resección de un nódulo pulmonar y métodos para localizarlo en la videotoracoscopía, con énfasis en la marcación con lipiodol y verde de indocianina." />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Dr. David Lazo Pérez — Cirujano Torácico" />
+  <meta property="og:title" content="Nódulo pulmonar: cirugía y marcación · Dr. David Lazo Pérez" />
+  <meta property="og:description" content="Tipos de resección de un nódulo pulmonar y métodos para localizarlo en la videotoracoscopía, con énfasis en la marcación con lipiodol y verde de indocianina." />
+  <meta property="og:url" content="https://videotoracoscopia.cl/cirugia-nodulo-pulmonar" />
+  <meta property="og:image" content="https://videotoracoscopia.cl/media/nodulo-hero-radioscopia-lipiodol.webp" />
+  <meta property="og:locale" content="es_CL" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Dr. David Lazo Pérez" />
+  <link rel="canonical" href="https://videotoracoscopia.cl/cirugia-nodulo-pulmonar" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Bricolage+Grotesque:wght@600;700;800&family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Los atributos width/height protegen del CLS; height:auto evita que fijen
+   el alto y pisen el aspect-ratio o el alto que define el CSS. */
+img { height: auto; }
+
+/* ============================================================
+   VATS — Cambio de Paradigma  ·  hoja de estilo
+   Sistema: rojo tejido = toracotomía (lo viejo)
+            teal quirúrgico = VATS (lo nuevo)
+   ============================================================ */
+
+/* ---------- TOKENS ---------- */
+:root{
+  --ink:#0B0E0F;
+  --ink-2:#12171A;
+  --ink-3:#1A2125;
+  --bone:#ECE6DA;
+  --bone-dim:rgba(236,230,218,.66);
+  --bone-faint:rgba(236,230,218,.40);
+  --bone-ghost:rgba(236,230,218,.16);
+  --line:rgba(236,230,218,.13);
+
+  --old:#DC4A38;       /* toracotomía */
+  --old-deep:#7c1f15;
+  --new:#26C3AE;       /* VATS */
+  --new-deep:#0c6f63;
+
+  --bg:var(--ink);
+  --fg:var(--bone);
+
+  --font-display:"Archivo",system-ui,sans-serif;
+  --font-body:"Newsreader",Georgia,serif;
+  --font-mono:"Space Mono",ui-monospace,monospace;
+
+  --measure:64ch;
+  --pad-x:clamp(20px,6vw,120px);
+  --maxw:1320px;
+
+  --disp-wght:840;
+  --disp-wdth:118;
+}
+
+/* PALETTE: clínico (claro) */
+[data-palette="clinico"]{
+  --ink:#F1ECE2;
+  --ink-2:#E6DFD1;
+  --ink-3:#dcd4c4;
+  --bone:#15201F;
+  --bone-dim:rgba(21,32,31,.70);
+  --bone-faint:rgba(21,32,31,.46);
+  --bone-ghost:rgba(21,32,31,.12);
+  --line:rgba(21,32,31,.16);
+  --old:#C13C2C;
+  --new:#0E8C7C;
+  --new-deep:#0a5b51;
+}
+
+/* PALETTE: carbón (monocromo + un acento) */
+[data-palette="carbon"]{
+  --ink:#0d0d0e;
+  --ink-2:#161618;
+  --ink-3:#202023;
+  --bone:#E8E6E1;
+  --bone-dim:rgba(232,230,225,.64);
+  --bone-faint:rgba(232,230,225,.38);
+  --bone-ghost:rgba(232,230,225,.15);
+  --line:rgba(232,230,225,.13);
+  --old:#8b8b8b;
+  --old-deep:#3a3a3a;
+  --new:#E6533B;        /* único acento cálido */
+  --new-deep:#8e2c1c;
+}
+
+/* DISPLAY FONT swaps */
+[data-display="anton"]{ --font-display:"Anton",sans-serif; --disp-wght:400; --disp-wdth:100; }
+[data-display="bricolage"]{ --font-display:"Bricolage Grotesque",sans-serif; --disp-wght:800; --disp-wdth:100; }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--font-body);
+  font-size:clamp(17px,1.15vw,21px);
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+  transition:background .5s ease,color .5s ease;
+}
+::selection{background:var(--new);color:var(--ink);}
+
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  font-weight:var(--disp-wght);
+  font-stretch:calc(var(--disp-wdth) * 1%);
+  line-height:.94;
+  margin:0;
+  letter-spacing:-.01em;
+  text-wrap:balance;
+  overflow-wrap:break-word;
+}
+.mono{font-family:var(--font-mono);}
+.kicker{
+  font-family:var(--font-mono);
+  font-size:.74rem;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--bone-faint);
+  font-weight:400;
+}
+.old-ink{color:var(--old);}
+.new-ink{color:var(--new);}
+
+/* ---------- LAYOUT ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad-x);min-width:0;width:100%;}
+section{position:relative;}
+.scene{padding-block:clamp(80px,13vh,170px);}
+.lede{font-size:clamp(1.4rem,2.4vw,2.05rem);line-height:1.42;max-width:30ch;}
+p{max-width:var(--measure);}
+p.body{color:var(--bone-dim);}
+
+/* index tag for each section */
+.idx{
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  letter-spacing:.2em;
+  color:var(--bone-faint);
+  display:flex;align-items:center;gap:.8em;
+  margin-bottom:2.2rem;
+}
+.idx::after{content:"";flex:1;height:1px;background:var(--line);}
+
+/* reveal */
+.r{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);}
+.r.in{opacity:1;transform:none;}
+.reveal-now .r{opacity:1!important;transform:none!important;transition:none!important;}
+.r.d1{transition-delay:.08s}.r.d2{transition-delay:.16s}.r.d3{transition-delay:.24s}.r.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none;}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding-block:clamp(70px,10vh,130px);position:relative;overflow:hidden;}
+.hero h1{
+  font-size:clamp(2.6rem,6vw,5.4rem);
+  letter-spacing:-.028em;
+  line-height:.96;
+}
+.hero-lower{display:grid;grid-template-columns:1fr clamp(260px,30vw,420px);gap:clamp(28px,5vw,72px);align-items:center;}
+.hero-lower>*{min-width:0;}
+.hero h1 .line{display:block;overflow:hidden;}
+.hero h1 em{font-style:normal;color:var(--new);}
+.hero h1 .strike{color:var(--bone);position:relative;white-space:nowrap;}
+.hero h1 .strike::after{content:"";position:absolute;left:-.02em;right:-.02em;top:52%;height:.058em;background:var(--old);
+  transform:scaleX(var(--sx,0));transform-origin:left;transition:transform .75s cubic-bezier(.7,0,.25,1) .65s;}
+.hero-text.in .strike::after{--sx:1;}
+.reveal-now .hero h1 .strike::after{--sx:1;transition:none;}
+.hero-sub{margin-top:clamp(1.4rem,2.4vw,2.2rem);max-width:46ch;color:var(--bone-dim);font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.5;}
+.hero-meta{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;align-items:baseline;font-family:var(--font-mono);font-size:.82rem;color:var(--bone-faint);letter-spacing:.04em;}
+.hero-meta b{color:var(--fg);font-weight:400;}
+.hero-figure{position:relative;aspect-ratio:3/4;max-height:82vh;border:1px solid var(--line);overflow:hidden;background:var(--ink-2);}
+.hero-figure img{width:100%;height:100%;object-fit:cover;filter:saturate(.96) contrast(1.03);}
+.hero-figure .tag{position:absolute;left:0;bottom:0;background:var(--ink);color:var(--bone-dim);font-family:var(--font-mono);
+  font-size:.7rem;letter-spacing:.06em;padding:.6em .9em;border-top:1px solid var(--line);border-right:1px solid var(--line);}
+.scrollcue{position:absolute;left:var(--pad-x);bottom:26px;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--bone-faint);display:flex;align-items:center;gap:.8em;}
+.scrollcue .bar{width:42px;height:1px;background:var(--bone-faint);position:relative;overflow:hidden;}
+.scrollcue .bar::after{content:"";position:absolute;inset:0;background:var(--new);animation:sweep 2.4s infinite;}
+@keyframes sweep{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+
+/* ============================================================
+   THESIS
+   ============================================================ */
+.thesis{border-top:1px solid var(--line);}
+.thesis .big{font-family:var(--font-display);font-weight:var(--disp-wght);font-stretch:calc(var(--disp-wdth)*1%);
+  font-size:clamp(2rem,4.6vw,4.4rem);line-height:1.02;max-width:18ch;letter-spacing:-.015em;}
+.thesis .big .hl{color:var(--new);}
+.thesis .cols{margin-top:3rem;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(24px,4vw,70px);}
+.cite{font-family:var(--font-mono);font-size:.72rem;line-height:1.5;color:var(--bone-faint);border-left:1px solid var(--line);padding-left:1rem;}
+
+/* ============================================================
+   FACE-OFF (dos accesos)  + axis sections
+   ============================================================ */
+.faceoff{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--line);}
+.faceoff>div{padding:clamp(24px,3.4vw,52px);}
+.faceoff .side-old{background:color-mix(in srgb,var(--old) 9%,var(--bg));border-right:1px solid var(--line);}
+.faceoff .side-new{background:color-mix(in srgb,var(--new) 9%,var(--bg));}
+.side-label{font-family:var(--font-mono);font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:.7em;margin-bottom:1.3rem;}
+.side-label .dot{width:9px;height:9px;border-radius:50%;}
+.side-old .dot{background:var(--old);}.side-new .dot{background:var(--new);}
+.side-old .side-label{color:var(--old);}.side-new .side-label{color:var(--new);}
+.faceoff h3{font-size:clamp(1.6rem,3vw,2.6rem);margin-bottom:.6rem;}
+.faceoff .fig{margin-top:1.4rem;border:1px solid var(--line);aspect-ratio:16/10;overflow:hidden;background:var(--ink-2);}
+.faceoff .fig img{width:100%;height:100%;object-fit:cover;}
+.faceoff ul{list-style:none;padding:0;margin:1.3rem 0 0;}
+.faceoff li{padding:.55em 0;border-top:1px solid var(--line);color:var(--bone-dim);font-size:.96rem;display:flex;gap:.7em;}
+.faceoff li::before{content:"—";color:var(--bone-faint);}
+
+/* giant stat */
+.statband{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--line);border-top:0;}
+.statband>div{padding:clamp(22px,3vw,44px);}
+.statband .s-old{border-right:1px solid var(--line);}
+.stat-num{font-family:var(--font-display);font-weight:900;font-stretch:118%;line-height:.82;
+  font-size:clamp(2.8rem,7.5vw,6.4rem);letter-spacing:-.03em;display:block;}
+.s-old .stat-num{color:var(--old);}.s-new .stat-num{color:var(--new);}
+.stat-unit{font-family:var(--font-mono);font-size:.9rem;letter-spacing:.04em;color:var(--bone-dim);margin-top:.4em;display:block;max-width:32ch;}
+.stat-cap{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-faint);margin-bottom:.6rem;display:block;}
+
+/* axis header */
+.axis-head{display:flex;align-items:baseline;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:.4rem;}
+.axis-head h2{font-size:clamp(2.1rem,5vw,4.6rem);}
+.axis-num{font-family:var(--font-mono);font-size:clamp(2rem,5vw,4rem);color:var(--bone-ghost);font-weight:400;line-height:1;}
+
+/* editable placeholder data token */
+.ph{color:var(--new);border-bottom:1px dashed var(--new);cursor:text;}
+[data-palette="carbon"] .ph{color:var(--new);border-color:var(--new);}
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+.tl{border-top:1px solid var(--line);position:relative;}
+.tl-track{position:relative;margin-top:2rem;}
+.tl-line{position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--line);}
+.tl-item{position:relative;padding:clamp(28px,5vh,60px) 0 clamp(28px,5vh,60px) clamp(28px,4.5vw,56px);border-bottom:1px solid var(--line);}
+.tl-item:last-child{border-bottom:0;}
+.tl-year{display:block;margin-bottom:.45rem;font-family:var(--font-display);font-weight:900;font-stretch:118%;
+  font-size:clamp(1.7rem,3.6vw,3.1rem);line-height:1;color:var(--fg);}
+.tl-item.era-old .tl-year{color:var(--old);}
+.tl-dot{position:absolute;left:-4px;top:calc(clamp(28px,5vh,60px) + .22em);width:9px;height:9px;border-radius:50%;background:var(--new);box-shadow:0 0 0 5px var(--bg);}
+.tl-item.era-old .tl-dot{background:var(--old);}
+.tl-item h3{font-size:clamp(1.3rem,2.4vw,2rem);margin-bottom:.5rem;}
+.tl-item .tl-fig{margin-top:1.2rem;border:1px solid var(--line);max-width:340px;overflow:hidden;background:var(--ink-2);}
+.tl-item .tl-fig img{width:100%;display:block;}
+.tl-tag{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-faint);}
+
+/* ============================================================
+   MEDIA / VIDEO SLOTS
+   ============================================================ */
+.media-band{border-top:1px solid var(--line);}
+.figrow{display:grid;gap:clamp(14px,2vw,26px);}
+.figrow.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+.figrow.three{grid-template-columns:repeat(3,minmax(0,1fr));}
+figure{margin:0;}
+.frame{border:1px solid var(--line);overflow:hidden;background:var(--ink-2);position:relative;}
+.frame img{width:100%;display:block;object-fit:cover;}
+figcaption{font-family:var(--font-mono);font-size:.72rem;line-height:1.5;color:var(--bone-faint);margin-top:.7rem;letter-spacing:.02em;}
+
+.video-slot{position:relative;border:1px solid var(--line);background:var(--ink-2);aspect-ratio:16/9;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.video-slot video{width:100%;height:100%;object-fit:cover;display:block;}
+.video-slot .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.30;filter:grayscale(.35) contrast(1.05);}
+.video-slot .ph-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;
+  background:repeating-linear-gradient(135deg,transparent 0 16px,var(--bone-ghost) 16px 17px);text-align:center;padding:1.5rem;}
+.video-slot .play{width:74px;height:74px;border-radius:50%;border:1px solid var(--new);display:flex;align-items:center;justify-content:center;color:var(--new);}
+.video-slot .play svg{width:26px;height:26px;margin-left:4px;}
+.video-slot .vlabel{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;color:var(--bone-dim);max-width:34ch;}
+.video-slot .vpath{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.04em;color:var(--bone-faint);}
+
+/* ============================================================
+   INDICACIONES grid
+   ============================================================ */
+.ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.4rem;}
+.ind-cell{background:var(--bg);padding:clamp(18px,2vw,28px);}
+.ind-cell h4{font-family:var(--font-mono);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--new);margin-bottom:.9rem;font-stretch:100%;}
+.ind-cell ul{list-style:none;margin:0;padding:0;}
+.ind-cell li{font-size:.92rem;color:var(--bone-dim);padding:.28em 0;border-top:1px solid var(--line);}
+.ind-cell li:first-child{border-top:0;}
+
+/* contraindicaciones */
+.contra{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,48px);margin-top:2.4rem;}
+.contra .card{border:1px solid var(--line);padding:clamp(22px,2.6vw,38px);background:var(--ink-2);}
+.contra .card.abs{border-top:3px solid var(--old);}
+.contra .card.rel{border-top:3px solid var(--bone-faint);}
+.contra h4{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.2rem;font-stretch:100%;font-weight:700;}
+.contra .abs h4{color:var(--old);}
+.contra dl{margin:0;}
+.contra dt{font-weight:600;color:var(--fg);margin-top:1rem;font-size:1rem;}
+.contra dd{margin:.2em 0 0;color:var(--bone-dim);font-size:.92rem;}
+
+/* algoritmo */
+.algo{margin-top:2.4rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,2.6vw,40px);}
+.algo .branch{border:1px solid var(--line);padding:clamp(22px,2.6vw,36px);}
+.algo .branch.elect{background:color-mix(in srgb,var(--new) 7%,var(--bg));}
+.algo .branch.urg{background:color-mix(in srgb,var(--old) 7%,var(--bg));}
+.algo .branch h4{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-stretch:100%;font-weight:700;margin-bottom:1.2rem;}
+.algo .elect h4{color:var(--new);}.algo .urg h4{color:var(--old);}
+.step{position:relative;padding:.7em 0 .7em 0;border-top:1px dashed var(--line);color:var(--bone-dim);font-size:.95rem;}
+.step b{color:var(--fg);font-weight:600;display:block;font-family:var(--font-body);}
+.algo .verdict{margin-top:1.4rem;padding:1em 1.1em;font-family:var(--font-mono);font-size:.86rem;line-height:1.4;}
+.algo .elect .verdict{background:var(--new);color:var(--ink);}
+.algo .urg .verdict{border:1px solid var(--old);color:var(--old);}
+.algo .qline{font-family:var(--font-body);font-style:italic;color:var(--bone-dim);margin-top:1.1rem;font-size:.98rem;}
+
+/* ============================================================
+   CONCLUSION + CLOSING
+   ============================================================ */
+.concl{border-top:1px solid var(--line);}
+.concl .big{font-family:var(--font-display);font-weight:var(--disp-wght);font-stretch:calc(var(--disp-wdth)*1%);
+  font-size:clamp(2.2rem,5.6vw,5.4rem);line-height:1;letter-spacing:-.02em;max-width:16ch;}
+.concl .big .hl{color:var(--new);}
+.closing{min-height:64vh;display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--line);}
+.closing h2{font-size:clamp(3rem,9vw,8rem);}
+.contact{margin-top:2.6rem;display:flex;flex-wrap:wrap;gap:1.2rem 2.4rem;font-family:var(--font-mono);font-size:.9rem;}
+.contact a{color:var(--new);text-decoration:none;border-bottom:1px solid var(--line);}
+.contact span{color:var(--bone-faint);}
+.foot{margin-top:auto;padding-top:3rem;font-family:var(--font-mono);font-size:.72rem;color:var(--bone-faint);letter-spacing:.04em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+
+/* progress bar */
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--new);width:0;z-index:60;transition:width .12s linear;}
+
+/* ============================================================
+   CTA CONTACTO UNIFICADO
+   ============================================================ */
+.cta-unified {
+  background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 60%, #0369a1 100%);
+  padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden;
+}
+.cta-unified::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(34,211,238,0.08), transparent 70%); pointer-events:none; }
+.cta-unified > * { position: relative; z-index: 2; }
+.cta-unified .cta-eyebrow { font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#22d3ee; margin-bottom:0.75rem; }
+.cta-unified .cta-title { font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.6rem); color:#fff; letter-spacing:-0.02em; margin-bottom:2rem; }
+.cta-unified .cta-contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; max-width:980px; margin:0 auto; align-items:stretch; }
+.cta-unified .contact-card { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:1.5rem; text-align:left; transition:background 0.2s; }
+.cta-unified .contact-card:hover { background:rgba(255,255,255,0.11); }
+.cta-unified .contact-card h4 { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#22d3ee; margin-bottom:0.75rem; }
+.cta-unified .ccontact-links { display:flex; flex-direction:column; gap:0.65rem; margin-top:0.5rem; }
+.cta-unified .ccontact-link { display:flex; align-items:center; gap:0.75rem; text-decoration:none; padding:0.6rem 0.75rem; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); transition:background 0.2s, border-color 0.2s; }
+.cta-unified .ccontact-link:hover { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2); }
+.cta-unified .ccontact-ico { font-size:1.1rem; flex-shrink:0; }
+.cta-unified .ccontact-label { display:block; font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.4); }
+.cta-unified .ccontact-val { display:block; font-size:0.82rem; font-weight:600; color:rgba(255,255,255,0.85); margin-top:0.1rem; }
+
+/* ============================================================
+   TOPBAR
+   ============================================================ */
+.topbar { background: #0c1526; padding: 0.42rem 2.5rem; display: flex; justify-content: flex-end; gap: 1.25rem; flex-wrap: wrap; }
+.topbar a { font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
+.topbar a:hover { color: rgba(255,255,255,0.8); }
+.topbar span { color: rgba(255,255,255,0.15); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:880px){
+  .hero-lower{grid-template-columns:1fr;}
+  .hero-figure{aspect-ratio:3/4;max-height:none;}
+  .thesis .cols{grid-template-columns:1fr;}
+  .faceoff,.statband,.contra,.algo,.figrow.two,.figrow.three{grid-template-columns:minmax(0,1fr);}
+  .faceoff .side-old{border-right:0;border-bottom:1px solid var(--line);}
+  .statband .s-old{border-right:0;border-bottom:1px solid var(--line);}
+}
+
+/* ═══════════════════════════════════════════════
+   MOBILE RESPONSIVE  ·  max-width 768px
+   Injected last — overrides all rules above
+═══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Global */
+  html, body { overflow-x: hidden; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, video, iframe { max-width: 100%; height: auto; display: block; }
+
+  /* Typography floor */
+  p, li, td, th, blockquote, figcaption, .hero-lead, .hero-sub,
+  .alert-strip p, .card-desc, .esp-card p, .benefit-card p { font-size: max(14px, 0.9rem) !important; line-height: 1.65 !important; }
+
+  /* ── Navigation ── */
+  nav {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    position: relative;
+    flex-wrap: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .nav-hamburger { display: flex !important; margin-left: auto; }
+  .nav-cta { display: none !important; }
+
+  /* Nav links: hidden by default, drop down when .nav-open */
+  .nav-links {
+    display: none !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important; left: 0 !important; right: 0 !important;
+    background: var(--navy, #0c1526) !important;
+    padding: 0.75rem 1.25rem 1.25rem !important;
+    gap: 0 !important;
+    z-index: 9999 !important;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.45) !important;
+    border-top: 1px solid rgba(255,255,255,0.07) !important;
+    list-style: none !important;
+  }
+  nav.nav-open .nav-links { display: flex !important; }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block !important;
+    padding: 0.7rem 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    color: rgba(255,255,255,0.85) !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    width: 100% !important;
+  }
+  .nav-links li:last-child a { border-bottom: none !important; }
+
+  /* ── Topbar & breadcrumb ── */
+  .topbar, .breadcrumb {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    font-size: 0.72rem !important;
+    white-space: normal !important;
+  }
+  .topbar { flex-wrap: wrap !important; gap: 0.4rem 0.75rem !important; justify-content: flex-start !important; }
+  .topbar a { font-size: 0.75rem !important; }
+  .topbar span { display: none !important; }
+
+  /* ── Sections & inner containers ── */
+  .section, section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .inner, .page-hero, .content, .sec,
+  .article-hero, .article-hero-inner,
+  .cta-bottom, .cta-section, .main-wrap { padding-left: 1rem !important; padding-right: 1rem !important; }
+
+  /* ── Footer ── */
+  footer {
+    padding-left: 1rem !important; padding-right: 1rem !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    text-align: center !important;
+  }
+  .footer-links { flex-wrap: wrap !important; justify-content: center !important; gap: 0.75rem !important; }
+  .footer-inner, .footer-brand { flex-direction: column !important; gap: 1rem !important; text-align: center !important; }
+
+  /* ── Hero sections ── */
+  .hero { min-height: 90vh !important; }
+  .hero-content { padding: 6rem 1rem 2rem !important; }
+  .hero-inner { padding: 6rem 1rem 3rem !important; }
+  .hero-h1, .hero h1 { font-size: clamp(2rem, 8vw, 3rem) !important; }
+  h1 { font-size: clamp(1.9rem, 7.5vw, 3rem) !important; }
+  h2 { font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important; }
+  .hero-btns, .hero-ctas, .hero-actions, .hero-cta-group {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary, .btn-ghost, .btn-outline,
+  .btn-hero-primary, .btn-hero-secondary {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── ALL GRIDS → single column ── */
+  .esp-grid, .cards-grid, .about-grid, .audience-grid,
+  .bio-wrap, .benefits-grid, .proc-grid, .davinci-grid,
+  .ebus-grid, .ebus-cards, .ablacion-cards,
+  .two-col, .medicos-grid, .interv-grid,
+  .approach-grid, .pathology-grid,
+  .rigida-grid, .crio-grid, .crio-uses-grid, .tech-grid,
+  .types-grid, .tnm-intro, .cryo-mechanic, .alcance-list,
+  .study-grid, .equipo-grid, .img-list-block,
+  .stent-vs-grid, .indic-two-col, .complic-grid,
+  .stent-evidence, .eco-grid, .abl-card-body, .abl-row,
+  .contact-grid, .page-body, .services-row, .indic-grid,
+  .proc-table-grid, .hero-inner-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .path-two-col { column-count: 1 !important; columns: 1 !important; }
+  .img-list-block.reverse { direction: ltr !important; }
+  .sidebar { display: none !important; }
+  .abl-desc-col { border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important; }
+  .proc-col:first-child { border-right: none !important; border-bottom: 1px solid var(--border, #e5e7eb) !important; }
+
+  /* ── Bio credentials: 2 columns on mobile ── */
+  .bio-creds { grid-template-columns: 1fr 1fr !important; }
+  .bio-section-light .bio-wrap { grid-template-columns: 1fr !important; }
+
+  /* ── Statsbar ── */
+  .statsbar {
+    grid-template-columns: 1fr 1fr !important;
+    padding: 1.25rem 1rem !important;
+  }
+  .stats-strip { grid-template-columns: 1fr 1fr !important; }
+  .stat {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+    padding-bottom: 1rem !important;
+  }
+  .stat:last-child { border-bottom: none !important; padding-bottom: 0 !important; }
+  .hero-statsbar {
+    flex-direction: column !important;
+    padding: 1.25rem 1rem !important;
+    gap: 1rem !important;
+  }
+  .hero-stat {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    padding-bottom: 0.75rem !important;
+  }
+  .hero-stat:last-child { border-bottom: none !important; }
+
+  /* ── CTA contact grid ── */
+  .cta-contact-grid, .cta-unified .cta-contact-grid,
+  .ccontact-links {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+  }
+  .contact-card { display: block !important; }
+
+  /* ── Tables ── */
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
+  .grouping-table { font-size: 0.78rem !important; }
+  .grouping-table td, .grouping-table th { padding: 0.4rem 0.5rem !important; }
+
+  /* ── Misc layout fixes ── */
+  .alert-strip { flex-direction: column !important; gap: 0.75rem !important; }
+  .doctor-wrap, .bio-wrap-row { flex-direction: column !important; align-items: flex-start !important; gap: 1.5rem !important; }
+  .survival-row { flex-wrap: wrap !important; }
+  .aquire-strip, .abl-card-header { flex-direction: column !important; gap: 1rem !important; }
+  .as-sep { display: none !important; }
+  .page-nav { flex-direction: column !important; padding: 2rem 1rem !important; gap: 1rem !important; }
+  .page-nav-link.next { text-align: left !important; }
+  .evidence-strip { grid-template-columns: 1fr 1fr !important; }
+  .abl-card-kpis { gap: 1rem !important; flex-wrap: wrap !important; }
+  .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; gap: 0.75rem !important; }
+
+  /* ── Bio author grid mobile fix ── */
+  .bio-author-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .bio-author-grid > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    padding-right: 0 !important;
+  }
+
+  /* ── Bio wrap mobile fix ── */
+  .bio-wrap {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  .bio-wrap > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    padding-right: 0 !important;
+  }
+  .bio-name { font-size: 1.8rem !important; }
+}
+
+/* ---------- PHONE: punchier, denser, more striking ---------- */
+@media (max-width:560px){
+  :root{ --pad-x:18px; --measure:100%; }
+  body{ font-size:17px; }
+  .scene{ padding-block:clamp(54px,9vh,84px); }
+  .idx{ margin-bottom:1.5rem; }
+  .lede{ font-size:1.18rem; line-height:1.36; max-width:100%; }
+
+  /* HERO — bigger, tighter, full-bleed image */
+  .hero{ min-height:92svh; padding-block:46px 30px; }
+  .hero h1{ font-size:clamp(2.6rem,13vw,4.4rem); line-height:.92; letter-spacing:-.035em; }
+  .hero-lower{ gap:24px; margin-top:2rem; }
+  .hero-sub{ font-size:1.1rem; line-height:1.45; }
+  .hero-meta{ margin-top:1.6rem; gap:.4rem 1.2rem; }
+  .hero-figure{ aspect-ratio:3/4; max-height:none; }
+  .scrollcue{ left:var(--pad-x); bottom:18px; font-size:.62rem; letter-spacing:.2em; }
+
+  /* THESIS / CONCLUSION display type */
+  .thesis .big{ font-size:clamp(1.9rem,8.5vw,2.7rem); line-height:1.06; }
+  .concl .big{ font-size:clamp(2.3rem,11vw,3.4rem); }
+  .closing h2{ font-size:clamp(3.2rem,20vw,5.4rem); }
+
+  /* AXIS header — number becomes a clean kicker above the title */
+  .axis-head{ flex-direction:column; align-items:flex-start; gap:.5rem; }
+  .axis-head h2{ order:2; font-size:clamp(2.4rem,11vw,3.3rem); line-height:.96; }
+  .axis-num{ order:1; font-size:.82rem; letter-spacing:.34em; color:var(--bone-faint);
+    font-family:var(--font-mono); }
+  .axis-num::before{ content:"EJE "; }
+
+  /* FACE-OFF — bolder colour identity, stacked */
+  .faceoff>div{ padding:24px 20px; }
+  .faceoff .side-old{ background:color-mix(in srgb,var(--old) 16%,var(--bg)); }
+  .faceoff .side-new{ background:color-mix(in srgb,var(--new) 16%,var(--bg)); }
+  .side-label{ font-size:.72rem; margin-bottom:1rem; }
+  .faceoff h3{ font-size:2.5rem; }
+  .faceoff .fig{ aspect-ratio:16/11; }
+
+  /* STAT BANDS — hero numbers + tinted blocks */
+  .statband>div{ padding:26px 20px; }
+  .statband .s-old{ background:color-mix(in srgb,var(--old) 11%,var(--bg)); }
+  .statband .s-new{ background:color-mix(in srgb,var(--new) 11%,var(--bg)); }
+  .stat-num{ font-size:clamp(3.2rem,18vw,5rem); letter-spacing:-.04em; }
+  .stat-cap{ font-size:.7rem; }
+
+  /* TIMELINE */
+  .tl-item{ padding:34px 0 34px clamp(24px,6vw,40px); }
+  .tl-year{ font-size:clamp(1.9rem,9vw,2.6rem); }
+  .tl-item h3{ font-size:1.4rem; }
+  .tl-item .tl-fig{ max-width:240px; }
+
+  /* INDICACIONES / CONTRA / ALGO */
+  .ind-grid{ grid-template-columns:1fr; }
+  .ind-cell{ padding:18px 20px; }
+  .contra .card, .algo .branch{ padding:22px 20px; }
+}
+
+/* ── Ajuste tipográfico del hero ──────────────────────────────
+   "videotoracoscopía" (17 caracteres) no cabe en el display del
+   hero al tamaño base y `overflow-wrap:break-word` la partía a
+   la mitad sin guión. Se reduce sólo esa palabra para que entre
+   en una línea; `hyphens:auto` queda de red de seguridad para
+   que, si alguna vez debe partirse, lo haga con guión. */
+.hero h1 em{
+  font-size:.70em;
+  hyphens:auto;
+  -webkit-hyphens:auto;
+}
+@media (max-width:900px){
+  .hero h1 em{font-size:.82em;}
+}
+
+/* ============================================================
+   PUBLICACIONES (Investigación)
+   El bloque venía con clases de otro sitio de la red (.inner,
+   .eyebrow, .pubs-*) que aquí no existían: caía a los estilos por
+   defecto del navegador. Reescrito con los tokens de este sitio.
+   ============================================================ */
+.pubs{display:grid;gap:1.9rem;margin-top:2.6rem;}
+.pub{border-left:1px solid var(--line);padding-left:1.4rem;max-width:var(--measure);}
+.pub-t{font-family:var(--font-body);font-size:clamp(1.02rem,1.5vw,1.22rem);
+  line-height:1.36;color:var(--fg);margin-bottom:.55rem;}
+.pub-a{font-family:var(--font-mono);font-size:.72rem;line-height:1.65;
+  color:var(--bone-dim);margin-bottom:.3rem;}
+.pub-a strong{color:var(--fg);font-weight:700;}
+.pub-m{font-family:var(--font-mono);font-size:.72rem;line-height:1.65;color:var(--bone-faint);}
+.pub-m a{color:var(--new);text-decoration:none;border-bottom:1px solid rgba(38,195,174,.38);}
+.pub-m a:hover{color:var(--fg);border-bottom-color:var(--fg);}
+.pubs-all{display:inline-block;margin-top:2.4rem;font-family:var(--font-mono);
+  font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--new);
+  text-decoration:none;border-bottom:1px solid rgba(38,195,174,.38);padding-bottom:.25rem;}
+.pubs-all:hover{color:var(--fg);border-bottom-color:var(--fg);}
+
+@media (max-width:768px){
+  .pub{padding-left:1rem;}
+  .pubs{gap:1.5rem;}
+}
+
+</style>
+  <style>
+    .sub-hero{min-height:auto;padding-block:clamp(48px,8vh,96px) clamp(40px,7vh,80px)}
+    .sub-hero .hero-figure{aspect-ratio:1/1}
+    .crumb{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;color:var(--bone-faint);margin-bottom:1.6rem}
+    .crumb a{color:var(--bone-faint)}
+    .sec-h{font-size:clamp(1.9rem,4vw,3.4rem);margin-bottom:1.6rem}
+    .sec-h3{font-size:clamp(1.3rem,2.2vw,1.8rem);margin:3rem 0 1.2rem}
+    .scene.tight{padding-block:clamp(56px,9vh,110px)}
+    .scene.tight + .scene.tight{border-top:1px solid var(--line)}
+    .scene.feat{background:var(--ink-2)}
+    .feat-tag{display:inline-block;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--new);padding:.35em .8em;margin-bottom:1.2rem}
+    .ind-cell p{font-size:.95rem;color:var(--bone-dim);margin:0}
+    .scene.feat .ind-cell{background:var(--ink-2)}
+    .res-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2rem}
+    .res{background:var(--bg);padding:clamp(18px,2vw,28px)}
+    .res h3{font-size:1.5rem;margin:1rem 0 .6rem}
+    .res p{font-size:.95rem;color:var(--bone-dim);margin:0}
+    .lung{width:100%;max-width:170px;height:auto;display:block;margin:0 auto}
+    .lung .ol{fill:none;stroke:var(--bone-faint);stroke-width:2}
+    .lung .fi path{fill:none;stroke:var(--bone-ghost);stroke-width:2}
+    .lung .hl{fill:var(--new);opacity:.55}
+    .lung .nd{fill:var(--old)}
+    .figrow.four{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:2.4rem}
+    .figrow.four .frame img{aspect-ratio:1/1;object-fit:contain;background:#000}
+    .htl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,36px);margin-top:2rem;position:relative;padding-top:34px}
+    .htl::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
+    .htl-item{position:relative}
+    .htl-dot{position:absolute;top:-31px;left:0;width:14px;height:14px;border-radius:50%;background:var(--new);box-shadow:0 0 0 5px var(--bg)}
+    .htl-item:first-child .htl-dot{background:var(--old)}
+    .htl-year{display:block;font-family:var(--font-display);font-weight:var(--disp-wght);font-size:clamp(2rem,3.4vw,2.8rem);line-height:1;color:var(--fg)}
+    .htl-item h3{font-size:1.15rem;margin:.5rem 0 .7rem;line-height:1.15}
+    .htl-item p{font-size:.92rem;color:var(--bone-dim);margin:0;line-height:1.55}
+    @media (max-width:880px){.htl{grid-template-columns:1fr;padding-top:0;padding-left:30px}.htl::before{left:6px;right:auto;top:0;bottom:0;width:2px;height:auto}.htl-dot{top:6px;left:-30px}}
+    .callout{margin-top:2.2rem;max-width:none;border:1px solid var(--new);border-left:4px solid var(--new);background:var(--ink-2);padding:clamp(18px,2.2vw,28px);font-size:1.05rem;line-height:1.6;color:var(--fg)}
+    .frame svg.cortes{display:block;width:100%;height:auto}
+    .figone{max-width:620px;margin-top:2.4rem}
+    .figone.wide{max-width:none}
+    .tbl{margin-top:1.6rem;border:1px solid var(--line);overflow-x:auto}
+    .tbl table{width:100%;border-collapse:collapse;font-size:.95rem}
+    .tbl th{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--new);text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);font-weight:700}
+    .tbl td{padding:14px 16px;border-top:1px solid var(--line);vertical-align:top;color:var(--bone-dim);line-height:1.5}
+    .tbl td:first-child{color:var(--fg);min-width:150px}
+    .tbl td strong{color:var(--fg)}
+    .tbl td a{color:var(--new)}
+    .plist{margin:1.4rem 0 0;padding-left:1.2rem;max-width:62ch;color:var(--bone-dim)}
+    .plist li{margin:.5rem 0}
+    p.body{max-width:62ch}
+    .faq{margin-top:1.6rem;border-top:1px solid var(--line)}
+    .faq-item{border-bottom:1px solid var(--line)}
+    .faq-item summary{cursor:pointer;list-style:none;padding:1.1rem 2.2rem 1.1rem 0;position:relative;font-family:var(--font-display);font-weight:700;font-stretch:100%;font-size:clamp(1.05rem,1.6vw,1.25rem);line-height:1.3;color:var(--fg)}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--font-mono);font-size:1.3rem;color:var(--new)}
+    .faq-item[open] summary::after{content:"–"}
+    .faq-item p{margin:0 0 1.3rem;color:var(--bone-dim)}
+    /* Textos a todo el ancho de su columna, alineados a la izquierda */
+    p,p.body,.plist,.pub,.hero-sub,.lede{max-width:none;text-align:left}
+    .split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,3.4vw,56px);align-items:start}
+    .split-fig{margin:0;position:sticky;top:24px}
+    .split-text>p.body:first-child{margin-top:0}
+    @media (max-width:880px){.split{grid-template-columns:1fr}.split-fig{position:static}}
+    p.body a{color:var(--new)}
+    .note{font-family:var(--font-mono);font-size:.72rem;color:var(--bone-faint);margin-top:.9rem}
+    sup.ref{font-size:.62em;line-height:0;margin-left:1px}
+    sup.ref a{color:var(--new);text-decoration:none;font-weight:700}
+    .refs{margin:0;padding-left:1.4rem;font-size:.9rem;color:var(--bone-dim)}
+    .refs li{margin:.7rem 0;line-height:1.5}
+    .refs a{color:var(--new)}
+    .back{display:inline-block;margin-top:2rem;font-family:var(--font-mono);font-size:.8rem;letter-spacing:.06em;color:var(--new)}
+    [id]{scroll-margin-top:24px}
+    @media (max-width:880px){.figrow.four,.res-grid{grid-template-columns:1fr}}
+    @media (max-width:640px){
+      .tbl{overflow:visible;border:none}
+      .tbl table,.tbl tbody,.tbl tr,.tbl td{display:block;width:auto}
+      .tbl thead{display:none}
+      .tbl tr{border:1px solid var(--line);margin:10px 0;padding:12px 14px}
+      .tbl td{border:none;padding:3px 0}
+      .tbl td[data-c]:not([data-c="0"])::before{content:attr(data-l);display:block;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--new);margin-top:8px}
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "@id": "https://videotoracoscopia.cl/cirugia-nodulo-pulmonar#webpage",
+  "url": "https://videotoracoscopia.cl/cirugia-nodulo-pulmonar",
+  "name": "Cirugía de los nódulos pulmonares",
+  "description": "Tipos de resección de un nódulo pulmonar y métodos para localizarlo en la videotoracoscopía, con énfasis en la marcación con lipiodol y verde de indocianina.",
+  "inLanguage": "es-CL",
+  "about": [
+    {
+      "@type": "MedicalProcedure",
+      "name": "Resección en cuña"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Segmentectomía"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Lobectomía"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Marcación con lipiodol"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Marcación con verde de indocianina"
+    }
+  ],
+  "author": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "reviewedBy": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "lastReviewed": "2026-10-27",
+  "dateModified": "2026-10-27",
+  "specialty": "https://schema.org/Surgical",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://videotoracoscopia.cl/#website",
+    "url": "https://videotoracoscopia.cl/",
+    "name": "Videotoracoscopia.cl",
+    "inLanguage": "es-CL"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Videotoracoscopía",
+        "item": "https://videotoracoscopia.cl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Cirugía de los nódulos pulmonares",
+        "item": "https://videotoracoscopia.cl/cirugia-nodulo-pulmonar"
+      }
+    ]
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://videotoracoscopia.cl/media/nodulo-hero-radioscopia-lipiodol.webp",
+    "width": 776,
+    "height": 705
+  },
+  "citation": [
+    "Vega S J, Lazo P D, Undurraga M F, Clavero R JM, Rodríguez D P. Caracterización de nódulos pulmonares resecados. Experiencia de manejo por un programa multidisciplinario. Rev Med Chile. 2018;146(11):1261-1268.",
+    "Ginsberg RJ, Rubinstein LV. Randomized trial of lobectomy versus limited resection for T1 N0 non-small cell lung cancer. Lung Cancer Study Group. Ann Thorac Surg. 1995;60(3):615-622.",
+    "Saji H, Okada M, Tsuboi M, et al. Segmentectomy versus lobectomy in small-sized peripheral non-small-cell lung cancer (JCOG0802/WJOG4607L): a multicentre, open-label, phase 3, randomised, controlled, non-inferiority trial. Lancet. 2022;399(10335):1607-1617.",
+    "Altorki N, Wang X, Kozono D, et al. Lobar or sublobar resection for peripheral stage IA non-small-cell lung cancer. N Engl J Med. 2023;388(6):489-498.",
+    "Suzuki K, Nagai K, Yoshida J, et al. Video-assisted thoracoscopic surgery for small indeterminate pulmonary nodules: indications for preoperative marking. Chest. 1999;115(2):563-568.",
+    "Ichinose J, Kohno T, Fujimori S, Harano T, Suzuki S. Efficacy and complications of computed tomography-guided hook wire localization. Ann Thorac Surg. 2013;96(4):1203-1208.",
+    "Sancheti MS, Lee R, Ahmed SU, et al. Percutaneous fiducial localization for thoracoscopic wedge resection of small pulmonary nodules. Ann Thorac Surg. 2014;97(6):1914-1918.",
+    "Watanabe K, Nomori H, Ohtsuka T, Kaji M, Naruke T, Suemasu K. Usefulness and complications of computed tomography-guided lipiodol marking for fluoroscopy-assisted thoracoscopic resection of small pulmonary nodules: experience with 174 nodules. J Thorac Cardiovasc Surg. 2006;132(2):320-324.",
+    "O'Brien S A, Ramírez Ch M, Loyola M MA, Astudillo J J, Lazo P D, Rodríguez D P, Clavero R JM. Marcación de nódulos pulmonares con lipiodol bajo tomografía computada. Experiencia local y correlación anatomopatológica. Rev Chil Radiol. 2018;24(4):129-133.",
+    "Vega S J, Zárate G I, Rodríguez G H, Lazo P D, Undurraga M F, Clavero R JM, Alarcón O F, O'Brien S A, Rodríguez D P. Resección por videotoracoscopía de nódulos pulmonares marcados con lipiodol. Experiencia en dos centros universitarios. Rev Chil Enferm Respir. 2021;37(3):197-202.",
+    "Wood DE, Kazerooni EA, Baum SL, et al. Lung Cancer Screening, Version 3.2018, NCCN Clinical Practice Guidelines in Oncology. J Natl Compr Canc Netw. 2018;16(4):412-441.",
+    "Gould MK, Donington J, Lynch WR, et al. Evaluation of individuals with pulmonary nodules: when is it lung cancer? Diagnosis and management of lung cancer, 3rd ed: American College of Chest Physicians evidence-based clinical practice guidelines. Chest. 2013;143(5 Suppl):e93S-e120S."
+  ]
+}
+  </script>
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://videotoracoscopia.cl/cirugia-nodulo-pulmonar#faq",
+  "isPartOf": {
+    "@id": "https://videotoracoscopia.cl/cirugia-nodulo-pulmonar#webpage"
+  },
+  "inLanguage": "es-CL",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Por qué hay que marcar un nódulo antes de operarlo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En la videotoracoscopía el cirujano no puede palpar el pulmón como en la cirugía abierta. Los nódulos pequeños, en vidrio esmerilado o alejados de la superficie del pulmón muchas veces no se ven ni se sienten. La marcación previa permite encontrarlos, resecarlos con margen y evitar la conversión a cirugía abierta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se hace la marcación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se hace el día de la cirugía, en el TAC y con anestesia local. Con una aguja fina se deja la marca dentro del nódulo o muy cerca de él. El procedimiento toma entre 15 y 20 minutos y luego el paciente pasa al pabellón."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué riesgos tiene la marcación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los riesgos son los de la punción pulmonar, principalmente neumotórax y sangrado. En nuestra serie publicada de 93 pacientes hubo neumotórax por la marcación en el 25,8 %, y ninguno requirió drenaje pleural, ya que todos los pacientes pasaron inmediatamente a cirugía."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué cirugía se hace: cuña, segmentectomía o lobectomía?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La decisión entre segmentectomía, resección en cuña o lobectomía depende de múltiples factores que deben considerarse, como el tamaño, la ubicación dentro del lóbulo, el estado de los ganglios linfáticos, la histología y sobre todo las condiciones propias de cada paciente. El cirujano debe analizarlos caso a caso antes de cada intervención."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Quién decide si un nódulo debe operarse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La indicación se discute en nuestro comité multidisciplinario de nódulos, donde radiología, neumología y cirugía torácica revisan las imágenes y la historia clínica de cada paciente para definir si corresponde seguimiento, biopsia o cirugía."
+      }
+    }
+  ]
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. David Lazo Pérez", "alternateName": "Dr. Lazo",
+  "subjectOf": {"@type": "ProfilePage", "@id": "https://cirugiatoracica.cl/cv#page"},
+  "honorificSuffix": "FACS",
+  "jobTitle": "Cirujano Torácico",
+  "medicalSpecialty": [
+    "Cirugía Torácica",
+    "Videotoracoscopía",
+    "VATS",
+    "Cirugía Torácica Video-Asistida"
+  ],
+  "url": "https://videotoracoscopia.cl/",
+  "image": "https://videotoracoscopia.cl/media/image3_jpeg.jpg",
+  "worksFor": [
+    {
+      "@type": "Hospital",
+      "name": "Clínica Las Condes"
+    },
+    {
+      "@type": "Hospital",
+      "name": "Hospital Clínico San Borja Arriarán"
+    }
+  ],
+  "sameAs": [
+    "https://orcid.org/0009-0007-0806-6679",
+    "https://cirugiatoracica.cl",
+    "https://rats.cl",
+    "https://videotoracoscopia.cl",
+    "https://broncoscopia.cl",
+    "https://cancerpulmonar.cl",
+    "https://hiperhidrosis.cl",
+    "https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/",
+    "https://www.instagram.com/dr.david.lazo.p/",
+    "https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago",
+    "https://www.doctoralia.cl/david-rene-lazo-perez/cirujano-toracico-cirujano-general/las-condes",
+    "https://www.topdoctors.cl/doctor/david-rene-lazo-perez/",
+    "https://www.ctsnet.org/home/dlazo",
+    "https://encuadrado.com/p/david-lazo-perez/"
+  ],
+  "knowsAbout": [
+    "VATS",
+    "Videotoracoscopía",
+    "Cirugía Torácica Video-Asistida",
+    "Cirugía Torácica",
+    "Lobectomía VATS",
+    "UVATS",
+    "Cirugía Mínimamente Invasiva",
+    "Cáncer Pulmonar",
+    "Cirugía Robótica RATS"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Especialidad médica",
+      "name": "Cirugía Torácica — Universidad de Chile"
+    }
+  ],
+  "areaServed": "Santiago, Chile",
+  "availableService": "Consulta presencial Clínica Las Condes y telemedicina",
+  "@id": "https://cirugiatoracica.cl/#david-lazo",
+  "memberOf": [
+    {
+      "@type": "MedicalOrganization",
+      "name": "World Association for Bronchology and Interventional Pulmonology (WABIP)",
+      "url": "https://wabip.com/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "American College of Surgeons (ACS)",
+      "url": "https://www.facs.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "International Association for the Study of Lung Cancer (IASLC)",
+      "url": "https://www.iaslc.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "European Respiratory Society (ERS)",
+      "url": "https://www.ersnet.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "International Society for Heart and Lung Transplantation (ISHLT)",
+      "url": "https://ishlt.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "Sociedad de Cirujanos de Chile",
+      "url": "https://www.socich.cl/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "Asociación Latinoamericana de Tórax (ALAT)",
+      "url": "https://alatorax.org/"
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "Sociedad Chilena de Enfermedades Respiratorias (SER)",
+      "url": "https://www.serchile.cl/"
+    }
+  ],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Pontificia Universidad Católica de Chile",
+      "url": "https://www.uc.cl/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Universidad de Chile",
+      "url": "https://www.uchile.cl/"
+    },
+    {
+      "@type": "Hospital",
+      "name": "Hospital Universitario Puerta de Hierro Majadahonda",
+      "url": "https://www.comunidad.madrid/hospital/puertadehierro/"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santiago",
+    "addressRegion": "Región Metropolitana",
+    "addressCountry": "CL"
+  },
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "ORCID",
+      "value": "0009-0007-0806-6679"
+    }
+  ],
+  "affiliation": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Universidad Finis Terrae — Facultad de Medicina",
+      "url": "https://facultadmedicina.uft.cl/"
+    }
+  ]
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "@id": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482021000300197",
+  "headline": "Resección por videotoracoscopía de nódulos pulmonares marcados con lipiodol. Experiencia en dos centros universitarios",
+  "author": {
+    "@id": "https://cirugiatoracica.cl/#david-lazo"
+  },
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "SciELO",
+      "value": "S0717-73482021000300197"
+    }
+  ],
+  "isPartOf": {
+    "@type": "PublicationIssue",
+    "issueNumber": "3",
+    "isPartOf": {
+      "@type": "PublicationVolume",
+      "volumeNumber": "37",
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "Revista Chilena de Enfermedades Respiratorias",
+        "issn": "0717-7348"
+      }
+    }
+  },
+  "datePublished": "2021",
+  "pageStart": "197",
+  "pageEnd": "202",
+  "inLanguage": "es",
+  "url": "https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482021000300197"
+}
+  </script>
+  <noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
+<!-- Google Analytics 4 · red Dr. David Lazo Pérez -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-X3GX2HCVZL', { linker: { domains: ['cirugiatoracica.cl','rats.cl','cancerpulmonar.cl','broncoscopia.cl','hiperhidrosis.cl','videotoracoscopia.cl'] } });
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var h = a.getAttribute('href') || '';
+      if (h.indexOf('reserva.clinicalascondes.cl') > -1) {
+        gtag('event', 'reserva_presencial', { canal: 'Clinica Las Condes', pagina: location.pathname });
+      } else if (h.indexOf('encuadrado.com') > -1) {
+        gtag('event', 'reserva_telemedicina', { canal: 'Telemedicina', pagina: location.pathname });
+      } else if (h.indexOf('doctoralia.cl') > -1) {
+        gtag('event', 'salida_doctoralia', { pagina: location.pathname });
+      } else if (h.indexOf('instagram.com') > -1) {
+        gtag('event', 'salida_instagram', { pagina: location.pathname });
+      }
+    }, true);
+  </script>
+</head>
+<body>
+<div class="topbar">
+  <a href="https://cirugiatoracica.cl">cirugiatoracica.cl</a> <span>·</span> <a href="https://rats.cl">Robótica</a>
+  <span>·</span>
+  <a href="https://cancerpulmonar.cl">Cáncer Pulmonar</a>
+  <span>·</span>
+  <a href="https://broncoscopia.cl">Broncoscopía</a>
+  <span>·</span>
+  <a href="https://videotoracoscopia.cl">Videotoracoscopía</a>
+  <span>·</span>
+  <a href="https://hiperhidrosis.cl">Hiperhidrosis</a>
+</div>
+
+<div class="progress"></div>
+<header class="hero sub-hero">
+  <div class="wrap">
+    <div class="hero-lower">
+      <div class="hero-text r d1">
+        <p class="crumb"><a href="/">Videotoracoscopía</a> / Cirugía de los nódulos pulmonares</p>
+        <h1>Cirugía de los nódulos pulmonares</h1>
+        <p class="hero-sub">Qué tipos de resección existen y cómo se localiza un nódulo pequeño o profundo para resecarlo por videotoracoscopía, con énfasis en la marcación de aquellos de difícil localización.</p>
+        <div class="hero-meta">
+          <span><b>Dr. David Lazo Pérez</b>, FACS</span>
+          <span>Cirugía Torácica</span>
+        </div>
+      </div>
+      <div class="hero-figure r d2">
+        <img src="/media/nodulo-hero-radioscopia-lipiodol.webp" alt="Imagen de radioscopia durante la videotoracoscopía que muestra la marca de lipiodol" width="776" height="705" decoding="async" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+<section class="scene tight">
+  <div class="wrap">
+    <div class="idx r">01 — Definición</div>
+    <h2 class="sec-h r d1">Qué es un nódulo pulmonar</h2>
+    <p class="body r d1">Un nódulo pulmonar es una opacidad en la radiografía o el TAC de 3 cm o menos de diámetro, rodeada de pulmón. Las opacidades de más de 3 cm se llaman masas. Hay más de 80 causas posibles, desde enfermedades benignas hasta cánceres pulmonares primarios o metástasis. Es un hallazgo frecuente: en programas de detección precoz con TAC de baja dosis, entre el 23 % y el 68 % de los pacientes tiene uno o más nódulos.<sup class="ref"><a href="#ref-1">1</a></sup></p>
+    <p class="body r d1">Cómo se estudia y cuándo se controla un nódulo está en <a href="https://cancerpulmonar.cl/nodulo-pulmonar">cancerpulmonar.cl/nodulo-pulmonar</a>.</p>
+  </div>
+</section>
+
+<section class="scene tight">
+  <div class="wrap">
+    <div class="idx r">02 — Tipos de resección</div>
+    <h2 class="sec-h r d1">Cuánto pulmón se reseca</h2>
+    <p class="body r d1">Según el tamaño, la ubicación y el tipo de nódulo, se reseca una porción del pulmón de distinta extensión:</p>
+    <div class="res-grid r d2">
+      <div class="res"><svg class="lung" viewBox="0 0 206 266" role="img" aria-label="Resección en cuña"><path class="hl" d="M33,96 L66,108 L37,132 C33,120 32,108 33,96 Z"/><path class="ol" d="M100,12 C72,12 44,58 34,118 C24,178 28,226 44,242 C76,254 150,254 172,238 C184,198 180,150 162,110 C147,72 126,12 100,12 Z"/><g class="fi"><path d="M150,82 C122,140 84,190 42,214" /><path d="M32,132 C70,138 100,140 126,128" /></g><circle class="nd" cx="44" cy="112" r="6"/></svg><h3>Resección en cuña</h3><p>Resección no anatómica de una porción periférica del pulmón que contiene el nódulo, con un margen de tejido sano. También se llama resección atípica o <i>wedge</i>.</p></div>
+      <div class="res"><svg class="lung" viewBox="0 0 206 266" role="img" aria-label="Segmentectomía"><path class="hl" d="M100,12 C76,12 54,42 44,74 L104,88 L124,42 C116,24 108,12 100,12 Z"/><path class="ol" d="M100,12 C72,12 44,58 34,118 C24,178 28,226 44,242 C76,254 150,254 172,238 C184,198 180,150 162,110 C147,72 126,12 100,12 Z"/><g class="fi"><path d="M150,82 C122,140 84,190 42,214" /><path d="M32,132 C70,138 100,140 126,128" /></g><circle class="nd" cx="88" cy="52" r="6"/></svg><h3>Segmentectomía</h3><p>Resección anatómica de un segmento pulmonar, con su arteria, su vena y su bronquio. También se llama resección segmentaria típica.</p></div>
+      <div class="res"><svg class="lung" viewBox="0 0 206 266" role="img" aria-label="Lobectomía"><path class="hl" d="M100,12 C72,12 44,58 34,118 L32,132 C70,138 100,140 126,128 C134,112 142,96 150,82 C140,50 122,12 100,12 Z"/><path class="ol" d="M100,12 C72,12 44,58 34,118 C24,178 28,226 44,242 C76,254 150,254 172,238 C184,198 180,150 162,110 C147,72 126,12 100,12 Z"/><g class="fi"><path d="M150,82 C122,140 84,190 42,214" /><path d="M32,132 C70,138 100,140 126,128" /></g><circle class="nd" cx="88" cy="52" r="6"/></svg><h3>Lobectomía</h3><p>Resección de un lóbulo pulmonar completo, con su arteria, su vena y su bronquio.</p></div>
+    </div>
+    <p class="note">Esquemas: en verde, la porción de pulmón que se reseca; en rojo, el nódulo.</p>
+    <h3 class="sec-h3 r">¿Lobectomía o segmentectomía en tumores de hasta 2 cm? Evidencia actual:</h3>
+    <div class="htl r d1">
+      <div class="htl-item"><span class="htl-dot"></span><span class="htl-year">1995</span><h3>Lung Cancer Study Group<sup class="ref"><a href="#ref-2">2</a></sup></h3><p>247 pacientes con cáncer pulmonar periférico T1N0. Comparada con la lobectomía, la resección limitada (segmentectomía o en cuña) tuvo el triple de recurrencia local y un aumento de 75 % en la recurrencia total. La lobectomía quedó como la cirugía de elección.</p></div>
+      <div class="htl-item"><span class="htl-dot"></span><span class="htl-year">2022</span><h3>JCOG0802/WJOG4607L<sup class="ref"><a href="#ref-3">3</a></sup></h3><p>1.106 pacientes en 70 centros de Japón, con tumores periféricos de 2 cm o menos y predominio de componente sólido. Sobrevida global a 5 años: 94,3 % con segmentectomía y 91,1 % con lobectomía. Recaída local: 10,5 % y 5,4 %, respectivamente.</p></div>
+      <div class="htl-item"><span class="htl-dot"></span><span class="htl-year">2023</span><h3>CALGB 140503 (Alliance)<sup class="ref"><a href="#ref-4">4</a></sup></h3><p>697 pacientes con tumores periféricos de 2 cm o menos y ganglios negativos confirmados durante la cirugía. La resección sublobar no fue inferior en sobrevida libre de enfermedad. Sobrevida global a 5 años: 80,3 % con resección sublobar y 78,9 % con lobectomía.</p></div>
+    </div>
+    <p class="callout r">La decisión entre segmentectomía, resección en cuña o lobectomía depende de múltiples factores que deben considerarse, como el tamaño, la ubicación dentro del lóbulo, el estado de los ganglios linfáticos, la histología y sobre todo las condiciones propias de cada paciente. El cirujano debe analizarlos caso a caso antes de cada intervención.</p>
+  </div>
+</section>
+
+<section class="scene tight">
+  <div class="wrap">
+    <div class="idx r">03 — El problema</div>
+    <h2 class="sec-h r d1">Por qué hay que localizar el nódulo</h2>
+    <div class="figrow two r d1">
+      <figure><div class="frame"><svg class="cortes" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Esquema de la ubicación del nódulo en cortes axial, sagital y coronal">
+  <style>
+    .cortes .bg{fill:#0f1416}
+    .cortes .tx{fill:#1b2326;stroke:rgba(236,230,218,.45);stroke-width:1.5}
+    .cortes .lu{fill:#2a3438;stroke:#26C3AE;stroke-width:1.6}
+    .cortes .md{fill:#3a4549;stroke:rgba(236,230,218,.35);stroke-width:1}
+    .cortes .bo{fill:rgba(236,230,218,.55)}
+    .cortes .fi{fill:none;stroke:rgba(236,230,218,.35);stroke-width:1.2;stroke-dasharray:4 3}
+    .cortes .nd{fill:#DC4A38;stroke:#fff;stroke-width:1}
+    .cortes .dm{stroke:#ECE6DA;stroke-width:1.4}
+    .cortes text{font-family:"Space Mono",ui-monospace,monospace;fill:rgba(236,230,218,.75);font-size:11px}
+    .cortes .tt{font-size:12px;fill:#26C3AE;letter-spacing:.14em}
+    .cortes .lb{font-size:10.5px;fill:#ECE6DA}
+  </style>
+  <rect class="bg" x="0" y="0" width="600" height="450"/>
+  <!-- AXIAL -->
+  <text class="tt" x="16" y="22">AXIAL</text>
+  <ellipse class="tx" cx="300" cy="135" rx="205" ry="95"/>
+  <path class="lu" d="M150,92 C190,62 262,66 276,96 C284,120 284,160 276,186 C262,210 190,214 152,188 C120,166 116,118 150,92 Z"/>
+  <path class="lu" d="M450,94 C412,64 342,70 328,100 C340,112 352,128 348,146 C342,168 336,182 334,190 C352,212 414,212 448,188 C480,166 482,118 450,94 Z"/>
+  <path class="md" d="M282,70 L322,72 C344,108 352,140 336,186 L282,192 C290,150 290,110 282,70 Z"/>
+  <rect class="bo" x="290" y="44" width="20" height="10" rx="2"/>
+  <circle class="bo" cx="300" cy="206" r="13"/>
+  <circle class="nd" cx="148" cy="118" r="7"/>
+  <line class="dm" x1="128" y1="118" x2="141" y2="118"/>
+  <line class="dm" x1="128" y1="112" x2="128" y2="124"/>
+  <text class="lb" x="86" y="104">10 mm</text>
+  <text x="80" y="140">D</text><text x="512" y="140">I</text>
+  <text x="290" y="36">ANT</text><text x="286" y="244">POST</text>
+  <!-- SAGITAL -->
+  <text class="tt" x="16" y="270">SAGITAL · PULMÓN DERECHO</text>
+  <g transform="translate(342,0) scale(-1,1)">
+  <path class="lu" d="M150,284 C128,286 104,330 96,380 C92,404 98,420 110,424 C150,410 200,408 232,420 C246,404 246,372 236,336 C222,300 182,282 150,284 Z"/>
+  <path class="fi" d="M222,312 C190,350 150,388 112,418"/>
+  <path class="fi" d="M174,356 C150,352 120,352 100,356"/>
+  <circle class="nd" cx="150" cy="318" r="7"/>
+  </g>
+  <text x="50" y="350">POST</text><text x="254" y="350">ANT</text>
+  <!-- CORONAL -->
+  <text class="tt" x="318" y="270">CORONAL</text>
+  <path class="tx" d="M348,292 C380,276 520,276 552,292 C566,330 568,390 560,432 L340,432 C332,390 334,330 348,292 Z"/>
+  <path class="lu" d="M420,296 C398,294 366,302 356,330 C348,360 348,400 352,424 C372,418 406,414 432,420 C438,380 438,330 420,296 Z"/>
+  <path class="lu" d="M480,296 C502,294 534,302 544,330 C552,360 552,400 548,424 C530,418 504,414 478,420 C472,380 466,330 480,296 Z"/>
+  <path class="md" d="M432,300 L470,300 C464,340 468,380 478,420 L432,420 C438,380 438,330 432,300 Z"/>
+  <circle class="nd" cx="375" cy="332" r="7"/>
+  <line class="dm" x1="355" y1="332" x2="367" y2="332"/>
+  <line class="dm" x1="355" y1="326" x2="355" y2="338"/>
+  <text class="lb" x="330" y="318">10 mm</text>
+  <text x="326" y="448">D</text><text x="566" y="448">I</text>
+</svg></div><figcaption>Esquema de la ubicación del mismo nódulo, en el lóbulo superior derecho, en cortes axial, sagital y coronal.</figcaption></figure>
+      <figure><div class="frame"><img src="/media/nodulo-vision-vats.webp" width="1024" height="722" alt="Ilustración de la visión por videotoracoscopía: el nódulo pulmonar queda oculto bajo el tejido y no se ve en la superficie del pulmón" loading="lazy" decoding="async"></div><figcaption>Visión por videotoracoscopía: un nódulo de 1 cm bajo 10 mm de tejido no se ve en la superficie del pulmón.</figcaption></figure>
+    </div>
+    <p class="body r d1" style="margin-top:1.6rem">En la serie de Suzuki de 1999, el 46 % de las conversiones a toracotomía se debió a no encontrar el nódulo. En nódulos de 10 mm o menos a más de 5 mm de la pleura, no se encontró en el 63 % de los casos.<sup class="ref"><a href="#ref-5">5</a></sup></p>
+  </div>
+</section>
+
+<section class="scene tight">
+  <div class="wrap">
+    <div class="idx r">04 — Métodos de localización</div>
+    <h2 class="sec-h r d1">Cómo se marca un nódulo</h2>
+    <p class="body r d1">Casi todos los métodos se basan en una punción bajo TAC antes de la cirugía, que deja una marca dentro del nódulo o junto a él. Sus complicaciones son, principalmente, las de la punción: neumotórax y sangrado.</p>
+    <div class="tbl r d1">
+      <table>
+        <thead><tr><th>Método</th><th>Cómo se ubica en la cirugía</th><th>Consideraciones</th></tr></thead>
+        <tbody>
+        <tr><td data-c="0" data-l="Método"><strong>Azul de metileno</strong></td><td data-c="1" data-l="Cómo se ubica en la cirugía">Mancha azul en la superficie del pulmón</td><td data-c="2" data-l="Consideraciones">Fácil, rápido y de bajo costo. La cirugía debe hacerse pronto porque el colorante difunde en el pulmón. Entrega poca información de la profundidad y se ve mal en pulmones con antracosis</td></tr>
+        <tr><td data-c="0" data-l="Método"><strong>Arpón</strong> (<i>hook wire</i>)<sup class="ref"><a href="#ref-6">6</a></sup></td><td data-c="1" data-l="Cómo se ubica en la cirugía">Alambre con gancho anclado en el nódulo</td><td data-c="2" data-l="Consideraciones">La cirugía se hace inmediatamente después de la punción. Puede desplazarse con el traslado, la ventilación o la manipulación. Es difícil de usar en el ápice y cerca del diafragma, del mediastino o de los grandes vasos.</td></tr>
+        <tr><td data-c="0" data-l="Método"><strong>Fiduciarios y microcoils</strong><sup class="ref"><a href="#ref-7">7</a></sup></td><td data-c="1" data-l="Cómo se ubica en la cirugía">Marcador metálico que se ubica con radioscopia; los coils también se pueden palpar</td><td data-c="2" data-l="Consideraciones">Marca permanente. Requiere radioscopia durante la cirugía. En 65 nódulos marcados con fiduciarios, la resección fue exitosa en 98 % de los pacientes; hubo complicaciones en 3 (embolización y migración del marcador, hematoma)</td></tr>
+        <tr><td data-c="0" data-l="Método"><strong>Radiotrazador</strong></td><td data-c="1" data-l="Cómo se ubica en la cirugía">Tecnecio 99 unido a albúmina, detectado con una sonda gamma</td><td data-c="2" data-l="Consideraciones">La cirugía se hace el mismo día. Implica exposición a radiación y depende mucho del operador</td></tr>
+        <tr><td data-c="0" data-l="Método"><strong>Lipiodol</strong></td><td data-c="1" data-l="Cómo se ubica en la cirugía">Medio de contraste que se ve con radioscopia</td><td data-c="2" data-l="Consideraciones">La marca se mantiene en el pulmón, por lo que no es indispensable operar inmediatamente después de la punción: en la serie de Watanabe, la marcación se hizo entre 1 y 7 días antes de la cirugía.<sup class="ref"><a href="#ref-8">8</a></sup> Su desventaja es que requiere radioscopia, con radiación ionizante, durante la operación. <a href="#lipiodol">Ver más abajo</a></td></tr>
+        <tr><td data-c="0" data-l="Método"><strong>Verde de indocianina</strong></td><td data-c="1" data-l="Cómo se ubica en la cirugía">Fluorescencia con una cámara de infrarrojo cercano</td><td data-c="2" data-l="Consideraciones">Gran utilidad en nódulos superficiales a menos de 2 cm. Requiere un equipo específico y puede haber falsos positivos y negativos propios de la fluorescencia.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="scene tight feat" id="lipiodol">
+  <div class="wrap">
+    <div class="idx r">05 — Lipiodol</div>
+    <h2 class="sec-h r d1">Marcación con lipiodol</h2>
+    <span class="feat-tag r">Método destacado</span>
+    <p class="body r d1">El lipiodol es un medio de contraste oleoso. Es radiopaco: durante la cirugía se ve con radioscopia y permite obtener una imagen radiológica de la pieza resecada para confirmar que contiene la marca.</p>
+    <div class="ind-grid r d2">
+      <div class="ind-cell"><h4>Indicación</h4><p>Se indica en nódulos menores de 10 mm, en vidrio esmerilado o a más de 5 mm de la superficie del pulmón.</p></div>
+      <div class="ind-cell"><h4>Marcación en el TAC</h4><p>Se hace el día de la cirugía, en el TAC, con anestesia local: con una aguja fina se inyectan 0,4 mL de lipiodol dentro del nódulo o a menos de 10 mm de él. Toma entre 15 y 20 minutos.</p></div>
+      <div class="ind-cell"><h4>En el pabellón</h4><p>En el pabellón, el cirujano localiza la marca con radioscopia, reseca el nódulo y comprueba con radioscopia que la marca está en la pieza.</p></div>
+      <div class="ind-cell"><h4>Biopsia contemporánea</h4><p>La pieza se analiza durante la cirugía (biopsia contemporánea). Según el resultado, se termina el procedimiento o se amplía la resección en el mismo acto.</p></div>
+    </div>
+    <div class="figrow four">
+      <figure class="r d1"><div class="frame"><img src="/media/lipiodol-1-tac-nodulo.webp" width="900" height="566" alt="TAC de tórax con un nódulo pulmonar antes de la marcación" loading="lazy" decoding="async"></div><figcaption>1. Nódulo en el TAC antes de la marcación.</figcaption></figure>
+      <figure class="r d1"><div class="frame"><img src="/media/lipiodol-2-tac-aguja.webp" width="900" height="900" alt="TAC de tórax con una aguja fina dirigida al nódulo pulmonar" loading="lazy" decoding="async"></div><figcaption>2. Aguja dirigida al nódulo bajo TAC.</figcaption></figure>
+      <figure class="r d1"><div class="frame"><img src="/media/lipiodol-3-tac-deposito.webp" width="900" height="900" alt="TAC de tórax con lipiodol depositado en el nódulo pulmonar" loading="lazy" decoding="async"></div><figcaption>3. Lipiodol en el nódulo.</figcaption></figure>
+      <figure class="r d1"><div class="frame"><img src="/media/lipiodol-4-radioscopia-pieza.webp" width="900" height="900" alt="Radioscopia de la pieza quirúrgica resecada con la marca de lipiodol" loading="lazy" decoding="async"></div><figcaption>4. Radioscopia de la pieza: la marca de lipiodol está dentro de la resección.</figcaption></figure>
+    </div>
+    <h3 class="sec-h3 r">Nuestros resultados publicados</h3>
+    <div class="tbl r d1">
+      <table>
+        <thead><tr><th>Serie</th><th>Pacientes</th><th>Resultados</th></tr></thead>
+        <tbody>
+        <tr><td data-c="0" data-l="Serie"><strong>O'Brien 2018</strong><sup class="ref"><a href="#ref-9">9</a></sup><br>2012-2017</td><td data-c="1" data-l="Pacientes">51 pacientes, 55 nódulos de 2 a 32 mm (media 12,1 mm)</td><td data-c="2" data-l="Resultados">100 % de los nódulos marcados identificados y resecados. Complicaciones de la marcación: 10 %, ninguna requirió drenaje pleural. 80 % de los nódulos fueron malignos</td></tr>
+        <tr><td data-c="0" data-l="Serie"><strong>Vega 2021</strong><sup class="ref"><a href="#ref-10">10</a></sup><br>Dos centros universitarios, 2012-2019</td><td data-c="1" data-l="Pacientes">93 pacientes, 103 nódulos de 3 a 29 mm (media 10,7 mm)</td><td data-c="2" data-l="Resultados">100 % identificados. Neumotórax por la marcación en 25,8 %, ninguno requirió drenaje pleural. Conversión a cirugía abierta en 5,4 %, por adherencias. Resección en cuña en 67 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="scene tight feat" id="icg">
+  <div class="wrap">
+    <div class="idx r">06 — Verde de indocianina</div>
+    <h2 class="sec-h r d1">Marcación con verde de indocianina</h2>
+    <span class="feat-tag r">Método destacado</span>
+    <p class="body r d1">El verde de indocianina (ICG) es un colorante que emite fluorescencia cuando se ilumina con luz en el infrarrojo cercano. Esa luz atraviesa varios milímetros de tejido, por lo que la marca puede verse aunque el nódulo no esté en la superficie del pulmón.</p>
+    <div class="ind-grid r d2">
+      <div class="ind-cell"><h4>Marcación en el TAC</h4><p>Por punción bajo TAC con una aguja fina (22 a 25 G) se inyectan 0,4 mL de verde de indocianina lo más cerca posible del nódulo.</p></div>
+      <div class="ind-cell"><h4>En el pabellón</h4><p>Una cámara con visión en infrarrojo cercano (NIR), conectada al sistema de video, muestra la marca en verde sobre el pulmón.</p></div>
+      <div class="ind-cell"><h4>Sin radiación</h4><p>La localización durante la cirugía no requiere radioscopia ni exposición a radiación.</p></div>
+      <div class="ind-cell"><h4>Limitaciones</h4><p>Se ve mejor en nódulos superficiales, requiere un equipo específico y puede haber falsos positivos y negativos de la fluorescencia.</p></div>
+    </div>
+    <figure class="figone wide r d1"><div class="frame"><img src="/media/icg-fluorescencia-radioscopia.webp" width="1478" height="634" alt="Monitores en el pabellón: a la izquierda, la visión con fluorescencia en infrarrojo cercano muestra en verde el verde de indocianina sobre el pulmón; a la derecha, la radioscopia" loading="lazy" decoding="async"></div><figcaption>Monitores en el pabellón: a la izquierda, visión con fluorescencia en infrarrojo cercano, con el verde de indocianina en verde sobre el pulmón; a la derecha, radioscopia.</figcaption></figure>
+  </div>
+</section>
+
+<section class="scene tight">
+  <div class="wrap">
+    <div class="idx r">07 — Comité multidisciplinario</div>
+    <h2 class="sec-h r d1">Decisiones en comité multidisciplinario</h2>
+    <div class="split">
+      <div class="split-text">
+      <p class="body r d1">Las guías de detección precoz y de manejo de los nódulos pulmonares plantean un enfoque multidisciplinario, con radiología, neumología y cirugía torácica:</p>
+      <ul class="plist r d1">
+        <li><b>NCCN</b> (detección precoz del cáncer pulmonar, 2018): las instituciones que hacen detección precoz deben usar un enfoque multidisciplinario, con radiología de tórax, neumología y cirugía torácica, y los equipos multidisciplinarios se mencionan como una forma de reducir exámenes innecesarios y morbilidad.<sup class="ref"><a href="#ref-11">11</a></sup></li>
+        <li><b>American College of Chest Physicians</b> (2013): la clasificación y el tratamiento de los pacientes con más de un foco de cáncer pulmonar son difíciles y requieren una consideración multidisciplinaria.<sup class="ref"><a href="#ref-12">12</a></sup></li>
+      </ul>
+      <h3 class="sec-h3 r">Experiencia en nuestro programa multidisciplinario de nódulos</h3>
+      <div class="tbl r d1">
+        <table>
+          <thead><tr><th>Serie</th><th>Pacientes</th><th>Resultados</th></tr></thead>
+          <tbody>
+          <tr><td data-c="0" data-l="Serie"><strong>Vega 2018</strong><sup class="ref"><a href="#ref-1">1</a></sup><br>2014-2018</td><td data-c="1" data-l="Pacientes">100 pacientes operados por nódulo pulmonar tras discusión en comité multidisciplinario. Tamaño medio 16 mm</td><td data-c="2" data-l="Resultados">Todos operados por videotoracoscopía; conversión en 6 %. Lobectomía 40 %, resección en cuña 36 %, segmentectomía 24 %. 87 % de los nódulos fueron malignos y 13 % benignos</td></tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+      <figure class="split-fig r d2"><div class="frame"><img src="/media/comite-multidisciplinario-nodulos.webp" width="1200" height="677" alt="Reunión del comité multidisciplinario de nódulos pulmonares: los participantes revisan un TAC de tórax proyectado en la pantalla" loading="lazy" decoding="async"></div></figure>
+    </div>
+  </div>
+</section>
+
+<section class="scene tight" id="faq">
+  <div class="wrap">
+    <div class="idx r">08 — Preguntas frecuentes</div>
+    <h2 class="sec-h r d1">Preguntas frecuentes</h2>
+    <div class="faq r d1">
+      <details class="faq-item"><summary>¿Por qué hay que marcar un nódulo antes de operarlo?</summary><p>En la videotoracoscopía el cirujano no puede palpar el pulmón como en la cirugía abierta. Los nódulos pequeños, en vidrio esmerilado o alejados de la superficie del pulmón muchas veces no se ven ni se sienten. La marcación previa permite encontrarlos, resecarlos con margen y evitar la conversión a cirugía abierta.</p></details>
+      <details class="faq-item"><summary>¿Cómo se hace la marcación?</summary><p>Se hace el día de la cirugía, en el TAC y con anestesia local. Con una aguja fina se deja la marca dentro del nódulo o muy cerca de él. El procedimiento toma entre 15 y 20 minutos y luego el paciente pasa al pabellón.</p></details>
+      <details class="faq-item"><summary>¿Qué riesgos tiene la marcación?</summary><p>Los riesgos son los de la punción pulmonar, principalmente neumotórax y sangrado. En nuestra serie publicada de 93 pacientes hubo neumotórax por la marcación en el 25,8 %, y ninguno requirió drenaje pleural, ya que todos los pacientes pasaron inmediatamente a cirugía.</p></details>
+      <details class="faq-item"><summary>¿Qué cirugía se hace: cuña, segmentectomía o lobectomía?</summary><p>La decisión entre segmentectomía, resección en cuña o lobectomía depende de múltiples factores que deben considerarse, como el tamaño, la ubicación dentro del lóbulo, el estado de los ganglios linfáticos, la histología y sobre todo las condiciones propias de cada paciente. El cirujano debe analizarlos caso a caso antes de cada intervención.</p></details>
+      <details class="faq-item"><summary>¿Quién decide si un nódulo debe operarse?</summary><p>La indicación se discute en nuestro comité multidisciplinario de nódulos, donde radiología, neumología y cirugía torácica revisan las imágenes y la historia clínica de cada paciente para definir si corresponde seguimiento, biopsia o cirugía.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="scene tight" id="referencias">
+  <div class="wrap">
+    <div class="idx r">Referencias</div>
+    <ol class="refs">
+      <li id="ref-1">Vega S J, Lazo P D, Undurraga M F, Clavero R JM, Rodríguez D P. Caracterización de nódulos pulmonares resecados. Experiencia de manejo por un programa multidisciplinario. <em>Rev Med Chile</em>. 2018;146(11):1261-1268. <a href="https://doi.org/10.4067/S0034-98872018001101261" target="_blank" rel="noopener">DOI</a></li>
+      <li id="ref-2">Ginsberg RJ, Rubinstein LV. Randomized trial of lobectomy versus limited resection for T1 N0 non-small cell lung cancer. Lung Cancer Study Group. <em>Ann Thorac Surg</em>. 1995;60(3):615-622. <a href="https://doi.org/10.1016/0003-4975(95)00537-u" target="_blank" rel="noopener">DOI</a></li>
+      <li id="ref-3">Saji H, Okada M, Tsuboi M, et al. Segmentectomy versus lobectomy in small-sized peripheral non-small-cell lung cancer (JCOG0802/WJOG4607L): a multicentre, open-label, phase 3, randomised, controlled, non-inferiority trial. <em>Lancet</em>. 2022;399(10335):1607-1617. <a href="https://doi.org/10.1016/S0140-6736(21)02333-3" target="_blank" rel="noopener">DOI</a></li>
+      <li id="ref-4">Altorki N, Wang X, Kozono D, et al. Lobar or sublobar resection for peripheral stage IA non-small-cell lung cancer. <em>N Engl J Med</em>. 2023;388(6):489-498. <a href="https://doi.org/10.1056/NEJMoa2212083" target="_blank" rel="noopener">DOI</a></li>
+      <li id="ref-5">Suzuki K, Nagai K, Yoshida J, et al. Video-assisted thoracoscopic surgery for small indeterminate pulmonary nodules: indications for preoperative marking. <em>Chest</em>. 1999;115(2):563-568. <a href="https://doi.org/10.1378/chest.115.2.563" target="_blank" rel="noopener">DOI</a></li>
+      <li id="ref-6">Ichinose J, Kohno T, Fujimori S, Harano T, Suzuki S. Efficacy and complications of computed tomography-guided hook wire localization. <em>Ann Thorac Surg</em>. 2013;96(4):1203-1208. <a href="https://doi.org/10.1016/j.athoracsur.2013.05.026" target="_blank" rel="noopener">DOI</a></li>
+      <li id="ref-7">Sancheti MS, Lee R, Ahmed SU, et al. Percutaneous fiducial localization for thoracoscopic wedge resection of small pulmonary nodules. <em>Ann Thorac Surg</em>. 2014;97(6):1914-1918. <a href="https://doi.org/10.1016/j.athoracsur.2014.02.028" target="_blank" rel="noopener">DOI</a></li>
+      <li id="ref-8">Watanabe K, Nomori H, Ohtsuka T, Kaji M, Naruke T, Suemasu K. Usefulness and complications of computed tomography-guided lipiodol marking for fluoroscopy-assisted thoracoscopic resection of small pulmonary nodules: experience with 174 nodules. <em>J Thorac Cardiovasc Surg</em>. 2006;132(2):320-324. <a href="https://doi.org/10.1016/j.jtcvs.2006.04.012" target="_blank" rel="noopener">DOI</a></li>
+      <li id="ref-9">O'Brien S A, Ramírez Ch M, Loyola M MA, Astudillo J J, Lazo P D, Rodríguez D P, Clavero R JM. Marcación de nódulos pulmonares con lipiodol bajo tomografía computada. Experiencia local y correlación anatomopatológica. <em>Rev Chil Radiol</em>. 2018;24(4):129-133. <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-93082018000400129" target="_blank" rel="noopener">SciELO</a></li>
+      <li id="ref-10">Vega S J, Zárate G I, Rodríguez G H, Lazo P D, Undurraga M F, Clavero R JM, Alarcón O F, O'Brien S A, Rodríguez D P. Resección por videotoracoscopía de nódulos pulmonares marcados con lipiodol. Experiencia en dos centros universitarios. <em>Rev Chil Enferm Respir</em>. 2021;37(3):197-202. <a href="https://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-73482021000300197" target="_blank" rel="noopener">SciELO</a></li>
+      <li id="ref-11">Wood DE, Kazerooni EA, Baum SL, et al. Lung Cancer Screening, Version 3.2018, NCCN Clinical Practice Guidelines in Oncology. <em>J Natl Compr Canc Netw</em>. 2018;16(4):412-441. <a href="https://doi.org/10.6004/jnccn.2018.0020" target="_blank" rel="noopener">DOI</a></li>
+      <li id="ref-12">Gould MK, Donington J, Lynch WR, et al. Evaluation of individuals with pulmonary nodules: when is it lung cancer? Diagnosis and management of lung cancer, 3rd ed: American College of Chest Physicians evidence-based clinical practice guidelines. <em>Chest</em>. 2013;143(5 Suppl):e93S-e120S. <a href="https://doi.org/10.1378/chest.12-2351" target="_blank" rel="noopener">DOI</a></li>
+    </ol>
+    <a class="back" href="/">← Videotoracoscopía</a>
+  </div>
+</section>
+</main>
+
+<section class="cta-unified" id="contacto">
+  <p class="cta-eyebrow">Primer paso</p>
+  <h2 class="cta-title">Hable directamente<br>con el especialista</h2>
+  <div class="cta-contact-grid">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.5rem;">
+      <img src="https://cirugiatoracica.cl/imgs/foto-dr-lazo-bio.jpg" alt="Dr. David Lazo Pérez, Cirujano Torácico especialista en cirugía robótica y broncoscopía intervencionista" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 10%;border:3px solid rgba(255,255,255,0.2);margin:0;" decoding="async">
+      <div style="text-align:center;">
+        <p style="font-size:0.88rem;font-weight:700;color:#fff;margin-bottom:0.2rem;">Dr. David Lazo Pérez</p>
+        <p style="font-size:0.75rem;color:rgba(255,255,255,0.55);">Cirujano Torácico</p>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Agendar consulta</h4>
+      <div class="ccontact-links">
+        <a class="ccontact-link" href="https://reserva.clinicalascondes.cl/AgendaWeb/reserva-horas?nombre=DAVID%20RENE&apellidoPat=LAZO&apellidoMat=PEREZ" target="_blank" rel="noopener">
+          <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 8v6M9 11h6M9 21v-3h6v3"/></svg></span>
+          <div><span class="ccontact-label">Clínica Las Condes</span><span class="ccontact-val">Reservar hora presencial →</span></div>
+        </a>
+        <a class="ccontact-link" href="https://encuadrado.com/p/david-lazo-perez/" target="_blank" rel="noopener">
+          <span class="ccontact-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:rgba(255,255,255,0.8)"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/></svg></span>
+          <div><span class="ccontact-label">Telemedicina</span><span class="ccontact-val">Consulta online — todo Chile →</span></div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>Redes sociales</h4>
+      <div class="ccontact-links">
+        <a class="ccontact-link" href="https://www.linkedin.com/in/david-lazo-p%C3%A9rez-7b194748/" target="_blank" rel="noopener">
+          <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <div><span class="ccontact-label">LinkedIn</span><span class="ccontact-val">Dr. David Lazo Pérez</span></div>
+        </a>
+        <a class="ccontact-link" href="https://www.instagram.com/dr.david.lazo.p/" target="_blank" rel="noopener">
+          <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <div><span class="ccontact-label">Instagram</span><span class="ccontact-val">@dr.david.lazo.p</span></div>
+        </a>
+        <a class="ccontact-link" href="https://www.doctoralia.cl/david-rene-lazo-perez-3/cirujano-toracico-cirujano-general/santiago" target="_blank" rel="noopener">
+          <svg class="ccontact-ico" style="width:20px;height:20px;color:rgba(255,255,255,0.75);flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.523 0 10 2.239 10 5v1H2v-1c0-2.761 4.477-5 10-5z"/></svg>
+          <div><span class="ccontact-label">Doctoralia</span><span class="ccontact-val">Ver perfil y reseñas →</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer style="background:#060a12;border-top:1px solid rgba(255,255,255,0.05);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+  <p style="font-size:0.78rem;color:rgba(255,255,255,0.28);">© 2026 · Dr. David Lazo Pérez · Cirugía Torácica · Santiago, Chile</p>
+  <div class="footer-links" style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+    <a href="https://rats.cl" style="font-size:0.78rem;color:rgba(255,255,255,0.28);text-decoration:none;">rats.cl</a>
+    <a href="https://rats.cl/operculo-toracico" style="font-size:0.78rem;color:rgba(255,255,255,0.28);text-decoration:none;">opérculo torácico (RATS)</a>
+    <a href="https://cancerpulmonar.cl" style="font-size:0.78rem;color:rgba(255,255,255,0.28);text-decoration:none;">cancerpulmonar.cl</a>
+    <a href="https://broncoscopia.cl" style="font-size:0.78rem;color:rgba(255,255,255,0.28);text-decoration:none;">broncoscopia.cl</a>
+    <a href="https://videotoracoscopia.cl" style="font-size:0.78rem;color:rgba(255,255,255,0.28);text-decoration:none;">videotoracoscopia.cl</a>
+    <a href="https://hiperhidrosis.cl" style="font-size:0.78rem;color:rgba(255,255,255,0.28);text-decoration:none;">hiperhidrosis.cl</a>
+  </div>
+</footer>
+<script>
+/* ============================================================
+   VATS — Cambio de Paradigma · interacción
+   ============================================================ */
+(function(){
+  "use strict";
+
+  /* ---------- scroll-driven reveal + counters (robust; no IntersectionObserver) ---------- */
+  var reveals = [].slice.call(document.querySelectorAll('.r'));
+  var counters = [].slice.call(document.querySelectorAll('[data-count]'));
+
+  function vh(){ return window.innerHeight || document.documentElement.clientHeight || 600; }
+  function topOf(el){ return el.getBoundingClientRect().top; }
+
+  function runCounter(el){
+    if(el.__done) return; el.__done = true;
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = (el.getAttribute('data-dec')|0), dur = 1100, t0 = null;
+    var prefix = el.getAttribute('data-pre')||'', suffix = el.getAttribute('data-suf')||'';
+    function step(ts){
+      if(!t0) t0 = ts; var p = Math.min((ts-t0)/dur,1);
+      var v = (target*(1-Math.pow(1-p,3))).toFixed(dec);
+      el.textContent = prefix + v + suffix;
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function check(){
+    var h = vh();
+    for(var i=reveals.length-1;i>=0;i--){
+      if(topOf(reveals[i]) < h*0.92){ reveals[i].classList.add('in'); reveals.splice(i,1); }
+    }
+    for(var j=counters.length-1;j>=0;j--){
+      if(topOf(counters[j]) < h*0.82){ runCounter(counters[j]); counters.splice(j,1); }
+    }
+  }
+
+  check();
+  document.addEventListener('scroll', check, {passive:true});
+  window.addEventListener('resize', check);
+  window.addEventListener('load', check);
+  // belt-and-suspenders: ensure first paint reveals above-the-fold even if events are quiet
+  setTimeout(check, 60); setTimeout(check, 400);
+  // failsafe: if CSS transitions are paused (e.g. offscreen render) and content is stuck invisible,
+  // force everything visible without animation so the page is never blank.
+  setTimeout(function(){
+    var t = document.querySelector('.r.in');
+    if(t && parseFloat(getComputedStyle(t).opacity) < 0.6){
+      document.documentElement.classList.add('reveal-now');
+      reveals.forEach(function(el){ el.classList.add('in'); }); reveals.length = 0;
+    }
+  }, 1500);
+
+  /* ---------- progress bar ---------- */
+  var bar = document.querySelector('.progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max>0 ? (h.scrollTop||document.body.scrollTop)/max : 0;
+    if(bar) bar.style.width = (p*100).toFixed(2)+'%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+})();
+
+</script>
+</body>
+</html>

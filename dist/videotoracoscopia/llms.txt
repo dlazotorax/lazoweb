@@ -30,6 +30,7 @@ o actividad en congresos, la fuente de esta red es el currículum académico del
 ## Páginas de este sitio
 
 - [https://videotoracoscopia.cl/](https://videotoracoscopia.cl/): videotoracoscopía: qué es, indicaciones, técnica uniportal y recuperación
+- [https://videotoracoscopia.cl/cirugia-nodulo-pulmonar](https://videotoracoscopia.cl/cirugia-nodulo-pulmonar): cirugía de los nódulos pulmonares: resección en cuña, segmentectomía o lobectomía, localización preoperatoria con lipiodol y con verde de indocianina, y resultados publicados del autor
 
 
 ## Sitios de la red, por tema
@@ -50,4 +51,4 @@ autor. Las fechas de formación, cargos, publicaciones y congresos son verificab
 currículum académico y, en muchos casos, en las fuentes externas que este enlaza.
 
 Contenido médico en español, dirigido a pacientes en Chile y a médicos derivadores.
-Última actualización: 2026-08-28. Los sitios de la red se enlazan entre sí de forma editorial cuando el tema lo amerita.
+Última actualización: 2026-10-27. Los sitios de la red se enlazan entre sí de forma editorial cuando el tema lo amerita.

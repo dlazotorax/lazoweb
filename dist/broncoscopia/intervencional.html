@@ -1199,6 +1199,32 @@ img,video,iframe{max-width:100%}
 .content p,.content li,.content td{overflow-wrap:break-word}
 }
 </style>
+<style id="site-nav-css">
+#site-nav{position:sticky;top:0;z-index:500;height:66px;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid #E2E3E3;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;font-family:'Red Hat Display',Arial,sans-serif}
+#site-nav .sn-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+#site-nav .sn-mark{width:34px;height:34px;border-radius:8px;background:#14448F;display:flex;align-items:center;justify-content:center}
+#site-nav .sn-mark svg{width:18px;height:18px}
+#site-nav .sn-text{font-size:.88rem;font-weight:800;letter-spacing:-.01em;color:#0E1012}
+#site-nav .sn-links{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0}
+#site-nav .sn-links a{font-size:.83rem;font-weight:500;color:#3D4044;text-decoration:none}
+#site-nav .sn-links a:hover,#site-nav .sn-links a[aria-current=page]{color:#1F6FEB}
+#site-nav .sn-links a[aria-current=page]{font-weight:700}
+#site-nav .sn-cta{background:#1F6FEB;color:#fff;text-decoration:none;padding:.5rem 1.2rem;border-radius:6px;font-size:.83rem;font-weight:700}
+#site-nav .sn-cta:hover{background:#1A5FCC}
+#site-nav .sn-burger{display:none;background:none;border:0;cursor:pointer;padding:.4rem;flex-direction:column;gap:5px}
+#site-nav .sn-burger span{display:block;width:22px;height:2px;background:#0E1012;border-radius:2px;transition:transform .25s,opacity .2s}
+#site-nav.open .sn-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#site-nav.open .sn-burger span:nth-child(2){opacity:0}
+#site-nav.open .sn-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:900px){
+#site-nav{padding:0 1rem}#site-nav .sn-cta{display:none}#site-nav .sn-burger{display:flex;margin-left:auto}
+#site-nav .sn-links{display:none;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;background:#0E1012;padding:.75rem 1.25rem 1.25rem;box-shadow:0 12px 40px rgba(0,0,0,.45);z-index:9999}
+#site-nav.open .sn-links{display:flex}
+#site-nav .sn-links a{display:block;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.88);font-size:.95rem}
+#site-nav .sn-links li:last-child a{border-bottom:0}
+#site-nav .sn-links a[aria-current=page]{color:#8FB8FF}
+}
+</style>
 </head>
 <body>
 
@@ -1216,23 +1242,25 @@ img,video,iframe{max-width:100%}
   </div>
 
   <header>
-  <!-- ──────────── PAGE NAV ──────────── -->
-  <nav class="page-nav">
-    <a class="page-nav-logo" href="/">
-      <div>
-        <div class="page-nav-eyebrow">broncoscopia.cl</div>
-        <div class="page-nav-title">Broncoscopía Intervencional</div>
+  <nav id="site-nav" aria-label="Principal">
+    <a class="sn-logo" href="/">
+      <div class="sn-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+          <path d="M12 2C7 2 4 6 4 10c0 3 1.5 5.5 4 7v3h8v-3c2.5-1.5 4-4 4-7 0-4-3-8-8-8z"/>
+          <line x1="12" y1="7" x2="12" y2="17"/>
+        </svg>
       </div>
+      <span class="sn-text">Broncoscopía.cl</span>
     </a>
-    <div class="page-nav-sep"></div>
-    <ul class="page-nav-links">
-      <li><a href="#rigida">Broncoscopía Rígida</a></li>
-      <li><a href="#ablacion">Técnicas de Ablación</a></li>
-      <li><a href="#crioterapia">Crioterapia</a></li>
-      <li><a href="#stents">Stents</a></li>
-      <li><a href="/#contacto" class="page-nav-cta">Derivar paciente →</a></li>
+    <ul class="sn-links">
+      <li><a href="/#que-es">¿Qué es?</a></li>
+      <li><a href="/ebus">EBUS · CryoEBUS</a></li>
+      <li><a href="/intervencional" aria-current="page">Intervencional</a></li>
+      <li><a href="/#medicos">Para Médicos</a></li>
+      <li><a href="/#dr-lazo">Dr. Lazo</a></li>
     </ul>
-    <button class="nav-hamburger" aria-label="Abrir menú" onclick="this.closest('nav').classList.toggle('nav-open')"><span></span><span></span><span></span></button>
+    <a class="sn-cta" href="/#contacto">Reservar hora</a>
+    <button class="sn-burger" aria-label="Abrir menú" aria-expanded="false" onclick="var n=this.closest('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button>
   </nav>
   </header>
 

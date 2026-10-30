@@ -22,8 +22,8 @@ ACCENT = '#C4500E'   # naranjo levemente oscuro (David, 8-sep); el lienzo trae #
 DC = DC.replace('#0047FF', ACCENT).replace('#0047ff', ACCENT)
 
 PAGES = {  # key: (archivo, url, title, description, name, migas)
- 'index': ('index.html', BASE, 'Opérculo torácico: cirugía robótica · Dr. David Lazo Pérez',
-   'Síndrome del opérculo torácico neurogénico, venoso y arterial: causas, clínica, estudio y resección robótica de la primera costilla. Dr. David Lazo Pérez.',
+ 'index': ('index.html', BASE, 'Opérculo torácico: qué es y síndrome · Dr. David Lazo Pérez',
+   'Qué es el opérculo torácico y el síndrome neurogénico, venoso y arterial: anatomía, causas, estudio y resección robótica de la primera costilla.',
    'Síndrome del opérculo torácico: resolución robótica', None),
  'causas': ('causas.html', BASE+'/causas', 'Opérculo torácico: causas · Dr. David Lazo Pérez',
    'Causas del síndrome del opérculo torácico: costilla cervical, primera costilla anómala, bandas de Roos, anomalías musculares y trauma. Dr. David Lazo Pérez.',
@@ -170,10 +170,10 @@ def build(key):
         extra = ld({"@context":"https://schema.org","@type":"VideoObject","@id":url+"#video",
             "name":"Resección robótica transtorácica de la primera costilla",
             "description":"Resección robótica transtorácica de la primera costilla en el síndrome del opérculo torácico, por tres puertos de 8 mm desde el interior del tórax.",
-            "thumbnailUrl":"https://i.ytimg.com/vi/eh7PLkHmMCQ/hq2.jpg",
-            "uploadDate":"2026-10-14",
-            "embedUrl":"https://www.youtube-nocookie.com/embed/eh7PLkHmMCQ",
-            "url":"https://www.youtube.com/shorts/eh7PLkHmMCQ",
+            "thumbnailUrl":"https://i.ytimg.com/vi/dY3bHCgoaZs/hq2.jpg",
+            "uploadDate":"2026-10-30",
+            "embedUrl":"https://www.youtube-nocookie.com/embed/dY3bHCgoaZs",
+            "url":"https://www.youtube.com/shorts/dY3bHCgoaZs",
             "inLanguage":"es-CL",
             "author":{"@id":"https://cirugiatoracica.cl/#david-lazo"}})
     doc = head + PHYS + ld(faq) + ld(web) + extra + GA4 + '</head>\n<body>\n<div style="background:#F6F5F1">\n' + strip_html + nav_html + '\n' + main_html + '\n' + tail_html + '\n</div>\n</body>\n</html>\n'

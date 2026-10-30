@@ -17,7 +17,7 @@ GA4 = re.search(r'<!-- Google Analytics 4.*?\}, true\);\n  </script>\n', V1, re.
 OUT = os.path.join(ROOT, '_design/maquetas/operculo/') if MAQUETA else os.path.join(ROOT, 'dist/rats/operculo-toracico/')
 BASE = 'https://rats.cl/operculo-toracico'
 TODAY = '2026-09-13'
-MODIFIED = {'tratamiento': '2026-10-13'}   # dateModified por página (cambios no clínicos); lastReviewed sigue en TODAY
+MODIFIED = {'tratamiento': '2026-10-30'}   # dateModified por página (cambios no clínicos); lastReviewed sigue en TODAY
 ACCENT = '#C4500E'   # naranjo levemente oscuro (David, 8-sep); el lienzo trae #0047FF
 DC = DC.replace('#0047FF', ACCENT).replace('#0047ff', ACCENT)
 

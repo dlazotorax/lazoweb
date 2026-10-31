@@ -1,0 +1,50 @@
+<svg class="cortes" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Esquema de la ubicación del nódulo en cortes axial, sagital y coronal">
+  <style>
+    .cortes .bg{fill:#0f1416}
+    .cortes .tx{fill:#1b2326;stroke:rgba(236,230,218,.45);stroke-width:1.5}
+    .cortes .lu{fill:#2a3438;stroke:#26C3AE;stroke-width:1.6}
+    .cortes .md{fill:#3a4549;stroke:rgba(236,230,218,.35);stroke-width:1}
+    .cortes .bo{fill:rgba(236,230,218,.55)}
+    .cortes .fi{fill:none;stroke:rgba(236,230,218,.35);stroke-width:1.2;stroke-dasharray:4 3}
+    .cortes .nd{fill:#DC4A38;stroke:#fff;stroke-width:1}
+    .cortes .dm{stroke:#ECE6DA;stroke-width:1.4}
+    .cortes text{font-family:"Space Mono",ui-monospace,monospace;fill:rgba(236,230,218,.75);font-size:11px}
+    .cortes .tt{font-size:12px;fill:#26C3AE;letter-spacing:.14em}
+    .cortes .lb{font-size:10.5px;fill:#ECE6DA}
+  </style>
+  <rect class="bg" x="0" y="0" width="600" height="450"/>
+  <!-- AXIAL -->
+  <text class="tt" x="16" y="22">AXIAL</text>
+  <ellipse class="tx" cx="300" cy="135" rx="205" ry="95"/>
+  <path class="lu" d="M150,92 C190,62 262,66 276,96 C284,120 284,160 276,186 C262,210 190,214 152,188 C120,166 116,118 150,92 Z"/>
+  <path class="lu" d="M450,94 C412,64 342,70 328,100 C340,112 352,128 348,146 C342,168 336,182 334,190 C352,212 414,212 448,188 C480,166 482,118 450,94 Z"/>
+  <path class="md" d="M282,70 L322,72 C344,108 352,140 336,186 L282,192 C290,150 290,110 282,70 Z"/>
+  <rect class="bo" x="290" y="44" width="20" height="10" rx="2"/>
+  <circle class="bo" cx="300" cy="206" r="13"/>
+  <circle class="nd" cx="148" cy="118" r="7"/>
+  <line class="dm" x1="128" y1="118" x2="141" y2="118"/>
+  <line class="dm" x1="128" y1="112" x2="128" y2="124"/>
+  <text class="lb" x="86" y="104">10 mm</text>
+  <text x="80" y="140">D</text><text x="512" y="140">I</text>
+  <text x="290" y="36">ANT</text><text x="286" y="244">POST</text>
+  <!-- SAGITAL -->
+  <text class="tt" x="16" y="270">SAGITAL · PULMÓN DERECHO</text>
+  <g transform="translate(342,0) scale(-1,1)">
+  <path class="lu" d="M150,284 C128,286 104,330 96,380 C92,404 98,420 110,424 C150,410 200,408 232,420 C246,404 246,372 236,336 C222,300 182,282 150,284 Z"/>
+  <path class="fi" d="M222,312 C190,350 150,388 112,418"/>
+  <path class="fi" d="M174,356 C150,352 120,352 100,356"/>
+  <circle class="nd" cx="150" cy="318" r="7"/>
+  </g>
+  <text x="50" y="350">POST</text><text x="254" y="350">ANT</text>
+  <!-- CORONAL -->
+  <text class="tt" x="318" y="270">CORONAL</text>
+  <path class="tx" d="M348,292 C380,276 520,276 552,292 C566,330 568,390 560,432 L340,432 C332,390 334,330 348,292 Z"/>
+  <path class="lu" d="M420,296 C398,294 366,302 356,330 C348,360 348,400 352,424 C372,418 406,414 432,420 C438,380 438,330 420,296 Z"/>
+  <path class="lu" d="M480,296 C502,294 534,302 544,330 C552,360 552,400 548,424 C530,418 504,414 478,420 C472,380 466,330 480,296 Z"/>
+  <path class="md" d="M432,300 L470,300 C464,340 468,380 478,420 L432,420 C438,380 438,330 432,300 Z"/>
+  <circle class="nd" cx="375" cy="332" r="7"/>
+  <line class="dm" x1="355" y1="332" x2="367" y2="332"/>
+  <line class="dm" x1="355" y1="326" x2="355" y2="338"/>
+  <text class="lb" x="330" y="318">10 mm</text>
+  <text x="326" y="448">D</text><text x="566" y="448">I</text>
+</svg>

@@ -75,6 +75,7 @@ def video_sec(n,label,yt=None,title='',text=''):
     </section>''' if MAQ else ''
 
 VIDEO_SEG='Segmentectomía anatómica robótica del segmento posterior del lóbulo superior derecho (S2). Se seccionan en forma selectiva la arteria, el bronquio y la vena del segmento; luego, el ICG intravenoso con la visión Firefly® delimita el segmento sin perfusión y el plano intersegmentario, que se secciona con endograpadora.'
+VIDEO_CT='Ligadura robótica del conducto torácico por una fístula quilosa cervical. En luz blanca el conducto no se distingue en la grasa del mediastino posterior; con verde de indocianina y la visión Firefly® se identifica su trayecto, se diseca y se liga con clips bajo visión de fluorescencia.'
 VIDEO_TXT='Nódulo subpleural del lóbulo superior izquierdo, marcado con verde de indocianina antes de la cirugía. Se localiza con la cámara Firefly®, se reseca en cuña con endograpadora robótica y se comprueba con fluorescencia que la lesión queda dentro del margen.'
 # ---------------- page bodies ----------------
 def body_index(p):
@@ -227,7 +228,7 @@ def body_ct(p):
       {Pp('Se usa para evitar lesionarlo durante cirugías del mediastino y del esófago y, cuando ya hay un quilotórax, para encontrar el sitio de la fuga y comprobar que la ligadura la cerró.'+p.r('kuo'))}
     </section>
 
-    {video_sec(3,'',yt='EW5Z0sYQY-E',title='Ligadura robótica del conducto torácico guiada por fluorescencia ICG — Dr. David Lazo Pérez',text='Ligadura robótica del conducto torácico, localizado con verde de indocianina y la visión de fluorescencia Firefly®.')}
+    {video_sec(3,'',yt='EW5Z0sYQY-E',title='Ligadura robótica del conducto torácico guiada por fluorescencia ICG — Dr. David Lazo Pérez',text=VIDEO_CT)}
 
     {SEC}
       {H2(4,'Evidencia publicada','evidencia')}
@@ -311,6 +312,14 @@ for slug,sp in SPEC.items():
             "description":VIDEO_SEG,"uploadDate":"2026-10-31T07:37:32-07:00","duration":"PT45S",
             "thumbnailUrl":"https://i.ytimg.com/vi/BykskDhQulc/hqdefault.jpg",
             "embedUrl":"https://www.youtube-nocookie.com/embed/BykskDhQulc","url":"https://www.youtube.com/shorts/BykskDhQulc",
+            "inLanguage":"es-CL","author":{"@id":"https://cirugiatoracica.cl/#david-lazo"},"isPartOf":{"@id":U+"#webpage"}}
+        ld+='  <script type="application/ld+json">\n'+json.dumps(vo,ensure_ascii=False,indent=2)+'\n  </script>\n'
+    if slug=='conducto-toracico':
+        vo={"@context":"https://schema.org","@type":"VideoObject","@id":U+"#video",
+            "name":"Ligadura robótica del conducto torácico guiada por fluorescencia ICG | RATS",
+            "description":VIDEO_CT,"uploadDate":"2026-10-30T11:46:06-07:00","duration":"PT38S",
+            "thumbnailUrl":"https://i.ytimg.com/vi/EW5Z0sYQY-E/hqdefault.jpg",
+            "embedUrl":"https://www.youtube-nocookie.com/embed/EW5Z0sYQY-E","url":"https://www.youtube.com/shorts/EW5Z0sYQY-E",
             "inLanguage":"es-CL","author":{"@id":"https://cirugiatoracica.cl/#david-lazo"},"isPartOf":{"@id":U+"#webpage"}}
         ld+='  <script type="application/ld+json">\n'+json.dumps(vo,ensure_ascii=False,indent=2)+'\n  </script>\n'
     if slug=='':

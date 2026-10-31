@@ -7,7 +7,7 @@ exec(open(Path(__file__).parent/'refs_block.py').read())
 REF={k:(t,d) for k,t,d in refs}
 ACC='#0E7490'; BG2='#EDEBE6'; TODAY='2026-10-30'
 BASE='https://rats.cl/verde-indocianina'
-PAGES=[('','Portada'),('nodulos','01 Nódulos'),('segmentectomia','02 Segmentectomía'),('conducto-toracico','03 Conducto torácico')]
+PAGES=[('','ICG'),('nodulos','01 Nódulos'),('segmentectomia','02 Segmentectomía'),('conducto-toracico','03 Conducto torácico')]
 IMG='imgs/icg-firefly.webp' if MAQ else '/verde-indocianina/imgs/icg-firefly.webp'
 IMG5='imgs/nodulo-vision.webp' if MAQ else '/verde-indocianina/imgs/nodulo-vision.webp'
 CORTES=open(Path(__file__).parent/'cortes.svg').read().replace('<svg class="cortes"','<svg class="cortes" style="display:block;width:100%;height:auto"',1)
@@ -250,7 +250,7 @@ FAQ_INDEX=[
 ]
 
 SPEC={
- '':dict(h1='RATS y verde de indocianina',title='RATS y verde de indocianina (ICG) · Dr. David Lazo Pérez',
+ '':dict(h1='<a href="https://rats.cl" style="color:inherit;text-decoration:none">RATS</a> y verde de indocianina',title='RATS y verde de indocianina (ICG) · Dr. David Lazo Pérez',
    desc='Usos del verde de indocianina en cirugía robótica torácica: marcación de nódulos pulmonares, plano intersegmentario en la segmentectomía y conducto torácico.',
    sub='Fluorescencia en el infrarrojo cercano en cirugía robótica torácica: marcación de nódulos, plano intersegmentario y conducto torácico.',
    name='RATS y verde de indocianina',body=body_index,
@@ -347,7 +347,8 @@ for slug,sp in SPEC.items():
         bar=f'<span style="display:block;height:3px;background:{ACC};margin:10px -18px -14px"></span>' if cur else ''
         ac=' aria-current="page"' if cur else ''
         return f'        <a href="{link(s2)}"{ac} style="{na}" class="hv4">{label}{bar}</a>'
-    nav='<nav aria-label="RATS y verde de indocianina" style="position:sticky;top:0;z-index:50;background:#0B0B0B;color:#F6F5F1">\n      <div style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;align-items:stretch">\n'+'\n'.join(navlink(s2,l) for s2,l in PAGES)+'\n      </div>\n    </nav>\n    '
+    nav='<nav aria-label="RATS y verde de indocianina" style="position:sticky;top:0;z-index:50;background:#0B0B0B;color:#F6F5F1">\n      <div style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;align-items:stretch">\n'+f'        <a href="{"https://rats.cl" if not MAQ else "#"}" style="{na};color:#9A9A9A" class="hv4">← rats.cl</a>\n'+'\n'.join(navlink(s2,l) for s2,l in PAGES)+'\n      </div>\n    </nav>\n    '
     main=f'<main style="max-width:1280px;margin:0 auto;padding:0 24px">\n    {body}\n  </main>'
-    out=head+PRE+header+nav+main+TAIL
+    PRE2=PRE.replace('<span>Cirugía torácica robótica · Santiago de Chile</span>','<a href="https://rats.cl" style="color:#F6F5F1;text-decoration:none">Cirugía torácica robótica · Santiago de Chile</a>',1)
+    out=head+PRE2+header+nav+main+TAIL
     fn=OUTDIR/((slug or 'index')+'.html'); fn.parent.mkdir(parents=True,exist_ok=True); fn.write_text(out); print('ok',fn.name,len(out),p.order)

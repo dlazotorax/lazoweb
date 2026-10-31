@@ -35,6 +35,10 @@ o actividad en congresos, la fuente de esta red es el currículum académico del
 - [https://rats.cl/operculo-toracico/clinica](https://rats.cl/operculo-toracico/clinica): clínica — variantes neurogénica, venosa y arterial; diagnóstico diferencial
 - [https://rats.cl/operculo-toracico/estudio](https://rats.cl/operculo-toracico/estudio): estudio — radiografía, EMG, PVR, Doppler, angioTC; papel de la toxina botulínica
 - [https://rats.cl/operculo-toracico/tratamiento](https://rats.cl/operculo-toracico/tratamiento): tratamiento — manejo por urgencia, por qué se reseca la primera costilla, vías, transaxilar vs RATS, resultados publicados
+- [https://rats.cl/verde-indocianina](https://rats.cl/verde-indocianina): RATS y verde de indocianina (ICG) — fluorescencia en el infrarrojo cercano (Firefly) y sus usos en cirugía robótica torácica
+- [https://rats.cl/verde-indocianina/nodulos](https://rats.cl/verde-indocianina/nodulos): marcación de nódulos pulmonares con ICG bajo TAC y resección robótica; evidencia publicada y comparación con lipiodol
+- [https://rats.cl/verde-indocianina/segmentectomia](https://rats.cl/verde-indocianina/segmentectomia): ICG intravenoso para identificar el plano intersegmentario en la segmentectomía robótica
+- [https://rats.cl/verde-indocianina/conducto-toracico](https://rats.cl/verde-indocianina/conducto-toracico): anatomía del conducto torácico e identificación con ICG inguinal; prevención y manejo del quilotórax
 
 
 ## Sitios de la red, por tema
@@ -55,4 +59,4 @@ autor. Las fechas de formación, cargos, publicaciones y congresos son verificab
 currículum académico y, en muchos casos, en las fuentes externas que este enlaza.
 
 Contenido médico en español, dirigido a pacientes en Chile y a médicos derivadores.
-Última actualización: 2026-08-28. Los sitios de la red se enlazan entre sí de forma editorial cuando el tema lo amerita.
+Última actualización: 2026-10-31. Los sitios de la red se enlazan entre sí de forma editorial cuando el tema lo amerita.

@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://rats.cl/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/" />
@@ -48,6 +48,38 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/operculo-toracico/tratamiento" />
+  </url>
+
+  <url>
+    <loc>https://rats.cl/verde-indocianina</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/verde-indocianina" />
+  </url>
+
+  <url>
+    <loc>https://rats.cl/verde-indocianina/nodulos</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/verde-indocianina/nodulos" />
+  </url>
+
+  <url>
+    <loc>https://rats.cl/verde-indocianina/segmentectomia</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/verde-indocianina/segmentectomia" />
+  </url>
+
+  <url>
+    <loc>https://rats.cl/verde-indocianina/conducto-toracico</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/verde-indocianina/conducto-toracico" />
   </url>
 
 </urlset>

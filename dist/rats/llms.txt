@@ -39,6 +39,10 @@ o actividad en congresos, la fuente de esta red es el currículum académico del
 - [https://rats.cl/verde-indocianina/nodulos](https://rats.cl/verde-indocianina/nodulos): marcación de nódulos pulmonares con ICG bajo TAC y resección robótica; evidencia publicada y comparación con lipiodol
 - [https://rats.cl/verde-indocianina/segmentectomia](https://rats.cl/verde-indocianina/segmentectomia): ICG intravenoso para identificar el plano intersegmentario en la segmentectomía robótica
 - [https://rats.cl/verde-indocianina/conducto-toracico](https://rats.cl/verde-indocianina/conducto-toracico): anatomía del conducto torácico e identificación con ICG inguinal; prevención y manejo del quilotórax
+- [https://rats.cl/resecciones](https://rats.cl/resecciones): resecciones pulmonares robóticas — cuánto pulmón se reseca en la cuña, la segmentectomía y la lobectomía; evidencia JCOG0802 y CALGB 140503
+- [https://rats.cl/resecciones/cuna](https://rats.cl/resecciones/cuna): resección en cuña robótica; indicaciones, técnica con marcación del nódulo y evidencia JCOG0804
+- [https://rats.cl/resecciones/segmentectomia](https://rats.cl/resecciones/segmentectomia): segmentectomía pulmonar robótica; indicaciones, técnica y evidencia JCOG0802, CALGB 140503 y JCOG1211
+- [https://rats.cl/resecciones/lobectomia](https://rats.cl/resecciones/lobectomia): lobectomía pulmonar robótica; indicaciones, técnica y evidencia frente a toracotomía y videotoracoscopía
 
 
 ## Sitios de la red, por tema

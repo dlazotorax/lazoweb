@@ -82,4 +82,36 @@
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/verde-indocianina/conducto-toracico" />
   </url>
 
+  <url>
+    <loc>https://rats.cl/resecciones</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/resecciones" />
+  </url>
+
+  <url>
+    <loc>https://rats.cl/resecciones/cuna</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/resecciones/cuna" />
+  </url>
+
+  <url>
+    <loc>https://rats.cl/resecciones/segmentectomia</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/resecciones/segmentectomia" />
+  </url>
+
+  <url>
+    <loc>https://rats.cl/resecciones/lobectomia</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/resecciones/lobectomia" />
+  </url>
+
 </urlset>

@@ -127,6 +127,10 @@ FAQ_INDEX=[
  ('¿Se pueden hacer por cirugía robótica?','Sí. Las tres resecciones se pueden hacer con el robot da Vinci, por incisiones pequeñas entre las costillas y sin separarlas. La elección depende de la lesión y del paciente, no de la plataforma.'),
 ]
 
+def FAQREF(p,q):
+    if q.startswith('¿Cuándo se prefiere'): return p.r('jcog0802','calgb')
+    if q.startswith('¿Cuánta función'): return p.r('jcog0802','calgb')
+    return ''
 def body_index(p):
     def card(k,num):
         return f'''<a href="{link(k)}" style="flex:1 1 280px;display:flex;flex-direction:column;gap:12px;border:2px solid #0B0B0B;border-top:6px solid {ACC};background:#fff;padding:22px;color:#0B0B0B;text-decoration:none" class="hv3c">
@@ -138,7 +142,7 @@ def body_index(p):
         </a>'''
     fh='\n'.join(f'''        <details style="border-bottom:1px solid #0B0B0B;padding:14px 0">
           <summary style="cursor:pointer;list-style:none;font-size:17px;font-weight:700">{q}</summary>
-          <p style="font-size:15.5px;margin-top:10px">{a}</p>
+          <p style="font-size:15.5px;margin-top:10px">{a}{FAQREF(p,q)}</p>
         </details>''' for q,a in FAQ_INDEX)
     return f'''{SEC}
       {H2(1,'Cuánto pulmón se reseca','tipos')}
@@ -152,17 +156,7 @@ def body_index(p):
     </section>
 
     {SEC}
-      {H2(2,'¿Lobectomía o segmentectomía en tumores de hasta 2 cm?','evidencia')}
-      {table(EV,[
-        ('1995 · Lung Cancer Study Group'+p.r('ginsberg'),'247 pacientes con cáncer pulmonar periférico T1N0','Comparada con la lobectomía, la resección limitada (segmentectomía o en cuña) tuvo el triple de recurrencia local y un aumento de 75 % en la recurrencia total. La lobectomía quedó como la cirugía de elección'),
-        ('2022 · JCOG0802/WJOG4607L'+p.r('jcog0802'),'1.106 pacientes en 70 centros de Japón, con tumores periféricos de 2 cm o menos y predominio de componente sólido','Sobrevida global a 5 años: 94,3 % con segmentectomía y 91,1 % con lobectomía. Recaída local: 10,5 % y 5,4 %, respectivamente'),
-        ('2023 · CALGB 140503'+p.r('calgb'),'697 pacientes con tumores periféricos de 2 cm o menos y ganglios negativos confirmados durante la cirugía','La resección sublobar no fue inferior en sobrevida libre de enfermedad. Sobrevida global a 5 años: 80,3 % con resección sublobar y 78,9 % con lobectomía'),
-      ])}
-      <p style="font-size:16.5px;max-width:920px;border-left:4px solid {ACC};padding:6px 0 6px 16px;margin-top:18px">La decisión entre segmentectomía, resección en cuña o lobectomía depende de múltiples factores, como el tamaño, la ubicación dentro del lóbulo, el estado de los ganglios linfáticos, la histología y sobre todo las condiciones propias de cada paciente. El cirujano debe analizarlos caso a caso antes de cada intervención.</p>
-    </section>
-
-    {SEC}
-      {H2(3,'Preguntas frecuentes','faq')}
+      {H2(2,'Preguntas frecuentes','faq')}
       <div style="max-width:900px">
 {fh}
       </div>

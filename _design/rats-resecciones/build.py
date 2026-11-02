@@ -7,6 +7,20 @@ ACC='#C4500E'; BG2='#EDEBE6'; TODAY='2026-10-31'
 BASE='https://rats.cl/resecciones'
 PAGES=[('','Resecciones'),('cuna','01 Cuña'),('segmentectomia','02 Segmentectomía'),('lobectomia','03 Lobectomía')]
 IMG_SEG='imgs/lobulos-segmentos.webp' if MAQ else '/verde-indocianina/imgs/lobulos-segmentos.webp'
+def IMG3D(k): return ('imgs/' if MAQ else '/resecciones/imgs/')+f'reseccion-{k}.webp'
+DIM={'cuna':(748,1100),'segmentectomia':(703,1100),'lobectomia':(635,1100)}
+ALT={'cuna':'Ilustración 3D del pulmón derecho en vista lateral: resección en cuña del borde anterior del lóbulo superior, con el nódulo dentro de la pieza y la línea de grapas en el pulmón y en la pieza',
+ 'segmentectomia':'Ilustración 3D del pulmón derecho: segmentectomía del segmento posterior del lóbulo superior (S2); el segmento, en forma de pirámide, se separa del lóbulo y quedan los muñones de su bronquio, arteria y vena',
+ 'lobectomia':'Ilustración 3D del pulmón derecho: lobectomía superior; el lóbulo superior se separa de los lóbulos medio e inferior y quedan los muñones del bronquio, la arteria y la vena del lóbulo'}
+CAP={'cuna':'Resección en cuña de un nódulo periférico del lóbulo superior derecho. La pieza incluye el nódulo con un margen de tejido sano.',
+ 'segmentectomia':'Segmentectomía del segmento posterior del lóbulo superior derecho (S2), con sección de su bronquio, su arteria y su vena.',
+ 'lobectomia':'Lobectomía superior derecha: muñones del bronquio, la arteria y la vena del lóbulo.'}
+def fig3d(k): 
+    w,h=DIM[k]
+    return f'''<figure style="flex:1 1 320px;max-width:460px;margin:0">
+          <img src="{IMG3D(k)}" alt="{ALT[k]}" width="{w}" height="{h}" style="width:100%;display:block;border:2px solid #0B0B0B;background:#fff" loading="lazy" />
+          <figcaption style="font-size:12.5px;color:#3A3A3A;margin-top:8px">{CAP[k]}</figcaption>
+        </figure>'''
 def url(slug): return BASE+('/'+slug if slug else '')
 def link(slug):
     if not MAQ: return url(slug)
@@ -94,10 +108,7 @@ DEF={'cuna':'Resección no anatómica de una porción periférica del pulmón qu
      'segmentectomia':'Resección anatómica de un segmento pulmonar, con su arteria, su vena y su bronquio. También se llama resección segmentaria típica.',
      'lobectomia':'Resección de un lóbulo pulmonar completo, con su arteria, su vena y su bronquio.'}
 def que_es(k,extra,fig=None):
-    fig=fig or f'''<figure style="flex:0 1 300px;max-width:300px;margin:0;border:2px solid #0B0B0B;background:#fff;padding:22px">
-          {lung(k,240)}
-          <figcaption style="font-size:12.5px;color:#3A3A3A;margin-top:12px">{NOTE}</figcaption>
-        </figure>'''
+    fig=fig or fig3d(k)
     return f'''{SEC}
       {H2(1,'Qué es','que-es')}
       <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center">
@@ -195,11 +206,11 @@ def body_cuna(p):
     {refs_html(p)}'''
 
 def body_seg(p):
-    fig=f'''<figure style="flex:1 1 420px;max-width:600px;margin:0">
+    extra=Pp('Cada lóbulo se divide en segmentos, cada uno con su propia arteria, vena y bronquio. El límite entre segmentos no se ve en la superficie del pulmón.')+f'''<figure style="margin:14px 0 0;max-width:520px">
           <img src="{IMG_SEG}" alt="Pulmón derecho en vista lateral: a la izquierda, los lóbulos superior, medio e inferior; a la derecha, los segmentos apical, posterior, anterior, lateral, medial, superior y basales anterior, lateral y posterior" width="1200" height="896" style="width:100%;display:block;border:2px solid #0B0B0B;background:#fff" loading="lazy" />
           <figcaption style="font-size:12.5px;color:#3A3A3A;margin-top:8px">Pulmón derecho, vista lateral: lóbulos y segmentos.</figcaption>
         </figure>'''
-    extra=Pp('Cada lóbulo se divide en segmentos, cada uno con su propia arteria, vena y bronquio. El límite entre segmentos no se ve en la superficie del pulmón.')+f'<div style="max-width:200px;margin-top:10px">{lung("segmentectomia",200)}</div><p style="font-size:12.5px;color:#3A3A3A;margin-top:8px">{NOTE}</p>'
+    fig=None
     return f'''{que_es('segmentectomia',extra,fig)}
 
     {SEC}

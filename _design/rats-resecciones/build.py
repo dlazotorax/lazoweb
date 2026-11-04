@@ -198,6 +198,10 @@ def body_cuna(p):
 
     {refs_html(p)}'''
 
+LOBSEG_FIG=f'''<figure style="margin:14px 0 0;max-width:520px">
+          <img src="{IMG_SEG}" alt="Pulmón derecho en vista lateral: a la izquierda, los lóbulos superior, medio e inferior; a la derecha, los segmentos apical, posterior, anterior, lateral, medial, superior y basales anterior, lateral y posterior" width="1200" height="896" style="width:100%;display:block;border:2px solid #0B0B0B;background:#fff" loading="lazy" />
+          <figcaption style="font-size:12.5px;color:#3A3A3A;margin-top:8px">Pulmón derecho, vista lateral: lóbulos y segmentos.</figcaption>
+        </figure>'''
 def body_seg(p):
     extra=Pp('Cada lóbulo se divide en segmentos, cada uno con su propia arteria, vena y bronquio. El límite entre segmentos no se ve en la superficie del pulmón.')+f'''<figure style="margin:14px 0 0;max-width:520px">
           <img src="{IMG_SEG}" alt="Pulmón derecho en vista lateral: a la izquierda, los lóbulos superior, medio e inferior; a la derecha, los segmentos apical, posterior, anterior, lateral, medial, superior y basales anterior, lateral y posterior" width="1200" height="896" style="width:100%;display:block;border:2px solid #0B0B0B;background:#fff" loading="lazy" />
@@ -237,7 +241,7 @@ def body_seg(p):
     {refs_html(p)}'''
 
 def body_lob(p):
-    return f'''{que_es('lobectomia',Pp('El pulmón derecho tiene tres lóbulos (superior, medio e inferior) y el izquierdo, dos (superior e inferior).'))}
+    return f'''{que_es('lobectomia',Pp('El pulmón derecho tiene tres lóbulos (superior, medio e inferior) y el izquierdo, dos (superior e inferior).')+LOBSEG_FIG)}
 
     {SEC}
       {H2(2,'Indicaciones','indicaciones')}

@@ -193,7 +193,6 @@ def body_cuna(p):
       {table(EV,[
         ('Ginsberg 1995'+p.r('ginsberg'),'247 pacientes con cáncer pulmonar periférico T1N0, aleatorizados a lobectomía o resección limitada (segmentectomía o cuña amplia)','La resección limitada tuvo el triple de recurrencia local'),
         ('JCOG0804 · Suzuki 2022'+p.r('jcog0804'),'333 pacientes en 51 centros de Japón, con tumores de 2 cm o menos y predominio de vidrio esmerilado; 258 cuñas amplias y 56 segmentectomías','Sobrevida libre de recaída a 5 años: 99,7 %. Sin recaídas locales. Margen quirúrgico mediano de 15 mm. Complicaciones grado 3 o mayor en el 5,4 %, sin grado 4 ni 5'),
-        ('Miyoshi 2023'+p.r('miyoshi'),'237 resecciones en cuña del estudio JCOG0804','El 16 % tuvo una caída del VEF1 de 10 % o más. La retracción pleural fue un factor de riesgo independiente'),
       ])}
     </section>
 

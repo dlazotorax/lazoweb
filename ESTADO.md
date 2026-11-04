@@ -1,6 +1,6 @@
 # ESTADO — Red web Dr. David Lazo Pérez
 
-> **Última actualización: 31 oct 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
+> **Última actualización: 4 nov 2026.** Documento de trabajo: reglas, decisiones, datos canónicos,
 > métricas vigentes y pendientes. Todo lo narrativo (sesiones, razonamientos, cómo se llegó a cada
 > dato) está en **`ESTADO-historico.md`**; la versión larga de este archivo, tal como estaba al
 > 22-sep-2026, está al final de ese histórico.
@@ -67,6 +67,7 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
 | cancerpulmonar `/nodulo-pulmonar`: cirugía de nódulos pequeños **no va aquí**: marcación con lipiodol → videotoracoscopia.cl; con ICG → rats.cl (material reservado en `Paginas web/reservado-cirugia-nodulos.html`). Sin menciones a CLC en el contenido | 17-oct-2026 |
 | videotoracoscopia.cl **`/cirugia-nodulo-pulmonar`** (publicada 27-oct-2026): resección (cuña, segmentectomía, lobectomía), localización con lipiodol y, en forma breve, con ICG; FAQ visible. **El ICG en profundidad, con videos, irá en rats.cl** (decisión de David, 27-oct) | 27-oct-2026 |
 | rats.cl **`/verde-indocianina`** (publicada 31-oct-2026): portada + `/nodulos`, `/segmentectomia`, `/conducto-toracico`, cada una con su video de YouTube (@david-lazo-torax) que parte solo y sin sonido al llegar a él (API de YouTube + IntersectionObserver). `VideoObject` en nódulos y segmentectomía; `VideoObject` también en conducto torácico. Imágenes propias hechas con Gemini y corregidas (molécula de ICG real, rótulos anatómicos). Fuente: `_design/rats-verde-indocianina/build3.py` (genera los 4 HTML desde la plantilla del opérculo: `python3 _design/rats-verde-indocianina/build3.py . dist/rats/verde-indocianina final`); editar el script, no los HTML | 31-oct-2026 |
+| rats.cl **`/resecciones`** (publicada 4-nov-2026): portada (tres tarjetas con los esquemas de vats + 4 preguntas frecuentes) + `/cuna`, `/segmentectomia`, `/lobectomia`. Cada subpágina: qué es con ilustración 3D propia (Blender, `_design/rats-resecciones/3d/`), indicaciones, técnica robótica, video que parte solo y sin sonido al llegar a él y cuadro de evidencia (PubMed). Videos: cuña = nódulo ICG (w076_YlJ5XE), segmentectomía = S2 ICG (BykskDhQulc), lobectomía = LSD (HB6RPEX-mCc, con `VideoObject`). David pidió sacar de los cuadros VIOLET y Miyoshi, y quitar la sección de evidencia de la portada. Lobectomía lleva la lámina de lóbulos de ambos pulmones (izquierdo derivado de la lámina original). Enlazada desde la portada de rats (menú «Resecciones» y tarjeta 01 · Pulmón). Fuente: `_design/rats-resecciones/build.py` (`python3 _design/rats-resecciones/build.py . dist/rats/resecciones final`); editar el script, no los HTML. Pendiente: «resecciones avanzadas» (neumonectomía, sleeve, bilobectomía) | 4-nov-2026 |
 | **hiperhidrosis.cl sin HCSBA**: en HCSBA no hay capacidad para operar patología no grave. Afiliación solo CLC en ese dominio (JSON-LD, `llms.txt` y texto); excepción a la coincidencia del `@id` (§5) | 12-oct-2026 |
 | Hero de `/publicaciones` (imagen IA con taza STS) **se mantiene** por decisión de David hasta tener foto real de congreso | ago-2026 |
 | **Nombre visible: siempre «Dr. David Lazo Pérez»** en títulos, metas, marca, pies, FAQ y `alt`. «el Dr. Lazo» solo como segunda mención en prosa; donde aparece, el `Physician` lleva `"alternateName": "Dr. Lazo"`. Fuentes generadas (opérculo, hiperhidrosis, cancerpulmonar F2) corregidas en `_design/` | 20-oct-2026 |
@@ -115,14 +116,14 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
 | Dominio | Páginas | Rol |
 |---|---|---|
 | cirugiatoracica.cl | 6 (`/`, `/perfil`, `/cv`, `/publicaciones`, `/docencia`, `/links`) | Hub |
-| rats.cl | 10 (`/` + `/operculo-toracico` y 4 subpáginas + `/verde-indocianina` y 3 subpáginas) | Médicos referentes |
+| rats.cl | 14 (`/` + `/operculo-toracico` y 4 subpáginas + `/verde-indocianina` y 3 subpáginas + `/resecciones` y 3 subpáginas) | Médicos referentes |
 | cancerpulmonar.cl | 8 (incl. `/nodulo-pulmonar`, 17-oct-2026) | Pacientes |
 | broncoscopia.cl | 3 | Dual |
 | hiperhidrosis.cl | 16 | Pacientes |
 | videotoracoscopia.cl | 2 (`/` + `/cirugia-nodulo-pulmonar`, 27-oct-2026) | VATS |
 | vats.cl · cirugiadetorax.cl | 308 → videotoracoscopia.cl · 308 → cirugiatoracica.cl | Redirects |
 
-**45 páginas** (desde 31-oct-2026). Auditoría en producción (20-sep-2026): 39/39 limpias — sitemaps cuadran, UTF-8 sin BOM,
+**49 páginas** (desde 4-nov-2026). Auditoría en producción (20-sep-2026): 39/39 limpias — sitemaps cuadran, UTF-8 sin BOM,
 un `h1`, canonical sin www, 0 JSON-LD inválidos, contenido sin JS, 89 pares FAQ todos visibles,
 `robots.txt` y `llms.txt` en los 6. `audit.py` al 22-sep: 0 hallazgos.
 

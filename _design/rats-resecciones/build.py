@@ -261,7 +261,6 @@ def body_lob(p):
       {H2(5 if MAQ else 4,'Evidencia publicada','evidencia')}
       {table(EV,[
         ('Ginsberg 1995'+p.r('ginsberg'),'247 pacientes con cáncer pulmonar periférico T1N0, aleatorizados a lobectomía o resección limitada','La lobectomía tuvo un tercio de la recurrencia local de la resección limitada y quedó como la cirugía de elección'),
-        ('VIOLET · Lim 2022'+p.r('violet'),'503 pacientes en 9 hospitales del Reino Unido, aleatorizados a lobectomía por videotoracoscopía o por toracotomía','Con videotoracoscopía: mejor función física a las 5 semanas, estadía mediana de 4 y 5 días y menos complicaciones. Sobrevida similar'),
         ('RVlob · Jin 2022'+p.r('rvlob'),'320 pacientes aleatorizados a lobectomía robótica (157) o por videotoracoscopía (163)','Estadía y complicaciones similares, sin mortalidad. Con el robot: más ganglios resecados (mediana 11 y 10) y más estaciones evaluadas (6 y 5); mayor drenaje pleural y mayor costo'),
       ])}
     </section>
@@ -285,7 +284,7 @@ SPEC={
    name='Segmentectomía pulmonar robótica',body=body_seg,
    about=[('MedicalProcedure','Segmentectomía pulmonar robótica')]),
  'lobectomia':dict(h1='Lobectomía robótica',title='Lobectomía pulmonar robótica · Dr. David Lazo Pérez',
-   desc='Lobectomía pulmonar por cirugía robótica: qué es, indicaciones, técnica y evidencia publicada frente a la toracotomía y la videotoracoscopía.',
+   desc='Lobectomía pulmonar por cirugía robótica: qué es, indicaciones, técnica y evidencia publicada, incluido el ensayo RVlob de robot frente a videotoracoscopía.',
    sub='Resección de un lóbulo pulmonar completo, con su arteria, su vena y su bronquio.',
    name='Lobectomía pulmonar robótica',body=body_lob,
    about=[('MedicalProcedure','Lobectomía pulmonar robótica')]),

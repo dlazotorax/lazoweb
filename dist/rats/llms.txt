@@ -42,7 +42,7 @@ o actividad en congresos, la fuente de esta red es el currículum académico del
 - [https://rats.cl/resecciones](https://rats.cl/resecciones): resecciones pulmonares robóticas — cuánto pulmón se reseca en la cuña, la segmentectomía y la lobectomía; evidencia JCOG0802 y CALGB 140503
 - [https://rats.cl/resecciones/cuna](https://rats.cl/resecciones/cuna): resección en cuña robótica; indicaciones, técnica con marcación del nódulo y evidencia JCOG0804
 - [https://rats.cl/resecciones/segmentectomia](https://rats.cl/resecciones/segmentectomia): segmentectomía pulmonar robótica; indicaciones, técnica y evidencia JCOG0802, CALGB 140503 y JCOG1211
-- [https://rats.cl/resecciones/lobectomia](https://rats.cl/resecciones/lobectomia): lobectomía pulmonar robótica; indicaciones, técnica y evidencia frente a toracotomía y videotoracoscopía
+- [https://rats.cl/resecciones/lobectomia](https://rats.cl/resecciones/lobectomia): lobectomía pulmonar robótica; indicaciones, técnica y evidencia publicada (Ginsberg 1995, RVlob)
 
 
 ## Sitios de la red, por tema

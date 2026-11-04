@@ -167,6 +167,7 @@ def body_index(p):
 VIDEO_CUNA='Nódulo subpleural del lóbulo superior izquierdo, marcado con verde de indocianina antes de la cirugía. Se localiza con la cámara Firefly®, se reseca en cuña con endograpadora robótica y se comprueba con fluorescencia que la lesión queda dentro del margen.'
 VIDEO_SEG='Segmentectomía anatómica robótica del segmento posterior del lóbulo superior derecho (S2). Se seccionan en forma selectiva la arteria, el bronquio y la vena del segmento; luego, el ICG intravenoso con la visión Firefly® delimita el segmento sin perfusión y el plano intersegmentario, que se secciona con endograpadora.'
 
+VIDEO_LOB='Lobectomía superior derecha robótica con abordaje anterior y la cisura al final. Se seccionan la vena pulmonar superior derecha, el tronco arterial anterior (A1+3) con la endograpadora guiada con un vessel loop, la arteria posterior ascendente (A2) y el bronquio lobar superior; al final se completan las cisuras con endograpadora.'
 def body_cuna(p):
     return f'''{que_es('cuna',Pp('No sigue los límites anatómicos del pulmón: no se seccionan arterias, venas ni bronquios. La endograpadora corta y sella el tejido alrededor del nódulo.'))}
 
@@ -263,10 +264,10 @@ def body_lob(p):
       {Pp('Se resecan los ganglios del hilio y del mediastino para la etapificación. El lóbulo se extrae en una bolsa por una de las incisiones.')}
     </section>
 
-    {video_sec(4,'Video de lobectomía robótica')}
+    {video_sec(4,'',yt='HB6RPEX-mCc',title='Lobectomía superior derecha robótica con abordaje anterior y cisura al final — Dr. David Lazo Pérez',text=VIDEO_LOB)}
 
     {SEC}
-      {H2(5 if MAQ else 4,'Evidencia publicada','evidencia')}
+      {H2(5,'Evidencia publicada','evidencia')}
       {table(EV,[
         ('Ginsberg 1995'+p.r('ginsberg'),'247 pacientes con cáncer pulmonar periférico T1N0, aleatorizados a lobectomía o resección limitada','La lobectomía tuvo un tercio de la recurrencia local de la resección limitada y quedó como la cirugía de elección'),
         ('RVlob · Jin 2022'+p.r('rvlob'),'320 pacientes aleatorizados a lobectomía robótica (157) o por videotoracoscopía (163)','Estadía y complicaciones similares, sin mortalidad. Con el robot: más ganglios resecados (mediana 11 y 10) y más estaciones evaluadas (6 y 5); mayor drenaje pleural y mayor costo'),
@@ -327,6 +328,14 @@ for slug,sp in SPEC.items():
         fq={"@context":"https://schema.org","@type":"FAQPage","@id":U+"#faq","isPartOf":{"@id":U+"#webpage"},"inLanguage":"es-CL",
             "mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in FAQ_INDEX]}
         ld+='  <script type="application/ld+json">\n'+json.dumps(fq,ensure_ascii=False,indent=2)+'\n  </script>\n'
+    if slug=='lobectomia':
+        vo={"@context":"https://schema.org","@type":"VideoObject","@id":U+"#video",
+            "name":"Lobectomía superior derecha robótica, abordaje anterior con cisura al final | RATS",
+            "description":VIDEO_LOB,"uploadDate":"2026-11-04T14:14:08-08:00","duration":"PT55S",
+            "thumbnailUrl":"https://i.ytimg.com/vi/HB6RPEX-mCc/hqdefault.jpg",
+            "embedUrl":"https://www.youtube-nocookie.com/embed/HB6RPEX-mCc","url":"https://www.youtube.com/shorts/HB6RPEX-mCc",
+            "inLanguage":"es-CL","author":{"@id":"https://cirugiatoracica.cl/#david-lazo"},"isPartOf":{"@id":U+"#webpage"}}
+        ld+='  <script type="application/ld+json">\n'+json.dumps(vo,ensure_ascii=False,indent=2)+'\n  </script>\n'
     head=head.replace('<!-- Google Analytics 4',ld+'<!-- Google Analytics 4',1)
     head=head.replace('.hv5:hover','.hv3c:hover{border-color:'+ACC+';text-decoration:none}\n  .hv5:hover')
     kicker=f'<a href="{"https://rats.cl" if not MAQ else "#"}" style="color:{ACC}">RATS</a>'+('' if not slug else f' · <a href="{link("")}" style="color:{ACC}">Resecciones pulmonares</a>')+' · Dr. David Lazo Pérez'

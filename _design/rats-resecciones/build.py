@@ -3,7 +3,7 @@ from pathlib import Path
 REPO=Path(sys.argv[1]); OUTDIR=Path(sys.argv[2]); MODE=sys.argv[3]  # 'final' or 'preview'
 MAQ = MODE=='preview'
 src=(REPO/'dist/rats/operculo-toracico/index.html').read_text()
-ACC='#C4500E'; BG2='#EDEBE6'; TODAY='2026-10-31'
+ACC='#C4500E'; BG2='#EDEBE6'; TODAY='2026-11-04'
 BASE='https://rats.cl/resecciones'
 PAGES=[('','Resecciones'),('cuna','01 Cuña'),('segmentectomia','02 Segmentectomía'),('lobectomia','03 Lobectomía')]
 IMG_SEG='imgs/lobulos-segmentos.webp' if MAQ else '/verde-indocianina/imgs/lobulos-segmentos.webp'
@@ -313,6 +313,8 @@ for slug,sp in SPEC.items():
     head=re.sub(r'<meta name="description" content="[^"]*" />',f'<meta name="description" content="{html.escape(sp["desc"])}" />',head)
     head=re.sub(r'<link rel="canonical" href="[^"]*" />',f'<link rel="canonical" href="{U}" />',head)
     head=head.replace('<html lang="es">','<html lang="es-CL">')
+    OGI={'':'reseccion-segmentectomia','cuna':'reseccion-cuna','segmentectomia':'reseccion-segmentectomia','lobectomia':'reseccion-lobectomia'}[slug]
+    head=re.sub(r'<meta property="og:image" content="[^"]*" />',f'<meta property="og:image" content="https://rats.cl/resecciones/imgs/{OGI}.webp" />',head)
     head=re.sub(r'\s*<script type="application/ld\+json">.*?</script>','',head,flags=re.S)
     crumbs=[{"@type":"ListItem","position":1,"name":"Cirugía robótica torácica","item":"https://rats.cl/"},{"@type":"ListItem","position":2,"name":"Resecciones pulmonares robóticas","item":BASE}]
     if slug: crumbs.append({"@type":"ListItem","position":3,"name":sp['name'],"item":U})

@@ -202,7 +202,7 @@ def body_seg(p):
         ('Hao 2023'+p.r('hao'),'155 segmentectomías robóticas consecutivas','Plano intersegmentario bien delimitado en el 96,8 %, sin relación con el segmento resecado; sin eventos adversos por el ICG'),
         ('Peeters 2024'+p.r('peeters'),'Revisión sistemática: 18 estudios, 1.090 pacientes operados por VATS o RATS','El ICG intravenoso identificó el plano en el 94 % de los casos, incluso con dosis bajas (0,05 mg/kg). No se informaron reacciones adversas'),
       ])}
-      {Pp('Las indicaciones de la segmentectomía frente a la lobectomía en tumores de hasta 2 cm se revisan en <a href="https://videotoracoscopia.cl/cirugia-nodulo-pulmonar">videotoracoscopia.cl</a>.')}
+      {Pp('Las indicaciones, la técnica y la evidencia de la segmentectomía robótica se revisan en <a href="https://rats.cl/resecciones/segmentectomia">Segmentectomía robótica</a>.')}
     </section>
 
     {refs_html(p)}'''

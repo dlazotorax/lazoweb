@@ -180,8 +180,8 @@
   "reviewedBy": {
     "@id": "https://cirugiatoracica.cl/#david-lazo"
   },
-  "lastReviewed": "2026-09-28",
-  "dateModified": "2026-09-28",
+  "lastReviewed": "2026-11-05",
+  "dateModified": "2026-11-05",
   "specialty": "https://schema.org/PulmonaryMedicine",
   "isPartOf": {
     "@type": "WebSite",
@@ -568,6 +568,13 @@ font-family:var(--sans);color:var(--ink);line-height:1.65}
 
 }
 
+.lg .res-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.2rem 0 1rem}
+.lg .res-card{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);padding:1.1rem 1.1rem 1.2rem;text-decoration:none;color:var(--text);transition:border-color .2s}
+.lg .res-card:hover{border-color:var(--accent2)}
+.lg .res-card img{width:100%;height:240px;object-fit:contain;background:#fff;border-radius:14px;margin-bottom:.9rem}
+.lg .res-card strong{font-size:1.05rem;margin-bottom:.35rem}
+.lg .res-card span{font-size:.92rem;color:var(--slate)}
+.lg .res-card em{font-style:normal;font-size:.8rem;font-weight:600;color:var(--accent2);margin-top:.7rem}
 </style>
   <!-- Google Analytics 4 · red Dr. David Lazo Pérez -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
@@ -704,10 +711,35 @@ font-family:var(--sans);color:var(--ink);line-height:1.65}
 
   </div>
 
-  <h2>Cirugía mínimamente invasiva: VATS y Robótica</h2>
+  <h2 id="cirugia">Cirugía del cáncer pulmonar</h2>
   <p>
     La cirugía es el tratamiento más importante en los estadios tempranos. En la mayoría de los casos resecables puede realizarse por técnicas mínimamente invasivas, evitando la cirugía abierta tradicional (toracotomía).
   </p>
+
+  <h3>Tipos de resección pulmonar</h3>
+  <p>Según el tamaño, la ubicación y el tipo de tumor, y las condiciones del paciente, se reseca una porción periférica del pulmón, un segmento o un lóbulo completo.</p>
+  <div class="res-cards">
+    <a class="res-card" href="https://rats.cl/resecciones/cuna">
+      <img src="/imgs/reseccion-cuna.webp" alt="Ilustración 3D del pulmón derecho: resección en cuña" width="748" height="1100" loading="lazy" />
+      <strong>Resección en cuña</strong>
+      <span>Resección no anatómica de una porción periférica del pulmón que contiene el nódulo, con un margen de tejido sano.</span>
+      <em>Ver en rats.cl →</em>
+    </a>
+    <a class="res-card" href="https://rats.cl/resecciones/segmentectomia">
+      <img src="/imgs/reseccion-segmentectomia.webp" alt="Ilustración 3D del pulmón derecho: segmentectomía" width="703" height="1100" loading="lazy" />
+      <strong>Segmentectomía</strong>
+      <span>Resección anatómica de un segmento pulmonar, con su arteria, su vena y su bronquio.</span>
+      <em>Ver en rats.cl →</em>
+    </a>
+    <a class="res-card" href="https://rats.cl/resecciones/lobectomia">
+      <img src="/imgs/reseccion-lobectomia.webp" alt="Ilustración 3D del pulmón derecho: lobectomía" width="635" height="1100" loading="lazy" />
+      <strong>Lobectomía</strong>
+      <span>Resección de un lóbulo pulmonar completo, con su arteria, su vena y su bronquio. Es la resección habitual para la mayoría de los pacientes.</span>
+      <em>Ver en rats.cl →</em>
+    </a>
+  </div>
+  <p><strong>Bilobectomía y neumonectomía:</strong> se extirpan dos lóbulos o un pulmón completo. Se reservan para tumores centrales o con invasión extensa, o cuando la anatomía lo requiere.</p>
+  <p>En todos los casos, se realiza simultáneamente una <strong>linfadenectomía mediastínica</strong> (extirpación de ganglios linfáticos) para asegurar una estadificación precisa y mejorar el control oncológico.</p>
 
   <div class="robots-box">
     <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5V12M12 12l-5 5v4M12 12l5 5v4M5 21h4M15 21h4"/></svg>Cirugía robótica (RATS)</h3>
@@ -722,16 +754,8 @@ font-family:var(--sans);color:var(--ink);line-height:1.65}
       <div class="rf"><strong>Oncología</strong>Mismos resultados oncológicos que la videotoracoscopía</div>
       <div class="rf"><strong>Indicado en</strong>Estadios I, II y IIIA seleccionados</div>
     </div>
-    <p>Más información sobre la técnica en <a href="https://rats.cl" target="_blank">rats.cl →</a></p>
+    <p>Más información sobre la técnica en <a href="https://rats.cl" target="_blank">rats.cl →</a> y sobre cada tipo de resección robótica en <a href="https://rats.cl/resecciones" target="_blank">rats.cl/resecciones →</a></p>
   </div>
-
-  <h3>Tipos de resección pulmonar</h3>
-  <ul>
-    <li><strong>Segmentectomía / Resección en cuña:</strong> Se extirpa solo una porción del lóbulo. Indicada en tumores pequeños (≤2 cm) o en pacientes con función pulmonar limitada.</li>
-    <li><strong>Lobectomía:</strong> Se extirpa un lóbulo completo del pulmón. Es el estándar de oro para la mayoría de los casos.</li>
-    <li><strong>Bilobectomía / Neumonectomía:</strong> Se extirpan dos lóbulos o un pulmón completo. Solo en casos con invasión extensa o cuando la anatomía lo requiere.</li>
-  </ul>
-  <p>En todos los casos, se realiza simultáneamente una <strong>linfadenectomía mediastínica</strong> (extirpación de ganglios linfáticos) para asegurar una estadificación precisa y mejorar el control oncológico.</p>
 
   <h2>Terapias Dirigidas — Medicina de Precisión</h2>
   <p>

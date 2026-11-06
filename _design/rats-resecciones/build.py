@@ -71,7 +71,24 @@ def refs_html(p):
 {items}
       </ol>
     </section>'''
+LOCAL_VID={'w076_YlJ5XE':'/videos/nodulo-icg','BykskDhQulc':'/videos/segmentectomia-s2'}  # YouTube los restringe por edad: no se reproducen incrustados
 def video_sec(n,label,yt=None,title='',text=''):
+    if yt and yt in LOCAL_VID:
+        b=LOCAL_VID[yt]
+        return f'''{SEC}
+      {H2(n,'Video','video')}
+      <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center">
+        <div style="flex:0 1 360px;max-width:360px;width:100%">
+          <div style="position:relative;aspect-ratio:9/16;border:2px solid #0B0B0B;background:#0B0B0B">
+            <video class="vid-auto" src="{b}.mp4" poster="{b}.jpg" muted loop playsinline preload="none" aria-label="{title}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+          </div>
+        </div>
+        <div style="flex:1 1 320px;max-width:560px">{Pp(text,True) if text else ''}<p style="font-size:14px"><a href="https://www.youtube.com/shorts/{yt}" target="_blank" rel="noopener">Ver en YouTube →</a></p></div>
+      </div>
+      <script>(function(){{var v=document.currentScript.parentNode.querySelector('video.vid-auto');if(!v)return;
+      if(!('IntersectionObserver' in window)){{v.setAttribute('controls','');return;}}
+      new IntersectionObserver(function(es){{es.forEach(function(e){{if(e.isIntersecting){{v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){{v.setAttribute('controls','');}});}}else{{v.pause();}}}});}},{{threshold:0.5}}).observe(v);}})();</script>
+    </section>'''
     if yt:
         return f'''{SEC}
       {H2(n,'Video','video')}

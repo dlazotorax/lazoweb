@@ -51,7 +51,24 @@ def refs_html(p):
 {items}
       </ol>
     </section>'''
+LOCAL_VID={'w076_YlJ5XE':'/videos/nodulo-icg','BykskDhQulc':'/videos/segmentectomia-s2'}  # YouTube los restringe por edad: no se reproducen incrustados
 def video_sec(n,label,yt=None,title='',text=''):
+    if yt and yt in LOCAL_VID:
+        b=LOCAL_VID[yt]
+        return f'''{SEC}
+      {H2(n,'Video','video')}
+      <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center">
+        <div style="flex:0 1 360px;max-width:360px;width:100%">
+          <div style="position:relative;aspect-ratio:9/16;border:2px solid #0B0B0B;background:#0B0B0B">
+            <video class="vid-auto" src="{b}.mp4" poster="{b}.jpg" muted loop playsinline preload="none" aria-label="{title}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+          </div>
+        </div>
+        <div style="flex:1 1 320px;max-width:560px">{Pp(text,True) if text else ''}<p style="font-size:14px"><a href="https://www.youtube.com/shorts/{yt}" target="_blank" rel="noopener">Ver en YouTube →</a></p></div>
+      </div>
+      <script>(function(){{var v=document.currentScript.parentNode.querySelector('video.vid-auto');if(!v)return;
+      if(!('IntersectionObserver' in window)){{v.setAttribute('controls','');return;}}
+      new IntersectionObserver(function(es){{es.forEach(function(e){{if(e.isIntersecting){{v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){{v.setAttribute('controls','');}});}}else{{v.pause();}}}});}},{{threshold:0.5}}).observe(v);}})();</script>
+    </section>'''
     if yt:
         frame=f'''<div style="flex:0 1 360px;max-width:360px;width:100%">
           <div style="position:relative;aspect-ratio:9/16;border:2px solid #0B0B0B;background:#0B0B0B">
@@ -302,16 +319,16 @@ for slug,sp in SPEC.items():
         vo={"@context":"https://schema.org","@type":"VideoObject","@id":U+"#video",
             "name":"Resección robótica de nódulo pulmonar guiada por fluorescencia ICG | RATS",
             "description":VIDEO_TXT,"uploadDate":"2026-10-30T11:43:37-07:00","duration":"PT38S",
-            "thumbnailUrl":"https://i.ytimg.com/vi/w076_YlJ5XE/hqdefault.jpg",
-            "embedUrl":"https://www.youtube-nocookie.com/embed/w076_YlJ5XE","url":"https://www.youtube.com/shorts/w076_YlJ5XE",
+            "thumbnailUrl":"https://rats.cl/videos/nodulo-icg.jpg",
+            "contentUrl":"https://rats.cl/videos/nodulo-icg.mp4",
             "inLanguage":"es-CL","author":{"@id":"https://cirugiatoracica.cl/#david-lazo"},"isPartOf":{"@id":U+"#webpage"}}
         ld+='  <script type="application/ld+json">\n'+json.dumps(vo,ensure_ascii=False,indent=2)+'\n  </script>\n'
     if slug=='segmentectomia':
         vo={"@context":"https://schema.org","@type":"VideoObject","@id":U+"#video",
             "name":"Segmentectomía S2 derecha robótica con plano intersegmentario por ICG | RATS",
             "description":VIDEO_SEG,"uploadDate":"2026-10-31T07:37:32-07:00","duration":"PT45S",
-            "thumbnailUrl":"https://i.ytimg.com/vi/BykskDhQulc/hqdefault.jpg",
-            "embedUrl":"https://www.youtube-nocookie.com/embed/BykskDhQulc","url":"https://www.youtube.com/shorts/BykskDhQulc",
+            "thumbnailUrl":"https://rats.cl/videos/segmentectomia-s2.jpg",
+            "contentUrl":"https://rats.cl/videos/segmentectomia-s2.mp4",
             "inLanguage":"es-CL","author":{"@id":"https://cirugiatoracica.cl/#david-lazo"},"isPartOf":{"@id":U+"#webpage"}}
         ld+='  <script type="application/ld+json">\n'+json.dumps(vo,ensure_ascii=False,indent=2)+'\n  </script>\n'
     if slug=='conducto-toracico':

@@ -568,13 +568,31 @@ font-family:var(--sans);color:var(--ink);line-height:1.65}
 
 }
 
-.lg .res-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.2rem 0 1rem}
-.lg .res-card{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);padding:1.1rem 1.1rem 1.2rem;text-decoration:none;color:var(--text);transition:border-color .2s}
-.lg .res-card:hover{border-color:var(--accent2)}
-.lg .res-card img{width:100%;height:240px;object-fit:contain;background:#fff;border-radius:14px;margin-bottom:.9rem}
-.lg .res-card strong{font-size:1.05rem;margin-bottom:.35rem}
-.lg .res-card span{font-size:.92rem;color:var(--slate)}
-.lg .res-card em{font-style:normal;font-size:.8rem;font-weight:600;color:var(--accent2);margin-top:.7rem}
+.lg .surg-panel{background:var(--navy);color:#fff;border-radius:var(--radius);padding:1.8rem 1.6rem 1.6rem;margin:1.1rem 0 1.4rem;scroll-margin-top:90px}
+.lg .surg-panel .sp-eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-lt);margin-bottom:.6rem}
+.lg .surg-panel h3{font-size:1.45rem;line-height:1.25;font-weight:700;color:#fff;margin:0 0 .6rem}
+.lg .stage-block-body .surg-panel p{color:rgba(255,255,255,.82);font-size:.93rem;line-height:1.65;margin:0 0 .8rem}
+.lg .surg-panel a{color:#fff}
+.lg .surg-panel .sp-box strong{color:#fff}
+.lg .res-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.9rem;margin:1.2rem 0 1.3rem}
+.lg .res-card{display:flex;flex-direction:column;background:#fff;border-radius:18px;padding:1rem 1rem 1.1rem;text-decoration:none;color:var(--text);transition:transform .2s,box-shadow .2s}
+.lg .res-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.lg .res-card img{width:100%;height:210px;object-fit:contain;background:#fff;margin-bottom:.8rem}
+.lg .res-card .rc-num{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--accent2)}
+.lg .res-card strong{font-size:1.08rem;margin:.15rem 0 .35rem;color:var(--navy)}
+.lg .res-card .rc-txt{font-size:.86rem;color:var(--slate);line-height:1.55}
+.lg .res-card .rc-more{margin-top:auto;padding-top:.8rem;font-size:.82rem;font-weight:700;color:var(--accent2)}
+.lg .sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:.9rem}
+.lg .sp-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:1.1rem 1.2rem}
+.lg .sp-box h4{font-size:.95rem;font-weight:700;color:#fff;margin:0 0 .45rem}
+.lg .stage-block-body .sp-box p{font-size:.86rem;margin:0 0 .6rem}
+.lg .sp-feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.5rem;margin:.6rem 0 .7rem}
+.lg .sp-feats div{font-size:.78rem;color:rgba(255,255,255,.75);line-height:1.4}
+.lg .sp-feats strong{display:block;color:#fff;font-size:.82rem}
+.lg .sp-links{display:flex;flex-wrap:wrap;gap:.5rem}
+.lg .sp-links a{display:inline-block;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:.35rem .9rem;font-size:.8rem;font-weight:600;color:#fff;text-decoration:none}
+.lg .sp-links a:hover{background:var(--accent2);border-color:var(--accent2)}
+@media (max-width:600px){.lg .surg-panel{padding:1.3rem .95rem;margin-left:-.75rem;margin-right:-.75rem}.lg .res-card img{height:180px}.lg .surg-panel h3{font-size:1.25rem}}
 </style>
   <!-- Google Analytics 4 · red Dr. David Lazo Pérez -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3GX2HCVZL"></script>
@@ -671,6 +689,48 @@ font-family:var(--sans);color:var(--ink);line-height:1.65}
       <div class="stage-block-body">
         <p><span class="tx-tag tx-surgery">Cirugía</span> <strong>La cirugía es el tratamiento principal y potencialmente curativo.</strong> La lobectomía (extirpación de un lóbulo) es la resección estándar para la mayoría de los pacientes. En tumores periféricos de hasta 2 cm sin compromiso ganglionar (T1a–b N0), la NCCN recomienda considerar una resección sublobar (segmentectomía o resección en cuña).</p>
         <p>Hoy la gran mayoría se realiza por <strong><a href="https://videotoracoscopia.cl">videotoracoscopía (VATS)</a> o <a href="https://rats.cl">cirugía robótica (RATS)</a></strong>, con incisiones mínimas, menos dolor postoperatorio y recuperación más rápida.</p>
+        <div class="surg-panel" id="cirugia">
+          <span class="sp-eyebrow">Cirugía del cáncer pulmonar</span>
+          <h3>Cuánto pulmón se reseca</h3>
+          <p>Según el tamaño, la ubicación y el tipo de tumor, y las condiciones del paciente, se reseca una porción periférica del pulmón, un segmento o un lóbulo completo.</p>
+          <div class="res-cards">
+            <a class="res-card" href="https://rats.cl/resecciones/cuna">
+              <img src="/imgs/reseccion-cuna.webp" alt="Ilustración 3D del pulmón derecho: resección en cuña" width="748" height="1100" loading="lazy" />
+              <span class="rc-num">01</span>
+              <strong>Resección en cuña</strong>
+              <span class="rc-txt">Resección no anatómica de una porción periférica del pulmón que contiene el nódulo, con un margen de tejido sano.</span>
+              <span class="rc-more">Saber más →</span>
+            </a>
+            <a class="res-card" href="https://rats.cl/resecciones/segmentectomia">
+              <img src="/imgs/reseccion-segmentectomia.webp" alt="Ilustración 3D del pulmón derecho: segmentectomía" width="703" height="1100" loading="lazy" />
+              <span class="rc-num">02</span>
+              <strong>Segmentectomía</strong>
+              <span class="rc-txt">Resección anatómica de un segmento pulmonar, con su arteria, su vena y su bronquio.</span>
+              <span class="rc-more">Saber más →</span>
+            </a>
+            <a class="res-card" href="https://rats.cl/resecciones/lobectomia">
+              <img src="/imgs/reseccion-lobectomia.webp" alt="Ilustración 3D del pulmón derecho: lobectomía" width="635" height="1100" loading="lazy" />
+              <span class="rc-num">03</span>
+              <strong>Lobectomía</strong>
+              <span class="rc-txt">Resección de un lóbulo pulmonar completo, con su arteria, su vena y su bronquio. Es la resección habitual para la mayoría de los pacientes.</span>
+              <span class="rc-more">Saber más →</span>
+            </a>
+          </div>
+          <div class="sp-grid">
+            <div class="sp-box">
+              <h4>Ganglios y resecciones mayores</h4>
+              <p>En todos los casos se realiza simultáneamente una <strong>linfadenectomía mediastínica</strong> (extirpación de ganglios linfáticos) para asegurar una estadificación precisa y mejorar el control oncológico.</p>
+              <p><strong>Bilobectomía y neumonectomía:</strong> se extirpan dos lóbulos o un pulmón completo. Se reservan para tumores centrales o con invasión extensa, o cuando la anatomía lo requiere.</p>
+            </div>
+            <div class="sp-box">
+              <h4>Cirugía robótica (RATS)</h4>
+              <p>La cirugía torácica robótica asistida (RATS) con sistema Da Vinci permite realizar la misma resección oncológica que la videotoracoscopía, con visión 3D magnificada e instrumental articulado. El Dr. David Lazo Pérez es pionero en esta técnica en Chile, realizándola desde 2015.</p>
+              <div class="sp-feats"><div><strong>Visión 3D</strong>Imagen magnificada del campo operatorio</div><div><strong>Menor sangrado</strong>Instrumental con movimiento de muñeca completo</div><div><strong>Menos dolor</strong>Incisiones de 1-2 cm</div><div><strong>Alta precoz</strong>La mayoría se va de alta en pocos días</div><div><strong>Oncología</strong>Mismos resultados oncológicos que la videotoracoscopía</div><div><strong>Indicado en</strong>Estadios I, II y IIIA seleccionados</div></div>
+              <div class="sp-links"><a href="https://rats.cl/resecciones">Saber más</a><a href="https://videotoracoscopia.cl">Videotoracoscopía</a></div>
+            </div>
+          </div>
+        </div>
+
         <p><span class="tx-tag tx-chemo">Quimio</span><span class="tx-tag tx-immuno">Inmunoterapia</span> En tumores de 4 cm o más, o con ganglios comprometidos, la NCCN recomienda evaluar <strong>quimioterapia más inmunoterapia antes de la cirugía</strong> (nivolumab, pembrolizumab o durvalumab; categoría 1), que según el esquema continúa después de la operación. En general no se indica cuando el tumor tiene mutación EGFR o fusión ALK.</p>
         <p><span class="tx-tag tx-chemo">Quimioterapia</span> Después de la cirugía, la quimioterapia adyuvante está recomendada desde el estadio IIB; en estadios IB y IIA, cuando hay factores de alto riesgo (por ejemplo, tumor poco diferenciado, invasión vascular o de la pleura visceral).</p>
         <p><span class="tx-tag tx-targeted">Terapia Dirigida</span> Si el tumor resecado tiene un marcador accionable, existen terapias dirigidas adyuvantes (categoría 1 NCCN): <strong>osimertinib</strong> (EGFR exon 19 del o L858R), <strong>alectinib</strong> (fusión ALK) y <strong>selpercatinib</strong> (fusión RET). Por eso, antes de decidir el tratamiento se estudian EGFR, ALK, RET y PD-L1.</p>
@@ -709,52 +769,6 @@ font-family:var(--sans);color:var(--ink);line-height:1.65}
       </div>
     </div>
 
-  </div>
-
-  <h2 id="cirugia">Cirugía del cáncer pulmonar</h2>
-  <p>
-    La cirugía es el tratamiento más importante en los estadios tempranos. En la mayoría de los casos resecables puede realizarse por técnicas mínimamente invasivas, evitando la cirugía abierta tradicional (toracotomía).
-  </p>
-
-  <h3>Tipos de resección pulmonar</h3>
-  <p>Según el tamaño, la ubicación y el tipo de tumor, y las condiciones del paciente, se reseca una porción periférica del pulmón, un segmento o un lóbulo completo.</p>
-  <div class="res-cards">
-    <a class="res-card" href="https://rats.cl/resecciones/cuna">
-      <img src="/imgs/reseccion-cuna.webp" alt="Ilustración 3D del pulmón derecho: resección en cuña" width="748" height="1100" loading="lazy" />
-      <strong>Resección en cuña</strong>
-      <span>Resección no anatómica de una porción periférica del pulmón que contiene el nódulo, con un margen de tejido sano.</span>
-      <em>Ver en rats.cl →</em>
-    </a>
-    <a class="res-card" href="https://rats.cl/resecciones/segmentectomia">
-      <img src="/imgs/reseccion-segmentectomia.webp" alt="Ilustración 3D del pulmón derecho: segmentectomía" width="703" height="1100" loading="lazy" />
-      <strong>Segmentectomía</strong>
-      <span>Resección anatómica de un segmento pulmonar, con su arteria, su vena y su bronquio.</span>
-      <em>Ver en rats.cl →</em>
-    </a>
-    <a class="res-card" href="https://rats.cl/resecciones/lobectomia">
-      <img src="/imgs/reseccion-lobectomia.webp" alt="Ilustración 3D del pulmón derecho: lobectomía" width="635" height="1100" loading="lazy" />
-      <strong>Lobectomía</strong>
-      <span>Resección de un lóbulo pulmonar completo, con su arteria, su vena y su bronquio. Es la resección habitual para la mayoría de los pacientes.</span>
-      <em>Ver en rats.cl →</em>
-    </a>
-  </div>
-  <p><strong>Bilobectomía y neumonectomía:</strong> se extirpan dos lóbulos o un pulmón completo. Se reservan para tumores centrales o con invasión extensa, o cuando la anatomía lo requiere.</p>
-  <p>En todos los casos, se realiza simultáneamente una <strong>linfadenectomía mediastínica</strong> (extirpación de ganglios linfáticos) para asegurar una estadificación precisa y mejorar el control oncológico.</p>
-
-  <div class="robots-box">
-    <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:0.4rem"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5V12M12 12l-5 5v4M12 12l5 5v4M5 21h4M15 21h4"/></svg>Cirugía robótica (RATS)</h3>
-    <p>
-      La cirugía torácica robótica asistida (RATS) con sistema Da Vinci permite realizar la misma resección oncológica que la videotoracoscopía, con visión 3D magnificada e instrumental articulado. El Dr. David Lazo Pérez es pionero en esta técnica en Chile, realizándola desde 2015.
-    </p>
-    <div class="robots-features">
-      <div class="rf"><strong>Visión 3D</strong>Imagen magnificada del campo operatorio</div>
-      <div class="rf"><strong>Menor sangrado</strong>Instrumental con movimiento de muñeca completo</div>
-      <div class="rf"><strong>Menos dolor</strong>Incisiones de 1-2 cm</div>
-      <div class="rf"><strong>Alta precoz</strong>La mayoría se va de alta en pocos días</div>
-      <div class="rf"><strong>Oncología</strong>Mismos resultados oncológicos que la videotoracoscopía</div>
-      <div class="rf"><strong>Indicado en</strong>Estadios I, II y IIIA seleccionados</div>
-    </div>
-    <p>Más información sobre la técnica en <a href="https://rats.cl" target="_blank">rats.cl →</a> y sobre cada tipo de resección robótica en <a href="https://rats.cl/resecciones" target="_blank">rats.cl/resecciones →</a></p>
   </div>
 
   <h2>Terapias Dirigidas — Medicina de Precisión</h2>

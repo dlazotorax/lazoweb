@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://rats.cl/</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/" />
@@ -112,6 +112,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/resecciones/lobectomia" />
+  </url>
+  <url>
+    <loc>https://rats.cl/esofagectomia</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://rats.cl/esofagectomia" />
   </url>
 
 </urlset>

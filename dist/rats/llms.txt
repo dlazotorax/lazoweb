@@ -43,6 +43,7 @@ o actividad en congresos, la fuente de esta red es el currículum académico del
 - [https://rats.cl/resecciones/cuna](https://rats.cl/resecciones/cuna): resección en cuña robótica; indicaciones, técnica con marcación del nódulo y evidencia JCOG0804
 - [https://rats.cl/resecciones/segmentectomia](https://rats.cl/resecciones/segmentectomia): segmentectomía pulmonar robótica; indicaciones, técnica y evidencia JCOG0802, CALGB 140503 y JCOG1211
 - [https://rats.cl/resecciones/lobectomia](https://rats.cl/resecciones/lobectomia): lobectomía pulmonar robótica; indicaciones, técnica y evidencia publicada (Ginsberg 1995, RVlob)
+- [https://rats.cl/esofagectomia](https://rats.cl/esofagectomia): esofagectomía robótica — tiempo torácico en una cirugía conjunta de cirugía digestiva y torácica; técnicas McKeown e Ivor Lewis, videos propios y evidencia publicada (ROBOT, RAMIE, ICAN, UGIRA)
 
 
 ## Sitios de la red, por tema

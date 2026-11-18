@@ -414,6 +414,14 @@ def auditar(verbose=False):
         if verbose:
             print(f"  revisada {rel}")
 
+    # lastmod del sitemap = fecha real de cambio de cada HTML (scripts/lastmod.py)
+    try:
+        import lastmod as _lastmod
+        for d in _lastmod.desfases():
+            fallos.append(f"[lastmod] {d} — corre: python3 scripts/lastmod.py")
+    except Exception as e:  # no bloquear la auditoría por un error del verificador
+        avisos.append(f"lastmod no verificado: {e}")
+
     # Duplicados
     for titulo, donde in titles.items():
         if len(donde) > 1:

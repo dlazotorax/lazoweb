@@ -98,6 +98,8 @@ Correr `python3 scripts/audit.py` y **no pushear con hallazgos**.
 - **`scripts/audit.py`:** anidado HTML, JSON-LD parseable, cada Q/A de `FAQPage` visible, recursos
   locales, GA4 una vez, `title` ≤60 y `description` 120-158 sin duplicados, `@id` canónico. Sale 1 si
   falla. **No detecta problemas de renderizado.**
+- **`scripts/lastmod.py`** fija `<lastmod>` desde git; `audit.py` falla si hay desfase. Tras editar
+  un HTML: `python3 scripts/lastmod.py` antes de commitear.
 - **Opérculo:** la fuente es `_design/maquetas/operculo/_build/lienzo-design-v2.dc.html`; se regenera con
   `python3 _design/maquetas/operculo/_build/convert_dc.py --publicar`. **No editar los HTML generados.**
 - **cancerpulmonar.cl (desde 17-oct-2026):** cada página = `/estilo.css` (diseño F2) + su `<style>` propio acotado a `.lg`
@@ -139,7 +141,7 @@ un `h1`, canonical sin www, 0 JSON-LD inválidos, contenido sin JS, 89 pares FAQ
 - `<meta robots>`: `max-snippet:-1, max-image-preview:large, max-video-preview:-1`.
 - GA4 `G-X3GX2HCVZL`: aparece **2 veces** por página (loader + config) y está bien.
 - `lastReviewed` = fecha del último cambio clínico real (`git log`), no la de hoy. `/links` y
-  `/publicaciones` no lo llevan a propósito. `<lastmod>` del sitemap = fecha del cambio de archivo.
+  `/publicaciones` no lo llevan a propósito. `<lastmod>` lo calcula `scripts/lastmod.py`.
 - `img { height: auto; }` obligatorio si `<img>` lleva `width`/`height`. WebP en fondos vía `image-set()`.
 - Estilo: Arial/Figtree, teal `#0891b2`, navy `#0c1526`, serif `DM Serif Display`. **Excepción: broncoscopia.cl** (desde 21-oct-2026) usa el sistema del hub: Red Hat Display + JetBrains Mono, azul `#1F6FEB`, grafito `#0E1012`. **Excepción: rats.cl** (portada y
   opérculo) usa el sistema editorial del opérculo: Bebas Neue + Public Sans, hueso `#F6F5F1`, negro `#0B0B0B`.

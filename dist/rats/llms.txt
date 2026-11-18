@@ -44,6 +44,7 @@ o actividad en congresos, la fuente de esta red es el currículum académico del
 - [https://rats.cl/resecciones/segmentectomia](https://rats.cl/resecciones/segmentectomia): segmentectomía pulmonar robótica; indicaciones, técnica y evidencia JCOG0802, CALGB 140503 y JCOG1211
 - [https://rats.cl/resecciones/lobectomia](https://rats.cl/resecciones/lobectomia): lobectomía pulmonar robótica; indicaciones, técnica y evidencia publicada (Ginsberg 1995, RVlob)
 - [https://rats.cl/esofagectomia](https://rats.cl/esofagectomia): esofagectomía robótica — tiempo torácico en una cirugía conjunta de cirugía digestiva y torácica; técnicas McKeown e Ivor Lewis, videos propios y evidencia publicada (ROBOT, RAMIE, ICAN, UGIRA)
+- [https://rats.cl/tumores-mediastino](https://rats.cl/tumores-mediastino): tumores de mediastino — compartimentos anterosuperior, medio y posterior, resección robótica de tumores del mediastino anterosuperior y posterior, timectomía por tumores tímicos o miastenia gravis y evidencia publicada (MGTX, NCDB, series robóticas)
 
 
 ## Sitios de la red, por tema

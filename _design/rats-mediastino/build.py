@@ -64,7 +64,7 @@ ld = '<script type="application/ld+json">\n' + json.dumps(webpage, ensure_ascii=
 for clave, v in VIDEOS.items():
     if v.get("local"):
         vo = {"@context": "https://schema.org", "@type": "VideoObject", "@id": f"{URL}#video-{clave}",
-              "name": v["titulo"] + " | RATS", "description": v["texto"], "uploadDate": v["subido"], "duration": v["duracion"],
+              "name": v["titulo"] + " | RATS", "description": v["texto"], "uploadDate": v["subido"] + "T00:00:00-03:00", "duration": v["duracion"],
               "thumbnailUrl": f"https://rats.cl/videos/{v['local']}.jpg", "contentUrl": f"https://rats.cl/videos/{v['local']}.mp4",
               "inLanguage": "es-CL", "author": {"@id": "https://cirugiatoracica.cl/#david-lazo"}, "isPartOf": {"@id": URL + "#webpage"}}
         ld += '\n  <script type="application/ld+json">\n' + json.dumps(vo, ensure_ascii=False, indent=2) + '\n  </script>'
